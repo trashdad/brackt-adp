@@ -4,8 +4,9 @@ import ROSTERS from '../data/rosters';
 import { fetchOddsForSport } from '../services/oddsApi';
 import { calculateSeasonTotalEV, calculateHistoricallyWeightedEV } from '../services/evCalculator';
 import { slugify } from '../utils/formatters';
-import { loadSettings } from '../utils/storage';
+import { loadSettings, loadManualOdds } from '../utils/storage';
 import { loadAllPipelineData } from '../services/dataLoader';
+import { americanToImpliedProbability, removeVig } from '../services/oddsConverter';
 
 // Scarcity premium constants — controls how much intra-sport EV dominance boosts ADP rank.
 // W: overall bonus strength (0.5 = up to ~50% of topEV added for a perfectly dominant entry)
@@ -267,6 +268,61 @@ export default function useOddsData() {
         rawBySport[sport.id] = result || [];
       })
     );
+
+    // Step 3: Merge manual odds from localStorage
+    const manualOdds = loadManualOdds();
+    for (const [entryId, manual] of Object.entries(manualOdds)) {
+      const { sport, name, oddsBySource: manualSources } = manual;
+      if (!sport || !manualSources) continue;
+
+      if (!rawBySport[sport]) rawBySport[sport] = [];
+      const items = rawBySport[sport];
+      const key = normalize(name);
+      const existing = items.find((item) => normalize(item.name) === key);
+
+      if (existing) {
+        // Merge manual sportsbook odds into existing entry's oddsBySource
+        if (!existing.oddsBySource) existing.oddsBySource = {};
+        for (const [src, odds] of Object.entries(manualSources)) {
+          existing.oddsBySource[src] = odds;
+        }
+      } else {
+        // Create new raw item from manual data
+        const newItem = { name, odds: null, oddsBySource: { ...manualSources } };
+        items.push(newItem);
+      }
+    }
+
+    // Step 4: For entries with multi-source odds, apply vig removal and set consensus
+    for (const items of Object.values(rawBySport)) {
+      for (const item of items) {
+        if (item.oddsBySource && Object.keys(item.oddsBySource).length > 0) {
+          const { consensus } = removeVig(item.oddsBySource);
+          if (consensus) {
+            item.odds = consensus;
+          } else if (!item.odds) {
+            // Fallback: use first available odds value
+            const firstOdds = Object.values(item.oddsBySource).find(Boolean);
+            if (firstOdds) item.odds = firstOdds;
+          }
+
+          // Determine best odds (most favorable = highest implied probability for favorites, highest payout for underdogs)
+          let bestSrc = null, bestVal = null, bestProb = -1;
+          for (const [src, odds] of Object.entries(item.oddsBySource)) {
+            const prob = americanToImpliedProbability(odds);
+            if (prob > bestProb) {
+              bestProb = prob;
+              bestSrc = src;
+              bestVal = odds;
+            }
+          }
+          if (bestSrc) {
+            item.bestOdds = bestVal;
+            item.bestOddsSource = bestSrc;
+          }
+        }
+      }
+    }
 
     setEntries(buildEntries(rawBySport, historicalBySport));
     setLastUpdated(new Date());

@@ -3,6 +3,7 @@ import Layout from './components/layout/Layout';
 import Dashboard from './pages/Dashboard';
 import SportView from './pages/SportView';
 import PlayerDetail from './pages/PlayerDetail';
+import ParsePage from './pages/ParsePage';
 import Settings from './pages/Settings';
 import useOddsData from './hooks/useOddsData';
 import useDraftBoard from './hooks/useDraftBoard';
@@ -33,6 +34,10 @@ export default function App() {
         <Route
           path="player/:id"
           element={<PlayerDetail boardEntries={boardEntries} onToggleDraft={toggleDrafted} />}
+        />
+        <Route
+          path="parse"
+          element={<ParsePage onOddsSubmitted={refresh} />}
         />
         <Route
           path="settings"

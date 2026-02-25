@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import ADPTable from '../components/board/ADPTable';
 import PlayerCard from '../components/cards/PlayerCard';
 import SportFilter from '../components/filters/SportFilter';
@@ -31,13 +32,21 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
             {lastUpdated && ` \u00B7 Updated ${lastUpdated.toLocaleTimeString()}`}
           </p>
         </div>
-        <button
-          onClick={onRefresh}
-          disabled={loading}
-          className="px-3 py-1.5 text-xs font-medium rounded-md bg-brand-600 text-white hover:bg-brand-700 disabled:opacity-50 transition"
-        >
-          {loading ? 'Loading...' : 'Refresh'}
-        </button>
+        <div className="flex items-center gap-2">
+          <Link
+            to="/parse"
+            className="px-3 py-1.5 text-xs font-medium rounded-md border border-brand-600 text-brand-600 bg-white hover:bg-brand-50 transition"
+          >
+            Paste Screenshot and Parse
+          </Link>
+          <button
+            onClick={onRefresh}
+            disabled={loading}
+            className="px-3 py-1.5 text-xs font-medium rounded-md bg-brand-600 text-white hover:bg-brand-700 disabled:opacity-50 transition"
+          >
+            {loading ? 'Loading...' : 'Refresh'}
+          </button>
+        </div>
       </div>
 
       <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
