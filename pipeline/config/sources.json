@@ -1,0 +1,92 @@
+{
+  "sources": [
+    {
+      "id": "the-odds-api",
+      "type": "node",
+      "module": "TheOddsApi",
+      "enabled": true,
+      "interval": "0 0 */24 * * *",
+      "rateLimit": { "maxPerDay": 20 },
+      "sports": [
+        "nfl", "nba", "mlb", "nhl", "ncaaf", "ncaab", "ncaaw", "wnba",
+        "afl", "f1", "ucl", "fifa", "darts", "snooker",
+        "pga", "tennis_m", "tennis_w", "csgo"
+      ]
+    },
+    {
+      "id": "odds-api-io",
+      "type": "node",
+      "module": "OddsApiIo",
+      "enabled": true,
+      "interval": "0 0 */2 * * *",
+      "rateLimit": { "maxPerHour": 100 },
+      "sports": [
+        "nfl", "nba", "mlb", "nhl", "ncaaf", "ncaab", "ncaaw", "wnba",
+        "afl", "f1", "ucl", "fifa", "darts", "snooker",
+        "pga", "tennis_m", "tennis_w", "csgo"
+      ]
+    },
+    {
+      "id": "api-sports",
+      "type": "node",
+      "module": "ApiSports",
+      "enabled": true,
+      "interval": "0 0 */12 * * *",
+      "rateLimit": { "maxPerDay": 100 },
+      "sports": ["f1"]
+    },
+    {
+      "id": "draftkings",
+      "type": "python",
+      "script": "draftkings_scraper.py",
+      "enabled": true,
+      "interval": "0 0 */6 * * *",
+      "rateLimit": { "delayRange": [3000, 8000] },
+      "sports": [
+        "nfl", "nba", "mlb", "nhl", "ncaaf", "ncaab", "wnba",
+        "f1", "pga", "tennis_m", "tennis_w", "indycar"
+      ]
+    },
+    {
+      "id": "fanduel",
+      "type": "python",
+      "script": "fanduel_scraper.py",
+      "enabled": true,
+      "interval": "0 0 */6 * * *",
+      "rateLimit": { "delayRange": [4000, 10000] },
+      "sports": [
+        "nfl", "nba", "mlb", "nhl", "ncaaf", "ncaab", "wnba",
+        "f1", "pga", "tennis_m", "tennis_w"
+      ]
+    },
+    {
+      "id": "oddsportal",
+      "type": "python",
+      "script": "oddsportal_scraper.py",
+      "enabled": true,
+      "interval": "0 0 0 * * 0",
+      "rateLimit": { "delayRange": [3000, 7000] },
+      "dataType": "historical",
+      "sports": ["nfl", "nba", "mlb", "nhl", "f1", "pga", "tennis_m", "tennis_w"]
+    },
+    {
+      "id": "covers",
+      "type": "python",
+      "script": "covers_scraper.py",
+      "enabled": true,
+      "interval": "0 0 */12 * * *",
+      "rateLimit": { "delayRange": [2000, 5000] },
+      "sports": ["nfl", "nba", "mlb", "nhl"]
+    },
+    {
+      "id": "betonline-llws",
+      "type": "python",
+      "script": "betonline_llws_scraper.py",
+      "enabled": true,
+      "interval": "0 0 */12 * * *",
+      "rateLimit": { "delayRange": [3000, 8000] },
+      "seasonWindow": { "startMonth": 7, "endMonth": 9 },
+      "sports": ["llws"]
+    }
+  ]
+}

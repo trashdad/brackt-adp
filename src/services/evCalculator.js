@@ -159,3 +159,69 @@ export function calculateSeasonTotalEV(americanOdds, category, eventsPerSeason) 
     eventsPerSeason,
   };
 }
+
+// Historical weighting constants
+const CURRENT_WEIGHT = 0.7;
+const HISTORICAL_WEIGHT = 0.3;
+const TREND_MODIFIER = 0.03; // 3% boost/reduction for shortening/lengthening
+
+/**
+ * Calculate EV with historical weighting blended in.
+ * Blends current odds (70%) with historical average (30%), then applies a trend modifier.
+ *
+ * @param americanOdds - current odds string
+ * @param category - scoring category ('standard' or 'qp')
+ * @param eventsPerSeason - events per season
+ * @param historicalData - { history: [{ odds, date, source }], trend: 'shortening'|'stable'|'lengthening' }
+ */
+export function calculateHistoricallyWeightedEV(americanOdds, category, eventsPerSeason, historicalData) {
+  // Calculate EV from current odds
+  const currentEV = calculateSeasonTotalEV(americanOdds, category, eventsPerSeason);
+
+  if (!historicalData || !historicalData.history || historicalData.history.length < 2) {
+    return currentEV;
+  }
+
+  // Calculate average historical implied probability
+  const historicalOdds = historicalData.history
+    .map((h) => h.odds)
+    .filter(Boolean);
+
+  if (historicalOdds.length === 0) return currentEV;
+
+  const avgHistoricalProb =
+    historicalOdds.reduce((sum, odds) => sum + americanToImpliedProbability(odds), 0) /
+    historicalOdds.length;
+
+  // Convert avg historical probability back to American odds for EV calculation
+  let historicalAmericanOdds;
+  if (avgHistoricalProb > 0.5) {
+    historicalAmericanOdds = `${Math.round((-avgHistoricalProb * 100) / (1 - avgHistoricalProb))}`;
+  } else if (avgHistoricalProb > 0) {
+    historicalAmericanOdds = `+${Math.round((100 * (1 - avgHistoricalProb)) / avgHistoricalProb)}`;
+  } else {
+    return currentEV;
+  }
+
+  const historicalEV = calculateSeasonTotalEV(historicalAmericanOdds, category, eventsPerSeason);
+
+  // Blend current (70%) and historical (30%) season totals
+  let blendedSeasonTotal =
+    CURRENT_WEIGHT * currentEV.seasonTotal + HISTORICAL_WEIGHT * historicalEV.seasonTotal;
+
+  // Apply trend modifier
+  const trend = historicalData.trend || 'stable';
+  if (trend === 'shortening') {
+    blendedSeasonTotal *= 1 + TREND_MODIFIER; // slight boost
+  } else if (trend === 'lengthening') {
+    blendedSeasonTotal *= 1 - TREND_MODIFIER; // slight reduction
+  }
+
+  return {
+    ...currentEV,
+    seasonTotal: parseFloat(blendedSeasonTotal.toFixed(2)),
+    historicalBlend: true,
+    historicalAvgOdds: historicalAmericanOdds,
+    trend,
+  };
+}

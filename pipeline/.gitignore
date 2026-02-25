@@ -1,0 +1,7 @@
+node_modules/
+output/.raw/
+output/live/
+output/historical/
+output/logs/
+.env
+_temp_*_mappings.json

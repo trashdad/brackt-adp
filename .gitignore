@@ -2,3 +2,12 @@ node_modules
 dist
 .env
 *.local
+
+# Pipeline generated data
+pipeline/output/.raw/
+pipeline/output/live/
+pipeline/output/historical/
+pipeline/output/logs/
+pipeline/node_modules/
+public/data/live/
+public/data/historical/

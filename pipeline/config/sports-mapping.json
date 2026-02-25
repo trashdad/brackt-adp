@@ -1,0 +1,114 @@
+{
+  "nfl": {
+    "the-odds-api": { "key": "americanfootball_nfl" },
+    "odds-api-io": { "key": "americanfootball_nfl" },
+    "draftkings": { "category": "football", "subcategory": "nfl", "futuresPath": "/sportsbook/nfl/futures" },
+    "fanduel": { "category": "football", "subcategory": "nfl", "futuresPath": "/navigation/nfl/futures" },
+    "covers": { "path": "/sport/football/nfl/odds/futures" },
+    "oddsportal": { "path": "/american-football/usa/nfl/" }
+  },
+  "nba": {
+    "the-odds-api": { "key": "basketball_nba" },
+    "odds-api-io": { "key": "basketball_nba" },
+    "draftkings": { "category": "basketball", "subcategory": "nba", "futuresPath": "/sportsbook/nba/futures" },
+    "fanduel": { "category": "basketball", "subcategory": "nba", "futuresPath": "/navigation/nba/futures" },
+    "covers": { "path": "/sport/basketball/nba/odds/futures" },
+    "oddsportal": { "path": "/basketball/usa/nba/" }
+  },
+  "mlb": {
+    "the-odds-api": { "key": "baseball_mlb" },
+    "odds-api-io": { "key": "baseball_mlb" },
+    "draftkings": { "category": "baseball", "subcategory": "mlb", "futuresPath": "/sportsbook/mlb/futures" },
+    "fanduel": { "category": "baseball", "subcategory": "mlb", "futuresPath": "/navigation/mlb/futures" },
+    "covers": { "path": "/sport/baseball/mlb/odds/futures" },
+    "oddsportal": { "path": "/baseball/usa/mlb/" }
+  },
+  "nhl": {
+    "the-odds-api": { "key": "icehockey_nhl" },
+    "odds-api-io": { "key": "icehockey_nhl" },
+    "draftkings": { "category": "hockey", "subcategory": "nhl", "futuresPath": "/sportsbook/nhl/futures" },
+    "fanduel": { "category": "hockey", "subcategory": "nhl", "futuresPath": "/navigation/nhl/futures" },
+    "covers": { "path": "/sport/hockey/nhl/odds/futures" },
+    "oddsportal": { "path": "/hockey/usa/nhl/" }
+  },
+  "ncaaf": {
+    "the-odds-api": { "key": "americanfootball_ncaaf" },
+    "odds-api-io": { "key": "americanfootball_ncaaf" },
+    "draftkings": { "category": "football", "subcategory": "college-football", "futuresPath": "/sportsbook/college-football/futures" },
+    "fanduel": { "category": "football", "subcategory": "college-football", "futuresPath": "/navigation/college-football/futures" }
+  },
+  "ncaab": {
+    "the-odds-api": { "key": "basketball_ncaab" },
+    "odds-api-io": { "key": "basketball_ncaab" },
+    "draftkings": { "category": "basketball", "subcategory": "college-basketball", "futuresPath": "/sportsbook/college-basketball/futures" },
+    "fanduel": { "category": "basketball", "subcategory": "college-basketball", "futuresPath": "/navigation/college-basketball/futures" }
+  },
+  "ncaaw": {
+    "the-odds-api": { "key": "basketball_wncaab" },
+    "odds-api-io": { "key": "basketball_wncaab" }
+  },
+  "wnba": {
+    "the-odds-api": { "key": "basketball_wnba" },
+    "odds-api-io": { "key": "basketball_wnba" },
+    "draftkings": { "category": "basketball", "subcategory": "wnba", "futuresPath": "/sportsbook/wnba/futures" },
+    "fanduel": { "category": "basketball", "subcategory": "wnba", "futuresPath": "/navigation/wnba/futures" }
+  },
+  "afl": {
+    "the-odds-api": { "key": "aussierules_afl" },
+    "odds-api-io": { "key": "aussierules_afl" }
+  },
+  "f1": {
+    "the-odds-api": { "key": "motorsport_formula1" },
+    "odds-api-io": { "key": "motorsport_formula1" },
+    "api-sports": { "league": 1, "season": 2026 },
+    "draftkings": { "category": "motorsports", "subcategory": "formula-1", "futuresPath": "/sportsbook/formula-1/futures" },
+    "fanduel": { "category": "motorsports", "subcategory": "formula-1", "futuresPath": "/navigation/formula-1/futures" },
+    "oddsportal": { "path": "/motorsport/formula-1/" }
+  },
+  "ucl": {
+    "the-odds-api": { "key": "soccer_uefa_champs_league" },
+    "odds-api-io": { "key": "soccer_uefa_champs_league" }
+  },
+  "fifa": {
+    "the-odds-api": { "key": "soccer_fifa_world_cup" },
+    "odds-api-io": { "key": "soccer_fifa_world_cup" }
+  },
+  "darts": {
+    "the-odds-api": { "key": "darts_pdc_world_championship" },
+    "odds-api-io": { "key": "darts_pdc_world_championship" }
+  },
+  "snooker": {
+    "the-odds-api": { "key": "snooker_world_championship" },
+    "odds-api-io": { "key": "snooker_world_championship" }
+  },
+  "llws": {
+    "betonline-llws": { "path": "/futures/little-league-world-series" }
+  },
+  "indycar": {
+    "draftkings": { "category": "motorsports", "subcategory": "indycar", "futuresPath": "/sportsbook/indycar/futures" }
+  },
+  "pga": {
+    "the-odds-api": { "key": "golf_pga" },
+    "odds-api-io": { "key": "golf_pga" },
+    "draftkings": { "category": "golf", "subcategory": "pga-tour", "futuresPath": "/sportsbook/pga-tour/futures" },
+    "fanduel": { "category": "golf", "subcategory": "pga-tour", "futuresPath": "/navigation/pga/futures" },
+    "oddsportal": { "path": "/golf/" }
+  },
+  "tennis_m": {
+    "the-odds-api": { "key": "tennis_atp" },
+    "odds-api-io": { "key": "tennis_atp" },
+    "draftkings": { "category": "tennis", "subcategory": "atp", "futuresPath": "/sportsbook/tennis/atp/futures" },
+    "fanduel": { "category": "tennis", "subcategory": "atp", "futuresPath": "/navigation/tennis/atp/futures" },
+    "oddsportal": { "path": "/tennis/" }
+  },
+  "tennis_w": {
+    "the-odds-api": { "key": "tennis_wta" },
+    "odds-api-io": { "key": "tennis_wta" },
+    "draftkings": { "category": "tennis", "subcategory": "wta", "futuresPath": "/sportsbook/tennis/wta/futures" },
+    "fanduel": { "category": "tennis", "subcategory": "wta", "futuresPath": "/navigation/tennis/wta/futures" }
+  },
+  "csgo": {
+    "the-odds-api": { "key": "esports_csgo" },
+    "odds-api-io": { "key": "esports_csgo" }
+  }
+}
