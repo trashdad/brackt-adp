@@ -1,5 +1,11 @@
+import { loadSettings } from '../utils/storage';
+
 const BASE_URL = 'https://api.the-odds-api.com/v4';
-const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
+
+function getCacheTTL() {
+  const { refreshInterval } = loadSettings();
+  return (refreshInterval || 24) * 60 * 60 * 1000;
+}
 
 function getCacheKey(sport) {
   return `brackt_odds_${sport}`;
@@ -10,7 +16,7 @@ function getFromCache(sport) {
     const raw = localStorage.getItem(getCacheKey(sport));
     if (!raw) return null;
     const { data, timestamp } = JSON.parse(raw);
-    if (Date.now() - timestamp > CACHE_TTL) {
+    if (Date.now() - timestamp > getCacheTTL()) {
       localStorage.removeItem(getCacheKey(sport));
       return null;
     }
@@ -48,6 +54,9 @@ export async function fetchOddsForSport(sportApiKey, apiKey) {
     console.warn(`Odds API error for ${sportApiKey}: ${res.status}`);
     return null;
   }
+
+  const remaining = res.headers.get('x-requests-remaining');
+  if (remaining) localStorage.setItem('brackt_api_remaining', remaining);
 
   const json = await res.json();
 

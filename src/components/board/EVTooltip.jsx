@@ -36,6 +36,8 @@ function TableHead({ ptLabel = 'Pts' }) {
 export default function EVTooltip({ entry, children }) {
   const [pos, setPos] = useState(null);
 
+  if (entry.isPlaceholder) return <span>{children}</span>;
+
   const handleMouseEnter = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = Math.min(rect.left, window.innerWidth - TOOLTIP_WIDTH - 8);
