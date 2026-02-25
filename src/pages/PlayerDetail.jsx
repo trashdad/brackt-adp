@@ -72,6 +72,54 @@ export default function PlayerDetail({ boardEntries, onToggleDraft }) {
           </p>
         </div>
 
+        {/* Historical trend indicator */}
+        {entry.historicalTrend && (
+          <div className="mt-3 flex items-center gap-2">
+            <span className="text-xs text-gray-500">Odds Trend:</span>
+            <span className={`inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded ${
+              entry.historicalTrend === 'shortening'
+                ? 'bg-green-100 text-green-700'
+                : entry.historicalTrend === 'lengthening'
+                ? 'bg-red-100 text-red-700'
+                : 'bg-gray-100 text-gray-600'
+            }`}>
+              {entry.historicalTrend === 'shortening' && '\u2191'}
+              {entry.historicalTrend === 'lengthening' && '\u2193'}
+              {entry.historicalTrend === 'stable' && '\u2194'}
+              {' '}{entry.historicalTrend}
+            </span>
+            {entry.ev?.historicalBlend && (
+              <span className="text-[10px] text-gray-400">(EV blended with historical avg)</span>
+            )}
+          </div>
+        )}
+
+        {/* Multi-source odds breakdown */}
+        {entry.oddsBySource && Object.keys(entry.oddsBySource).length > 1 && (
+          <div className="mt-3">
+            <p className="text-xs text-gray-500 mb-1">Odds by Source:</p>
+            <div className="flex flex-wrap gap-2">
+              {Object.entries(entry.oddsBySource).map(([source, odds]) => (
+                <span
+                  key={source}
+                  className={`text-xs px-2 py-0.5 rounded font-mono ${
+                    source === entry.bestOddsSource
+                      ? 'bg-green-100 text-green-800 font-bold'
+                      : 'bg-gray-100 text-gray-600'
+                  }`}
+                >
+                  {source}: {odds}
+                </span>
+              ))}
+            </div>
+            {entry.bestOdds && (
+              <p className="text-[10px] text-gray-400 mt-1">
+                Best: {entry.bestOdds} ({entry.bestOddsSource})
+              </p>
+            )}
+          </div>
+        )}
+
         {!entry.isPlaceholder && (
           <div className="mt-6">
             <EVBreakdown ev={entry.ev} category={entry.scoringType} />

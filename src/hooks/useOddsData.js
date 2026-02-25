@@ -2,9 +2,10 @@ import { useState, useEffect, useCallback } from 'react';
 import SPORTS from '../data/sports';
 import ROSTERS from '../data/rosters';
 import { fetchOddsForSport } from '../services/oddsApi';
-import { calculateSeasonTotalEV } from '../services/evCalculator';
+import { calculateSeasonTotalEV, calculateHistoricallyWeightedEV } from '../services/evCalculator';
 import { slugify } from '../utils/formatters';
 import { loadSettings } from '../utils/storage';
+import { loadAllPipelineData } from '../services/dataLoader';
 
 // Scarcity premium constants — controls how much intra-sport EV dominance boosts ADP rank.
 // W: overall bonus strength (0.5 = up to ~50% of topEV added for a perfectly dominant entry)
@@ -53,10 +54,30 @@ function applyScarcityPremium(entries) {
 }
 
 /**
+ * Convert pipeline live data for a sport into the { name, odds } format expected by buildEntries.
+ * Uses consensusOdds if available, falls back to bestOdds.
+ * Also preserves multi-source fields for enrichment.
+ */
+function pipelineToRawItems(pipelineData) {
+  if (!pipelineData || !pipelineData.entries) return [];
+  return pipelineData.entries.map((entry) => ({
+    name: entry.name,
+    odds: entry.consensusOdds || entry.bestOdds,
+    // Multi-source enrichment fields
+    oddsBySource: entry.oddsBySource || {},
+    bestOdds: entry.bestOdds,
+    bestOddsSource: entry.bestOddsSource,
+  }));
+}
+
+/**
  * Build the full board entries from raw odds data, merged with rosters.
  * Roster entries with no API match become placeholders.
+ *
+ * @param rawBySport - { sportId: [{ name, odds, oddsBySource?, bestOdds?, bestOddsSource? }] }
+ * @param historicalBySport - { sportId: { entries: [{ nameNormalized, history, trend, ... }] } } (optional)
  */
-function buildEntries(rawBySport) {
+function buildEntries(rawBySport, historicalBySport = {}) {
   const entries = [];
 
   for (const sport of SPORTS) {
@@ -64,6 +85,15 @@ function buildEntries(rawBySport) {
 
     const apiItems = rawBySport[sport.id] || [];
     const rosterNames = ROSTERS[sport.id] || [];
+
+    // Build historical lookup for this sport
+    const historicalData = historicalBySport[sport.id];
+    const historicalLookup = new Map();
+    if (historicalData && historicalData.entries) {
+      for (const h of historicalData.entries) {
+        historicalLookup.set(h.nameNormalized, h);
+      }
+    }
 
     // Build normalized lookup from API items
     const apiLookup = new Map();
@@ -81,7 +111,18 @@ function buildEntries(rawBySport) {
 
       if (apiItem) {
         matchedApiKeys.add(key);
-        const ev = calculateSeasonTotalEV(apiItem.odds, sport.category, sport.eventsPerSeason);
+        const historical = historicalLookup.get(key);
+
+        // Calculate EV, optionally weighted by historical data
+        let ev;
+        if (historical && historical.history && historical.history.length >= 2) {
+          ev = calculateHistoricallyWeightedEV(
+            apiItem.odds, sport.category, sport.eventsPerSeason, historical
+          );
+        } else {
+          ev = calculateSeasonTotalEV(apiItem.odds, sport.category, sport.eventsPerSeason);
+        }
+
         entries.push({
           id: `${sport.id}-${slugify(name)}`,
           name,
@@ -97,6 +138,15 @@ function buildEntries(rawBySport) {
           isPlaceholder: false,
           drafted: false,
           draftedBy: null,
+          // Multi-source enrichment (backward-compatible optional fields)
+          ...(apiItem.oddsBySource && Object.keys(apiItem.oddsBySource).length > 0 && {
+            oddsBySource: apiItem.oddsBySource,
+            bestOdds: apiItem.bestOdds,
+            bestOddsSource: apiItem.bestOddsSource,
+          }),
+          ...(historical && {
+            historicalTrend: historical.trend,
+          }),
         });
       } else {
         entries.push({
@@ -120,8 +170,19 @@ function buildEntries(rawBySport) {
 
     // Add API items not matched by any roster entry
     for (const item of apiItems) {
-      if (!matchedApiKeys.has(normalize(item.name))) {
-        const ev = calculateSeasonTotalEV(item.odds, sport.category, sport.eventsPerSeason);
+      const key = normalize(item.name);
+      if (!matchedApiKeys.has(key)) {
+        const historical = historicalLookup.get(key);
+
+        let ev;
+        if (historical && historical.history && historical.history.length >= 2) {
+          ev = calculateHistoricallyWeightedEV(
+            item.odds, sport.category, sport.eventsPerSeason, historical
+          );
+        } else {
+          ev = calculateSeasonTotalEV(item.odds, sport.category, sport.eventsPerSeason);
+        }
+
         entries.push({
           id: `${sport.id}-${slugify(item.name)}`,
           name: item.name,
@@ -137,6 +198,14 @@ function buildEntries(rawBySport) {
           isPlaceholder: false,
           drafted: false,
           draftedBy: null,
+          ...(item.oddsBySource && Object.keys(item.oddsBySource).length > 0 && {
+            oddsBySource: item.oddsBySource,
+            bestOdds: item.bestOdds,
+            bestOddsSource: item.bestOddsSource,
+          }),
+          ...(historical && {
+            historicalTrend: historical.trend,
+          }),
         });
       }
     }
@@ -164,21 +233,42 @@ export default function useOddsData() {
   const refresh = useCallback(async () => {
     setLoading(true);
     const { apiKey } = loadSettings();
-    const rawBySport = {};
 
-    // Fetch all sports in parallel (uses cache if fresh, else live API)
+    const activeSports = SPORTS.filter((s) => s.active);
+    const sportIds = activeSports.map((s) => s.id);
+
+    // Step 1: Try loading pipeline data first
+    let pipelineData = null;
+    try {
+      pipelineData = await loadAllPipelineData(sportIds);
+    } catch {
+      // Pipeline data not available — continue with API fallback
+    }
+
+    const rawBySport = {};
+    const historicalBySport = pipelineData?.historicalBySport || {};
+
+    // Step 2: For each sport, prefer pipeline data, fall back to direct API
     await Promise.all(
-      SPORTS.filter((s) => s.active).map(async (sport) => {
+      activeSports.map(async (sport) => {
+        // Check if pipeline has live data for this sport
+        const pipelineLive = pipelineData?.liveBySport?.[sport.id];
+        if (pipelineLive && pipelineLive.entries && pipelineLive.entries.length > 0) {
+          rawBySport[sport.id] = pipelineToRawItems(pipelineLive);
+          return;
+        }
+
+        // Fallback to direct Odds API call (existing behavior)
         if (!sport.apiKey || !apiKey) {
-          rawBySport[sport.id] = []; // no API coverage → all placeholders
+          rawBySport[sport.id] = [];
           return;
         }
         const result = await fetchOddsForSport(sport.apiKey, apiKey);
-        rawBySport[sport.id] = result || []; // null on error → placeholders
+        rawBySport[sport.id] = result || [];
       })
     );
 
-    setEntries(buildEntries(rawBySport));
+    setEntries(buildEntries(rawBySport, historicalBySport));
     setLastUpdated(new Date());
     setLoading(false);
   }, []);
