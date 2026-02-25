@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { SPORT_COLORS } from '../../data/sports';
 import { formatAmericanOdds } from '../../services/oddsConverter';
 import { formatNumber, formatPercent } from '../../utils/formatters';
+import EVTooltip from '../board/EVTooltip';
 
 export default function PlayerCard({ entry, onToggleDraft }) {
   const color = SPORT_COLORS[entry.sport] || '#888';
@@ -35,11 +36,15 @@ export default function PlayerCard({ entry, onToggleDraft }) {
         </div>
         <div>
           <span className="text-gray-500 text-xs">Event EV</span>
-          <p className="font-medium">{formatNumber(entry.ev.singleEvent)}</p>
+          <p className="font-medium">
+            <EVTooltip entry={entry}>{formatNumber(entry.ev.singleEvent)}</EVTooltip>
+          </p>
         </div>
         <div>
           <span className="text-gray-500 text-xs">Season EV</span>
-          <p className="font-bold text-brand-700">{formatNumber(entry.ev.seasonTotal)}</p>
+          <p className="font-bold text-brand-700">
+            <EVTooltip entry={entry}>{formatNumber(entry.ev.seasonTotal)}</EVTooltip>
+          </p>
         </div>
       </div>
       {!entry.drafted && (

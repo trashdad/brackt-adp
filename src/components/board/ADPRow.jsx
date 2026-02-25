@@ -3,6 +3,7 @@ import { SPORT_COLORS } from '../../data/sports';
 import { formatAmericanOdds } from '../../services/oddsConverter';
 import { formatNumber, formatPercent } from '../../utils/formatters';
 import DraftedBadge from './DraftedBadge';
+import EVTooltip from './EVTooltip';
 
 export default function ADPRow({ entry, onToggleDraft }) {
   const color = SPORT_COLORS[entry.sport] || '#888';
@@ -39,10 +40,10 @@ export default function ADPRow({ entry, onToggleDraft }) {
         {formatAmericanOdds(entry.odds)}
       </td>
       <td className="px-3 py-2 text-sm text-gray-600">
-        {formatNumber(entry.ev.singleEvent)}
+        <EVTooltip entry={entry}>{formatNumber(entry.ev.singleEvent)}</EVTooltip>
       </td>
       <td className="px-3 py-2 text-sm font-semibold text-gray-900">
-        {formatNumber(entry.ev.seasonTotal)}
+        <EVTooltip entry={entry}>{formatNumber(entry.ev.seasonTotal)}</EVTooltip>
       </td>
       <td className="px-3 py-2 text-sm text-gray-500 uppercase">
         {entry.scoringType}
