@@ -1,5 +1,7 @@
-import { getScoringTable } from '../data/scoring';
+import { getScoringTable, STANDARD_SCORING, QP_SCORING } from '../data/scoring';
 import { americanToImpliedProbability } from './oddsConverter';
+
+const QP_MAX = 20; // max QP points awarded for a 1st-place finish
 
 /**
  * Given a win probability, estimate the probability distribution for each finish position.
@@ -61,9 +63,76 @@ export function calculateSingleEventEV(americanOdds, category) {
 }
 
 /**
+ * Calculate EV for a QP sport (Golf, Tennis, Counter-Strike).
+ *
+ * The Brackt rules say: QP accumulates across all majors in the season,
+ * and the season-end QP ranking earns standard points (100/70/50/40/25/15).
+ * QP values themselves are NOT the fantasy scoring unit.
+ *
+ * Model:
+ *  1. Compute expected QP per event from the per-event finish probability distribution.
+ *  2. Derive "season strength" = E[QP/event] / QP_MAX (fraction of perfect performance).
+ *     A player averaging 18/20 QP per event dominates season standings; one averaging
+ *     2/20 will finish near the bottom.
+ *  3. Apply standard scoring to the season-rank distribution driven by season strength.
+ */
+function calculateQPSeasonEV(americanOdds, eventsPerSeason) {
+  const winProb = americanToImpliedProbability(americanOdds);
+  const probs = estimateFinishProbabilities(winProb);
+
+  // Step 1: per-event QP breakdown
+  let expectedQPPerEvent = 0;
+  const perFinish = {};
+  for (const tier of QP_SCORING) {
+    const [start, end] = tier.range;
+    let tierEV = 0;
+    for (let pos = start; pos <= end; pos++) {
+      tierEV += (probs[pos] || 0) * tier.points;
+    }
+    expectedQPPerEvent += tierEV;
+    perFinish[tier.finish] = parseFloat(tierEV.toFixed(2));
+  }
+
+  // Step 2: season strength — how dominant is this player relative to perfect?
+  const seasonStrength = Math.min(1, expectedQPPerEvent / QP_MAX);
+
+  // Step 3: season-end rank distribution driven by season strength
+  const seasonRankProbs = estimateFinishProbabilities(seasonStrength);
+  let seasonEV = 0;
+  const seasonPerFinish = {};
+  for (const tier of STANDARD_SCORING) {
+    const [start, end] = tier.range;
+    let tierEV = 0;
+    for (let pos = start; pos <= end; pos++) {
+      tierEV += (seasonRankProbs[pos] || 0) * tier.points;
+    }
+    seasonEV += tierEV;
+    seasonPerFinish[tier.finish] = parseFloat(tierEV.toFixed(2));
+  }
+
+  return {
+    singleEvent: parseFloat(expectedQPPerEvent.toFixed(2)), // E[QP] per event (informational)
+    seasonTotal: parseFloat(seasonEV.toFixed(2)),           // season standard-points EV
+    winProbability: parseFloat((winProb * 100).toFixed(1)),
+    perFinish,           // per-event QP contributions by finish tier
+    eventsPerSeason,
+    // QP-specific fields used by the tooltip
+    expectedQPPerEvent: parseFloat(expectedQPPerEvent.toFixed(2)),
+    seasonStrength: parseFloat((seasonStrength * 100).toFixed(1)),
+    seasonPerFinish,     // season rank → standard points contributions
+    isQP: true,
+  };
+}
+
+/**
  * Calculate season-total EV (for ADP ranking across sports).
+ * Routes QP sports through the two-stage QP model.
  */
 export function calculateSeasonTotalEV(americanOdds, category, eventsPerSeason) {
+  if (category === 'qp') {
+    return calculateQPSeasonEV(americanOdds, eventsPerSeason);
+  }
+
   const { singleEvent, winProbability, perFinish } = calculateSingleEventEV(americanOdds, category);
   return {
     singleEvent,
