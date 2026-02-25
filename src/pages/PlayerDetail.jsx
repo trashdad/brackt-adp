@@ -38,7 +38,7 @@ export default function PlayerDetail({ boardEntries, onToggleDraft }) {
           <span className="text-3xl font-bold text-gray-300">#{entry.adpRank}</span>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-4 border-y border-gray-200">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 py-4 border-y border-gray-200">
           <div>
             <p className="text-xs text-gray-500">Win Probability</p>
             <p className="text-lg font-bold">{formatPercent(entry.ev.winProbability)}</p>
@@ -54,6 +54,13 @@ export default function PlayerDetail({ boardEntries, onToggleDraft }) {
           <div>
             <p className="text-xs text-gray-500">Season Total EV</p>
             <p className="text-lg font-bold text-brand-700">{formatNumber(entry.ev.seasonTotal)}</p>
+          </div>
+          <div>
+            <p className="text-xs text-gray-500">ADP Score</p>
+            <p className="text-lg font-bold text-brand-700">{formatNumber(entry.adpScore)}</p>
+            {entry.scarcityBonus > 0 && (
+              <p className="text-[10px] text-orange-400 font-mono">+{entry.scarcityBonus.toFixed(2)} scarcity</p>
+            )}
           </div>
         </div>
 

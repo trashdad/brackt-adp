@@ -45,6 +45,14 @@ export default function ADPRow({ entry, onToggleDraft }) {
       <td className="px-3 py-2 text-sm font-semibold text-gray-900">
         <EVTooltip entry={entry}>{formatNumber(entry.ev.seasonTotal)}</EVTooltip>
       </td>
+      <td className="px-3 py-2 text-sm font-bold text-brand-700">
+        {formatNumber(entry.adpScore)}
+        {entry.scarcityBonus > 0 && (
+          <span className="block text-[10px] font-normal text-orange-400 font-mono">
+            +{entry.scarcityBonus.toFixed(1)}
+          </span>
+        )}
+      </td>
       <td className="px-3 py-2 text-sm text-gray-500 uppercase">
         {entry.scoringType}
       </td>

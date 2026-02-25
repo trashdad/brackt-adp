@@ -146,6 +146,24 @@ export default function EVTooltip({ entry, children }) {
               </div>
             </>
           )}
+
+          {/* Scarcity premium — shown for any entry with a meaningful intra-sport gap */}
+          {entry.scarcityBonus > 0 && (
+            <div className="border-t border-gray-700 pt-2 mt-1 space-y-1">
+              <div className="flex justify-between">
+                <span className="text-gray-400">EV Gap (sport)</span>
+                <span className="font-mono text-yellow-200">+{entry.evGap.toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-400">Scarcity Bonus</span>
+                <span className="font-mono text-orange-300">+{entry.scarcityBonus.toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-400">ADP Score</span>
+                <span className="font-mono font-bold text-white">{entry.adpScore.toFixed(2)}</span>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </span>
