@@ -6,11 +6,12 @@ import EVTooltip from '../board/EVTooltip';
 
 export default function PlayerCard({ entry, onToggleDraft }) {
   const color = SPORT_COLORS[entry.sport] || '#888';
+  const val = (v) => entry.isPlaceholder ? '—' : v;
 
   return (
     <div
       className={`rounded-lg border border-gray-200 bg-white p-4 shadow-sm ${
-        entry.drafted ? 'opacity-40' : ''
+        entry.drafted ? 'opacity-40' : entry.isPlaceholder ? 'opacity-40 italic' : ''
       }`}
     >
       <div className="flex items-start justify-between mb-2">
@@ -28,26 +29,26 @@ export default function PlayerCard({ entry, onToggleDraft }) {
       <div className="grid grid-cols-2 gap-2 text-sm mb-3">
         <div>
           <span className="text-gray-500 text-xs">Win %</span>
-          <p className="font-medium">{formatPercent(entry.ev.winProbability)}</p>
+          <p className="font-medium">{val(formatPercent(entry.ev?.winProbability))}</p>
         </div>
         <div>
           <span className="text-gray-500 text-xs">Odds</span>
-          <p className="font-mono font-medium">{formatAmericanOdds(entry.odds)}</p>
+          <p className="font-mono font-medium">{val(formatAmericanOdds(entry.odds))}</p>
         </div>
         <div>
           <span className="text-gray-500 text-xs">Event EV</span>
           <p className="font-medium">
-            <EVTooltip entry={entry}>{formatNumber(entry.ev.singleEvent)}</EVTooltip>
+            <EVTooltip entry={entry}>{val(formatNumber(entry.ev?.singleEvent))}</EVTooltip>
           </p>
         </div>
         <div>
           <span className="text-gray-500 text-xs">Season EV</span>
           <p className="font-bold text-brand-700">
-            <EVTooltip entry={entry}>{formatNumber(entry.ev.seasonTotal)}</EVTooltip>
+            <EVTooltip entry={entry}>{val(formatNumber(entry.ev?.seasonTotal))}</EVTooltip>
           </p>
         </div>
       </div>
-      {!entry.drafted && (
+      {!entry.drafted && !entry.isPlaceholder && (
         <button
           onClick={() => onToggleDraft(entry.id)}
           className="w-full px-3 py-1.5 text-xs font-medium rounded border border-gray-300 text-gray-600 hover:bg-gray-100 transition"

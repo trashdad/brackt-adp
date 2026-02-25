@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import SPORTS from '../data/sports';
-import MOCK_ENTRIES from '../data/mockData';
+import ROSTERS from '../data/rosters';
 import { fetchOddsForSport } from '../services/oddsApi';
 import { calculateSeasonTotalEV } from '../services/evCalculator';
 import { slugify } from '../utils/formatters';
@@ -12,27 +12,16 @@ import { loadSettings } from '../utils/storage';
 const ADP_SCARCITY_WEIGHT = 0.5;
 const ADP_SCARCITY_K      = 2;
 
+const normalize = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
 /**
  * For each entry, compute an adpScore = ev.seasonTotal + scarcityBonus.
- *
- * Within each sport, entries are ranked by ev.seasonTotal. The gap to the next-lower
- * entry is normalized by the sport's EV range, then weighted by the entry's relative
- * position (exponential decay). This rewards dominant entries that are significantly
- * better than their nearest peer — those must be drafted much earlier because early
- * draft capital is exponentially more valuable than later picks.
- *
- *   gap_i           = ev_i - ev_{i+1}
- *   normalizedGap_i = gap_i / sportRange
- *   relativePos_i   = ev_i / topEV_sport
- *   scarcityBonus_i = normalizedGap_i × relativePos_i^k × topEV_sport × W
- *   adpScore_i      = ev.seasonTotal + scarcityBonus_i
- *
- * Also sets entry.evGap (raw gap in EV pts) and entry.scarcityBonus on each entry.
- * ev.seasonTotal is never modified.
+ * Skips placeholder entries.
  */
 function applyScarcityPremium(entries) {
   const bySport = {};
   for (const entry of entries) {
+    if (entry.isPlaceholder) continue;
     if (!bySport[entry.sport]) bySport[entry.sport] = [];
     bySport[entry.sport].push(entry);
   }
@@ -64,52 +53,107 @@ function applyScarcityPremium(entries) {
 }
 
 /**
- * Build the full board entries from raw odds data.
+ * Build the full board entries from raw odds data, merged with rosters.
+ * Roster entries with no API match become placeholders.
  */
 function buildEntries(rawBySport) {
   const entries = [];
 
   for (const sport of SPORTS) {
     if (!sport.active) continue;
-    const items = rawBySport[sport.id] || [];
 
-    for (const item of items) {
-      const ev = calculateSeasonTotalEV(item.odds, sport.category, sport.eventsPerSeason);
-      entries.push({
-        id: `${sport.id}-${slugify(item.name)}`,
-        name: item.name,
-        sport: sport.id,
-        sportName: sport.name,
-        sportIcon: sport.icon,
-        scoringType: sport.category,
-        odds: item.odds,
-        ev,
-        drafted: false,
-        draftedBy: null,
-      });
+    const apiItems = rawBySport[sport.id] || [];
+    const rosterNames = ROSTERS[sport.id] || [];
+
+    // Build normalized lookup from API items
+    const apiLookup = new Map();
+    for (const item of apiItems) {
+      apiLookup.set(normalize(item.name), item);
+    }
+
+    // Track which API items were matched by roster
+    const matchedApiKeys = new Set();
+
+    // Process roster entries
+    for (const name of rosterNames) {
+      const key = normalize(name);
+      const apiItem = apiLookup.get(key);
+
+      if (apiItem) {
+        matchedApiKeys.add(key);
+        const ev = calculateSeasonTotalEV(apiItem.odds, sport.category, sport.eventsPerSeason);
+        entries.push({
+          id: `${sport.id}-${slugify(name)}`,
+          name,
+          sport: sport.id,
+          sportName: sport.name,
+          sportIcon: sport.icon,
+          scoringType: sport.category,
+          odds: apiItem.odds,
+          ev,
+          adpScore: 0,
+          scarcityBonus: 0,
+          evGap: 0,
+          isPlaceholder: false,
+          drafted: false,
+          draftedBy: null,
+        });
+      } else {
+        entries.push({
+          id: `${sport.id}-${slugify(name)}`,
+          name,
+          sport: sport.id,
+          sportName: sport.name,
+          sportIcon: sport.icon,
+          scoringType: sport.category,
+          odds: null,
+          ev: null,
+          adpScore: -1,
+          scarcityBonus: 0,
+          evGap: 0,
+          isPlaceholder: true,
+          drafted: false,
+          draftedBy: null,
+        });
+      }
+    }
+
+    // Add API items not matched by any roster entry
+    for (const item of apiItems) {
+      if (!matchedApiKeys.has(normalize(item.name))) {
+        const ev = calculateSeasonTotalEV(item.odds, sport.category, sport.eventsPerSeason);
+        entries.push({
+          id: `${sport.id}-${slugify(item.name)}`,
+          name: item.name,
+          sport: sport.id,
+          sportName: sport.name,
+          sportIcon: sport.icon,
+          scoringType: sport.category,
+          odds: item.odds,
+          ev,
+          adpScore: 0,
+          scarcityBonus: 0,
+          evGap: 0,
+          isPlaceholder: false,
+          drafted: false,
+          draftedBy: null,
+        });
+      }
     }
   }
 
-  // Apply scarcity premium, then sort by adpScore and assign ADP rank
+  // Apply scarcity premium to real entries, then sort
   applyScarcityPremium(entries);
-  entries.sort((a, b) => b.adpScore - a.adpScore);
+  entries.sort((a, b) => {
+    if (a.isPlaceholder && !b.isPlaceholder) return 1;
+    if (!a.isPlaceholder && b.isPlaceholder) return -1;
+    return b.adpScore - a.adpScore;
+  });
   entries.forEach((e, i) => {
     e.adpRank = i + 1;
   });
 
   return entries;
-}
-
-/**
- * Produce a sport -> entries mapping from mock data.
- */
-function getMockBySport() {
-  const map = {};
-  for (const entry of MOCK_ENTRIES) {
-    if (!map[entry.sport]) map[entry.sport] = [];
-    map[entry.sport].push({ name: entry.name, odds: entry.odds });
-  }
-  return map;
 }
 
 export default function useOddsData() {
@@ -120,33 +164,19 @@ export default function useOddsData() {
   const refresh = useCallback(async () => {
     setLoading(true);
     const { apiKey } = loadSettings();
-
-    if (!apiKey) {
-      // Use mock data
-      const mockMap = getMockBySport();
-      setEntries(buildEntries(mockMap));
-      setLastUpdated(new Date());
-      setLoading(false);
-      return;
-    }
-
-    // Try fetching from API, fall back to mock per sport
-    const mockMap = getMockBySport();
     const rawBySport = {};
 
-    const promises = SPORTS.filter((s) => s.active && s.apiKey).map(async (sport) => {
-      const result = await fetchOddsForSport(sport.apiKey, apiKey);
-      rawBySport[sport.id] = result && result.length > 0 ? result : (mockMap[sport.id] || []);
-    });
-
-    await Promise.all(promises);
-
-    // Fill in sports without API keys with mock data
-    for (const sport of SPORTS) {
-      if (sport.active && !sport.apiKey) {
-        rawBySport[sport.id] = mockMap[sport.id] || [];
-      }
-    }
+    // Fetch all sports in parallel (uses cache if fresh, else live API)
+    await Promise.all(
+      SPORTS.filter((s) => s.active).map(async (sport) => {
+        if (!sport.apiKey || !apiKey) {
+          rawBySport[sport.id] = []; // no API coverage → all placeholders
+          return;
+        }
+        const result = await fetchOddsForSport(sport.apiKey, apiKey);
+        rawBySport[sport.id] = result || []; // null on error → placeholders
+      })
+    );
 
     setEntries(buildEntries(rawBySport));
     setLastUpdated(new Date());
@@ -155,6 +185,10 @@ export default function useOddsData() {
 
   useEffect(() => {
     refresh();
+    const { refreshInterval } = loadSettings();
+    const intervalMs = (refreshInterval || 24) * 60 * 60 * 1000;
+    const timer = setInterval(refresh, intervalMs);
+    return () => clearInterval(timer);
   }, [refresh]);
 
   return { entries, loading, lastUpdated, refresh };

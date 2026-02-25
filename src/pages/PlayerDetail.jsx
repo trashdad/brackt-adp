@@ -19,6 +19,7 @@ export default function PlayerDetail({ boardEntries, onToggleDraft }) {
 
   const sport = getSportById(entry.sport);
   const color = SPORT_COLORS[entry.sport] || '#888';
+  const val = (v) => entry.isPlaceholder ? '—' : v;
 
   return (
     <div className="max-w-2xl mx-auto space-y-6">
@@ -41,24 +42,24 @@ export default function PlayerDetail({ boardEntries, onToggleDraft }) {
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 py-4 border-y border-gray-200">
           <div>
             <p className="text-xs text-gray-500">Win Probability</p>
-            <p className="text-lg font-bold">{formatPercent(entry.ev.winProbability)}</p>
+            <p className="text-lg font-bold">{val(formatPercent(entry.ev?.winProbability))}</p>
           </div>
           <div>
             <p className="text-xs text-gray-500">American Odds</p>
-            <p className="text-lg font-bold font-mono">{formatAmericanOdds(entry.odds)}</p>
+            <p className="text-lg font-bold font-mono">{val(formatAmericanOdds(entry.odds))}</p>
           </div>
           <div>
             <p className="text-xs text-gray-500">Single Event EV</p>
-            <p className="text-lg font-bold">{formatNumber(entry.ev.singleEvent)}</p>
+            <p className="text-lg font-bold">{val(formatNumber(entry.ev?.singleEvent))}</p>
           </div>
           <div>
             <p className="text-xs text-gray-500">Season Total EV</p>
-            <p className="text-lg font-bold text-brand-700">{formatNumber(entry.ev.seasonTotal)}</p>
+            <p className="text-lg font-bold text-brand-700">{val(formatNumber(entry.ev?.seasonTotal))}</p>
           </div>
           <div>
             <p className="text-xs text-gray-500">ADP Score</p>
-            <p className="text-lg font-bold text-brand-700">{formatNumber(entry.adpScore)}</p>
-            {entry.scarcityBonus > 0 && (
+            <p className="text-lg font-bold text-brand-700">{val(formatNumber(entry.adpScore))}</p>
+            {!entry.isPlaceholder && entry.scarcityBonus > 0 && (
               <p className="text-[10px] text-orange-400 font-mono">+{entry.scarcityBonus.toFixed(2)} scarcity</p>
             )}
           </div>
@@ -71,9 +72,11 @@ export default function PlayerDetail({ boardEntries, onToggleDraft }) {
           </p>
         </div>
 
-        <div className="mt-6">
-          <EVBreakdown ev={entry.ev} category={entry.scoringType} />
-        </div>
+        {!entry.isPlaceholder && (
+          <div className="mt-6">
+            <EVBreakdown ev={entry.ev} category={entry.scoringType} />
+          </div>
+        )}
 
         <div className="mt-6">
           {entry.drafted ? (
@@ -88,14 +91,14 @@ export default function PlayerDetail({ boardEntries, onToggleDraft }) {
                 Undraft
               </button>
             </div>
-          ) : (
+          ) : !entry.isPlaceholder ? (
             <button
               onClick={() => onToggleDraft(entry.id)}
               className="w-full px-4 py-2 text-sm font-medium rounded-md bg-brand-600 text-white hover:bg-brand-700 transition"
             >
               Mark as Drafted
             </button>
-          )}
+          ) : null}
         </div>
       </div>
     </div>
