@@ -3,6 +3,23 @@ import { americanToImpliedProbability } from './oddsConverter';
 
 const QP_MAX = 20; // max QP points awarded for a 1st-place finish
 
+// Probability that a finish position ties with the adjacent position.
+// Brackt rules split tied positions equally: e.g. 2nd+3rd tie → (70+50)/2 = 60 each.
+const TIE_PROB = 0.05;
+
+/**
+ * Adjust a scoring table's point values to account for the probability of tying
+ * with the next adjacent tier. Returns a new table with effective (blended) points.
+ */
+function withTieAdjustment(scoringTable) {
+  return scoringTable.map((tier, i) => {
+    const next = scoringTable[i + 1];
+    if (!next) return tier;
+    const effectivePts = (1 - TIE_PROB) * tier.points + TIE_PROB * (tier.points + next.points) / 2;
+    return { ...tier, points: effectivePts };
+  });
+}
+
 /**
  * Given a win probability, estimate the probability distribution for each finish position.
  * Uses a probability decay model as described in the plan.
@@ -40,7 +57,7 @@ function estimateFinishProbabilities(winProb) {
 export function calculateSingleEventEV(americanOdds, category) {
   const winProb = americanToImpliedProbability(americanOdds);
   const probs = estimateFinishProbabilities(winProb);
-  const scoringTable = getScoringTable(category);
+  const scoringTable = withTieAdjustment(getScoringTable(category));
 
   let ev = 0;
   const perFinish = {};
@@ -83,7 +100,7 @@ function calculateQPSeasonEV(americanOdds, eventsPerSeason) {
   // Step 1: per-event QP breakdown
   let expectedQPPerEvent = 0;
   const perFinish = {};
-  for (const tier of QP_SCORING) {
+  for (const tier of withTieAdjustment(QP_SCORING)) {
     const [start, end] = tier.range;
     let tierEV = 0;
     for (let pos = start; pos <= end; pos++) {
@@ -100,7 +117,7 @@ function calculateQPSeasonEV(americanOdds, eventsPerSeason) {
   const seasonRankProbs = estimateFinishProbabilities(seasonStrength);
   let seasonEV = 0;
   const seasonPerFinish = {};
-  for (const tier of STANDARD_SCORING) {
+  for (const tier of withTieAdjustment(STANDARD_SCORING)) {
     const [start, end] = tier.range;
     let tierEV = 0;
     for (let pos = start; pos <= end; pos++) {
