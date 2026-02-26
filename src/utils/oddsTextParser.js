@@ -3,33 +3,63 @@ import ROSTERS from '../data/rosters';
 const normalize = (s) => s.toLowerCase().replace(/[^a-z0-9 ]/g, '').trim();
 
 /**
+ * Normalize unicode dashes/minuses to ASCII hyphen-minus,
+ * strip zero-width and non-breaking spaces, and trim.
+ */
+function sanitizeLine(line) {
+  return line
+    .replace(/[\u2212\u2013\u2014\u2015\uFE58\uFF0D]/g, '-')  // unicode minus/dash → ASCII
+    .replace(/[\u00A0\u200B\u200C\u200D\uFEFF]/g, ' ')         // non-breaking/zero-width → space
+    .trim();
+}
+
+/**
+ * Returns true if a string is purely numeric (possibly with a sign).
+ */
+function isNumericOnly(s) {
+  return /^[+-]?\d+$/.test(s.trim());
+}
+
+/**
  * Parse pasted odds text into [{nameText, odds}] pairs.
- * Handles: "Team Name +150", "Team Name\n+150", and mixed layouts.
+ * Handles: "Team Name +150", "Team Name\n+150", mixed layouts,
+ * unicode minus signs, and "EVEN"/"EV" as +100.
  */
 export function parseOddsText(text) {
-  const lines = text.split(/\n/).map((l) => l.trim()).filter(Boolean);
-  const oddsPattern = /([+-]?\d{3,5})/;
+  const lines = text.split(/\r?\n/).map(sanitizeLine).filter(Boolean);
+  const oddsPattern = /([+-]\d{3,5}|\b\d{3,5}\b)/;
   const results = [];
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
+
+    // Handle "EVEN" / "EV" as +100
+    if (/^(EVEN|EV)$/i.test(line)) {
+      if (results.length > 0 && !results[results.length - 1].odds) {
+        results[results.length - 1].odds = '+100';
+      }
+      continue;
+    }
+
     const match = line.match(oddsPattern);
 
     if (match) {
       // Odds found on this line — extract name from same line (text before odds)
       const oddsIdx = line.indexOf(match[0]);
       const namePart = line.slice(0, oddsIdx).trim();
+      const oddsVal = match[0].startsWith('+') || match[0].startsWith('-') ? match[0] : '+' + match[0];
 
-      if (namePart.length > 1) {
-        results.push({ nameText: namePart, odds: match[0] });
+      if (namePart.length > 1 && !isNumericOnly(namePart)) {
+        results.push({ nameText: namePart, odds: oddsVal });
       } else if (results.length > 0 && !results[results.length - 1].odds) {
         // Previous line was a name-only line, attach odds to it
-        results[results.length - 1].odds = match[0];
+        results[results.length - 1].odds = oddsVal;
       }
     } else {
       // No odds on this line — could be a team name for the next line
       const cleaned = line.replace(/[^\w\s'-]/g, '').trim();
-      if (cleaned.length > 1) {
+      // Skip lines that are just numbers (stray odds fragments, rankings, etc.)
+      if (cleaned.length > 1 && !isNumericOnly(cleaned)) {
         results.push({ nameText: cleaned, odds: null });
       }
     }
