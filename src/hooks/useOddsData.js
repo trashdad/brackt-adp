@@ -4,7 +4,7 @@ import ROSTERS from '../data/rosters';
 import { fetchOddsForSport } from '../services/oddsApi';
 import { calculateSeasonTotalEV, calculateHistoricallyWeightedEV, applyPositionalScarcity } from '../services/evCalculator';
 import { slugify } from '../utils/formatters';
-import { loadSettings } from '../utils/storage';
+import { loadSettings, loadLocalManualOdds } from '../utils/storage';
 import { loadAllPipelineData } from '../services/dataLoader';
 import { americanToImpliedProbability, removeVig, probabilityToAmerican } from '../services/oddsConverter';
 
@@ -249,9 +249,12 @@ export default function useOddsData() {
       })
     );
 
-    // Step 3: Merge manual odds from server
+    // Step 3: Merge manual odds from server + local fallback
     const manualOddsResp = await fetch('/api/manual-odds').catch(() => null);
-    const manualOdds = manualOddsResp?.ok ? await manualOddsResp.json() : {};
+    const serverManualOdds = manualOddsResp?.ok ? await manualOddsResp.json() : {};
+    const localManualOdds = loadLocalManualOdds();
+    const manualOdds = { ...localManualOdds, ...serverManualOdds };
+
     for (const [entryId, manual] of Object.entries(manualOdds)) {
       const { sport, name, oddsBySource: manualSources, oddsByTournament: manualTournaments } = manual;
       if (!sport) continue;

@@ -5,9 +5,20 @@ A high-performance, 16-bit arcade-themed sports drafting utility. Aggregates fut
 ## ARCHITECTURE_NODES
 
 - **Frontend**: React 18 + Tailwind CSS (Vite)
-- **Proxy Node**: Cloudflare Worker (Proxy for CORS bypass & Secret protection)
 - **Scraper Node**: Python + Selenium (Local extraction of sportsbook data)
 - **Backend Node**: Express.js (Live data merging & manifest generation)
+
+## DEPLOYMENT_MODES
+
+### Netlify (Recommended)
+This application is pre-configured for **Netlify** with persistent storage via **Netlify Blobs**.
+1. Connect your GitHub repository to Netlify.
+2. Build Command: `npm run build`
+3. Publish Directory: `dist`
+4. **Enable Blobs**: In your Netlify dashboard, ensure your site has access to Netlify Blobs (usually enabled by default for new sites).
+5. Routing: Handled by `netlify.toml` which redirects `/api` to serverless functions.
+
+*Note: With Netlify Blobs, your draft state and manual odds are shared and persistent across all users of your deployed site.*
 
 ## SYSTEM_BOOT_SEQUENCE
 
@@ -17,16 +28,7 @@ npm install
 npm run dev:all
 ```
 
-### 2. Proxy Node (Cloudflare)
-```bash
-# Run locally
-npm run worker:dev
-
-# Deploy to Cloudflare
-npm run worker:deploy
-```
-
-### 3. Scraper Pipeline
+### 2. Scraper Pipeline
 ```bash
 cd pipeline
 pip install -r requirements.txt
@@ -35,8 +37,6 @@ python python-sources/run_scraper.py --source draftkings --all
 
 ## TERMINAL_COMMANDS
 
-- `npm run worker:dev`: Initialize local proxy node at `localhost:8787`
-- `npm run worker:deploy`: Push proxy node to Cloudflare edge
 - `npm run dev:all`: Launch frontend and local storage server
 
 ## CONFIGURATION

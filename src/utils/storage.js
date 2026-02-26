@@ -1,4 +1,6 @@
 const SETTINGS_KEY = 'brackt_settings';
+const DRAFT_KEY = 'brackt_draft_state_local';
+const MANUAL_ODDS_KEY = 'brackt_manual_odds_local';
 
 // Settings remain local-only (API keys are per-user credentials, not shared)
 export function loadSettings() {
@@ -26,4 +28,36 @@ export function saveSettings(settings) {
   } catch {
     // storage full
   }
+}
+
+// ── Local Fallback Storage ───────────────────────────────────────────────────
+
+export function loadLocalDraftState() {
+  try {
+    const raw = localStorage.getItem(DRAFT_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+export function saveLocalDraftState(state) {
+  try {
+    localStorage.setItem(DRAFT_KEY, JSON.stringify(state));
+  } catch {}
+}
+
+export function loadLocalManualOdds() {
+  try {
+    const raw = localStorage.getItem(MANUAL_ODDS_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+export function saveLocalManualOdds(odds) {
+  try {
+    localStorage.setItem(MANUAL_ODDS_KEY, JSON.stringify(odds));
+  } catch {}
 }
