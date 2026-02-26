@@ -41,7 +41,17 @@ export default function ParsePage({ onOddsSubmitted }) {
 
   const updateResult = (idx, field, value) => {
     setResults((prev) =>
-      prev.map((r, i) => (i === idx ? { ...r, [field]: value } : r))
+      prev.map((r, i) => {
+        if (i === idx) {
+          const updated = { ...r, [field]: value };
+          // If switching to "custom", initialize customName with the parsed text if empty
+          if (field === 'matchedName' && value === '__custom__' && !updated.customName) {
+            updated.customName = r.nameText;
+          }
+          return updated;
+        }
+        return r;
+      })
     );
   };
 
@@ -53,7 +63,8 @@ export default function ParsePage({ onOddsSubmitted }) {
     const manual = loadManualOdds();
 
     for (const row of results) {
-      if (!row.checked || !row.matchedName) continue;
+      const finalName = row.matchedName === '__custom__' ? (row.customName || '').trim() : row.matchedName;
+      if (!row.checked || !finalName) continue;
 
       // Validate odds: must be a number with optional +/- prefix, absolute value >= 100
       const oddsNum = parseFloat(row.odds);
@@ -61,12 +72,12 @@ export default function ParsePage({ onOddsSubmitted }) {
 
       // Normalize: ensure +/- prefix
       const normalizedOdds = (oddsNum > 0 ? '+' : '') + oddsNum;
-      const entryId = `${submitSport}-${slugify(row.matchedName)}`;
+      const entryId = `${submitSport}-${slugify(finalName)}`;
 
       if (!manual[entryId]) {
         manual[entryId] = {
           sport: submitSport,
-          name: row.matchedName,
+          name: finalName,
           oddsBySource: {},
           oddsByTournament: {},
           timestamp: Date.now(),
@@ -241,12 +252,12 @@ export default function ParsePage({ onOddsSubmitted }) {
                         </td>
                         <td className="px-2 py-2">
                           <select
-                            value={row.matchedName}
+                            value={row.matchedName === '__custom__' ? '__custom__' : row.matchedName}
                             onChange={(e) => updateResult(idx, 'matchedName', e.target.value)}
-                            className={`w-full border rounded px-1.5 py-1 text-sm ${
+                            className={`w-full border rounded px-1.5 py-1 text-sm mb-1 ${
                               !row.matchedName
                                 ? 'border-red-300 bg-red-50'
-                                : row.confidence < 0.7
+                                : row.confidence < 0.7 && row.matchedName !== '__custom__'
                                 ? 'border-amber-300 bg-amber-50'
                                 : 'border-gray-300'
                             }`}
@@ -255,7 +266,19 @@ export default function ParsePage({ onOddsSubmitted }) {
                             {roster.map((name) => (
                               <option key={name} value={name}>{name}</option>
                             ))}
+                            <option value="__custom__">Other / New Player...</option>
                           </select>
+                          
+                          {row.matchedName === '__custom__' && (
+                            <input
+                              type="text"
+                              value={row.customName || ''}
+                              onChange={(e) => updateResult(idx, 'customName', e.target.value)}
+                              placeholder="Enter custom name"
+                              className="w-full border border-brand-300 rounded px-1.5 py-1 text-sm bg-brand-50"
+                            />
+                          )}
+                          
                           <span className="text-[10px] text-gray-400 block mt-0.5">
                             Parsed: "{row.nameText}"
                           </span>

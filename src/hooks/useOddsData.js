@@ -2,57 +2,13 @@ import { useState, useEffect, useCallback } from 'react';
 import SPORTS from '../data/sports';
 import ROSTERS from '../data/rosters';
 import { fetchOddsForSport } from '../services/oddsApi';
-import { calculateSeasonTotalEV, calculateHistoricallyWeightedEV } from '../services/evCalculator';
+import { calculateSeasonTotalEV, calculateHistoricallyWeightedEV, applyPositionalScarcity } from '../services/evCalculator';
 import { slugify } from '../utils/formatters';
 import { loadSettings, loadManualOdds } from '../utils/storage';
 import { loadAllPipelineData } from '../services/dataLoader';
-import { americanToImpliedProbability, removeVig } from '../services/oddsConverter';
-
-// Scarcity premium constants — controls how much intra-sport EV dominance boosts ADP rank.
-// W: overall bonus strength (0.5 = up to ~50% of topEV added for a perfectly dominant entry)
-// k: exponential decay exponent (2 = quadratic; only large gaps at the top get meaningful bonuses)
-const ADP_SCARCITY_WEIGHT = 0.5;
-const ADP_SCARCITY_K      = 2;
+import { americanToImpliedProbability, removeVig, probabilityToAmerican } from '../services/oddsConverter';
 
 const normalize = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
-
-/**
- * For each entry, compute an adpScore = ev.seasonTotal + scarcityBonus.
- * Skips placeholder entries.
- */
-function applyScarcityPremium(entries) {
-  const bySport = {};
-  for (const entry of entries) {
-    if (entry.isPlaceholder) continue;
-    if (!bySport[entry.sport]) bySport[entry.sport] = [];
-    bySport[entry.sport].push(entry);
-  }
-
-  for (const sportEntries of Object.values(bySport)) {
-    sportEntries.sort((a, b) => b.ev.seasonTotal - a.ev.seasonTotal);
-    const topEV    = sportEntries[0].ev.seasonTotal;
-    const bottomEV = sportEntries[sportEntries.length - 1].ev.seasonTotal;
-    const sportRange = Math.max(topEV - bottomEV, 1);
-
-    for (let i = 0; i < sportEntries.length; i++) {
-      const entry  = sportEntries[i];
-      const nextEV = i < sportEntries.length - 1
-        ? sportEntries[i + 1].ev.seasonTotal
-        : entry.ev.seasonTotal; // last entry: gap = 0
-
-      const gap           = Math.max(entry.ev.seasonTotal - nextEV, 0);
-      const normalizedGap = gap / sportRange;
-      const relativePos   = entry.ev.seasonTotal / Math.max(topEV, 1);
-      const scarcityBonus = parseFloat(
-        (normalizedGap * Math.pow(relativePos, ADP_SCARCITY_K) * topEV * ADP_SCARCITY_WEIGHT).toFixed(2)
-      );
-
-      entry.evGap         = parseFloat(gap.toFixed(2));
-      entry.scarcityBonus = scarcityBonus;
-      entry.adpScore      = parseFloat((entry.ev.seasonTotal + scarcityBonus).toFixed(2));
-    }
-  }
-}
 
 /**
  * Convert pipeline live data for a sport into the { name, odds } format expected by buildEntries.
@@ -107,10 +63,14 @@ function buildEntries(rawBySport, historicalBySport = {}) {
 
     // Track which API items were matched by roster
     const matchedApiKeys = new Set();
+    const processedRosterKeys = new Set();
 
     // Process roster entries
     for (const name of rosterNames) {
       const key = normalize(name);
+      if (processedRosterKeys.has(key)) continue; // Skip if roster itself has duplicates
+      processedRosterKeys.add(key);
+
       const apiItem = apiLookup.get(key);
 
       if (apiItem) {
@@ -175,10 +135,11 @@ function buildEntries(rawBySport, historicalBySport = {}) {
       }
     }
 
-    // Add API items not matched by any roster entry
+    // Add API items not matched by any roster entry, ensuring no duplicates
     for (const item of apiItems) {
       const key = normalize(item.name);
       if (!matchedApiKeys.has(key)) {
+        matchedApiKeys.add(key); // Mark as matched/processed
         const historical = historicalLookup.get(key);
 
         let ev;
@@ -221,12 +182,22 @@ function buildEntries(rawBySport, historicalBySport = {}) {
     }
   }
 
-  // Apply scarcity premium to real entries, then sort
-  applyScarcityPremium(entries);
+  // Group real entries by sport and apply scarcity
+  const bySport = {};
+  for (const entry of entries) {
+    if (entry.isPlaceholder) continue;
+    if (!bySport[entry.sport]) bySport[entry.sport] = [];
+    bySport[entry.sport].push(entry);
+  }
+
+  for (const sportEntries of Object.values(bySport)) {
+    applyPositionalScarcity(sportEntries);
+  }
+
   entries.sort((a, b) => {
     if (a.isPlaceholder && !b.isPlaceholder) return 1;
     if (!a.isPlaceholder && b.isPlaceholder) return -1;
-    return b.adpScore - a.adpScore;
+    return (b.adpScore || 0) - (a.adpScore || 0);
   });
   entries.forEach((e, i) => {
     e.adpRank = i + 1;
@@ -318,19 +289,20 @@ export default function useOddsData() {
     }
 
     // Step 4: For entries with multi-source odds, apply vig removal and set consensus
-    for (const items of Object.values(rawBySport)) {
+    for (const [sId, items] of Object.entries(rawBySport)) {
+      const sport = SPORTS.find(s => s.id === sId);
+      
       for (const item of items) {
+        // Resolve consensus for main odds
         if (item.oddsBySource && Object.keys(item.oddsBySource).length > 0) {
           const { consensus } = removeVig(item.oddsBySource);
           if (consensus) {
             item.odds = consensus;
           } else if (!item.odds) {
-            // Fallback: use first available odds value
             const firstOdds = Object.values(item.oddsBySource).find(Boolean);
             if (firstOdds) item.odds = firstOdds;
           }
 
-          // Determine best odds for the bettor (lowest implied probability = highest payout)
           let bestSrc = null, bestVal = null, bestProb = Infinity;
           for (const [src, odds] of Object.entries(item.oddsBySource)) {
             const prob = americanToImpliedProbability(odds);
@@ -346,8 +318,14 @@ export default function useOddsData() {
           }
         }
 
-        if (item.oddsByTournament && Object.keys(item.oddsByTournament).length > 0) {
+        // Resolve consensus and population for tournament odds
+        const hasTournamentData = item.oddsByTournament && Object.keys(item.oddsByTournament).length > 0;
+        
+        if (hasTournamentData) {
           if (!item.tournaments) item.tournaments = {};
+          let sumProb = 0;
+          let count = 0;
+
           for (const [tId, tSources] of Object.entries(item.oddsByTournament)) {
             const { consensus } = removeVig(tSources);
             let tOdds = consensus;
@@ -355,7 +333,46 @@ export default function useOddsData() {
               const firstOdds = Object.values(tSources).find(Boolean);
               if (firstOdds) tOdds = firstOdds;
             }
-            item.tournaments[tId] = { odds: tOdds };
+            if (tOdds) {
+              item.tournaments[tId] = { odds: tOdds };
+              sumProb += americanToImpliedProbability(tOdds);
+              count++;
+            }
+          }
+
+          // If main odds are missing, set them to the average of tournament odds
+          if (!item.odds && count > 0) {
+            const avgProb = sumProb / count;
+            const avgOddsNum = probabilityToAmerican(avgProb);
+            if (avgOddsNum != null) {
+              item.odds = (avgOddsNum > 0 ? '+' : '') + avgOddsNum;
+            }
+          }
+        }
+
+        // Populate missing tournaments with average or main odds
+        if (sport?.tournaments) {
+          if (!item.tournaments) item.tournaments = {};
+          
+          let baselineOdds = item.odds;
+          if (!baselineOdds && hasTournamentData) {
+            // Re-calculate average if main odds still null
+            let sumP = 0, cnt = 0;
+            for (const t of Object.values(item.tournaments)) {
+              if (t.odds) { sumP += americanToImpliedProbability(t.odds); cnt++; }
+            }
+            if (cnt > 0) {
+              const avgO = probabilityToAmerican(sumP / cnt);
+              baselineOdds = avgO != null ? (avgO > 0 ? '+' : '') + avgO : null;
+            }
+          }
+
+          if (baselineOdds) {
+            for (const tConfig of sport.tournaments) {
+              if (!item.tournaments[tConfig.id]) {
+                item.tournaments[tConfig.id] = { odds: baselineOdds, isEstimated: true };
+              }
+            }
           }
         }
       }

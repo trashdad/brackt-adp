@@ -5,6 +5,7 @@ import { formatNumber, formatPercent } from '../../utils/formatters';
 import DraftedBadge from './DraftedBadge';
 import EVTooltip from './EVTooltip';
 import OddsTooltip from './OddsTooltip';
+import PriorityTooltip from './PriorityTooltip';
 
 export default function ADPRow({ entry, onToggleDraft }) {
   const color = SPORT_COLORS[entry.sport] || '#888';
@@ -26,6 +27,11 @@ export default function ADPRow({ entry, onToggleDraft }) {
         >
           {entry.name}
         </Link>
+        {entry.evGap >= 7 && (
+          <span className="ml-1 text-red-500 font-bold" title={`Significant dropoff: ${entry.evGap} pts`}>
+            !!
+          </span>
+        )}
       </td>
       <td className="px-3 py-2">
         <span
@@ -48,12 +54,14 @@ export default function ADPRow({ entry, onToggleDraft }) {
         <EVTooltip entry={entry}>{val(formatNumber(entry.ev?.seasonTotal))}</EVTooltip>
       </td>
       <td className="px-3 py-2 text-sm font-bold text-brand-700">
-        {val(formatNumber(entry.adpScore))}
-        {!entry.isPlaceholder && entry.scarcityBonus > 0 && (
-          <span className="block text-[10px] font-normal text-orange-400 font-mono">
-            +{entry.scarcityBonus.toFixed(1)}
-          </span>
-        )}
+        <PriorityTooltip entry={entry}>
+          {val(formatNumber(entry.adpScore))}
+          {!entry.isPlaceholder && entry.scarcityBonus > 0 && (
+            <span className="block text-[10px] font-normal text-orange-400 font-mono">
+              +{entry.scarcityBonus.toFixed(1)}
+            </span>
+          )}
+        </PriorityTooltip>
       </td>
       <td className="px-3 py-2 text-sm text-gray-500 uppercase">
         {entry.scoringType}

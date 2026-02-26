@@ -1,16 +1,70 @@
 import { getScoringTable, STANDARD_SCORING, QP_SCORING } from '../data/scoring';
-import { americanToImpliedProbability } from './oddsConverter';
+import { americanToImpliedProbability, probabilityToAmerican } from './oddsConverter';
 
-const QP_MAX = 20; // max QP points awarded for a 1st-place finish
-
-// Probability that a finish position ties with the adjacent position.
-// Brackt rules split tied positions equally: e.g. 2nd+3rd tie → (70+50)/2 = 60 each.
-const TIE_PROB = 0.05;
+const QP_MAX = 20; 
+const SIM_ITERATIONS = 5000;
 
 /**
- * Adjust a scoring table's point values to account for the probability of tying
- * with the next adjacent tier. Returns a new table with effective (blended) points.
+ * Monte Carlo simulation to estimate finishing position distribution.
+ * 
+ * @param {number} winProb - The implied probability of winning (1st place).
+ * @returns {Object} - Probability distribution for positions 1-16.
  */
+export function runFinishSimulation(winProb) {
+  const distribution = {};
+  for (let i = 1; i <= 16; i++) distribution[i] = 0;
+
+  // Strength of the player based on win probability
+  // Higher win prob means they are more likely to finish higher.
+  for (let i = 0; i < SIM_ITERATIONS; i++) {
+    // Generate a performance score. 1st place is roughly 1.0, 16th is 0.
+    // We use a power distribution to model the "reach" of a favorite vs underdog.
+    // Favorites have a tighter, higher performance floor.
+    const performance = Math.pow(Math.random(), 1 / (winProb * 10 + 0.5));
+    
+    // Map performance to a rank (simulated)
+    let rank;
+    if (performance > 0.95) rank = 1;
+    else if (performance > 0.85) rank = 2;
+    else if (performance > 0.75) rank = 3;
+    else if (performance > 0.65) rank = 4;
+    else if (performance > 0.50) rank = Math.floor(Math.random() * 2) + 5; // 5-6
+    else if (performance > 0.35) rank = Math.floor(Math.random() * 2) + 7; // 7-8
+    else if (performance > 0.15) rank = Math.floor(Math.random() * 4) + 9; // 9-12
+    else rank = Math.floor(Math.random() * 4) + 13; // 13-16
+    
+    distribution[rank]++;
+  }
+
+  for (let i = 1; i <= 16; i++) {
+    distribution[i] /= SIM_ITERATIONS;
+  }
+  return distribution;
+}
+
+/**
+ * Calculate EV based on a finish distribution and scoring table.
+ */
+function calculateEVFromDist(dist, scoringTable) {
+  let ev = 0;
+  const perFinish = {};
+  
+  const tieAdjusted = withTieAdjustment(scoringTable);
+
+  for (const tier of tieAdjusted) {
+    const [start, end] = tier.range;
+    let tierEV = 0;
+    for (let pos = start; pos <= end; pos++) {
+      tierEV += (dist[pos] || 0) * tier.points;
+    }
+    ev += tierEV;
+    perFinish[tier.finish] = parseFloat(tierEV.toFixed(2));
+  }
+  
+  return { ev, perFinish };
+}
+
+const TIE_PROB = 0.05;
 function withTieAdjustment(scoringTable) {
   return scoringTable.map((tier, i) => {
     const next = scoringTable[i + 1];
@@ -21,81 +75,25 @@ function withTieAdjustment(scoringTable) {
 }
 
 /**
- * Given a win probability, estimate the probability distribution for each finish position.
- * Uses a probability decay model as described in the plan.
- */
-function estimateFinishProbabilities(winProb) {
-  const p1 = winProb;
-  const p2 = Math.min(winProb * 1.2, 0.4);
-  const p3 = Math.min(winProb * 1.1, 0.35);
-  const p4 = Math.min(winProb * 1.0, 0.3);
-
-  const usedTop4 = p1 + p2 + p3 + p4;
-  const remaining = Math.max(0, 1 - usedTop4);
-
-  // Distribute remaining across positions 5-16
-  const p5_6 = remaining * 0.25; // each of 5th, 6th
-  const p7_8 = remaining * 0.15; // each of 7th, 8th
-  const p9_12 = remaining * 0.06; // each of 9-12
-  const p13_16 = remaining * 0.02; // each of 13-16
-
-  return {
-    1: p1,
-    2: p2,
-    3: p3,
-    4: p4,
-    5: p5_6, 6: p5_6,
-    7: p7_8, 8: p7_8,
-    9: p9_12, 10: p9_12, 11: p9_12, 12: p9_12,
-    13: p13_16, 14: p13_16, 15: p13_16, 16: p13_16,
-  };
-}
-
-/**
- * Calculate single-event EV for a player/team given American odds and scoring category.
+ * Calculate single-event EV. Capped at 100.
  */
 export function calculateSingleEventEV(americanOdds, category) {
   const winProb = americanToImpliedProbability(americanOdds);
-  const probs = estimateFinishProbabilities(winProb);
-  const scoringTable = withTieAdjustment(getScoringTable(category));
-
-  let ev = 0;
-  const perFinish = {};
-
-  for (const tier of scoringTable) {
-    const [start, end] = tier.range;
-    let tierEV = 0;
-    for (let pos = start; pos <= end; pos++) {
-      tierEV += (probs[pos] || 0) * tier.points;
-    }
-    ev += tierEV;
-    perFinish[tier.finish] = parseFloat(tierEV.toFixed(2));
-  }
+  const dist = runFinishSimulation(winProb);
+  const { ev, perFinish } = calculateEVFromDist(dist, getScoringTable(category));
 
   return {
-    singleEvent: parseFloat(ev.toFixed(2)),
+    singleEvent: parseFloat(Math.min(ev, 100).toFixed(2)),
     winProbability: parseFloat((winProb * 100).toFixed(1)),
     perFinish,
   };
 }
 
 /**
- * Calculate EV for a QP sport (Golf, Tennis, Counter-Strike).
- *
- * The Brackt rules say: QP accumulates across all majors in the season,
- * and the season-end QP ranking earns standard points (100/70/50/40/25/15).
- * QP values themselves are NOT the fantasy scoring unit.
- *
- * Model:
- *  1. Compute expected QP per event from the per-event finish probability distribution.
- *  2. Derive "season strength" = E[QP/event] / QP_MAX (fraction of perfect performance).
- *     A player averaging 18/20 QP per event dominates season standings; one averaging
- *     2/20 will finish near the bottom.
- *  3. Apply standard scoring to the season-rank distribution driven by season strength.
+ * Calculate QP Season EV. Capped at 100.
  */
 function calculateQPSeasonEV(americanOdds, eventsPerSeason, tournaments = null) {
   let expectedQPPerEvent = 0;
-  const perFinish = {};
   let baseWinProb = 0;
 
   if (tournaments && Object.keys(tournaments).length > 0) {
@@ -108,160 +106,110 @@ function calculateQPSeasonEV(americanOdds, eventsPerSeason, tournaments = null) 
       if (!tOdds) continue;
       const tWinProb = americanToImpliedProbability(tOdds);
       sumProb += tWinProb;
-      const tProbs = estimateFinishProbabilities(tWinProb);
-      let tQP = 0;
-      for (const tier of withTieAdjustment(QP_SCORING)) {
-        const [start, end] = tier.range;
-        for (let pos = start; pos <= end; pos++) {
-          tQP += (tProbs[pos] || 0) * tier.points;
-        }
-      }
+      const tDist = runFinishSimulation(tWinProb);
+      const { ev: tQP } = calculateEVFromDist(tDist, QP_SCORING);
       totalExpectedQP += tQP;
     }
     
-    if (tKeys.length > 0) {
-      expectedQPPerEvent = totalExpectedQP / tKeys.length;
-      baseWinProb = sumProb / tKeys.length;
-    }
-    
-    // For tooltip perFinish, use the average probability
-    const probs = estimateFinishProbabilities(baseWinProb);
-    for (const tier of withTieAdjustment(QP_SCORING)) {
-      const [start, end] = tier.range;
-      let tierEV = 0;
-      for (let pos = start; pos <= end; pos++) {
-        tierEV += (probs[pos] || 0) * tier.points;
-      }
-      perFinish[tier.finish] = parseFloat(tierEV.toFixed(2));
-    }
+    expectedQPPerEvent = totalExpectedQP / tKeys.length;
+    baseWinProb = sumProb / tKeys.length;
   } else {
     baseWinProb = americanToImpliedProbability(americanOdds);
-    const probs = estimateFinishProbabilities(baseWinProb);
-
-    // Step 1: per-event QP breakdown
-    for (const tier of withTieAdjustment(QP_SCORING)) {
-      const [start, end] = tier.range;
-      let tierEV = 0;
-      for (let pos = start; pos <= end; pos++) {
-        tierEV += (probs[pos] || 0) * tier.points;
-      }
-      expectedQPPerEvent += tierEV;
-      perFinish[tier.finish] = parseFloat(tierEV.toFixed(2));
-    }
+    const dist = runFinishSimulation(baseWinProb);
+    const { ev } = calculateEVFromDist(dist, QP_SCORING);
+    expectedQPPerEvent = ev;
   }
 
-  // Step 2: season strength — how dominant is this player relative to perfect?
+  // Season Strength is the likelihood of finishing top of the QP table
   const seasonStrength = Math.min(1, expectedQPPerEvent / QP_MAX);
-
-  // Step 3: season-end rank distribution driven by season strength
-  const seasonRankProbs = estimateFinishProbabilities(seasonStrength);
-  let seasonEV = 0;
-  const seasonPerFinish = {};
-  for (const tier of withTieAdjustment(STANDARD_SCORING)) {
-    const [start, end] = tier.range;
-    let tierEV = 0;
-    for (let pos = start; pos <= end; pos++) {
-      tierEV += (seasonRankProbs[pos] || 0) * tier.points;
-    }
-    seasonEV += tierEV;
-    seasonPerFinish[tier.finish] = parseFloat(tierEV.toFixed(2));
-  }
+  
+  // Final league points are determined by the season-end QP ranking simulation
+  const seasonDist = runFinishSimulation(seasonStrength);
+  const { ev: seasonEV, perFinish: seasonPerFinish } = calculateEVFromDist(seasonDist, STANDARD_SCORING);
 
   return {
-    singleEvent: parseFloat(expectedQPPerEvent.toFixed(2)), // E[QP] per event (informational)
-    seasonTotal: parseFloat(seasonEV.toFixed(2)),           // season standard-points EV
+    singleEvent: parseFloat(expectedQPPerEvent.toFixed(2)),
+    seasonTotal: parseFloat(Math.min(seasonEV, 100).toFixed(2)),
     winProbability: parseFloat((baseWinProb * 100).toFixed(1)),
-    perFinish,           // per-event QP contributions by finish tier
     eventsPerSeason,
-    // QP-specific fields used by the tooltip
     expectedQPPerEvent: parseFloat(expectedQPPerEvent.toFixed(2)),
     seasonStrength: parseFloat((seasonStrength * 100).toFixed(1)),
-    seasonPerFinish,     // season rank → standard points contributions
+    seasonPerFinish,
     isQP: true,
   };
 }
 
 /**
- * Calculate season-total EV (for ADP ranking across sports).
- * Routes QP sports through the two-stage QP model.
+ * Calculate total season EV. Always capped at 100 for any single roster spot.
  */
 export function calculateSeasonTotalEV(americanOdds, category, eventsPerSeason, tournaments = null) {
   if (category === 'qp') {
     return calculateQPSeasonEV(americanOdds, eventsPerSeason, tournaments);
   }
 
-  const { singleEvent, winProbability, perFinish } = calculateSingleEventEV(americanOdds, category);
+  const res = calculateSingleEventEV(americanOdds, category);
   return {
-    singleEvent,
-    seasonTotal: parseFloat((singleEvent * eventsPerSeason).toFixed(2)),
-    winProbability,
-    perFinish,
+    ...res,
+    seasonTotal: res.singleEvent, // For standard sports, one spot = one outcome (max 100)
     eventsPerSeason,
   };
 }
 
-// Historical weighting constants
+/**
+ * Apply positional scarcity premium to the raw EV.
+ * 
+ * "We need to pay particular attention to players or teams that have a high amount 
+ * of percentage points difference between them and the next lowest team or player, 
+ * as that increases their EV by showing positional scarcity."
+ */
+export function applyPositionalScarcity(sportEntries) {
+  if (!sportEntries || sportEntries.length < 2) return;
+
+  // Sort by raw seasonTotal EV descending
+  sportEntries.sort((a, b) => (b.ev?.seasonTotal || 0) - (a.ev?.seasonTotal || 0));
+
+  for (let i = 0; i < sportEntries.length; i++) {
+    const current = sportEntries[i];
+    const next = sportEntries[i + 1] || { ev: { seasonTotal: 0 } };
+    
+    const rawEV = current.ev?.seasonTotal || 0;
+    const nextEV = next.ev?.seasonTotal || 0;
+    const gap = rawEV - nextEV;
+
+    // Scarcity Bonus: Boost EV based on the gap to the next player.
+    // If you are 20 points better than the next guy, you are significantly more valuable.
+    // We add a fraction of the gap to the "effective" score.
+    const scarcityMultiplier = 0.5; // 50% of the gap is added as a 'value' bonus
+    current.evGap = parseFloat(gap.toFixed(2));
+    current.scarcityBonus = parseFloat((gap * scarcityMultiplier).toFixed(2));
+    current.adpScore = parseFloat((rawEV + current.scarcityBonus).toFixed(2));
+  }
+}
+
+// Keep historical weighting but use the new simulation-based EV
 const CURRENT_WEIGHT = 0.7;
 const HISTORICAL_WEIGHT = 0.3;
-const TREND_MODIFIER = 0.03; // 3% boost/reduction for shortening/lengthening
 
-/**
- * Calculate EV with historical weighting blended in.
- * Blends current odds (70%) with historical average (30%), then applies a trend modifier.
- *
- * @param americanOdds - current odds string
- * @param category - scoring category ('standard' or 'qp')
- * @param eventsPerSeason - events per season
- * @param historicalData - { history: [{ odds, date, source }], trend: 'shortening'|'stable'|'lengthening' }
- */
 export function calculateHistoricallyWeightedEV(americanOdds, category, eventsPerSeason, historicalData, tournaments = null) {
-  // Calculate EV from current odds
   const currentEV = calculateSeasonTotalEV(americanOdds, category, eventsPerSeason, tournaments);
 
   if (!historicalData || !historicalData.history || historicalData.history.length < 2) {
     return currentEV;
   }
 
-  // Calculate average historical implied probability
-  const historicalOdds = historicalData.history
-    .map((h) => h.odds)
-    .filter(Boolean);
-
+  const historicalOdds = historicalData.history.map((h) => h.odds).filter(Boolean);
   if (historicalOdds.length === 0) return currentEV;
 
-  const avgHistoricalProb =
-    historicalOdds.reduce((sum, odds) => sum + americanToImpliedProbability(odds), 0) /
-    historicalOdds.length;
-
-  // Convert avg historical probability back to American odds for EV calculation
-  let historicalAmericanOdds;
-  if (avgHistoricalProb > 0.5) {
-    historicalAmericanOdds = `${Math.round((-avgHistoricalProb * 100) / (1 - avgHistoricalProb))}`;
-  } else if (avgHistoricalProb > 0) {
-    historicalAmericanOdds = `+${Math.round((100 * (1 - avgHistoricalProb)) / avgHistoricalProb)}`;
-  } else {
-    return currentEV;
-  }
-
+  const avgHistoricalProb = historicalOdds.reduce((sum, odds) => sum + americanToImpliedProbability(odds), 0) / historicalOdds.length;
+  const historicalAmericanOdds = probabilityToAmerican(avgHistoricalProb);
   const historicalEV = calculateSeasonTotalEV(historicalAmericanOdds, category, eventsPerSeason);
 
-  // Blend current (70%) and historical (30%) season totals
-  let blendedSeasonTotal =
-    CURRENT_WEIGHT * currentEV.seasonTotal + HISTORICAL_WEIGHT * historicalEV.seasonTotal;
-
-  // Apply trend modifier
-  const trend = historicalData.trend || 'stable';
-  if (trend === 'shortening') {
-    blendedSeasonTotal *= 1 + TREND_MODIFIER; // slight boost
-  } else if (trend === 'lengthening') {
-    blendedSeasonTotal *= 1 - TREND_MODIFIER; // slight reduction
-  }
+  let blendedSeasonTotal = CURRENT_WEIGHT * currentEV.seasonTotal + HISTORICAL_WEIGHT * historicalEV.seasonTotal;
 
   return {
     ...currentEV,
     seasonTotal: parseFloat(blendedSeasonTotal.toFixed(2)),
     historicalBlend: true,
-    historicalAvgOdds: historicalAmericanOdds,
-    trend,
   };
 }
+

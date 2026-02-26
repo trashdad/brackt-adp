@@ -10,7 +10,7 @@ const COLUMNS = [
   { label: 'Odds', key: 'odds' },
   { label: 'Event EV', key: 'ev.singleEvent' },
   { label: 'Season EV', key: 'ev.seasonTotal' },
-  { label: 'ADP Score', key: 'adpScore' },
+  { label: 'Draft Priority Score', key: 'adpScore' },
   { label: 'Type', key: 'scoringType' },
   { label: 'Status', key: 'drafted' },
 ];

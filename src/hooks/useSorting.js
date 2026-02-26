@@ -19,6 +19,15 @@ export default function useSorting(items, defaultKey = 'adpRank', defaultDir = '
       let aVal = resolveValue(a, sortKey);
       let bVal = resolveValue(b, sortKey);
 
+      // Special handling for American Odds
+      if (sortKey === 'odds') {
+        const aNum = parseFloat(aVal) || 0;
+        const bNum = parseFloat(bVal) || 0;
+        if (aNum < bNum) return sortDir === 'asc' ? -1 : 1;
+        if (aNum > bNum) return sortDir === 'asc' ? 1 : -1;
+        return 0;
+      }
+
       if (typeof aVal === 'string') aVal = aVal.toLowerCase();
       if (typeof bVal === 'string') bVal = bVal.toLowerCase();
 
