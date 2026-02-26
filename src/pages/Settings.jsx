@@ -2,10 +2,21 @@ import { useState, useEffect } from 'react';
 import { loadSettings, saveSettings } from '../utils/storage';
 import { useScraper } from '../context/ScraperContext';
 
-export default function Settings({ onResetDraft }) {
+export default function Settings({ onClearAll }) {
   const [settings, setSettings] = useState(() => loadSettings());
   const [saved, setSaved] = useState(false);
+  const [wiping, setWiping] = useState(false);
+  const [wiped, setWiped] = useState(false);
   const { validateKeys } = useScraper();
+
+  const handleWipe = async () => {
+    if (!confirm('CONFIRM: Erase all draft state and manual odds? This cannot be undone.')) return;
+    setWiping(true);
+    await onClearAll();
+    setWiping(false);
+    setWiped(true);
+    setTimeout(() => setWiped(false), 3000);
+  };
 
   const handleSave = () => {
     saveSettings(settings);
@@ -96,13 +107,14 @@ export default function Settings({ onResetDraft }) {
       <div className="bg-retro-red/10 border-2 border-retro-red/40 p-10 shadow-2xl space-y-6">
         <h2 className="font-retro text-[14px] text-retro-red tracking-[0.2em] uppercase underline decoration-retro-red decoration-4 underline-offset-8">Danger Zone</h2>
         <p className="font-mono text-[11px] text-retro-red/60 leading-relaxed uppercase tracking-widest font-bold">
-          ERASE_ALL_SHARED_DRAFT_MEMORY. THIS_PROCESS_IS_DESTRUCTIVE_AND_IRREVERSIBLE.
+          ERASE_ALL_SHARED_DATA: DRAFT_STATE + MANUAL_ODDS + LOCAL_CACHE. IRREVERSIBLE.
         </p>
         <button
-          onClick={onResetDraft}
-          className="font-retro text-[11px] px-6 py-3 bg-retro-red text-white border-2 border-black shadow-[inset_-2px_-2px_0_0_rgba(0,0,0,0.4),0_4px_0_0_#000] hover:brightness-110 transition-all active:translate-y-0.5 active:shadow-none uppercase tracking-widest"
+          onClick={handleWipe}
+          disabled={wiping}
+          className="font-retro text-[11px] px-6 py-3 bg-retro-red text-white border-2 border-black shadow-[inset_-2px_-2px_0_0_rgba(0,0,0,0.4),0_4px_0_0_#000] hover:brightness-110 transition-all active:translate-y-0.5 active:shadow-none uppercase tracking-widest disabled:opacity-50"
         >
-          EXECUTE_WIPE
+          {wiping ? 'WIPING...' : wiped ? 'WIPE_COMPLETE' : 'EXECUTE_WIPE'}
         </button>
       </div>
     </div>

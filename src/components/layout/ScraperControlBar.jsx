@@ -34,24 +34,45 @@ export default function ScraperControlBar() {
     clearLogs();
     addLog("INIT_PIPELINE: STARTING SCRAPER SEQUENCE...", "info");
 
-    const initStatuses = {};
-    SOURCES.forEach((s) => (initStatuses[s.id] = "idle"));
-    setStatuses(initStatuses);
+    // Show all sources as "running" while the request is in flight
+    const runningStatuses = {};
+    SOURCES.forEach((s) => (runningStatuses[s.id] = "running"));
+    setStatuses(runningStatuses);
 
     const resp = await fetch("/api/run-pipeline", { method: "POST" }).catch(() => null);
     if (!resp?.ok) {
-      addLog("ERROR: FAILED_TO_REACH_API_SERVER. Is it running?", "error");
+      addLog("ERROR: PIPELINE_REQUEST_FAILED", "error");
+      setIsRunning(false);
+      const resetStatuses = {};
+      SOURCES.forEach((s) => (resetStatuses[s.id] = "error"));
+      setStatuses(resetStatuses);
+      return;
+    }
+
+    const data = await resp.json().catch(() => null);
+    if (!data || !data.ok) {
+      addLog(`WARN: ${(data?.message || "Pipeline already running").toUpperCase()}`, "warn");
       setIsRunning(false);
       return;
     }
 
-    const data = await resp.json();
-    if (!data.ok) {
-      addLog(`WARN: ${(data.message || "Pipeline already running").toUpperCase()}`, "warn");
+    // Netlify mode: results came back synchronously in the response
+    if (data.completed) {
+      addLog("PIPELINE: API_SOURCES_FETCHED", "info");
+      for (const [sourceId, status] of Object.entries(data.sources || {})) {
+        const name = (SOURCES.find((s) => s.id === sourceId)?.name || sourceId).toUpperCase();
+        if (status === "success") addLog(`SUCCESS: ${name} DATA_FETCHED`, "success");
+        else if (status === "skipped") addLog(`SKIPPED: ${name} (LOCAL_ONLY)`, "warn");
+        else addLog(`ERROR: ${name} FETCH_FAILED`, "error");
+      }
+      setStatuses((prev) => ({ ...prev, ...data.sources }));
       setIsRunning(false);
+      if (data.message) addLog(`RESULT: ${data.message.toUpperCase()}`, "info");
+      addLog("PIPELINE_COMPLETE: ALL_SOURCES_PROCESSED.", "info");
       return;
     }
 
+    // Local Express server mode: start polling for per-source status updates
     addLog("PIPELINE: DISPATCHING SOURCE RUNNERS...", "info");
 
     let prevSources = {};
@@ -60,7 +81,6 @@ export default function ScraperControlBar() {
       if (!statusResp?.ok) return;
       const state = await statusResp.json();
 
-      // Log status transitions
       for (const [sourceId, status] of Object.entries(state.sources || {})) {
         if (status !== prevSources[sourceId]) {
           const name = (SOURCES.find((s) => s.id === sourceId)?.name || sourceId).toUpperCase();
@@ -91,6 +111,8 @@ export default function ScraperControlBar() {
         return "bg-retro-gold border-black text-black shadow-[inset_2px_2px_0_rgba(255,255,255,0.3)]";
       case "running":
         return "bg-retro-cyan border-black animate-pulse shadow-[inset_2px_2px_0_rgba(255,255,255,0.3)]";
+      case "skipped":
+        return "bg-retro-panel border-black opacity-30 shadow-[inset_2px_2px_0_rgba(255,255,255,0.1)]";
       default:
         return "bg-retro-panel border-black opacity-50 shadow-[inset_2px_2px_0_rgba(255,255,255,0.1)]";
     }

@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Dashboard from './pages/Dashboard';
@@ -8,10 +9,26 @@ import Settings from './pages/Settings';
 import useOddsData from './hooks/useOddsData';
 import useDraftBoard from './hooks/useDraftBoard';
 import { ScraperProvider } from './context/ScraperContext';
+import { saveLocalDraftState, saveLocalManualOdds } from './utils/storage';
 
 export default function App() {
   const { entries, loading, lastUpdated, refresh } = useOddsData();
   const { boardEntries, toggleDrafted, resetDraft, syncDraft } = useDraftBoard(entries);
+
+  const handleClearAll = useCallback(async () => {
+    // Clear draft state (local + server)
+    resetDraft();
+    saveLocalDraftState({});
+    // Clear manual odds (local + server)
+    saveLocalManualOdds({});
+    await fetch('/api/manual-odds', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({}),
+    }).catch(() => {});
+    // Refresh the board with clean data
+    await refresh();
+  }, [resetDraft, refresh]);
 
   return (
     <ScraperProvider>
@@ -44,7 +61,7 @@ export default function App() {
           />
           <Route
             path="settings"
-            element={<Settings onResetDraft={resetDraft} />}
+            element={<Settings onClearAll={handleClearAll} />}
           />
         </Route>
       </Routes>
