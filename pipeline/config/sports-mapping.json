@@ -5,7 +5,8 @@
     "draftkings": { "category": "football", "subcategory": "nfl", "futuresPath": "/sportsbook/nfl/futures" },
     "fanduel": { "category": "football", "subcategory": "nfl", "futuresPath": "/navigation/nfl/futures" },
     "covers": { "path": "/sport/football/nfl/odds/futures" },
-    "oddsportal": { "path": "/american-football/usa/nfl/" }
+    "oddsportal": { "path": "/american-football/usa/nfl/" },
+    "vegasinsider": { "path": "/nfl/odds/futures/" }
   },
   "nba": {
     "the-odds-api": { "key": "basketball_nba" },
@@ -13,7 +14,8 @@
     "draftkings": { "category": "basketball", "subcategory": "nba", "futuresPath": "/sportsbook/nba/futures" },
     "fanduel": { "category": "basketball", "subcategory": "nba", "futuresPath": "/navigation/nba/futures" },
     "covers": { "path": "/sport/basketball/nba/odds/futures" },
-    "oddsportal": { "path": "/basketball/usa/nba/" }
+    "oddsportal": { "path": "/basketball/usa/nba/" },
+    "vegasinsider": { "path": "/nba/odds/futures/" }
   },
   "mlb": {
     "the-odds-api": { "key": "baseball_mlb" },
@@ -21,7 +23,8 @@
     "draftkings": { "category": "baseball", "subcategory": "mlb", "futuresPath": "/sportsbook/mlb/futures" },
     "fanduel": { "category": "baseball", "subcategory": "mlb", "futuresPath": "/navigation/mlb/futures" },
     "covers": { "path": "/sport/baseball/mlb/odds/futures" },
-    "oddsportal": { "path": "/baseball/usa/mlb/" }
+    "oddsportal": { "path": "/baseball/usa/mlb/" },
+    "vegasinsider": { "path": "/mlb/odds/futures/" }
   },
   "nhl": {
     "the-odds-api": { "key": "icehockey_nhl" },
@@ -29,7 +32,8 @@
     "draftkings": { "category": "hockey", "subcategory": "nhl", "futuresPath": "/sportsbook/nhl/futures" },
     "fanduel": { "category": "hockey", "subcategory": "nhl", "futuresPath": "/navigation/nhl/futures" },
     "covers": { "path": "/sport/hockey/nhl/odds/futures" },
-    "oddsportal": { "path": "/hockey/usa/nhl/" }
+    "oddsportal": { "path": "/hockey/usa/nhl/" },
+    "vegasinsider": { "path": "/nhl/odds/futures/" }
   },
   "ncaaf": {
     "the-odds-api": { "key": "americanfootball_ncaaf" },

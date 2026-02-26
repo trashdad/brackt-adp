@@ -87,6 +87,15 @@
       "rateLimit": { "delayRange": [3000, 8000] },
       "seasonWindow": { "startMonth": 7, "endMonth": 9 },
       "sports": ["llws"]
+    },
+    {
+      "id": "vegasinsider",
+      "type": "python",
+      "script": "vegasinsider_scraper.py",
+      "enabled": true,
+      "interval": "0 0 */12 * * *",
+      "rateLimit": { "delayRange": [2000, 5000] },
+      "sports": ["nfl", "nba", "mlb", "nhl", "ncaaf", "ncaab"]
     }
   ]
 }

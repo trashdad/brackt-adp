@@ -32,17 +32,23 @@ class OddsPortalScraper(BaseScraper):
             return []
 
         url = f'{OP_BASE_URL}{path}'
-        self.navigate(url, wait_seconds=6)
+        if not self.navigate(url, wait_seconds=6, retries=3):
+            logger.warning(f"Failed to navigate to {url}")
+            return []
 
         entries = []
 
         try:
-            # Wait for content to load
-            WebDriverWait(self.driver, 15).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, 'table, [class*="event"], main'))
+            # Wait for content or any table row
+            WebDriverWait(self.driver, 20).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, 'tr, [class*="event"], main'))
             )
+            
+            # Additional wait for dynamic scripts to finish
+            time.sleep(3)
         except Exception:
             logger.warning(f'Page did not load expected content for {sport_id}')
+            self.save_screenshot(f"fail_op_{sport_id}")
             return []
 
         # Get page source and parse with BeautifulSoup

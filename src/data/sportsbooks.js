@@ -7,4 +7,6 @@ export const SPORTSBOOKS = [
   { id: 'bovada', name: 'Bovada' },
   { id: 'betmgm', name: 'BetMGM' },
   { id: 'caesars', name: 'Caesars' },
+  { id: 'vegasinsider', name: 'VegasInsider' },
+  { id: 'oddsshark', name: 'OddsShark' },
 ];

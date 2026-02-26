@@ -48,11 +48,46 @@ class BaseScraper(abc.ABC):
         """Wait a polite random delay between requests."""
         random_delay(self.delay_range[0], self.delay_range[1])
 
-    def navigate(self, url: str, wait_seconds: int = 5):
-        """Navigate to a URL and wait for page load."""
-        logger.info(f'Navigating to {url}')
-        self.driver.get(url)
-        time.sleep(wait_seconds)
+    def navigate(self, url: str, wait_seconds: int = 5, retries: int = 3):
+        """Navigate to a URL with retry logic and basic verification."""
+        for attempt in range(retries):
+            try:
+                logger.info(f'Navigating to {url} (Attempt {attempt+1}/{retries})')
+                self.driver.get(url)
+                time.sleep(wait_seconds)
+                
+                # Check for common "Access Denied" or Cloudflare patterns
+                page_source = self.driver.page_source.lower()
+                if "access denied" in page_source or "checking your browser" in page_source:
+                    logger.warning(f"Detection triggered on {url}. Retrying...")
+                    self.polite_delay()
+                    continue
+                
+                return True
+            except Exception as e:
+                logger.error(f"Error navigating to {url}: {e}")
+                if attempt == retries - 1:
+                    self.save_screenshot(f"fail_nav_{self.source_id}")
+                time.sleep(wait_seconds)
+        return False
+
+    def save_screenshot(self, label: str):
+        """Save a debug screenshot of the current page."""
+        log_dir = RAW_DIR.parent / 'logs' / 'screenshots'
+        log_dir.mkdir(parents=True, exist_ok=True)
+        filename = f"{label}_{int(time.time())}.png"
+        path = log_dir / filename
+        try:
+            self.driver.save_screenshot(str(path))
+            logger.info(f"Screenshot saved to {path}")
+        except Exception as e:
+            logger.error(f"Failed to save screenshot: {e}")
+
+    def scroll_to_bottom(self, increments: int = 3, delay: float = 1.0):
+        """Scroll down the page to trigger lazy loading."""
+        for i in range(increments):
+            self.driver.execute_script("window.scrollBy(0, window.innerHeight);")
+            time.sleep(delay)
 
     @abc.abstractmethod
     def scrape_sport(self, sport_id: str, sport_mapping: dict) -> list[dict]:
