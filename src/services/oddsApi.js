@@ -1,6 +1,5 @@
 import { loadSettings } from '../utils/storage';
-
-const BASE_URL = 'https://api.the-odds-api.com/v4';
+import { getProxyUrl } from './proxyService';
 
 function getCacheTTL() {
   const { refreshInterval } = loadSettings();
@@ -47,7 +46,7 @@ export async function fetchOddsForSport(sportApiKey, apiKey) {
   const cached = getFromCache(sportApiKey);
   if (cached) return cached;
 
-  const url = `${BASE_URL}/sports/${sportApiKey}/odds?apiKey=${encodeURIComponent(apiKey)}&regions=us&markets=outrights&oddsFormat=american`;
+  const url = getProxyUrl('odds-api', `/sports/${sportApiKey}/odds?apiKey=${encodeURIComponent(apiKey)}&regions=us&markets=outrights&oddsFormat=american`);
 
   const res = await fetch(url);
   if (!res.ok) {

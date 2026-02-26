@@ -1,4 +1,5 @@
 import { loadSettings } from '../utils/storage';
+import { getProxyUrl } from './proxyService';
 
 /**
  * Validate The Odds API Key
@@ -6,7 +7,8 @@ import { loadSettings } from '../utils/storage';
 async function validateTheOddsApi(key) {
   if (!key) return false;
   try {
-    const res = await fetch(`https://api.the-odds-api.com/v4/sports?apiKey=${key}`);
+    const url = getProxyUrl('odds-api', `/sports?apiKey=${key}`);
+    const res = await fetch(url);
     return res.ok;
   } catch {
     return false;
@@ -19,7 +21,8 @@ async function validateTheOddsApi(key) {
 async function validateOddsApiIo(key) {
   if (!key) return false;
   try {
-    const res = await fetch(`https://api.odds-api.io/v1/sports?apiKey=${key}`);
+    const url = getProxyUrl('odds-io', `/sports?apiKey=${key}`);
+    const res = await fetch(url);
     return res.ok;
   } catch {
     return false;
@@ -32,7 +35,8 @@ async function validateOddsApiIo(key) {
 async function validateApiSports(key) {
   if (!key) return false;
   try {
-    const res = await fetch('https://v3.football.api-sports.io/status', {
+    const url = getProxyUrl('api-sports', '/status');
+    const res = await fetch(url, {
       headers: { 'x-apisports-key': key }
     });
     return res.ok;
