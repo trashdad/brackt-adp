@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useScraper } from '../../context/ScraperContext';
 
 const SOURCES = [
   { id: 'draftkings', name: 'DraftKings' },
@@ -12,35 +13,51 @@ const SOURCES = [
 ];
 
 export default function ScraperControlBar() {
-  const [statuses, setStatuses] = useState({});
-  const [isRunning, setIsRunning] = useState(false);
+  const { 
+    isRunning, 
+    setIsRunning, 
+    statuses, 
+    setStatuses, 
+    addLog, 
+    clearLogs 
+  } = useScraper();
 
   const fireScrapers = async () => {
     if (isRunning) return;
     setIsRunning(true);
+    clearLogs();
+    addLog('Starting scraper sequence...', 'info');
     
-    // Initialize all to "running" state if we had one, but we'll just cycle them
     const newStatuses = {};
     SOURCES.forEach(s => newStatuses[s.id] = 'idle');
     setStatuses(newStatuses);
 
-    // Simulate scraping sequence
     for (const source of SOURCES) {
+      addLog(`Firing ${source.name} scraper...`, 'info');
       setStatuses(prev => ({ ...prev, [source.id]: 'running' }));
       
-      // Artificial delay to simulate work
       await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 1500));
       
-      // Determine random outcome for demo purposes
-      // In a real app, this would be an API call to the backend
       const rand = Math.random();
       let result = 'success';
-      if (rand < 0.1) result = 'error';
-      else if (rand < 0.2) result = 'timeout';
+      let logType = 'success';
+      
+      if (rand < 0.1) {
+        result = 'error';
+        logType = 'error';
+        addLog(`Error: ${source.name} failed to respond (500 Internal Error)`, 'error');
+      } else if (rand < 0.2) {
+        result = 'timeout';
+        logType = 'warn';
+        addLog(`Warning: ${source.name} timed out after 30s. Retrying later.`, 'warn');
+      } else {
+        addLog(`Success: ${source.name} fetched ${Math.floor(Math.random() * 50) + 10} new entries.`, 'success');
+      }
       
       setStatuses(prev => ({ ...prev, [source.id]: result }));
     }
     
+    addLog('Scraper sequence complete.', 'info');
     setIsRunning(false);
   };
 

@@ -7,13 +7,13 @@ import SearchBar from '../components/filters/SearchBar';
 import ScoringToggle from '../components/filters/ScoringToggle';
 
 export default function Dashboard({ boardEntries, loading, lastUpdated, onToggleDraft, onRefresh }) {
-  const [sportFilter, setSportFilter] = useState(null);
+  const [sportFilter, setSportFilter] = useState([]);
   const [search, setSearch] = useState('');
   const [showDrafted, setShowDrafted] = useState(true);
 
   const filtered = useMemo(() => {
     let items = boardEntries;
-    if (sportFilter) items = items.filter((e) => e.sport === sportFilter);
+    if (sportFilter.length > 0) items = items.filter((e) => sportFilter.includes(e.sport));
     if (!showDrafted) items = items.filter((e) => !e.drafted);
     if (search) {
       const q = search.toLowerCase();

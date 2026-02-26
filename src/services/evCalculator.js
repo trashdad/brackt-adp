@@ -1,5 +1,6 @@
 import { getScoringTable, STANDARD_SCORING, QP_SCORING } from '../data/scoring';
 import { americanToImpliedProbability, probabilityToAmerican } from './oddsConverter';
+import SPORTS from '../data/sports';
 
 const QP_MAX = 20; 
 const SIM_ITERATIONS = 5000;
@@ -165,23 +166,39 @@ export function calculateSeasonTotalEV(americanOdds, category, eventsPerSeason, 
 export function applyPositionalScarcity(sportEntries) {
   if (!sportEntries || sportEntries.length < 2) return;
 
+  const sportId = sportEntries[0].sport;
+  const sportConfig = SPORTS.find(s => s.id === sportId);
+  const baseMultiplier = sportConfig?.scarcityWeight ?? 0.5;
+  const rankDecay = 0.9; // Coefficient drops 10% per rank position
+
   // Sort by raw seasonTotal EV descending
   sportEntries.sort((a, b) => (b.ev?.seasonTotal || 0) - (a.ev?.seasonTotal || 0));
 
   for (let i = 0; i < sportEntries.length; i++) {
     const current = sportEntries[i];
+    const prev = sportEntries[i - 1];
     const next = sportEntries[i + 1] || { ev: { seasonTotal: 0 } };
     
     const rawEV = current.ev?.seasonTotal || 0;
+    const prevEV = prev ? (prev.ev?.seasonTotal || 0) : rawEV;
     const nextEV = next.ev?.seasonTotal || 0;
-    const gap = rawEV - nextEV;
 
-    // Scarcity Bonus: Boost EV based on the gap to the next player.
-    // If you are 20 points better than the next guy, you are significantly more valuable.
-    // We add a fraction of the gap to the "effective" score.
-    const scarcityMultiplier = 0.5; // 50% of the gap is added as a 'value' bonus
-    current.evGap = parseFloat(gap.toFixed(2));
-    current.scarcityBonus = parseFloat((gap * scarcityMultiplier).toFixed(2));
+    const gapToNext = rawEV - nextEV;
+    const gapFromPrev = prevEV - rawEV;
+
+    // 1. Drop over time (rank decay)
+    const timeDecay = Math.pow(rankDecay, i);
+
+    // 2. Inversely proportional to distance from person before them
+    // If there is a huge gap between you and the guy in front, you are less "scarce" 
+    // because you aren't part of that top-tier elite group.
+    // We use (1 + gap) to avoid division by zero and dampen the effect.
+    const proximityMultiplier = 1 / (1 + (gapFromPrev * 0.1));
+
+    const effectiveMultiplier = baseMultiplier * timeDecay * proximityMultiplier;
+
+    current.evGap = parseFloat(gapToNext.toFixed(2));
+    current.scarcityBonus = parseFloat((gapToNext * effectiveMultiplier).toFixed(2));
     current.adpScore = parseFloat((rawEV + current.scarcityBonus).toFixed(2));
   }
 }
