@@ -34,12 +34,6 @@ export default function EVTooltip({ entry, children }) {
               <span className="text-gray-400">Event EV</span>
               <span className="font-mono">{formatNumber(ev.singleEvent)}</span>
             </div>
-            {ev.isQP && (
-              <div className="flex justify-between">
-                <span className="text-gray-400">Avg QP/Event</span>
-                <span className="font-mono text-blue-300">{formatNumber(ev.expectedQPPerEvent)}</span>
-              </div>
-            )}
             <div className="flex justify-between pt-1 border-t border-gray-800">
               <span className="text-gray-400 font-medium">Season EV</span>
               <span className="font-mono font-bold text-green-400">{formatNumber(ev.seasonTotal)}</span>
