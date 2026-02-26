@@ -14,13 +14,16 @@ export default function ParsePage({ onOddsSubmitted }) {
   const [customSportsbook, setCustomSportsbook] = useState('');
   const [results, setResults] = useState([]);
   const [submitted, setSubmitted] = useState(false);
+  const [parsedSportId, setParsedSportId] = useState(null);
 
   const activeSports = SPORTS.filter((s) => s.active);
-  const roster = ROSTERS[sportId] || [];
+  const activeSportId = parsedSportId || sportId;
+  const roster = ROSTERS[activeSportId] || [];
 
   const handleParse = () => {
     const parsed = parseOddsText(text);
     const matched = matchTeams(parsed, sportId);
+    setParsedSportId(sportId);
     setResults(
       matched.map((r, i) => ({
         key: i,
@@ -44,22 +47,30 @@ export default function ParsePage({ onOddsSubmitted }) {
     const source = sportsbook === 'other' ? customSportsbook.trim() : sportsbook;
     if (!source) return;
 
+    const submitSport = parsedSportId || sportId;
     const manual = loadManualOdds();
 
     for (const row of results) {
       if (!row.checked || !row.matchedName) continue;
-      const entryId = `${sportId}-${slugify(row.matchedName)}`;
+
+      // Validate odds: must be a number with optional +/- prefix, absolute value >= 100
+      const oddsNum = parseFloat(row.odds);
+      if (isNaN(oddsNum) || Math.abs(oddsNum) < 100) continue;
+
+      // Normalize: ensure +/- prefix
+      const normalizedOdds = (oddsNum > 0 ? '+' : '') + oddsNum;
+      const entryId = `${submitSport}-${slugify(row.matchedName)}`;
 
       if (!manual[entryId]) {
         manual[entryId] = {
-          sport: sportId,
+          sport: submitSport,
           name: row.matchedName,
           oddsBySource: {},
           timestamp: Date.now(),
         };
       }
 
-      manual[entryId].oddsBySource[source] = row.odds;
+      manual[entryId].oddsBySource[source] = normalizedOdds;
       manual[entryId].timestamp = Date.now();
     }
 
@@ -127,8 +138,8 @@ export default function ParsePage({ onOddsSubmitted }) {
             <div>
               <label className="block text-xs font-medium text-gray-600 mb-1">Sport</label>
               <select
-                value={sportId}
-                onChange={(e) => setSportId(e.target.value)}
+                value={parsedSportId || sportId}
+                onChange={(e) => { setSportId(e.target.value); setParsedSportId(null); setResults([]); setSubmitted(false); }}
                 className="border border-gray-300 rounded-md px-2 py-1.5 text-sm"
               >
                 {activeSports.map((s) => (

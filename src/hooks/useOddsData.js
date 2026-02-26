@@ -306,11 +306,11 @@ export default function useOddsData() {
             if (firstOdds) item.odds = firstOdds;
           }
 
-          // Determine best odds (most favorable = highest implied probability for favorites, highest payout for underdogs)
-          let bestSrc = null, bestVal = null, bestProb = -1;
+          // Determine best odds for the bettor (lowest implied probability = highest payout)
+          let bestSrc = null, bestVal = null, bestProb = Infinity;
           for (const [src, odds] of Object.entries(item.oddsBySource)) {
             const prob = americanToImpliedProbability(odds);
-            if (prob > bestProb) {
+            if (prob > 0 && prob < bestProb) {
               bestProb = prob;
               bestSrc = src;
               bestVal = odds;
