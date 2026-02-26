@@ -1,15 +1,36 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ADPTable from '../components/board/ADPTable';
 import PlayerCard from '../components/cards/PlayerCard';
 import SportFilter from '../components/filters/SportFilter';
 import SearchBar from '../components/filters/SearchBar';
 import ScoringToggle from '../components/filters/ScoringToggle';
+import { exportBoard, importBoard } from '../utils/csvManager';
 
 export default function Dashboard({ boardEntries, loading, lastUpdated, onToggleDraft, onRefresh }) {
   const [sportFilter, setSportFilter] = useState([]);
   const [search, setSearch] = useState('');
   const [showDrafted, setShowDrafted] = useState(true);
+  const [importStatus, setImportStatus] = useState(null); // null | 'loading' | 'ok' | 'error'
+  const fileInputRef = useRef(null);
+
+  const handleExport = () => exportBoard(boardEntries);
+
+  const handleImport = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    e.target.value = '';
+    setImportStatus('loading');
+    try {
+      const { manualCount, draftedCount } = await importBoard(file);
+      setImportStatus(`ok:${manualCount}:${draftedCount}`);
+      onRefresh();
+      setTimeout(() => setImportStatus(null), 4000);
+    } catch {
+      setImportStatus('error');
+      setTimeout(() => setImportStatus(null), 4000);
+    }
+  };
 
   const filtered = useMemo(() => {
     let items = boardEntries;
@@ -31,7 +52,42 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
             {boardEntries.length} RECORDS_FOUND // LAST_LINK: {lastUpdated ? lastUpdated.toLocaleTimeString() : 'OFFLINE'}
           </p>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 flex-wrap justify-end">
+          {/* Import status feedback */}
+          {importStatus && (
+            <span className={`font-retro text-[7px] tracking-widest px-3 py-2 border ${
+              importStatus === 'loading' ? 'text-retro-gold border-retro-gold/40' :
+              importStatus === 'error' ? 'text-retro-red border-retro-red/40' :
+              'text-retro-lime border-retro-lime/40'
+            }`}>
+              {importStatus === 'loading' ? 'LOADING...' :
+               importStatus === 'error' ? 'IMPORT_ERR' :
+               (() => { const [,m,d] = importStatus.split(':'); return `RESTORED: ${m}_ODDS / ${d}_DRAFTED`; })()}
+            </span>
+          )}
+
+          {/* Hidden file input for CSV import */}
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept=".csv"
+            className="hidden"
+            onChange={handleImport}
+          />
+
+          <button
+            onClick={handleExport}
+            className="font-retro text-[8px] px-4 py-3 bg-white/10 text-retro-lime border border-retro-lime/30 shadow-[0_0_8px_rgba(0,255,100,0.15)] hover:bg-white/20 transition-all active:translate-y-0.5"
+          >
+            [ CSV_OUT ]
+          </button>
+          <button
+            onClick={() => fileInputRef.current?.click()}
+            disabled={importStatus === 'loading'}
+            className="font-retro text-[8px] px-4 py-3 bg-white/10 text-retro-gold border border-retro-gold/30 shadow-[0_0_8px_rgba(255,200,0,0.15)] hover:bg-white/20 transition-all active:translate-y-0.5 disabled:opacity-50"
+          >
+            [ CSV_IN ]
+          </button>
           <Link
             to="/parse"
             className="font-retro text-[8px] px-5 py-3 bg-white/10 text-retro-cyan border-2 border-retro-cyan/30 shadow-[0_0_10px_rgba(0,245,255,0.2)] hover:bg-white/20 transition-all active:translate-y-0.5"
