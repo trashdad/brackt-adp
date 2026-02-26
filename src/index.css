@@ -1,9 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply min-h-screen;
+    @apply min-h-screen bg-[#2E2E3E] text-[#C0C0C0] font-sans antialiased;
+    image-rendering: pixelated;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-retro;
+  }
+}
+
+@layer components {
+  .pixel-border {
+    @apply border-4 border-black;
+    box-shadow: 
+      inset -4px -4px 0 0 #808080,
+      inset 4px 4px 0 0 #f0f0f0;
+  }
+
+  .pixel-border-dark {
+    @apply border-4 border-black;
+    box-shadow: 
+      inset -4px -4px 0 0 #1a1a2a,
+      inset 4px 4px 0 0 #4a4a5a;
+  }
+
+  .pixel-button {
+    @apply font-retro text-[10px] px-4 py-2 relative border-4 border-black active:translate-y-1 transition-all;
+    box-shadow: 
+      inset -4px -4px 0 0 rgba(0,0,0,0.2),
+      inset 4px 4px 0 0 rgba(255,255,255,0.2);
+  }
+
+  .snes-panel {
+    @apply bg-snes-light text-black pixel-border;
+  }
+
+  .snes-panel-dark {
+    @apply bg-snes-blue text-white pixel-border-dark;
+  }
+
+  .snes-font {
+    @apply font-retro text-[10px] tracking-tighter;
+  }
+}
+
+/* Custom scrollbar to match retro theme */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #2E2E3E;
+}
+::-webkit-scrollbar-thumb {
+  background: #808080;
+  border: 2px solid #000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A18FD1;
 }

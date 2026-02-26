@@ -25,14 +25,14 @@ export default function ADPTable({ entries, onToggleDraft }) {
   }
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
-      <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-50 sticky top-0">
+    <div className="overflow-x-auto snes-panel">
+      <table className="min-w-full divide-y-4 divide-black">
+        <thead className="bg-snes-dark text-white sticky top-0 border-b-4 border-black">
           <tr>
             {COLUMNS.map((col) => (
               <ColumnHeader
                 key={col.key}
-                label={col.label}
+                label={col.label.toUpperCase()}
                 sortKey={col.key}
                 currentSortKey={sortKey}
                 sortDir={sortDir}
@@ -41,7 +41,7 @@ export default function ADPTable({ entries, onToggleDraft }) {
             ))}
           </tr>
         </thead>
-        <tbody>
+        <tbody className="bg-white divide-y-2 divide-black/10">
           {sorted.map((entry) => (
             <ADPRow key={entry.id} entry={entry} onToggleDraft={onToggleDraft} />
           ))}

@@ -23,33 +23,33 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
   }, [boardEntries, sportFilter, search, showDrafted]);
 
   return (
-    <div className="space-y-4">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+    <div className="space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 snes-panel bg-snes-lavender/10 border-black">
         <div>
-          <h1 className="text-xl font-bold text-gray-900">ADP Board</h1>
-          <p className="text-xs text-gray-500">
-            {boardEntries.length} entries across 20 sports
-            {lastUpdated && ` \u00B7 Updated ${lastUpdated.toLocaleTimeString()}`}
+          <h1 className="text-xl font-retro text-snes-blue drop-shadow-[1px_1px_0_#fff]">ADP_BOARD</h1>
+          <p className="font-retro text-[8px] text-gray-500 mt-2">
+            {boardEntries.length} ENTRIES_IN_DATABASE
+            {lastUpdated && ` \u00B7 LAST_SYNC: ${lastUpdated.toLocaleTimeString()}`}
           </p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <Link
             to="/parse"
-            className="px-3 py-1.5 text-xs font-medium rounded-md border border-brand-600 text-brand-600 bg-white hover:bg-brand-50 transition"
+            className="font-retro text-[9px] px-3 py-2 bg-white text-snes-blue border-4 border-black shadow-[inset_-2px_-2px_0_0_#ccc] hover:bg-gray-100 transition-all active:translate-y-0.5"
           >
-            Paste Screenshot and Parse
+            PARSE_DATA
           </Link>
           <button
             onClick={onRefresh}
             disabled={loading}
-            className="px-3 py-1.5 text-xs font-medium rounded-md bg-brand-600 text-white hover:bg-brand-700 disabled:opacity-50 transition"
+            className="font-retro text-[9px] px-3 py-2 bg-snes-purple text-white border-4 border-black shadow-[inset_-2px_-2px_0_0_rgba(0,0,0,0.4)] hover:bg-snes-lavender transition-all active:translate-y-0.5 disabled:opacity-50"
           >
-            {loading ? 'Loading...' : 'Refresh'}
+            {loading ? 'BUSY...' : 'SYNC'}
           </button>
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-black/5 p-3 border-2 border-black/10">
         <SearchBar value={search} onChange={setSearch} />
         <ScoringToggle showDrafted={showDrafted} onToggle={setShowDrafted} />
       </div>

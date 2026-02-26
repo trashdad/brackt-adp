@@ -87,6 +87,7 @@ export function calculateSingleEventEV(americanOdds, category) {
     singleEvent: parseFloat(Math.min(ev, 100).toFixed(2)),
     winProbability: parseFloat((winProb * 100).toFixed(1)),
     perFinish,
+    dist, // Include raw distribution for transparency
   };
 }
 

@@ -12,16 +12,16 @@ export default function SportFilter({ selected = [], onChange }) {
   };
 
   return (
-    <div className="flex flex-wrap gap-1.5">
+    <div className="flex flex-wrap gap-2">
       <button
         onClick={() => onChange([])}
-        className={`px-3 py-1 rounded-full text-xs font-medium border transition ${
+        className={`px-4 py-2 border-2 transition-all font-retro text-[9px] tracking-tight active:translate-y-0.5 ${
           selected.length === 0
-            ? 'bg-brand-600 text-white border-brand-600'
-            : 'bg-white text-gray-600 border-gray-300 hover:border-gray-400'
+            ? 'bg-snes-blue text-white border-black shadow-[inset_-2px_-2px_0_0_rgba(0,0,0,0.4)]'
+            : 'bg-snes-light text-gray-700 border-black/20 hover:border-black shadow-[inset_2px_2px_0_0_#f0f0f0,inset_-2px_-2px_0_0_#808080]'
         }`}
       >
-        All
+        [ALL]
       </button>
       {activeSports.map((sport) => {
         const isActive = selected.includes(sport.id);
@@ -29,14 +29,14 @@ export default function SportFilter({ selected = [], onChange }) {
           <button
             key={sport.id}
             onClick={() => toggleSport(sport.id)}
-            className={`px-3 py-1 rounded-full text-xs font-medium border transition ${
+            className={`px-4 py-2 border-2 transition-all font-retro text-[9px] tracking-tighter active:translate-y-0.5 ${
               isActive
-                ? 'text-white border-transparent'
-                : 'bg-white text-gray-600 border-gray-300 hover:border-gray-400'
+                ? 'text-white border-black shadow-[inset_-2px_-2px_0_0_rgba(0,0,0,0.4)]'
+                : 'bg-snes-light text-gray-700 border-black/20 hover:border-black shadow-[inset_2px_2px_0_0_#f0f0f0,inset_-2px_-2px_0_0_#808080]'
             }`}
             style={isActive ? { backgroundColor: SPORT_COLORS[sport.id] || '#888' } : undefined}
           >
-            {sport.icon} {sport.name}
+            {sport.icon} {sport.name.toUpperCase()}
           </button>
         );
       })}

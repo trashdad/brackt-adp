@@ -63,49 +63,53 @@ export default function ScraperControlBar() {
 
   const getStatusColor = (status) => {
     switch (status) {
-      case 'success': return 'bg-green-500 border-green-600';
-      case 'error': return 'bg-red-500 border-red-600';
-      case 'timeout': return 'bg-yellow-500 border-yellow-600';
-      case 'running': return 'bg-blue-400 border-blue-500 animate-pulse';
-      default: return 'bg-gray-700 border-gray-600';
+      case 'success': return 'bg-[#4CAF50] border-black';
+      case 'error': return 'bg-[#F44336] border-black';
+      case 'timeout': return 'bg-[#FFEB3B] border-black text-black';
+      case 'running': return 'bg-[#2196F3] border-black animate-pulse';
+      default: return 'bg-[#555555] border-black';
     }
   };
 
   return (
-    <div className="bg-gray-900 border-b border-gray-800 flex items-stretch h-10 overflow-hidden">
+    <div className="bg-black flex items-stretch h-12 overflow-hidden border-b-2 border-white/20">
       {/* Fire Button */}
       <button
         onClick={fireScrapers}
         disabled={isRunning}
-        className={`px-4 flex items-center justify-center text-[11px] font-black uppercase tracking-tighter transition-colors ${
+        className={`px-6 flex items-center justify-center font-retro text-[10px] tracking-tight transition-all border-r-4 border-black ${
           isRunning 
-            ? 'bg-orange-600 text-white cursor-not-allowed' 
-            : 'bg-brand-500 hover:bg-brand-400 text-white active:bg-brand-600'
+            ? 'bg-snes-dark text-white opacity-80 cursor-not-allowed' 
+            : 'bg-snes-purple hover:bg-snes-lavender text-white active:translate-y-0.5'
         }`}
+        style={{
+          boxShadow: 'inset -4px -4px 0 0 rgba(0,0,0,0.3), inset 4px 4px 0 0 rgba(255,255,255,0.2)'
+        }}
       >
-        {isRunning ? 'Scraping...' : 'Fire Scrapers'}
+        {isRunning ? 'RUNNING...' : 'FIRE_SCRAPERS'}
       </button>
 
       {/* Status Boxes */}
-      <div className="flex flex-1 items-stretch overflow-x-auto no-scrollbar">
+      <div className="flex flex-1 items-stretch overflow-x-auto no-scrollbar gap-1 p-1 bg-[#1a1a1a]">
         {SOURCES.map((source) => (
           <div
             key={source.id}
-            className={`flex-1 min-w-[100px] border-r border-gray-800 flex flex-col justify-center px-3 transition-colors ${getStatusColor(statuses[source.id])}`}
+            className={`flex-1 min-w-[90px] border-2 flex flex-col justify-center px-2 transition-colors ${getStatusColor(statuses[source.id])}`}
+            style={{ imageRendering: 'pixelated' }}
           >
-            <span className="text-[10px] font-bold text-white leading-tight uppercase truncate">
+            <span className="text-[9px] font-retro text-white leading-none truncate mb-1">
               {source.name}
             </span>
-            <span className="text-[8px] text-white/70 font-medium leading-tight uppercase">
-              {statuses[source.id] || 'Ready'}
-            </span>
+            <div className="h-1 bg-black/40 rounded-full overflow-hidden">
+              <div className={`h-full ${statuses[source.id] === 'running' ? 'bg-white animate-pulse' : 'bg-transparent'}`} />
+            </div>
           </div>
         ))}
       </div>
       
       {/* Right tail filler */}
-      <div className="bg-gray-900 w-12 border-l border-gray-800 flex items-center justify-center">
-        <div className={`w-2 h-2 rounded-full ${isRunning ? 'bg-green-500 animate-ping' : 'bg-gray-700'}`} />
+      <div className="bg-black w-14 border-l-2 border-white/20 flex items-center justify-center">
+        <div className={`w-3 h-3 rounded-none border border-black ${isRunning ? 'bg-red-500 animate-pulse' : 'bg-green-900'}`} />
       </div>
     </div>
   );
