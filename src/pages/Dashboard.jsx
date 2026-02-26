@@ -44,25 +44,25 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
   }, [boardEntries, sportFilter, search, showDrafted]);
 
   return (
-    <div className="space-y-8">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 p-6 snes-panel bg-gradient-to-br from-[#2D2D44] to-[#1A1A2E] border-black/40 shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
+    <div className="space-y-3">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-4 py-3 snes-panel bg-gradient-to-br from-[#2D2D44] to-[#1A1A2E] border-black/40">
         <div>
-          <h1 className="text-2xl font-retro text-retro-cyan drop-shadow-[2px_2px_0_#000] tracking-widest">_ADP_DATABASE</h1>
-          <p className="font-retro text-[7px] text-retro-light/40 mt-3 tracking-widest leading-relaxed">
-            {boardEntries.length} RECORDS_FOUND // LAST_LINK: {lastUpdated ? lastUpdated.toLocaleTimeString() : 'OFFLINE'}
+          <h1 className="font-retro text-[11px] text-retro-cyan drop-shadow-[1px_1px_0_#000] tracking-widest">_ADP_DATABASE</h1>
+          <p className="font-pixel text-[10px] text-retro-light/40 mt-1.5 tracking-[0.1em]">
+            {boardEntries.length} RECORDS // {lastUpdated ? lastUpdated.toLocaleTimeString() : 'OFFLINE'}
           </p>
         </div>
-        <div className="flex items-center gap-3 flex-wrap justify-end">
+        <div className="flex items-center gap-2 flex-wrap justify-end">
           {/* Import status feedback */}
           {importStatus && (
-            <span className={`font-retro text-[7px] tracking-widest px-3 py-2 border ${
+            <span className={`font-pixel text-[9px] tracking-wider px-2 py-1 border ${
               importStatus === 'loading' ? 'text-retro-gold border-retro-gold/40' :
               importStatus === 'error' ? 'text-retro-red border-retro-red/40' :
               'text-retro-lime border-retro-lime/40'
             }`}>
               {importStatus === 'loading' ? 'LOADING...' :
                importStatus === 'error' ? 'IMPORT_ERR' :
-               (() => { const [,m,d] = importStatus.split(':'); return `RESTORED: ${m}_ODDS / ${d}_DRAFTED`; })()}
+               (() => { const [,m,d] = importStatus.split(':'); return `OK: ${m} ODDS / ${d} DRAFTED`; })()}
             </span>
           )}
 
@@ -77,40 +77,40 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
 
           <button
             onClick={handleExport}
-            className="font-retro text-[8px] px-4 py-3 bg-white/10 text-retro-lime border border-retro-lime/30 shadow-[0_0_8px_rgba(0,255,100,0.15)] hover:bg-white/20 transition-all active:translate-y-0.5"
+            className="font-pixel text-[10px] px-3 py-1.5 bg-white/10 text-retro-lime border border-retro-lime/30 shadow-[0_0_6px_rgba(0,255,100,0.12)] hover:bg-white/20 transition-all active:translate-y-0.5"
           >
-            [ CSV_OUT ]
+            CSV_OUT
           </button>
           <button
             onClick={() => fileInputRef.current?.click()}
             disabled={importStatus === 'loading'}
-            className="font-retro text-[8px] px-4 py-3 bg-white/10 text-retro-gold border border-retro-gold/30 shadow-[0_0_8px_rgba(255,200,0,0.15)] hover:bg-white/20 transition-all active:translate-y-0.5 disabled:opacity-50"
+            className="font-pixel text-[10px] px-3 py-1.5 bg-white/10 text-retro-gold border border-retro-gold/30 shadow-[0_0_6px_rgba(255,200,0,0.12)] hover:bg-white/20 transition-all active:translate-y-0.5 disabled:opacity-50"
           >
-            [ CSV_IN ]
+            CSV_IN
           </button>
           <Link
             to="/parse"
-            className="font-retro text-[8px] px-5 py-3 bg-white/10 text-retro-cyan border-2 border-retro-cyan/30 shadow-[0_0_10px_rgba(0,245,255,0.2)] hover:bg-white/20 transition-all active:translate-y-0.5"
+            className="font-pixel text-[10px] px-3 py-1.5 bg-white/10 text-retro-cyan border border-retro-cyan/30 shadow-[0_0_6px_rgba(0,245,255,0.12)] hover:bg-white/20 transition-all active:translate-y-0.5"
           >
-            [ PARSE_IMG ]
+            PARSE_IMG
           </Link>
           <button
             onClick={onRefresh}
             disabled={loading}
-            className="font-retro text-[8px] px-5 py-3 bg-gradient-to-br from-retro-purple to-retro-magenta text-white border-2 border-black shadow-[inset_2px_2px_0_rgba(255,255,255,0.2),0_4px_0_0_#000] hover:brightness-110 transition-all active:translate-y-1 disabled:opacity-50"
+            className="font-pixel text-[10px] px-4 py-1.5 bg-gradient-to-br from-retro-purple to-retro-magenta text-white border border-black shadow-[inset_1px_1px_0_rgba(255,255,255,0.15)] hover:brightness-110 transition-all active:translate-y-0.5 disabled:opacity-50"
           >
             {loading ? 'SYNCING...' : 'SYNC_NODE'}
           </button>
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center bg-black/20 p-4 border border-white/5 shadow-inner">
+      <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center bg-black/20 px-3 py-2 border border-white/5">
         <SearchBar value={search} onChange={setSearch} />
-        <div className="h-8 w-px bg-white/5 hidden lg:block mx-2" />
+        <div className="h-6 w-px bg-white/5 hidden lg:block" />
         <ScoringToggle showDrafted={showDrafted} onToggle={setShowDrafted} />
       </div>
 
-      <div className="py-2 overflow-x-auto no-scrollbar">
+      <div className="overflow-x-auto no-scrollbar">
         <SportFilter selected={sportFilter} onChange={setSportFilter} />
       </div>
 
