@@ -18,5 +18,10 @@ pipeline/node_modules/
 public/data/live/
 public/data/historical/
 
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
 # Server-side persistent data (shared board state)
 server/data/*.json
