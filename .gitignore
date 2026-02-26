@@ -17,3 +17,6 @@ pipeline/output/logs/
 pipeline/node_modules/
 public/data/live/
 public/data/historical/
+
+# Server-side persistent data (shared board state)
+server/data/*.json

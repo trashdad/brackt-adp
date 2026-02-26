@@ -4,7 +4,7 @@ import ROSTERS from '../data/rosters';
 import { fetchOddsForSport } from '../services/oddsApi';
 import { calculateSeasonTotalEV, calculateHistoricallyWeightedEV, applyPositionalScarcity } from '../services/evCalculator';
 import { slugify } from '../utils/formatters';
-import { loadSettings, loadManualOdds } from '../utils/storage';
+import { loadSettings } from '../utils/storage';
 import { loadAllPipelineData } from '../services/dataLoader';
 import { americanToImpliedProbability, removeVig, probabilityToAmerican } from '../services/oddsConverter';
 
@@ -81,10 +81,10 @@ function buildEntries(rawBySport, historicalBySport = {}) {
         let ev;
         if (historical && historical.history && historical.history.length >= 2) {
           ev = calculateHistoricallyWeightedEV(
-            apiItem.odds, sport.category, sport.eventsPerSeason, historical, apiItem.tournaments
+            apiItem.odds, sport.category, sport.eventsPerSeason, historical
           );
         } else {
-          ev = calculateSeasonTotalEV(apiItem.odds, sport.category, sport.eventsPerSeason, apiItem.tournaments);
+          ev = calculateSeasonTotalEV(apiItem.odds, sport.category, sport.eventsPerSeason);
         }
 
         entries.push({
@@ -145,10 +145,10 @@ function buildEntries(rawBySport, historicalBySport = {}) {
         let ev;
         if (historical && historical.history && historical.history.length >= 2) {
           ev = calculateHistoricallyWeightedEV(
-            item.odds, sport.category, sport.eventsPerSeason, historical, item.tournaments
+            item.odds, sport.category, sport.eventsPerSeason, historical
           );
         } else {
-          ev = calculateSeasonTotalEV(item.odds, sport.category, sport.eventsPerSeason, item.tournaments);
+          ev = calculateSeasonTotalEV(item.odds, sport.category, sport.eventsPerSeason);
         }
 
         entries.push({
@@ -249,8 +249,9 @@ export default function useOddsData() {
       })
     );
 
-    // Step 3: Merge manual odds from localStorage
-    const manualOdds = loadManualOdds();
+    // Step 3: Merge manual odds from server
+    const manualOddsResp = await fetch('/api/manual-odds').catch(() => null);
+    const manualOdds = manualOddsResp?.ok ? await manualOddsResp.json() : {};
     for (const [entryId, manual] of Object.entries(manualOdds)) {
       const { sport, name, oddsBySource: manualSources, oddsByTournament: manualTournaments } = manual;
       if (!sport) continue;
@@ -340,38 +341,20 @@ export default function useOddsData() {
             }
           }
 
-          // If main odds are missing, set them to the average of tournament odds
-          if (!item.odds && count > 0) {
+          // For sports with tournament structure, ALWAYS set item.odds to the average
+          // of available tournament odds. This is the canonical odds figure used for EV.
+          if (count > 0 && sport?.tournaments) {
             const avgProb = sumProb / count;
             const avgOddsNum = probabilityToAmerican(avgProb);
             if (avgOddsNum != null) {
               item.odds = (avgOddsNum > 0 ? '+' : '') + avgOddsNum;
             }
-          }
-        }
-
-        // Populate missing tournaments with average or main odds
-        if (sport?.tournaments) {
-          if (!item.tournaments) item.tournaments = {};
-          
-          let baselineOdds = item.odds;
-          if (!baselineOdds && hasTournamentData) {
-            // Re-calculate average if main odds still null
-            let sumP = 0, cnt = 0;
-            for (const t of Object.values(item.tournaments)) {
-              if (t.odds) { sumP += americanToImpliedProbability(t.odds); cnt++; }
-            }
-            if (cnt > 0) {
-              const avgO = probabilityToAmerican(sumP / cnt);
-              baselineOdds = avgO != null ? (avgO > 0 ? '+' : '') + avgO : null;
-            }
-          }
-
-          if (baselineOdds) {
-            for (const tConfig of sport.tournaments) {
-              if (!item.tournaments[tConfig.id]) {
-                item.tournaments[tConfig.id] = { odds: baselineOdds, isEstimated: true };
-              }
+          } else if (!item.odds && count > 0) {
+            // Non-tournament sport with multi-source data: use average as fallback
+            const avgProb = sumProb / count;
+            const avgOddsNum = probabilityToAmerican(avgProb);
+            if (avgOddsNum != null) {
+              item.odds = (avgOddsNum > 0 ? '+' : '') + avgOddsNum;
             }
           }
         }
