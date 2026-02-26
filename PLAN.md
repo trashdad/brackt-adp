@@ -128,7 +128,7 @@ brackt-adp/
 | 5th–6th | 25   |
 | 7th–8th | 15   |
 
-### QP Scoring (Golf, Tennis Men's, Tennis Women's, Counter-Strike)
+### QP Scoring (Golf, Tennis Men's, Tennis Women's, Counter-Strike 2)
 | Finish | QP  |
 |--------|-----|
 | 1st    | 20  |
@@ -172,7 +172,7 @@ Season-Total EV = Single-Event EV × eventsPerSeason
 - NFL: 1 event (Super Bowl) → EV × 1
 - PGA Golf: ~30 events → EV × 30
 - Tennis: ~4 Grand Slams + 9 Masters = ~13 events → EV × 13
-- Counter-Strike BLAST: ~6 major events → EV × 6
+- Counter-Strike 2: ~2 major events → EV × 2
 
 This normalizes across sports so a golfer's cumulative season value is comparable to an NFL team's championship shot.
 
@@ -189,7 +189,7 @@ This normalizes across sports so a golfer's cumulative season value is comparabl
 ### Niche Sport Fallbacks
 - **Little League World Series**: Manual entry form / web scraping
 - **IndyCar**: Manual entry / scraping from public odds pages
-- **Counter-Strike (BLAST)**: The Odds API has esports; also fallback to PandaScore
+- **Counter-Strike 2**: The Odds API has esports; also fallback to PandaScore
 - **Snooker**: The Odds API or Goalserve fallback
 
 ### Request Budget Strategy (500/month)
