@@ -1,6 +1,5 @@
-import { useEffect, useCallback } from "react";
+import { useEffect } from "react";
 import { useScraper } from "../../context/ScraperContext";
-import { checkAllApiKeys } from "../../services/apiValidator";
 
 const SOURCES = [
   { id: "draftkings", name: "DraftKings" },
@@ -33,54 +32,53 @@ export default function ScraperControlBar() {
     if (isRunning) return;
     setIsRunning(true);
     clearLogs();
-    addLog("Starting scraper sequence...", "info");
+    addLog("INIT_PIPELINE: STARTING SCRAPER SEQUENCE...", "info");
 
-    const newStatuses = {};
-    SOURCES.forEach((s) => (newStatuses[s.id] = "idle"));
-    setStatuses(newStatuses);
+    const initStatuses = {};
+    SOURCES.forEach((s) => (initStatuses[s.id] = "idle"));
+    setStatuses(initStatuses);
 
-    for (const source of SOURCES) {
-      // If it's a key-based source and the key is invalid, skip or log error
-      if (source.hasApiKey && apiKeyStatuses[source.id] !== "valid") {
-        addLog(`Skipping ${source.name} - Invalid API key.`, "error");
-        setStatuses((prev) => ({ ...prev, [source.id]: "error" }));
-        continue;
-      }
-
-      addLog(`Firing ${source.name} scraper...`, "info");
-      setStatuses((prev) => ({ ...prev, [source.id]: "running" }));
-
-      await new Promise((resolve) =>
-        setTimeout(resolve, 800 + Math.random() * 1500),
-      );
-
-      const rand = Math.random();
-      let result = "success";
-
-      if (rand < 0.1) {
-        result = "error";
-        addLog(
-          `Error: ${source.name} failed to respond (500 Internal Error)`,
-          "error",
-        );
-      } else if (rand < 0.2) {
-        result = "timeout";
-        addLog(
-          `Warning: ${source.name} timed out after 30s. Retrying later.`,
-          "warn",
-        );
-      } else {
-        addLog(
-          `Success: ${source.name} fetched ${Math.floor(Math.random() * 50) + 10} new entries.`,
-          "success",
-        );
-      }
-
-      setStatuses((prev) => ({ ...prev, [source.id]: result }));
+    const resp = await fetch("/api/run-pipeline", { method: "POST" }).catch(() => null);
+    if (!resp?.ok) {
+      addLog("ERROR: FAILED_TO_REACH_API_SERVER. Is it running?", "error");
+      setIsRunning(false);
+      return;
     }
 
-    addLog("Scraper sequence complete.", "info");
-    setIsRunning(false);
+    const data = await resp.json();
+    if (!data.ok) {
+      addLog(`WARN: ${(data.message || "Pipeline already running").toUpperCase()}`, "warn");
+      setIsRunning(false);
+      return;
+    }
+
+    addLog("PIPELINE: DISPATCHING SOURCE RUNNERS...", "info");
+
+    let prevSources = {};
+    const pollInterval = setInterval(async () => {
+      const statusResp = await fetch("/api/pipeline/status").catch(() => null);
+      if (!statusResp?.ok) return;
+      const state = await statusResp.json();
+
+      // Log status transitions
+      for (const [sourceId, status] of Object.entries(state.sources || {})) {
+        if (status !== prevSources[sourceId]) {
+          const name = (SOURCES.find((s) => s.id === sourceId)?.name || sourceId).toUpperCase();
+          if (status === "running") addLog(`RUNNING: ${name}...`, "info");
+          else if (status === "success") addLog(`SUCCESS: ${name} DATA_FETCHED`, "success");
+          else if (status === "error") addLog(`ERROR: ${name} FETCH_FAILED`, "error");
+          else if (status === "timeout") addLog(`TIMEOUT: ${name} TIMED_OUT`, "warn");
+        }
+      }
+      prevSources = { ...state.sources };
+      setStatuses((prev) => ({ ...prev, ...state.sources }));
+
+      if (!state.running) {
+        clearInterval(pollInterval);
+        setIsRunning(false);
+        addLog("PIPELINE_COMPLETE: ALL_SOURCES_PROCESSED.", "info");
+      }
+    }, 1000);
   };
 
   const getStatusColor = (status) => {

@@ -3,7 +3,7 @@
  * These files are produced by the pipeline scheduler and copied to public/data/.
  */
 
-const DATA_BASE = '/data';
+const DATA_BASE = '/api/pipeline';
 
 /**
  * Load merged live odds for a sport from the pipeline.
@@ -11,7 +11,7 @@ const DATA_BASE = '/data';
  */
 export async function loadLiveOdds(sportId) {
   try {
-    const res = await fetch(`${DATA_BASE}/live/${sportId}.json`);
+    const res = await fetch(`${DATA_BASE}/live/${sportId}`);
     if (!res.ok) return null;
     return await res.json();
   } catch {
@@ -25,7 +25,7 @@ export async function loadLiveOdds(sportId) {
  */
 export async function loadHistoricalOdds(sportId) {
   try {
-    const res = await fetch(`${DATA_BASE}/historical/${sportId}.json`);
+    const res = await fetch(`${DATA_BASE}/historical/${sportId}`);
     if (!res.ok) return null;
     return await res.json();
   } catch {
@@ -39,7 +39,7 @@ export async function loadHistoricalOdds(sportId) {
  */
 export async function loadManifest() {
   try {
-    const res = await fetch(`${DATA_BASE}/live/manifest.json`);
+    const res = await fetch(`${DATA_BASE}/manifest`);
     if (!res.ok) return null;
     return await res.json();
   } catch {

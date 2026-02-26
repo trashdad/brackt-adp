@@ -1,6 +1,17 @@
 import express from 'express';
 import cors from 'cors';
+import { spawn } from 'child_process';
+import { readFileSync, existsSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { readStore, writeStore } from './store.js';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const PIPELINE_OUTPUT = join(__dirname, '..', 'pipeline', 'output');
+const PROJECT_ROOT = join(__dirname, '..');
+
+// In-memory pipeline run state (reset on server restart)
+let pipelineState = { running: false, sources: {}, lastRun: null };
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -38,6 +49,86 @@ app.post('/api/draft-state', (req, res) => {
   }
   writeStore('draft-state', req.body);
   res.json({ ok: true });
+});
+
+// ── Pipeline Data Serving ─────────────────────────────────────────────────────
+// Serve pipeline output files directly so the frontend doesn't need a manual copy step.
+
+function readPipelineJson(filePath) {
+  if (!existsSync(filePath)) return null;
+  try { return JSON.parse(readFileSync(filePath, 'utf8')); } catch { return null; }
+}
+
+app.get('/api/pipeline/manifest', (_req, res) => {
+  const data = readPipelineJson(join(PIPELINE_OUTPUT, 'live', 'manifest.json'));
+  data ? res.json(data) : res.status(404).json(null);
+});
+
+app.get('/api/pipeline/live/:sportId', (req, res) => {
+  const data = readPipelineJson(join(PIPELINE_OUTPUT, 'live', `${req.params.sportId}.json`));
+  data ? res.json(data) : res.status(404).json(null);
+});
+
+app.get('/api/pipeline/historical/:sportId', (req, res) => {
+  const data = readPipelineJson(join(PIPELINE_OUTPUT, 'historical', `${req.params.sportId}.json`));
+  data ? res.json(data) : res.status(404).json(null);
+});
+
+// ── Pipeline Runner ───────────────────────────────────────────────────────────
+
+app.get('/api/pipeline/status', (_req, res) => {
+  res.json(pipelineState);
+});
+
+app.post('/api/run-pipeline', (_req, res) => {
+  if (pipelineState.running) {
+    return res.json({ ok: false, message: 'Pipeline already running' });
+  }
+
+  pipelineState = { running: true, sources: {}, lastRun: new Date().toISOString() };
+  res.json({ ok: true });
+
+  const proc = spawn('node', ['pipeline/scheduler/index.js', '--once'], {
+    cwd: PROJECT_ROOT,
+    stdio: ['ignore', 'pipe', 'pipe'],
+    env: { ...process.env },
+  });
+
+  // Parse Winston console output: "TIMESTAMP LEVEL [sourceId]: message"
+  // Strip ANSI codes, extract sourceId + message, classify status.
+  function parseLine(line) {
+    const clean = line.replace(/\x1b\[[0-9;]*m/g, '').trim();
+    if (!clean) return;
+    const match = clean.match(/\[([^\]/]+)(?:\/[^\]]*)?]:\s+(.+)/);
+    if (!match) return;
+    const [, sourceId, message] = match;
+    const lower = message.toLowerCase();
+    if (lower.includes('running')) {
+      pipelineState.sources[sourceId] = 'running';
+    } else if (lower.includes('completed') || lower.includes('success')) {
+      pipelineState.sources[sourceId] = 'success';
+    } else if (lower.includes('failed') || lower.includes('error') || lower.includes('exited')) {
+      pipelineState.sources[sourceId] = 'error';
+    } else if (lower.includes('timed out') || lower.includes('timeout')) {
+      pipelineState.sources[sourceId] = 'timeout';
+    }
+  }
+
+  let buf = '';
+  const onData = (data) => {
+    buf += data.toString();
+    const lines = buf.split('\n');
+    buf = lines.pop();
+    for (const line of lines) parseLine(line);
+  };
+
+  proc.stdout.on('data', onData);
+  proc.stderr.on('data', onData);
+
+  proc.on('close', () => {
+    if (buf) parseLine(buf);
+    pipelineState.running = false;
+  });
 });
 
 app.listen(PORT, () => {
