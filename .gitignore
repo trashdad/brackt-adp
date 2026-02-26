@@ -17,3 +17,9 @@ pipeline/output/logs/
 pipeline/node_modules/
 public/data/live/
 public/data/historical/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
