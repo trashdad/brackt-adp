@@ -68,6 +68,7 @@ function pipelineToRawItems(pipelineData) {
       odds: entry.consensusOdds || entry.bestOdds,
       // Multi-source enrichment fields
       oddsBySource: entry.oddsBySource || {},
+      oddsByTournament: entry.oddsByTournament || {},
       bestOdds: entry.bestOdds,
       bestOddsSource: entry.bestOddsSource,
     }));
@@ -120,10 +121,10 @@ function buildEntries(rawBySport, historicalBySport = {}) {
         let ev;
         if (historical && historical.history && historical.history.length >= 2) {
           ev = calculateHistoricallyWeightedEV(
-            apiItem.odds, sport.category, sport.eventsPerSeason, historical
+            apiItem.odds, sport.category, sport.eventsPerSeason, historical, apiItem.tournaments
           );
         } else {
-          ev = calculateSeasonTotalEV(apiItem.odds, sport.category, sport.eventsPerSeason);
+          ev = calculateSeasonTotalEV(apiItem.odds, sport.category, sport.eventsPerSeason, apiItem.tournaments);
         }
 
         entries.push({
@@ -146,6 +147,9 @@ function buildEntries(rawBySport, historicalBySport = {}) {
             oddsBySource: apiItem.oddsBySource,
             bestOdds: apiItem.bestOdds,
             bestOddsSource: apiItem.bestOddsSource,
+          }),
+          ...(apiItem.tournaments && Object.keys(apiItem.tournaments).length > 0 && {
+            tournaments: apiItem.tournaments,
           }),
           ...(historical && {
             historicalTrend: historical.trend,
@@ -180,10 +184,10 @@ function buildEntries(rawBySport, historicalBySport = {}) {
         let ev;
         if (historical && historical.history && historical.history.length >= 2) {
           ev = calculateHistoricallyWeightedEV(
-            item.odds, sport.category, sport.eventsPerSeason, historical
+            item.odds, sport.category, sport.eventsPerSeason, historical, item.tournaments
           );
         } else {
-          ev = calculateSeasonTotalEV(item.odds, sport.category, sport.eventsPerSeason);
+          ev = calculateSeasonTotalEV(item.odds, sport.category, sport.eventsPerSeason, item.tournaments);
         }
 
         entries.push({
@@ -205,6 +209,9 @@ function buildEntries(rawBySport, historicalBySport = {}) {
             oddsBySource: item.oddsBySource,
             bestOdds: item.bestOdds,
             bestOddsSource: item.bestOddsSource,
+          }),
+          ...(item.tournaments && Object.keys(item.tournaments).length > 0 && {
+            tournaments: item.tournaments,
           }),
           ...(historical && {
             historicalTrend: historical.trend,
@@ -274,8 +281,8 @@ export default function useOddsData() {
     // Step 3: Merge manual odds from localStorage
     const manualOdds = loadManualOdds();
     for (const [entryId, manual] of Object.entries(manualOdds)) {
-      const { sport, name, oddsBySource: manualSources } = manual;
-      if (!sport || !manualSources) continue;
+      const { sport, name, oddsBySource: manualSources, oddsByTournament: manualTournaments } = manual;
+      if (!sport) continue;
 
       if (!rawBySport[sport]) rawBySport[sport] = [];
       const items = rawBySport[sport];
@@ -283,14 +290,29 @@ export default function useOddsData() {
       const existing = items.find((item) => normalize(item.name) === key);
 
       if (existing) {
-        // Merge manual sportsbook odds into existing entry's oddsBySource
-        if (!existing.oddsBySource) existing.oddsBySource = {};
-        for (const [src, odds] of Object.entries(manualSources)) {
-          existing.oddsBySource[src] = odds;
+        if (manualSources) {
+          if (!existing.oddsBySource) existing.oddsBySource = {};
+          for (const [src, odds] of Object.entries(manualSources)) {
+            existing.oddsBySource[src] = odds;
+          }
+        }
+        if (manualTournaments) {
+          if (!existing.oddsByTournament) existing.oddsByTournament = {};
+          for (const [tId, tSources] of Object.entries(manualTournaments)) {
+            if (!existing.oddsByTournament[tId]) existing.oddsByTournament[tId] = {};
+            for (const [src, odds] of Object.entries(tSources)) {
+              existing.oddsByTournament[tId][src] = odds;
+            }
+          }
         }
       } else {
         // Create new raw item from manual data
-        const newItem = { name, odds: null, oddsBySource: { ...manualSources } };
+        const newItem = { 
+          name, 
+          odds: null, 
+          oddsBySource: manualSources ? { ...manualSources } : {},
+          oddsByTournament: manualTournaments ? JSON.parse(JSON.stringify(manualTournaments)) : {}
+        };
         items.push(newItem);
       }
     }
@@ -321,6 +343,19 @@ export default function useOddsData() {
           if (bestSrc) {
             item.bestOdds = bestVal;
             item.bestOddsSource = bestSrc;
+          }
+        }
+
+        if (item.oddsByTournament && Object.keys(item.oddsByTournament).length > 0) {
+          if (!item.tournaments) item.tournaments = {};
+          for (const [tId, tSources] of Object.entries(item.oddsByTournament)) {
+            const { consensus } = removeVig(tSources);
+            let tOdds = consensus;
+            if (!tOdds) {
+              const firstOdds = Object.values(tSources).find(Boolean);
+              if (firstOdds) tOdds = firstOdds;
+            }
+            item.tournaments[tId] = { odds: tOdds };
           }
         }
       }

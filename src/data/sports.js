@@ -15,10 +15,10 @@ const SPORTS = [
   { id: 'snooker', name: 'Snooker World Championship', apiKey: 'snooker_world_championship', category: 'standard', eventsPerSeason: 1, market: 'outrights', icon: '\u{1F3B1}', active: true },
   { id: 'llws', name: 'Little League World Series', apiKey: null, category: 'standard', eventsPerSeason: 1, market: 'outrights', icon: '\u26BE', active: true },
   { id: 'indycar', name: 'IndyCar', apiKey: null, category: 'standard', eventsPerSeason: 1, market: 'outrights', icon: '\u{1F3CE}\uFE0F', active: true },
-  { id: 'pga', name: 'PGA Golf', apiKey: 'golf_pga', category: 'qp', eventsPerSeason: 30, market: 'outrights', icon: '\u26F3', active: true },
-  { id: 'tennis_m', name: 'Tennis (Men\'s)', apiKey: 'tennis_atp', category: 'qp', eventsPerSeason: 13, market: 'outrights', icon: '\u{1F3BE}', active: true },
-  { id: 'tennis_w', name: 'Tennis (Women\'s)', apiKey: 'tennis_wta', category: 'qp', eventsPerSeason: 13, market: 'outrights', icon: '\u{1F3BE}', active: true },
-  { id: 'csgo', name: 'Counter-Strike (BLAST)', apiKey: 'esports_csgo', category: 'qp', eventsPerSeason: 6, market: 'outrights', icon: '\u{1F3AE}', active: true },
+  { id: 'pga', name: 'PGA Golf', apiKey: 'golf_pga', category: 'qp', eventsPerSeason: 4, market: 'outrights', icon: '\u26F3', active: true, tournaments: [{ id: 'masters', name: 'The Masters' }, { id: 'pga-champ', name: 'PGA Championship' }, { id: 'us-open', name: 'US Open' }, { id: 'open-champ', name: 'The Open Championship' }] },
+  { id: 'tennis_m', name: 'Tennis (Men\'s)', apiKey: 'tennis_atp', category: 'qp', eventsPerSeason: 4, market: 'outrights', icon: '\u{1F3BE}', active: true, tournaments: [{ id: 'aus-open', name: 'Australian Open' }, { id: 'french-open', name: 'French Open' }, { id: 'wimbledon', name: 'Wimbledon' }, { id: 'us-open', name: 'US Open' }] },
+  { id: 'tennis_w', name: 'Tennis (Women\'s)', apiKey: 'tennis_wta', category: 'qp', eventsPerSeason: 4, market: 'outrights', icon: '\u{1F3BE}', active: true, tournaments: [{ id: 'aus-open', name: 'Australian Open' }, { id: 'french-open', name: 'French Open' }, { id: 'wimbledon', name: 'Wimbledon' }, { id: 'us-open', name: 'US Open' }] },
+  { id: 'csgo', name: 'Counter-Strike (BLAST)', apiKey: 'esports_csgo', category: 'qp', eventsPerSeason: 2, market: 'outrights', icon: '\u{1F3AE}', active: true, tournaments: [{ id: 'spring-major', name: 'Spring Major' }, { id: 'fall-major', name: 'Fall Major' }] },
 ];
 
 export const SPORT_COLORS = {

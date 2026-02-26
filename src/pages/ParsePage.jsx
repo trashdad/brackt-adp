@@ -10,6 +10,7 @@ import { slugify } from '../utils/formatters';
 export default function ParsePage({ onOddsSubmitted }) {
   const [text, setText] = useState('');
   const [sportId, setSportId] = useState('nfl');
+  const [tournamentId, setTournamentId] = useState('');
   const [sportsbook, setSportsbook] = useState('draftkings');
   const [customSportsbook, setCustomSportsbook] = useState('');
   const [results, setResults] = useState([]);
@@ -18,6 +19,7 @@ export default function ParsePage({ onOddsSubmitted }) {
 
   const activeSports = SPORTS.filter((s) => s.active);
   const activeSportId = parsedSportId || sportId;
+  const activeSport = SPORTS.find(s => s.id === activeSportId);
   const roster = ROSTERS[activeSportId] || [];
 
   const handleParse = () => {
@@ -66,11 +68,24 @@ export default function ParsePage({ onOddsSubmitted }) {
           sport: submitSport,
           name: row.matchedName,
           oddsBySource: {},
+          oddsByTournament: {},
           timestamp: Date.now(),
         };
       }
 
-      manual[entryId].oddsBySource[source] = normalizedOdds;
+      if (!manual[entryId].oddsByTournament) {
+        manual[entryId].oddsByTournament = {};
+      }
+
+      if (activeSport?.tournaments && tournamentId) {
+        if (!manual[entryId].oddsByTournament[tournamentId]) {
+          manual[entryId].oddsByTournament[tournamentId] = {};
+        }
+        manual[entryId].oddsByTournament[tournamentId][source] = normalizedOdds;
+      } else {
+        manual[entryId].oddsBySource[source] = normalizedOdds;
+      }
+
       manual[entryId].timestamp = Date.now();
     }
 
@@ -139,7 +154,15 @@ export default function ParsePage({ onOddsSubmitted }) {
               <label className="block text-xs font-medium text-gray-600 mb-1">Sport</label>
               <select
                 value={parsedSportId || sportId}
-                onChange={(e) => { setSportId(e.target.value); setParsedSportId(null); setResults([]); setSubmitted(false); }}
+                onChange={(e) => { 
+                  const newSportId = e.target.value;
+                  setSportId(newSportId); 
+                  setParsedSportId(null); 
+                  setResults([]); 
+                  setSubmitted(false);
+                  const newSport = SPORTS.find(s => s.id === newSportId);
+                  setTournamentId(newSport?.tournaments?.[0]?.id || '');
+                }}
                 className="border border-gray-300 rounded-md px-2 py-1.5 text-sm"
               >
                 {activeSports.map((s) => (
@@ -147,6 +170,22 @@ export default function ParsePage({ onOddsSubmitted }) {
                 ))}
               </select>
             </div>
+
+            {activeSport?.tournaments && (
+              <div>
+                <label className="block text-xs font-medium text-gray-600 mb-1">Tournament</label>
+                <select
+                  value={tournamentId}
+                  onChange={(e) => setTournamentId(e.target.value)}
+                  className="border border-gray-300 rounded-md px-2 py-1.5 text-sm min-w-[150px]"
+                >
+                  <option value="">-- Select --</option>
+                  {activeSport.tournaments.map((t) => (
+                    <option key={t.id} value={t.id}>{t.name}</option>
+                  ))}
+                </select>
+              </div>
+            )}
 
             <button
               onClick={handleParse}
