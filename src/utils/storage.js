@@ -22,9 +22,19 @@ export function saveDraftState(state) {
 export function loadSettings() {
   try {
     const raw = localStorage.getItem(SETTINGS_KEY);
-    return raw ? JSON.parse(raw) : { apiKey: '', refreshInterval: 24 };
+    return raw ? JSON.parse(raw) : { 
+      apiKey: '', 
+      oddsApiIoKey: '',
+      apiSportsKey: '',
+      refreshInterval: 24 
+    };
   } catch {
-    return { apiKey: '', refreshInterval: 24 };
+    return { 
+      apiKey: '', 
+      oddsApiIoKey: '',
+      apiSportsKey: '',
+      refreshInterval: 24 
+    };
   }
 }
 
