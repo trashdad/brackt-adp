@@ -61,14 +61,16 @@ function applyScarcityPremium(entries) {
  */
 function pipelineToRawItems(pipelineData) {
   if (!pipelineData || !pipelineData.entries) return [];
-  return pipelineData.entries.map((entry) => ({
-    name: entry.name,
-    odds: entry.consensusOdds || entry.bestOdds,
-    // Multi-source enrichment fields
-    oddsBySource: entry.oddsBySource || {},
-    bestOdds: entry.bestOdds,
-    bestOddsSource: entry.bestOddsSource,
-  }));
+  return pipelineData.entries
+    .filter((entry) => !/^[+-]?[\d,]+$/.test(entry.name.replace(/\s/g, '')))
+    .map((entry) => ({
+      name: entry.name,
+      odds: entry.consensusOdds || entry.bestOdds,
+      // Multi-source enrichment fields
+      oddsBySource: entry.oddsBySource || {},
+      bestOdds: entry.bestOdds,
+      bestOddsSource: entry.bestOddsSource,
+    }));
 }
 
 /**

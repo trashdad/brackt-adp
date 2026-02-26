@@ -20,6 +20,14 @@ function normalizeName(name) {
 }
 
 /**
+ * Returns true if a string looks like an odds value rather than a name.
+ * E.g. "+1,200", "-300", "500", "+50,000"
+ */
+function looksLikeOdds(name) {
+  return /^[+-]?[\d,]+$/.test(name.replace(/\s/g, ''));
+}
+
+/**
  * Convert American odds string to a numeric value for comparison.
  * More positive = better for the bettor (higher payout).
  * -150 → 150 payout on $100 bet; +200 → $200 payout on $100 bet
@@ -110,6 +118,9 @@ function mergeSources(sportId, rawSources) {
     sourceIds.add(source.source);
 
     for (const entry of source.entries || []) {
+      // Skip entries where the "name" is actually an odds value
+      if (looksLikeOdds(entry.name)) continue;
+
       const key = entry.nameNormalized || normalizeName(entry.name);
 
       if (!entryMap.has(key)) {

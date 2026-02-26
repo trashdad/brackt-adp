@@ -4,6 +4,7 @@ Covers provides consensus odds from multiple sportsbooks.
 """
 
 import logging
+import re
 import time
 
 from selenium.webdriver.common.by import By
@@ -83,6 +84,11 @@ class CoversScraper(BaseScraper):
 
             # Skip header-like rows
             if any(skip in name.lower() for skip in ['team', 'player', 'name', 'odds']):
+                return None
+
+            # Skip rows where the "name" looks like odds (e.g., "+1,200")
+            name_stripped = name.replace(',', '').replace(' ', '')
+            if re.match(r'^[+-]?\d+$', name_stripped):
                 return None
 
             odds = parse_american_odds(odds_text)

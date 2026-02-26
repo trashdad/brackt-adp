@@ -22,7 +22,7 @@ def format_american_odds(odds: int | float) -> str:
 
 def parse_american_odds(text: str) -> str | None:
     """
-    Extract American odds from text like '+150', '-200', '150', 'EVEN'.
+    Extract American odds from text like '+150', '-200', '150', '+1,200', 'EVEN'.
     Returns formatted string like '+150' or '-200', or None if unparseable.
     """
     text = text.strip()
@@ -30,11 +30,16 @@ def parse_american_odds(text: str) -> str | None:
     if text.upper() == 'EVEN' or text.upper() == 'EV':
         return '+100'
 
+    # Strip commas from formatted numbers like "+1,200" → "+1200"
+    text = text.replace(',', '')
+
     match = re.search(r'([+-]?\d+)', text)
     if not match:
         return None
 
     value = int(match.group(1))
+    if abs(value) < 100 and value != 0:
+        return None
     if value == 0:
         return None
 
