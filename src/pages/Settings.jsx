@@ -15,60 +15,62 @@ export default function Settings({ onResetDraft }) {
   };
 
   return (
-    <div className="max-w-lg mx-auto space-y-8">
-      <h1 className="text-xl font-retro text-snes-blue drop-shadow-[1px_1px_0_#fff]">SYSTEM_CONFIG</h1>
+    <div className="max-w-xl mx-auto space-y-10">
+      <h1 className="text-2xl font-retro text-retro-cyan drop-shadow-[2px_2px_0_#000] tracking-[0.2em]">TERMINAL_CONFIG</h1>
 
-      <div className="snes-panel p-8 space-y-6">
-        <div>
-          <label className="block font-retro text-[9px] text-gray-700 mb-2 uppercase text-snes-purple">
-            THE_ODDS_API_KEY
-          </label>
-          <input
-            type="text"
-            value={settings.apiKey}
-            onChange={(e) => setSettings((s) => ({ ...s, apiKey: e.target.value }))}
-            placeholder="ENTER_KEY..."
-            className="w-full px-4 py-3 bg-white border-4 border-black font-retro text-[8px] focus:outline-none focus:ring-4 focus:ring-snes-purple/30 shadow-[inset_2px_2px_0_0_#eee]"
-          />
-          <p className="font-retro text-[7px] text-gray-400 mt-2 tracking-tighter">
-            REGISTER_AT: <span className="text-snes-purple underline">THE-ODDS-API.COM</span>
-          </p>
-        </div>
+      <div className="snes-panel p-10 space-y-8 bg-gradient-to-br from-[#2D2D44] to-[#1A1A2E] border-black/60 shadow-2xl">
+        <section className="space-y-6">
+          <div>
+            <label className="block font-retro text-[11px] text-retro-purple mb-3 uppercase tracking-widest">
+              THE_ODDS_API_KEY
+            </label>
+            <input
+              type="text"
+              value={settings.apiKey}
+              onChange={(e) => setSettings((s) => ({ ...s, apiKey: e.target.value }))}
+              placeholder="ENTER_KEY..."
+              className="w-full px-5 py-3 bg-black/40 border-2 border-black font-mono text-[13px] text-white focus:outline-none focus:ring-2 focus:ring-retro-purple/30 shadow-inner uppercase"
+            />
+            <p className="font-mono text-[10px] text-white/30 mt-3 tracking-wider italic">
+              REGISTER_AT: <span className="text-retro-purple underline not-italic font-bold">THE-ODDS-API.COM</span>
+            </p>
+          </div>
 
-        <div>
-          <label className="block font-retro text-[9px] text-gray-700 mb-2 uppercase text-snes-purple">
-            ODDS_API_IO_KEY
-          </label>
-          <input
-            type="text"
-            value={settings.oddsApiIoKey || ''}
-            onChange={(e) => setSettings((s) => ({ ...s, oddsApiIoKey: e.target.value }))}
-            placeholder="ENTER_KEY..."
-            className="w-full px-4 py-3 bg-white border-4 border-black font-retro text-[8px] focus:outline-none focus:ring-4 focus:ring-snes-purple/30 shadow-[inset_2px_2px_0_0_#eee]"
-          />
-          <p className="font-retro text-[7px] text-gray-400 mt-2 tracking-tighter">
-            REGISTER_AT: <span className="text-snes-purple underline">ODDS-API.IO</span>
-          </p>
-        </div>
+          <div>
+            <label className="block font-retro text-[11px] text-retro-purple mb-3 uppercase tracking-widest">
+              ODDS_API_IO_KEY
+            </label>
+            <input
+              type="text"
+              value={settings.oddsApiIoKey || ''}
+              onChange={(e) => setSettings((s) => ({ ...s, oddsApiIoKey: e.target.value }))}
+              placeholder="ENTER_KEY..."
+              className="w-full px-5 py-3 bg-black/40 border-2 border-black font-mono text-[13px] text-white focus:outline-none focus:ring-2 focus:ring-retro-purple/30 shadow-inner uppercase"
+            />
+            <p className="font-mono text-[10px] text-white/30 mt-3 tracking-wider italic">
+              REGISTER_AT: <span className="text-retro-purple underline not-italic font-bold">ODDS-API.IO</span>
+            </p>
+          </div>
 
-        <div>
-          <label className="block font-retro text-[9px] text-gray-700 mb-2 uppercase text-snes-purple">
-            API_SPORTS_KEY
-          </label>
-          <input
-            type="text"
-            value={settings.apiSportsKey || ''}
-            onChange={(e) => setSettings((s) => ({ ...s, apiSportsKey: e.target.value }))}
-            placeholder="ENTER_KEY..."
-            className="w-full px-4 py-3 bg-white border-4 border-black font-retro text-[8px] focus:outline-none focus:ring-4 focus:ring-snes-purple/30 shadow-[inset_2px_2px_0_0_#eee]"
-          />
-          <p className="font-retro text-[7px] text-gray-400 mt-2 tracking-tighter">
-            REGISTER_AT: <span className="text-snes-purple underline">DASHBOARD.API-SPORTS.IO</span>
-          </p>
-        </div>
+          <div>
+            <label className="block font-retro text-[11px] text-retro-purple mb-3 uppercase tracking-widest">
+              API_SPORTS_KEY
+            </label>
+            <input
+              type="text"
+              value={settings.apiSportsKey || ''}
+              onChange={(e) => setSettings((s) => ({ ...s, apiSportsKey: e.target.value }))}
+              placeholder="ENTER_KEY..."
+              className="w-full px-5 py-3 bg-black/40 border-2 border-black font-mono text-[13px] text-white focus:outline-none focus:ring-2 focus:ring-retro-purple/30 shadow-inner uppercase"
+            />
+            <p className="font-mono text-[10px] text-white/30 mt-3 tracking-wider italic">
+              REGISTER_AT: <span className="text-retro-purple underline not-italic font-bold">DASHBOARD.API-SPORTS.IO</span>
+            </p>
+          </div>
+        </section>
 
-        <div className="pt-2">
-          <label className="block font-retro text-[9px] text-gray-700 mb-2 uppercase">
+        <div className="pt-4 border-t border-white/5">
+          <label className="block font-retro text-[11px] text-retro-light/60 mb-3 uppercase tracking-widest">
             CACHE_TTL (HOURS)
           </label>
           <input
@@ -79,28 +81,28 @@ export default function Settings({ onResetDraft }) {
             onChange={(e) =>
               setSettings((s) => ({ ...s, refreshInterval: parseInt(e.target.value, 10) || 24 }))
             }
-            className="w-24 px-4 py-3 bg-white border-4 border-black font-retro text-[8px] focus:outline-none focus:ring-4 focus:ring-snes-purple/30 shadow-[inset_2px_2px_0_0_#eee]"
+            className="w-32 px-5 py-3 bg-black/40 border-2 border-black font-mono text-[13px] text-white focus:outline-none focus:ring-2 focus:ring-retro-cyan/30 shadow-inner"
           />
         </div>
 
         <button
           onClick={handleSave}
-          className="font-retro text-[10px] px-6 py-4 bg-snes-purple text-white border-4 border-black shadow-[inset_-4px_-4px_0_0_rgba(0,0,0,0.4),4px_4px_0_0_#000] hover:bg-snes-lavender transition-all active:translate-y-1"
+          className="w-full font-retro text-[13px] px-8 py-4 bg-gradient-to-br from-retro-purple to-retro-magenta text-white border-2 border-black shadow-[0_6px_0_0_#000,inset_2px_2px_0_rgba(255,255,255,0.2)] hover:brightness-110 transition-all active:translate-y-1 active:shadow-none uppercase tracking-[0.2em]"
         >
-          {saved ? 'SUCCESS!' : 'SAVE_CONFIG'}
+          {saved ? 'UPDATE_SUCCESSFUL' : 'SAVE_PARAMETERS'}
         </button>
       </div>
 
-      <div className="bg-red-900 border-4 border-black p-8 shadow-[8px_8px_0_0_#000] space-y-4">
-        <h2 className="font-retro text-[10px] text-white tracking-widest uppercase underline decoration-red-500 underline-offset-4">Danger Zone</h2>
-        <p className="font-retro text-[7px] text-red-200 leading-relaxed uppercase opacity-80">
-          ERASE_ALL_DRAFT_DATA. THIS_PROCESS_IS_IRREVERSIBLE.
+      <div className="bg-retro-red/10 border-2 border-retro-red/40 p-10 shadow-2xl space-y-6">
+        <h2 className="font-retro text-[14px] text-retro-red tracking-[0.2em] uppercase underline decoration-retro-red decoration-4 underline-offset-8">Danger Zone</h2>
+        <p className="font-mono text-[11px] text-retro-red/60 leading-relaxed uppercase tracking-widest font-bold">
+          ERASE_ALL_SHARED_DRAFT_MEMORY. THIS_PROCESS_IS_DESTRUCTIVE_AND_IRREVERSIBLE.
         </p>
         <button
           onClick={onResetDraft}
-          className="font-retro text-[9px] px-4 py-3 bg-red-600 text-white border-4 border-black shadow-[inset_-2px_-2px_0_0_rgba(0,0,0,0.4)] hover:bg-red-500 transition-all active:translate-y-0.5"
+          className="font-retro text-[11px] px-6 py-3 bg-retro-red text-white border-2 border-black shadow-[inset_-2px_-2px_0_0_rgba(0,0,0,0.4),0_4px_0_0_#000] hover:brightness-110 transition-all active:translate-y-0.5 active:shadow-none uppercase tracking-widest"
         >
-          RESET_DRAFT_MEMORY
+          EXECUTE_WIPE
         </button>
       </div>
     </div>

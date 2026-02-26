@@ -44,7 +44,6 @@ export default function ParsePage({ onOddsSubmitted }) {
       prev.map((r, i) => {
         if (i === idx) {
           const updated = { ...r, [field]: value };
-          // If switching to "custom", initialize customName with the parsed text if empty
           if (field === 'matchedName' && value === '__custom__' && !updated.customName) {
             updated.customName = r.nameText;
           }
@@ -60,8 +59,6 @@ export default function ParsePage({ onOddsSubmitted }) {
     if (!source) return;
 
     const submitSport = parsedSportId || sportId;
-    
-    // Load existing from both server and local
     const resp = await fetch('/api/manual-odds').catch(() => null);
     const serverManual = resp?.ok ? await resp.json() : {};
     const localManual = loadLocalManualOdds();
@@ -71,11 +68,9 @@ export default function ParsePage({ onOddsSubmitted }) {
       const finalName = row.matchedName === '__custom__' ? (row.customName || '').trim() : row.matchedName;
       if (!row.checked || !finalName) continue;
 
-      // Validate odds: must be a number with optional +/- prefix, absolute value >= 100
       const oddsNum = parseFloat(row.odds);
       if (isNaN(oddsNum) || Math.abs(oddsNum) < 100) continue;
 
-      // Normalize: ensure +/- prefix
       const normalizedOdds = (oddsNum > 0 ? '+' : '') + oddsNum;
       const entryId = `${submitSport}-${slugify(finalName)}`;
 
@@ -89,9 +84,7 @@ export default function ParsePage({ onOddsSubmitted }) {
         };
       }
 
-      if (!manual[entryId].oddsByTournament) {
-        manual[entryId].oddsByTournament = {};
-      }
+      if (!manual[entryId].oddsByTournament) manual[entryId].oddsByTournament = {};
 
       if (activeSport?.tournaments && tournamentId) {
         if (!manual[entryId].oddsByTournament[tournamentId]) {
@@ -105,9 +98,7 @@ export default function ParsePage({ onOddsSubmitted }) {
       manual[entryId].timestamp = Date.now();
     }
 
-    // Save to local fallback
     saveLocalManualOdds(manual);
-
     await fetch('/api/manual-odds', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -118,167 +109,174 @@ export default function ParsePage({ onOddsSubmitted }) {
   };
 
   return (
-    <div className="space-y-4">
-      <div className="flex items-center justify-between">
+    <div className="space-y-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 px-6 py-4 snes-panel bg-gradient-to-br from-[#2D2D44] to-[#1A1A2E] border-black/40">
         <div>
-          <h1 className="text-xl font-bold text-gray-900">Paste & Parse Odds</h1>
-          <p className="text-xs text-gray-500">
-            Paste odds text from a sportsbook, select the source and sport, then parse and submit.
+          <h1 className="font-retro text-[18px] text-retro-cyan drop-shadow-md tracking-widest uppercase">_SIGNAL_PARSER</h1>
+          <p className="font-mono text-[11px] text-retro-light/40 mt-2 tracking-widest uppercase">
+            EXTRACT_ODDS_FROM_RAW_TEXT_BUFFERS
           </p>
         </div>
         <Link
           to="/"
-          className="px-3 py-1.5 text-xs font-medium rounded-md border border-gray-300 text-gray-600 hover:bg-gray-100 transition"
+          className="font-retro text-[11px] px-6 py-3 bg-white/5 text-retro-cyan border border-retro-cyan/30 hover:bg-white/10 transition-all active:translate-y-0.5 uppercase tracking-widest"
         >
-          Back to Board
+          &lt;&lt; BACK_TO_DASHBOARD
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Left panel — input */}
-        <div className="space-y-3">
-          <textarea
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            placeholder="Paste odds text here..."
-            rows={14}
-            className="w-full border border-gray-300 rounded-md p-3 text-sm font-mono placeholder-gray-400 focus:ring-2 focus:ring-brand-500 focus:border-brand-500"
-          />
+        <div className="space-y-6">
+          <div className="relative">
+            <textarea
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              placeholder="PASTE_RAW_DATA_HERE..."
+              rows={16}
+              className="w-full bg-black/40 border-2 border-black p-6 font-mono text-[12px] text-retro-cyan/80 placeholder:text-gray-700 focus:outline-none focus:ring-2 focus:ring-retro-cyan/30 shadow-inner"
+            />
+            <div className="absolute inset-0 border-b-2 border-white/5 pointer-events-none" />
+          </div>
 
-          <div className="flex flex-wrap gap-3 items-end">
-            <div>
-              <label className="block text-xs font-medium text-gray-600 mb-1">Sportsbook</label>
-              <select
-                value={sportsbook}
-                onChange={(e) => setSportsbook(e.target.value)}
-                className="border border-gray-300 rounded-md px-2 py-1.5 text-sm"
-              >
-                {SPORTSBOOKS.map((sb) => (
-                  <option key={sb.id} value={sb.id}>{sb.name}</option>
-                ))}
-                <option value="other">Other...</option>
-              </select>
-            </div>
-
-            {sportsbook === 'other' && (
-              <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">Custom Name</label>
-                <input
-                  type="text"
-                  value={customSportsbook}
-                  onChange={(e) => setCustomSportsbook(e.target.value)}
-                  placeholder="e.g. Pinnacle"
-                  className="border border-gray-300 rounded-md px-2 py-1.5 text-sm"
-                />
-              </div>
-            )}
-
-            <div>
-              <label className="block text-xs font-medium text-gray-600 mb-1">Sport</label>
-              <select
-                value={parsedSportId || sportId}
-                onChange={(e) => { 
-                  const newSportId = e.target.value;
-                  setSportId(newSportId); 
-                  setParsedSportId(null); 
-                  setResults([]); 
-                  setSubmitted(false);
-                  const newSport = SPORTS.find(s => s.id === newSportId);
-                  setTournamentId(newSport?.tournaments?.[0]?.id || '');
-                }}
-                className="border border-gray-300 rounded-md px-2 py-1.5 text-sm"
-              >
-                {activeSports.map((s) => (
-                  <option key={s.id} value={s.id}>{s.icon} {s.name}</option>
-                ))}
-              </select>
-            </div>
-
-            {activeSport?.tournaments && (
-              <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">Tournament</label>
+          <div className="snes-panel p-6 bg-retro-panel space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="block font-retro text-[10px] text-retro-light/60 uppercase tracking-widest">SOURCE_NODE</label>
                 <select
-                  value={tournamentId}
-                  onChange={(e) => setTournamentId(e.target.value)}
-                  className="border border-gray-300 rounded-md px-2 py-1.5 text-sm min-w-[150px]"
+                  value={sportsbook}
+                  onChange={(e) => setSportsbook(e.target.value)}
+                  className="w-full bg-black/40 border-2 border-black px-3 py-2 font-mono text-[12px] text-white focus:outline-none"
                 >
-                  <option value="">-- Select --</option>
-                  {activeSport.tournaments.map((t) => (
-                    <option key={t.id} value={t.id}>{t.name}</option>
+                  {SPORTSBOOKS.map((sb) => (
+                    <option key={sb.id} value={sb.id}>{sb.name.toUpperCase()}</option>
+                  ))}
+                  <option value="other">CUSTOM_SOURCE...</option>
+                </select>
+              </div>
+
+              {sportsbook === 'other' && (
+                <div className="space-y-2">
+                  <label className="block font-retro text-[10px] text-retro-light/60 uppercase tracking-widest">NODE_NAME</label>
+                  <input
+                    type="text"
+                    value={customSportsbook}
+                    onChange={(e) => setCustomSportsbook(e.target.value)}
+                    placeholder="ENTER_NAME..."
+                    className="w-full bg-black/40 border-2 border-black px-3 py-2 font-mono text-[12px] text-white focus:outline-none"
+                  />
+                </div>
+              )}
+
+              <div className="space-y-2">
+                <label className="block font-retro text-[10px] text-retro-light/60 uppercase tracking-widest">TARGET_SPORT</label>
+                <select
+                  value={parsedSportId || sportId}
+                  onChange={(e) => { 
+                    const newSportId = e.target.value;
+                    setSportId(newSportId); 
+                    setParsedSportId(null); 
+                    setResults([]); 
+                    setSubmitted(false);
+                    const newSport = SPORTS.find(s => s.id === newSportId);
+                    setTournamentId(newSport?.tournaments?.[0]?.id || '');
+                  }}
+                  className="w-full bg-black/40 border-2 border-black px-3 py-2 font-mono text-[12px] text-white focus:outline-none"
+                >
+                  {activeSports.map((s) => (
+                    <option key={s.id} value={s.id}>{s.icon} {s.name.toUpperCase()}</option>
                   ))}
                 </select>
               </div>
-            )}
+
+              {activeSport?.tournaments && (
+                <div className="space-y-2">
+                  <label className="block font-retro text-[10px] text-retro-light/60 uppercase tracking-widest">TOURNAMENT_ID</label>
+                  <select
+                    value={tournamentId}
+                    onChange={(e) => setTournamentId(e.target.value)}
+                    className="w-full bg-black/40 border-2 border-black px-3 py-2 font-mono text-[12px] text-white focus:outline-none"
+                  >
+                    <option value="">-- SELECT_UNIT --</option>
+                    {activeSport.tournaments.map((t) => (
+                      <option key={t.id} value={t.id}>{t.name.toUpperCase()}</option>
+                    ))}
+                  </select>
+                </div>
+              )}
+            </div>
 
             <button
               onClick={handleParse}
               disabled={!text.trim()}
-              className="px-4 py-1.5 text-sm font-medium rounded-md bg-brand-600 text-white hover:bg-brand-700 disabled:opacity-50 transition"
+              className="w-full font-retro text-[12px] px-6 py-4 bg-gradient-to-br from-retro-purple to-retro-magenta text-white border-2 border-black shadow-[0_4px_0_0_#000,inset_1px_1px_0_rgba(255,255,255,0.2)] hover:brightness-110 transition-all active:translate-y-1 active:shadow-none uppercase tracking-widest disabled:opacity-50"
             >
-              Parse
+              EXECUTE_PARSER
             </button>
           </div>
         </div>
 
         {/* Right panel — results */}
-        <div className="space-y-3">
-          {results.length > 0 && (
+        <div className="space-y-6">
+          {results.length > 0 ? (
             <>
-              <div className="flex items-center justify-between">
-                <p className="text-sm text-gray-600">{results.length} line(s) parsed</p>
+              <div className="flex items-center justify-between border-b-2 border-white/10 pb-4">
+                <p className="font-mono text-[11px] text-retro-cyan uppercase tracking-widest">
+                  {results.length} UNITS_DETECTED
+                </p>
                 {submitted ? (
-                  <span className="px-3 py-1.5 text-xs font-medium rounded-md bg-green-100 text-green-700">
-                    Submitted
+                  <span className="font-retro text-[10px] px-4 py-2 bg-retro-lime/20 text-retro-lime border border-retro-lime/40 uppercase tracking-widest animate-pulse">
+                    LINK_ESTABLISHED
                   </span>
                 ) : (
                   <button
                     onClick={handleSubmit}
                     disabled={!results.some((r) => r.checked && r.matchedName)}
-                    className="px-4 py-1.5 text-sm font-medium rounded-md bg-brand-600 text-white hover:bg-brand-700 disabled:opacity-50 transition"
+                    className="font-retro text-[11px] px-6 py-2 bg-retro-cyan text-black border-2 border-black shadow-[0_4px_0_0_#00A3A8,inset_1px_1px_0_rgba(255,255,255,0.5)] hover:brightness-110 transition-all active:translate-y-0.5 active:shadow-none uppercase tracking-widest disabled:opacity-50"
                   >
-                    Submit
+                    SUBMIT_DATA
                   </button>
                 )}
               </div>
 
-              <div className="border border-gray-200 rounded-lg overflow-hidden">
-                <table className="w-full text-sm">
-                  <thead className="bg-gray-50 text-xs text-gray-500 uppercase">
+              <div className="snes-panel bg-black/40 overflow-hidden border-black/60">
+                <table className="w-full border-collapse">
+                  <thead className="bg-[#1A1A2E] font-retro text-[8px] text-white/40 tracking-widest uppercase">
                     <tr>
-                      <th className="px-2 py-2 w-8"></th>
-                      <th className="px-2 py-2 text-left">Team / Player</th>
-                      <th className="px-2 py-2 text-left">Odds</th>
-                      <th className="px-2 py-2 w-8"></th>
+                      <th className="px-4 py-4 border-b border-white/5 w-10"></th>
+                      <th className="px-4 py-4 text-left border-b border-white/5">TEAM_PLAYER_MAPPING</th>
+                      <th className="px-4 py-4 text-left border-b border-white/5 w-32">ODDS_VAL</th>
+                      <th className="px-4 py-4 border-b border-white/5 w-10"></th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className="font-mono text-[12px] text-retro-light/80">
                     {results.map((row, idx) => (
-                      <tr key={row.key} className="border-t border-gray-100 hover:bg-gray-50">
-                        <td className="px-2 py-2 text-center">
+                      <tr key={row.key} className="border-b border-white/5 hover:bg-white/5 transition-colors group">
+                        <td className="px-4 py-3 text-center">
                           <input
                             type="checkbox"
                             checked={row.checked}
                             onChange={(e) => updateResult(idx, 'checked', e.target.checked)}
-                            className="rounded border-gray-300"
+                            className="w-4 h-4 bg-black/40 border-black/60 rounded-none text-retro-purple focus:ring-0"
                           />
                         </td>
-                        <td className="px-2 py-2">
+                        <td className="px-4 py-3 space-y-2">
                           <select
                             value={row.matchedName === '__custom__' ? '__custom__' : row.matchedName}
                             onChange={(e) => updateResult(idx, 'matchedName', e.target.value)}
-                            className={`w-full border rounded px-1.5 py-1 text-sm mb-1 ${
+                            className={`w-full bg-black/60 border border-white/10 px-3 py-1.5 font-mono text-[12px] text-white focus:border-retro-cyan/50 ${
                               !row.matchedName
-                                ? 'border-red-300 bg-red-50'
+                                ? 'border-retro-red/40 bg-retro-red/10'
                                 : row.confidence < 0.7 && row.matchedName !== '__custom__'
-                                ? 'border-amber-300 bg-amber-50'
-                                : 'border-gray-300'
+                                ? 'border-retro-gold/40 bg-retro-gold/10'
+                                : ''
                             }`}
                           >
-                            <option value="">-- Select --</option>
+                            <option value="">-- AUTO_SELECT --</option>
                             {roster.map((name) => (
-                              <option key={name} value={name}>{name}</option>
+                              <option key={name} value={name}>{name.toUpperCase()}</option>
                             ))}
-                            <option value="__custom__">Other / New Player...</option>
+                            <option value="__custom__">_MANUAL_ENTRY_</option>
                           </select>
                           
                           {row.matchedName === '__custom__' && (
@@ -286,26 +284,26 @@ export default function ParsePage({ onOddsSubmitted }) {
                               type="text"
                               value={row.customName || ''}
                               onChange={(e) => updateResult(idx, 'customName', e.target.value)}
-                              placeholder="Enter custom name"
-                              className="w-full border border-brand-300 rounded px-1.5 py-1 text-sm bg-brand-50"
+                              placeholder="ENTER_NAME..."
+                              className="w-full bg-black/60 border border-retro-cyan/30 px-3 py-1.5 font-mono text-[12px] text-retro-cyan uppercase"
                             />
                           )}
                           
-                          <span className="text-[10px] text-gray-400 block mt-0.5">
-                            Parsed: "{row.nameText}"
-                          </span>
+                          <div className="font-retro text-[7px] text-white/20 uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">
+                            BUF_RAW: "{row.nameText}"
+                          </div>
                         </td>
-                        <td className="px-2 py-2">
+                        <td className="px-4 py-3">
                           <input
                             type="text"
                             value={row.odds}
                             onChange={(e) => updateResult(idx, 'odds', e.target.value)}
-                            className="w-20 border border-gray-300 rounded px-1.5 py-1 text-sm font-mono text-center"
+                            className="w-full bg-black/60 border border-white/10 px-3 py-1.5 font-mono text-[12px] text-retro-cyan text-center tabular-nums"
                           />
                         </td>
-                        <td className="px-2 py-2 text-center">
+                        <td className="px-4 py-3 text-center">
                           {row.confidence > 0 && row.confidence < 0.7 && (
-                            <span className="text-amber-500 font-bold" title="Low confidence match">?</span>
+                            <span className="text-retro-gold font-bold font-retro text-[14px] animate-pulse" title="LOW_CONFIDENCE_MATCH">?</span>
                           )}
                         </td>
                       </tr>
@@ -314,11 +312,10 @@ export default function ParsePage({ onOddsSubmitted }) {
                 </table>
               </div>
             </>
-          )}
-
-          {results.length === 0 && (
-            <div className="flex items-center justify-center py-16 text-gray-400 text-sm">
-              Parsed results will appear here
+          ) : (
+            <div className="flex flex-col items-center justify-center py-32 snes-panel bg-black/20 border-white/5 opacity-40">
+              <div className="w-12 h-12 border-4 border-white/10 border-t-retro-cyan rounded-full animate-spin mb-6" />
+              <p className="font-retro text-[10px] tracking-[0.2em] uppercase">AWAITING_BUFFER_INPUT...</p>
             </div>
           )}
         </div>

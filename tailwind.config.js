@@ -34,7 +34,8 @@ export default {
         },
       },
       fontFamily: {
-        retro: ['"Press Start 2P"', 'cursive'],
+        retro: ['"Pixelify Sans"', 'cursive'],
+        mono: ['"IBM Plex Mono"', 'monospace'],
         pixel: ['"Silkscreen"', 'cursive'],
       },
     },

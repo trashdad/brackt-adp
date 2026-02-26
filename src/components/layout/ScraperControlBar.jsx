@@ -102,7 +102,7 @@ export default function ScraperControlBar() {
       <button
         onClick={fireScrapers}
         disabled={isRunning}
-        className={`px-8 flex items-center justify-center font-retro text-[9px] tracking-wider transition-all border-r-2 border-black ${
+        className={`px-10 flex items-center justify-center font-retro text-[13px] tracking-[0.15em] transition-all border-r-2 border-black ${
           isRunning
             ? "bg-retro-panel text-white opacity-60"
             : "bg-gradient-to-br from-retro-purple to-retro-magenta hover:from-retro-magenta hover:to-retro-purple text-white active:translate-y-0.5"
@@ -112,18 +112,18 @@ export default function ScraperControlBar() {
             "inset -2px -2px 0 0 rgba(0,0,0,0.5), inset 2px 2px 0 0 rgba(255,255,255,0.1)",
         }}
       >
-        {isRunning ? "CMD_BUSY..." : "INIT_SCRAPE"}
+        {isRunning ? "CMD_BUSY" : "INIT_SCRAPE"}
       </button>
 
       {/* Status Boxes */}
-      <div className="flex flex-1 items-stretch overflow-x-auto no-scrollbar gap-1.5 p-1.5 bg-[#0a0a14]">
+      <div className="flex flex-1 items-stretch overflow-x-auto no-scrollbar gap-2 p-2 bg-[#0a0a14]">
         {SOURCES.map((source) => (
           <div
             key={source.id}
-            className={`flex-1 min-w-[100px] border-2 flex flex-col justify-center px-3 transition-colors relative ${getStatusColor(statuses[source.id])}`}
+            className={`flex-1 min-w-[110px] border-2 flex flex-col justify-center px-3 transition-colors relative ${getStatusColor(statuses[source.id])}`}
           >
-            <div className="flex items-center justify-between gap-2">
-              <span className="text-[8px] font-retro text-white drop-shadow-[1px_1px_0_#000] leading-none truncate pr-3">
+            <div className="flex items-center justify-between gap-3">
+              <span className="font-mono text-[10px] font-bold text-white drop-shadow-[1px_1px_0_#000] leading-none truncate pr-4 tracking-wider">
                 {source.name.toUpperCase()}
               </span>
 

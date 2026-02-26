@@ -50,25 +50,25 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
   }, [boardEntries, sportFilter, search, showDrafted]);
 
   return (
-    <div className="space-y-3">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-4 py-3 snes-panel bg-gradient-to-br from-[#2D2D44] to-[#1A1A2E] border-black/40">
+    <div className="space-y-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 px-6 py-4 snes-panel bg-gradient-to-br from-[#2D2D44] to-[#1A1A2E] border-black/40 shadow-xl">
         <div>
-          <h1 className="font-retro text-[11px] text-retro-cyan drop-shadow-[1px_1px_0_#000] tracking-widest">_ADP_DATABASE</h1>
-          <p className="font-pixel text-[10px] text-retro-light/40 mt-1.5 tracking-[0.1em]">
-            {boardEntries.length} RECORDS // {lastUpdated ? lastUpdated.toLocaleTimeString() : 'OFFLINE'}
+          <h1 className="font-retro text-[18px] text-retro-cyan drop-shadow-md tracking-widest">_ADP_DATABASE</h1>
+          <p className="font-mono text-[11px] text-retro-light/40 mt-2 tracking-widest uppercase">
+            {boardEntries.length} RECORDS_LINKED // STATUS: {lastUpdated ? 'ONLINE' : 'OFFLINE'}
           </p>
         </div>
-        <div className="flex items-center gap-2 flex-wrap justify-end">
+        <div className="flex items-center gap-3 flex-wrap justify-end">
           {/* Import status feedback */}
           {importStatus && (
-            <span className={`font-pixel text-[9px] tracking-wider px-2 py-1 border ${
+            <span className={`font-mono text-[10px] tracking-wider px-3 py-1.5 border border-dashed animate-pulse ${
               importStatus === 'loading' ? 'text-retro-gold border-retro-gold/40' :
               importStatus === 'error' ? 'text-retro-red border-retro-red/40' :
               'text-retro-lime border-retro-lime/40'
             }`}>
               {importStatus === 'loading' ? 'LOADING...' :
                importStatus === 'error' ? 'IMPORT_ERR' :
-               (() => { const [,m,d] = importStatus.split(':'); return `OK: ${m} ODDS / ${d} DRAFTED`; })()}
+               (() => { const [,m,d] = importStatus.split(':'); return `SUCCESS: ${m} ODDS / ${d} DRAFTED`; })()}
             </span>
           )}
 
@@ -83,29 +83,29 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
 
           <button
             onClick={handleExport}
-            className="font-pixel text-[10px] px-3 py-1.5 bg-white/10 text-retro-lime border border-retro-lime/30 shadow-[0_0_6px_rgba(0,255,100,0.12)] hover:bg-white/20 transition-all active:translate-y-0.5"
+            className="font-retro text-[11px] px-4 py-2 bg-white/5 text-retro-lime border border-retro-lime/30 hover:bg-white/10 transition-all active:translate-y-0.5 uppercase tracking-wider"
           >
-            CSV_OUT
+            EXPORT
           </button>
           <button
             onClick={() => fileInputRef.current?.click()}
             disabled={importStatus === 'loading'}
-            className="font-pixel text-[10px] px-3 py-1.5 bg-white/10 text-retro-gold border border-retro-gold/30 shadow-[0_0_6px_rgba(255,200,0,0.12)] hover:bg-white/20 transition-all active:translate-y-0.5 disabled:opacity-50"
+            className="font-retro text-[11px] px-4 py-2 bg-white/5 text-retro-gold border border-retro-gold/30 hover:bg-white/10 transition-all active:translate-y-0.5 disabled:opacity-50 uppercase tracking-wider"
           >
-            CSV_IN
+            IMPORT
           </button>
           <Link
             to="/parse"
-            className="font-pixel text-[10px] px-3 py-1.5 bg-white/10 text-retro-cyan border border-retro-cyan/30 shadow-[0_0_6px_rgba(0,245,255,0.12)] hover:bg-white/20 transition-all active:translate-y-0.5"
+            className="font-retro text-[11px] px-4 py-2 bg-white/5 text-retro-cyan border border-retro-cyan/30 hover:bg-white/10 transition-all active:translate-y-0.5 uppercase tracking-wider"
           >
-            PARSE_IMG
+            PARSE
           </Link>
           <button
             onClick={onRefresh}
             disabled={loading}
-            className="font-pixel text-[10px] px-4 py-1.5 bg-gradient-to-br from-retro-purple to-retro-magenta text-white border border-black shadow-[inset_1px_1px_0_rgba(255,255,255,0.15)] hover:brightness-110 transition-all active:translate-y-0.5 disabled:opacity-50"
+            className="font-retro text-[11px] px-5 py-2 bg-gradient-to-br from-retro-purple to-retro-magenta text-white border border-black shadow-[inset_1px_1px_0_rgba(255,255,255,0.2)] hover:brightness-110 transition-all active:translate-y-0.5 disabled:opacity-50 uppercase tracking-widest"
           >
-            {loading ? 'SYNCING...' : 'SYNC_NODE'}
+            {loading ? 'BUSY...' : 'SYNC'}
           </button>
         </div>
       </div>

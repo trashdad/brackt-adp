@@ -13,6 +13,16 @@
   status = 200
 
 [[redirects]]
+  from = "/api/pipeline/*"
+  to = "/.netlify/functions/pipeline-data"
+  status = 200
+
+[[redirects]]
+  from = "/api/run-pipeline"
+  to = "/.netlify/functions/run-pipeline"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

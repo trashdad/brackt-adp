@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&family=Silkscreen:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -26,16 +26,17 @@
 
 @layer base {
   body {
-    @apply min-h-screen bg-retro-bg text-retro-light font-sans antialiased;
+    @apply min-h-screen bg-retro-bg text-retro-light font-mono antialiased;
     image-rendering: crisp-edges;
     background-image:
-      linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
-      linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%),
+      linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
     background-size: 100% 4px, 3px 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-retro tracking-wider uppercase text-retro-cyan drop-shadow-[1px_1px_0px_#000];
+    @apply font-retro tracking-widest uppercase text-retro-cyan;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 245, 255, 0.2);
   }
 }
 
@@ -49,18 +50,18 @@
 
   .pixel-border-bright {
     @apply border border-retro-cyan;
-    box-shadow: 0 0 6px theme('colors.retro.cyan');
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
   }
 
   .pixel-button {
-    @apply font-retro text-[9px] px-4 py-2 relative border border-black active:translate-y-0.5 transition-all uppercase;
+    @apply font-retro text-[13px] px-5 py-2.5 relative border border-black active:translate-y-0.5 transition-all uppercase;
     box-shadow:
-      inset -1px -1px 0 0 rgba(0,0,0,0.4),
+      inset -2px -2px 0 0 rgba(0,0,0,0.4),
       inset 1px 1px 0 0 rgba(255,255,255,0.15);
   }
 
   .snes-panel {
-    @apply bg-retro-panel text-retro-light pixel-border;
+    @apply bg-retro-panel/90 backdrop-blur-sm text-retro-light pixel-border;
   }
 
   .snes-panel-dark {
@@ -68,7 +69,7 @@
   }
 
   .snes-font {
-    @apply font-retro text-[10px] tracking-tight;
+    @apply font-retro text-[12px] tracking-tight;
   }
 }
 

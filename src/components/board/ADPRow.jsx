@@ -18,15 +18,15 @@ export default function ADPRow({ entry, onToggleDraft }) {
       }`}
     >
       {/* Rank */}
-      <td className="px-3 py-1.5 font-pixel text-[10px] text-retro-light/30 w-10 border-r border-black/10 tabular-nums">
+      <td className="px-3 py-2 font-mono text-[11px] text-retro-light/40 w-10 border-r border-black/10 tabular-nums text-center">
         {entry.adpRank}
       </td>
 
-      {/* Name — Silkscreen is far more legible than Press Start 2P at data density */}
-      <td className="px-3 py-1.5">
+      {/* Name — Pixelify Sans is far more legible than Silkscreen/PressStart */}
+      <td className="px-3 py-2">
         <Link
           to={`/player/${entry.id}`}
-          className="font-pixel text-[12px] font-bold text-retro-light group-hover:text-retro-cyan transition-colors tracking-wide"
+          className="font-retro text-[14px] font-medium text-retro-light group-hover:text-retro-cyan transition-colors tracking-wide"
         >
           {entry.name.toUpperCase()}
         </Link>
@@ -38,42 +38,43 @@ export default function ADPRow({ entry, onToggleDraft }) {
       </td>
 
       {/* Sport badge */}
-      <td className="px-3 py-1.5">
+      <td className="px-3 py-2">
         <span
-          className="inline-flex items-center gap-1 px-1.5 py-0.5 border border-black/40 font-pixel text-[9px] text-white"
+          className="inline-flex items-center gap-1.5 px-2 py-0.5 border border-black/40 font-retro text-[10px] text-white"
           style={{ backgroundColor: color }}
         >
-          {entry.sportIcon} {entry.sportName.toUpperCase()}
+          <span className="scale-110">{entry.sportIcon}</span>
+          <span>{entry.sportName.toUpperCase()}</span>
         </span>
       </td>
 
       {/* Win % */}
-      <td className="px-3 py-1.5 font-pixel text-[12px] text-retro-cyan/80 tabular-nums">
+      <td className="px-3 py-2 font-mono text-[13px] text-retro-cyan/90 tabular-nums">
         {val(formatPercent(entry.ev?.winProbability))}
       </td>
 
       {/* Odds */}
-      <td className="px-3 py-1.5 font-pixel text-[12px] text-retro-light/60 tabular-nums">
+      <td className="px-3 py-2 font-mono text-[13px] text-retro-light/70 tabular-nums">
         <OddsTooltip entry={entry}>{val(formatAmericanOdds(entry.odds))}</OddsTooltip>
       </td>
 
       {/* Event EV */}
-      <td className="px-3 py-1.5 font-pixel text-[12px] text-retro-light/60 tabular-nums">
+      <td className="px-3 py-2 font-mono text-[13px] text-retro-light/70 tabular-nums">
         <EVTooltip entry={entry}>{val(formatNumber(entry.ev?.singleEvent))}</EVTooltip>
       </td>
 
       {/* Season EV */}
-      <td className="px-3 py-1.5 font-pixel text-[12px] font-bold text-retro-light tabular-nums">
+      <td className="px-3 py-2 font-mono text-[13px] font-bold text-retro-light tabular-nums">
         <EVTooltip entry={entry}>{val(formatNumber(entry.ev?.seasonTotal))}</EVTooltip>
       </td>
 
       {/* Draft Priority Score */}
-      <td className="px-3 py-1.5 font-pixel text-[12px] font-bold text-retro-purple tabular-nums">
+      <td className="px-3 py-2 font-mono text-[14px] font-bold text-retro-purple tabular-nums">
         <PriorityTooltip entry={entry}>
           <div className="flex flex-col leading-tight">
-            <span className="drop-shadow-[0_0_3px_rgba(157,80,187,0.6)]">{val(formatNumber(entry.adpScore))}</span>
+            <span className="drop-shadow-[0_0_4px_rgba(157,80,187,0.4)] text-retro-cyan">{val(formatNumber(entry.adpScore))}</span>
             {!entry.isPlaceholder && entry.scarcityBonus > 0 && (
-              <span className="text-[9px] font-normal text-retro-gold/70">
+              <span className="text-[10px] font-normal text-retro-gold/80">
                 +{entry.scarcityBonus.toFixed(1)}
               </span>
             )}
@@ -82,18 +83,18 @@ export default function ADPRow({ entry, onToggleDraft }) {
       </td>
 
       {/* Type */}
-      <td className="px-3 py-1.5 font-pixel text-[9px] text-retro-light/25 tracking-wider">
+      <td className="px-3 py-2 font-retro text-[10px] text-retro-light/30 tracking-wider">
         {entry.scoringType.toUpperCase()}
       </td>
 
       {/* Status */}
-      <td className="px-3 py-1.5">
+      <td className="px-3 py-2">
         {entry.drafted ? (
           <DraftedBadge draftedBy={entry.draftedBy} />
         ) : !entry.isPlaceholder ? (
           <button
             onClick={() => onToggleDraft(entry.id)}
-            className="px-2.5 py-0.5 bg-retro-purple hover:bg-retro-magenta text-white border border-black font-pixel text-[10px] tracking-wider shadow-[inset_-1px_-1px_0_0_rgba(0,0,0,0.4)] transition-all active:translate-y-0.5"
+            className="px-3 py-1 bg-retro-purple hover:bg-retro-magenta text-white border border-black font-retro text-[11px] tracking-wider shadow-[inset_-1px_-1px_0_0_rgba(0,0,0,0.4)] transition-all active:translate-y-0.5"
           >
             DRAFT
           </button>

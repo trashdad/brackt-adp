@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { formatNumber } from '../../utils/formatters';
 
-const TOOLTIP_WIDTH = 200;
+const TOOLTIP_WIDTH = 220;
 
 export default function EVTooltip({ entry, children }) {
   const [pos, setPos] = useState(null);
@@ -14,7 +14,7 @@ export default function EVTooltip({ entry, children }) {
     setPos({ x, y: rect.bottom + 6 });
   };
 
-  const { ev, odds } = entry;
+  const { ev } = entry;
 
   return (
     <span className="cursor-help" onMouseEnter={handleMouseEnter} onMouseLeave={() => setPos(null)}>
@@ -22,21 +22,21 @@ export default function EVTooltip({ entry, children }) {
       {pos && (
         <div
           style={{ position: 'fixed', top: pos.y, left: pos.x, width: TOOLTIP_WIDTH, zIndex: 9999 }}
-          className="bg-gray-900 text-white text-[11px] rounded shadow-xl p-2 pointer-events-none border border-gray-700"
+          className="bg-[#0a0a14] text-white border-2 border-black shadow-[4px_4px_0_0_#000] p-4 pointer-events-none"
         >
-          <div className="flex justify-between border-b border-gray-800 pb-1 mb-1">
-            <span className="text-gray-400">Implied Win %</span>
-            <span className="font-mono text-yellow-400">{ev.winProbability}%</span>
+          <div className="flex justify-between border-b border-white/10 pb-2 mb-3">
+            <span className="font-retro text-[8px] text-white/40 uppercase">WIN_PROB_EST</span>
+            <span className="font-mono text-[12px] font-bold text-retro-gold">{ev.winProbability}%</span>
           </div>
           
-          <div className="space-y-1">
-            <div className="flex justify-between">
-              <span className="text-gray-400">Event EV</span>
-              <span className="font-mono">{formatNumber(ev.singleEvent)}</span>
+          <div className="space-y-3">
+            <div className="flex justify-between items-center">
+              <span className="font-retro text-[8px] text-white/40 uppercase">EVENT_EV</span>
+              <span className="font-mono text-[12px] text-white tabular-nums">{formatNumber(ev.singleEvent)}</span>
             </div>
-            <div className="flex justify-between pt-1 border-t border-gray-800">
-              <span className="text-gray-400 font-medium">Season EV</span>
-              <span className="font-mono font-bold text-green-400">{formatNumber(ev.seasonTotal)}</span>
+            <div className="flex justify-between items-center pt-3 border-t border-white/5">
+              <span className="font-retro text-[8px] text-retro-cyan uppercase tracking-widest">SEASON_TOTAL</span>
+              <span className="font-mono text-[14px] font-black text-retro-lime tabular-nums">{formatNumber(ev.seasonTotal)}</span>
             </div>
           </div>
         </div>
@@ -44,4 +44,3 @@ export default function EVTooltip({ entry, children }) {
     </span>
   );
 }
-

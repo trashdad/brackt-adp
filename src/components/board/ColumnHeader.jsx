@@ -4,14 +4,14 @@ export default function ColumnHeader({ label, sortKey, currentSortKey, sortDir, 
 
   return (
     <th
-      className={`px-3 py-2 text-left font-pixel text-[9px] tracking-[0.14em] cursor-pointer select-none transition-all border-r border-white/5 last:border-r-0 ${
+      className={`px-3 py-2 text-left font-retro text-[11px] tracking-widest cursor-pointer select-none transition-all border-r border-white/5 last:border-r-0 ${
         isActive ? 'text-retro-cyan bg-white/5' : 'text-retro-light/40 hover:text-white hover:bg-white/10'
       } ${className}`}
       onClick={() => onSort(sortKey)}
     >
       <div className="flex items-center gap-2">
         {label}
-        {isActive && <span className="text-[10px] text-retro-cyan drop-shadow-[0_0_4px_rgba(0,245,255,0.5)]">{arrow}</span>}
+        {isActive && <span className="text-[12px] text-retro-cyan drop-shadow-[0_0_4px_rgba(0,245,255,0.5)]">{arrow}</span>}
       </div>
     </th>
   );
