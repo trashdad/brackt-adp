@@ -11,7 +11,7 @@ import { ScraperProvider } from './context/ScraperContext';
 
 export default function App() {
   const { entries, loading, lastUpdated, refresh } = useOddsData();
-  const { boardEntries, toggleDrafted, resetDraft } = useDraftBoard(entries);
+  const { boardEntries, toggleDrafted, resetDraft, syncDraft } = useDraftBoard(entries);
 
   return (
     <ScraperProvider>
@@ -26,6 +26,7 @@ export default function App() {
                 lastUpdated={lastUpdated}
                 onToggleDraft={toggleDrafted}
                 onRefresh={refresh}
+                onSyncDraft={syncDraft}
               />
             }
           />

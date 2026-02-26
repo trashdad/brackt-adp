@@ -1,3 +1,5 @@
+import { saveLocalDraftState, saveLocalManualOdds } from './storage';
+
 const HEADERS = [
   'id', 'rank', 'name', 'sport', 'odds',
   'win_pct', 'event_ev', 'season_ev', 'adp_score',
@@ -118,6 +120,10 @@ export function importBoard(file) {
             draftState[id] = { drafted: true, draftedBy: cols[idx.drafted_by]?.trim() || null };
           }
         }
+
+        // Save to local fallback immediately for responsiveness
+        saveLocalManualOdds(manualOdds);
+        saveLocalDraftState(draftState);
 
         await Promise.all([
           fetch('/api/manual-odds', {

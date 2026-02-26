@@ -7,7 +7,7 @@ import SearchBar from '../components/filters/SearchBar';
 import ScoringToggle from '../components/filters/ScoringToggle';
 import { exportBoard, importBoard } from '../utils/csvManager';
 
-export default function Dashboard({ boardEntries, loading, lastUpdated, onToggleDraft, onRefresh }) {
+export default function Dashboard({ boardEntries, loading, lastUpdated, onToggleDraft, onRefresh, onSyncDraft }) {
   const [sportFilter, setSportFilter] = useState([]);
   const [search, setSearch] = useState('');
   const [showDrafted, setShowDrafted] = useState(true);
@@ -24,7 +24,13 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
     try {
       const { manualCount, draftedCount } = await importBoard(file);
       setImportStatus(`ok:${manualCount}:${draftedCount}`);
-      onRefresh();
+      
+      // Sync both odds and draft state
+      await Promise.all([
+        onRefresh(),
+        onSyncDraft ? onSyncDraft() : Promise.resolve()
+      ]);
+
       setTimeout(() => setImportStatus(null), 4000);
     } catch {
       setImportStatus('error');
