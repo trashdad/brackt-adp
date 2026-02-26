@@ -25,9 +25,9 @@ export default function ADPTable({ entries, onToggleDraft }) {
   }
 
   return (
-    <div className="overflow-x-auto snes-panel">
-      <table className="min-w-full divide-y-4 divide-black">
-        <thead className="bg-snes-dark text-white sticky top-0 border-b-4 border-black">
+    <div className="overflow-x-auto snes-panel border-black/40 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+      <table className="min-w-full border-collapse">
+        <thead className="bg-gradient-to-r from-[#2D2D44] to-[#1A1A2E] text-retro-cyan sticky top-0 border-b-2 border-black z-10">
           <tr>
             {COLUMNS.map((col) => (
               <ColumnHeader
@@ -41,7 +41,7 @@ export default function ADPTable({ entries, onToggleDraft }) {
             ))}
           </tr>
         </thead>
-        <tbody className="bg-white divide-y-2 divide-black/10">
+        <tbody className="bg-[#2D2D44]/40 divide-y border-t border-black/20">
           {sorted.map((entry) => (
             <ADPRow key={entry.id} entry={entry} onToggleDraft={onToggleDraft} />
           ))}

@@ -136,7 +136,8 @@ function calculateQPSeasonEV(americanOdds, eventsPerSeason, tournaments = null) 
     eventsPerSeason,
     expectedQPPerEvent: parseFloat(expectedQPPerEvent.toFixed(2)),
     seasonStrength: parseFloat((seasonStrength * 100).toFixed(1)),
-    seasonPerFinish,
+    perFinish: seasonPerFinish, // Map to standard key
+    dist: seasonDist,           // Map to standard key
     isQP: true,
   };
 }

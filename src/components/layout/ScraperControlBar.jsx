@@ -74,57 +74,57 @@ export default function ScraperControlBar() {
 
   const getStatusColor = (status) => {
     switch (status) {
-      case 'success': return 'bg-[#4CAF50] border-black';
-      case 'error': return 'bg-[#F44336] border-black';
-      case 'timeout': return 'bg-[#FFEB3B] border-black text-black';
-      case 'running': return 'bg-[#2196F3] border-black animate-pulse';
-      default: return 'bg-[#555555] border-black';
+      case 'success': return 'bg-retro-lime border-black shadow-[inset_2px_2px_0_rgba(255,255,255,0.3)]';
+      case 'error': return 'bg-retro-red border-black shadow-[inset_2px_2px_0_rgba(255,255,255,0.3)]';
+      case 'timeout': return 'bg-retro-gold border-black text-black shadow-[inset_2px_2px_0_rgba(255,255,255,0.3)]';
+      case 'running': return 'bg-retro-cyan border-black animate-pulse shadow-[inset_2px_2px_0_rgba(255,255,255,0.3)]';
+      default: return 'bg-retro-panel border-black opacity-50 shadow-[inset_2px_2px_0_rgba(255,255,255,0.1)]';
     }
   };
 
   return (
-    <div className="bg-black flex items-stretch h-12 overflow-hidden border-b-2 border-white/20">
+    <div className="bg-[#0f0f1b] flex items-stretch h-14 overflow-hidden border-b-2 border-white/10">
       {/* Fire Button */}
       <button
         onClick={fireScrapers}
         disabled={isRunning}
-        className={`px-6 flex items-center justify-center font-retro text-[10px] tracking-tight transition-all border-r-4 border-black ${
+        className={`px-8 flex items-center justify-center font-retro text-[9px] tracking-wider transition-all border-r-2 border-black ${
           isRunning 
-            ? 'bg-snes-dark text-white opacity-80 cursor-not-allowed' 
-            : 'bg-snes-purple hover:bg-snes-lavender text-white active:translate-y-0.5'
+            ? 'bg-retro-panel text-white opacity-60' 
+            : 'bg-gradient-to-br from-retro-purple to-retro-magenta hover:from-retro-magenta hover:to-retro-purple text-white active:translate-y-0.5'
         }`}
         style={{
-          boxShadow: 'inset -4px -4px 0 0 rgba(0,0,0,0.3), inset 4px 4px 0 0 rgba(255,255,255,0.2)'
+          boxShadow: 'inset -2px -2px 0 0 rgba(0,0,0,0.5), inset 2px 2px 0 0 rgba(255,255,255,0.1)'
         }}
       >
-        {isRunning ? 'RUNNING...' : 'FIRE_SCRAPERS'}
+        {isRunning ? 'CMD_BUSY...' : 'INIT_SCRAPE'}
       </button>
 
       {/* Status Boxes */}
-      <div className="flex flex-1 items-stretch overflow-x-auto no-scrollbar gap-1 p-1 bg-[#1a1a1a]">
+      <div className="flex flex-1 items-stretch overflow-x-auto no-scrollbar gap-1.5 p-1.5 bg-[#0a0a14]">
         {SOURCES.map((source) => (
           <div
             key={source.id}
-            className={`flex-1 min-w-[90px] border-2 flex flex-col justify-center px-2 transition-colors relative ${getStatusColor(statuses[source.id])}`}
-            style={{ imageRendering: 'pixelated' }}
+            className={`flex-1 min-w-[100px] border-2 flex flex-col justify-center px-3 transition-colors relative ${getStatusColor(statuses[source.id])}`}
           >
-            <div className="flex items-center justify-between">
-              <span className="text-[9px] font-retro text-white leading-none truncate mb-1 pr-4">
-                {source.name}
+            <div className="flex items-center justify-between gap-2">
+              <span className="text-[8px] font-retro text-white drop-shadow-[1px_1px_0_#000] leading-none truncate pr-3">
+                {source.name.toUpperCase()}
               </span>
               
               {/* API LED Light */}
               {source.hasApiKey && (
                 <div 
-                  className={`w-2.5 h-2.5 border border-black absolute right-1 top-1/2 -translate-y-1/2 shadow-[inset_-1px_-1px_0_0_rgba(0,0,0,0.5)] ${
+                  className={`w-2.5 h-2.5 border border-black absolute right-1.5 top-1/2 -translate-y-1/2 ${
                     apiKeyStatuses[source.id] === 'valid' ? 'led-green' : 'led-red'
                   }`}
-                  title={apiKeyStatuses[source.id] === 'valid' ? 'API Key Valid' : 'API Key Error/Missing'}
+                  style={{ boxShadow: 'inset -1px -1px 0 rgba(0,0,0,0.4), inset 1px 1px 0 rgba(255,255,255,0.3)' }}
+                  title={apiKeyStatuses[source.id] === 'valid' ? 'API_KEY_VALID' : 'API_KEY_ERROR'}
                 />
               )}
             </div>
             
-            <div className="h-1 bg-black/40 rounded-none overflow-hidden mt-1">
+            <div className="h-1 bg-black/30 mt-1.5 border border-white/5">
               <div className={`h-full ${statuses[source.id] === 'running' ? 'bg-white animate-pulse' : 'bg-transparent'}`} />
             </div>
           </div>
@@ -132,8 +132,8 @@ export default function ScraperControlBar() {
       </div>
       
       {/* Right tail filler */}
-      <div className="bg-black w-14 border-l-2 border-white/20 flex items-center justify-center">
-        <div className={`w-3 h-3 rounded-none border border-black ${isRunning ? 'bg-red-500 animate-pulse' : 'bg-green-900'}`} />
+      <div className="bg-[#0f0f1b] w-16 border-l-2 border-white/5 flex items-center justify-center">
+        <div className={`w-4 h-4 border-2 border-black ${isRunning ? 'bg-retro-red animate-pulse' : 'bg-[#1a1a1a]'}`} />
       </div>
     </div>
   );

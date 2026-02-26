@@ -12,31 +12,35 @@ export default function SportFilter({ selected = [], onChange }) {
   };
 
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-3">
       <button
         onClick={() => onChange([])}
-        className={`px-4 py-2 border-2 transition-all font-retro text-[9px] tracking-tight active:translate-y-0.5 ${
+        className={`px-5 py-2.5 border-2 transition-all font-retro text-[8px] tracking-widest active:translate-y-0.5 ${
           selected.length === 0
-            ? 'bg-snes-blue text-white border-black shadow-[inset_-2px_-2px_0_0_rgba(0,0,0,0.4)]'
-            : 'bg-snes-light text-gray-700 border-black/20 hover:border-black shadow-[inset_2px_2px_0_0_#f0f0f0,inset_-2px_-2px_0_0_#808080]'
+            ? 'bg-retro-cyan text-black border-black shadow-[0_4px_0_0_#00A3A8,inset_2px_2px_0_rgba(255,255,255,0.5)]'
+            : 'bg-retro-panel text-retro-light/60 border-black/40 hover:border-retro-cyan/50 shadow-[0_2px_0_0_#000]'
         }`}
       >
-        [ALL]
+        [ MASTER_LIST ]
       </button>
       {activeSports.map((sport) => {
         const isActive = selected.includes(sport.id);
+        const sportColor = SPORT_COLORS[sport.id] || '#888';
         return (
           <button
             key={sport.id}
             onClick={() => toggleSport(sport.id)}
-            className={`px-4 py-2 border-2 transition-all font-retro text-[9px] tracking-tighter active:translate-y-0.5 ${
+            className={`px-5 py-2.5 border-2 transition-all font-retro text-[8px] tracking-tight active:translate-y-0.5 ${
               isActive
-                ? 'text-white border-black shadow-[inset_-2px_-2px_0_0_rgba(0,0,0,0.4)]'
-                : 'bg-snes-light text-gray-700 border-black/20 hover:border-black shadow-[inset_2px_2px_0_0_#f0f0f0,inset_-2px_-2px_0_0_#808080]'
+                ? 'text-white border-black shadow-[0_4px_0_0_#000,inset_2px_2px_0_rgba(255,255,255,0.3)]'
+                : 'bg-retro-panel text-retro-light/60 border-black/40 hover:border-white/20 shadow-[0_2px_0_0_#000]'
             }`}
-            style={isActive ? { backgroundColor: SPORT_COLORS[sport.id] || '#888' } : undefined}
+            style={isActive ? { backgroundColor: sportColor } : undefined}
           >
-            {sport.icon} {sport.name.toUpperCase()}
+            <span className="flex items-center gap-2">
+              <span className="opacity-80">{sport.icon}</span>
+              {sport.name.toUpperCase()}
+            </span>
           </button>
         );
       })}

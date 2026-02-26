@@ -22,26 +22,26 @@ const SPORTS = [
 ];
 
 export const SPORT_COLORS = {
-  nfl: '#013369',
-  nba: '#F58426',
-  mlb: '#002D72',
-  nhl: '#000000',
-  ncaaf: '#8B0000',
-  ncaab: '#FF6600',
-  ncaaw: '#9B59B6',
-  wnba: '#FF6A00',
-  afl: '#01447B',
-  f1: '#E10600',
-  ucl: '#0D1B67',
-  fifa: '#326295',
-  darts: '#E42A2A',
-  snooker: '#2D7D2D',
-  llws: '#1C4587',
-  indycar: '#1A1A1A',
-  pga: '#00563F',
-  tennis_m: '#4E9A06',
-  tennis_w: '#C060A1',
-  csgo: '#DE9B35',
+  nfl: '#0055FF',      // Vibrant Blue
+  nba: '#FF8800',      // Electric Orange
+  mlb: '#FF0055',      // Bright Crimson
+  nhl: '#00FFFF',      // Neon Cyan
+  ncaaf: '#AA0000',    // Deep Red
+  ncaab: '#FF4400',    // Flare Orange
+  ncaaw: '#FF00FF',    // Neon Magenta
+  wnba: '#FFCC00',     // Bright Gold
+  afl: '#00AAFF',      // Sky Blue
+  f1: '#FF0000',       // Racing Red
+  ucl: '#5500FF',      // Deep Purple
+  fifa: '#00FF00',     // Pitch Green
+  darts: '#FFFF00',    // High-vis Yellow
+  snooker: '#008800',  // Table Green
+  llws: '#00CCCC',     // Aqua
+  indycar: '#888888',  // Silver/Chrome
+  pga: '#39FF14',      // Neon Lime
+  tennis_m: '#CCFF00', // Tennis Ball Yellow
+  tennis_w: '#FF66CC', // Hot Pink
+  csgo: '#FFAA00',     // Orange-Gold
 };
 
 export function getSportById(id) {
