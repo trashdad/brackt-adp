@@ -15,33 +15,33 @@ const SPORTS = [
   { id: 'snooker', name: 'Snooker World Championship', apiKey: 'snooker_world_championship', category: 'standard', eventsPerSeason: 1, market: 'outrights', icon: '\u{1F3B1}', active: true, scarcityWeight: 0.5 },
   { id: 'llws', name: 'Little League World Series', apiKey: null, category: 'standard', eventsPerSeason: 1, market: 'outrights', icon: '\u26BE', active: true, scarcityWeight: 0.5 },
   { id: 'indycar', name: 'IndyCar', apiKey: null, category: 'standard', eventsPerSeason: 1, market: 'outrights', icon: '\u{1F3CE}\uFE0F', active: true, scarcityWeight: 0.5 },
-  { id: 'pga', name: 'PGA Golf', apiKey: 'golf_pga', category: 'qp', eventsPerSeason: 4, market: 'outrights', icon: '\u26F3', active: true, scarcityWeight: 0.2, tournaments: [{ id: 'masters', name: 'The Masters' }, { id: 'pga-champ', name: 'PGA Championship' }, { id: 'us-open', name: 'US Open' }, { id: 'open-champ', name: 'The Open Championship' }] },
-  { id: 'tennis_m', name: 'Tennis (Men\'s)', apiKey: 'tennis_atp', category: 'qp', eventsPerSeason: 4, market: 'outrights', icon: '\u{1F3BE}', active: true, scarcityWeight: 0.4, tournaments: [{ id: 'aus-open', name: 'Australian Open' }, { id: 'french-open', name: 'French Open' }, { id: 'wimbledon', name: 'Wimbledon' }, { id: 'us-open', name: 'US Open' }] },
-  { id: 'tennis_w', name: 'Tennis (Women\'s)', apiKey: 'tennis_wta', category: 'qp', eventsPerSeason: 4, market: 'outrights', icon: '\u{1F3BE}', active: true, scarcityWeight: 0.4, tournaments: [{ id: 'aus-open', name: 'Australian Open' }, { id: 'french-open', name: 'French Open' }, { id: 'wimbledon', name: 'Wimbledon' }, { id: 'us-open', name: 'US Open' }] },
-  { id: 'csgo', name: 'Counter-Strike 2', apiKey: 'esports_csgo', category: 'qp', eventsPerSeason: 2, market: 'outrights', icon: '\u{1F3AE}', active: true, scarcityWeight: 0.4, tournaments: [{ id: 'cologne-2026', name: 'Cologne 2026' }, { id: 'singapore-2026', name: 'Singapore 2026' }] },
+  { id: 'pga', name: 'PGA Golf', apiKey: 'golf_pga', category: 'standard', eventsPerSeason: 4, market: 'outrights', icon: '\u26F3', active: true, scarcityWeight: 0.2, tournaments: [{ id: 'masters', name: 'The Masters' }, { id: 'pga-champ', name: 'PGA Championship' }, { id: 'us-open', name: 'US Open' }, { id: 'open-champ', name: 'The Open Championship' }] },
+  { id: 'tennis_m', name: 'Tennis (Men\'s)', apiKey: 'tennis_atp', category: 'standard', eventsPerSeason: 4, market: 'outrights', icon: '\u{1F3BE}', active: true, scarcityWeight: 0.4, tournaments: [{ id: 'aus-open', name: 'Australian Open' }, { id: 'french-open', name: 'French Open' }, { id: 'wimbledon', name: 'Wimbledon' }, { id: 'us-open', name: 'US Open' }] },
+  { id: 'tennis_w', name: 'Tennis (Women\'s)', apiKey: 'tennis_wta', category: 'standard', eventsPerSeason: 4, market: 'outrights', icon: '\u{1F3BE}', active: true, scarcityWeight: 0.4, tournaments: [{ id: 'aus-open', name: 'Australian Open' }, { id: 'french-open', name: 'French Open' }, { id: 'wimbledon', name: 'Wimbledon' }, { id: 'us-open', name: 'US Open' }] },
+  { id: 'csgo', name: 'Counter-Strike 2', apiKey: 'esports_csgo', category: 'standard', eventsPerSeason: 2, market: 'outrights', icon: '\u{1F3AE}', active: true, scarcityWeight: 0.4, tournaments: [{ id: 'cologne-2026', name: 'Cologne 2026' }, { id: 'singapore-2026', name: 'Singapore 2026' }] },
 ];
 
 export const SPORT_COLORS = {
-  nfl: '#013369',
-  nba: '#F58426',
-  mlb: '#002D72',
-  nhl: '#000000',
-  ncaaf: '#8B0000',
-  ncaab: '#FF6600',
-  ncaaw: '#9B59B6',
-  wnba: '#FF6A00',
-  afl: '#01447B',
-  f1: '#E10600',
-  ucl: '#0D1B67',
-  fifa: '#326295',
-  darts: '#E42A2A',
-  snooker: '#2D7D2D',
-  llws: '#1C4587',
-  indycar: '#1A1A1A',
-  pga: '#00563F',
-  tennis_m: '#4E9A06',
-  tennis_w: '#C060A1',
-  csgo: '#DE9B35',
+  nfl: '#0055FF',      // Vibrant Blue
+  nba: '#FF8800',      // Electric Orange
+  mlb: '#FF0055',      // Bright Crimson
+  nhl: '#00FFFF',      // Neon Cyan
+  ncaaf: '#AA0000',    // Deep Red
+  ncaab: '#FF4400',    // Flare Orange
+  ncaaw: '#FF00FF',    // Neon Magenta
+  wnba: '#FFCC00',     // Bright Gold
+  afl: '#00AAFF',      // Sky Blue
+  f1: '#FF0000',       // Racing Red
+  ucl: '#5500FF',      // Deep Purple
+  fifa: '#00FF00',     // Pitch Green
+  darts: '#FFFF00',    // High-vis Yellow
+  snooker: '#008800',  // Table Green
+  llws: '#00CCCC',     // Aqua
+  indycar: '#888888',  // Silver/Chrome
+  pga: '#39FF14',      // Neon Lime
+  tennis_m: '#CCFF00', // Tennis Ball Yellow
+  tennis_w: '#FF66CC', // Hot Pink
+  csgo: '#FFAA00',     // Orange-Gold
 };
 
 export function getSportById(id) {

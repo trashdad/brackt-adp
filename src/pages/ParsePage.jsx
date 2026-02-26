@@ -4,7 +4,6 @@ import SPORTS from '../data/sports';
 import ROSTERS from '../data/rosters';
 import { SPORTSBOOKS } from '../data/sportsbooks';
 import { parseOddsText, matchTeams } from '../utils/oddsTextParser';
-import { loadManualOdds, saveManualOdds } from '../utils/storage';
 import { slugify } from '../utils/formatters';
 
 export default function ParsePage({ onOddsSubmitted }) {
@@ -55,12 +54,13 @@ export default function ParsePage({ onOddsSubmitted }) {
     );
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const source = sportsbook === 'other' ? customSportsbook.trim() : sportsbook;
     if (!source) return;
 
     const submitSport = parsedSportId || sportId;
-    const manual = loadManualOdds();
+    const resp = await fetch('/api/manual-odds').catch(() => null);
+    const manual = resp?.ok ? await resp.json() : {};
 
     for (const row of results) {
       const finalName = row.matchedName === '__custom__' ? (row.customName || '').trim() : row.matchedName;
@@ -100,7 +100,11 @@ export default function ParsePage({ onOddsSubmitted }) {
       manual[entryId].timestamp = Date.now();
     }
 
-    saveManualOdds(manual);
+    await fetch('/api/manual-odds', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(manual),
+    }).catch(() => {});
     setSubmitted(true);
     if (onOddsSubmitted) onOddsSubmitted();
   };

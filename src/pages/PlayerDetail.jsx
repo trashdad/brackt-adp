@@ -22,52 +22,57 @@ export default function PlayerDetail({ boardEntries, onToggleDraft }) {
   const val = (v) => entry.isPlaceholder ? '—' : v;
 
   return (
-    <div className="max-w-2xl mx-auto space-y-6">
-      <Link to="/" className="font-retro text-[8px] text-snes-lavender hover:text-white transition-colors">&lt; GO_BACK</Link>
+    <div className="max-w-3xl mx-auto space-y-8">
+      <Link to="/" className="font-retro text-[8px] text-retro-cyan hover:text-white transition-all flex items-center gap-2 group">
+        <span className="group-hover:-translate-x-1 transition-transform">&lt;&lt;</span> RETURN_TO_DATABASE
+      </Link>
 
-      <div className="snes-panel p-8 bg-white border-black shadow-[8px_8px_0_0_#000]">
-        <div className="flex items-start justify-between mb-8 border-b-4 border-black pb-4">
-          <div>
-            <h1 className="text-xl font-retro text-snes-blue tracking-tight uppercase leading-tight">{entry.name}</h1>
+      <div className="snes-panel p-10 bg-gradient-to-br from-[#2D2D44] to-[#1A1A2E] border-black/60 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
+        <div className="flex items-start justify-between mb-10 border-b-2 border-white/10 pb-8">
+          <div className="space-y-4">
+            <h1 className="text-2xl font-retro text-white tracking-widest uppercase leading-tight drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">{entry.name}</h1>
             <span
-              className="inline-flex items-center gap-1 mt-3 px-3 py-1 border-2 border-black font-retro text-[8px] text-white shadow-[2px_2px_0_0_rgba(0,0,0,0.2)]"
+              className="inline-flex items-center gap-2 px-3 py-2 border-2 border-black font-retro text-[8px] text-white shadow-[4px_4px_0_0_rgba(0,0,0,0.5)]"
               style={{ backgroundColor: color }}
             >
               {entry.sportIcon} {entry.sportName.toUpperCase()}
             </span>
           </div>
-          <span className="font-retro text-3xl text-snes-light drop-shadow-[2px_2px_0_#000]">#{entry.adpRank}</span>
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 py-6 border-b-4 border-black border-double">
-          <div className="space-y-1">
-            <p className="font-retro text-[7px] text-gray-400 uppercase">WIN_PROB</p>
-            <p className="font-pixel text-xl font-bold text-snes-blue">{val(formatPercent(entry.ev?.winProbability))}</p>
-          </div>
-          <div className="space-y-1">
-            <p className="font-retro text-[7px] text-gray-400 uppercase">ODDS</p>
-            <p className="font-pixel text-xl font-bold text-snes-purple">{val(formatAmericanOdds(entry.odds))}</p>
-          </div>
-          <div className="space-y-1">
-            <p className="font-retro text-[7px] text-gray-400 uppercase">SEASON_EV</p>
-            <p className="font-pixel text-xl font-bold text-red-600">{val(formatNumber(entry.ev?.seasonTotal))}</p>
+          <div className="flex flex-col items-end gap-2">
+            <span className="font-retro text-[8px] text-retro-light/40 uppercase">Global_Rank</span>
+            <span className="font-retro text-4xl text-retro-gold drop-shadow-[4px_4px_0_#000]">#{entry.adpRank}</span>
           </div>
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-4 items-center">
-          <div className="bg-snes-blue text-white px-4 py-2 border-4 border-black font-retro text-[9px] shadow-[4px_4px_0_0_#A18FD1]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 py-8 border-b-2 border-white/10 border-dashed">
+          <div className="bg-black/20 p-4 border border-white/5 shadow-inner space-y-2">
+            <p className="font-retro text-[7px] text-retro-cyan/60 uppercase tracking-widest">WIN_PROBABILITY</p>
+            <p className="font-pixel text-2xl font-bold text-retro-cyan">{val(formatPercent(entry.ev?.winProbability))}</p>
+          </div>
+          <div className="bg-black/20 p-4 border border-white/5 shadow-inner space-y-2">
+            <p className="font-retro text-[7px] text-retro-purple/60 uppercase tracking-widest">AMERICAN_ODDS</p>
+            <p className="font-pixel text-2xl font-bold text-retro-purple">{val(formatAmericanOdds(entry.odds))}</p>
+          </div>
+          <div className="bg-black/20 p-4 border border-white/5 shadow-inner space-y-2">
+            <p className="font-retro text-[7px] text-retro-red/60 uppercase tracking-widest">SEASON_VAL_EV</p>
+            <p className="font-pixel text-2xl font-bold text-retro-red">{val(formatNumber(entry.ev?.seasonTotal))}</p>
+          </div>
+        </div>
+
+        <div className="mt-10 flex flex-wrap gap-6 items-center">
+          <div className="bg-gradient-to-r from-retro-purple to-retro-magenta text-white px-6 py-4 border-2 border-black font-retro text-[10px] tracking-widest shadow-[4px_4px_0_0_#000,inset_2px_2px_0_rgba(255,255,255,0.2)]">
             ADP_SCORE: {val(formatNumber(entry.adpScore))}
           </div>
           {!entry.isPlaceholder && entry.scarcityBonus > 0 && (
-            <div className="bg-white text-orange-600 px-3 py-1 border-2 border-orange-600 font-retro text-[7px]">
-              +{(entry.scarcityBonus || 0).toFixed(2)} SCARCITY
+            <div className="bg-black/40 text-retro-gold px-4 py-3 border-2 border-retro-gold/30 font-retro text-[8px] shadow-[0_0_15px_rgba(255,215,0,0.1)]">
+              +{(entry.scarcityBonus || 0).toFixed(2)} SCARCITY_PREMIUM
             </div>
           )}
         </div>
 
-        <div className="mt-8 pt-4 border-t-2 border-black/5 font-retro text-[7px] text-gray-400 space-y-1 uppercase tracking-tighter">
-          <p>SCORING_MODE: {entry.scoringType}</p>
-          {sport && sport.eventsPerSeason > 1 && <p>TOTAL_EVENTS: {sport.eventsPerSeason}</p>}
+        <div className="mt-10 pt-6 border-t border-white/5 font-retro text-[7px] text-retro-light/30 flex gap-6 uppercase tracking-widest">
+          <p>MODE: {entry.scoringType}_ENG</p>
+          {sport && sport.eventsPerSeason > 1 && <p>NODE_COUNT: {sport.eventsPerSeason}_EVENTS</p>}
         </div>
 
         {/* Historical trend indicator */}

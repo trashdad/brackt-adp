@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
 import { loadSettings, saveSettings } from '../utils/storage';
+import { useScraper } from '../context/ScraperContext';
 
 export default function Settings({ onResetDraft }) {
   const [settings, setSettings] = useState(() => loadSettings());
   const [saved, setSaved] = useState(false);
-
-  useEffect(() => {
-    saveSettings(settings);
-  }, [settings]);
+  const { validateKeys } = useScraper();
 
   const handleSave = () => {
     saveSettings(settings);
     setSaved(true);
+    validateKeys(); // Re-validate new keys
     setTimeout(() => setSaved(false), 2000);
   };
 
@@ -21,8 +20,8 @@ export default function Settings({ onResetDraft }) {
 
       <div className="snes-panel p-8 space-y-6">
         <div>
-          <label className="block font-retro text-[9px] text-gray-700 mb-2 uppercase">
-            API_ACCESS_KEY
+          <label className="block font-retro text-[9px] text-gray-700 mb-2 uppercase text-snes-purple">
+            THE_ODDS_API_KEY
           </label>
           <input
             type="text"
@@ -31,12 +30,44 @@ export default function Settings({ onResetDraft }) {
             placeholder="ENTER_KEY..."
             className="w-full px-4 py-3 bg-white border-4 border-black font-retro text-[8px] focus:outline-none focus:ring-4 focus:ring-snes-purple/30 shadow-[inset_2px_2px_0_0_#eee]"
           />
-          <p className="font-retro text-[7px] text-gray-400 mt-3 tracking-tighter">
+          <p className="font-retro text-[7px] text-gray-400 mt-2 tracking-tighter">
             REGISTER_AT: <span className="text-snes-purple underline">THE-ODDS-API.COM</span>
           </p>
         </div>
 
         <div>
+          <label className="block font-retro text-[9px] text-gray-700 mb-2 uppercase text-snes-purple">
+            ODDS_API_IO_KEY
+          </label>
+          <input
+            type="text"
+            value={settings.oddsApiIoKey || ''}
+            onChange={(e) => setSettings((s) => ({ ...s, oddsApiIoKey: e.target.value }))}
+            placeholder="ENTER_KEY..."
+            className="w-full px-4 py-3 bg-white border-4 border-black font-retro text-[8px] focus:outline-none focus:ring-4 focus:ring-snes-purple/30 shadow-[inset_2px_2px_0_0_#eee]"
+          />
+          <p className="font-retro text-[7px] text-gray-400 mt-2 tracking-tighter">
+            REGISTER_AT: <span className="text-snes-purple underline">ODDS-API.IO</span>
+          </p>
+        </div>
+
+        <div>
+          <label className="block font-retro text-[9px] text-gray-700 mb-2 uppercase text-snes-purple">
+            API_SPORTS_KEY
+          </label>
+          <input
+            type="text"
+            value={settings.apiSportsKey || ''}
+            onChange={(e) => setSettings((s) => ({ ...s, apiSportsKey: e.target.value }))}
+            placeholder="ENTER_KEY..."
+            className="w-full px-4 py-3 bg-white border-4 border-black font-retro text-[8px] focus:outline-none focus:ring-4 focus:ring-snes-purple/30 shadow-[inset_2px_2px_0_0_#eee]"
+          />
+          <p className="font-retro text-[7px] text-gray-400 mt-2 tracking-tighter">
+            REGISTER_AT: <span className="text-snes-purple underline">DASHBOARD.API-SPORTS.IO</span>
+          </p>
+        </div>
+
+        <div className="pt-2">
           <label className="block font-retro text-[9px] text-gray-700 mb-2 uppercase">
             CACHE_TTL (HOURS)
           </label>

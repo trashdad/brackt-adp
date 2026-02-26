@@ -1,12 +1,30 @@
-import { useState, useCallback, useEffect } from 'react';
-import { loadDraftState, saveDraftState } from '../utils/storage';
+import { useState, useCallback, useEffect, useRef } from 'react';
 
 export default function useDraftBoard(entries) {
-  const [draftState, setDraftState] = useState(() => loadDraftState());
+  const [draftState, setDraftState] = useState({});
+  const initialized = useRef(false);
 
-  // Persist on every change
+  // Load shared draft state from server on mount
   useEffect(() => {
-    saveDraftState(draftState);
+    fetch('/api/draft-state')
+      .then((r) => r.json())
+      .then((data) => {
+        setDraftState(data || {});
+        initialized.current = true;
+      })
+      .catch(() => {
+        initialized.current = true;
+      });
+  }, []);
+
+  // Persist to server on every change (skip until initial load is done)
+  useEffect(() => {
+    if (!initialized.current) return;
+    fetch('/api/draft-state', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(draftState),
+    }).catch(() => {});
   }, [draftState]);
 
   const toggleDrafted = useCallback((entryId) => {

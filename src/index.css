@@ -4,63 +4,85 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes led-glow-green {
+  0%, 100% { opacity: 1; filter: brightness(1.2) drop-shadow(0 0 2px #4CAF50); }
+  50% { opacity: 0.8; filter: brightness(1) drop-shadow(0 0 1px #4CAF50); }
+}
+
+@keyframes led-glow-red {
+  0%, 100% { opacity: 1; filter: brightness(1.2) drop-shadow(0 0 2px #F44336); }
+  50% { opacity: 0.8; filter: brightness(1) drop-shadow(0 0 1px #F44336); }
+}
+
+.led-green {
+  @apply bg-[#4CAF50] border-black;
+  animation: led-glow-green 2s infinite ease-in-out;
+}
+
+.led-red {
+  @apply bg-[#F44336] border-black;
+  animation: led-glow-red 2s infinite ease-in-out;
+}
+
 @layer base {
   body {
-    @apply min-h-screen bg-[#2E2E3E] text-[#C0C0C0] font-sans antialiased;
-    image-rendering: pixelated;
+    @apply min-h-screen bg-retro-bg text-retro-light font-sans antialiased;
+    image-rendering: crisp-edges;
+    background-image:
+      linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+      linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-retro;
+    @apply font-retro tracking-wider uppercase text-retro-cyan drop-shadow-[1px_1px_0px_#000];
   }
 }
 
 @layer components {
   .pixel-border {
-    @apply border-4 border-black;
-    box-shadow: 
-      inset -4px -4px 0 0 #808080,
-      inset 4px 4px 0 0 #f0f0f0;
+    @apply border border-black;
+    box-shadow:
+      inset -1px -1px 0 0 rgba(0,0,0,0.3),
+      inset 1px 1px 0 0 rgba(255,255,255,0.08);
   }
 
-  .pixel-border-dark {
-    @apply border-4 border-black;
-    box-shadow: 
-      inset -4px -4px 0 0 #1a1a2a,
-      inset 4px 4px 0 0 #4a4a5a;
+  .pixel-border-bright {
+    @apply border border-retro-cyan;
+    box-shadow: 0 0 6px theme('colors.retro.cyan');
   }
 
   .pixel-button {
-    @apply font-retro text-[10px] px-4 py-2 relative border-4 border-black active:translate-y-1 transition-all;
-    box-shadow: 
-      inset -4px -4px 0 0 rgba(0,0,0,0.2),
-      inset 4px 4px 0 0 rgba(255,255,255,0.2);
+    @apply font-retro text-[9px] px-4 py-2 relative border border-black active:translate-y-0.5 transition-all uppercase;
+    box-shadow:
+      inset -1px -1px 0 0 rgba(0,0,0,0.4),
+      inset 1px 1px 0 0 rgba(255,255,255,0.15);
   }
 
   .snes-panel {
-    @apply bg-snes-light text-black pixel-border;
+    @apply bg-retro-panel text-retro-light pixel-border;
   }
 
   .snes-panel-dark {
-    @apply bg-snes-blue text-white pixel-border-dark;
+    @apply bg-retro-bg text-white pixel-border;
   }
 
   .snes-font {
-    @apply font-retro text-[10px] tracking-tighter;
+    @apply font-retro text-[10px] tracking-tight;
   }
 }
 
-/* Custom scrollbar to match retro theme */
+/* Custom scrollbar - arcade style */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #2E2E3E;
+  background: #0F0F1B;
 }
 ::-webkit-scrollbar-thumb {
-  background: #808080;
-  border: 2px solid #000;
+  background: #9D50BB;
+  border: 1px solid #000;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A18FD1;
+  background: #6E48AA;
 }

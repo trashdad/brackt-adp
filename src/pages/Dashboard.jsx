@@ -23,38 +23,40 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
   }, [boardEntries, sportFilter, search, showDrafted]);
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 snes-panel bg-snes-lavender/10 border-black">
+    <div className="space-y-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 p-6 snes-panel bg-gradient-to-br from-[#2D2D44] to-[#1A1A2E] border-black/40 shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
         <div>
-          <h1 className="text-xl font-retro text-snes-blue drop-shadow-[1px_1px_0_#fff]">ADP_BOARD</h1>
-          <p className="font-retro text-[8px] text-gray-500 mt-2">
-            {boardEntries.length} ENTRIES_IN_DATABASE
-            {lastUpdated && ` \u00B7 LAST_SYNC: ${lastUpdated.toLocaleTimeString()}`}
+          <h1 className="text-2xl font-retro text-retro-cyan drop-shadow-[2px_2px_0_#000] tracking-widest">_ADP_DATABASE</h1>
+          <p className="font-retro text-[7px] text-retro-light/40 mt-3 tracking-widest leading-relaxed">
+            {boardEntries.length} RECORDS_FOUND // LAST_LINK: {lastUpdated ? lastUpdated.toLocaleTimeString() : 'OFFLINE'}
           </p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <Link
             to="/parse"
-            className="font-retro text-[9px] px-3 py-2 bg-white text-snes-blue border-4 border-black shadow-[inset_-2px_-2px_0_0_#ccc] hover:bg-gray-100 transition-all active:translate-y-0.5"
+            className="font-retro text-[8px] px-5 py-3 bg-white/10 text-retro-cyan border-2 border-retro-cyan/30 shadow-[0_0_10px_rgba(0,245,255,0.2)] hover:bg-white/20 transition-all active:translate-y-0.5"
           >
-            PARSE_DATA
+            [ PARSE_IMG ]
           </Link>
           <button
             onClick={onRefresh}
             disabled={loading}
-            className="font-retro text-[9px] px-3 py-2 bg-snes-purple text-white border-4 border-black shadow-[inset_-2px_-2px_0_0_rgba(0,0,0,0.4)] hover:bg-snes-lavender transition-all active:translate-y-0.5 disabled:opacity-50"
+            className="font-retro text-[8px] px-5 py-3 bg-gradient-to-br from-retro-purple to-retro-magenta text-white border-2 border-black shadow-[inset_2px_2px_0_rgba(255,255,255,0.2),0_4px_0_0_#000] hover:brightness-110 transition-all active:translate-y-1 disabled:opacity-50"
           >
-            {loading ? 'BUSY...' : 'SYNC'}
+            {loading ? 'SYNCING...' : 'SYNC_NODE'}
           </button>
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-black/5 p-3 border-2 border-black/10">
+      <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center bg-black/20 p-4 border border-white/5 shadow-inner">
         <SearchBar value={search} onChange={setSearch} />
+        <div className="h-8 w-px bg-white/5 hidden lg:block mx-2" />
         <ScoringToggle showDrafted={showDrafted} onToggle={setShowDrafted} />
       </div>
 
-      <SportFilter selected={sportFilter} onChange={setSportFilter} />
+      <div className="py-2 overflow-x-auto no-scrollbar">
+        <SportFilter selected={sportFilter} onChange={setSportFilter} />
+      </div>
 
       {loading ? (
         <div className="flex items-center justify-center py-16">
