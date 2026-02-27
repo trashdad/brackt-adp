@@ -9,13 +9,12 @@ export default function PriorityTooltip({ entry, children }) {
 
   if (entry.isPlaceholder) return <span>{children}</span>;
 
-  const handleMouseEnter = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = Math.max(TOOLTIP_MARGIN, Math.min(rect.left, window.innerWidth - TOOLTIP_WIDTH - TOOLTIP_MARGIN));
-    const fitsBelow = rect.bottom + 6 + 160 < window.innerHeight;
+  const handleMouseMove = (e) => {
+    const x = Math.max(TOOLTIP_MARGIN, Math.min(e.clientX + 10, window.innerWidth - TOOLTIP_WIDTH - TOOLTIP_MARGIN));
+    const fitsBelow = e.clientY + 20 + 160 < window.innerHeight;
     setPos({
       x,
-      y: fitsBelow ? rect.bottom + 6 : rect.top - 6,
+      y: fitsBelow ? e.clientY + 20 : e.clientY - 20,
       above: !fitsBelow,
     });
   };
@@ -27,7 +26,7 @@ export default function PriorityTooltip({ entry, children }) {
   return (
     <span
       className="cursor-help underline decoration-dotted decoration-brand-300"
-      onMouseEnter={handleMouseEnter}
+      onMouseMove={handleMouseMove}
       onMouseLeave={() => setPos(null)}
     >
       {children}

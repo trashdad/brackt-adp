@@ -9,13 +9,12 @@ export default function EVTooltip({ entry, children }) {
 
   if (entry.isPlaceholder) return <span>{children}</span>;
 
-  const handleMouseEnter = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = Math.max(TOOLTIP_MARGIN, Math.min(rect.left, window.innerWidth - TOOLTIP_WIDTH - TOOLTIP_MARGIN));
-    const fitsBelow = rect.bottom + 6 + 120 < window.innerHeight;
+  const handleMouseMove = (e) => {
+    const x = Math.max(TOOLTIP_MARGIN, Math.min(e.clientX + 10, window.innerWidth - TOOLTIP_WIDTH - TOOLTIP_MARGIN));
+    const fitsBelow = e.clientY + 20 + 120 < window.innerHeight;
     setPos({
       x,
-      y: fitsBelow ? rect.bottom + 6 : rect.top - 6,
+      y: fitsBelow ? e.clientY + 20 : e.clientY - 20,
       above: !fitsBelow,
     });
   };
@@ -23,7 +22,7 @@ export default function EVTooltip({ entry, children }) {
   const { ev } = entry;
 
   return (
-    <span className="cursor-help" onMouseEnter={handleMouseEnter} onMouseLeave={() => setPos(null)}>
+    <span className="cursor-help" onMouseMove={handleMouseMove} onMouseLeave={() => setPos(null)}>
       {children}
       {pos && (
         <div

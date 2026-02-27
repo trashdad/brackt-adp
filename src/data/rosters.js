@@ -120,7 +120,7 @@ const ROSTERS = {
     'Bayer Leverkusen', 'Atalanta', 'Sporting CP', 'Benfica', 'AC Milan',
     'Monaco', 'Marseille', 'Ajax', 'PSV Eindhoven', 'Eintracht Frankfurt',
     'Athletic Bilbao', 'Villarreal', 'Club Brugge', 'Galatasaray', 'Olympiacos',
-    'Slavia Prague', 'Copenhagen',
+    'Slavia Prague', 'Copenhagen', 'Bodo Glimt',
   ],
 
   // ── FIFA World Cup — Top 40 nations ─────────────────────────────
@@ -133,9 +133,10 @@ const ROSTERS = {
     'Egypt', 'Ivory Coast', 'Algeria', 'Saudi Arabia', 'Iran',
     'Denmark', 'Austria', 'Turkey', 'Poland', 'Sweden',
     'Scotland', 'Paraguay', 'South Africa', 'Qatar', 'New Zealand',
+    'Wales',
   ],
 
-  // ── Darts — Top 25 PDC players ──────────────────────────────────
+  // ── Darts — Top 34 PDC players ──────────────────────────────────
   darts: [
     'Luke Littler', 'Luke Humphries', 'Gian van Veen', 'Michael van Gerwen',
     'Jonny Clayton', 'Stephen Bunting', 'Gary Anderson', 'James Wade',
@@ -143,16 +144,23 @@ const ROSTERS = {
     'Ryan Searle', 'Nathan Aspinall', 'Ross Smith', 'Martin Schindler',
     'Jermaine Wattimena', 'Damon Heta', 'Mike De Decker', 'Rob Cross',
     'Luke Woodhouse', 'Dave Chisnall', 'Daryl Gurney', 'Wessel Nijman',
-    'Ryan Joyce',
+    'Ryan Joyce', 'Beau Greaves', 'Niko Springer', 'Justin Hood',
+    'Michael Smith', 'Dirk van Duijvenbode', 'Charlie Manby', 'Callan Rydz',
+    'Krzysztof Ratajski', "William O'Connor",
   ],
 
-  // ── Snooker — Top 20 world ranked players ───────────────────────
+  // ── Snooker — Top 40 world ranked players ───────────────────────
   snooker: [
     'Judd Trump', 'Kyren Wilson', 'Neil Robertson', 'Mark Williams',
     'Zhao Xintong', 'John Higgins', 'Mark Selby', 'Shaun Murphy',
     'Mark Allen', 'Xiao Guodong', "Ronnie O'Sullivan", 'Wu Yize',
     'Chris Wakelin', 'Barry Hawkins', 'Ding Junhui', 'Si Jiahui',
     'Stuart Bingham', 'Zhang Anda', 'Jak Jones', 'Ali Carter',
+    'Jack Lisowski', 'Luca Brecel', 'Gary Wilson', 'Allister Carter',
+    'Stan Moody', "Joe O'Connor", 'Hossein Vafaei', 'Elliot Slessor',
+    'David Gilbert', 'Stephen Maguire', 'Anthony McGill', 'Aaron Hill',
+    'Zhou Yuelong', 'Jackson Page', 'Yuan Sijun', 'Thepchaiya Un-Nooh',
+    'Pang Junxu',
   ],
 
   // ── Little League World Series — Regional slots ─────────────────
@@ -189,10 +197,10 @@ const ROSTERS = {
     'Corey Conners', 'Max Greyserman', 'Jason Day', 'Kurt Kitayama',
     'Ryan Fox', 'Adam Scott', 'J.J. Spaun', 'Si Woo Kim',
     'Tom Hoge', 'Daniel Berger', 'Rasmus Hojgaard', 'Dustin Johnson',
-    'Davis Thompson', 'Ben Griffin',
+    'Davis Thompson', 'Ben Griffin', 'Patrick Reed', 'Chris Gotterup',
   ],
 
-  // ── Tennis Men's (ATP) — Top 30 players ─────────────────────────
+  // ── Tennis Men's (ATP) — Top 44 players ─────────────────────────
   tennis_m: [
     'Carlos Alcaraz', 'Jannik Sinner', 'Alexander Zverev', 'Novak Djokovic',
     'Felix Auger-Aliassime', 'Taylor Fritz', 'Alex de Minaur', 'Lorenzo Musetti',
@@ -201,7 +209,11 @@ const ROSTERS = {
     'Karen Khachanov', 'Jiri Lehecka', 'Jakub Mensik', 'Francisco Cerundolo',
     'Flavio Cobolli', 'Denis Shapovalov', 'Joao Fonseca', 'Stefanos Tsitsipas',
     'Frances Tiafoe', 'Ugo Humbert', 'Arthur Fils', 'Grigor Dimitrov',
-    'Matteo Berrettini', 'Alejandro Davidovich Fokina',
+    'Matteo Berrettini', 'Alejandro Davidovich Fokina', 'Hubert Hurkacz',
+    'Giovanni Mpetshi Perricard', 'Sebastian Korda', 'Learner Tien',
+    'Gabriel Diallo', 'Alex Michelsen', 'Nicolas Jarry', 'Lorenzo Sonego',
+    'Jan-Lennard Struff', 'Cameron Norrie', 'Reilly Opelka', 'Tomas Machac',
+    'Nick Kyrgios', 'Tallon Griekspoor',
   ],
 
   // ── Tennis Women's (WTA) — Top 35 players ──────────────────────
