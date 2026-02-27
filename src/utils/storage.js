@@ -1,6 +1,8 @@
 const SETTINGS_KEY = 'brackt_settings';
 const DRAFT_KEY = 'brackt_draft_state_local';
 const MANUAL_ODDS_KEY = 'brackt_manual_odds_local';
+const SCARCITY_KEY = 'brackt_scarcity_modifier';
+const SOCIAL_CACHE_KEY = 'brackt_social_scores_cache';
 
 // Settings remain local-only (API keys are per-user credentials, not shared)
 export function loadSettings() {
@@ -30,6 +32,40 @@ export function saveSettings(settings) {
       console.error('[BRACKT] localStorage full — settings not saved');
     }
   }
+}
+
+// ── Scarcity Modifier ────────────────────────────────────────────────────────
+
+export function loadScarcityModifier() {
+  try {
+    const val = localStorage.getItem(SCARCITY_KEY);
+    return val !== null ? parseFloat(val) : 0.5;
+  } catch {
+    return 0.5;
+  }
+}
+
+export function saveScarcityModifier(val) {
+  try {
+    localStorage.setItem(SCARCITY_KEY, String(val));
+  } catch {}
+}
+
+// ── Social Scores Cache ─────────────────────────────────────────────────────
+
+export function loadSocialScoresCache() {
+  try {
+    const raw = localStorage.getItem(SOCIAL_CACHE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+export function saveSocialScoresCache(scores) {
+  try {
+    localStorage.setItem(SOCIAL_CACHE_KEY, JSON.stringify(scores));
+  } catch {}
 }
 
 // ── Local Fallback Storage ───────────────────────────────────────────────────

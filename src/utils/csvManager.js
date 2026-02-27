@@ -3,6 +3,8 @@ import { saveLocalDraftState, saveLocalManualOdds } from './storage';
 const HEADERS = [
   'id', 'rank', 'name', 'sport', 'odds',
   'win_pct', 'event_ev', 'season_ev', 'adp_score',
+  'dropoff_velocity', 'social_score', 'social_quotient',
+  'scarcity_bonus', 'ev_gap', 'exceeds_capacity',
   'drafted', 'drafted_by', 'manual_sources', 'manual_tournaments',
 ];
 
@@ -54,6 +56,12 @@ export function exportBoard(boardEntries) {
       escapeField(e.ev?.singleEvent ?? ''),
       escapeField(e.ev?.seasonTotal ?? ''),
       escapeField(e.adpScore ?? ''),
+      escapeField(e.dropoffVelocity ?? ''),
+      escapeField(e.socialScore ?? ''),
+      escapeField(e.socialQuotient ?? ''),
+      escapeField(e.scarcityBonus ?? ''),
+      escapeField(e.evGap ?? ''),
+      escapeField(e.exceedsCapacity ? 'true' : 'false'),
       escapeField(e.drafted ? 'true' : 'false'),
       escapeField(e.draftedBy ?? ''),
       escapeField(e.oddsBySource ? JSON.stringify(e.oddsBySource) : '{}'),

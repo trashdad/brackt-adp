@@ -9,11 +9,11 @@ import Settings from './pages/Settings';
 import useOddsData from './hooks/useOddsData';
 import useDraftBoard from './hooks/useDraftBoard';
 import { ScraperProvider } from './context/ScraperContext';
-import { saveLocalDraftState, saveLocalManualOdds } from './utils/storage';
+import { saveLocalDraftState, saveLocalManualOdds, loadScarcityModifier, saveScarcityModifier } from './utils/storage';
 import { exportBoard, importBoard } from './utils/csvManager';
 
 export default function App() {
-  const [scarcityModifier, setScarcityModifier] = useState(0.5);
+  const [scarcityModifier, setScarcityModifier] = useState(() => loadScarcityModifier());
   const { entries, loading, lastUpdated, refresh } = useOddsData(scarcityModifier);
   const { boardEntries, toggleDrafted, resetDraft, syncDraft } = useDraftBoard(entries);
 
@@ -22,6 +22,11 @@ export default function App() {
   const fileInputRef = useRef(null);
 
   const handleExport = useCallback(() => exportBoard(boardEntries), [boardEntries]);
+
+  const handleScarcityChange = useCallback((val) => {
+    setScarcityModifier(val);
+    saveScarcityModifier(val);
+  }, []);
 
   const handleImport = useCallback(async (e) => {
     const file = e.target.files?.[0];
@@ -77,7 +82,7 @@ export default function App() {
                 onRefresh={refresh}
                 onSyncDraft={syncDraft}
                 scarcityModifier={scarcityModifier}
-                onScarcityChange={setScarcityModifier}
+                onScarcityChange={handleScarcityChange}
               />
             }
           />

@@ -4,7 +4,7 @@ import ROSTERS from '../data/rosters';
 import { fetchOddsForSport } from '../services/oddsApi';
 import { calculateSeasonTotalEV, calculateHistoricallyWeightedEV, applyPositionalScarcity } from '../services/evCalculator';
 import { slugify } from '../utils/formatters';
-import { loadSettings, loadLocalManualOdds } from '../utils/storage';
+import { loadSettings, loadLocalManualOdds, loadSocialScoresCache, saveSocialScoresCache } from '../utils/storage';
 import { loadAllPipelineData } from '../services/dataLoader';
 import { americanToImpliedProbability, removeVig, probabilityToAmerican } from '../services/oddsConverter';
 
@@ -384,12 +384,13 @@ export default function useOddsData(scarcityModifier) {
       }
     }
 
-    // Step 5: Load social scores
-    let socialScores = {};
+    // Step 5: Load social scores (try server, then local cache)
+    let socialScores = loadSocialScoresCache();
     try {
       const socialScoresResp = await fetch('/data/social-scores.json');
       if (socialScoresResp.ok) {
         socialScores = await socialScoresResp.json();
+        saveSocialScoresCache(socialScores);
       }
     } catch (e) {
       // Ignore if social scores not available yet
