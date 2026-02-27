@@ -196,12 +196,6 @@ export function applyPositionalScarcity(sportEntries, globalModifier) {
       }
     }
 
-    // Apply social quotient to draft priority (not to EV)
-    const sq = current.socialQuotient || 1.0;
-    if (sq > 1.0) {
-      adpScore = adpScore * sq;
-    }
-
     current.evGap = parseFloat(gapToNext.toFixed(2));
     current.remainingUndrafted = remainingUndrafted;
     current.scarcityBonus = parseFloat(bonus.toFixed(2));

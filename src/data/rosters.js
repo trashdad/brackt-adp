@@ -180,7 +180,8 @@ const ROSTERS = {
     'Alexander Rossi', 'Felix Rosenqvist', 'Rinus VeeKay', 'David Malukas',
     'Nolan Siegel', 'Kyffin Simpson', 'Sting Ray Robb', 'Marcus Armstrong',
     'Conor Daly', 'Robert Shwartzman', 'Callum Ilott', 'Louis Foster',
-    'Devlin DeFrancesco', 'Christian Rasmussen', 'Jacob Abel',
+    'Devlin DeFrancesco', 'Christian Rasmussen', 'Jacob Abel', 'Mick Schumacher',
+    'Takuma Sato',
   ],
 
   // ── PGA Golf — Top 50 players ───────────────────────────────────
