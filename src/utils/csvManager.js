@@ -1,4 +1,9 @@
-import { saveLocalDraftState, saveLocalManualOdds } from './storage';
+import {
+  saveLocalDraftState,
+  saveLocalManualOdds,
+  loadSocialScoresCache,
+  saveSocialScoresCache
+} from './storage';
 
 const HEADERS = [
   'id', 'rank', 'name', 'sport', 'odds',
@@ -107,33 +112,52 @@ export function importBoard(file) {
 
         const manualOdds = {};
         const draftState = {};
+        const socialScores = {};
 
         for (let i = 1; i < lines.length; i++) {
           const cols = parseCSVLine(lines[i]);
+          if (cols.length < 3) continue;
+
           const id = cols[idx.id]?.trim();
           const name = cols[idx.name]?.trim();
           const sport = cols[idx.sport]?.trim();
           if (!id || !name || !sport) continue;
 
-          // Restore manual odds if source data is present
+          // 1. Restore manual odds if source data is present
           let oddsBySource = {};
           let oddsByTournament = {};
-          try { oddsBySource = JSON.parse(cols[idx.manual_sources] || '{}'); } catch { /* malformed JSON, use default */ }
-          try { oddsByTournament = JSON.parse(cols[idx.manual_tournaments] || '{}'); } catch { /* malformed JSON, use default */ }
+          try { oddsBySource = JSON.parse(cols[idx.manual_sources] || '{}'); } catch { /* ignore malformed */ }
+          try { oddsByTournament = JSON.parse(cols[idx.manual_tournaments] || '{}'); } catch { /* ignore malformed */ }
           const hasManual = Object.keys(oddsBySource).length > 0 || Object.keys(oddsByTournament).length > 0;
           if (hasManual) {
             manualOdds[id] = { sport, name, oddsBySource, oddsByTournament, timestamp: Date.now() };
           }
 
-          // Restore draft state
-          if (cols[idx.drafted]?.trim() === 'true') {
+          // 2. Restore draft state
+          const isDrafted = cols[idx.drafted]?.trim().toLowerCase() === 'true';
+          if (isDrafted) {
             draftState[id] = { drafted: true, draftedBy: cols[idx.drafted_by]?.trim() || null };
+          }
+
+          // 3. Restore social scores if present
+          const score = parseFloat(cols[idx.social_score]);
+          const quotient = parseFloat(cols[idx.social_quotient]);
+          if (!isNaN(score) || !isNaN(quotient)) {
+            socialScores[id] = {
+              socialScore: isNaN(score) ? 0 : score,
+              socialQuotient: isNaN(quotient) ? 1.0 : quotient,
+            };
           }
         }
 
         // Save to local fallback immediately for responsiveness
         saveLocalManualOdds(manualOdds);
         saveLocalDraftState(draftState);
+        if (Object.keys(socialScores).length > 0) {
+          // Merge with existing cache if possible
+          const existingSocial = loadSocialScoresCache();
+          saveSocialScoresCache({ ...existingSocial, ...socialScores });
+        }
 
         await Promise.all([
           fetch('/api/manual-odds', {
