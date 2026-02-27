@@ -117,38 +117,96 @@ export function calculateSeasonTotalEV(americanOdds, category, eventsPerSeason) 
 
 /**
  * Apply positional scarcity premium to the raw EV.
- * @param {Array} sportEntries - entries for a single sport
- * @param {number} [globalModifier] - optional global coefficient override (default uses per-sport scarcityWeight)
+ * Formula: adpScore = EV + (((distance to next undrafted player) * 2) / remainingUndraftedCount)
+ * @param {Array} sportEntries - entries for a single sport (must include drafted status)
+ * @param {number} [globalModifier] - optional global coefficient override (not used in new formula)
  */
 export function applyPositionalScarcity(sportEntries, globalModifier) {
   if (!sportEntries || sportEntries.length < 2) return;
 
-  const sportId = sportEntries[0].sport;
-  const sportConfig = SPORTS.find(s => s.id === sportId);
-  const baseMultiplier = globalModifier ?? sportConfig?.scarcityWeight ?? 0.5;
-  const rankDecay = 0.9;
-
+  // Sort by EV descending (highest EV first)
   sportEntries.sort((a, b) => (b.ev?.seasonTotal || 0) - (a.ev?.seasonTotal || 0));
 
+  // Calculate remaining undrafted count for each position
   for (let i = 0; i < sportEntries.length; i++) {
     const current = sportEntries[i];
-    const prev = sportEntries[i - 1];
-    const next = sportEntries[i + 1] || { ev: { seasonTotal: 0 } };
-
     const rawEV = current.ev?.seasonTotal || 0;
-    const prevEV = prev ? (prev.ev?.seasonTotal || 0) : rawEV;
-    const nextEV = next.ev?.seasonTotal || 0;
 
-    const gapToNext = rawEV - nextEV;
-    const gapFromPrev = prevEV - rawEV;
+    // Find next UNDRAFTED entry
+    let nextUndraftedIndex = -1;
+    for (let j = i + 1; j < sportEntries.length; j++) {
+      if (!sportEntries[j].drafted) {
+        nextUndraftedIndex = j;
+        break;
+      }
+    }
 
-    const timeDecay = Math.pow(rankDecay, i);
-    const proximityMultiplier = 1 / (1 + (gapFromPrev * 0.1));
-    const effectiveMultiplier = baseMultiplier * timeDecay * proximityMultiplier;
+    // Calculate gap to next undrafted player
+    let gapToNext = 0;
+    if (nextUndraftedIndex !== -1) {
+      const nextUndrafted = sportEntries[nextUndraftedIndex];
+      gapToNext = rawEV - (nextUndrafted.ev?.seasonTotal || 0);
+    }
+
+    // Count remaining undrafted entries (including self if undrafted)
+    const remainingUndrafted = sportEntries.filter(
+      (entry, idx) => idx >= i && !entry.drafted
+    ).length;
+
+    // --- NEW: Dropoff Velocity Calculation ---
+    // Samples 2 players above and 2 players below (undrafted only)
+    const undraftedOnly = sportEntries.filter(e => !e.drafted);
+    const uIdx = undraftedOnly.findIndex(e => e.id === current.id);
+    
+    let velocity = 1.0;
+    if (uIdx !== -1 && undraftedOnly.length > 3) {
+      const getEV = (idx) => undraftedOnly[idx]?.ev?.seasonTotal || 0;
+      
+      // Calculate Inertia (Drop from above)
+      const dropAbove1 = uIdx > 0 ? getEV(uIdx - 1) - rawEV : 0;
+      const dropAbove2 = uIdx > 1 ? getEV(uIdx - 2) - getEV(uIdx - 1) : dropAbove1;
+      const avgInertia = (dropAbove1 + dropAbove2) / 2;
+
+      // Calculate Momentum (Drop to below)
+      const dropBelow1 = uIdx < undraftedOnly.length - 1 ? rawEV - getEV(uIdx + 1) : 0;
+      const dropBelow2 = uIdx < undraftedOnly.length - 2 ? getEV(uIdx + 1) - getEV(uIdx + 2) : dropBelow1;
+      const avgMomentum = (dropBelow1 + dropBelow2) / 2;
+
+      // Velocity is the ratio of how much faster we are dropping now vs before
+      // We add a small constant to prevent division by zero and dampen noise
+      velocity = avgMomentum / (Math.max(avgInertia, 0.5));
+    }
+    current.dropoffVelocity = parseFloat(velocity.toFixed(2));
+
+    // Apply new formula: EV + (((gap to next undrafted * 2) / remaining undrafted))
+    const bonus = remainingUndrafted > 0
+      ? (gapToNext * 2) / remainingUndrafted
+      : 0;
+
+    let adpScore = rawEV + bonus;
+    let exceedsCapacity = false;
+
+    // CAP RULE: Cannot exceed EV of player ranked just above in the same sport
+    if (i > 0) {
+      const above = sportEntries[i - 1];
+      const aboveEV = above.ev?.seasonTotal || 0;
+      if (adpScore > aboveEV) {
+        adpScore = aboveEV;
+        exceedsCapacity = true;
+      }
+    }
+
+    // Apply social quotient to draft priority (not to EV)
+    const sq = current.socialQuotient || 1.0;
+    if (sq > 1.0) {
+      adpScore = adpScore * sq;
+    }
 
     current.evGap = parseFloat(gapToNext.toFixed(2));
-    current.scarcityBonus = parseFloat((gapToNext * effectiveMultiplier).toFixed(2));
-    current.adpScore = parseFloat((rawEV + current.scarcityBonus).toFixed(2));
+    current.remainingUndrafted = remainingUndrafted;
+    current.scarcityBonus = parseFloat(bonus.toFixed(2));
+    current.adpScore = parseFloat(adpScore.toFixed(2));
+    current.exceedsCapacity = exceedsCapacity;
   }
 }
 

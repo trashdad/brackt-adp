@@ -1,0 +1,7806 @@
+{
+  "nfl-arizona-cardinals": {
+    "socialScore": 12.6,
+    "socialQuotient": 1.14,
+    "lastUpdated": "2026-02-27T06:48:18.512Z",
+    "sources": {
+      "reddit": {
+        "score": 6.6,
+        "mentions": 6
+      },
+      "news": {
+        "score": 6,
+        "mentions": 2,
+        "articles": 2
+      }
+    }
+  },
+  "nfl-baltimore-ravens": {
+    "socialScore": 6.65,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.512Z",
+    "sources": {
+      "reddit": {
+        "score": 2.2,
+        "mentions": 2
+      },
+      "expert": {
+        "score": 4.45,
+        "rank": 3,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nfl-cincinnati-bengals": {
+    "socialScore": 9.22,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.512Z",
+    "sources": {
+      "reddit": {
+        "score": 6.4,
+        "mentions": 6
+      },
+      "expert": {
+        "score": 2.82,
+        "rank": 9,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nfl-chicago-bears": {
+    "socialScore": 7.6,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 7.6,
+        "mentions": 7
+      }
+    }
+  },
+  "nfl-denver-broncos": {
+    "socialScore": 5.2,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.2,
+        "mentions": 5
+      }
+    }
+  },
+  "nfl-atlanta-falcons": {
+    "socialScore": 6.4,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 6.4,
+        "mentions": 6
+      }
+    }
+  },
+  "nfl-buffalo-bills": {
+    "socialScore": 9.11,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.2,
+        "mentions": 5
+      },
+      "expert": {
+        "score": 3.91,
+        "rank": 5,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nfl-dallas-cowboys": {
+    "socialScore": 6.2,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4.2,
+        "mentions": 4
+      },
+      "expert": {
+        "score": 2,
+        "rank": 12,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nfl-carolina-panthers": {
+    "socialScore": 5.2,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.2,
+        "mentions": 5
+      }
+    }
+  },
+  "nfl-cleveland-browns": {
+    "socialScore": 6.2,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 6.2,
+        "mentions": 6
+      }
+    }
+  },
+  "nfl-detroit-lions": {
+    "socialScore": 12.13,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 7.4,
+        "mentions": 7
+      },
+      "expert": {
+        "score": 4.73,
+        "rank": 2,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nfl-jacksonville-jaguars": {
+    "socialScore": 5.2,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.2,
+        "mentions": 5
+      }
+    }
+  },
+  "nfl-indianapolis-colts": {
+    "socialScore": 7.4,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 7.4,
+        "mentions": 7
+      }
+    }
+  },
+  "nfl-las-vegas-raiders": {
+    "socialScore": 7.4,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 7.4,
+        "mentions": 7
+      }
+    }
+  },
+  "nfl-kansas-city-chiefs": {
+    "socialScore": 9.2,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4.2,
+        "mentions": 4
+      },
+      "expert": {
+        "score": 5,
+        "rank": 1,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nfl-green-bay-packers": {
+    "socialScore": 9.69,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 6.6,
+        "mentions": 6
+      },
+      "expert": {
+        "score": 3.09,
+        "rank": 8,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nfl-los-angeles-chargers": {
+    "socialScore": 5.2,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.2,
+        "mentions": 5
+      }
+    }
+  },
+  "nfl-los-angeles-rams": {
+    "socialScore": 23.2,
+    "socialQuotient": 1.17,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 11.2,
+        "mentions": 11
+      },
+      "news": {
+        "score": 12,
+        "mentions": 3,
+        "articles": 3
+      }
+    }
+  },
+  "nfl-miami-dolphins": {
+    "socialScore": 7.67,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.4,
+        "mentions": 5
+      },
+      "expert": {
+        "score": 2.27,
+        "rank": 11,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nfl-houston-texans": {
+    "socialScore": 9.76,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 6.4,
+        "mentions": 6
+      },
+      "expert": {
+        "score": 3.36,
+        "rank": 7,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nfl-tampa-bay-buccaneers": {
+    "socialScore": 3.2,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      }
+    }
+  },
+  "nfl-new-orleans-saints": {
+    "socialScore": 9.4,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 9.4,
+        "mentions": 9
+      }
+    }
+  },
+  "nfl-new-england-patriots": {
+    "socialScore": 92.9,
+    "socialQuotient": 1.24,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 10.4,
+        "mentions": 10
+      },
+      "news": {
+        "score": 82.5,
+        "mentions": 21,
+        "articles": 21
+      }
+    }
+  },
+  "nfl-san-francisco-49ers": {
+    "socialScore": 11.58,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 7.4,
+        "mentions": 7
+      },
+      "expert": {
+        "score": 4.18,
+        "rank": 4,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nfl-tennessee-titans": {
+    "socialScore": 2.4,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2.4,
+        "mentions": 2
+      }
+    }
+  },
+  "nfl-philadelphia-eagles": {
+    "socialScore": 8.84,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.2,
+        "mentions": 5
+      },
+      "expert": {
+        "score": 3.64,
+        "rank": 6,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nfl-pittsburgh-steelers": {
+    "socialScore": 6.2,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 6.2,
+        "mentions": 6
+      }
+    }
+  },
+  "nfl-new-york-jets": {
+    "socialScore": 9.95,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 7.4,
+        "mentions": 7
+      },
+      "expert": {
+        "score": 2.55,
+        "rank": 10,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nfl-minnesota-vikings": {
+    "socialScore": 5.2,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.2,
+        "mentions": 5
+      }
+    }
+  },
+  "nfl-new-york-giants": {
+    "socialScore": 3.2,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      }
+    }
+  },
+  "nba-charlotte-hornets": {
+    "socialScore": 16.54,
+    "socialQuotient": 1.15,
+    "sources": {
+      "reddit": {
+        "score": 10.04,
+        "mentions": 8
+      },
+      "news": {
+        "score": 6.5,
+        "mentions": 3,
+        "articles": 3
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-chicago-bulls": {
+    "socialScore": 12.14,
+    "socialQuotient": 1.13,
+    "sources": {
+      "reddit": {
+        "score": 12.14,
+        "mentions": 8
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nfl-washington-commanders": {
+    "socialScore": 7.2,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4.2,
+        "mentions": 4
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "nba-boston-celtics": {
+    "socialScore": 16.84,
+    "socialQuotient": 1.13,
+    "sources": {
+      "reddit": {
+        "score": 7.51,
+        "mentions": 7
+      },
+      "news": {
+        "score": 4.33,
+        "mentions": 2,
+        "articles": 2
+      },
+      "expert": {
+        "score": 5,
+        "rank": 1,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-dallas-mavericks": {
+    "socialScore": 12.03,
+    "socialQuotient": 1.12,
+    "sources": {
+      "reddit": {
+        "score": 8.67,
+        "mentions": 8
+      },
+      "expert": {
+        "score": 3.36,
+        "rank": 7,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-golden-state-warriors": {
+    "socialScore": 10.41,
+    "socialQuotient": 1.13,
+    "sources": {
+      "reddit": {
+        "score": 8.24,
+        "mentions": 6
+      },
+      "news": {
+        "score": 2.17,
+        "mentions": 1,
+        "articles": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-brooklyn-nets": {
+    "socialScore": 19.58,
+    "socialQuotient": 1.16,
+    "sources": {
+      "reddit": {
+        "score": 10.91,
+        "mentions": 8
+      },
+      "news": {
+        "score": 8.67,
+        "mentions": 3,
+        "articles": 4
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-cleveland-cavaliers": {
+    "socialScore": 16.28,
+    "socialQuotient": 1.14,
+    "sources": {
+      "reddit": {
+        "score": 8.31,
+        "mentions": 6
+      },
+      "news": {
+        "score": 5.42,
+        "mentions": 2,
+        "articles": 2
+      },
+      "expert": {
+        "score": 2.55,
+        "rank": 10,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-atlanta-hawks": {
+    "socialScore": 11.34,
+    "socialQuotient": 1.13,
+    "sources": {
+      "reddit": {
+        "score": 9.17,
+        "mentions": 7
+      },
+      "news": {
+        "score": 2.17,
+        "mentions": 1,
+        "articles": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-detroit-pistons": {
+    "socialScore": 12.42,
+    "socialQuotient": 1.14,
+    "sources": {
+      "reddit": {
+        "score": 5.92,
+        "mentions": 5
+      },
+      "news": {
+        "score": 6.5,
+        "mentions": 3,
+        "articles": 3
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-minnesota-timberwolves": {
+    "socialScore": 14.37,
+    "socialQuotient": 1.12,
+    "sources": {
+      "reddit": {
+        "score": 9.92,
+        "mentions": 9
+      },
+      "expert": {
+        "score": 4.45,
+        "rank": 3,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-memphis-grizzlies": {
+    "socialScore": 7.66,
+    "socialQuotient": 1.11,
+    "sources": {
+      "reddit": {
+        "score": 7.66,
+        "mentions": 7
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-indiana-pacers": {
+    "socialScore": 10.96,
+    "socialQuotient": 1.12,
+    "sources": {
+      "reddit": {
+        "score": 6.79,
+        "mentions": 6
+      },
+      "news": {
+        "score": 2.17,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 2,
+        "rank": 12,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-la-clippers": {
+    "socialScore": 9.2,
+    "socialQuotient": 1.12,
+    "sources": {
+      "reddit": {
+        "score": 7.03,
+        "mentions": 7
+      },
+      "news": {
+        "score": 2.17,
+        "mentions": 1,
+        "articles": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-milwaukee-bucks": {
+    "socialScore": 13.74,
+    "socialQuotient": 1.12,
+    "sources": {
+      "reddit": {
+        "score": 7.66,
+        "mentions": 7
+      },
+      "news": {
+        "score": 2.17,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 3.91,
+        "rank": 5,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-new-orleans-pelicans": {
+    "socialScore": 9.1,
+    "socialQuotient": 1.12,
+    "sources": {
+      "reddit": {
+        "score": 9.1,
+        "mentions": 8
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-houston-rockets": {
+    "socialScore": 11.71,
+    "socialQuotient": 1.13,
+    "sources": {
+      "reddit": {
+        "score": 9.54,
+        "mentions": 9
+      },
+      "news": {
+        "score": 2.17,
+        "mentions": 1,
+        "articles": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-new-york-knicks": {
+    "socialScore": 13.44,
+    "socialQuotient": 1.13,
+    "sources": {
+      "reddit": {
+        "score": 8.45,
+        "mentions": 6
+      },
+      "news": {
+        "score": 2.17,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 2.82,
+        "rank": 9,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-la-lakers": {
+    "socialScore": 15.17,
+    "socialQuotient": 1.15,
+    "sources": {
+      "reddit": {
+        "score": 10.84,
+        "mentions": 11
+      },
+      "news": {
+        "score": 4.33,
+        "mentions": 2,
+        "articles": 2
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-miami-heat": {
+    "socialScore": 9.83,
+    "socialQuotient": 1.12,
+    "sources": {
+      "reddit": {
+        "score": 7.66,
+        "mentions": 7
+      },
+      "news": {
+        "score": 2.17,
+        "mentions": 1,
+        "articles": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-utah-jazz": {
+    "socialScore": 12.06,
+    "socialQuotient": 1.13,
+    "sources": {
+      "reddit": {
+        "score": 12.06,
+        "mentions": 9
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-toronto-raptors": {
+    "socialScore": 10.55,
+    "socialQuotient": 1.13,
+    "sources": {
+      "reddit": {
+        "score": 8.38,
+        "mentions": 8
+      },
+      "news": {
+        "score": 2.17,
+        "mentions": 1,
+        "articles": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-philadelphia-76ers": {
+    "socialScore": 14.04,
+    "socialQuotient": 1.13,
+    "sources": {
+      "reddit": {
+        "score": 10.4,
+        "mentions": 8
+      },
+      "expert": {
+        "score": 3.64,
+        "rank": 6,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-orlando-magic": {
+    "socialScore": 16.47,
+    "socialQuotient": 1.15,
+    "sources": {
+      "reddit": {
+        "score": 12.14,
+        "mentions": 8
+      },
+      "news": {
+        "score": 4.33,
+        "mentions": 2,
+        "articles": 2
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-sacramento-kings": {
+    "socialScore": 23.77,
+    "socialQuotient": 1.16,
+    "sources": {
+      "reddit": {
+        "score": 16.33,
+        "mentions": 15
+      },
+      "news": {
+        "score": 5.17,
+        "mentions": 2,
+        "articles": 2
+      },
+      "expert": {
+        "score": 2.27,
+        "rank": 11,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "mlb-atlanta-braves": {
+    "socialScore": 14.93,
+    "socialQuotient": 1.13,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 10.2,
+        "mentions": 10
+      },
+      "expert": {
+        "score": 4.73,
+        "rank": 2,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nba-phoenix-suns": {
+    "socialScore": 12.92,
+    "socialQuotient": 1.12,
+    "sources": {
+      "reddit": {
+        "score": 9.83,
+        "mentions": 9
+      },
+      "expert": {
+        "score": 3.09,
+        "rank": 8,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-portland-trail-blazers": {
+    "socialScore": 9.83,
+    "socialQuotient": 1.12,
+    "sources": {
+      "reddit": {
+        "score": 7.66,
+        "mentions": 7
+      },
+      "news": {
+        "score": 2.17,
+        "mentions": 1,
+        "articles": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-washington-wizards": {
+    "socialScore": 6.07,
+    "socialQuotient": 1.1,
+    "sources": {
+      "reddit": {
+        "score": 6.07,
+        "mentions": 5
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "mlb-arizona-diamondbacks": {
+    "socialScore": 11.09,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5,
+        "mentions": 5
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 3.09,
+        "rank": 8,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "mlb-boston-red-sox": {
+    "socialScore": 5.4,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.4,
+        "mentions": 5
+      }
+    }
+  },
+  "mlb-chicago-white-sox": {
+    "socialScore": 3,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3,
+        "mentions": 3
+      }
+    }
+  },
+  "mlb-kansas-city-royals": {
+    "socialScore": 4.6,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4.6,
+        "mentions": 4
+      }
+    }
+  },
+  "mlb-chicago-cubs": {
+    "socialScore": 9.2,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 7.2,
+        "mentions": 7
+      },
+      "expert": {
+        "score": 2,
+        "rank": 12,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "mlb-houston-astros": {
+    "socialScore": 10.64,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 7,
+        "mentions": 7
+      },
+      "expert": {
+        "score": 3.64,
+        "rank": 6,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "mlb-detroit-tigers": {
+    "socialScore": 5.4,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.4,
+        "mentions": 5
+      }
+    }
+  },
+  "mlb-cleveland-guardians": {
+    "socialScore": 7.2,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 7.2,
+        "mentions": 7
+      }
+    }
+  },
+  "mlb-baltimore-orioles": {
+    "socialScore": 13.65,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 6.2,
+        "mentions": 6
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 4.45,
+        "rank": 3,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "mlb-colorado-rockies": {
+    "socialScore": 6,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 6,
+        "mentions": 6
+      }
+    }
+  },
+  "mlb-cincinnati-reds": {
+    "socialScore": 5,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5,
+        "mentions": 5
+      }
+    }
+  },
+  "mlb-san-diego-padres": {
+    "socialScore": 8.2,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 8.2,
+        "mentions": 8
+      }
+    }
+  },
+  "mlb-los-angeles-angels": {
+    "socialScore": 8,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 8,
+        "mentions": 8
+      }
+    }
+  },
+  "mlb-minnesota-twins": {
+    "socialScore": 7.2,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 7.2,
+        "mentions": 7
+      }
+    }
+  },
+  "mlb-philadelphia-phillies": {
+    "socialScore": 14.18,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 10,
+        "mentions": 10
+      },
+      "expert": {
+        "score": 4.18,
+        "rank": 4,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "mlb-oakland-athletics": {
+    "socialScore": 5,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5,
+        "mentions": 5
+      }
+    }
+  },
+  "mlb-new-york-mets": {
+    "socialScore": 8.8,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 8.8,
+        "mentions": 8
+      }
+    }
+  },
+  "mlb-new-york-yankees": {
+    "socialScore": 17.06,
+    "socialQuotient": 1.14,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 6.2,
+        "mentions": 6
+      },
+      "news": {
+        "score": 7.5,
+        "mentions": 2,
+        "articles": 2
+      },
+      "expert": {
+        "score": 3.36,
+        "rank": 7,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "mlb-miami-marlins": {
+    "socialScore": 5.2,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.2,
+        "mentions": 5
+      }
+    }
+  },
+  "mlb-pittsburgh-pirates": {
+    "socialScore": 3,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3,
+        "mentions": 3
+      }
+    }
+  },
+  "mlb-milwaukee-brewers": {
+    "socialScore": 10.7,
+    "socialQuotient": 1.13,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 6.2,
+        "mentions": 6
+      },
+      "news": {
+        "score": 4.5,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "nhl-anaheim-ducks": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "mlb-st-louis-cardinals": {
+    "socialScore": 4,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4,
+        "mentions": 4
+      }
+    }
+  },
+  "nhl-boston-bruins": {
+    "socialScore": 9.29,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 3.09,
+        "rank": 8,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "mlb-seattle-mariners": {
+    "socialScore": 13.22,
+    "socialQuotient": 1.13,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 10.4,
+        "mentions": 10
+      },
+      "expert": {
+        "score": 2.82,
+        "rank": 9,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "mlb-tampa-bay-rays": {
+    "socialScore": 6.27,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4,
+        "mentions": 4
+      },
+      "expert": {
+        "score": 2.27,
+        "rank": 11,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nhl-buffalo-sabres": {
+    "socialScore": 3,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "mlb-washington-nationals": {
+    "socialScore": 7.2,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 7.2,
+        "mentions": 7
+      }
+    }
+  },
+  "mlb-texas-rangers": {
+    "socialScore": 9.71,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.8,
+        "mentions": 5
+      },
+      "expert": {
+        "score": 3.91,
+        "rank": 5,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "mlb-san-francisco-giants": {
+    "socialScore": 5.8,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.8,
+        "mentions": 5
+      }
+    }
+  },
+  "mlb-toronto-blue-jays": {
+    "socialScore": 7.75,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.2,
+        "mentions": 5
+      },
+      "expert": {
+        "score": 2.55,
+        "rank": 10,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nhl-edmonton-oilers": {
+    "socialScore": 9.33,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4.6,
+        "mentions": 4
+      },
+      "expert": {
+        "score": 4.73,
+        "rank": 2,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nhl-columbus-blue-jackets": {
+    "socialScore": 3.6,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.6,
+        "mentions": 3
+      }
+    }
+  },
+  "nhl-montreal-canadiens": {
+    "socialScore": 6.2,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "nhl-detroit-red-wings": {
+    "socialScore": 11.1,
+    "socialQuotient": 1.13,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.6,
+        "mentions": 3
+      },
+      "news": {
+        "score": 7.5,
+        "mentions": 2,
+        "articles": 2
+      }
+    }
+  },
+  "nhl-minnesota-wild": {
+    "socialScore": 6,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 6,
+        "mentions": 5
+      }
+    }
+  },
+  "nhl-florida-panthers": {
+    "socialScore": 11.2,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 5,
+        "rank": 1,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nhl-dallas-stars": {
+    "socialScore": 4.18,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.18,
+        "rank": 4,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nhl-chicago-blackhawks": {
+    "socialScore": 3.6,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.6,
+        "mentions": 3
+      }
+    }
+  },
+  "nhl-calgary-flames": {
+    "socialScore": 7.8,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4.8,
+        "mentions": 4
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "nhl-los-angeles-kings": {
+    "socialScore": 8.2,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.2,
+        "mentions": 5
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "nhl-philadelphia-flyers": {
+    "socialScore": 6.6,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.6,
+        "mentions": 3
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "nhl-ottawa-senators": {
+    "socialScore": 6.2,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "nhl-pittsburgh-penguins": {
+    "socialScore": 6.2,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "nhl-new-york-islanders": {
+    "socialScore": 3.2,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      }
+    }
+  },
+  "nhl-san-jose-sharks": {
+    "socialScore": 5.2,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.2,
+        "mentions": 5
+      }
+    }
+  },
+  "nhl-nashville-predators": {
+    "socialScore": 3.2,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      }
+    }
+  },
+  "nhl-new-york-rangers": {
+    "socialScore": 7.65,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      },
+      "expert": {
+        "score": 4.45,
+        "rank": 3,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nhl-new-jersey-devils": {
+    "socialScore": 3.6,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.6,
+        "mentions": 3
+      }
+    }
+  },
+  "nhl-seattle-kraken": {
+    "socialScore": 3.6,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.6,
+        "mentions": 3
+      }
+    }
+  },
+  "nhl-st-louis-blues": {
+    "socialScore": 3.2,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      }
+    }
+  },
+  "nhl-vegas-golden-knights": {
+    "socialScore": 2.82,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.82,
+        "rank": 9,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nhl-utah-hockey-club": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nhl-winnipeg-jets": {
+    "socialScore": 2.27,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.27,
+        "rank": 11,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nhl-vancouver-canucks": {
+    "socialScore": 3.36,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.36,
+        "rank": 7,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nhl-washington-capitals": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaaf-georgia-bulldogs": {
+    "socialScore": 5,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 5,
+        "rank": 1,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaf-texas-longhorns": {
+    "socialScore": 5.3,
+    "socialQuotient": 1.03,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 0.85,
+        "mentions": 1
+      },
+      "expert": {
+        "score": 4.45,
+        "rank": 3,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaf-oregon-ducks": {
+    "socialScore": 4.18,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.18,
+        "rank": 4,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaf-notre-dame-fighting-irish": {
+    "socialScore": 3.36,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.36,
+        "rank": 7,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "nhl-toronto-maple-leafs": {
+    "socialScore": 9.15,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.6,
+        "mentions": 3
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 2.55,
+        "rank": 10,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaf-michigan-wolverines": {
+    "socialScore": 3.67,
+    "socialQuotient": 1.03,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 0.85,
+        "mentions": 1
+      },
+      "expert": {
+        "score": 2.82,
+        "rank": 9,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaf-clemson-tigers": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-texas-am-aggies": {
+    "socialScore": 3.85,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 0.85,
+        "mentions": 1
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "ncaaf-alabama-crimson-tide": {
+    "socialScore": 4.76,
+    "socialQuotient": 1.03,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 0.85,
+        "mentions": 1
+      },
+      "expert": {
+        "score": 3.91,
+        "rank": 5,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaf-ole-miss-rebels": {
+    "socialScore": 3.64,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.64,
+        "rank": 6,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaf-penn-state-nittany-lions": {
+    "socialScore": 3.09,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.09,
+        "rank": 8,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaf-oklahoma-sooners": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaaf-lsu-tigers": {
+    "socialScore": 2.55,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.55,
+        "rank": 10,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaf-tennessee-volunteers": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-usc-trojans": {
+    "socialScore": 1.02,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1.02,
+        "mentions": 1
+      }
+    }
+  },
+  "ncaaf-louisville-cardinals": {
+    "socialScore": 0.85,
+    "socialQuotient": 1.03,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 0.85,
+        "mentions": 1
+      }
+    }
+  },
+  "ncaaf-miami-hurricanes": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-florida-gators": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-auburn-tigers": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-florida-state-seminoles": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-iowa-hawkeyes": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaaf-kansas-state-wildcats": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-south-carolina-gamecocks": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-colorado-buffaloes": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-missouri-tigers": {
+    "socialScore": 2.27,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.27,
+        "rank": 11,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaf-arizona-state-sun-devils": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-utah-utes": {
+    "socialScore": 3.7,
+    "socialQuotient": 1.05,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1.7,
+        "mentions": 2
+      },
+      "expert": {
+        "score": 2,
+        "rank": 12,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaf-baylor-bears": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-washington-huskies": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-nebraska-cornhuskers": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-smu-mustangs": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-byu-cougars": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaaf-texas-tech-red-raiders": {
+    "socialScore": 1.02,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1.02,
+        "mentions": 1
+      }
+    }
+  },
+  "ncaaf-arizona-wildcats": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-iowa-state-cyclones": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-unlv-rebels": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-tulane-green-wave": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaab-purdue-boilermakers": {
+    "socialScore": 5.65,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      },
+      "expert": {
+        "score": 4.45,
+        "rank": 3,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaf-memphis-tigers": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaf-boise-state-broncos": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaab-illinois-fighting-illini": {
+    "socialScore": 2,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2,
+        "rank": 12,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaab-florida-gators": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaab-uconn-huskies": {
+    "socialScore": 5,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 5,
+        "rank": 1,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaf-indiana-hoosiers": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaab-kansas-jayhawks": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaab-kentucky-wildcats": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaab-tennessee-volunteers": {
+    "socialScore": 3.36,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.36,
+        "rank": 7,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaab-nebraska-cornhuskers": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaab-north-carolina-tar-heels": {
+    "socialScore": 5.18,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      },
+      "expert": {
+        "score": 4.18,
+        "rank": 4,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaab-st-johns-red-storm": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "ncaab-iowa-state-cyclones": {
+    "socialScore": 3.64,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.64,
+        "rank": 6,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaab-gonzaga-bulldogs": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaab-alabama-crimson-tide": {
+    "socialScore": 2.55,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.55,
+        "rank": 10,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaab-arkansas-razorbacks": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaab-michigan-state-spartans": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "ncaab-iowa-hawkeyes": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaab-wisconsin-badgers": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaab-louisville-cardinals": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaab-texas-am-aggies": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaab-virginia-cavaliers": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaab-vanderbilt-commodores": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaab-nc-state-wolfpack": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaab-miami-hurricanes": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaab-byu-cougars": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaab-texas-tech-red-raiders": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {}
+  },
+  "ncaab-tcu-horned-frogs": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaab-creighton-bluejays": {
+    "socialScore": 2.27,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.27,
+        "rank": 11,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaab-clemson-tigers": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaab-villanova-wildcats": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaab-auburn-tigers": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaab-ucla-bruins": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaab-smu-mustangs": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaab-ohio-state-buckeyes": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "ncaab-saint-marys-gaels": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaab-texas-longhorns": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaw-lsu-tigers": {
+    "socialScore": 11.38,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 7.2,
+        "mentions": 5
+      },
+      "expert": {
+        "score": 4.18,
+        "rank": 4,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaw-notre-dame-fighting-irish": {
+    "socialScore": 3.55,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      },
+      "expert": {
+        "score": 2.55,
+        "rank": 10,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaw-vanderbilt-commodores": {
+    "socialScore": 4.1,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4.1,
+        "mentions": 2
+      }
+    }
+  },
+  "ncaaw-oklahoma-sooners": {
+    "socialScore": 2.7,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2.7,
+        "mentions": 1
+      }
+    }
+  },
+  "ncaaw-michigan-wolverines": {
+    "socialScore": 2.8,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2.8,
+        "mentions": 1
+      }
+    }
+  },
+  "ncaab-marquette-golden-eagles": {
+    "socialScore": 2.82,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.82,
+        "rank": 9,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaw-duke-blue-devils": {
+    "socialScore": 2.5,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2.5,
+        "mentions": 1
+      }
+    }
+  },
+  "ncaaw-texas-longhorns": {
+    "socialScore": 7.11,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.2,
+        "mentions": 1
+      },
+      "expert": {
+        "score": 3.91,
+        "rank": 5,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaw-iowa-hawkeyes": {
+    "socialScore": 8.63,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.9,
+        "mentions": 2
+      },
+      "expert": {
+        "score": 4.73,
+        "rank": 2,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaw-stanford-cardinal": {
+    "socialScore": 5.36,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      },
+      "expert": {
+        "score": 3.36,
+        "rank": 7,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaw-maryland-terrapins": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaw-nc-state-wolfpack": {
+    "socialScore": 3.82,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      },
+      "expert": {
+        "score": 2.82,
+        "rank": 9,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaw-michigan-state-spartans": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ncaaw-ole-miss-rebels": {
+    "socialScore": 1.6,
+    "socialQuotient": 1.05,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1.6,
+        "mentions": 1
+      }
+    }
+  },
+  "ncaaw-baylor-bears": {
+    "socialScore": 2,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      }
+    }
+  },
+  "ncaaw-louisville-cardinals": {
+    "socialScore": 2.4,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2.4,
+        "mentions": 1
+      }
+    }
+  },
+  "ncaaw-north-carolina-tar-heels": {
+    "socialScore": 3.7,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.7,
+        "mentions": 3
+      }
+    }
+  },
+  "ncaaw-tennessee-lady-volunteers": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "ncaaw-iowa-state-cyclones": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "ncaaw-ohio-state-buckeyes": {
+    "socialScore": 2.4,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2.4,
+        "mentions": 1
+      }
+    }
+  },
+  "wnba-golden-state-valkyries": {
+    "socialScore": 2.2,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2.2,
+        "mentions": 2
+      }
+    }
+  },
+  "ncaaw-texas-tech-lady-raiders": {
+    "socialScore": 1.4,
+    "socialQuotient": 1.05,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1.4,
+        "mentions": 1
+      }
+    }
+  },
+  "wnba-connecticut-sun": {
+    "socialScore": 4.45,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.45,
+        "rank": 3,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaw-kentucky-wildcats": {
+    "socialScore": 3,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3,
+        "mentions": 2
+      }
+    }
+  },
+  "wnba-dallas-wings": {
+    "socialScore": 6.09,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3,
+        "mentions": 3
+      },
+      "expert": {
+        "score": 3.09,
+        "rank": 8,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "wnba-atlanta-dream": {
+    "socialScore": 2.55,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.55,
+        "rank": 10,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "wnba-los-angeles-sparks": {
+    "socialScore": 3,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      },
+      "expert": {
+        "score": 2,
+        "rank": 12,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaw-usc-trojans": {
+    "socialScore": 3.64,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.64,
+        "rank": 6,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "wnba-chicago-sky": {
+    "socialScore": 2.82,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.82,
+        "rank": 9,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "wnba-phoenix-mercury": {
+    "socialScore": 5.56,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2.2,
+        "mentions": 2
+      },
+      "expert": {
+        "score": 3.36,
+        "rank": 7,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "afl-essendon-bombers": {
+    "socialScore": 4.02,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.02,
+        "rank": 15,
+        "notes": "ESPN Tier 6. No finals chance.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      }
+    }
+  },
+  "wnba-seattle-storm": {
+    "socialScore": 6.91,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3,
+        "mentions": 3
+      },
+      "expert": {
+        "score": 3.91,
+        "rank": 5,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "afl-geelong-cats": {
+    "socialScore": 7.56,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 6.56,
+        "rank": 2,
+        "notes": "ESPN Tier 2. $8 odds. Elite midfield.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "afl-collingwood-magpies": {
+    "socialScore": 3.19,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.19,
+        "rank": 11,
+        "notes": "ESPN Tier 5. Nick Daicos Brownlow tip.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "wnba-washington-mystics": {
+    "socialScore": 3.27,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      },
+      "expert": {
+        "score": 2.27,
+        "rank": 11,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "afl-adelaide-crows": {
+    "socialScore": 6.01,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 5.01,
+        "rank": 5,
+        "notes": "ESPN Tier 2. Resurgent.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "afl-carlton-blues": {
+    "socialScore": 4.38,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.38,
+        "rank": 12,
+        "notes": "ESPN Tier 5.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      }
+    }
+  },
+  "afl-gold-coast-suns": {
+    "socialScore": 9.58,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 5.38,
+        "rank": 3,
+        "notes": "ESPN Tier 2. $8 odds. Breakout contender.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      },
+      "reddit": {
+        "score": 4.2,
+        "mentions": 4
+      }
+    }
+  },
+  "afl-greater-western-sydney-giants": {
+    "socialScore": 8.39,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 5.19,
+        "rank": 4,
+        "notes": "ESPN Tier 2. Strong list.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      },
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      }
+    }
+  },
+  "afl-fremantle-dockers": {
+    "socialScore": 4.86,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.66,
+        "rank": 8,
+        "notes": "ESPN Tier 3. Could go either way.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      }
+    }
+  },
+  "afl-st-kilda-saints": {
+    "socialScore": 6.34,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.34,
+        "rank": 10,
+        "notes": "ESPN big improver. Added Clayton Oliver.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 3,
+        "mentions": 3
+      }
+    }
+  },
+  "afl-west-coast-eagles": {
+    "socialScore": 5.85,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.65,
+        "rank": 18,
+        "notes": "ESPN Tier 6.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 4.2,
+        "mentions": 4
+      }
+    }
+  },
+  "afl-hawthorn-hawks": {
+    "socialScore": 5.63,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.63,
+        "rank": 7,
+        "notes": "$8 at bookies but ESPN Tier 4.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "afl-melbourne-demons": {
+    "socialScore": 3.89,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.89,
+        "rank": 16,
+        "notes": "ESPN Tier 6.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      }
+    }
+  },
+  "afl-north-melbourne-kangaroos": {
+    "socialScore": 4.14,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.14,
+        "rank": 14,
+        "notes": "ESPN Tier 5. Rebuilding.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      }
+    }
+  },
+  "afl-richmond-tigers": {
+    "socialScore": 2.77,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.77,
+        "rank": 17,
+        "notes": "ESPN Tier 6.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "f1-carlos-sainz": {
+    "socialScore": 3.64,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.64,
+        "rank": 9,
+        "notes": "66/1. Williams move. Williams invested heavily in 2026 regs. Potential surprise per F1-Analysis.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 4
+      }
+    }
+  },
+  "afl-western-bulldogs": {
+    "socialScore": 6.7,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.5,
+        "rank": 9,
+        "notes": "ESPN dark horse pick. Midfield dominance.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      }
+    }
+  },
+  "afl-port-adelaide-power": {
+    "socialScore": 3.26,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.26,
+        "rank": 13,
+        "notes": "ESPN Tier 5.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "afl-sydney-swans": {
+    "socialScore": 8.02,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.82,
+        "rank": 6,
+        "notes": "ESPN Tier 3. $10 odds. Added Charlie Curnow.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      },
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      }
+    }
+  },
+  "f1-oliver-bearman": {
+    "socialScore": 3.09,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.09,
+        "rank": 16,
+        "notes": "200/1. Haas-Toyota. Impressed in 2024 Ferrari sub appearances.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "f1-yuki-tsunoda": {
+    "socialScore": 2,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      }
+    }
+  },
+  "f1-fernando-alonso": {
+    "socialScore": 5.65,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.65,
+        "rank": 5,
+        "notes": "15/2. Surprise — Aston Martin Honda PU optimism. theScore: Adrian Newey factor could be decisive.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 5
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "f1-isack-hadjar": {
+    "socialScore": 4,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3,
+        "rank": 11,
+        "notes": "100/1. Red Bull junior, F2 champion. Rookie season but strong car.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 3
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "f1-liam-lawson": {
+    "socialScore": 1.98,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.98,
+        "rank": 17,
+        "notes": "250/1. RB/VCARB. Red Bull pipeline. Aggressive racer.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "f1-esteban-ocon": {
+    "socialScore": 3.61,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.61,
+        "rank": 18,
+        "notes": "250/1. Haas. Experienced midfielder.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      }
+    }
+  },
+  "f1-alexander-albon": {
+    "socialScore": 2.88,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.88,
+        "rank": 12,
+        "notes": "100/1. Williams. Team leader. Consistently extracts maximum from car.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "f1-lance-stroll": {
+    "socialScore": 3.13,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.13,
+        "rank": 10,
+        "notes": "80/1. Benefits from Aston Martin + Newey. Father investing heavily.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "f1-nico-hulkenberg": {
+    "socialScore": 2.31,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.31,
+        "rank": 14,
+        "notes": "150/1. Sauber/Audi factory team. German backing. Experienced pair with Bortoleto.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "f1-pierre-gasly": {
+    "socialScore": 4.62,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.42,
+        "rank": 13,
+        "notes": "150/1. Alpine. Cadillac/GM PU from 2026. Unknown quantity.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 2.2,
+        "mentions": 2
+      }
+    }
+  },
+  "ucl-inter-milan": {
+    "socialScore": 8.38,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.18,
+        "rank": 12,
+        "notes": "50/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      },
+      "reddit": {
+        "score": 4.2,
+        "mentions": 4
+      }
+    }
+  },
+  "f1-franco-colapinto": {
+    "socialScore": 1.76,
+    "socialQuotient": 1.05,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.76,
+        "rank": 19,
+        "notes": "500/1. Alpine. Argentine fan favorite. Raw speed shown in 2025 cameos.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "ucl-chelsea": {
+    "socialScore": 7.17,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.77,
+        "rank": 8,
+        "notes": "18/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      },
+      "reddit": {
+        "score": 2.4,
+        "mentions": 2
+      }
+    }
+  },
+  "f1-gabriel-bortoleto": {
+    "socialScore": 2.5,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.5,
+        "rank": 15,
+        "notes": "150/1. Sauber rookie. F2 champion. ESPN: best rookie crop in years.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "ucl-atletico-madrid": {
+    "socialScore": 17.32,
+    "socialQuotient": 1.15,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.32,
+        "rank": 11,
+        "notes": "40/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      },
+      "reddit": {
+        "score": 13,
+        "mentions": 13
+      }
+    }
+  },
+  "ucl-real-madrid": {
+    "socialScore": 19.98,
+    "socialQuotient": 1.16,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 5.78,
+        "rank": 7,
+        "notes": "10/1. Record champions.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 14.2,
+        "mentions": 13
+      }
+    }
+  },
+  "ucl-barcelona": {
+    "socialScore": 12.9,
+    "socialQuotient": 1.14,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 6.3,
+        "rank": 4,
+        "notes": "8/1. Opta 8.8%.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 3.6,
+        "mentions": 3
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "ucl-liverpool": {
+    "socialScore": 7.16,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 5.96,
+        "rank": 6,
+        "notes": "9/1. Opta 7.4%.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      }
+    }
+  },
+  "ucl-juventus": {
+    "socialScore": 5.44,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.84,
+        "rank": 21,
+        "notes": "350/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 3.6,
+        "mentions": 3
+      }
+    }
+  },
+  "ucl-borussia-dortmund": {
+    "socialScore": 7.52,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.32,
+        "rank": 13,
+        "notes": "50/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "ucl-newcastle": {
+    "socialScore": 3.8,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.8,
+        "rank": 9,
+        "notes": "33/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "ucl-benfica": {
+    "socialScore": 13.23,
+    "socialQuotient": 1.14,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.13,
+        "rank": 18,
+        "notes": "200/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 6.6,
+        "mentions": 6
+      },
+      "news": {
+        "score": 4.5,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "ucl-napoli": {
+    "socialScore": 2.2,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2.2,
+        "mentions": 2
+      }
+    }
+  },
+  "ucl-sporting-cp": {
+    "socialScore": 2.51,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.51,
+        "rank": 14,
+        "notes": "66/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      }
+    }
+  },
+  "ucl-marseille": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "ucl-bayer-leverkusen": {
+    "socialScore": 6.07,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.07,
+        "rank": 15,
+        "notes": "66/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 3,
+        "mentions": 3
+      }
+    }
+  },
+  "ucl-ac-milan": {
+    "socialScore": 4,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4,
+        "mentions": 4
+      }
+    }
+  },
+  "ucl-atalanta": {
+    "socialScore": 6.23,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.03,
+        "rank": 19,
+        "notes": "200/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "ucl-monaco": {
+    "socialScore": 7.55,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.75,
+        "rank": 22,
+        "notes": "500/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 5.8,
+        "mentions": 5
+      }
+    }
+  },
+  "ucl-tottenham": {
+    "socialScore": 4.88,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.68,
+        "rank": 10,
+        "notes": "33/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      }
+    }
+  },
+  "ucl-slavia-prague": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ucl-galatasaray": {
+    "socialScore": 6.72,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.32,
+        "rank": 16,
+        "notes": "100/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 4.4,
+        "mentions": 4
+      }
+    }
+  },
+  "ucl-olympiacos": {
+    "socialScore": 6.45,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.65,
+        "rank": 23,
+        "notes": "500/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 4.8,
+        "mentions": 4
+      }
+    }
+  },
+  "ucl-psv-eindhoven": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ucl-club-brugge": {
+    "socialScore": 3.14,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.94,
+        "rank": 20,
+        "notes": "250/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      }
+    }
+  },
+  "ucl-copenhagen": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ucl-athletic-bilbao": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ucl-villarreal": {
+    "socialScore": 2.4,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2.4,
+        "mentions": 2
+      }
+    }
+  },
+  "ucl-ajax": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "ucl-eintracht-frankfurt": {
+    "socialScore": 1.2,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      }
+    }
+  },
+  "fifa-norway": {
+    "socialScore": 3.6,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.6,
+        "mentions": 3
+      }
+    }
+  },
+  "fifa-belgium": {
+    "socialScore": 11.88,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4.7,
+        "mentions": 2
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 4.18,
+        "rank": 4,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "fifa-croatia": {
+    "socialScore": 7.95,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2.4,
+        "mentions": 2
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 2.55,
+        "rank": 10,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "fifa-uruguay": {
+    "socialScore": 5.87,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.6,
+        "mentions": 1
+      },
+      "expert": {
+        "score": 2.27,
+        "rank": 11,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "fifa-portugal": {
+    "socialScore": 5.76,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2.4,
+        "mentions": 2
+      },
+      "expert": {
+        "score": 3.36,
+        "rank": 7,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "fifa-colombia": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "ucl-bodo-glimt": {
+    "socialScore": 5.22,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.22,
+        "rank": 17,
+        "notes": "150/1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 3,
+        "mentions": 3
+      }
+    }
+  },
+  "fifa-germany": {
+    "socialScore": 2.2,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2.2,
+        "mentions": 2
+      }
+    }
+  },
+  "fifa-italy": {
+    "socialScore": 8.52,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.7,
+        "mentions": 3
+      },
+      "expert": {
+        "score": 2.82,
+        "rank": 9,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "fifa-netherlands": {
+    "socialScore": 10.34,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.7,
+        "mentions": 1
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 3.64,
+        "rank": 6,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "fifa-ecuador": {
+    "socialScore": 4,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "fifa-senegal": {
+    "socialScore": 2.4,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2.4,
+        "mentions": 2
+      }
+    }
+  },
+  "fifa-australia": {
+    "socialScore": 3.6,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.6,
+        "mentions": 3
+      }
+    }
+  },
+  "fifa-japan": {
+    "socialScore": 4.8,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4.8,
+        "mentions": 2
+      }
+    }
+  },
+  "fifa-switzerland": {
+    "socialScore": 3.6,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.6,
+        "mentions": 1
+      }
+    }
+  },
+  "fifa-south-korea": {
+    "socialScore": 4.4,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4.4,
+        "mentions": 2
+      }
+    }
+  },
+  "fifa-canada": {
+    "socialScore": 7,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 7,
+        "mentions": 4
+      }
+    }
+  },
+  "fifa-united-states": {
+    "socialScore": 7.4,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.4,
+        "mentions": 5
+      },
+      "expert": {
+        "score": 2,
+        "rank": 12,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "fifa-mexico": {
+    "socialScore": 13.1,
+    "socialQuotient": 1.14,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 10.1,
+        "mentions": 7
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "fifa-morocco": {
+    "socialScore": 6,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 6,
+        "mentions": 3
+      }
+    }
+  },
+  "fifa-turkey": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "fifa-austria": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "fifa-denmark": {
+    "socialScore": 3.6,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.6,
+        "mentions": 1
+      }
+    }
+  },
+  "fifa-algeria": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "fifa-ivory-coast": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "fifa-ghana": {
+    "socialScore": 1.2,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      }
+    }
+  },
+  "fifa-poland": {
+    "socialScore": 3.4,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.4,
+        "mentions": 1
+      }
+    }
+  },
+  "fifa-egypt": {
+    "socialScore": 4.7,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4.7,
+        "mentions": 2
+      }
+    }
+  },
+  "fifa-iran": {
+    "socialScore": 4.8,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4.8,
+        "mentions": 2
+      }
+    }
+  },
+  "fifa-saudi-arabia": {
+    "socialScore": 4.5,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4.5,
+        "mentions": 2
+      }
+    }
+  },
+  "fifa-qatar": {
+    "socialScore": 5.7,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.7,
+        "mentions": 3
+      }
+    }
+  },
+  "fifa-wales": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "darts-stephen-bunting": {
+    "socialScore": 11.5,
+    "socialQuotient": 1.13,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 11.5,
+        "mentions": 6
+      }
+    }
+  },
+  "darts-michael-van-gerwen": {
+    "socialScore": 25.35,
+    "socialQuotient": 1.16,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 20.9,
+        "mentions": 8
+      },
+      "expert": {
+        "score": 4.45,
+        "rank": 3,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "fifa-new-zealand": {
+    "socialScore": 6.4,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 6.4,
+        "mentions": 4
+      }
+    }
+  },
+  "fifa-south-africa": {
+    "socialScore": 4.7,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4.7,
+        "mentions": 2
+      }
+    }
+  },
+  "fifa-sweden": {
+    "socialScore": 1.2,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      }
+    }
+  },
+  "fifa-paraguay": {
+    "socialScore": 1.2,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      }
+    }
+  },
+  "fifa-scotland": {
+    "socialScore": 5.7,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 5.7,
+        "mentions": 3
+      }
+    }
+  },
+  "darts-jonny-clayton": {
+    "socialScore": 16,
+    "socialQuotient": 1.15,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 13,
+        "mentions": 5
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "darts-ross-smith": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "darts-gary-anderson": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "darts-josh-rock": {
+    "socialScore": 6.8,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 6.8,
+        "mentions": 6
+      }
+    }
+  },
+  "darts-ryan-searle": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "darts-danny-noppert": {
+    "socialScore": 2.82,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.82,
+        "rank": 9,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "darts-chris-dobey": {
+    "socialScore": 2.27,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.27,
+        "rank": 11,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "darts-james-wade": {
+    "socialScore": 3.6,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.6,
+        "mentions": 1
+      }
+    }
+  },
+  "darts-gerwyn-price": {
+    "socialScore": 12.91,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 9,
+        "mentions": 6
+      },
+      "expert": {
+        "score": 3.91,
+        "rank": 5,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "darts-nathan-aspinall": {
+    "socialScore": 7.14,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 3.5,
+        "mentions": 1
+      },
+      "expert": {
+        "score": 3.64,
+        "rank": 6,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "darts-martin-schindler": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "darts-luke-woodhouse": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "darts-ryan-joyce": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "darts-jermaine-wattimena": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "darts-dave-chisnall": {
+    "socialScore": 2.55,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.55,
+        "rank": 10,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "darts-beau-greaves": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "darts-mike-de-decker": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "darts-damon-heta": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "darts-daryl-gurney": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "darts-wessel-nijman": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "darts-rob-cross": {
+    "socialScore": 20.36,
+    "socialQuotient": 1.15,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 17,
+        "mentions": 17
+      },
+      "expert": {
+        "score": 3.36,
+        "rank": 7,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "snooker-john-higgins": {
+    "socialScore": 10.69,
+    "socialQuotient": 1.13,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.49,
+        "rank": 9,
+        "notes": "14/1. World #6, 4x champion. Wizard of Wishaw still competing at top level.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "darts-dirk-van-duijvenbode": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "darts-niko-springer": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "darts-charlie-manby": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "snooker-mark-williams": {
+    "socialScore": 5.96,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.56,
+        "rank": 11,
+        "notes": "16/1. World #4, 2025 finalist. 3x World Champion at 50.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 3
+      },
+      "reddit": {
+        "score": 2.4,
+        "mentions": 2
+      }
+    }
+  },
+  "darts-callan-rydz": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "darts-william-oconnor": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "darts-michael-smith": {
+    "socialScore": 4.18,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.18,
+        "rank": 4,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "darts-justin-hood": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "darts-krzysztof-ratajski": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "snooker-si-jiahui": {
+    "socialScore": 1.78,
+    "socialQuotient": 1.05,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.78,
+        "rank": 17,
+        "notes": "World #16. Young Chinese talent.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 1
+      }
+    }
+  },
+  "snooker-stuart-bingham": {
+    "socialScore": 2,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      }
+    }
+  },
+  "snooker-ding-junhui": {
+    "socialScore": 2.92,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.92,
+        "rank": 15,
+        "notes": "28/1. World #15. 2024 finalist renaissance.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "snooker-chris-wakelin": {
+    "socialScore": 1.67,
+    "socialQuotient": 1.05,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.67,
+        "rank": 18,
+        "notes": "World #13. Career-best season.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 1
+      }
+    }
+  },
+  "snooker-ronnie-osullivan": {
+    "socialScore": 6.16,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 6.16,
+        "rank": 4,
+        "notes": "7/1. 7x champion but health concerns — pulled out of 2026 Masters. Dropped to #11.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 5
+      }
+    }
+  },
+  "snooker-mark-allen": {
+    "socialScore": 3.72,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.72,
+        "rank": 10,
+        "notes": "16/1. World #9. UK Championship winner.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "snooker-zhang-anda": {
+    "socialScore": 2.59,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.59,
+        "rank": 14,
+        "notes": "25/1. Dark horse pick — won International Championship. Maximum break threat.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "snooker-shaun-murphy": {
+    "socialScore": 7.04,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.04,
+        "rank": 8,
+        "notes": "10/1. Consistent performer. 2005 World Champion.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 3
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "snooker-xiao-guodong": {
+    "socialScore": 2.73,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.73,
+        "rank": 13,
+        "notes": "22/1. World #10. Chinese contingent rising.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "snooker-barry-hawkins": {
+    "socialScore": 2.32,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.32,
+        "rank": 16,
+        "notes": "World #14. Solid Crucible record — 3 semis.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "snooker-gary-wilson": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "snooker-jack-lisowski": {
+    "socialScore": 2.86,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.86,
+        "rank": 12,
+        "notes": "20/1. Dark horse — breakout season, improved match-winning ability.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "snooker-ali-carter": {
+    "socialScore": 1.2,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      }
+    }
+  },
+  "snooker-stan-moody": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "snooker-luca-brecel": {
+    "socialScore": 1.92,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.92,
+        "rank": 19,
+        "notes": "2023 World Champion. Capable of brilliance but inconsistent.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "snooker-hossein-vafaei": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "snooker-joe-oconnor": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "snooker-allister-carter": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "snooker-jak-jones": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "snooker-elliot-slessor": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "snooker-thepchaiya-un-nooh": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "snooker-aaron-hill": {
+    "socialScore": 8,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      },
+      "news": {
+        "score": 6,
+        "mentions": 2,
+        "articles": 2
+      }
+    }
+  },
+  "snooker-jackson-page": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "snooker-david-gilbert": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "llws-usa-great-lakes": {
+    "socialScore": 4.72,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.72,
+        "rank": 11,
+        "notes": "Ohio/Michigan/Indiana talent. Occasional champion.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      }
+    }
+  },
+  "snooker-zhou-yuelong": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "snooker-yuan-sijun": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "snooker-anthony-mcgill": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "snooker-pang-junxu": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "snooker-stephen-maguire": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "llws-usa-midwest": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "llws-usa-southeast": {
+    "socialScore": 4.18,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.18,
+        "rank": 6,
+        "notes": "Strong baseball region. Georgia/Florida talent. Frequent contender.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "llws-taipei": {
+    "socialScore": 6.75,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 6.75,
+        "rank": 1,
+        "notes": "Won 2025 LLWS. 18 total titles (most all-time). Chinese Taipei = historically dominant.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 5
+      }
+    }
+  },
+  "llws-usa-new-england": {
+    "socialScore": 2.4,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.4,
+        "rank": 13,
+        "notes": "Recent contenders. Connecticut strong.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "llws-usa-southwest": {
+    "socialScore": 5.28,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 5.28,
+        "rank": 4,
+        "notes": "Texas powerhouse. Won/runner-up in 15 of last 21 LLWS on US side.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 4
+      }
+    }
+  },
+  "llws-usa-mountain": {
+    "socialScore": 4,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 4,
+        "mentions": 4
+      }
+    }
+  },
+  "llws-usa-mid-atlantic": {
+    "socialScore": 3.8,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.8,
+        "rank": 8,
+        "notes": "Pennsylvania/New Jersey. Home region — plays in Williamsport. 5 titles.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "llws-usa-northwest": {
+    "socialScore": 1.82,
+    "socialQuotient": 1.05,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.82,
+        "rank": 14,
+        "notes": "Washington/Oregon. Sporadic but capable.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 1
+      }
+    }
+  },
+  "llws-usa-west": {
+    "socialScore": 8.5,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 5.5,
+        "rank": 3,
+        "notes": "California pipeline. 8 titles from CA alone (most by US state). Hawaii adds 4 more.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 3,
+        "mentions": 3
+      }
+    }
+  },
+  "llws-usa-metro": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "llws-australia": {
+    "socialScore": 2.56,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.56,
+        "rank": 16,
+        "notes": "Baseball growing Down Under. Qualifier experience.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "llws-panama": {
+    "socialScore": 2.08,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.08,
+        "rank": 12,
+        "notes": "Growing baseball nation. Caribbean qualifier threat.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 1
+      }
+    }
+  },
+  "indycar-will-power": {
+    "socialScore": 7.65,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.45,
+        "rank": 9,
+        "notes": "20/1. Moved to Andretti for 2026. 2018 champ. Indy 500 winner.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      }
+    }
+  },
+  "llws-europe-africa": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "llws-latin-america": {
+    "socialScore": 7.04,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.04,
+        "rank": 9,
+        "notes": "Venezuela powerhouse. Maracaibo won 2000. Colombia rising.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 4,
+        "mentions": 4
+      }
+    }
+  },
+  "llws-canada": {
+    "socialScore": 2.08,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.08,
+        "rank": 15,
+        "notes": "Vancouver (BC) won 2009. Occasional dark horse.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "llws-asia-pacific": {
+    "socialScore": 3.29,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.29,
+        "rank": 13,
+        "notes": "South Korea/Philippines.",
+        "sourcesUsed": 3
+      }
+    }
+  },
+  "llws-mexico": {
+    "socialScore": 3.99,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.99,
+        "rank": 7,
+        "notes": "Monterrey Industrial won 3 titles (2004, 2008). Latin American baseball tradition.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "indycar-pato-oward": {
+    "socialScore": 6.68,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 6.68,
+        "rank": 2,
+        "notes": "11/2. Runner-up last season. Beyond the Flag #2. McLaren Arrow star. Indy 500 contender.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 6
+      }
+    }
+  },
+  "llws-caribbean": {
+    "socialScore": 4.37,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.37,
+        "rank": 5,
+        "notes": "Curacao dynasty — 3 titles in last decade. Small island, outsized talent.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "indycar-marcus-ericsson": {
+    "socialScore": 3.22,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.22,
+        "rank": 15,
+        "notes": "100/1. 2022 Indy 500 winner. Knows how to win the big one.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "indycar-scott-dixon": {
+    "socialScore": 8.65,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 5.15,
+        "rank": 8,
+        "notes": "16/1. 6x champion, all-time legend. 52 career wins. Beyond the Flag: still elite.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 5
+      },
+      "reddit": {
+        "score": 3.5,
+        "mentions": 1
+      }
+    }
+  },
+  "indycar-graham-rahal": {
+    "socialScore": 2.47,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.47,
+        "rank": 18,
+        "notes": "Veteran presence. Team co-owner driver.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "indycar-rinus-veekay": {
+    "socialScore": 2.57,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.57,
+        "rank": 17,
+        "notes": "Race winner. Dutch talent. Capable of upset victories.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "indycar-santino-ferrucci": {
+    "socialScore": 3.22,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.22,
+        "rank": 16,
+        "notes": "120/1. AJ Foyt team. Indy 500 specialist.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "indycar-felix-rosenqvist": {
+    "socialScore": 3.95,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.95,
+        "rank": 13,
+        "notes": "80/1. Dark horse per Beyond the Flag. Consistent midfield threat.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "indycar-colton-herta": {
+    "socialScore": 4.98,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.78,
+        "rank": 10,
+        "notes": "Talented speedster. Fastest raw pace on grid per RACER.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 3
+      },
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      }
+    }
+  },
+  "indycar-christian-lundgaard": {
+    "socialScore": 3.82,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.82,
+        "rank": 4,
+        "notes": "20/1 but Beyond the Flag #4. F2 pedigree. Rahal Letterman improved car.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "indycar-alexander-rossi": {
+    "socialScore": 6.76,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.56,
+        "rank": 12,
+        "notes": "70/1. 2016 Indy 500 winner. Veteran experience.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 3
+      },
+      "reddit": {
+        "score": 3.2,
+        "mentions": 1
+      }
+    }
+  },
+  "indycar-david-malukas": {
+    "socialScore": 4.56,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.56,
+        "rank": 3,
+        "notes": "18/1 in odds but Beyond the Flag #3 — breakout imminent. Meyer Shank upgrade.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "indycar-nolan-siegel": {
+    "socialScore": 1.98,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.98,
+        "rank": 19,
+        "notes": "Young American prospect. Arrow McLaren development.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 1
+      }
+    }
+  },
+  "indycar-sting-ray-robb": {
+    "socialScore": 1.9,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.9,
+        "rank": 20,
+        "notes": "Sophomore season. AJ Foyt team.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 1
+      }
+    }
+  },
+  "indycar-marcus-armstrong": {
+    "socialScore": 3.14,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.14,
+        "rank": 11,
+        "notes": "Breakout candidate per Beyond the Flag. Ganassi seat upgrade.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "indycar-conor-daly": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "indycar-kyffin-simpson": {
+    "socialScore": 1.8,
+    "socialQuotient": 1.05,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.8,
+        "rank": 25,
+        "notes": "Beyond the Flag dark horse. Young talent at Ganassi.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "indycar-louis-foster": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "indycar-robert-shwartzman": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "indycar-callum-ilott": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "indycar-christian-rasmussen": {
+    "socialScore": 2.86,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.86,
+        "rank": 14,
+        "notes": "100/1. Breakout candidate. Indy NXT champion.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "indycar-devlin-defrancesco": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-bryson-dechambeau": {
+    "socialScore": 5.27,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 5.27,
+        "rank": 4,
+        "notes": "+1200 Masters. LIV star. ProGolfNow: distance advantage at Augusta.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 7
+      }
+    }
+  },
+  "pga-justin-thomas": {
+    "socialScore": 4,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4,
+        "rank": 9,
+        "notes": "+2500 Masters. 2x PGA Champ. Bounce-back candidate per SI.com.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 5
+      }
+    }
+  },
+  "pga-collin-morikawa": {
+    "socialScore": 5.45,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.45,
+        "rank": 8,
+        "notes": "+1800 Masters. 2x major winner. Iron play elite per Fried Egg.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 6
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "pga-patrick-cantlay": {
+    "socialScore": 2.65,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.65,
+        "rank": 17,
+        "notes": "Consistent top-10 machine. MyGolfSpy: elite putting stats.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "indycar-jacob-abel": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-viktor-hovland": {
+    "socialScore": 3.29,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.29,
+        "rank": 13,
+        "notes": "+3500 Masters. 2023 FedEx Cup champ.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 4
+      }
+    }
+  },
+  "pga-sam-burns": {
+    "socialScore": 2.57,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.57,
+        "rank": 18,
+        "notes": "Top-15 world ranking. SportsLine model value pick.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "pga-ludvig-aberg": {
+    "socialScore": 4.2,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.2,
+        "rank": 7,
+        "notes": "+1800 Masters. 24yo phenom. Geoff Shackelford: generational talent, Augusta suits his game.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 5
+      }
+    }
+  },
+  "pga-jon-rahm": {
+    "socialScore": 5.15,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 5.15,
+        "rank": 5,
+        "notes": "+1400 Masters. Former World #1. Reunification speculation.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 7
+      }
+    }
+  },
+  "pga-hideki-matsuyama": {
+    "socialScore": 3.57,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.57,
+        "rank": 10,
+        "notes": "+3500 Masters. 2021 Masters champ. Won 3 times in 2024-25.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 4
+      }
+    }
+  },
+  "pga-wyndham-clark": {
+    "socialScore": 1.99,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.99,
+        "rank": 25,
+        "notes": "2023 US Open winner. Fried Egg: can win on any course.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "pga-brooks-koepka": {
+    "socialScore": 5.65,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.65,
+        "rank": 20,
+        "notes": "5x major winner. LIV. Proven major performer.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 4
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "pga-justin-rose": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-russell-henley": {
+    "socialScore": 4.93,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.93,
+        "rank": 23,
+        "notes": "Top-20 in world ranking. SportsLine model longshot value.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 2
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "pga-tyrrell-hatton": {
+    "socialScore": 2.9,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.9,
+        "rank": 14,
+        "notes": "+3500 Masters. Splash Sports: undervalued in odds.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "pga-shane-lowry": {
+    "socialScore": 3.43,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.23,
+        "rank": 19,
+        "notes": "Open Championship contender. Links pedigree.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      }
+    }
+  },
+  "pga-robert-macintyre": {
+    "socialScore": 2.73,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.73,
+        "rank": 16,
+        "notes": "+7000 Masters. Rising Scot. Breakout 2025 season.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "pga-sungjae-im": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-cameron-young": {
+    "socialScore": 3.53,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.53,
+        "rank": 15,
+        "notes": "+5000 Masters. ProGolfNow sleeper pick. Massive power.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "pga-matt-fitzpatrick": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-sepp-straka": {
+    "socialScore": 1.77,
+    "socialQuotient": 1.05,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.77,
+        "rank": 22,
+        "notes": "World #12. Under-the-radar consistent performer.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 1
+      }
+    }
+  },
+  "pga-harris-english": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-brian-harman": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-akshay-bhatia": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-jordan-spieth": {
+    "socialScore": 3.8,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.8,
+        "rank": 11,
+        "notes": "+3500 Masters. Augusta specialist (1 win, 3 top-3s). Career Grand Slam quest.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 5
+      }
+    }
+  },
+  "pga-keegan-bradley": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-tom-kim": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-maverick-mcnealy": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-tony-finau": {
+    "socialScore": 6.13,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.63,
+        "rank": 27,
+        "notes": "Consistent contender. PGA Tour veteran.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 2
+      },
+      "news": {
+        "score": 4.5,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "pga-joaquin-niemann": {
+    "socialScore": 3.07,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.07,
+        "rank": 12,
+        "notes": "+3500 Masters. LIV standout. ProGolfNow: best putter in LIV.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "pga-ryan-fox": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-jj-spaun": {
+    "socialScore": 9,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 9,
+        "mentions": 2,
+        "articles": 2
+      }
+    }
+  },
+  "pga-aaron-rai": {
+    "socialScore": 1,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "pga-corey-conners": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-kurt-kitayama": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-jason-day": {
+    "socialScore": 4.5,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 4.5,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "pga-adam-scott": {
+    "socialScore": 18,
+    "socialQuotient": 1.15,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 18,
+        "mentions": 5,
+        "articles": 5
+      }
+    }
+  },
+  "pga-cameron-smith": {
+    "socialScore": 2.32,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.32,
+        "rank": 21,
+        "notes": "2022 Open champ. LIV. Short game wizard.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "pga-min-woo-lee": {
+    "socialScore": 1.38,
+    "socialQuotient": 1.05,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.38,
+        "rank": 28,
+        "notes": "Australian talent. Rising world ranking.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 1
+      }
+    }
+  },
+  "pga-max-greyserman": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-daniel-berger": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-rasmus-hojgaard": {
+    "socialScore": 5.5,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      },
+      "news": {
+        "score": 4.5,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "pga-tom-hoge": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-alexander-zverev": {
+    "socialScore": 8.91,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 3.91,
+        "rank": 5,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "pga-chris-gotterup": {
+    "socialScore": 1.64,
+    "socialQuotient": 1.05,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.64,
+        "rank": 24,
+        "notes": "ProGolfNow breakout pick. Young power player.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 1
+      }
+    }
+  },
+  "pga-dustin-johnson": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-davis-thompson": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-patrick-reed": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-ben-griffin": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "pga-si-woo-kim": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-taylor-fritz": {
+    "socialScore": 5,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 2,
+        "rank": 12,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_m-casper-ruud": {
+    "socialScore": 3.09,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.09,
+        "rank": 8,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_m-daniil-medvedev": {
+    "socialScore": 13.18,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 9,
+        "mentions": 3,
+        "articles": 3
+      },
+      "expert": {
+        "score": 4.18,
+        "rank": 4,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_m-alexander-bublik": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-jack-draper": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-ben-shelton": {
+    "socialScore": 3,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "tennis_m-lorenzo-musetti": {
+    "socialScore": 2,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      }
+    }
+  },
+  "tennis_m-alex-de-minaur": {
+    "socialScore": 2.55,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.55,
+        "rank": 10,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_m-holger-rune": {
+    "socialScore": 3.36,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.36,
+        "rank": 7,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_m-felix-auger-aliassime": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-joao-fonseca": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-jakub-mensik": {
+    "socialScore": 6,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 6,
+        "mentions": 2,
+        "articles": 2
+      }
+    }
+  },
+  "tennis_m-flavio-cobolli": {
+    "socialScore": 3,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "tennis_m-denis-shapovalov": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-francisco-cerundolo": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-karen-khachanov": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-jiri-lehecka": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-andrey-rublev": {
+    "socialScore": 9.64,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 6,
+        "mentions": 2,
+        "articles": 2
+      },
+      "expert": {
+        "score": 3.64,
+        "rank": 6,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_m-tommy-paul": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-stefanos-tsitsipas": {
+    "socialScore": 2.27,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.27,
+        "rank": 11,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_m-frances-tiafoe": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-learner-tien": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-sebastian-korda": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-giovanni-mpetshi-perricard": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-ugo-humbert": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-alejandro-davidovich-fokina": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-arthur-fils": {
+    "socialScore": 9,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 9,
+        "mentions": 3,
+        "articles": 3
+      }
+    }
+  },
+  "tennis_m-hubert-hurkacz": {
+    "socialScore": 2.82,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.82,
+        "rank": 9,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_m-matteo-berrettini": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-grigor-dimitrov": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-lorenzo-sonego": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-tallon-griekspoor": {
+    "socialScore": 6,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 6,
+        "mentions": 2,
+        "articles": 2
+      }
+    }
+  },
+  "tennis_m-jan-lennard-struff": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-reilly-opelka": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-alex-michelsen": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-nicolas-jarry": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-cameron-norrie": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-tomas-machac": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-nick-kyrgios": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_m-gabriel-diallo": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-jessica-pegula": {
+    "socialScore": 20.41,
+    "socialQuotient": 1.15,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 16.5,
+        "mentions": 5,
+        "articles": 5
+      },
+      "expert": {
+        "score": 3.91,
+        "rank": 5,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_w-belinda-bencic": {
+    "socialScore": 3,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "tennis_w-amanda-anisimova": {
+    "socialScore": 3,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "tennis_w-linda-noskova": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-madison-keys": {
+    "socialScore": 2,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2,
+        "rank": 12,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_w-mirra-andreeva": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-jasmine-paolini": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-elina-svitolina": {
+    "socialScore": 6,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 6,
+        "mentions": 2,
+        "articles": 2
+      }
+    }
+  },
+  "tennis_w-clara-tauson": {
+    "socialScore": 6,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 6,
+        "mentions": 2,
+        "articles": 2
+      }
+    }
+  },
+  "tennis_w-emma-navarro": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-jelena-ostapenko": {
+    "socialScore": 5.55,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 2.55,
+        "rank": 10,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_w-qinwen-zheng": {
+    "socialScore": 3.36,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.36,
+        "rank": 7,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_w-emma-raducanu": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-ekaterina-alexandrova": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-naomi-osaka": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-karolina-muchova": {
+    "socialScore": 2.27,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.27,
+        "rank": 11,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_w-liudmila-samsonova": {
+    "socialScore": 6,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 6,
+        "mentions": 2,
+        "articles": 2
+      }
+    }
+  },
+  "tennis_w-elise-mertens": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-leylah-fernandez": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-diana-shnaider": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-maya-joint": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-barbora-krejcikova": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-sonay-kartal": {
+    "socialScore": 3,
+    "socialQuotient": 1.07,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "tennis_w-tereza-valentova": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-anastasia-potapova": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-iva-jovic": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-victoria-mboko": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-marta-kostyuk": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "tennis_w-marketa-vondrousova": {
+    "socialScore": 3.09,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.09,
+        "rank": 8,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_w-paula-badosa": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "csgo-aurora": {
+    "socialScore": 3.38,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.38,
+        "rank": 10,
+        "notes": "ESL Pro League S23 odds at 19:1. Rising.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "csgo-team-liquid": {
+    "socialScore": 3.29,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.29,
+        "rank": 14,
+        "notes": "Rebuilding but NA mainstay.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    }
+  },
+  "tennis_w-veronika-kudermetova": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "csgo-furia": {
+    "socialScore": 6.47,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 6.47,
+        "rank": 2,
+        "notes": "HLTV #2, Valve #2. ESL Pro League S23 favorite (+225).",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 4
+      }
+    }
+  },
+  "csgo-natus-vincere": {
+    "socialScore": 3.91,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.91,
+        "rank": 9,
+        "notes": "Historical powerhouse, ~99% chance Cologne qualifier.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "csgo-faze-clan": {
+    "socialScore": 4.59,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.59,
+        "rank": 6,
+        "notes": "HLTV #6. Championship pedigree but inconsistent.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "csgo-g2-esports": {
+    "socialScore": 30.41,
+    "socialQuotient": 1.18,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.41,
+        "rank": 8,
+        "notes": "IEM Krakow contender. Dependent on MalbsMd form.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 6,
+        "mentions": 6
+      },
+      "news": {
+        "score": 21,
+        "mentions": 7,
+        "articles": 7
+      }
+    }
+  },
+  "csgo-the-mongolz": {
+    "socialScore": 3.59,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 3.59,
+        "rank": 7,
+        "notes": "Won Esports World Cup 2025. Legit dark horse.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "csgo-mouz": {
+    "socialScore": 7.4,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 6.2,
+        "rank": 3,
+        "notes": "Valve #3, HLTV #4. Jimpphat breakout. Consistent podiums.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      }
+    }
+  },
+  "csgo-team-spirit": {
+    "socialScore": 4.82,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 4.82,
+        "rank": 5,
+        "notes": "4 trophies in 2025. IGL experiment with magixx is risky.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "csgo-mibr": {
+    "socialScore": 4,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "csgo-fnatic": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "csgo-heroic": {
+    "socialScore": 4.09,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.09,
+        "rank": 12,
+        "notes": "ESL Pro League S23 at 100:1.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      }
+    }
+  },
+  "csgo-ninjas-in-pyjamas": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "csgo-pain-gaming": {
+    "socialScore": 5.24,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.24,
+        "rank": 11,
+        "notes": "ESL Pro League participant.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    }
+  },
+  "csgo-astralis": {
+    "socialScore": 2.1,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 2.1,
+        "rank": 15,
+        "notes": "Former dynasty, still competing.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "csgo-flyquest": {
+    "socialScore": 3.94,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "expert": {
+        "score": 1.94,
+        "rank": 13,
+        "notes": "FUT Esports competitor (dark horse per Hotspawn).",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      }
+    }
+  },
+  "csgo-gamerlegion": {
+    "socialScore": 2,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-02-27T06:48:18.513Z",
+    "sources": {
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      }
+    }
+  },
+  "csgo-3dmax": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "lastUpdated": "2026-02-27T06:48:18.513Z"
+  },
+  "nba-san-antonio-spurs": {
+    "socialScore": 30.22,
+    "socialQuotient": 1.18,
+    "sources": {
+      "reddit": {
+        "score": 11.64,
+        "mentions": 9
+      },
+      "news": {
+        "score": 18.58,
+        "mentions": 4,
+        "articles": 6
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "nba-oklahoma-city-thunder": {
+    "socialScore": 47.16,
+    "socialQuotient": 1.2,
+    "sources": {
+      "reddit": {
+        "score": 5.92,
+        "mentions": 5
+      },
+      "news": {
+        "score": 36.51,
+        "mentions": 11,
+        "articles": 13
+      },
+      "expert": {
+        "score": 4.73,
+        "rank": 2,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "nba-denver-nuggets": {
+    "socialScore": 25.74,
+    "socialQuotient": 1.16,
+    "sources": {
+      "reddit": {
+        "score": 4.05,
+        "mentions": 3
+      },
+      "news": {
+        "score": 17.51,
+        "mentions": 4,
+        "articles": 5
+      },
+      "expert": {
+        "score": 4.18,
+        "rank": 4,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "csgo-vitality": {
+    "socialScore": 18.93,
+    "socialQuotient": 1.16,
+    "sources": {
+      "expert": {
+        "score": 6.73,
+        "rank": 1,
+        "notes": "HLTV #1, 1000 pts. Consensus best team. 2x Major champs 2025.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      },
+      "news": {
+        "score": 9,
+        "mentions": 3,
+        "articles": 3
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "csgo-falcons": {
+    "socialScore": 5.04,
+    "socialQuotient": 1.09,
+    "sources": {
+      "expert": {
+        "score": 5.04,
+        "rank": 4,
+        "notes": "HLTV #3. Strong roster but fewer trophies.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "snooker-judd-trump": {
+    "socialScore": 11.79,
+    "socialQuotient": 1.13,
+    "sources": {
+      "expert": {
+        "score": 6.79,
+        "rank": 1,
+        "notes": "World #1, 4/1 favorite. Dominant all season. Won multiple ranking events.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 5
+      },
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "snooker-zhao-xintong": {
+    "socialScore": 10.59,
+    "socialQuotient": 1.13,
+    "sources": {
+      "expert": {
+        "score": 5.79,
+        "rank": 2,
+        "notes": "Defending champ, 9/2. Won World Grand Prix + Players Championship back-to-back Feb 2026. Red-hot form.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 4.8,
+        "mentions": 4
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "snooker-mark-selby": {
+    "socialScore": 10.8,
+    "socialQuotient": 1.13,
+    "sources": {
+      "expert": {
+        "score": 5.6,
+        "rank": 3,
+        "notes": "5/1. Won 3 ranking titles this season. Racing Post value pick for 5th Crucible crown.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 2.2,
+        "mentions": 2
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "snooker-kyren-wilson": {
+    "socialScore": 6.23,
+    "socialQuotient": 1.1,
+    "sources": {
+      "expert": {
+        "score": 5.23,
+        "rank": 5,
+        "notes": "8/1. World #2 by prize money. 2024 World Champion.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "snooker-wu-yize": {
+    "socialScore": 5.56,
+    "socialQuotient": 1.1,
+    "sources": {
+      "expert": {
+        "score": 4.36,
+        "rank": 6,
+        "notes": "9/1. Rising Chinese star. Dark horse per Eurosport pundits.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 3
+      },
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "snooker-neil-robertson": {
+    "socialScore": 7.26,
+    "socialQuotient": 1.11,
+    "sources": {
+      "expert": {
+        "score": 4.86,
+        "rank": 7,
+        "notes": "10/1. World #3. Century machine — 900+ career centuries.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 2.4,
+        "mentions": 2
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "afl-brisbane-lions": {
+    "socialScore": 9.18,
+    "socialQuotient": 1.12,
+    "sources": {
+      "expert": {
+        "score": 6.78,
+        "rank": 1,
+        "notes": "ESPN Tier 1. $5 favorite. Chasing threepeat.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 2.4,
+        "mentions": 2
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "ucl-arsenal": {
+    "socialScore": 18.03,
+    "socialQuotient": 1.15,
+    "sources": {
+      "expert": {
+        "score": 6.83,
+        "rank": 1,
+        "notes": "7/2. 8-for-8 league phase. Opta 28.3% win prob.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 2.2,
+        "mentions": 2
+      },
+      "news": {
+        "score": 9,
+        "mentions": 3,
+        "articles": 3
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "ucl-bayern-munich": {
+    "socialScore": 6.65,
+    "socialQuotient": 1.11,
+    "sources": {
+      "expert": {
+        "score": 6.65,
+        "rank": 2,
+        "notes": "9/2. Opta 15.9% win prob.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 4
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "ucl-psg": {
+    "socialScore": 14.88,
+    "socialQuotient": 1.14,
+    "sources": {
+      "expert": {
+        "score": 6.48,
+        "rank": 3,
+        "notes": "7/1. Defending champions. Opta 6.2%.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 5.4,
+        "mentions": 5
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "ucl-manchester-city": {
+    "socialScore": 11.53,
+    "socialQuotient": 1.13,
+    "sources": {
+      "expert": {
+        "score": 6.13,
+        "rank": 5,
+        "notes": "8/1. Pep factor.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 5.4,
+        "mentions": 5
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "pga-scottie-scheffler": {
+    "socialScore": 21.36,
+    "socialQuotient": 1.16,
+    "sources": {
+      "expert": {
+        "score": 6.86,
+        "rank": 1,
+        "notes": "Favorite for ALL 4 majors. +300 Masters. World #1. SportsLine model top pick.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 10
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      },
+      "news": {
+        "score": 13.5,
+        "mentions": 4,
+        "articles": 4
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "pga-rory-mcilroy": {
+    "socialScore": 16.31,
+    "socialQuotient": 1.15,
+    "sources": {
+      "expert": {
+        "score": 6.31,
+        "rank": 2,
+        "notes": "Defending Masters champ. +500 Masters. World #2. Fried Egg: best ball-striker on Tour.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 9
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      },
+      "news": {
+        "score": 9,
+        "mentions": 2,
+        "articles": 2
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "pga-xander-schauffele": {
+    "socialScore": 6.98,
+    "socialQuotient": 1.11,
+    "sources": {
+      "expert": {
+        "score": 5.78,
+        "rank": 3,
+        "notes": "+1100 Masters. Won 2024 PGA + Open. SI.com dark horse for Grand Slam run.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 8
+      },
+      "reddit": {
+        "score": 1.2,
+        "mentions": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "pga-tommy-fleetwood": {
+    "socialScore": 9.8,
+    "socialQuotient": 1.12,
+    "sources": {
+      "expert": {
+        "score": 4.3,
+        "rank": 6,
+        "notes": "+1600 Masters, +1400 Open. Links specialist. GolfMagic: overdue for a major.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 5
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      },
+      "news": {
+        "score": 4.5,
+        "mentions": 1,
+        "articles": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "indycar-alex-palou": {
+    "socialScore": 11.44,
+    "socialQuotient": 1.13,
+    "sources": {
+      "expert": {
+        "score": 6.84,
+        "rank": 1,
+        "notes": "4/7 favorite. 3 consecutive titles, 4 total. Beyond the Flag #1. Chip Ganassi dominance.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 6
+      },
+      "reddit": {
+        "score": 4.6,
+        "mentions": 2
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "indycar-kyle-kirkwood": {
+    "socialScore": 6.58,
+    "socialQuotient": 1.11,
+    "sources": {
+      "expert": {
+        "score": 5.58,
+        "rank": 5,
+        "notes": "7/1. Won 3 races in 2025 (2nd most). Andretti star. Indy 500 favorite.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 5
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "indycar-scott-mclaughlin": {
+    "socialScore": 5.44,
+    "socialQuotient": 1.1,
+    "sources": {
+      "expert": {
+        "score": 5.44,
+        "rank": 6,
+        "notes": "8/1. Penske veteran. 3x Supercars champ. Consistent top-5 finisher.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 5
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "indycar-josef-newgarden": {
+    "socialScore": 5.29,
+    "socialQuotient": 1.1,
+    "sources": {
+      "expert": {
+        "score": 5.29,
+        "rank": 7,
+        "notes": "8/1. 2x consecutive Indy 500 winner. Penske. Oval king.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 5
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "f1-george-russell": {
+    "socialScore": 9.29,
+    "socialQuotient": 1.12,
+    "sources": {
+      "expert": {
+        "score": 6.29,
+        "rank": 1,
+        "notes": "11/4 co-favorite. Mercedes PU advantage per theScore. Topped Bahrain pre-season testing. New regs suit Mercedes concept.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 7
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "f1-max-verstappen": {
+    "socialScore": 11.6,
+    "socialQuotient": 1.13,
+    "sources": {
+      "expert": {
+        "score": 6.6,
+        "rank": 2,
+        "notes": "11/4 co-favorite. 4x champion. Red Bull adapted well to 2026 active aero regs. Kym Illman: never bet against Max.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 8
+      },
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "f1-lando-norris": {
+    "socialScore": 6.92,
+    "socialQuotient": 1.11,
+    "sources": {
+      "expert": {
+        "score": 5.92,
+        "rank": 3,
+        "notes": "9/2. Reigning 2025 champion. McLaren strong but new PU unknown. ESPN: best overtaker on grid.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 7
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "f1-oscar-piastri": {
+    "socialScore": 6.27,
+    "socialQuotient": 1.1,
+    "sources": {
+      "expert": {
+        "score": 5.27,
+        "rank": 4,
+        "notes": "15/2. McLaren consistency. F1-Analysis: most improved driver trajectory.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 6
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "f1-kimi-antonelli": {
+    "socialScore": 5.5,
+    "socialQuotient": 1.1,
+    "sources": {
+      "expert": {
+        "score": 4.5,
+        "rank": 6,
+        "notes": "10/1. Mercedes prodigy, rookie. Sky Sports: generational talent, Merc betting big. Youngest F1 driver in decades.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 5
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "f1-charles-leclerc": {
+    "socialScore": 5.76,
+    "socialQuotient": 1.1,
+    "sources": {
+      "expert": {
+        "score": 4.76,
+        "rank": 7,
+        "notes": "20/1. Ferrari topped pre-season times but suspected sandbagging concern. New Ferrari PU untested in race conditions.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 6
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "f1-lewis-hamilton": {
+    "socialScore": 5.59,
+    "socialQuotient": 1.1,
+    "sources": {
+      "expert": {
+        "score": 4.59,
+        "rank": 8,
+        "notes": "33/1. First season at Ferrari. ESPN: integration risk but 7x WDC pedigree. Kym Illman: hungry for redemption.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 6
+      },
+      "reddit": {
+        "score": 1,
+        "mentions": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "llws-japan": {
+    "socialScore": 10.5,
+    "socialQuotient": 1.13,
+    "sources": {
+      "expert": {
+        "score": 6.5,
+        "rank": 2,
+        "notes": "11 LLWS titles. 2nd most all-time. Exceptional fundamentals and discipline.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 5
+      },
+      "reddit": {
+        "score": 4,
+        "mentions": 4
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "pga-sahith-theegala": {
+    "socialScore": 1.71,
+    "socialQuotient": 1.05,
+    "sources": {
+      "expert": {
+        "score": 1.71,
+        "rank": 26,
+        "notes": "Fan favorite. MyGolfSpy: due for first major breakthrough.",
+        "sourcesUsed": 10,
+        "sourcesAgreed": 2
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "indycar-romain-grosjean": {
+    "socialScore": 1.82,
+    "socialQuotient": 1.05,
+    "sources": {
+      "expert": {
+        "score": 1.82,
+        "rank": 21,
+        "notes": "Ex-F1. Fan favorite.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "indycar-agustin-canapino": {
+    "socialScore": 1.74,
+    "socialQuotient": 1.05,
+    "sources": {
+      "expert": {
+        "score": 1.74,
+        "rank": 22,
+        "notes": "Argentine racer. Juncos Hollinger.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "indycar-linus-lundqvist": {
+    "socialScore": 1.66,
+    "socialQuotient": 1.05,
+    "sources": {
+      "expert": {
+        "score": 1.66,
+        "rank": 23,
+        "notes": "Swedish prospect. Improving results.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "indycar-jack-harvey": {
+    "socialScore": 1.58,
+    "socialQuotient": 1.05,
+    "sources": {
+      "expert": {
+        "score": 1.58,
+        "rank": 24,
+        "notes": "British veteran. Dale Coyne.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "f1-jack-doohan": {
+    "socialScore": 1.43,
+    "socialQuotient": 1.05,
+    "sources": {
+      "expert": {
+        "score": 1.43,
+        "rank": 20,
+        "notes": "500/1. Alpine reserve/2nd driver. Son of Mick Doohan.",
+        "sourcesUsed": 8,
+        "sourcesAgreed": 1
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "llws-south-korea": {
+    "socialScore": 3.42,
+    "socialQuotient": 1.08,
+    "sources": {
+      "expert": {
+        "score": 3.42,
+        "rank": 10,
+        "notes": "Won 2014, 2019 LLWS. Asia-Pacific power. Strong coaching systems.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 3
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "ncaaf-ohio-state-buckeyes": {
+    "socialScore": 4.73,
+    "socialQuotient": 1,
+    "sources": {
+      "expert": {
+        "score": 4.73,
+        "rank": 2,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "nfl-seattle-seahawks": {
+    "socialScore": 109.7,
+    "socialQuotient": 1.25,
+    "sources": {
+      "reddit": {
+        "score": 9.2,
+        "mentions": 9
+      },
+      "news": {
+        "score": 100.5,
+        "mentions": 26,
+        "articles": 26
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "mlb-los-angeles-dodgers": {
+    "socialScore": 42.4,
+    "socialQuotient": 1.19,
+    "sources": {
+      "reddit": {
+        "score": 7.4,
+        "mentions": 7
+      },
+      "news": {
+        "score": 30,
+        "mentions": 9,
+        "articles": 9
+      },
+      "expert": {
+        "score": 5,
+        "rank": 1,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "nhl-carolina-hurricanes": {
+    "socialScore": 9.84,
+    "socialQuotient": 1.1,
+    "sources": {
+      "reddit": {
+        "score": 3.2,
+        "mentions": 3
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 3.64,
+        "rank": 6,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "nhl-colorado-avalanche": {
+    "socialScore": 13.61,
+    "socialQuotient": 1.12,
+    "sources": {
+      "reddit": {
+        "score": 5.2,
+        "mentions": 5
+      },
+      "news": {
+        "score": 4.5,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 3.91,
+        "rank": 5,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "nhl-tampa-bay-lightning": {
+    "socialScore": 5.6,
+    "socialQuotient": 1.08,
+    "sources": {
+      "reddit": {
+        "score": 3.6,
+        "mentions": 3
+      },
+      "expert": {
+        "score": 2,
+        "rank": 12,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "ncaab-duke-blue-devils": {
+    "socialScore": 3.09,
+    "socialQuotient": 1,
+    "sources": {
+      "expert": {
+        "score": 3.09,
+        "rank": 8,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "ncaab-arizona-wildcats": {
+    "socialScore": 3.91,
+    "socialQuotient": 1,
+    "sources": {
+      "expert": {
+        "score": 3.91,
+        "rank": 5,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "ncaab-michigan-wolverines": {
+    "socialScore": 0,
+    "socialQuotient": 1,
+    "sources": {},
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "ncaab-houston-cougars": {
+    "socialScore": 4.73,
+    "socialQuotient": 1,
+    "sources": {
+      "expert": {
+        "score": 4.73,
+        "rank": 2,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "ncaaw-south-carolina-gamecocks": {
+    "socialScore": 8.3,
+    "socialQuotient": 1.08,
+    "sources": {
+      "reddit": {
+        "score": 3.3,
+        "mentions": 1
+      },
+      "expert": {
+        "score": 5,
+        "rank": 1,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "ncaaw-uconn-huskies": {
+    "socialScore": 7.95,
+    "socialQuotient": 1.08,
+    "sources": {
+      "reddit": {
+        "score": 3.5,
+        "mentions": 1
+      },
+      "expert": {
+        "score": 4.45,
+        "rank": 3,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "wnba-las-vegas-aces": {
+    "socialScore": 10,
+    "socialQuotient": 1.09,
+    "sources": {
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 5,
+        "rank": 1,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "wnba-indiana-fever": {
+    "socialScore": 5.84,
+    "socialQuotient": 1.06,
+    "sources": {
+      "reddit": {
+        "score": 2.2,
+        "mentions": 2
+      },
+      "expert": {
+        "score": 3.64,
+        "rank": 6,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "fifa-brazil": {
+    "socialScore": 18.71,
+    "socialQuotient": 1.14,
+    "sources": {
+      "reddit": {
+        "score": 10.3,
+        "mentions": 7
+      },
+      "news": {
+        "score": 4.5,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 3.91,
+        "rank": 5,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "fifa-argentina": {
+    "socialScore": 12.5,
+    "socialQuotient": 1.11,
+    "sources": {
+      "reddit": {
+        "score": 3,
+        "mentions": 3
+      },
+      "news": {
+        "score": 4.5,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 5,
+        "rank": 1,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "fifa-france": {
+    "socialScore": 7.13,
+    "socialQuotient": 1.06,
+    "sources": {
+      "reddit": {
+        "score": 2.4,
+        "mentions": 2
+      },
+      "expert": {
+        "score": 4.73,
+        "rank": 2,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "fifa-spain": {
+    "socialScore": 8.79,
+    "socialQuotient": 1.1,
+    "sources": {
+      "reddit": {
+        "score": 5.7,
+        "mentions": 3
+      },
+      "expert": {
+        "score": 3.09,
+        "rank": 8,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "fifa-england": {
+    "socialScore": 12.55,
+    "socialQuotient": 1.12,
+    "sources": {
+      "reddit": {
+        "score": 3.6,
+        "mentions": 3
+      },
+      "news": {
+        "score": 4.5,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 4.45,
+        "rank": 3,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "darts-luke-littler": {
+    "socialScore": 20.73,
+    "socialQuotient": 1.15,
+    "sources": {
+      "reddit": {
+        "score": 13,
+        "mentions": 7
+      },
+      "news": {
+        "score": 3,
+        "mentions": 1,
+        "articles": 1
+      },
+      "expert": {
+        "score": 4.73,
+        "rank": 2,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "darts-luke-humphries": {
+    "socialScore": 15.5,
+    "socialQuotient": 1.13,
+    "sources": {
+      "reddit": {
+        "score": 10.5,
+        "mentions": 5
+      },
+      "expert": {
+        "score": 5,
+        "rank": 1,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "darts-gian-van-veen": {
+    "socialScore": 9.2,
+    "socialQuotient": 1.12,
+    "sources": {
+      "reddit": {
+        "score": 9.2,
+        "mentions": 4
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "tennis_m-jannik-sinner": {
+    "socialScore": 28,
+    "socialQuotient": 1.17,
+    "sources": {
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      },
+      "news": {
+        "score": 21,
+        "mentions": 6,
+        "articles": 6
+      },
+      "expert": {
+        "score": 5,
+        "rank": 1,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "tennis_m-novak-djokovic": {
+    "socialScore": 25.95,
+    "socialQuotient": 1.16,
+    "sources": {
+      "reddit": {
+        "score": 2,
+        "mentions": 2
+      },
+      "news": {
+        "score": 19.5,
+        "mentions": 6,
+        "articles": 6
+      },
+      "expert": {
+        "score": 4.45,
+        "rank": 3,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "tennis_m-carlos-alcaraz": {
+    "socialScore": 31.73,
+    "socialQuotient": 1.17,
+    "sources": {
+      "news": {
+        "score": 27,
+        "mentions": 8,
+        "articles": 8
+      },
+      "expert": {
+        "score": 4.73,
+        "rank": 2,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "tennis_w-aryna-sabalenka": {
+    "socialScore": 37.73,
+    "socialQuotient": 1.18,
+    "sources": {
+      "news": {
+        "score": 33,
+        "mentions": 10,
+        "articles": 10
+      },
+      "expert": {
+        "score": 4.73,
+        "rank": 2,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "tennis_w-elena-rybakina": {
+    "socialScore": 34.18,
+    "socialQuotient": 1.18,
+    "sources": {
+      "news": {
+        "score": 30,
+        "mentions": 9,
+        "articles": 9
+      },
+      "expert": {
+        "score": 4.18,
+        "rank": 4,
+        "notes": "Expert Consensus Top Tier"
+      }
+    },
+    "lastUpdated": "2026-02-27T06:48:18.514Z"
+  },
+  "ncaaw-ucla-bruins": {
+    "socialScore": 3.09,
+    "socialQuotient": 1,
+    "sources": {
+      "expert": {
+        "score": 3.09,
+        "rank": 8,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaw-oregon-state-beavers": {
+    "socialScore": 2.27,
+    "socialQuotient": 1,
+    "sources": {
+      "expert": {
+        "score": 2.27,
+        "rank": 11,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "ncaaw-gonzaga-bulldogs": {
+    "socialScore": 2,
+    "socialQuotient": 1,
+    "sources": {
+      "expert": {
+        "score": 2,
+        "rank": 12,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "wnba-new-york-liberty": {
+    "socialScore": 4.73,
+    "socialQuotient": 1,
+    "sources": {
+      "expert": {
+        "score": 4.73,
+        "rank": 2,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "wnba-minnesota-lynx": {
+    "socialScore": 4.18,
+    "socialQuotient": 1,
+    "sources": {
+      "expert": {
+        "score": 4.18,
+        "rank": 4,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "darts-peter-wright": {
+    "socialScore": 3.09,
+    "socialQuotient": 1,
+    "sources": {
+      "expert": {
+        "score": 3.09,
+        "rank": 8,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "darts-joe-cullen": {
+    "socialScore": 2,
+    "socialQuotient": 1,
+    "sources": {
+      "expert": {
+        "score": 2,
+        "rank": 12,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_w-iga-swiatek": {
+    "socialScore": 5,
+    "socialQuotient": 1,
+    "sources": {
+      "expert": {
+        "score": 5,
+        "rank": 1,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_w-coco-gauff": {
+    "socialScore": 4.45,
+    "socialQuotient": 1,
+    "sources": {
+      "expert": {
+        "score": 4.45,
+        "rank": 3,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_w-ons-jabeur": {
+    "socialScore": 3.64,
+    "socialQuotient": 1,
+    "sources": {
+      "expert": {
+        "score": 3.64,
+        "rank": 6,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  },
+  "tennis_w-maria-sakkari": {
+    "socialScore": 2.82,
+    "socialQuotient": 1,
+    "sources": {
+      "expert": {
+        "score": 2.82,
+        "rank": 9,
+        "notes": "Expert Consensus Top Tier"
+      }
+    }
+  }
+}

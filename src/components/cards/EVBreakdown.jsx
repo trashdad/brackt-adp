@@ -4,10 +4,14 @@ export default function EVBreakdown({ entry }) {
   const { ev, scoringType, adpScore, scarcityBonus, evGap } = entry;
   if (!ev || !ev.perFinish) return null;
 
-  const perFinishEntries = Object.entries(ev.perFinish);
-  if (perFinishEntries.length === 0) return null;
+  // 1. Sort distribution entries numerically (1-16) to ensure chart order is correct
+  const distEntries = ev.dist 
+    ? Object.entries(ev.dist).sort((a, b) => Number(a[0]) - Number(b[0]))
+    : [];
 
-  const maxDist = ev.dist ? Math.max(...Object.values(ev.dist), 0.01) : 0.01;
+  if (distEntries.length === 0) return null;
+
+  const maxDist = Math.max(...distEntries.map(e => e[1]), 0.01);
 
   return (
     <div className="space-y-12">
@@ -18,27 +22,32 @@ export default function EVBreakdown({ entry }) {
             &gt; SIM_CORE_OUTPUT
           </h3>
           <div className="flex items-center gap-3 font-mono text-[10px] text-retro-purple uppercase">
-            <span className="animate-pulse">PROCESSING...</span>
+            <span className="text-retro-lime font-bold">COMPLETED</span>
             <span className="text-white/20">5,000_ITERATIONS</span>
           </div>
         </div>
         <div className="bg-black/60 p-8 border-2 border-black shadow-[inset_0_0_20px_rgba(0,0,0,0.8),0_4px_0_0_rgba(255,255,255,0.05)]">
-          <div className="flex items-end gap-2 h-48">
-            {ev.dist && Object.entries(ev.dist).map(([pos, prob]) => (
-              <div key={pos} className="flex-1 flex flex-col items-center gap-3 group relative">
-                <div className="w-full relative flex flex-col justify-end h-full">
+          <div className="flex items-stretch gap-2 h-64">
+            {distEntries.map(([pos, prob]) => (
+              <div key={pos} className="flex-1 flex flex-col group relative">
+                {/* The Bar Container */}
+                <div className="flex-grow relative flex flex-col justify-end min-h-0 mb-3">
                   <div 
                     className="w-full bg-gradient-to-t from-retro-purple via-retro-magenta to-retro-cyan border-t-2 border-white/40 transition-all group-hover:brightness-125 shadow-[0_0_20px_rgba(0,245,255,0.3)]"
-                    style={{ height: `${(prob / maxDist) * 100}%` }}
+                    style={{ height: `${(prob / maxDist) * 100}%`, minHeight: prob > 0 ? '2px' : '0' }}
                   >
                   </div>
+                  {/* Hover Probability Label */}
+                  {prob > 0.005 && (
+                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 font-mono text-[9px] text-retro-cyan opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20 bg-black/80 px-1 py-0.5 border border-white/10">
+                      {(prob * 100).toFixed(1)}%
+                    </div>
+                  )}
                 </div>
-                <span className="font-mono text-[10px] text-white/30 group-hover:text-retro-cyan transition-colors">{pos}</span>
-                {prob > 0.01 && (
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 font-mono text-[9px] text-retro-cyan opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                    {(prob * 100).toFixed(1)}%
-                  </div>
-                )}
+                {/* Rank Label */}
+                <span className="font-mono text-[10px] text-white/30 group-hover:text-retro-cyan transition-colors text-center border-t border-white/5 pt-2">
+                  {pos}
+                </span>
               </div>
             ))}
           </div>
@@ -63,12 +72,21 @@ export default function EVBreakdown({ entry }) {
               </tr>
             </thead>
             <tbody className="font-mono text-[13px] text-retro-light/80">
-              {perFinishEntries.map(([finish, val], idx) => {
-                const prob = ev.dist ? (ev.dist[idx + 1] || 0) : 0;
+              {Object.entries(ev.perFinish).map(([finish, val]) => {
+                const rankMatch = finish.match(/(\d+)(?:st|nd|rd|th)?(?:-(\d+))?/);
+                let totalProb = 0;
+                if (rankMatch && ev.dist) {
+                  const start = parseInt(rankMatch[1]);
+                  const end = rankMatch[2] ? parseInt(rankMatch[2]) : start;
+                  for (let r = start; r <= end; r++) {
+                    totalProb += (ev.dist[r] || 0);
+                  }
+                }
+
                 return (
                   <tr key={finish} className="border-b border-white/5 hover:bg-white/5 transition-colors group">
                     <td className="px-4 py-3 text-retro-purple font-mono font-bold group-hover:text-retro-cyan">{finish.toUpperCase()}</td>
-                    <td className="px-4 py-3 opacity-60 group-hover:opacity-100 tabular-nums">{formatPercent(prob)}</td>
+                    <td className="px-4 py-3 opacity-60 group-hover:opacity-100 tabular-nums">{formatPercent(totalProb)}</td>
                     <td className="px-4 py-3 text-right font-bold text-white group-hover:text-retro-cyan tabular-nums">
                       {val > 0 ? `+${val.toFixed(2)}` : '0.00'}
                     </td>

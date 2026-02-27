@@ -26,7 +26,7 @@
 
 @layer base {
   body {
-    @apply min-h-screen bg-retro-bg text-retro-light font-sans antialiased;
+    @apply min-h-screen bg-retro-bg text-retro-light font-sans antialiased transition-colors duration-200;
     image-rendering: crisp-edges;
     background-image:
       linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%),
@@ -34,13 +34,137 @@
     background-size: 100% 4px, 3px 100%;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-retro tracking-widest uppercase text-retro-cyan;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 245, 255, 0.2);
+  [data-theme='win95'] body {
+    background-color: #000;
+    background-image: none;
+    color: #fff;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  [data-theme='win95'] h1, 
+  [data-theme='win95'] h2, 
+  [data-theme='win95'] h3, 
+  [data-theme='win95'] h4 {
+    @apply font-sans tracking-normal capitalize text-[#ffff00];
+    text-shadow: none;
   }
 }
 
 @layer components {
+  /* Win95 UI components - Variables for dynamic theme switching within class */
+  .win95-outset {
+    background: #c0c0c0;
+    box-shadow: inset 1px 1px #fff, inset -1px -1px #808080, inset 2px 2px #dfdfdf, inset -2px -2px #0a0a0a;
+    border: 1px solid #c0c0c0;
+  }
+  [data-theme='win95'] .win95-outset {
+    background: #1a1a1a;
+    box-shadow: inset 1px 1px #404040, inset -1px -1px #000, inset 2px 2px #333, inset -2px -2px #000;
+    border: 1px solid #1a1a1a;
+  }
+
+  .win95-inset {
+    background: #fff;
+    box-shadow: inset 1px 1px #808080, inset -1px -1px #fff, inset 2px 2px #0a0a0a, inset -2px -2px #dfdfdf;
+    border: 1px solid #c0c0c0;
+  }
+  [data-theme='win95'] .win95-inset {
+    background: #000;
+    box-shadow: inset 1px 1px #000, inset -1px -1px #404040, inset 2px 2px #000, inset -2px -2px #333;
+    border: 1px solid #1a1a1a;
+  }
+
+  .win95-button {
+    background: #c0c0c0;
+    box-shadow: inset 1px 1px #fff, inset -1px -1px #808080, inset 2px 2px #dfdfdf, inset -2px -2px #0a0a0a;
+    border: 1px solid #c0c0c0;
+    @apply px-4 py-1 active:shadow-none active:translate-x-[1px] active:translate-y-[1px];
+  }
+  [data-theme='win95'] .win95-button {
+    background: #1a1a1a;
+    box-shadow: inset 1px 1px #404040, inset -1px -1px #000, inset 2px 2px #333, inset -2px -2px #000;
+    border: 1px solid #1a1a1a;
+    color: #fff;
+  }
+
+  [data-theme='win95'] .snes-panel {
+    @apply win95-outset rounded-none bg-[#1a1a1a] text-white border-none;
+  }
+
+  [data-theme='win95'] header {
+    background: #1a1a1a !important;
+    border-bottom: 2px solid #404040 !important;
+    box-shadow: none !important;
+  }
+
+  [data-theme='win95'] header a,
+  [data-theme='win95'] header button,
+  [data-theme='win95'] header nav a {
+    @apply font-sans font-normal text-white tracking-normal normal-case shadow-none;
+    text-shadow: none;
+  }
+
+  [data-theme='win95'] .pixel-button,
+  [data-theme='win95'] button:not(.w-8) {
+    @apply win95-button font-sans normal-case tracking-normal text-white border-none;
+  }
+
+  [data-theme='win95'] .overflow-x-auto {
+    @apply win95-inset border-none;
+  }
+
+  [data-theme='win95'] thead {
+    @apply bg-[#000080] text-white border-b-2 border-[#404040] font-sans;
+    background-image: none !important;
+  }
+
+  [data-theme='win95'] thead th {
+    @apply font-sans font-bold text-white border-r border-[#404040];
+  }
+
+  [data-theme='win95'] tr {
+    @apply border-b border-[#333] bg-[#000];
+  }
+
+  [data-theme='win95'] tr:hover {
+    background: #008080 !important; /* Teal highlight */
+    color: #fff !important;
+  }
+  [data-theme='win95'] tr:hover * {
+    color: #fff !important;
+  }
+
+  [data-theme='win95'] .text-retro-cyan,
+  [data-theme='win95'] .text-retro-gold,
+  [data-theme='win95'] .text-retro-purple {
+    @apply text-white;
+  }
+
+  [data-theme='win95'] .text-retro-lime {
+    @apply text-[#00ff00];
+  }
+
+  [data-theme='win95'] .text-retro-red {
+    @apply text-[#ff0000];
+  }
+
+  [data-theme='win95'] .animate-pulse {
+    animation: none !important;
+  }
+
+  [data-theme='win95'] aside {
+    background: #1a1a1a !important;
+    border-right: 2px solid #404040 !important;
+  }
+
+  [data-theme='win95'] tbody {
+    @apply bg-black;
+  }
+
+  [data-theme='win95'] .drop-shadow-[3px_3px_0_#000] {
+    filter: none !important;
+  }
+
   .pixel-border {
     @apply border border-black;
     box-shadow:

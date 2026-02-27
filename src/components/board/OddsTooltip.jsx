@@ -1,12 +1,9 @@
-import { useState } from 'react';
 import { formatAmericanOdds, removeVig } from '../../services/oddsConverter';
 import SPORTS from '../../data/sports';
-
-const TOOLTIP_WIDTH = 260;
-const TOOLTIP_MARGIN = 8;
+import { useTooltip } from '../../hooks/useTooltip.jsx';
 
 export default function OddsTooltip({ entry, children }) {
-  const [pos, setPos] = useState(null);
+  const { handleMouseMove, handleMouseLeave, renderTooltip } = useTooltip(260, 200);
 
   if (entry.isPlaceholder) return <span>{children}</span>;
 
@@ -15,16 +12,6 @@ export default function OddsTooltip({ entry, children }) {
   const hasTournaments = entry.tournaments && Object.keys(entry.tournaments).length > 0;
 
   if (!hasSources && !hasTournaments) return <span>{children}</span>;
-
-  const handleMouseMove = (e) => {
-    const x = Math.max(TOOLTIP_MARGIN, Math.min(e.clientX + 10, window.innerWidth - TOOLTIP_WIDTH - TOOLTIP_MARGIN));
-    const fitsBelow = e.clientY + 20 + 200 < window.innerHeight; // More room for odds
-    setPos({
-      x,
-      y: fitsBelow ? e.clientY + 20 : e.clientY - 20,
-      above: !fitsBelow,
-    });
-  };
 
   const sources = hasSources ? Object.entries(oddsBySource) : [];
   const vigFreeData = sources.length > 1 ? removeVig(oddsBySource) : null;
@@ -36,19 +23,14 @@ export default function OddsTooltip({ entry, children }) {
   }) : [];
 
   return (
-    <span className="cursor-help underline decoration-dotted decoration-retro-light/30" onMouseMove={handleMouseMove} onMouseLeave={() => setPos(null)}>
+    <span
+      className="cursor-help underline decoration-dotted decoration-retro-light/30"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
       {children}
-      {pos && (
-        <div
-          style={{
-            position: 'fixed',
-            [pos.above ? 'bottom' : 'top']: pos.above ? window.innerHeight - pos.y : pos.y,
-            left: pos.x,
-            width: TOOLTIP_WIDTH,
-            zIndex: 9999,
-          }}
-          className="bg-[#0a0a14] text-white text-xs border-2 border-black shadow-[4px_4px_0_0_#000] p-3 pointer-events-none"
-        >
+      {renderTooltip(
+        <>
           {hasSources && (
             <>
               <div className="font-retro text-[8px] text-white/40 uppercase tracking-wide mb-2">
@@ -100,7 +82,8 @@ export default function OddsTooltip({ entry, children }) {
               </div>
             </div>
           )}
-        </div>
+        </>,
+        'p-3',
       )}
     </span>
   );

@@ -6,10 +6,19 @@ import DraftedBadge from './DraftedBadge';
 import EVTooltip from './EVTooltip';
 import OddsTooltip from './OddsTooltip';
 import PriorityTooltip from './PriorityTooltip';
+import SocialTooltip from './SocialTooltip';
+
+const getVelocityColor = (v) => {
+  if (v > 1.8) return 'text-retro-red font-black'; // Extreme cliff
+  if (v > 1.2) return 'text-orange-500 font-bold'; // Acceleration
+  if (v > 0.8) return 'text-retro-gold'; // Steady
+  return 'text-retro-lime'; // Flattening
+};
 
 export default function ADPRow({ entry, onToggleDraft }) {
   const color = SPORT_COLORS[entry.sport] || '#888';
   const val = (v) => entry.isPlaceholder ? '—' : v;
+  const velocity = entry.dropoffVelocity || 1.0;
 
   return (
     <tr
@@ -58,9 +67,13 @@ export default function ADPRow({ entry, onToggleDraft }) {
         <OddsTooltip entry={entry}>{val(formatAmericanOdds(entry.odds))}</OddsTooltip>
       </td>
 
-      {/* Event EV */}
-      <td className="px-3 py-2 font-mono text-[13px] text-retro-light/70 tabular-nums">
-        <EVTooltip entry={entry}>{val(formatNumber(entry.ev?.singleEvent))}</EVTooltip>
+      {/* Dropoff Velocity */}
+      <td className="px-3 py-2 font-mono text-[13px] tabular-nums">
+        {entry.isPlaceholder ? '—' : (
+          <span className={getVelocityColor(velocity)} title="MOMENTUM / INERTIA (Rate of EV decay)">
+            {velocity.toFixed(2)}x
+          </span>
+        )}
       </td>
 
       {/* Season EV */}
@@ -71,8 +84,13 @@ export default function ADPRow({ entry, onToggleDraft }) {
       {/* Draft Priority Score */}
       <td className="px-3 py-2 font-mono text-[14px] font-bold text-retro-purple tabular-nums">
         <PriorityTooltip entry={entry}>
-          <div className="flex flex-col leading-tight">
-            <span className="drop-shadow-[0_0_4px_rgba(157,80,187,0.4)] text-retro-cyan">{val(formatNumber(entry.adpScore))}</span>
+          <div className="flex flex-col leading-tight relative">
+            <span className="drop-shadow-[0_0_4px_rgba(157,80,187,0.4)] text-retro-cyan">
+              {val(formatNumber(entry.adpScore))}
+              {entry.exceedsCapacity && (
+                <span className="ml-1 text-retro-gold text-[10px]" title="EXCEEDS_CAPACITY">▲</span>
+              )}
+            </span>
             {!entry.isPlaceholder && entry.scarcityBonus > 0 && (
               <span className="text-[10px] font-normal text-retro-gold/80">
                 +{entry.scarcityBonus.toFixed(1)}
@@ -82,9 +100,13 @@ export default function ADPRow({ entry, onToggleDraft }) {
         </PriorityTooltip>
       </td>
 
-      {/* Type */}
-      <td className="px-3 py-2 font-retro text-[10px] text-retro-light/30 tracking-wider">
-        {entry.scoringType.toUpperCase()}
+      {/* Social Score + Quotient */}
+      <td className="px-3 py-2 font-mono text-[13px] text-retro-cyan/90 tabular-nums">
+        <SocialTooltip entry={entry}>{val(formatNumber(entry.socialScore || 0))}</SocialTooltip>
+      </td>
+
+      <td className="px-3 py-2 font-mono text-[13px] text-retro-gold/80 tabular-nums">
+        <SocialTooltip entry={entry}>{val(formatNumber(entry.socialQuotient || 0))}</SocialTooltip>
       </td>
 
       {/* Status */}

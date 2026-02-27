@@ -1,40 +1,22 @@
-import { useState } from 'react';
 import { formatNumber } from '../../utils/formatters';
-
-const TOOLTIP_WIDTH = 220;
-const TOOLTIP_MARGIN = 8;
+import { useTooltip } from '../../hooks/useTooltip.jsx';
 
 export default function EVTooltip({ entry, children }) {
-  const [pos, setPos] = useState(null);
+  const { handleMouseMove, handleMouseLeave, renderTooltip } = useTooltip(220, 140);
 
   if (entry.isPlaceholder) return <span>{children}</span>;
-
-  const handleMouseMove = (e) => {
-    const x = Math.max(TOOLTIP_MARGIN, Math.min(e.clientX + 10, window.innerWidth - TOOLTIP_WIDTH - TOOLTIP_MARGIN));
-    const fitsBelow = e.clientY + 20 + 120 < window.innerHeight;
-    setPos({
-      x,
-      y: fitsBelow ? e.clientY + 20 : e.clientY - 20,
-      above: !fitsBelow,
-    });
-  };
 
   const { ev } = entry;
 
   return (
-    <span className="cursor-help" onMouseMove={handleMouseMove} onMouseLeave={() => setPos(null)}>
+    <span
+      className="cursor-help"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
       {children}
-      {pos && (
-        <div
-          style={{
-            position: 'fixed',
-            [pos.above ? 'bottom' : 'top']: pos.above ? window.innerHeight - pos.y : pos.y,
-            left: pos.x,
-            width: TOOLTIP_WIDTH,
-            zIndex: 9999,
-          }}
-          className="bg-[#0a0a14] text-white border-2 border-black shadow-[4px_4px_0_0_#000] p-4 pointer-events-none"
-        >
+      {renderTooltip(
+        <>
           <div className="flex justify-between border-b border-white/10 pb-2 mb-3">
             <span className="font-retro text-[8px] text-white/40 uppercase">WIN_PROB_EST</span>
             <span className="font-mono text-[12px] font-bold text-retro-gold">{ev.winProbability}%</span>
@@ -50,7 +32,8 @@ export default function EVTooltip({ entry, children }) {
               <span className="font-mono text-[14px] font-black text-retro-lime tabular-nums">{formatNumber(ev.seasonTotal)}</span>
             </div>
           </div>
-        </div>
+        </>,
+        'p-4',
       )}
     </span>
   );

@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import { getSportById, SPORT_COLORS } from '../data/sports';
 import ADPTable from '../components/board/ADPTable';
 import SearchBar from '../components/filters/SearchBar';
+import ExpertRankings from '../components/board/ExpertRankings';
 
 export default function SportView({ boardEntries, onToggleDraft }) {
   const { id } = useParams();
@@ -64,6 +65,8 @@ export default function SportView({ boardEntries, onToggleDraft }) {
       </div>
 
       <ADPTable entries={entries} onToggleDraft={onToggleDraft} />
+
+      <ExpertRankings entries={entries} sportId={id} />
     </div>
   );
 }

@@ -36,8 +36,9 @@ function pipelineToRawItems(pipelineData) {
  *
  * @param rawBySport - { sportId: [{ name, odds, oddsBySource?, bestOdds?, bestOddsSource? }] }
  * @param historicalBySport - { sportId: { entries: [{ nameNormalized, history, trend, ... }] } } (optional)
+ * @param socialScores - { entryId: { socialScore, socialQuotient } } (optional)
  */
-function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier) {
+function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, socialScores = {}) {
   const entries = [];
 
   for (const sport of SPORTS) {
@@ -72,6 +73,8 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier) {
       processedRosterKeys.add(key);
 
       const apiItem = apiLookup.get(key);
+      const entryId = `${sport.id}-${slugify(name)}`;
+      const social = socialScores[entryId] || { socialScore: 0, socialQuotient: 1.0 };
 
       if (apiItem) {
         matchedApiKeys.add(key);
@@ -86,9 +89,12 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier) {
         } else {
           ev = calculateSeasonTotalEV(apiItem.odds, sport.category, sport.eventsPerSeason);
         }
+        if (sport.evMultiplier != null && ev) {
+          ev = { ...ev, singleEvent: ev.singleEvent * sport.evMultiplier, seasonTotal: ev.seasonTotal * sport.evMultiplier };
+        }
 
         entries.push({
-          id: `${sport.id}-${slugify(name)}`,
+          id: entryId,
           name,
           sport: sport.id,
           sportName: sport.name,
@@ -96,6 +102,9 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier) {
           scoringType: sport.category,
           odds: apiItem.odds,
           ev,
+          socialScore: social.socialScore,
+          socialQuotient: social.socialQuotient,
+          socialSources: social.sources || {},
           adpScore: 0,
           scarcityBonus: 0,
           evGap: 0,
@@ -117,7 +126,7 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier) {
         });
       } else {
         entries.push({
-          id: `${sport.id}-${slugify(name)}`,
+          id: entryId,
           name,
           sport: sport.id,
           sportName: sport.name,
@@ -125,6 +134,9 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier) {
           scoringType: sport.category,
           odds: null,
           ev: null,
+          socialScore: social.socialScore,
+          socialQuotient: social.socialQuotient,
+          socialSources: social.sources || {},
           adpScore: -1,
           scarcityBonus: 0,
           evGap: 0,
@@ -141,6 +153,8 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier) {
       if (!matchedApiKeys.has(key)) {
         matchedApiKeys.add(key); // Mark as matched/processed
         const historical = historicalLookup.get(key);
+        const entryId = `${sport.id}-${slugify(item.name)}`;
+        const social = socialScores[entryId] || { socialScore: 0, socialQuotient: 1.0 };
 
         let ev;
         if (historical && historical.history && historical.history.length >= 2) {
@@ -150,9 +164,12 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier) {
         } else {
           ev = calculateSeasonTotalEV(item.odds, sport.category, sport.eventsPerSeason);
         }
+        if (sport.evMultiplier != null && ev) {
+          ev = { ...ev, singleEvent: ev.singleEvent * sport.evMultiplier, seasonTotal: ev.seasonTotal * sport.evMultiplier };
+        }
 
         entries.push({
-          id: `${sport.id}-${slugify(item.name)}`,
+          id: entryId,
           name: item.name,
           sport: sport.id,
           sportName: sport.name,
@@ -160,6 +177,9 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier) {
           scoringType: sport.category,
           odds: item.odds,
           ev,
+          socialScore: social.socialScore,
+          socialQuotient: social.socialQuotient,
+          socialSources: social.sources || {},
           adpScore: 0,
           scarcityBonus: 0,
           evGap: 0,
@@ -364,7 +384,18 @@ export default function useOddsData(scarcityModifier) {
       }
     }
 
-    setEntries(buildEntries(rawBySport, historicalBySport, scarcityModifier));
+    // Step 5: Load social scores
+    let socialScores = {};
+    try {
+      const socialScoresResp = await fetch('/data/social-scores.json');
+      if (socialScoresResp.ok) {
+        socialScores = await socialScoresResp.json();
+      }
+    } catch (e) {
+      // Ignore if social scores not available yet
+    }
+
+    setEntries(buildEntries(rawBySport, historicalBySport, scarcityModifier, socialScores));
     setLastUpdated(new Date());
     setLoading(false);
   }, [scarcityModifier]);

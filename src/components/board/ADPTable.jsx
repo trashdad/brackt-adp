@@ -8,10 +8,11 @@ const COLUMNS = [
   { label: 'Sport', key: 'sportName' },
   { label: 'Win %', key: 'ev.winProbability' },
   { label: 'Odds', key: 'odds' },
-  { label: 'Event EV', key: 'ev.singleEvent' },
+  { label: 'Dropoff Velocity', key: 'dropoffVelocity' },
   { label: 'Season EV', key: 'ev.seasonTotal' },
   { label: 'Draft Priority Score', key: 'adpScore' },
-  { label: 'Type', key: 'scoringType' },
+  { label: 'Social Score', key: 'socialScore' },
+  { label: 'Social Quotient', key: 'socialQuotient' },
   { label: 'Status', key: 'drafted' },
 ];
 
