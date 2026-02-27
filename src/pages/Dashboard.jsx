@@ -1,42 +1,15 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import ADPTable from '../components/board/ADPTable';
 import PlayerCard from '../components/cards/PlayerCard';
 import SportFilter from '../components/filters/SportFilter';
 import SearchBar from '../components/filters/SearchBar';
 import ScoringToggle from '../components/filters/ScoringToggle';
-import { exportBoard, importBoard } from '../utils/csvManager';
 
-export default function Dashboard({ boardEntries, loading, lastUpdated, onToggleDraft, onRefresh, onSyncDraft }) {
+export default function Dashboard({ boardEntries, loading, lastUpdated, onToggleDraft, onRefresh, scarcityModifier, onScarcityChange }) {
   const [sportFilter, setSportFilter] = useState([]);
   const [search, setSearch] = useState('');
   const [showDrafted, setShowDrafted] = useState(true);
-  const [importStatus, setImportStatus] = useState(null); // null | 'loading' | 'ok' | 'error'
-  const fileInputRef = useRef(null);
-
-  const handleExport = () => exportBoard(boardEntries);
-
-  const handleImport = async (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    e.target.value = '';
-    setImportStatus('loading');
-    try {
-      const { manualCount, draftedCount } = await importBoard(file);
-      setImportStatus(`ok:${manualCount}:${draftedCount}`);
-      
-      // Sync both odds and draft state
-      await Promise.all([
-        onRefresh(),
-        onSyncDraft ? onSyncDraft() : Promise.resolve()
-      ]);
-
-      setTimeout(() => setImportStatus(null), 4000);
-    } catch {
-      setImportStatus('error');
-      setTimeout(() => setImportStatus(null), 4000);
-    }
-  };
 
   const filtered = useMemo(() => {
     let items = boardEntries;
@@ -59,41 +32,6 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
           </p>
         </div>
         <div className="flex items-center gap-3 flex-wrap justify-end">
-          {/* Import status feedback */}
-          {importStatus && (
-            <span className={`font-mono text-[10px] tracking-wider px-3 py-1.5 border border-dashed animate-pulse ${
-              importStatus === 'loading' ? 'text-retro-gold border-retro-gold/40' :
-              importStatus === 'error' ? 'text-retro-red border-retro-red/40' :
-              'text-retro-lime border-retro-lime/40'
-            }`}>
-              {importStatus === 'loading' ? 'LOADING...' :
-               importStatus === 'error' ? 'IMPORT_ERR' :
-               (() => { const [,m,d] = importStatus.split(':'); return `SUCCESS: ${m} ODDS / ${d} DRAFTED`; })()}
-            </span>
-          )}
-
-          {/* Hidden file input for CSV import */}
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept=".csv"
-            className="hidden"
-            onChange={handleImport}
-          />
-
-          <button
-            onClick={handleExport}
-            className="font-retro text-[11px] px-4 py-2 bg-white/5 text-retro-lime border border-retro-lime/30 hover:bg-white/10 transition-all active:translate-y-0.5 uppercase tracking-wider"
-          >
-            EXPORT
-          </button>
-          <button
-            onClick={() => fileInputRef.current?.click()}
-            disabled={importStatus === 'loading'}
-            className="font-retro text-[11px] px-4 py-2 bg-white/5 text-retro-gold border border-retro-gold/30 hover:bg-white/10 transition-all active:translate-y-0.5 disabled:opacity-50 uppercase tracking-wider"
-          >
-            IMPORT
-          </button>
           <Link
             to="/parse"
             className="font-retro text-[11px] px-4 py-2 bg-white/5 text-retro-cyan border border-retro-cyan/30 hover:bg-white/10 transition-all active:translate-y-0.5 uppercase tracking-wider"
@@ -118,6 +56,28 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
 
       <div className="overflow-x-auto no-scrollbar">
         <SportFilter selected={sportFilter} onChange={setSportFilter} />
+      </div>
+
+      {/* EV Scarcity Modifier */}
+      <div className="flex items-center gap-4 px-4 py-3 bg-black/20 border border-white/5">
+        <label className="font-retro text-[11px] text-retro-light/60 uppercase tracking-widest whitespace-nowrap">
+          EV Scarcity Modifier
+        </label>
+        <input
+          type="number"
+          min="0"
+          max="5"
+          step="0.1"
+          value={scarcityModifier}
+          onChange={(e) => {
+            const val = parseFloat(e.target.value);
+            if (!isNaN(val) && val >= 0) onScarcityChange(val);
+          }}
+          className="w-24 px-3 py-1.5 bg-black/40 border border-white/10 font-mono text-[13px] text-retro-cyan text-center tabular-nums focus:outline-none focus:border-retro-cyan/50"
+        />
+        <span className="font-mono text-[10px] text-retro-light/30 tracking-wider">
+          Controls Draft Priority Score scarcity bonus
+        </span>
       </div>
 
       {loading ? (

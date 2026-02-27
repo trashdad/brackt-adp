@@ -117,13 +117,15 @@ export function calculateSeasonTotalEV(americanOdds, category, eventsPerSeason) 
 
 /**
  * Apply positional scarcity premium to the raw EV.
+ * @param {Array} sportEntries - entries for a single sport
+ * @param {number} [globalModifier] - optional global coefficient override (default uses per-sport scarcityWeight)
  */
-export function applyPositionalScarcity(sportEntries) {
+export function applyPositionalScarcity(sportEntries, globalModifier) {
   if (!sportEntries || sportEntries.length < 2) return;
 
   const sportId = sportEntries[0].sport;
   const sportConfig = SPORTS.find(s => s.id === sportId);
-  const baseMultiplier = sportConfig?.scarcityWeight ?? 0.5;
+  const baseMultiplier = globalModifier ?? sportConfig?.scarcityWeight ?? 0.5;
   const rankDecay = 0.9;
 
   sportEntries.sort((a, b) => (b.ev?.seasonTotal || 0) - (a.ev?.seasonTotal || 0));

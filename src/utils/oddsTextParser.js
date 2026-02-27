@@ -9,7 +9,7 @@ const normalize = (s) => s.toLowerCase().replace(/[^a-z0-9 ]/g, '').trim();
 function sanitizeLine(line) {
   return line
     .replace(/[\u2212\u2013\u2014\u2015\uFE58\uFF0D]/g, '-')  // unicode minus/dash → ASCII
-    .replace(/[\u00A0\u200B\u200C\u200D\uFEFF]/g, ' ')         // non-breaking/zero-width → space
+    .replace(/\u00A0|\u200B|\u200C|\u200D|\uFEFF/g, ' ')        // non-breaking/zero-width → space
     .trim();
 }
 

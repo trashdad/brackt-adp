@@ -37,7 +37,7 @@ function pipelineToRawItems(pipelineData) {
  * @param rawBySport - { sportId: [{ name, odds, oddsBySource?, bestOdds?, bestOddsSource? }] }
  * @param historicalBySport - { sportId: { entries: [{ nameNormalized, history, trend, ... }] } } (optional)
  */
-function buildEntries(rawBySport, historicalBySport = {}) {
+function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier) {
   const entries = [];
 
   for (const sport of SPORTS) {
@@ -191,7 +191,7 @@ function buildEntries(rawBySport, historicalBySport = {}) {
   }
 
   for (const sportEntries of Object.values(bySport)) {
-    applyPositionalScarcity(sportEntries);
+    applyPositionalScarcity(sportEntries, scarcityModifier);
   }
 
   entries.sort((a, b) => {
@@ -206,7 +206,7 @@ function buildEntries(rawBySport, historicalBySport = {}) {
   return entries;
 }
 
-export default function useOddsData() {
+export default function useOddsData(scarcityModifier) {
   const [entries, setEntries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState(null);
@@ -364,13 +364,13 @@ export default function useOddsData() {
       }
     }
 
-    setEntries(buildEntries(rawBySport, historicalBySport));
+    setEntries(buildEntries(rawBySport, historicalBySport, scarcityModifier));
     setLastUpdated(new Date());
     setLoading(false);
-  }, []);
+  }, [scarcityModifier]);
 
   useEffect(() => {
-    refresh();
+    refresh(); // eslint-disable-line react-hooks/set-state-in-effect -- initial data load on mount
     const { refreshInterval } = loadSettings();
     const intervalMs = (refreshInterval || 24) * 60 * 60 * 1000;
     const timer = setInterval(refresh, intervalMs);

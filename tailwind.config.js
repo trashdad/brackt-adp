@@ -35,8 +35,8 @@ export default {
       },
       fontFamily: {
         retro: ['"Pixelify Sans"', 'cursive'],
-        mono: ['"IBM Plex Mono"', 'monospace'],
-        pixel: ['"Silkscreen"', 'cursive'],
+        mono: ['"JetBrains Mono"', 'monospace'],
+        sans: ['"Inter"', 'system-ui', 'sans-serif'],
       },
     },
   },

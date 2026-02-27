@@ -57,7 +57,7 @@ export default function SportView({ boardEntries, onToggleDraft }) {
               <span className="text-gray-500">
                 {i + 1}. <Link to={`/player/${e.id}`} className="text-gray-800 hover:text-brand-600">{e.name}</Link>
               </span>
-              <span className="font-mono font-semibold">{e.ev.seasonTotal.toFixed(1)}</span>
+              <span className="font-mono font-semibold">{(e.ev?.seasonTotal ?? 0).toFixed(1)}</span>
             </div>
           ))}
         </div>

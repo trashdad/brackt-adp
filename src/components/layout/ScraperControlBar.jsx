@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useScraper } from "../../context/ScraperContext";
 
 const SOURCES = [
@@ -24,8 +24,11 @@ export default function ScraperControlBar() {
     validateKeys,
   } = useScraper();
 
+  const pollRef = useRef(null);
+
   useEffect(() => {
     validateKeys();
+    return () => { if (pollRef.current) clearInterval(pollRef.current); };
   }, [validateKeys]);
 
   const fireScrapers = async () => {
@@ -76,7 +79,8 @@ export default function ScraperControlBar() {
     addLog("PIPELINE: DISPATCHING SOURCE RUNNERS...", "info");
 
     let prevSources = {};
-    const pollInterval = setInterval(async () => {
+    if (pollRef.current) clearInterval(pollRef.current);
+    const pollInterval = pollRef.current = setInterval(async () => {
       const statusResp = await fetch("/api/pipeline/status").catch(() => null);
       if (!statusResp?.ok) return;
       const state = await statusResp.json();
@@ -95,6 +99,7 @@ export default function ScraperControlBar() {
 
       if (!state.running) {
         clearInterval(pollInterval);
+        pollRef.current = null;
         setIsRunning(false);
         addLog("PIPELINE_COMPLETE: ALL_SOURCES_PROCESSED.", "info");
       }

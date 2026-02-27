@@ -91,8 +91,10 @@ export function importBoard(file) {
         headers.forEach((h, i) => { idx[h.trim()] = i; });
 
         // Require at minimum: id, name, sport
-        if (idx.id === undefined || idx.name === undefined || idx.sport === undefined) {
-          throw new Error('CSV is missing required columns: id, name, sport');
+        const required = ['id', 'name', 'sport'];
+        const missing = required.filter((col) => idx[col] === undefined);
+        if (missing.length > 0) {
+          throw new Error(`CSV is missing required columns: ${missing.join(', ')}. Found: ${headers.map(h => h.trim()).join(', ')}`);
         }
 
         const manualOdds = {};
@@ -108,8 +110,8 @@ export function importBoard(file) {
           // Restore manual odds if source data is present
           let oddsBySource = {};
           let oddsByTournament = {};
-          try { oddsBySource = JSON.parse(cols[idx.manual_sources] || '{}'); } catch {}
-          try { oddsByTournament = JSON.parse(cols[idx.manual_tournaments] || '{}'); } catch {}
+          try { oddsBySource = JSON.parse(cols[idx.manual_sources] || '{}'); } catch { /* malformed JSON, use default */ }
+          try { oddsByTournament = JSON.parse(cols[idx.manual_tournaments] || '{}'); } catch { /* malformed JSON, use default */ }
           const hasManual = Object.keys(oddsBySource).length > 0 || Object.keys(oddsByTournament).length > 0;
           if (hasManual) {
             manualOdds[id] = { sport, name, oddsBySource, oddsByTournament, timestamp: Date.now() };

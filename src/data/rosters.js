@@ -204,7 +204,7 @@ const ROSTERS = {
     'Matteo Berrettini', 'Alejandro Davidovich Fokina',
   ],
 
-  // ── Tennis Women's (WTA) — Top 25 players ──────────────────────
+  // ── Tennis Women's (WTA) — Top 35 players ──────────────────────
   tennis_w: [
     'Aryna Sabalenka', 'Iga Swiatek', 'Coco Gauff', 'Elena Rybakina',
     'Jessica Pegula', 'Madison Keys', 'Jasmine Paolini', 'Mirra Andreeva',
@@ -212,7 +212,9 @@ const ROSTERS = {
     'Elina Svitolina', 'Emma Navarro', 'Naomi Osaka', 'Karolina Muchova',
     'Diana Shnaider', 'Elise Mertens', 'Leylah Fernandez', 'Jelena Ostapenko',
     'Qinwen Zheng', 'Emma Raducanu', 'Ekaterina Alexandrova', 'Liudmila Samsonova',
-    'Victoria Mboko',
+    'Victoria Mboko', 'Marketa Vondrousova', 'Iva Jovic', 'Barbora Krejcikova',
+    'Maya Joint', 'Paula Badosa', 'Anastasia Potapova', 'Sonay Kartal',
+    'Marta Kostyuk', 'Tereza Valentova', 'Veronika Kudermetova',
   ],
 
   // ── Counter-Strike 2 — Top 20 teams ─────────────────────────────

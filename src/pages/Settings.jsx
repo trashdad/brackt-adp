@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { loadSettings, saveSettings } from '../utils/storage';
 import { useScraper } from '../context/ScraperContext';
 
@@ -31,6 +31,9 @@ export default function Settings({ onClearAll }) {
 
       <div className="snes-panel p-10 space-y-8 bg-gradient-to-br from-[#2D2D44] to-[#1A1A2E] border-black/60 shadow-2xl">
         <section className="space-y-6">
+          <p className="font-mono text-[9px] text-retro-gold/60 tracking-wider leading-relaxed border border-retro-gold/20 bg-retro-gold/5 px-4 py-3">
+            API_KEYS_STORED_IN_BROWSER_LOCAL_STORAGE. DO_NOT_ENTER_KEYS_ON_SHARED_MACHINES.
+          </p>
           <div>
             <label className="block font-retro text-[11px] text-retro-purple mb-3 uppercase tracking-widest">
               THE_ODDS_API_KEY

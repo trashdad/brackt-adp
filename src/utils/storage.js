@@ -25,8 +25,10 @@ export function loadSettings() {
 export function saveSettings(settings) {
   try {
     localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
-  } catch {
-    // storage full
+  } catch (err) {
+    if (err.name === 'QuotaExceededError') {
+      console.error('[BRACKT] localStorage full — settings not saved');
+    }
   }
 }
 
@@ -44,7 +46,11 @@ export function loadLocalDraftState() {
 export function saveLocalDraftState(state) {
   try {
     localStorage.setItem(DRAFT_KEY, JSON.stringify(state));
-  } catch {}
+  } catch (err) {
+    if (err.name === 'QuotaExceededError') {
+      console.error('[BRACKT] localStorage full — draft state not saved');
+    }
+  }
 }
 
 export function loadLocalManualOdds() {
@@ -59,5 +65,9 @@ export function loadLocalManualOdds() {
 export function saveLocalManualOdds(odds) {
   try {
     localStorage.setItem(MANUAL_ODDS_KEY, JSON.stringify(odds));
-  } catch {}
+  } catch (err) {
+    if (err.name === 'QuotaExceededError') {
+      console.error('[BRACKT] localStorage full — manual odds not saved');
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { loadLocalDraftState, saveLocalDraftState } from '../utils/storage';
 
 export default function useDraftBoard(entries) {
@@ -31,13 +31,13 @@ export default function useDraftBoard(entries) {
   useEffect(() => {
     if (!initialized.current) return;
     saveLocalDraftState(draftState);
-    
+
     fetch('/api/draft-state', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(draftState),
-    }).catch(() => {
-      // Server offline - local storage handles it
+    }).catch((err) => {
+      console.warn('[BRACKT] Draft sync failed, using local storage:', err.message);
     });
   }, [draftState]);
 
@@ -64,12 +64,12 @@ export default function useDraftBoard(entries) {
     setDraftState({});
   }, []);
 
-  // Merge draft state into entries
-  const boardEntries = entries.map((e) => ({
+  // Merge draft state into entries (memoized to avoid re-creating on every render)
+  const boardEntries = useMemo(() => entries.map((e) => ({
     ...e,
     drafted: !!draftState[e.id]?.drafted,
     draftedBy: draftState[e.id]?.draftedBy || null,
-  }));
+  })), [entries, draftState]);
 
   return { boardEntries, toggleDrafted, setDraftedBy, resetDraft, syncDraft, draftState };
 }

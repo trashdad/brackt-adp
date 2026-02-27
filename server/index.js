@@ -54,6 +54,8 @@ app.post('/api/draft-state', (req, res) => {
 // ── Pipeline Data Serving ─────────────────────────────────────────────────────
 // Serve pipeline output files directly so the frontend doesn't need a manual copy step.
 
+const SAFE_ID_PATTERN = /^[a-z0-9_-]+$/i;
+
 function readPipelineJson(filePath) {
   if (!existsSync(filePath)) return null;
   try { return JSON.parse(readFileSync(filePath, 'utf8')); } catch { return null; }
@@ -65,11 +67,17 @@ app.get('/api/pipeline/manifest', (_req, res) => {
 });
 
 app.get('/api/pipeline/live/:sportId', (req, res) => {
+  if (!SAFE_ID_PATTERN.test(req.params.sportId)) {
+    return res.status(400).json({ error: 'Invalid sport ID' });
+  }
   const data = readPipelineJson(join(PIPELINE_OUTPUT, 'live', `${req.params.sportId}.json`));
   data ? res.json(data) : res.status(404).json(null);
 });
 
 app.get('/api/pipeline/historical/:sportId', (req, res) => {
+  if (!SAFE_ID_PATTERN.test(req.params.sportId)) {
+    return res.status(400).json({ error: 'Invalid sport ID' });
+  }
   const data = readPipelineJson(join(PIPELINE_OUTPUT, 'historical', `${req.params.sportId}.json`));
   data ? res.json(data) : res.status(404).json(null);
 });
