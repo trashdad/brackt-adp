@@ -5,12 +5,18 @@ import {
   saveSocialScoresCache
 } from './storage';
 
-const HEADERS = [
+// Known sportsbook sources — each gets its own column
+const ODDS_SOURCES = [
+  'draftkings', 'fanduel', 'betmgm', 'bovada',
+  'covers', 'vegasinsider', 'consensus', 'screenshot', 'research', 'other',
+];
+
+const CORE_HEADERS = [
   'id', 'rank', 'name', 'sport', 'odds',
   'win_pct', 'event_ev', 'season_ev', 'adp_score',
   'dropoff_velocity', 'social_score', 'social_quotient',
   'scarcity_bonus', 'ev_gap', 'exceeds_capacity',
-  'drafted', 'drafted_by', 'manual_sources', 'manual_tournaments',
+  'drafted', 'drafted_by',
 ];
 
 function escapeField(val) {
@@ -43,15 +49,56 @@ function parseCSVLine(line) {
 }
 
 /**
+ * Collect all tournament IDs across entries for dynamic columns.
+ */
+function collectTournamentIds(boardEntries) {
+  const ids = new Set();
+  for (const e of boardEntries) {
+    if (e.tournaments) {
+      for (const tId of Object.keys(e.tournaments)) ids.add(tId);
+    }
+  }
+  return [...ids].sort();
+}
+
+/**
+ * Flatten oddsBySource from entry or from manual-odds tournament data.
+ * For tournament sports, oddsBySource may be empty but oddsByTournament
+ * has per-sportsbook data — we average those per source.
+ */
+function flattenSourceOdds(entry) {
+  const result = {};
+
+  // Direct oddsBySource (non-tournament sports, or manual entries)
+  if (entry.oddsBySource) {
+    for (const [src, odds] of Object.entries(entry.oddsBySource)) {
+      result[src] = odds;
+    }
+  }
+
+  return result;
+}
+
+/**
  * Export the full board to a CSV file download.
- * Computed fields (EV, adpScore) are included for readability but are not
- * required on import — they are recalculated by the app automatically.
+ * Odds are flattened into per-source columns for spreadsheet readability.
+ * Tournament odds get their own columns (tournament_{id}).
  */
 export function exportBoard(boardEntries) {
-  const rows = [HEADERS.join(',')];
+  const tournamentIds = collectTournamentIds(boardEntries);
+
+  // Build full header row
+  const sourceHeaders = ODDS_SOURCES.map(s => `odds_${s}`);
+  const tournamentHeaders = tournamentIds.map(t => `tournament_${t.replace(/-/g, '_')}`);
+  const allHeaders = [...CORE_HEADERS, ...sourceHeaders, ...tournamentHeaders];
+
+  const rows = [allHeaders.join(',')];
 
   for (const e of boardEntries) {
+    const sourceOdds = flattenSourceOdds(e);
+
     const row = [
+      // Core fields
       escapeField(e.id),
       escapeField(e.adpRank ?? ''),
       escapeField(e.name),
@@ -69,8 +116,10 @@ export function exportBoard(boardEntries) {
       escapeField(e.exceedsCapacity ? 'true' : 'false'),
       escapeField(e.drafted ? 'true' : 'false'),
       escapeField(e.draftedBy ?? ''),
-      escapeField(e.oddsBySource ? JSON.stringify(e.oddsBySource) : '{}'),
-      escapeField(e.oddsByTournament ? JSON.stringify(e.oddsByTournament) : '{}'),
+      // Per-source odds columns
+      ...ODDS_SOURCES.map(src => escapeField(sourceOdds[src] ?? '')),
+      // Per-tournament odds columns
+      ...tournamentIds.map(tId => escapeField(e.tournaments?.[tId]?.odds ?? '')),
     ];
     rows.push(row.join(','));
   }
@@ -87,6 +136,7 @@ export function exportBoard(boardEntries) {
 
 /**
  * Import board state from a CSV file.
+ * Supports both new flat odds columns (odds_*) and legacy JSON columns (manual_sources).
  * Restores manual odds and draft state to the server; the app recalculates EV.
  * Returns { manualCount, draftedCount } on success.
  */
@@ -110,6 +160,21 @@ export function importBoard(file) {
           throw new Error(`CSV is missing required columns: ${missing.join(', ')}. Found: ${headers.map(h => h.trim()).join(', ')}`);
         }
 
+        // Detect flat odds columns
+        const oddsSourceCols = ODDS_SOURCES
+          .map(src => ({ src, col: `odds_${src}` }))
+          .filter(({ col }) => idx[col] !== undefined);
+        const hasFlat = oddsSourceCols.length > 0;
+
+        // Detect tournament columns
+        const tournamentCols = headers
+          .filter(h => h.trim().startsWith('tournament_'))
+          .map(h => {
+            const col = h.trim();
+            const tId = col.replace('tournament_', '').replace(/_/g, '-');
+            return { tId, col };
+          });
+
         const manualOdds = {};
         const draftState = {};
         const socialScores = {};
@@ -123,11 +188,28 @@ export function importBoard(file) {
           const sport = cols[idx.sport]?.trim();
           if (!id || !name || !sport) continue;
 
-          // 1. Restore manual odds if source data is present
+          // 1. Restore odds — prefer flat columns, fall back to legacy JSON
           let oddsBySource = {};
           let oddsByTournament = {};
-          try { oddsBySource = JSON.parse(cols[idx.manual_sources] || '{}'); } catch { /* ignore malformed */ }
-          try { oddsByTournament = JSON.parse(cols[idx.manual_tournaments] || '{}'); } catch { /* ignore malformed */ }
+
+          if (hasFlat) {
+            for (const { src, col } of oddsSourceCols) {
+              const val = cols[idx[col]]?.trim();
+              if (val) oddsBySource[src] = val;
+            }
+            for (const { tId, col } of tournamentCols) {
+              const val = cols[idx[col]]?.trim();
+              if (val) {
+                if (!oddsByTournament[tId]) oddsByTournament[tId] = {};
+                oddsByTournament[tId].consensus = val;
+              }
+            }
+          } else {
+            // Legacy JSON columns
+            try { oddsBySource = JSON.parse(cols[idx.manual_sources] || '{}'); } catch { /* ignore */ }
+            try { oddsByTournament = JSON.parse(cols[idx.manual_tournaments] || '{}'); } catch { /* ignore */ }
+          }
+
           const hasManual = Object.keys(oddsBySource).length > 0 || Object.keys(oddsByTournament).length > 0;
           if (hasManual) {
             manualOdds[id] = { sport, name, oddsBySource, oddsByTournament, timestamp: Date.now() };
@@ -154,7 +236,6 @@ export function importBoard(file) {
         saveLocalManualOdds(manualOdds);
         saveLocalDraftState(draftState);
         if (Object.keys(socialScores).length > 0) {
-          // Merge with existing cache if possible
           const existingSocial = loadSocialScoresCache();
           saveSocialScoresCache({ ...existingSocial, ...socialScores });
         }
