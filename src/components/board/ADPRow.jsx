@@ -112,7 +112,7 @@ export default function ADPRow({ entry, onToggleDraft }) {
       {/* Status */}
       <td className="px-3 py-2">
         {entry.drafted ? (
-          <DraftedBadge draftedBy={entry.draftedBy} />
+          <DraftedBadge draftedBy={entry.draftedBy} onClick={() => onToggleDraft(entry.id)} />
         ) : !entry.isPlaceholder ? (
           <button
             onClick={() => onToggleDraft(entry.id)}
