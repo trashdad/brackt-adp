@@ -178,27 +178,33 @@ export function applyPositionalScarcity(sportEntries, globalModifier) {
     }
     current.dropoffVelocity = parseFloat(velocity.toFixed(2));
 
-    // Apply new formula: EV + (((gap to next undrafted * 2) / remaining undrafted))
-    const bonus = remainingUndrafted > 0
+    // Calculate positional scarcity bonus
+    const scarcityBonus = remainingUndrafted > 0
       ? (gapToNext * 2) / remainingUndrafted
       : 0;
 
-    let adpScore = rawEV + bonus;
+    let basePriority = rawEV + scarcityBonus;
     let exceedsCapacity = false;
 
-    // CAP RULE: Cannot exceed EV of player ranked just above in the same sport
+    // CAP RULE: Scarcity part remains capped by the entry above in the same sport
+    // This ensures a lower-odds player doesn't leapfrog a higher-odds player purely on depth gaps
     if (i > 0) {
       const above = sportEntries[i - 1];
-      const aboveEV = above.ev?.seasonTotal || 0;
-      if (adpScore > aboveEV) {
-        adpScore = aboveEV;
+      const aboveBase = above._cappedBase || (above.ev?.seasonTotal || 0);
+      if (basePriority > aboveBase) {
+        basePriority = aboveBase;
         exceedsCapacity = true;
       }
     }
+    // Store for the next iteration's cap check
+    current._cappedBase = basePriority;
+
+    // Social sentiment (Adj. SQ) is applied AFTER the cap, allowing leapfrogging
+    const adpScore = basePriority * (current.adjSq || 1.0);
 
     current.evGap = parseFloat(gapToNext.toFixed(2));
     current.remainingUndrafted = remainingUndrafted;
-    current.scarcityBonus = parseFloat(bonus.toFixed(2));
+    current.scarcityBonus = parseFloat(scarcityBonus.toFixed(2));
     current.adpScore = parseFloat(adpScore.toFixed(2));
     current.exceedsCapacity = exceedsCapacity;
   }
