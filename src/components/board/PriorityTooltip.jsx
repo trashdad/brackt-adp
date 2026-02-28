@@ -8,12 +8,12 @@ export default function PriorityTooltip({ entry, children }) {
 
   const rawEV = entry.ev?.seasonTotal || 0;
   const bonus = entry.scarcityBonus || 0;
-  const sq = entry.socialQuotient || 1.0;
+  const adjSq = entry.adjSq || 1.0;
   const score = entry.adpScore || 0;
-  const hasSocialBoost = sq > 1.0;
+  const hasAdjBoost = adjSq !== 1.0;
 
-  // Reconstruct the pre-social subtotal (what adpScore was before social multiplier)
-  const preSocialScore = hasSocialBoost ? parseFloat((score / sq).toFixed(2)) : score;
+  // Reconstruct the pre-social subtotal (what adpScore was before adjSq multiplier)
+  const preSocialScore = hasAdjBoost ? parseFloat((score / adjSq).toFixed(2)) : score;
 
   return (
     <span
@@ -43,22 +43,22 @@ export default function PriorityTooltip({ entry, children }) {
 
             {/* Step 3: Subtotal (before social) */}
             <div className="border-t border-white/10 pt-1.5 flex justify-between items-center">
-              <span className="text-retro-light/40 font-mono text-[11px]">Subtotal</span>
+              <span className="text-retro-light/40 font-mono text-[11px]">Subtotal (Capped)</span>
               <span className="font-mono text-[12px] text-white/70">{formatNumber(preSocialScore)}</span>
             </div>
 
             {/* Step 4: Cap rule indicator */}
             {entry.exceedsCapacity && (
               <div className="text-retro-gold text-[8px] font-retro uppercase animate-pulse">
-                !! CAPPED BY ABOVE PLAYER !!
+                !! SCARCITY CAPPED BY ABOVE PLAYER !!
               </div>
             )}
 
             {/* Step 5: Social Quotient multiplier */}
             <div className="flex justify-between items-center">
-              <span className="text-retro-light/50 font-mono text-[11px]">Social Signal</span>
-              <span className={`font-mono text-[12px] ${hasSocialBoost ? 'text-retro-cyan font-bold' : 'text-white/30'}`}>
-                x{sq.toFixed(2)}
+              <span className="text-retro-light/50 font-mono text-[11px]">Adj. SQ (Coeff)</span>
+              <span className={`font-mono text-[12px] ${hasAdjBoost ? 'text-retro-cyan font-bold' : 'text-white/30'}`}>
+                x{adjSq.toFixed(2)}
               </span>
             </div>
           </div>
@@ -76,9 +76,9 @@ export default function PriorityTooltip({ entry, children }) {
           {/* Formula explanation */}
           <div className="mt-3 pt-3 border-t border-white/10">
             <div className="text-[9px] text-white/30 leading-relaxed italic font-mono">
-              DPS = (EV + Scarcity) x Social<br/>
-              Cap: cannot exceed EV of player ranked above in sport.<br/>
-              Social applied after cap.
+              DPS = (EV + Scarcity) x Adj.SQ<br/>
+              Scarcity cap: cannot exceed entry above.<br/>
+              Adj.SQ applied AFTER cap (enables leapfrogging).
             </div>
           </div>
         </>,

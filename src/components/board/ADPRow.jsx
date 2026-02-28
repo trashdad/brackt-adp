@@ -7,6 +7,7 @@ import EVTooltip from './EVTooltip';
 import OddsTooltip from './OddsTooltip';
 import PriorityTooltip from './PriorityTooltip';
 import SocialTooltip from './SocialTooltip';
+import PlayerTooltip from './PlayerTooltip';
 
 const getVelocityColor = (v) => {
   if (v > 1.8) return 'text-retro-red font-black'; // Extreme cliff
@@ -33,12 +34,14 @@ export default function ADPRow({ entry, onToggleDraft }) {
 
       {/* Name — Pixelify Sans is far more legible than Silkscreen/PressStart */}
       <td className="px-3 py-2">
-        <Link
-          to={`/player/${entry.id}`}
-          className="font-retro text-[14px] font-medium text-retro-light group-hover:text-retro-cyan transition-colors tracking-wide"
-        >
-          {entry.name.toUpperCase()}
-        </Link>
+        <PlayerTooltip entry={entry}>
+          <Link
+            to={`/player/${entry.id}`}
+            className="font-retro text-[14px] font-medium text-retro-light group-hover:text-retro-cyan transition-colors tracking-wide"
+          >
+            {entry.name.toUpperCase()}
+          </Link>
+        </PlayerTooltip>
         {entry.evGap >= 7 && (
           <span className="ml-2 text-retro-red text-[10px] font-bold animate-pulse" title={`DROP_SIGNAL: ${entry.evGap} pts`}>
             !
