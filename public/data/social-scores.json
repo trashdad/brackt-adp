@@ -7207,37 +7207,37 @@
     }
   },
   "csgo-aurora": {
-    "socialScore": 2.75,
+    "socialScore": 2.8,
     "socialQuotient": 1.07,
-    "lastUpdated": "2026-02-27T13:25:19.566Z",
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
     "sources": {
       "expert": {
-        "score": 2.38,
+        "score": 2.4,
         "rank": 10,
-        "notes": "ESL Pro League S23 odds at 19:1. Rising.",
+        "notes": "HLTV #10 (244 pts). European contender, rising. Polymarket 5%.",
         "sourcesUsed": 4,
         "sourcesAgreed": 1
       },
       "reddit": {
-        "score": 0.37,
+        "score": 0.4,
         "mentions": 1
       }
     }
   },
   "csgo-team-liquid": {
-    "socialScore": 3.11,
+    "socialScore": 2.9,
     "socialQuotient": 1.07,
-    "lastUpdated": "2026-02-27T13:25:19.566Z",
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
     "sources": {
       "expert": {
-        "score": 2.29,
-        "rank": 14,
-        "notes": "Rebuilding but NA mainstay.",
+        "score": 2.2,
+        "rank": 13,
+        "notes": "HLTV #15 (96 pts). NA mainstay. In BLAST Rotterdam via qualifier. Polymarket 4%.",
         "sourcesUsed": 4,
         "sourcesAgreed": 2
       },
       "reddit": {
-        "score": 0.82,
+        "score": 0.7,
         "mentions": 2
       }
     }
@@ -7248,230 +7248,259 @@
     "lastUpdated": "2026-02-27T13:25:19.566Z"
   },
   "csgo-furia": {
-    "socialScore": 6.47,
-    "socialQuotient": 1.1,
-    "lastUpdated": "2026-02-27T13:25:19.566Z",
+    "socialScore": 9.2,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
     "sources": {
       "expert": {
-        "score": 6.47,
+        "score": 6.5,
         "rank": 2,
-        "notes": "HLTV #2, Valve #2. ESL Pro League S23 favorite (+225).",
-        "sourcesUsed": 4,
-        "sourcesAgreed": 4
+        "notes": "HLTV #2 (659 pts). IEM Krakow 2026 Grand Finalist (lost 1-3 to Vitality). YEKINDAR+FalleN rebuild working. Polymarket 28%.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 5
+      },
+      "reddit": {
+        "score": 1.2,
+        "mentions": 3
+      },
+      "news": {
+        "score": 1.5,
+        "mentions": 2,
+        "articles": 2
       }
     }
   },
   "csgo-natus-vincere": {
-    "socialScore": 3.91,
-    "socialQuotient": 1.08,
-    "lastUpdated": "2026-02-27T13:25:19.566Z",
+    "socialScore": 5,
+    "socialQuotient": 1.09,
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
     "sources": {
       "expert": {
-        "score": 3.91,
-        "rank": 9,
-        "notes": "Historical powerhouse, ~99% chance Cologne qualifier.",
-        "sourcesUsed": 4,
+        "score": 3.8,
+        "rank": 8,
+        "notes": "HLTV #8 (260 pts). Post-s1mple era. Aleksib IGL, makazze replaced jL. No major 2026 results yet. Historical LAN pedigree. Polymarket 13%.",
+        "sourcesUsed": 5,
         "sourcesAgreed": 3
+      },
+      "reddit": {
+        "score": 0.7,
+        "mentions": 2
+      },
+      "news": {
+        "score": 0.5,
+        "mentions": 1,
+        "articles": 1
       }
     }
   },
   "csgo-faze-clan": {
-    "socialScore": 4.59,
-    "socialQuotient": 1.09,
-    "lastUpdated": "2026-02-27T13:25:19.566Z",
+    "socialScore": 4.2,
+    "socialQuotient": 1.08,
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
     "sources": {
       "expert": {
-        "score": 4.59,
-        "rank": 6,
-        "notes": "HLTV #6. Championship pedigree but inconsistent.",
-        "sourcesUsed": 4,
+        "score": 3.5,
+        "rank": 9,
+        "notes": "HLTV #9 (249 pts). karrigan IGL. Twistzz returned Sep 2025, jcobbb signed Aug 2025, rain released Oct 2025. Budapest Major finalist but inconsistent since. Polymarket 5%.",
+        "sourcesUsed": 5,
         "sourcesAgreed": 3
+      },
+      "reddit": {
+        "score": 0.7,
+        "mentions": 2
       }
     }
   },
   "csgo-g2-esports": {
-    "socialScore": 13.59,
-    "socialQuotient": 1.14,
-    "lastUpdated": "2026-02-27T13:25:19.566Z",
+    "socialScore": 5.8,
+    "socialQuotient": 1.1,
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
     "sources": {
       "expert": {
-        "score": 3.41,
-        "rank": 8,
-        "notes": "IEM Krakow contender. Dependent on MalbsMd form.",
-        "sourcesUsed": 4,
+        "score": 3,
+        "rank": 11,
+        "notes": "HLTV #11 (229 pts). Lost NiKo to Falcons late 2025. Dropped from top-2 to #11. NOT in BLAST Rotterdam (VRS #13). HeavyGod standout. Rebuilding.",
+        "sourcesUsed": 5,
         "sourcesAgreed": 2
       },
       "reddit": {
-        "score": 2.26,
+        "score": 1.5,
         "mentions": 3
       },
       "news": {
-        "score": 7.92,
-        "mentions": 3,
-        "articles": 7
+        "score": 1.3,
+        "mentions": 2,
+        "articles": 2
       }
     }
   },
   "csgo-the-mongolz": {
-    "socialScore": 3.59,
+    "socialScore": 3.9,
     "socialQuotient": 1.08,
-    "lastUpdated": "2026-02-27T13:25:19.566Z",
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
     "sources": {
       "expert": {
-        "score": 3.59,
+        "score": 3.4,
         "rank": 7,
-        "notes": "Won Esports World Cup 2025. Legit dark horse.",
+        "notes": "HLTV #7 (280 pts). cobrazera signed Jan 2026 replacing Senzu. Rising regional powerhouse. Polymarket 7%.",
         "sourcesUsed": 4,
         "sourcesAgreed": 2
+      },
+      "reddit": {
+        "score": 0.5,
+        "mentions": 1
       }
     }
   },
   "csgo-mouz": {
-    "socialScore": 6.66,
+    "socialScore": 7.4,
     "socialQuotient": 1.11,
-    "lastUpdated": "2026-02-27T13:25:19.566Z",
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
     "sources": {
       "expert": {
-        "score": 6.2,
+        "score": 6,
         "rank": 3,
-        "notes": "Valve #3, HLTV #4. Jimpphat breakout. Consistent podiums.",
-        "sourcesUsed": 4,
-        "sourcesAgreed": 4
+        "notes": "HLTV #3 (481 pts). No roster changes, Brollan IGL. 3rd at PGL Cluj. Consistent top-4. Polymarket 23%.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 5
       },
       "reddit": {
-        "score": 0.46,
-        "mentions": 1
+        "score": 0.8,
+        "mentions": 2
+      },
+      "news": {
+        "score": 0.6,
+        "mentions": 1,
+        "articles": 1
       }
     }
   },
   "csgo-team-spirit": {
-    "socialScore": 5.26,
+    "socialScore": 6.1,
     "socialQuotient": 1.1,
-    "lastUpdated": "2026-02-27T13:25:19.566Z",
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
     "sources": {
       "expert": {
-        "score": 4.82,
-        "rank": 5,
-        "notes": "4 trophies in 2025. IGL experiment with magixx is risky.",
-        "sourcesUsed": 4,
+        "score": 4.8,
+        "rank": 6,
+        "notes": "HLTV #6 (349 pts). Major roster overhaul Dec 2025: magixx new IGL, zont1x returned, chopper+zweih benched. donk+sh1ro elite but chemistry uncertain. IEM Cologne 2025 winners. High variance. Polymarket 23%.",
+        "sourcesUsed": 5,
         "sourcesAgreed": 3
       },
       "reddit": {
-        "score": 0.44,
-        "mentions": 1
-      }
-    }
-  },
-  "csgo-mibr": {
-    "socialScore": 1.5,
-    "socialQuotient": 1.05,
-    "lastUpdated": "2026-02-27T13:25:19.566Z",
-    "sources": {
-      "reddit": {
-        "score": 0.37,
-        "mentions": 1
+        "score": 0.8,
+        "mentions": 2
       },
       "news": {
-        "score": 1.13,
+        "score": 0.5,
         "mentions": 1,
         "articles": 1
       }
     }
   },
-  "csgo-fnatic": {
-    "socialScore": 0,
-    "socialQuotient": 1,
-    "lastUpdated": "2026-02-27T13:25:19.566Z"
-  },
   "csgo-heroic": {
-    "socialScore": 2.84,
-    "socialQuotient": 1.07,
-    "lastUpdated": "2026-02-27T13:25:19.566Z",
+    "socialScore": 1.5,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
     "sources": {
       "expert": {
-        "score": 2.09,
-        "rank": 12,
-        "notes": "ESL Pro League S23 at 100:1.",
-        "sourcesUsed": 4,
+        "score": 1,
+        "rank": 20,
+        "notes": "HLTV #21 (65 pts). In transition. Historically overperforms at big events.",
+        "sourcesUsed": 3,
         "sourcesAgreed": 1
       },
       "reddit": {
-        "score": 0.75,
-        "mentions": 2
+        "score": 0.5,
+        "mentions": 1
       }
     }
   },
   "csgo-ninjas-in-pyjamas": {
-    "socialScore": 0,
-    "socialQuotient": 1,
-    "lastUpdated": "2026-02-27T13:25:19.566Z"
-  },
-  "csgo-pain-gaming": {
-    "socialScore": 3.37,
-    "socialQuotient": 1.08,
-    "lastUpdated": "2026-02-27T13:25:19.566Z",
+    "socialScore": 1,
+    "socialQuotient": 1.03,
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
     "sources": {
       "expert": {
-        "score": 2.24,
-        "rank": 11,
-        "notes": "ESL Pro League participant.",
-        "sourcesUsed": 4,
+        "score": 0.6,
+        "rank": 15,
+        "notes": "HLTV #25 (42 pts). In BLAST Rotterdam via European BLAST Rising qualifier. Polymarket 9% (overvalued by brand?).",
+        "sourcesUsed": 3,
         "sourcesAgreed": 1
       },
-      "news": {
-        "score": 1.13,
-        "mentions": 1,
-        "articles": 1
+      "reddit": {
+        "score": 0.4,
+        "mentions": 1
+      }
+    }
+  },
+  "csgo-pain-gaming": {
+    "socialScore": 1.2,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
+    "sources": {
+      "expert": {
+        "score": 0.7,
+        "rank": 17,
+        "notes": "HLTV #17 (78 pts). SA scene competitor.",
+        "sourcesUsed": 3,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 0.5,
+        "mentions": 1
       }
     }
   },
   "csgo-astralis": {
-    "socialScore": 2.1,
+    "socialScore": 2.5,
     "socialQuotient": 1.06,
-    "lastUpdated": "2026-02-27T13:25:19.566Z",
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
     "sources": {
       "expert": {
-        "score": 2.1,
-        "rank": 15,
-        "notes": "Former dynasty, still competing.",
+        "score": 2,
+        "rank": 12,
+        "notes": "HLTV #12 (158 pts). dev1ce departed to 100 Thieves. First international signings (phzy, ryu). Former dynasty but fading.",
         "sourcesUsed": 4,
         "sourcesAgreed": 2
-      }
-    }
-  },
-  "csgo-flyquest": {
-    "socialScore": 2.69,
-    "socialQuotient": 1.07,
-    "lastUpdated": "2026-02-27T13:25:19.566Z",
-    "sources": {
-      "expert": {
-        "score": 1.94,
-        "rank": 13,
-        "notes": "FUT Esports competitor (dark horse per Hotspawn).",
-        "sourcesUsed": 4,
-        "sourcesAgreed": 1
       },
       "reddit": {
-        "score": 0.75,
-        "mentions": 2
+        "score": 0.5,
+        "mentions": 1
       }
     }
   },
   "csgo-gamerlegion": {
-    "socialScore": 0.75,
-    "socialQuotient": 1.03,
-    "lastUpdated": "2026-02-27T13:25:19.566Z",
+    "socialScore": 0.8,
+    "socialQuotient": 1.02,
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
     "sources": {
+      "expert": {
+        "score": 0.5,
+        "rank": 16,
+        "notes": "HLTV #16 (78 pts). European mid-tier.",
+        "sourcesUsed": 3,
+        "sourcesAgreed": 1
+      },
       "reddit": {
-        "score": 0.75,
-        "mentions": 2
+        "score": 0.3,
+        "mentions": 1
       }
     }
   },
   "csgo-3dmax": {
-    "socialScore": 0,
-    "socialQuotient": 1,
-    "lastUpdated": "2026-02-27T13:25:19.566Z"
+    "socialScore": 0.8,
+    "socialQuotient": 1.02,
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
+    "sources": {
+      "expert": {
+        "score": 0.8,
+        "rank": 14,
+        "notes": "HLTV #14 (106 pts). European mid-tier. Not in BLAST Rotterdam.",
+        "sourcesUsed": 3,
+        "sourcesAgreed": 1
+      }
+    }
   },
   "nba-san-antonio-spurs": {
     "socialScore": 12.95,
@@ -7543,41 +7572,50 @@
     "lastUpdated": "2026-02-27T13:25:19.566Z"
   },
   "csgo-vitality": {
-    "socialScore": 11.33,
-    "socialQuotient": 1.13,
+    "socialScore": 14.8,
+    "socialQuotient": 1.14,
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
     "sources": {
       "expert": {
-        "score": 6.73,
+        "score": 7,
         "rank": 1,
-        "notes": "HLTV #1, 1000 pts. Consensus best team. 2x Major champs 2025.",
-        "sourcesUsed": 4,
+        "notes": "HLTV #1 (1000 pts). Won IEM Krakow + PGL Cluj back-to-back Jan-Feb 2026. 10 S-Tier titles in 12mo. ZywOo #1 player 2025 (4th time). 3 Majors. Polymarket 39% Rotterdam favorite.",
+        "sourcesUsed": 6,
+        "sourcesAgreed": 6
+      },
+      "reddit": {
+        "score": 2.1,
+        "mentions": 5
+      },
+      "news": {
+        "score": 5.7,
+        "mentions": 6,
+        "articles": 8
+      }
+    }
+  },
+  "csgo-falcons": {
+    "socialScore": 8.1,
+    "socialQuotient": 1.11,
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
+    "sources": {
+      "expert": {
+        "score": 5.5,
+        "rank": 4,
+        "notes": "HLTV #4 (474 pts). NiKo+m0NESY superteam. BLAST Bounty finalist (lost 0-3 to PARI). kyousuke Schengen visa risk for Rotterdam. Polymarket 20%.",
+        "sourcesUsed": 6,
         "sourcesAgreed": 4
       },
       "reddit": {
-        "score": 1.21,
+        "score": 1.4,
         "mentions": 3
       },
       "news": {
-        "score": 3.39,
-        "mentions": 3,
-        "articles": 3
+        "score": 1.2,
+        "mentions": 2,
+        "articles": 2
       }
-    },
-    "lastUpdated": "2026-02-27T13:25:19.566Z"
-  },
-  "csgo-falcons": {
-    "socialScore": 5.04,
-    "socialQuotient": 1.09,
-    "sources": {
-      "expert": {
-        "score": 5.04,
-        "rank": 4,
-        "notes": "HLTV #3. Strong roster but fewer trophies.",
-        "sourcesUsed": 4,
-        "sourcesAgreed": 3
-      }
-    },
-    "lastUpdated": "2026-02-27T13:25:19.566Z"
+    }
   },
   "snooker-judd-trump": {
     "socialScore": 8.67,
@@ -8857,5 +8895,64 @@
       }
     },
     "lastUpdated": "2026-02-27T13:25:19.566Z"
+  },
+  "csgo-parivision": {
+    "socialScore": 8.5,
+    "socialQuotient": 1.12,
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
+    "sources": {
+      "expert": {
+        "score": 5.8,
+        "rank": 5,
+        "notes": "HLTV #5 (381 pts). Won BLAST Bounty Winter at +4000 odds (swept Falcons 3-0). PGL Cluj GF (lost 0-3 to Vitality). Jame tactical IGL + zweih aggression. Polymarket 21%. Massive upside.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 4
+      },
+      "reddit": {
+        "score": 1.5,
+        "mentions": 3
+      },
+      "news": {
+        "score": 1.2,
+        "mentions": 2,
+        "articles": 2
+      }
+    }
+  },
+  "csgo-b8": {
+    "socialScore": 0.6,
+    "socialQuotient": 1.02,
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
+    "sources": {
+      "expert": {
+        "score": 0.4,
+        "rank": 18,
+        "notes": "HLTV #18 (76 pts). In BLAST Rotterdam via VRS invite. Long shot. Polymarket 3%.",
+        "sourcesUsed": 3,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 0.2,
+        "mentions": 1
+      }
+    }
+  },
+  "csgo-nrg": {
+    "socialScore": 0.6,
+    "socialQuotient": 1.02,
+    "lastUpdated": "2026-02-28T06:26:30.932Z",
+    "sources": {
+      "expert": {
+        "score": 0.4,
+        "rank": 19,
+        "notes": "HLTV #19 (68 pts). NA BLAST Rising qualifier. Long shot. Polymarket 3%.",
+        "sourcesUsed": 3,
+        "sourcesAgreed": 1
+      },
+      "reddit": {
+        "score": 0.2,
+        "mentions": 1
+      }
+    }
   }
 }

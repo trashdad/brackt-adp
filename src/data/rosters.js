@@ -230,12 +230,12 @@ const ROSTERS = {
     'Marta Kostyuk', 'Tereza Valentova', 'Veronika Kudermetova',
   ],
 
-  // ── Counter-Strike 2 — Top 20 teams ─────────────────────────────
+  // ── Counter-Strike 2 — Top 20 teams (Feb 2026 HLTV) ─────────────
   csgo: [
-    'Vitality', 'FURIA', 'Falcons', 'MOUZ', 'FaZe Clan',
-    'The MongolZ', 'Natus Vincere', 'Team Spirit', 'Aurora', 'G2 Esports',
-    'Team Liquid', 'Astralis', '3DMAX', 'paiN Gaming', 'GamerLegion',
-    'Fnatic', 'Ninjas in Pyjamas', 'MIBR', 'FlyQuest', 'Heroic',
+    'Vitality', 'FURIA', 'Falcons', 'MOUZ', 'PARIVISION',
+    'Team Spirit', 'The MongolZ', 'Natus Vincere', 'FaZe Clan', 'Aurora',
+    'G2 Esports', 'Astralis', 'Team Liquid', '3DMAX', 'paiN Gaming',
+    'GamerLegion', 'B8', 'NRG', 'Heroic', 'Ninjas in Pyjamas',
   ],
 };
 export default ROSTERS;
