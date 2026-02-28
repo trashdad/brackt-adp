@@ -99,12 +99,21 @@ const NFL_SNAP_WEIGHTED_AGE = {
 const NFL_ELITE_OL_CONTINUITY = ['philadelphiaeagles', 'denverbroncos', 'detroitlions', 'tampabaybuccaneers', 'buffalobills', 'chicagobears'];
 
 const NFL_2026_DRAFT_CAPITAL = {
-  'newyorkjets': 1.25, 'clevelandbrowns': 1.18, 'lasvegasraiders': 1.15, 'pittsburghsteelers': 1.12,
-  'tennesseetitans': 1.10, 'dallascowboys': 1.10, 'losangelesrams': 1.10
+  'newyorkjets': 1.07,      // #1: Massive war chest
+  'clevelandbrowns': 1.05,  // #2: Two 1st rounders
+  'lasvegasraiders': 1.04,  // #3: #1 overall pick
+  'pittsburghsteelers': 1.03,// #4: High volume
+  'tennesseetitans': 1.02,   // #5: #4 overall pick
+  'dallascowboys': 1.02,    // Two 1st rounders
+  'losangelesrams': 1.02     // Two 1st rounders
 };
 
 const NFL_COACHING_ALPHA = {
-  'chicagobears': 1.15, 'arizonacardinals': 1.12, 'buffalobills': 1.08, 'atlantafalcons': 1.05, 'lasvegasraiders': 1.10
+  'chicagobears': 1.15,      // Ben Johnson (2nd Year Jump - Elite Offense)
+  'arizonacardinals': 1.12,  // Mike LaFleur (New Offensive Hire)
+  'buffalobills': 1.08,      // Joe Brady (Promoted - Continuity)
+  'atlantafalcons': 1.05,    // Kevin Stefanski (Proven Playcaller)
+  'lasvegasraiders': 1.10    // Klint Kubiak (New Offensive System)
 };
 
 /**
@@ -112,11 +121,11 @@ const NFL_COACHING_ALPHA = {
  * Balances the board by predictability.
  */
 const GLOBAL_CONFIDENCE_INDEX = {
-  nba: 1.15, f1: 1.15, llws: 1.15,
-  afl: 1.10, ncaab: 1.10, tennis_m: 1.10, tennis_w: 1.10, snooker: 1.10, darts: 1.10,
-  nfl: 1.05, ncaaf: 1.05, ucl: 1.05, fifa: 1.05,
-  nhl: 0.95, mlb: 0.95, indycar: 0.95, pga: 0.95,
-  csgo: 0.90, wnba: 0.90, ncaaw: 0.90
+  nba: 1.18, f1: 1.18, llws: 1.18,
+  afl: 1.12, ncaab: 1.12, tennis_m: 1.12, tennis_w: 1.12, snooker: 1.12, darts: 1.12,
+  nfl: 1.00, ncaaf: 1.00, ucl: 1.00, fifa: 1.00,
+  nhl: 0.92, mlb: 0.92, indycar: 0.92, pga: 0.92,
+  csgo: 0.85, wnba: 0.85, ncaaw: 0.85
 };
 
 // --- CALCULATORS ---
