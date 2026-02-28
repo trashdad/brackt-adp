@@ -96,11 +96,24 @@ app.post('/api/run-pipeline', (_req, res) => {
   pipelineState = { running: true, sources: {}, lastRun: new Date().toISOString() };
   res.json({ ok: true });
 
+  const PIPELINE_TIMEOUT_MS = 10 * 60 * 1000; // 10 minutes
+
   const proc = spawn('node', ['pipeline/scheduler/index.js', '--once'], {
     cwd: PROJECT_ROOT,
     stdio: ['ignore', 'pipe', 'pipe'],
     env: { ...process.env },
   });
+
+  // Kill the process if it exceeds the timeout
+  const timeoutTimer = setTimeout(() => {
+    if (pipelineState.running) {
+      console.warn('[BRACKT] Pipeline timed out after 10 minutes, killing process');
+      proc.kill('SIGTERM');
+      setTimeout(() => {
+        try { proc.kill('SIGKILL'); } catch { /* already dead */ }
+      }, 5000);
+    }
+  }, PIPELINE_TIMEOUT_MS);
 
   // Parse Winston console output: "TIMESTAMP LEVEL [sourceId]: message"
   // Strip ANSI codes, extract sourceId + message, classify status.
@@ -134,7 +147,14 @@ app.post('/api/run-pipeline', (_req, res) => {
   proc.stderr.on('data', onData);
 
   proc.on('close', () => {
+    clearTimeout(timeoutTimer);
     if (buf) parseLine(buf);
+    pipelineState.running = false;
+  });
+
+  proc.on('error', (err) => {
+    clearTimeout(timeoutTimer);
+    console.error('[BRACKT] Pipeline process error:', err.message);
     pipelineState.running = false;
   });
 });

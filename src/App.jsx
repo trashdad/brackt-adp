@@ -36,10 +36,8 @@ export default function App() {
     try {
       const { manualCount, draftedCount } = await importBoard(file);
       setImportStatus(`ok:${manualCount}:${draftedCount}`);
-      await Promise.all([
-        refresh(),
-        syncDraft ? syncDraft() : Promise.resolve()
-      ]);
+      await refresh();
+      if (syncDraft) await syncDraft();
       setTimeout(() => setImportStatus(null), 4000);
     } catch {
       setImportStatus('error');

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import SPORTS from '../data/sports';
 import ROSTERS from '../data/rosters';
 import { fetchOddsForSport } from '../services/oddsApi';
@@ -410,13 +410,18 @@ export default function useOddsData(scarcityModifier) {
     setLoading(false);
   }, [scarcityModifier]);
 
+  // Initial load + periodic refresh. Use a ref to avoid recreating the
+  // interval every time scarcityModifier changes (which rebuilds `refresh`).
+  const refreshRef = useRef(refresh);
+  refreshRef.current = refresh;
+
   useEffect(() => {
-    refresh(); // eslint-disable-line react-hooks/set-state-in-effect -- initial data load on mount
+    refreshRef.current();
     const { refreshInterval } = loadSettings();
     const intervalMs = (refreshInterval || 24) * 60 * 60 * 1000;
-    const timer = setInterval(refresh, intervalMs);
+    const timer = setInterval(() => refreshRef.current(), intervalMs);
     return () => clearInterval(timer);
-  }, [refresh]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- intentionally stable via ref
 
   return { entries, loading, lastUpdated, refresh };
 }

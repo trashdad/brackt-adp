@@ -29,10 +29,13 @@ function calculateTrend(history) {
 
   if (isNaN(first) || isNaN(last)) return 'stable';
 
-  // For American odds: higher number = longer odds = less likely
-  const diff = last - first;
-  if (Math.abs(diff) < 10) return 'stable';
-  return diff > 0 ? 'lengthening' : 'shortening';
+  // Compare using implied probability rather than raw odds values
+  const toProb = (o) => o < 0 ? (-o) / (-o + 100) : 100 / (o + 100);
+  const firstProb = toProb(first);
+  const lastProb = toProb(last);
+  const probDiff = lastProb - firstProb;
+  if (Math.abs(probDiff) < 0.02) return 'stable'; // <2% probability shift
+  return probDiff > 0 ? 'shortening' : 'lengthening';
 }
 
 /**

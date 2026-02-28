@@ -19,7 +19,7 @@ const getVelocityColor = (v) => {
 export default function ADPRow({ entry, onToggleDraft }) {
   const color = SPORT_COLORS[entry.sport] || '#888';
   const val = (v) => entry.isPlaceholder ? '—' : v;
-  const velocity = entry.dropoffVelocity || 1.0;
+  const velocity = entry.dropoffVelocity ?? 1.0;
 
   return (
     <tr

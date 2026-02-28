@@ -103,7 +103,9 @@ export default function ParsePage({ onOddsSubmitted }) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(manual),
-    }).catch(() => {});
+    }).catch((err) => {
+      console.warn('[BRACKT] Failed to sync manual odds to server:', err?.message || String(err));
+    });
     setSubmitted(true);
     if (onOddsSubmitted) onOddsSubmitted();
   };

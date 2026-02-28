@@ -14,7 +14,7 @@ const ODDS_SOURCES = [
 const CORE_HEADERS = [
   'id', 'rank', 'name', 'sport', 'odds',
   'win_pct', 'event_ev', 'season_ev', 'adp_score',
-  'dropoff_velocity', 'social_score', 'social_quotient',
+  'dropoff_velocity', 'adj_sq', 'social_pos', 'social_neg',
   'scarcity_bonus', 'ev_gap', 'exceeds_capacity',
   'drafted', 'drafted_by',
 ];
@@ -109,8 +109,9 @@ export function exportBoard(boardEntries) {
       escapeField(e.ev?.seasonTotal ?? ''),
       escapeField(e.adpScore ?? ''),
       escapeField(e.dropoffVelocity ?? ''),
-      escapeField(e.socialScore ?? ''),
-      escapeField(e.socialQuotient ?? ''),
+      escapeField(e.adjSq ?? ''),
+      escapeField(e.socialPos ?? ''),
+      escapeField(e.socialNeg ?? ''),
       escapeField(e.scarcityBonus ?? ''),
       escapeField(e.evGap ?? ''),
       escapeField(e.exceedsCapacity ? 'true' : 'false'),
@@ -222,12 +223,14 @@ export function importBoard(file) {
           }
 
           // 3. Restore social scores if present
-          const score = parseFloat(cols[idx.social_score]);
-          const quotient = parseFloat(cols[idx.social_quotient]);
-          if (!isNaN(score) || !isNaN(quotient)) {
+          const adjSq = parseFloat(cols[idx.adj_sq]);
+          const socialPos = parseInt(cols[idx.social_pos], 10);
+          const socialNeg = parseInt(cols[idx.social_neg], 10);
+          if (!isNaN(adjSq) || !isNaN(socialPos) || !isNaN(socialNeg)) {
             socialScores[id] = {
-              socialScore: isNaN(score) ? 0 : score,
-              socialQuotient: isNaN(quotient) ? 1.0 : quotient,
+              adjSq: isNaN(adjSq) ? 1.0 : adjSq,
+              pos: isNaN(socialPos) ? 0 : socialPos,
+              neg: isNaN(socialNeg) ? 0 : socialNeg,
             };
           }
         }

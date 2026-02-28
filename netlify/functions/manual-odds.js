@@ -19,8 +19,13 @@ export const handler = async (event, context) => {
 
   // POST: Write to Blobs
   if (event.httpMethod === "POST") {
+    let body;
     try {
-      const body = JSON.parse(event.body);
+      body = JSON.parse(event.body);
+    } catch {
+      return { statusCode: 400, body: JSON.stringify({ error: "Invalid JSON" }) };
+    }
+    try {
       await store.setJSON(key, body);
       return {
         statusCode: 200,
