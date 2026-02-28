@@ -153,7 +153,7 @@ const ROSTERS = {
   snooker: [
     'Judd Trump', 'Kyren Wilson', 'Neil Robertson', 'Mark Williams',
     'Zhao Xintong', 'John Higgins', 'Mark Selby', 'Shaun Murphy',
-    'Mark Allen', 'Xiao Guodong', "Ronnie O'Sullivan", 'Wu Yize',
+    'Mark Allen', 'Xiao Guodong', 'Wu Yize',
     'Chris Wakelin', 'Barry Hawkins', 'Ding Junhui', 'Si Jiahui',
     'Stuart Bingham', 'Zhang Anda', 'Jak Jones', 'Ali Carter',
     'Jack Lisowski', 'Luca Brecel', 'Gary Wilson', 'Allister Carter',

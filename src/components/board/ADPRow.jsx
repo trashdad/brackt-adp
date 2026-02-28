@@ -70,6 +70,11 @@ export default function ADPRow({ entry, onToggleDraft }) {
         <OddsTooltip entry={entry}>{val(formatAmericanOdds(entry.odds))}</OddsTooltip>
       </td>
 
+      {/* Season EV */}
+      <td className="px-3 py-2 font-mono text-[13px] font-bold text-retro-light tabular-nums">
+        <EVTooltip entry={entry}>{val(formatNumber(entry.ev?.seasonTotal))}</EVTooltip>
+      </td>
+
       {/* Dropoff Velocity */}
       <td className="px-3 py-2 font-mono text-[13px] tabular-nums">
         {entry.isPlaceholder ? '—' : (
@@ -77,11 +82,6 @@ export default function ADPRow({ entry, onToggleDraft }) {
             {velocity.toFixed(2)}x
           </span>
         )}
-      </td>
-
-      {/* Season EV */}
-      <td className="px-3 py-2 font-mono text-[13px] font-bold text-retro-light tabular-nums">
-        <EVTooltip entry={entry}>{val(formatNumber(entry.ev?.seasonTotal))}</EVTooltip>
       </td>
 
       {/* Draft Priority Score */}

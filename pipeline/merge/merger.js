@@ -7,6 +7,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import logger from '../scheduler/logger.js';
+import ROSTERS from '../../src/data/rosters.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const RAW_DIR = path.join(__dirname, '..', 'output', '.raw');
@@ -17,6 +18,162 @@ const LIVE_DIR = path.join(__dirname, '..', 'output', 'live');
  */
 function normalizeName(name) {
   return name.toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+/**
+ * Resolve a canonical name from ROSTERS if possible.
+ */
+function getCanonicalName(name, sportId) {
+  const sportRoster = ROSTERS[sportId];
+  if (!sportRoster) return name;
+
+  let normalizedInput = normalizeName(name);
+
+  // Expand common abbreviations in the input
+  const cityExpansions = {
+    'la': 'losangeles',
+    'ny': 'newyork',
+    'sf': 'sanfrancisco',
+    'gb': 'greenbay',
+    'kc': 'kansascity',
+    'tb': 'tampabay',
+    'ne': 'newengland',
+    'no': 'neworleans',
+    'ari': 'arizona',
+    'atl': 'atlanta',
+    'bal': 'baltimore',
+    'buf': 'buffalo',
+    'car': 'carolina',
+    'chi': 'chicago',
+    'cin': 'cincinnati',
+    'cle': 'cleveland',
+    'dal': 'dallas',
+    'den': 'denver',
+    'det': 'detroit',
+    'hou': 'houston',
+    'ind': 'indianapolis',
+    'jax': 'jacksonville',
+    'lv': 'lasvegas',
+    'min': 'minnesota',
+    'phi': 'philadelphia',
+    'pit': 'pittsburgh',
+    'sea': 'seattle',
+    'ten': 'tennessee',
+    'was': 'washington',
+  };
+
+  // Try to replace city abbreviation at the start of the string
+  for (const [abbr, expansion] of Object.entries(cityExpansions)) {
+    if (normalizedInput.startsWith(abbr)) {
+      // Check if it's just the abbreviation or abbreviation + rest
+      // e.g., "larams" -> "losangelesrams"
+      const rest = normalizedInput.slice(abbr.length);
+      // Only expand if the rest also matches or if it's the whole string
+      const expanded = expansion + rest;
+      
+      // If the expanded version matches a team exactly, use it
+      for (const team of sportRoster) {
+        if (normalizeName(team) === expanded) {
+          normalizedInput = expanded;
+          break;
+        }
+      }
+    }
+  }
+
+  // 1. Exact match (normalized)
+  for (const team of sportRoster) {
+    if (normalizeName(team) === normalizedInput) return team;
+  }
+
+  // 2. Build mapping of aliases (city, mascot) to full names
+  const cityMap = new Map();
+  const mascotMap = new Map();
+
+  for (const team of sportRoster) {
+    const parts = team.split(' ');
+    // Handle teams with multiple words in city/mascot
+    // For simplicity, we'll try common splits:
+    // "Kansas City Chiefs" -> city: "Kansas City", mascot: "Chiefs"
+    // "New York Giants" -> city: "New York", mascot: "Giants"
+    // "Philadelphia 76ers" -> city: "Philadelphia", mascot: "76ers"
+    
+    // Most team names are "City Mascot" or "City City Mascot"
+    // Last word is usually the mascot
+    const mascot = parts[parts.length - 1];
+    const city = parts.slice(0, parts.length - 1).join(' ');
+
+    if (city) {
+      const normCity = normalizeName(city);
+      if (!cityMap.has(normCity)) {
+        cityMap.set(normCity, team);
+      } else {
+        // City is not unique (e.g., New York, Los Angeles), mark as null to avoid incorrect mapping
+        cityMap.set(normCity, null);
+      }
+    }
+
+    if (mascot) {
+      const normMascot = normalizeName(mascot);
+      if (!mascotMap.has(normMascot)) {
+        mascotMap.set(normMascot, team);
+      } else {
+        // Mascot is not unique, mark as null
+        mascotMap.set(normMascot, null);
+      }
+    }
+  }
+
+  // Check alias maps
+  if (mascotMap.has(normalizedInput) && mascotMap.get(normalizedInput)) {
+    return mascotMap.get(normalizedInput);
+  }
+  if (cityMap.has(normalizedInput) && cityMap.get(normalizedInput)) {
+    return cityMap.get(normalizedInput);
+  }
+
+  // Special case for common abbreviations
+  const abbreviations = {
+    'kc': 'Kansas City Chiefs',
+    'la': null, // Ambiguous
+    'ny': null, // Ambiguous
+    'sf': 'San Francisco 49ers',
+    'gb': 'Green Bay Packers',
+    'tb': 'Tampa Bay Buccaneers',
+    'lar': 'Los Angeles Rams',
+    'lac': 'Los Angeles Chargers',
+    'nyj': 'New York Jets',
+    'nyg': 'New York Giants',
+    'phi': 'Philadelphia Eagles',
+    'bal': 'Baltimore Ravens',
+    'buf': 'Buffalo Bills',
+    'det': 'Detroit Lions',
+    'sea': 'Seattle Seahawks',
+    'ne': 'New England Patriots',
+    'den': 'Denver Broncos',
+    'hou': 'Houston Texans',
+    'jax': 'Jacksonville Jaguars',
+    'min': 'Minnesota Vikings',
+    'chi': 'Chicago Bears',
+    'cle': 'Cleveland Browns',
+    'cin': 'Cincinnati Bengals',
+    'pit': 'Pittsburgh Steelers',
+    'ari': 'Arizona Cardinals',
+    'atl': 'Atlanta Falcons',
+    'car': 'Carolina Panthers',
+    'dal': 'Dallas Cowboys',
+    'ind': 'Indianapolis Colts',
+    'lv': 'Las Vegas Raiders',
+    'no': 'New Orleans Saints',
+    'ten': 'Tennessee Titans',
+    'was': 'Washington Commanders',
+  };
+
+  if (sportId === 'nfl' && abbreviations[normalizedInput]) {
+    return abbreviations[normalizedInput];
+  }
+
+  return name;
 }
 
 /**
@@ -121,11 +278,24 @@ function mergeSources(sportId, rawSources) {
       // Skip entries where the "name" is actually an odds value
       if (looksLikeOdds(entry.name)) continue;
 
-      const key = entry.nameNormalized || normalizeName(entry.name);
+      const canonicalName = getCanonicalName(entry.name, sportId);
+      
+      // If a roster exists for this sport, but the name didn't match anything in it, skip it
+      // (This filters out junk like "Time", "Odds", etc. from scrapers)
+      if (ROSTERS[sportId]) {
+        const normalizedCanonical = normalizeName(canonicalName);
+        const rosterNormalized = ROSTERS[sportId].map(normalizeName);
+        if (!rosterNormalized.includes(normalizedCanonical)) {
+          logger.debug(`Skipping non-roster entry: ${entry.name}`, { sport: sportId });
+          continue;
+        }
+      }
+
+      const key = normalizeName(canonicalName);
 
       if (!entryMap.has(key)) {
         entryMap.set(key, {
-          name: entry.name,
+          name: canonicalName,
           nameNormalized: key,
           oddsBySource: {},
           bestOdds: null,
