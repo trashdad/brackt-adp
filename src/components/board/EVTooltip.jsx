@@ -24,10 +24,16 @@ export default function EVTooltip({ entry, children }) {
 
           <div className="space-y-3">
             <div className="flex justify-between items-center">
-              <span className="font-retro text-[8px] text-white/40 uppercase">EVENT_EV</span>
+              <span className="font-retro text-[8px] text-white/40 uppercase tracking-tighter">Standing_Payout</span>
               <span className="font-mono text-[12px] text-white tabular-nums">{formatNumber(ev.singleEvent)}</span>
             </div>
-            <div className="flex justify-between items-center pt-3 border-t border-white/5">
+            <div className="pt-2 border-t border-white/5">
+              <p className="text-[7px] text-white/30 italic leading-tight uppercase font-mono">
+                Points awarded once at end-of-season.<br/>
+                Individual events/matches do not count.
+              </p>
+            </div>
+            <div className="flex justify-between items-center pt-2 border-t border-white/5">
               <span className="font-retro text-[8px] text-retro-cyan uppercase tracking-widest">SEASON_TOTAL</span>
               <span className="font-mono text-[14px] font-black text-retro-lime tabular-nums">{formatNumber(ev.seasonTotal)}</span>
             </div>

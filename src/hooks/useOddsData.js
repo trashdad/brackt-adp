@@ -84,10 +84,10 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
         let ev;
         if (historical && historical.history && historical.history.length >= 2) {
           ev = calculateHistoricallyWeightedEV(
-            apiItem.odds, sport.category, sport.eventsPerSeason, historical
+            apiItem.odds, sport.category, sport.eventsPerSeason, historical, sport.id
           );
         } else {
-          ev = calculateSeasonTotalEV(apiItem.odds, sport.category, sport.eventsPerSeason);
+          ev = calculateSeasonTotalEV(apiItem.odds, sport.category, sport.eventsPerSeason, sport.id);
         }
         if (sport.evMultiplier != null && ev) {
           ev = { ...ev, singleEvent: ev.singleEvent * sport.evMultiplier, seasonTotal: ev.seasonTotal * sport.evMultiplier };
@@ -165,10 +165,10 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
         let ev;
         if (historical && historical.history && historical.history.length >= 2) {
           ev = calculateHistoricallyWeightedEV(
-            item.odds, sport.category, sport.eventsPerSeason, historical
+            item.odds, sport.category, sport.eventsPerSeason, historical, sport.id
           );
         } else {
-          ev = calculateSeasonTotalEV(item.odds, sport.category, sport.eventsPerSeason);
+          ev = calculateSeasonTotalEV(item.odds, sport.category, sport.eventsPerSeason, sport.id);
         }
         if (sport.evMultiplier != null && ev) {
           ev = { ...ev, singleEvent: ev.singleEvent * sport.evMultiplier, seasonTotal: ev.seasonTotal * sport.evMultiplier };

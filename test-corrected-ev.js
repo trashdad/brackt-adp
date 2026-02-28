@@ -7,13 +7,10 @@ const MAJOR_BASED_SPORTS = ['pga', 'tennis_m', 'tennis_w', 'csgo', 'indycar'];
 function buildLegalLineup(sortedPool, limit = 15) {
     const lineup = [];
     const sportCounts = {};
-    
     for (const player of sortedPool) {
         if (lineup.length >= limit) break;
-        
         const sport = player.sport;
         const max = MAJOR_BASED_SPORTS.includes(sport) ? 2 : 1;
-        
         if ((sportCounts[sport] || 0) < max) {
             lineup.push(player);
             sportCounts[sport] = (sportCounts[sport] || 0) + 1;
@@ -22,7 +19,7 @@ function buildLegalLineup(sortedPool, limit = 15) {
     return lineup;
 }
 
-// --- SIMULATION ENGINE ---
+// --- PLACKETT-LUCE SIMULATOR ---
 const POINT_VALUES = [100, 70, 50, 40, 25, 25, 15, 15, 0, 0, 0, 0, 0, 0, 0, 0];
 
 function getSimulatedFinish(winProb) {
@@ -54,12 +51,39 @@ const rawData = fs.readFileSync('full_undrafted_analysis.json', 'utf16le');
 const cleanData = rawData.replace(/^\uFEFF/, '');
 const allEntries = JSON.parse(cleanData);
 
-// Strategy A: Top DPS pool (respecting constraints)
-const poolSortedByDPS = [...allEntries].sort((a,b) => b.dps - a.dps);
-const strategicLineup = buildLegalLineup(poolSortedByDPS);
+// RE-CALCULATE EV WITH MULTIPLIERS (Tennis=4, Golf=4, Indy=18)
+allEntries.forEach(e => {
+    const sportId = e.sport;
+    let mult = 1;
+    if (['tennis_m', 'tennis_w', 'pga'].includes(sportId)) mult = 4;
+    if (sportId === 'indycar') mult = 18;
+    if (sportId === 'llws') mult = 0.75; // structural penalty
+    
+    // We assume the stored 'ev' in the JSON was for a single event
+    e.correctSeasonEV = e.ev * mult;
+});
 
-// Strategy B: Top EV pool (respecting constraints)
-const poolSortedByEV = [...allEntries].sort((a,b) => b.ev - a.ev);
+// Calculate Replacement Levels for the corrected EV
+const sports = [...new Set(allEntries.map(e => e.sport))];
+const replacementLevels = {};
+sports.forEach(s => {
+    const sportEntries = allEntries.filter(e => e.sport === s).sort((a,b) => b.correctSeasonEV - a.correctSeasonEV);
+    const index = Math.min(sportEntries.length - 1, 7);
+    replacementLevels[s] = sportEntries[index]?.correctSeasonEV || 0;
+});
+
+// Strategy A: Hybrid VOR-EV (Corrected)
+allEntries.forEach(e => {
+    const vor = Math.max(0, e.correctSeasonEV - replacementLevels[e.sport]);
+    // The "Sweet Spot": 50% Scarcity (VOR), 50% Volume (EV)
+    e.hybridScore = (vor * 0.5) + (e.correctSeasonEV * 0.5);
+});
+
+const poolSortedByHybrid = [...allEntries].sort((a,b) => b.hybridScore - a.hybridScore);
+const strategicLineup = buildLegalLineup(poolSortedByHybrid);
+
+// Strategy B: Market Chalk (Top EV)
+const poolSortedByEV = [...allEntries].sort((a,b) => b.correctSeasonEV - a.correctSeasonEV);
 const chalkLineup = buildLegalLineup(poolSortedByEV);
 
 function runMonteCarlo(lineup, iterations = 30000) {
@@ -68,51 +92,34 @@ function runMonteCarlo(lineup, iterations = 30000) {
         let totalPts = 0;
         lineup.forEach(player => {
             const winProb = americanToImpliedProbability(player.odds);
-            const finish = getSimulatedFinish(winProb);
-            totalPts += POINT_VALUES[finish - 1];
+            const sportId = player.sport;
+            
+            let events = 1;
+            if (['tennis_m', 'tennis_w', 'pga'].includes(sportId)) events = 4;
+            if (sportId === 'indycar') events = 18;
+            
+            for(let e = 0; e < events; e++) {
+                const finish = getSimulatedFinish(winProb);
+                let pts = POINT_VALUES[finish - 1];
+                if (sportId === 'llws') pts *= 0.75;
+                totalPts += pts;
+            }
         });
         results.push(totalPts);
     }
     results.sort((a, b) => a - b);
     const mean = results.reduce((a, b) => a + b, 0) / iterations;
-    const median = results[Math.floor(iterations / 2)];
-    const p10 = results[Math.floor(iterations * 0.1)];
-    const p90 = results[Math.floor(iterations * 0.9)];
     const stdDev = Math.sqrt(results.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b, 0) / iterations);
-    return { mean, median, p10, p90, stdDev };
+    return { mean, stdDev };
 }
 
 console.log("==================================================");
-console.log("   BRACKT-ADP ROSTER-LEGAL MONTE CARLO SIM        ");
-console.log("   (15-Player Lineup | 30,000 Iterations)         ");
+console.log("   BRACKT-ADP CORRECTED EV MONTE CARLO SIM        ");
 console.log("==================================================\n");
 
 const strategicStats = runMonteCarlo(strategicLineup, 30000);
 const chalkStats = runMonteCarlo(chalkLineup, 30000);
 
-console.log("--- STRATEGY 1: TOP DPS (STRATEGIC ALPHA) ---");
-console.log(`Lineup Examples: ${strategicLineup.slice(0, 5).map(e => e.name).join(', ')}`);
-console.log(`Expected Points (Mean):   ${strategicStats.mean.toFixed(2)}`);
-console.log(`Floor (10th Percentile):  ${strategicStats.p10.toFixed(2)}`);
-console.log(`Ceiling (90th Percentile): ${strategicStats.p90.toFixed(2)}`);
-console.log(`Volatility (StdDev):      ${strategicStats.stdDev.toFixed(2)}\n`);
-
-console.log("--- STRATEGY 2: TOP EV (MARKET CHALK) ---");
-console.log(`Lineup Examples: ${chalkLineup.slice(0, 5).map(e => e.name).join(', ')}`);
-console.log(`Expected Points (Mean):   ${chalkStats.mean.toFixed(2)}`);
-console.log(`Floor (10th Percentile):  ${chalkStats.p10.toFixed(2)}`);
-console.log(`Ceiling (90th Percentile): ${chalkStats.p90.toFixed(2)}`);
-console.log(`Volatility (StdDev):      ${chalkStats.stdDev.toFixed(2)}\n`);
-
-const alpha = ((strategicStats.mean - chalkStats.mean) / chalkStats.mean) * 100;
-const riskReduction = ((chalkStats.stdDev - strategicStats.stdDev) / chalkStats.stdDev) * 100;
-
-console.log("--- COMPARATIVE ANALYSIS ---");
-console.log(`Calculated Alpha: ${alpha.toFixed(2)}%`);
-console.log(`Risk Reduction:   ${riskReduction.toFixed(2)}%`);
-
-if (alpha > 0) {
-    console.log("\nCONCLUSION: The DPS model is successfully surfacing 'Alpha' within roster constraints.");
-} else {
-    console.log("\nCONCLUSION: The model is currently trailing the market. Adjust sport coefficients.");
-}
+console.log(`STRATEGY 1 (HYBRID VOR-EV): ${strategicStats.mean.toFixed(2)} pts`);
+console.log(`STRATEGY 2 (CHALK EV):      ${chalkStats.mean.toFixed(2)} pts`);
+console.log(`ALPHA:                      ${(((strategicStats.mean - chalkStats.mean)/chalkStats.mean)*100).toFixed(2)}%`);
