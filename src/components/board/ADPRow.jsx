@@ -100,13 +100,31 @@ export default function ADPRow({ entry, onToggleDraft }) {
         </PriorityTooltip>
       </td>
 
-      {/* Social Score + Quotient */}
-      <td className="px-3 py-2 font-mono text-[13px] text-retro-cyan/90 tabular-nums">
-        <SocialTooltip entry={entry}>{val(formatNumber(entry.socialScore || 0))}</SocialTooltip>
+      {/* Social Score */}
+      <td className="px-3 py-2 font-mono text-[13px] tabular-nums">
+        <SocialTooltip entry={entry}>
+          <div className="flex gap-1 items-center justify-center">
+            <span className="text-retro-light/50">[</span>
+            <span className="text-retro-lime font-bold">{entry.socialPos || 0}</span>
+            <span className="text-retro-light/50">/</span>
+            <span className="text-retro-red font-bold">{entry.socialNeg || 0}</span>
+            <span className="text-retro-light/50">]</span>
+          </div>
+        </SocialTooltip>
       </td>
 
+      {/* Mkt vs Exp */}
+      <td className="px-3 py-2 font-mono text-[13px] tabular-nums text-center">
+        {!entry.isPlaceholder && entry.mktVsExp !== undefined ? (
+           <span className={entry.mktVsExp > 0 ? 'text-retro-lime' : entry.mktVsExp < 0 ? 'text-retro-red' : 'text-retro-light/50'}>
+             {entry.mktVsExp > 0 ? `+${entry.mktVsExp}` : entry.mktVsExp}
+           </span>
+        ) : '—'}
+      </td>
+
+      {/* Adj SQ */}
       <td className="px-3 py-2 font-mono text-[13px] text-retro-gold/80 tabular-nums">
-        <SocialTooltip entry={entry}>{val(formatNumber(entry.socialQuotient || 0))}</SocialTooltip>
+        <SocialTooltip entry={entry}>{val(formatNumber(entry.adjSq || 1.0))}</SocialTooltip>
       </td>
 
       {/* Status */}

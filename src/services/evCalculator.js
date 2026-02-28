@@ -178,27 +178,23 @@ export function applyPositionalScarcity(sportEntries, globalModifier) {
     }
     current.dropoffVelocity = parseFloat(velocity.toFixed(2));
 
-    // Apply new formula: EV + (((gap to next undrafted * 2) / remaining undrafted))
-    const bonus = remainingUndrafted > 0
-      ? (gapToNext * 2) / remainingUndrafted
-      : 0;
-
-    let adpScore = rawEV + bonus;
+    // Apply new formula: EV * AdjSq
+    let adpScore = rawEV * (current.adjSq || 1.0);
     let exceedsCapacity = false;
 
     // CAP RULE: Cannot exceed EV of player ranked just above in the same sport
     if (i > 0) {
       const above = sportEntries[i - 1];
       const aboveEV = above.ev?.seasonTotal || 0;
-      if (adpScore > aboveEV) {
-        adpScore = aboveEV;
+      if (adpScore > aboveEV * (above.adjSq || 1.0)) {
+        adpScore = aboveEV * (above.adjSq || 1.0);
         exceedsCapacity = true;
       }
     }
 
     current.evGap = parseFloat(gapToNext.toFixed(2));
     current.remainingUndrafted = remainingUndrafted;
-    current.scarcityBonus = parseFloat(bonus.toFixed(2));
+    current.scarcityBonus = 0; // Removing old additive bonus
     current.adpScore = parseFloat(adpScore.toFixed(2));
     current.exceedsCapacity = exceedsCapacity;
   }

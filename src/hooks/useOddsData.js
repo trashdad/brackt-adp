@@ -74,7 +74,7 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
 
       const apiItem = apiLookup.get(key);
       const entryId = `${sport.id}-${slugify(name)}`;
-      const social = socialScores[entryId] || { socialScore: 0, socialQuotient: 1.0 };
+      const social = socialScores[entryId] || { pos: 0, neg: 0, adjSq: 1.0, mktVsExp: 0 };
 
       if (apiItem) {
         matchedApiKeys.add(key);
@@ -102,8 +102,10 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
           scoringType: sport.category,
           odds: apiItem.odds,
           ev,
-          socialScore: social.socialScore,
-          socialQuotient: social.socialQuotient,
+          socialPos: social.pos || 0,
+          socialNeg: social.neg || 0,
+          adjSq: social.adjSq || 1.0,
+          mktVsExp: social.mktVsExp || 0,
           socialSources: social.sources || {},
           adpScore: 0,
           scarcityBonus: 0,
@@ -134,8 +136,10 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
           scoringType: sport.category,
           odds: null,
           ev: null,
-          socialScore: social.socialScore,
-          socialQuotient: social.socialQuotient,
+          socialPos: social.pos || 0,
+          socialNeg: social.neg || 0,
+          adjSq: social.adjSq || 1.0,
+          mktVsExp: social.mktVsExp || 0,
           socialSources: social.sources || {},
           adpScore: -1,
           scarcityBonus: 0,
@@ -154,7 +158,7 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
         matchedApiKeys.add(key); // Mark as matched/processed
         const historical = historicalLookup.get(key);
         const entryId = `${sport.id}-${slugify(item.name)}`;
-        const social = socialScores[entryId] || { socialScore: 0, socialQuotient: 1.0 };
+        const social = socialScores[entryId] || { pos: 0, neg: 0, adjSq: 1.0, mktVsExp: 0 };
 
         let ev;
         if (historical && historical.history && historical.history.length >= 2) {
@@ -177,8 +181,10 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
           scoringType: sport.category,
           odds: item.odds,
           ev,
-          socialScore: social.socialScore,
-          socialQuotient: social.socialQuotient,
+          socialPos: social.pos || 0,
+          socialNeg: social.neg || 0,
+          adjSq: social.adjSq || 1.0,
+          mktVsExp: social.mktVsExp || 0,
           socialSources: social.sources || {},
           adpScore: 0,
           scarcityBonus: 0,

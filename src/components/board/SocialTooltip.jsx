@@ -1,24 +1,17 @@
 import { formatNumber } from '../../utils/formatters';
 import { useTooltip } from '../../hooks/useTooltip.jsx';
 
-const SOURCE_LABELS = {
-  reddit: { label: 'Reddit', color: 'text-orange-400' },
-  bluesky: { label: 'Bluesky', color: 'text-sky-400' },
-  news: { label: 'News', color: 'text-emerald-400' },
-  rankings: { label: 'Rankings', color: 'text-yellow-400' },
-};
-
 export default function SocialTooltip({ entry, children }) {
-  const { handleMouseMove, handleMouseLeave, renderTooltip } = useTooltip(240, 180);
+  const { handleMouseMove, handleMouseLeave, renderTooltip } = useTooltip(260, 200);
 
   if (entry.isPlaceholder) return <span>{children}</span>;
 
-  const score = entry.socialScore || 0;
-  const quotient = entry.socialQuotient || 1.0;
-  const sources = entry.socialSources || {};
-  const hasSources = Object.keys(sources).length > 0;
+  const pos = entry.socialPos || 0;
+  const neg = entry.socialNeg || 0;
+  const mktVsExp = entry.mktVsExp !== undefined ? entry.mktVsExp : 0;
+  const adjSq = entry.adjSq || 1.0;
 
-  if (score <= 0 && !hasSources) return <span>{children}</span>;
+  if (pos === 0 && neg === 0 && adjSq === 1.0) return <span>{children}</span>;
 
   return (
     <span
@@ -30,57 +23,44 @@ export default function SocialTooltip({ entry, children }) {
       {renderTooltip(
         <>
           <div className="font-retro text-[8px] text-white/40 uppercase tracking-wide mb-2">
-            SOCIAL_SIGNAL
+            SUBJECTIVE_COEFFICIENT
           </div>
 
-          {hasSources ? (
-            <div className="space-y-1.5">
-              {Object.entries(sources).map(([key, data]) => {
-                const config = SOURCE_LABELS[key] || { label: key, color: 'text-white' };
-                return (
-                  <div key={key} className="flex justify-between items-center">
-                    <span className={`font-mono text-[11px] ${config.color}`}>
-                      {config.label}
-                      {data.mentions > 0 && (
-                        <span className="text-white/30 ml-1">({data.mentions})</span>
-                      )}
-                      {data.articles > 0 && (
-                        <span className="text-white/30 ml-1">({data.articles} art.)</span>
-                      )}
-                      {data.avgRank > 0 && (
-                        <span className="text-white/30 ml-1">(#{data.avgRank})</span>
-                      )}
-                    </span>
-                    <span className="font-mono text-[12px] text-white">
-                      {formatNumber(data.score)}
-                    </span>
-                  </div>
-                );
-              })}
+          <div className="space-y-2">
+            <div className="flex justify-between items-center">
+              <span className="font-mono text-[11px] text-white/70">Mentions (Pos/Neg)</span>
+              <div className="font-mono text-[12px]">
+                <span className="text-retro-lime">+{pos}</span>
+                <span className="text-white/30 mx-1">/</span>
+                <span className="text-retro-red">-{neg}</span>
+              </div>
             </div>
-          ) : (
-            <div className="text-white/40 font-mono text-[11px]">
-              No source breakdown available
-            </div>
-          )}
 
-          <div className="border-t border-white/10 mt-2 pt-2 flex justify-between items-center">
-            <span className="font-retro text-[9px] text-retro-cyan uppercase">TOTAL</span>
-            <span className="font-mono font-bold text-retro-lime text-[13px]">
-              {formatNumber(score)}
-            </span>
+            <div className="flex justify-between items-center">
+              <span className="font-mono text-[11px] text-white/70">Mkt vs. Expert</span>
+              <span className={`font-mono text-[12px] ${mktVsExp > 0 ? 'text-retro-lime' : mktVsExp < 0 ? 'text-retro-red' : 'text-white'}`}>
+                {mktVsExp > 0 ? `+${mktVsExp}` : mktVsExp}
+              </span>
+            </div>
+            
+            <div className="flex justify-between items-center">
+              <span className="font-mono text-[11px] text-white/70">Scarcity Modifier</span>
+              <span className="font-mono text-[12px] text-retro-cyan">
+                {['llws', 'f1', 'indycar', 'snooker'].includes(entry.sport) ? 'Yes (1.10x)' : 'No (1.00x)'}
+              </span>
+            </div>
           </div>
 
-          <div className="flex justify-between items-center mt-1">
-            <span className="font-retro text-[9px] text-retro-gold uppercase">EV_MULT</span>
-            <span className="font-mono font-bold text-retro-gold text-[13px]">
-              {quotient.toFixed(2)}x
+          <div className="flex justify-between items-center mt-3 pt-2 border-t border-white/10">
+            <span className="font-retro text-[9px] text-retro-gold uppercase">ADJ_SQ</span>
+            <span className="font-mono font-bold text-retro-gold text-[14px]">
+              {adjSq.toFixed(2)}x
             </span>
           </div>
 
           <div className="mt-2 pt-2 border-t border-white/10">
             <div className="text-[9px] text-white/30 leading-relaxed italic font-mono">
-              Social quotient multiplies Season EV. Sources: Reddit, Bluesky, News, Rankings.
+              Adj. SQ multiplies Base EV. Accounts for volatility drag (high neg sentiment), market-lead alpha (fading experts), and event scarcity.
             </div>
           </div>
         </>,

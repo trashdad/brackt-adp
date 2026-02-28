@@ -12,7 +12,8 @@ const COLUMNS = [
   { label: 'Season EV', key: 'ev.seasonTotal' },
   { label: 'Draft Priority Score', key: 'adpScore' },
   { label: 'Social Score', key: 'socialScore' },
-  { label: 'Social Quotient', key: 'socialQuotient' },
+  { label: 'Mkt vs Exp', key: 'mktVsExp' },
+  { label: 'Adj. SQ', key: 'adjSq' },
   { label: 'Status', key: 'drafted' },
 ];
 
