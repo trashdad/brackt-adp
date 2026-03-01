@@ -1,0 +1,19 @@
+{
+  "source": "Google Search / Multiple",
+  "category": "UEFA Champions League",
+  "timestamp": "2026-02-28T23-46-46-102Z",
+  "data": [
+    {
+      "type": "subjective",
+      "key": "Arsenal Pacesetter",
+      "value": "Current pacesetter in betting markets.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Borussia Dortmund Advantage",
+      "value": "Strong home-advantage pick for Round of 16.",
+      "sentiment": "positive"
+    }
+  ]
+}

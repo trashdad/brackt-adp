@@ -1,0 +1,13 @@
+{
+  "source": "bet365 / Betway / Oddschecker / The Punters Page",
+  "category": "Snooker",
+  "timestamp": "2026-03-01T08-00-00Z",
+  "data": [
+    {
+      "type": "objective",
+      "key": "World Snooker Championship Odds",
+      "value": "Judd Trump +350, Ronnie O'Sullivan +500, Mark Selby +500, Kyren Wilson +650, Neil Robertson +700, Zhao Xintong +1000, John Higgins +1200, Mark Williams +1400, Ding Junhui +2000, Shaun Murphy +2500, Luca Brecel +2500, Mark Allen +3000, Jack Lisowski +3300, Si Jiahui +5000, Zhang Anda +5000, Barry Hawkins +5000, Stuart Bingham +5000, Xiao Guodong +6600, Wu Yize +6600, Chris Wakelin +8000, Ryan Day +8000, David Gilbert +10000, Robert Milkins +10000, Elliot Slessor +15000, Anthony McGill +15000, Tom Ford +15000, Fan Zhengyi +15000, Joe Perry +20000, Michael White +25000, Matthew Selt +25000",
+      "context": "World Snooker Championship"
+    }
+  ]
+}

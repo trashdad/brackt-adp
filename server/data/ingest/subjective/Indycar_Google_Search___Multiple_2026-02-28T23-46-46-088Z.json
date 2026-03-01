@@ -1,0 +1,19 @@
+{
+  "source": "Google Search / Multiple",
+  "category": "Indycar",
+  "timestamp": "2026-02-28T23-46-46-088Z",
+  "data": [
+    {
+      "type": "subjective",
+      "key": "Alex Palou Outlook",
+      "value": "Heavy favorite to win fourth consecutive title.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Mick Schumacher Debut",
+      "value": "High-profile rookie making IndyCar debut.",
+      "sentiment": "neutral"
+    }
+  ]
+}

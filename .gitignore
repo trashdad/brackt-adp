@@ -23,5 +23,6 @@ public/data/historical/
 .dev.vars*
 !.dev.vars.example
 !.env.example
-# Server-side persistent data (shared board state)
-server/data/*.json
+# Server-side runtime data (user-specific, not committed)
+server/data/draft-state.json
+server/data/manual-odds.json

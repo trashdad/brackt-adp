@@ -1,0 +1,37 @@
+{
+  "source": "Sports Gambling Podcast / The Sports Geek / LegalSportsBetting",
+  "category": "LLWS",
+  "timestamp": "2026-03-01T06-00-00Z",
+  "data": [
+    {
+      "type": "subjective",
+      "key": "Asia-Pacific Outlook",
+      "value": "Taiwan won the 2025 LLWS championship defeating Nevada 7-0 in the title game — their first title since 1996. Asia-Pacific programs have historically dominated the international bracket with 18 all-time titles, more than any other region. Defending champion status makes them the overwhelming early favorite.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Japan Outlook",
+      "value": "Japan has 11 all-time LLWS titles and is reliably the top international threat alongside Taiwan. Japanese programs won five titles from 2010 to 2018 and consistently reach the international final. Always a top-two market choice.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Caribbean Outlook",
+      "value": "Caribbean teams have appeared in the international final consistently, including Aruba finishing as runner-up in 2025. With Curacao now receiving a separate direct entry slot in 2026, the Caribbean region effectively has two strong representatives in the field.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "USA West Outlook",
+      "value": "Hawaii-based programs are historically the strongest US region. USA West regularly appears in the US bracket final and is always the top domestic betting option. The 2026 West qualifier is expected to feature another Hawaii powerhouse program.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Europe-Africa Concern",
+      "value": "European and African representatives historically struggle to compete against Asian and Caribbean power programs. Czech Republic represented Europe-Africa in 2025 and was eliminated early. Long odds reflect genuine competitive gap at the elite level.",
+      "sentiment": "negative"
+    }
+  ]
+}

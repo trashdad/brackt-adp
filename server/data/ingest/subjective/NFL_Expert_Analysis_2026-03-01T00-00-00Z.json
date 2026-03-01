@@ -1,0 +1,20 @@
+{
+  "source": "ESPN / CBS Sports / Fox Sports / NFL.com",
+  "category": "NFL",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Seattle Seahawks Outlook", "value": "Defending Super Bowl LX champions opened as 2027 co-favorites after dismantling the Patriots 29-13. Offensive play-caller Klint Kubiak departed, raising continuity questions.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Seattle Seahawks Concern", "value": "Offensive play-caller Klint Kubiak is departing this offseason, which may affect continuity on offense and is the primary concern entering 2026-27.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Kansas City Chiefs Concern", "value": "Patrick Mahomes tore his ACL and LCL in Week 15 of the 2025 season and is targeting a Week 1 return, but Travis Kelce is weighing retirement and the team has projected negative cap space of -$35.5M.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Los Angeles Rams Outlook", "value": "Matthew Stafford appears far healthier entering the offseason after an MVP-worthy season at 37. Strong cap space among playoff teams and a defensive front that plays at elite level.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Buffalo Bills Outlook", "value": "Josh Allen provides an MVP-caliber engine with elite offensive line and All-Pro backfield support. Since Joe Brady was elevated in 2023, the Bills rank second in points per game at 29.1.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Buffalo Bills Concern", "value": "The Bills could not take advantage of a golden opportunity to reach the Super Bowl with both the Chiefs and Ravens out. The receiving corps needs significant offseason attention.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Baltimore Ravens Outlook", "value": "New head coach Jesse Minter inherits a talented team with Lamar Jackson and Derrick Henry. Defense expected to improve significantly with fresh schematic life under OC Declan Doyle.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Baltimore Ravens Concern", "value": "Lamar Jackson was limited significantly by injuries in 2025, rarely making it through a full practice week. The interior offensive line also needs reinforcement.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Jacksonville Jaguars Outlook", "value": "Trevor Lawrence posted a 113.2 passer rating with a 15-1 TD-INT ratio in the final six games of 2025. May draft elite CB Travis Hunter to address the secondary. Top five value bet for Super Bowl LXI.", "sentiment": "positive"},
+    {"type": "subjective", "key": "New England Patriots Concern", "value": "History shows Super Bowl runner-ups often fall off considerably the following year, and New England's 2025 schedule was the easiest by any team since the 1999 Rams, making their record harder to repeat.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Green Bay Packers Outlook", "value": "Jordan Love has reached elite quarterback status. Key pieces lost to injury in 2025 expected back — could vault Green Bay into true Super Bowl contention.", "sentiment": "positive"},
+    {"type": "subjective", "key": "San Francisco 49ers Outlook", "value": "Analysts argue the 49ers are undervalued for 2026. Despite injuries, they still won 12 games. With full health restored to Bosa, Warner and Kittle, expect NFC championship contention.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Philadelphia Eagles Outlook", "value": "At least one major analyst compared the Eagles to the 2014 Seahawks at their dynasty peak, citing Philadelphia's dominant run game and nasty young defense.", "sentiment": "positive"}
+  ]
+}

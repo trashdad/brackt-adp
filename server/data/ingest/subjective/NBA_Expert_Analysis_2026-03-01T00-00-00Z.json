@@ -1,0 +1,14 @@
+{
+  "source": "ESPN / The Big Lead / Sportsbook Review",
+  "category": "NBA",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Oklahoma City Thunder Outlook", "value": "The Thunder are 44-14 with the best record in the NBA, leading the league in defense (107.7 ppg allowed) and point differential (+11.7). Shai Gilgeous-Alexander in MVP form flanked by Jalen Williams and Chet Holmgren.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Oklahoma City Thunder Concern", "value": "OKC has been dealing with simultaneous injuries to SGA, Chet Holmgren, Jalen Williams, and Ajay Mitchell. Both SGA and Holmgren have recently been removed from the injury report.", "sentiment": "negative"},
+    {"type": "subjective", "key": "San Antonio Spurs Outlook", "value": "The Spurs surged from +1600 to +1000 on the strength of a nine-game winning streak and sit 38-16 in the West. Victor Wembanyama averaging 24.2 pts, 11.3 reb, 2.8 blocks — a generational two-way force.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Denver Nuggets Outlook", "value": "Denver possesses the best offense in the NBA at 120.8 ppg with Nikola Jokic widely regarded as the best player in the world. Experts see them as the most dangerous non-Thunder team in the West.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Detroit Pistons Outlook", "value": "Detroit is the NBA's second-best team record-wise at 42-14, leading the league in blocks and sitting fourth in defense. A breakout contender that many are overlooking at +1300.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Houston Rockets Outlook", "value": "The combination of Kevin Durant and Alperen Sengun has produced elite defense and an improved offense. At +2200, Houston is a live dark horse given their defensive identity.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Los Angeles Lakers Concern", "value": "The Lakers remain at long odds due to persistent concerns around roster depth, consistency, and long-term sustainability. Not viewed as a true championship-caliber threat at current construction.", "sentiment": "negative"}
+  ]
+}

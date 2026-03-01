@@ -157,6 +157,6 @@ export const TOURNAMENT_SPORTS = ['pga', 'tennis_m', 'tennis_w', 'indycar', 'csg
 export const PATHS = {
   rosters: path.join(__dirname, '../../src/data/rosters.js'),
   storage: path.join(__dirname, '../../server/data/social-storage.json'),
-  scores: path.join(__dirname, '../../public/data/social-scores.json'),
+  scores: path.join(__dirname, '../../server/data/social-scores.json'),
   draftState: path.join(__dirname, '../../server/data/draft-state.json'),
 };

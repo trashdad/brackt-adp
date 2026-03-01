@@ -1,0 +1,11 @@
+{
+  "source": "FanDuel",
+  "category": "Tennis",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "French Open Women's Odds",
+    "value": "Aryna Sabalenka +190, Elena Rybakina +440, Iga Swiatek +550, Coco Gauff +750, Amanda Anisimova +1000, Mirra Andreeva +1000, Jessica Pegula +2700",
+    "context": "2026 French Open Women's"
+  }]
+}

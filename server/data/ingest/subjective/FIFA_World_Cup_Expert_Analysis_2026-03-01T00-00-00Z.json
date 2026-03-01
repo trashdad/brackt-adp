@@ -1,0 +1,14 @@
+{
+  "source": "CBS Sports / ESPN / World Football Index / Pro Football Network",
+  "category": "FIFA World Cup",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Spain Outlook", "value": "Ranked No. 1 in FIFA world rankings and reigning Euro 2024 champions. Led by 18-year-old generational talent Lamine Yamal. Posted five clean sheets in six qualifiers. Most-bet World Cup winner at BetMGM.", "sentiment": "positive"},
+    {"type": "subjective", "key": "France Outlook", "value": "Viewed as the ultimate tournament team — adaptable, deep, capable of dominating or counter-attacking. Squad depth across positions is a decisive advantage in a 48-team format requiring seven wins.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Argentina Concern", "value": "Defending world champions but face concerns: average squad age of 29.3, defensive depth issues with Otamendi suspended for the opener, and questions about Messi sustaining a full role at 38.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Brazil Concern", "value": "Analysts repeatedly flag a lack of balanced midfield, defensive vulnerabilities against elite sides, and away form issues. Brazil is not the dominant force of previous generations despite their star power.", "sentiment": "negative"},
+    {"type": "subjective", "key": "USA Outlook", "value": "Home crowd advantage at MetLife and SoFi is a real asset. CBS Sports puts them near the top 10 in power rankings. Success measured by reaching the quarterfinals; semis would be a breakthrough.", "sentiment": "neutral"},
+    {"type": "subjective", "key": "Canada Outlook", "value": "Earned genuine respect with only one loss in last 14 games. Playing a second consecutive World Cup. Analysts view Canada as a potential group-stage surprise with physical, pressing style.", "sentiment": "positive"},
+    {"type": "subjective", "key": "England Outlook", "value": "Second favorites at +600 under new manager Thomas Tuchel. Deep squad featuring Bukayo Saka, Phil Foden, Jude Bellingham, Trent Alexander-Arnold. Implied probability of ~13% across prediction markets.", "sentiment": "positive"}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "source": "Google Search / Multiple",
+  "category": "PGA Golf",
+  "timestamp": "2026-02-28T23-46-46-099Z",
+  "data": [
+    {
+      "type": "subjective",
+      "key": "Tommy Fleetwood Breakout",
+      "value": "Top breakout pick after 2025 Tour Championship win.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Ryan Gerard Fade",
+      "value": "Experts suggest fading at low co-favorite odds.",
+      "sentiment": "negative"
+    }
+  ]
+}

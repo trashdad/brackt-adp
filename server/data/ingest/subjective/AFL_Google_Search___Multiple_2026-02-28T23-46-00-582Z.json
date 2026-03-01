@@ -1,0 +1,19 @@
+{
+  "source": "Google Search / Multiple",
+  "category": "AFL",
+  "timestamp": "2026-02-28T23-46-00-582Z",
+  "data": [
+    {
+      "type": "subjective",
+      "key": "Brisbane Outlook",
+      "value": "Clear favorites to defend title due to young core.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Sydney Swans Outlook",
+      "value": "Identified as best value following key recruits.",
+      "sentiment": "positive"
+    }
+  ]
+}

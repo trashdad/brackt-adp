@@ -1,0 +1,11 @@
+{
+  "source": "FanDuel / SportsBettingDime",
+  "category": "Tennis",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "French Open Men's Odds",
+    "value": "Carlos Alcaraz +100, Jannik Sinner +145, Novak Djokovic +1100, Alexander Zverev +1400, Jack Draper +2700, Joao Fonseca +2700, Lorenzo Musetti +2700",
+    "context": "2026 French Open Men's"
+  }]
+}

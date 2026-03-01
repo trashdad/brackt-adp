@@ -1,0 +1,11 @@
+{
+  "source": "Golf Channel / DraftKings",
+  "category": "PGA Golf",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "Masters 2026 Odds",
+    "value": "Scottie Scheffler +300, Rory McIlroy +500, Xander Schauffele +1100, Bryson DeChambeau +1200, Jon Rahm +1400, Tommy Fleetwood +1600, Ludvig Aberg +1800, Collin Morikawa +1800, Justin Thomas +2000, Hideki Matsuyama +3000, Brooks Koepka +3500, Viktor Hovland +3500, Joaquin Niemann +4000, Jordan Spieth +4000, Patrick Cantlay +4000, Shane Lowry +5000, Robert MacIntyre +7000",
+    "context": "2026 Masters Tournament"
+  }]
+}

@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const SCORES_PATH = path.join(__dirname, '../public/data/social-scores.json');
+const SCORES_PATH = path.join(__dirname, '../server/data/social-scores.json');
 const ROSTERS_PATH = path.join(__dirname, '../src/data/rosters.js');
 
 // 1. Load the full roster

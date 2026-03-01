@@ -1,0 +1,192 @@
+{
+  "sport": "afl",
+  "lastUpdated": "2026-03-01T07:59:01.031Z",
+  "sources": [
+    "google-search-multiple",
+    "beforeyoubet-bets-com-au"
+  ],
+  "entries": [
+    {
+      "name": "Brisbane Lions",
+      "nameNormalized": "brisbanelions",
+      "bestOdds": "+400",
+      "bestOddsSource": "beforeyoubet-bets-com-au",
+      "consensusOdds": "+374",
+      "oddsBySource": {
+        "google-search-multiple": "+350",
+        "beforeyoubet-bets-com-au": "+400"
+      },
+      "impliedProbability": 0.2,
+      "market": "outrights"
+    },
+    {
+      "name": "Geelong Cats",
+      "nameNormalized": "geelongcats",
+      "bestOdds": "+700",
+      "bestOddsSource": "google-search-multiple",
+      "consensusOdds": "+700",
+      "oddsBySource": {
+        "google-search-multiple": "+700",
+        "beforeyoubet-bets-com-au": "+700"
+      },
+      "impliedProbability": 0.125,
+      "market": "outrights"
+    },
+    {
+      "name": "Hawthorn Hawks",
+      "nameNormalized": "hawthornhawks",
+      "bestOdds": "+700",
+      "bestOddsSource": "beforeyoubet-bets-com-au",
+      "consensusOdds": "+700",
+      "oddsBySource": {
+        "beforeyoubet-bets-com-au": "+700"
+      },
+      "impliedProbability": 0.125,
+      "market": "outrights"
+    },
+    {
+      "name": "Gold Coast Suns",
+      "nameNormalized": "goldcoastsuns",
+      "bestOdds": "+700",
+      "bestOddsSource": "beforeyoubet-bets-com-au",
+      "consensusOdds": "+700",
+      "oddsBySource": {
+        "beforeyoubet-bets-com-au": "+700"
+      },
+      "impliedProbability": 0.125,
+      "market": "outrights"
+    },
+    {
+      "name": "Sydney Swans",
+      "nameNormalized": "sydneyswans",
+      "bestOdds": "+900",
+      "bestOddsSource": "beforeyoubet-bets-com-au",
+      "consensusOdds": "+900",
+      "oddsBySource": {
+        "beforeyoubet-bets-com-au": "+900"
+      },
+      "impliedProbability": 0.1,
+      "market": "outrights"
+    },
+    {
+      "name": "Adelaide Crows",
+      "nameNormalized": "adelaidecrows",
+      "bestOdds": "+1100",
+      "bestOddsSource": "beforeyoubet-bets-com-au",
+      "consensusOdds": "+1100",
+      "oddsBySource": {
+        "beforeyoubet-bets-com-au": "+1100"
+      },
+      "impliedProbability": 0.0833,
+      "market": "outrights"
+    },
+    {
+      "name": "GWS Giants",
+      "nameNormalized": "gwsgiants",
+      "bestOdds": "+1100",
+      "bestOddsSource": "beforeyoubet-bets-com-au",
+      "consensusOdds": "+1100",
+      "oddsBySource": {
+        "beforeyoubet-bets-com-au": "+1100"
+      },
+      "impliedProbability": 0.0833,
+      "market": "outrights"
+    },
+    {
+      "name": "Melbourne Demons",
+      "nameNormalized": "melbournedemons",
+      "bestOdds": "+1100",
+      "bestOddsSource": "beforeyoubet-bets-com-au",
+      "consensusOdds": "+1100",
+      "oddsBySource": {
+        "beforeyoubet-bets-com-au": "+1100"
+      },
+      "impliedProbability": 0.0833,
+      "market": "outrights"
+    },
+    {
+      "name": "Western Bulldogs",
+      "nameNormalized": "westernbulldogs",
+      "bestOdds": "+1100",
+      "bestOddsSource": "beforeyoubet-bets-com-au",
+      "consensusOdds": "+1100",
+      "oddsBySource": {
+        "beforeyoubet-bets-com-au": "+1100"
+      },
+      "impliedProbability": 0.0833,
+      "market": "outrights"
+    },
+    {
+      "name": "Collingwood Magpies",
+      "nameNormalized": "collingwoodmagpies",
+      "bestOdds": "+1000",
+      "bestOddsSource": "beforeyoubet-bets-com-au",
+      "consensusOdds": "+1000",
+      "oddsBySource": {
+        "beforeyoubet-bets-com-au": "+1000"
+      },
+      "impliedProbability": 0.0909,
+      "market": "outrights"
+    },
+    {
+      "name": "Fremantle Dockers",
+      "nameNormalized": "fremantledockers",
+      "bestOdds": "+1500",
+      "bestOddsSource": "beforeyoubet-bets-com-au",
+      "consensusOdds": "+1500",
+      "oddsBySource": {
+        "beforeyoubet-bets-com-au": "+1500"
+      },
+      "impliedProbability": 0.0625,
+      "market": "outrights"
+    },
+    {
+      "name": "Richmond Tigers",
+      "nameNormalized": "richmondtigers",
+      "bestOdds": "+1900",
+      "bestOddsSource": "beforeyoubet-bets-com-au",
+      "consensusOdds": "+1900",
+      "oddsBySource": {
+        "beforeyoubet-bets-com-au": "+1900"
+      },
+      "impliedProbability": 0.05,
+      "market": "outrights"
+    },
+    {
+      "name": "Carlton Blues",
+      "nameNormalized": "carltonblues",
+      "bestOdds": "+1900",
+      "bestOddsSource": "beforeyoubet-bets-com-au",
+      "consensusOdds": "+1900",
+      "oddsBySource": {
+        "beforeyoubet-bets-com-au": "+1900"
+      },
+      "impliedProbability": 0.05,
+      "market": "outrights"
+    },
+    {
+      "name": "St Kilda Saints",
+      "nameNormalized": "stkildasaints",
+      "bestOdds": "+2400",
+      "bestOddsSource": "beforeyoubet-bets-com-au",
+      "consensusOdds": "+2400",
+      "oddsBySource": {
+        "beforeyoubet-bets-com-au": "+2400"
+      },
+      "impliedProbability": 0.04,
+      "market": "outrights"
+    },
+    {
+      "name": "West Coast Eagles",
+      "nameNormalized": "westcoasteagles",
+      "bestOdds": "+9900",
+      "bestOddsSource": "beforeyoubet-bets-com-au",
+      "consensusOdds": "+9900",
+      "oddsBySource": {
+        "beforeyoubet-bets-com-au": "+9900"
+      },
+      "impliedProbability": 0.01,
+      "market": "outrights"
+    }
+  ]
+}

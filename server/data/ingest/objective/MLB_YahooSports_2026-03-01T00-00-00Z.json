@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Sports / SI.com / ESPN / DraftKings",
+  "category": "MLB",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "World Series Odds",
+    "value": "Los Angeles Dodgers +230, New York Yankees +950, Seattle Mariners +1300, Toronto Blue Jays +1400, Philadelphia Phillies +1400, New York Mets +1400, Boston Red Sox +1500, Atlanta Braves +1600, Chicago Cubs +1800, Houston Astros +2200, Baltimore Orioles +2200, Detroit Tigers +2500, Cleveland Guardians +2500, Milwaukee Brewers +2800, San Diego Padres +2800, Texas Rangers +3000, Cincinnati Reds +3000, San Francisco Giants +4000, Kansas City Royals +5000, Arizona Diamondbacks +5000, Tampa Bay Rays +5000, Minnesota Twins +8000, Miami Marlins +10000, St. Louis Cardinals +10000, Oakland Athletics +15000, Los Angeles Angels +25000, Pittsburgh Pirates +25000, Washington Nationals +25000, Chicago White Sox +50000, Colorado Rockies +50000",
+    "context": "2026 Season"
+  }]
+}

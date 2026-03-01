@@ -1,0 +1,49 @@
+{
+  "source": "Yahoo Sports / FanDuel Research / OddsShark / FOX Sports",
+  "category": "NCAA Women's Basketball",
+  "timestamp": "2026-03-01T06-00-00Z",
+  "data": [
+    {
+      "type": "subjective",
+      "key": "UConn Huskies Outlook",
+      "value": "UConn hasn't let up all season, staying unbeaten with depth clicking on both ends of the floor. The Sarah Strong and Azzi Fudd one-two punch is the best in the country, and Geno Auriemma's program historically peaks in March.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "UCLA Bruins Outlook",
+      "value": "The most compelling futures bet in the field. The Bruins went 30-2 and return four of five starters around Lauren Betts averaging 20.2 PPG and 9.5 RPG. They held the No. 1 ranking for most of the season and are still getting plus money.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "South Carolina Gamecocks Outlook",
+      "value": "Dawn Staley's squad is on a revenge mission after last year's championship loss to UConn. The Gamecocks traditionally peak in March, and the talent level here is unquestioned. A motivated South Carolina team at plus-odds is historically dangerous.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Texas Longhorns Outlook",
+      "value": "Texas earned statement wins over both South Carolina and UCLA this season, arguably the two best scalps in the sport. Madison Booker and a core of rising sophomores make the Longhorns a legitimate Final Four threat, and the odds have not fully caught up.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Vanderbilt Commodores Outlook",
+      "value": "Vanderbilt's defensive structure forces opponents into uncomfortable possessions, and Mikayla Blakes has been on an absolute scoring tear. At +3300, the Commodores are the most undervalued team on the board and project as a Final Four sleeper.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "LSU Tigers Outlook",
+      "value": "Kim Mulkey's ability to weaponize the transfer portal alongside returning stars Flau'jae Johnson and Mikaylah Williams gives LSU a legitimate path. The Lady Tigers have elite ceiling talent and +1600 is fair value for a program with Mulkey's tournament pedigree.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "UConn Huskies Concern",
+      "value": "Laying -285 on any college basketball team is a tough swallow. One bad shooting night or foul trouble for Sarah Strong and the bracket opens wide. The juice is not worth the squeeze at this price for bettors seeking value.",
+      "sentiment": "negative"
+    }
+  ]
+}

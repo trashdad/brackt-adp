@@ -10,7 +10,7 @@ const normalize = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
 const slugify = (str) => str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 const manualOdds = JSON.parse(fs.readFileSync('./server/data/manual-odds.json', 'utf8'));
-const socialScores = JSON.parse(fs.readFileSync('./public/data/social-scores.json', 'utf8'));
+const socialScores = JSON.parse(fs.readFileSync('./server/data/social-scores.json', 'utf8'));
 
 const rawBySport = { indycar: [] };
 const sport = SPORTS.find(s => s.id === 'indycar');

@@ -1,0 +1,13 @@
+{
+  "source": "Yahoo Sports / ESPN / OddsShark",
+  "category": "NCAA Basketball",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Michigan Wolverines Outlook", "value": "27-2 record and outright Big Ten champions. Led the nation in scoring at 89.1 PPG. Key transfers Yaxel Lendeborg, Elliot Cadeau, Morez Johnson Jr., and Aday Mara transformed the team.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Duke Blue Devils Outlook", "value": "Surged from +700 to +425 after defeating Michigan. Freshman Cameron Boozer averaging 22.7 pts and 10.1 reb while shooting 40.8% from three. A legitimate championship contender.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Florida Gators Outlook", "value": "Defending national champions currently on an 8-game win streak. At +1100 they represent value given the defending champion pedigree.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Purdue Boilermakers Concern", "value": "Defense has been a drag on the Boilermakers who started as presumptive favorites. Only 5-5 over their last 10 contests. Tumbled from early favorites to +2500.", "sentiment": "negative"},
+    {"type": "subjective", "key": "UConn Huskies Women Outlook", "value": "Defending national champions and overwhelming -270 favorites to repeat. The Huskies are on an historic run of dominance under Geno Auriemma.", "sentiment": "positive"},
+    {"type": "subjective", "key": "UCLA Bruins Women Outlook", "value": "Surged from +1200 preseason to +650 after going 30-2. Led by Lauren Betts and Kiki Rice, UCLA lost to UConn in last year's final and seeks revenge.", "sentiment": "positive"}
+  ]
+}

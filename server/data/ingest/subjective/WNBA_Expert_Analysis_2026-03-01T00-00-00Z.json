@@ -1,0 +1,13 @@
+{
+  "source": "Fox Sports / BetMGM / DraftKings Network",
+  "category": "WNBA",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Las Vegas Aces Outlook", "value": "Three-time champions in four years after sweeping Phoenix 4-0 in the 2025 Finals. A'ja Wilson's fourth MVP. Won 16 straight games to close the 2025 season. Organizational culture built for winning.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Minnesota Lynx Concern", "value": "Star Napheesa Collier underwent surgery on both ankles and is expected to miss 4-6 months, significantly clouding the Lynx's title hopes despite being co-favorites.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Indiana Fever Outlook", "value": "Caitlin Clark returning fully healthy after missing significant time with injury in 2025. Fever explicitly targeting a championship in year three. Aliyah Boston named Unrivaled Defensive Player of the Year.", "sentiment": "positive"},
+    {"type": "subjective", "key": "New York Liberty Concern", "value": "Head coach Sandy Brondello fired after first-round 2025 exit. Stars Breanna Stewart, Jonquel Jones, and Sabrina Ionescu all entered free agency simultaneously — the most uncertain offseason of any contender.", "sentiment": "negative"},
+    {"type": "subjective", "key": "WNBA 2026 Season Risk", "value": "The 2026 WNBA season faces an existential threat as the CBA has expired and a new deal has not been agreed upon. The season itself may be delayed or in jeopardy.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Golden State Valkyries Outlook", "value": "The expansion team made the playoffs in their first WNBA season, an impressive achievement, and enter 2026 at +3000 looking to build on surprising success.", "sentiment": "positive"}
+  ]
+}

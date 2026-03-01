@@ -1,0 +1,11 @@
+{
+  "source": "ESPN / Ladbrokes",
+  "category": "Tennis",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "Australian Open Women's Odds",
+    "value": "Aryna Sabalenka -200, Iga Swiatek +600, Coco Gauff +800, Mirra Andreeva +1600, Madison Keys +3000",
+    "context": "2026 Australian Open Women's"
+  }]
+}

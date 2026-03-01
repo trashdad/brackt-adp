@@ -1,0 +1,11 @@
+{
+  "source": "bet365 / OLBG",
+  "category": "PDC Darts",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "PDC World Championship Odds",
+    "value": "Luke Littler 4/5, Luke Humphries 6/1, Gian van Veen 13/2, Gerwyn Price 12/1, Josh Rock 14/1, Michael van Gerwen 20/1, Nathan Aspinall 30/1, Danny Noppert 40/1",
+    "context": "2026-27 PDC World Championship"
+  }]
+}

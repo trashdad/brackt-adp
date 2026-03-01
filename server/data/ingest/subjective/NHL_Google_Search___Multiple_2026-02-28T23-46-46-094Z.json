@@ -1,0 +1,19 @@
+{
+  "source": "Google Search / Multiple",
+  "category": "NHL",
+  "timestamp": "2026-02-28T23-46-46-094Z",
+  "data": [
+    {
+      "type": "subjective",
+      "key": "Colorado Avalanche Outlook",
+      "value": "Clear favorite following Milan Olympics.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Montreal Canadiens Outlook",
+      "value": "Resurgent value play, sitting second in division.",
+      "sentiment": "positive"
+    }
+  ]
+}

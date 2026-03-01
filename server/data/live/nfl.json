@@ -1,0 +1,462 @@
+{
+  "sport": "nfl",
+  "lastUpdated": "2026-03-01T07:59:01.031Z",
+  "sources": [
+    "covers",
+    "vegasinsider",
+    "google-search-multiple",
+    "sportsbettingdime-espn-fox-sports"
+  ],
+  "entries": [
+    {
+      "name": "Seattle Seahawks",
+      "nameNormalized": "seattleseahawks",
+      "bestOdds": "+950",
+      "bestOddsSource": "sportsbettingdime-espn-fox-sports",
+      "consensusOdds": "+769",
+      "oddsBySource": {
+        "covers": "+600",
+        "vegasinsider": "+800",
+        "google-search-multiple": "+800",
+        "sportsbettingdime-espn-fox-sports": "+950"
+      },
+      "impliedProbability": 0.0952,
+      "market": "outrights"
+    },
+    {
+      "name": "Los Angeles Rams",
+      "nameNormalized": "losangelesrams",
+      "bestOdds": "+950",
+      "bestOddsSource": "sportsbettingdime-espn-fox-sports",
+      "consensusOdds": "+679",
+      "oddsBySource": {
+        "covers": "+370",
+        "vegasinsider": "+850",
+        "google-search-multiple": "+900",
+        "sportsbettingdime-espn-fox-sports": "+950"
+      },
+      "impliedProbability": 0.0952,
+      "market": "outrights"
+    },
+    {
+      "name": "Buffalo Bills",
+      "nameNormalized": "buffalobills",
+      "bestOdds": "+1100",
+      "bestOddsSource": "vegasinsider",
+      "consensusOdds": "+1045",
+      "oddsBySource": {
+        "covers": "+950",
+        "vegasinsider": "+1100",
+        "sportsbettingdime-espn-fox-sports": "+1100"
+      },
+      "impliedProbability": 0.0833,
+      "market": "outrights"
+    },
+    {
+      "name": "Green Bay Packers",
+      "nameNormalized": "greenbaypackers",
+      "bestOdds": "+1400",
+      "bestOddsSource": "vegasinsider",
+      "consensusOdds": "+1095",
+      "oddsBySource": {
+        "covers": "+750",
+        "vegasinsider": "+1400",
+        "sportsbettingdime-espn-fox-sports": "+1400"
+      },
+      "impliedProbability": 0.0667,
+      "market": "outrights"
+    },
+    {
+      "name": "Philadelphia Eagles",
+      "nameNormalized": "philadelphiaeagles",
+      "bestOdds": "+1400",
+      "bestOddsSource": "vegasinsider",
+      "consensusOdds": "+1295",
+      "oddsBySource": {
+        "covers": "+1200",
+        "vegasinsider": "+1400",
+        "sportsbettingdime-espn-fox-sports": "+1300"
+      },
+      "impliedProbability": 0.0667,
+      "market": "outrights"
+    },
+    {
+      "name": "New England Patriots",
+      "nameNormalized": "newenglandpatriots",
+      "bestOdds": "+1600",
+      "bestOddsSource": "vegasinsider",
+      "consensusOdds": "+1256",
+      "oddsBySource": {
+        "covers": "+1000",
+        "vegasinsider": "+1600",
+        "sportsbettingdime-espn-fox-sports": "+1300"
+      },
+      "impliedProbability": 0.0588,
+      "market": "outrights"
+    },
+    {
+      "name": "Denver Broncos",
+      "nameNormalized": "denverbroncos",
+      "bestOdds": "+1800",
+      "bestOddsSource": "vegasinsider",
+      "consensusOdds": "+1429",
+      "oddsBySource": {
+        "covers": "+1000",
+        "vegasinsider": "+1800",
+        "sportsbettingdime-espn-fox-sports": "+1800"
+      },
+      "impliedProbability": 0.0526,
+      "market": "outrights"
+    },
+    {
+      "name": "San Francisco 49ers",
+      "nameNormalized": "sanfrancisco49ers",
+      "bestOdds": "+2000",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+1895",
+      "oddsBySource": {
+        "covers": "+2000",
+        "vegasinsider": "+1800"
+      },
+      "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "Jacksonville Jaguars",
+      "nameNormalized": "jacksonvillejaguars",
+      "bestOdds": "+2100",
+      "bestOddsSource": "sportsbettingdime-espn-fox-sports",
+      "consensusOdds": "+2032",
+      "oddsBySource": {
+        "covers": "+2000",
+        "vegasinsider": "+2000",
+        "sportsbettingdime-espn-fox-sports": "+2100"
+      },
+      "impliedProbability": 0.0455,
+      "market": "outrights"
+    },
+    {
+      "name": "Houston Texans",
+      "nameNormalized": "houstontexans",
+      "bestOdds": "+2000",
+      "bestOddsSource": "vegasinsider",
+      "consensusOdds": "+1580",
+      "oddsBySource": {
+        "covers": "+1100",
+        "vegasinsider": "+2000",
+        "sportsbettingdime-espn-fox-sports": "+2000"
+      },
+      "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "Detroit Lions",
+      "nameNormalized": "detroitlions",
+      "bestOdds": "+2500",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+1646",
+      "oddsBySource": {
+        "covers": "+2500",
+        "vegasinsider": "+1400",
+        "sportsbettingdime-espn-fox-sports": "+1400"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Los Angeles Chargers",
+      "nameNormalized": "losangeleschargers",
+      "bestOdds": "+2500",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+1735",
+      "oddsBySource": {
+        "covers": "+2500",
+        "vegasinsider": "+1500",
+        "sportsbettingdime-espn-fox-sports": "+1500"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Baltimore Ravens",
+      "nameNormalized": "baltimoreravens",
+      "bestOdds": "+4500",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+1519",
+      "oddsBySource": {
+        "covers": "+4500",
+        "vegasinsider": "+1200",
+        "google-search-multiple": "+1200",
+        "sportsbettingdime-espn-fox-sports": "+1300"
+      },
+      "impliedProbability": 0.0217,
+      "market": "outrights"
+    },
+    {
+      "name": "Chicago Bears",
+      "nameNormalized": "chicagobears",
+      "bestOdds": "+4500",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+2985",
+      "oddsBySource": {
+        "covers": "+4500",
+        "vegasinsider": "+2500",
+        "sportsbettingdime-espn-fox-sports": "+2600"
+      },
+      "impliedProbability": 0.0217,
+      "market": "outrights"
+    },
+    {
+      "name": "Kansas City Chiefs",
+      "nameNormalized": "kansascitychiefs",
+      "bestOdds": "+5500",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+1940",
+      "oddsBySource": {
+        "covers": "+5500",
+        "vegasinsider": "+1400",
+        "sportsbettingdime-espn-fox-sports": "+1500"
+      },
+      "impliedProbability": 0.0179,
+      "market": "outrights"
+    },
+    {
+      "name": "Tampa Bay Buccaneers",
+      "nameNormalized": "tampabaybuccaneers",
+      "bestOdds": "+5500",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+4588",
+      "oddsBySource": {
+        "covers": "+5500",
+        "vegasinsider": "+4000",
+        "sportsbettingdime-espn-fox-sports": "+4500"
+      },
+      "impliedProbability": 0.0179,
+      "market": "outrights"
+    },
+    {
+      "name": "Pittsburgh Steelers",
+      "nameNormalized": "pittsburghsteelers",
+      "bestOdds": "+8000",
+      "bestOddsSource": "sportsbettingdime-espn-fox-sports",
+      "consensusOdds": "+7279",
+      "oddsBySource": {
+        "covers": "+6500",
+        "vegasinsider": "+7500",
+        "sportsbettingdime-espn-fox-sports": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "New York Giants",
+      "nameNormalized": "newyorkgiants",
+      "bestOdds": "+9000",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+7847",
+      "oddsBySource": {
+        "covers": "+9000",
+        "vegasinsider": "+7500",
+        "sportsbettingdime-espn-fox-sports": "+7250"
+      },
+      "impliedProbability": 0.011,
+      "market": "outrights"
+    },
+    {
+      "name": "Dallas Cowboys",
+      "nameNormalized": "dallascowboys",
+      "bestOdds": "+11000",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+4294",
+      "oddsBySource": {
+        "covers": "+11000",
+        "vegasinsider": "+3300",
+        "sportsbettingdime-espn-fox-sports": "+3250"
+      },
+      "impliedProbability": 0.009,
+      "market": "outrights"
+    },
+    {
+      "name": "Tennessee Titans",
+      "nameNormalized": "tennesseetitans",
+      "bestOdds": "+12500",
+      "bestOddsSource": "vegasinsider",
+      "consensusOdds": "+11957",
+      "oddsBySource": {
+        "covers": "+11000",
+        "vegasinsider": "+12500",
+        "sportsbettingdime-espn-fox-sports": "+12500"
+      },
+      "impliedProbability": 0.0079,
+      "market": "outrights"
+    },
+    {
+      "name": "New Orleans Saints",
+      "nameNormalized": "neworleanssaints",
+      "bestOdds": "+13750",
+      "bestOddsSource": "sportsbettingdime-espn-fox-sports",
+      "consensusOdds": "+11872",
+      "oddsBySource": {
+        "covers": "+10000",
+        "vegasinsider": "+12500",
+        "sportsbettingdime-espn-fox-sports": "+13750"
+      },
+      "impliedProbability": 0.0072,
+      "market": "outrights"
+    },
+    {
+      "name": "Las Vegas Raiders",
+      "nameNormalized": "lasvegasraiders",
+      "bestOdds": "+15250",
+      "bestOddsSource": "sportsbettingdime-espn-fox-sports",
+      "consensusOdds": "+15082",
+      "oddsBySource": {
+        "covers": "+15000",
+        "vegasinsider": "+15000",
+        "sportsbettingdime-espn-fox-sports": "+15250"
+      },
+      "impliedProbability": 0.0065,
+      "market": "outrights"
+    },
+    {
+      "name": "Indianapolis Colts",
+      "nameNormalized": "indianapoliscolts",
+      "bestOdds": "+16000",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+6504",
+      "oddsBySource": {
+        "covers": "+16000",
+        "vegasinsider": "+5000",
+        "sportsbettingdime-espn-fox-sports": "+5000"
+      },
+      "impliedProbability": 0.0062,
+      "market": "outrights"
+    },
+    {
+      "name": "Carolina Panthers",
+      "nameNormalized": "carolinapanthers",
+      "bestOdds": "+20000",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+14290",
+      "oddsBySource": {
+        "covers": "+20000",
+        "vegasinsider": "+12500",
+        "sportsbettingdime-espn-fox-sports": "+12500"
+      },
+      "impliedProbability": 0.005,
+      "market": "outrights"
+    },
+    {
+      "name": "Cincinnati Bengals",
+      "nameNormalized": "cincinnatibengals",
+      "bestOdds": "+25000",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+3979",
+      "oddsBySource": {
+        "covers": "+25000",
+        "vegasinsider": "+2800",
+        "sportsbettingdime-espn-fox-sports": "+2750"
+      },
+      "impliedProbability": 0.004,
+      "market": "outrights"
+    },
+    {
+      "name": "Arizona Cardinals",
+      "nameNormalized": "arizonacardinals",
+      "bestOdds": "+25000",
+      "bestOddsSource": "vegasinsider",
+      "consensusOdds": "+22710",
+      "oddsBySource": {
+        "covers": "+20000",
+        "vegasinsider": "+25000",
+        "sportsbettingdime-espn-fox-sports": "+23750"
+      },
+      "impliedProbability": 0.004,
+      "market": "outrights"
+    },
+    {
+      "name": "Washington Commanders",
+      "nameNormalized": "washingtoncommanders",
+      "bestOdds": "+100000",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+7534",
+      "oddsBySource": {
+        "covers": "+100000",
+        "vegasinsider": "+5000",
+        "sportsbettingdime-espn-fox-sports": "+5250"
+      },
+      "impliedProbability": 0.001,
+      "market": "outrights"
+    },
+    {
+      "name": "Atlanta Falcons",
+      "nameNormalized": "atlantafalcons",
+      "bestOdds": "+100000",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+9118",
+      "oddsBySource": {
+        "covers": "+100000",
+        "vegasinsider": "+6000",
+        "sportsbettingdime-espn-fox-sports": "+6500"
+      },
+      "impliedProbability": 0.001,
+      "market": "outrights"
+    },
+    {
+      "name": "Minnesota Vikings",
+      "nameNormalized": "minnesotavikings",
+      "bestOdds": "+100000",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+7857",
+      "oddsBySource": {
+        "covers": "+100000",
+        "vegasinsider": "+5000",
+        "sportsbettingdime-espn-fox-sports": "+5750"
+      },
+      "impliedProbability": 0.001,
+      "market": "outrights"
+    },
+    {
+      "name": "Cleveland Browns",
+      "nameNormalized": "clevelandbrowns",
+      "bestOdds": "+100000",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+20113",
+      "oddsBySource": {
+        "covers": "+100000",
+        "vegasinsider": "+15000",
+        "sportsbettingdime-espn-fox-sports": "+13750"
+      },
+      "impliedProbability": 0.001,
+      "market": "outrights"
+    },
+    {
+      "name": "Miami Dolphins",
+      "nameNormalized": "miamidolphins",
+      "bestOdds": "+100000",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+32594",
+      "oddsBySource": {
+        "covers": "+100000",
+        "vegasinsider": "+25000",
+        "sportsbettingdime-espn-fox-sports": "+23750"
+      },
+      "impliedProbability": 0.001,
+      "market": "outrights"
+    },
+    {
+      "name": "New York Jets",
+      "nameNormalized": "newyorkjets",
+      "bestOdds": "+100000",
+      "bestOddsSource": "covers",
+      "consensusOdds": "+28749",
+      "oddsBySource": {
+        "covers": "+100000",
+        "vegasinsider": "+20000",
+        "sportsbettingdime-espn-fox-sports": "+22500"
+      },
+      "impliedProbability": 0.001,
+      "market": "outrights"
+    }
+  ]
+}

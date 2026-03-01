@@ -1,0 +1,12 @@
+{
+  "source": "Golf Channel / Golf Monthly / National Club Golfer",
+  "category": "PGA Golf",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Scottie Scheffler Outlook", "value": "World No. 1 is the heavy favorite across all four 2026 majors, having won two majors in 2025 (PGA Championship, The Open). Has never finished outside the top 20 in six Augusta appearances.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Rory McIlroy Concern", "value": "McIlroy defending the Masters seeks a rare back-to-back victory — something no player has accomplished since Tiger Woods in 2002. Faces enormous expectations and a historically stacked field.", "sentiment": "neutral"},
+    {"type": "subjective", "key": "Ludvig Aberg Outlook", "value": "Won the Genesis Invitational in February 2026 and analysts believe his first major title is a matter of when, not if. Most likely new major champion in 2026 per Golf Monthly analysts.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Jon Rahm Concern", "value": "Under immense pressure heading into 2026 after a disappointing 2025 major season. Analysts see redemption as his storyline but temper expectations given LIV transition challenges.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Tommy Fleetwood Outlook", "value": "English crowd favorite at The Open (Royal Birkdale, near his hometown Southport) at +1400. Links style suits his game and local support could be a factor.", "sentiment": "positive"}
+  ]
+}

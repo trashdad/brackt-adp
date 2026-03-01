@@ -396,7 +396,7 @@ export default function useOddsData(scarcityModifier) {
     // Step 5: Load social scores (try server, then local cache)
     let socialScores = loadSocialScoresCache();
     try {
-      const socialScoresResp = await fetch('/data/social-scores.json');
+      const socialScoresResp = await fetch('/api/social-scores');
       if (socialScoresResp.ok) {
         socialScores = await socialScoresResp.json();
         saveSocialScoresCache(socialScores);

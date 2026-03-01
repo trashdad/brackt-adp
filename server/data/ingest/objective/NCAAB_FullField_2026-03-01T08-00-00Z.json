@@ -1,0 +1,13 @@
+{
+  "source": "Yahoo Sports / Fox Sports / SI.com / Covers",
+  "category": "NCAA Basketball",
+  "timestamp": "2026-03-01T08-00-00Z",
+  "data": [
+    {
+      "type": "objective",
+      "key": "NCAA Men's March Madness Championship 2026 Odds",
+      "value": "Michigan Wolverines +375, Duke Blue Devils +425, Arizona Wildcats +475, Houston Cougars +900, Illinois Fighting Illini +1100, Florida Gators +1100, Iowa State Cyclones +1400, UConn Huskies +1800, Kansas Jayhawks +2000, Auburn Tigers +2000, Purdue Boilermakers +2500, St. John's Red Storm +2500, Kentucky Wildcats +3000, UCLA Bruins +3000, Tennessee Volunteers +3000, Gonzaga Bulldogs +3000, Alabama Crimson Tide +3500, Michigan State Spartans +3500, Louisville Cardinals +4000, Arkansas Razorbacks +4500, Indiana Hoosiers +5000, North Carolina Tar Heels +5000, Creighton Bluejays +5000, Nebraska Cornhuskers +5000, Wisconsin Badgers +6000, Oregon Ducks +6000, Texas Tech Red Raiders +6000, Marquette Golden Eagles +10000, San Diego State Aztecs +15000, Xavier Musketeers +15000, Memphis Tigers +20000, Missouri Tigers +20000, Ole Miss Rebels +20000, Virginia Cavaliers +20000, Utah Utes +20000",
+      "context": "2025-26 Season"
+    }
+  ]
+}

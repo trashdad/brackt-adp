@@ -1,0 +1,254 @@
+{
+  "sport": "ncaaw",
+  "lastUpdated": "2026-03-01T07:59:01.031Z",
+  "sources": [
+    "draftkings-fanduel-espn-covers",
+    "covers-com-fanduel"
+  ],
+  "entries": [
+    {
+      "name": "UConn Huskies",
+      "nameNormalized": "uconnhuskies",
+      "bestOdds": "-270",
+      "bestOddsSource": "covers-com-fanduel",
+      "consensusOdds": "-277",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "-285",
+        "covers-com-fanduel": "-270"
+      },
+      "impliedProbability": 0.7297,
+      "market": "outrights"
+    },
+    {
+      "name": "UCLA Bruins",
+      "nameNormalized": "uclabruins",
+      "bestOdds": "+700",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+674",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+700",
+        "covers-com-fanduel": "+650"
+      },
+      "impliedProbability": 0.125,
+      "market": "outrights"
+    },
+    {
+      "name": "South Carolina Gamecocks",
+      "nameNormalized": "southcarolinagamecocks",
+      "bestOdds": "+900",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+874",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+900",
+        "covers-com-fanduel": "+850"
+      },
+      "impliedProbability": 0.1,
+      "market": "outrights"
+    },
+    {
+      "name": "Texas Longhorns",
+      "nameNormalized": "texaslonghorns",
+      "bestOdds": "+1100",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+1100",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+1100"
+      },
+      "impliedProbability": 0.0833,
+      "market": "outrights"
+    },
+    {
+      "name": "LSU Tigers",
+      "nameNormalized": "lsutigers",
+      "bestOdds": "+1600",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+1600",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+1600"
+      },
+      "impliedProbability": 0.0588,
+      "market": "outrights"
+    },
+    {
+      "name": "Vanderbilt Commodores",
+      "nameNormalized": "vanderbiltcommodores",
+      "bestOdds": "+4000",
+      "bestOddsSource": "covers-com-fanduel",
+      "consensusOdds": "+3617",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+3300",
+        "covers-com-fanduel": "+4000"
+      },
+      "impliedProbability": 0.0244,
+      "market": "outrights"
+    },
+    {
+      "name": "Duke Blue Devils",
+      "nameNormalized": "dukebluedevils",
+      "bestOdds": "+7500",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+7500",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+7500"
+      },
+      "impliedProbability": 0.0132,
+      "market": "outrights"
+    },
+    {
+      "name": "Michigan Wolverines",
+      "nameNormalized": "michiganwolverines",
+      "bestOdds": "+7500",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+7500",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+7500"
+      },
+      "impliedProbability": 0.0132,
+      "market": "outrights"
+    },
+    {
+      "name": "Iowa Hawkeyes",
+      "nameNormalized": "iowahawkeyes",
+      "bestOdds": "+8000",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "Oklahoma Sooners",
+      "nameNormalized": "oklahomasooners",
+      "bestOdds": "+10000",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "NC State Wolfpack",
+      "nameNormalized": "ncstatewolfpack",
+      "bestOdds": "+10000",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Louisville Cardinals",
+      "nameNormalized": "louisvillecardinals",
+      "bestOdds": "+10000",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Iowa State Cyclones",
+      "nameNormalized": "iowastatecyclones",
+      "bestOdds": "+10000",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Tennessee Lady Volunteers",
+      "nameNormalized": "tennesseeladyvolunteers",
+      "bestOdds": "+11000",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+11000",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+11000"
+      },
+      "impliedProbability": 0.009,
+      "market": "outrights"
+    },
+    {
+      "name": "Texas Tech Lady Raiders",
+      "nameNormalized": "texastechladyraiders",
+      "bestOdds": "+12000",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+12000",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+12000"
+      },
+      "impliedProbability": 0.0083,
+      "market": "outrights"
+    },
+    {
+      "name": "Ole Miss Rebels",
+      "nameNormalized": "olemissrebels",
+      "bestOdds": "+12000",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+12000",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+12000"
+      },
+      "impliedProbability": 0.0083,
+      "market": "outrights"
+    },
+    {
+      "name": "Notre Dame Fighting Irish",
+      "nameNormalized": "notredamefightingirish",
+      "bestOdds": "+15000",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "USC Trojans",
+      "nameNormalized": "usctrojans",
+      "bestOdds": "+15000",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Baylor Bears",
+      "nameNormalized": "baylorbears",
+      "bestOdds": "+15000",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Kentucky Wildcats",
+      "nameNormalized": "kentuckywildcats",
+      "bestOdds": "+15000",
+      "bestOddsSource": "draftkings-fanduel-espn-covers",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "draftkings-fanduel-espn-covers": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    }
+  ]
+}

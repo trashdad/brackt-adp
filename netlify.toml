@@ -23,6 +23,21 @@
   status = 200
 
 [[redirects]]
+  from = "/api/social-scores"
+  to = "/.netlify/functions/social-scores"
+  status = 200
+
+[[redirects]]
+  from = "/api/research-data"
+  to = "/.netlify/functions/research-data"
+  status = 200
+
+[[redirects]]
+  from = "/api/subjective-data"
+  to = "/.netlify/functions/subjective-data"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

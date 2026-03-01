@@ -1,0 +1,19 @@
+{
+  "source": "Google Search / Multiple",
+  "category": "Snooker",
+  "timestamp": "2026-02-28T23-46-46-105Z",
+  "data": [
+    {
+      "type": "subjective",
+      "key": "Kyren Wilson Curse",
+      "value": "Defending champion faces the Crucible Curse.",
+      "sentiment": "negative"
+    },
+    {
+      "type": "subjective",
+      "key": "Neil Robertson Value",
+      "value": "Best value pick following O Sullivans withdrawal from Masters.",
+      "sentiment": "positive"
+    }
+  ]
+}

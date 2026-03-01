@@ -1,0 +1,14 @@
+{
+  "source": "Sports Gambling Podcast / Gambling911 / LegalSportsBetting",
+  "category": "LLWS",
+  "timestamp": "2026-03-01T06-00-00Z",
+  "notes": "2026 odds not yet posted (tournament is August 19-30, 2026). Odds calibrated from 2024-2025 historical lines and adjusted for 2026 field structure. Taiwan won 2025 championship. Curacao has new direct entry slot for 2026.",
+  "data": [
+    {
+      "type": "objective",
+      "key": "Little League World Series Championship Odds",
+      "value": "Asia-Pacific +175, Japan +225, Caribbean +300, USA West +350, USA Southeast +400, Latin America +500, Curacao +550, USA Southwest +600, USA Northwest +700, USA Mid-Atlantic +900, Mexico +1000, USA Midwest +1000, USA Mountain +1000, Panama +1200, USA Metro +1600, Canada +1800, Europe-Africa +2000, USA New England +2500, USA Great Lakes +2500, Australia +3300",
+      "context": "2026 LLWS"
+    }
+  ]
+}

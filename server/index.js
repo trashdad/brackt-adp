@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 import { readStore, writeStore } from './store.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const PIPELINE_OUTPUT = join(__dirname, '..', 'pipeline', 'output');
+const PIPELINE_OUTPUT = join(__dirname, 'data');
 const PROJECT_ROOT = join(__dirname, '..');
 
 // In-memory pipeline run state (reset on server restart)
@@ -80,6 +80,24 @@ app.get('/api/pipeline/historical/:sportId', (req, res) => {
   }
   const data = readPipelineJson(join(PIPELINE_OUTPUT, 'historical', `${req.params.sportId}.json`));
   data ? res.json(data) : res.status(404).json(null);
+});
+
+// ── Consolidated Data ────────────────────────────────────────────────────────
+// Read-only endpoints for social scores, research data, and subjective data.
+
+app.get('/api/social-scores', (_req, res) => {
+  const data = readPipelineJson(join(__dirname, 'data', 'social-scores.json'));
+  data ? res.json(data) : res.status(404).json({});
+});
+
+app.get('/api/research-data', (_req, res) => {
+  const data = readPipelineJson(join(__dirname, 'data', 'research-data.json'));
+  data ? res.json(data) : res.status(404).json({});
+});
+
+app.get('/api/subjective-data', (_req, res) => {
+  const data = readPipelineJson(join(__dirname, 'data', 'subjective-data.json'));
+  data ? res.json(data) : res.status(404).json({});
 });
 
 // ── Pipeline Runner ───────────────────────────────────────────────────────────

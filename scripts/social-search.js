@@ -6,7 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const ROSTERS_PATH = path.join(__dirname, '../src/data/rosters.js');
 const STORAGE_PATH = path.join(__dirname, '../server/data/social-storage.json');
-const SCORES_PATH = path.join(__dirname, '../public/data/social-scores.json');
+const SCORES_PATH = path.join(__dirname, '../server/data/social-scores.json');
 const DRAFT_STATE_PATH = path.join(__dirname, '../server/data/draft-state.json');
 
 // 1. Read rosters

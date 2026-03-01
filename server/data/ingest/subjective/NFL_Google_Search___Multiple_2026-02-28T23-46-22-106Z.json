@@ -1,0 +1,19 @@
+{
+  "source": "Google Search / Multiple",
+  "category": "NFL",
+  "timestamp": "2026-02-28T23-46-22-106Z",
+  "data": [
+    {
+      "type": "subjective",
+      "key": "Seahawks Outlook",
+      "value": "Opened as favorites to repeat following SB LX win.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Kansas City Chiefs Outlook",
+      "value": "High betting handle despite recent playoff exits.",
+      "sentiment": "neutral"
+    }
+  ]
+}

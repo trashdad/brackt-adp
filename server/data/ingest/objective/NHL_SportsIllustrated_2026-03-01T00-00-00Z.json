@@ -1,0 +1,11 @@
+{
+  "source": "SI.com / The Spread / OddsChecker",
+  "category": "NHL",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "Stanley Cup Odds",
+    "value": "Colorado Avalanche +280, Tampa Bay Lightning +500, Carolina Hurricanes +700, Vegas Golden Knights +900, Edmonton Oilers +1200, Dallas Stars +1400, Minnesota Wild +1900, Utah Mammoth +2800, Florida Panthers +3000, Los Angeles Kings +3500, Buffalo Sabres +3500, Washington Capitals +4000, Montreal Canadiens +4000, Detroit Red Wings +5000, Toronto Maple Leafs +6500, New York Islanders +7000, Pittsburgh Penguins +7000, Ottawa Senators +8000, Columbus Blue Jackets +10000, Anaheim Ducks +10000, Seattle Kraken +20000, New Jersey Devils +20000, Boston Bruins +20000, San Jose Sharks +30000, Philadelphia Flyers +30000, Nashville Predators +30000, Winnipeg Jets +50000, Vancouver Canucks +50000, New York Rangers +50000, Chicago Blackhawks +50000, Calgary Flames +50000, St. Louis Blues +100000",
+    "context": "2025-26 Season"
+  }]
+}

@@ -1,0 +1,19 @@
+{
+  "source": "Google Search / Multiple",
+  "category": "FIFA World Cup",
+  "timestamp": "2026-02-28T23-46-22-101Z",
+  "data": [
+    {
+      "type": "subjective",
+      "key": "Spain Outlook",
+      "value": "Clear favorite following Euro 2024 success and Lamine Yamal emergence.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Argentina Outlook",
+      "value": "Likely Lionel Messi's 'last dance'.",
+      "sentiment": "neutral"
+    }
+  ]
+}

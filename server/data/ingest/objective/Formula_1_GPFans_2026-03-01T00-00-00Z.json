@@ -1,0 +1,11 @@
+{
+  "source": "GPFans / bet365",
+  "category": "Formula 1",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "F1 Drivers Championship Odds",
+    "value": "George Russell 11/4, Max Verstappen 11/4, Lando Norris 9/2, Oscar Piastri 15/2, Fernando Alonso 15/2, Kimi Antonelli 10/1, Charles Leclerc 20/1, Lewis Hamilton 33/1, Carlos Sainz 66/1",
+    "context": "2026 F1 Season"
+  }]
+}

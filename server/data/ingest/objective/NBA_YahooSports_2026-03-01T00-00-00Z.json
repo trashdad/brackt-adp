@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Sports / Fox Sports / The Big Lead",
+  "category": "NBA",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "NBA Championship Odds",
+    "value": "Oklahoma City Thunder +130, Denver Nuggets +500, San Antonio Spurs +1000, Boston Celtics +1100, Cleveland Cavaliers +1200, Detroit Pistons +1300, New York Knicks +1400, Houston Rockets +2200, Minnesota Timberwolves +3300, Los Angeles Lakers +4000",
+    "context": "2025-26 Season"
+  }]
+}

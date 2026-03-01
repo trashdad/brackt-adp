@@ -1,0 +1,145 @@
+{
+  "sport": "wnba",
+  "lastUpdated": "2026-03-01T07:59:01.031Z",
+  "sources": [
+    "google-search-multiple",
+    "fox-sports-fanduel-betmgm"
+  ],
+  "entries": [
+    {
+      "name": "Las Vegas Aces",
+      "nameNormalized": "lasvegasaces",
+      "bestOdds": "+350",
+      "bestOddsSource": "fox-sports-fanduel-betmgm",
+      "consensusOdds": "+324",
+      "oddsBySource": {
+        "google-search-multiple": "+300",
+        "fox-sports-fanduel-betmgm": "+350"
+      },
+      "impliedProbability": 0.2222,
+      "market": "outrights"
+    },
+    {
+      "name": "Indiana Fever",
+      "nameNormalized": "indianafever",
+      "bestOdds": "+390",
+      "bestOddsSource": "fox-sports-fanduel-betmgm",
+      "consensusOdds": "+382",
+      "oddsBySource": {
+        "google-search-multiple": "+375",
+        "fox-sports-fanduel-betmgm": "+390"
+      },
+      "impliedProbability": 0.2041,
+      "market": "outrights"
+    },
+    {
+      "name": "Minnesota Lynx",
+      "nameNormalized": "minnesotalynx",
+      "bestOdds": "+400",
+      "bestOddsSource": "google-search-multiple",
+      "consensusOdds": "+374",
+      "oddsBySource": {
+        "google-search-multiple": "+400",
+        "fox-sports-fanduel-betmgm": "+350"
+      },
+      "impliedProbability": 0.2,
+      "market": "outrights"
+    },
+    {
+      "name": "New York Liberty",
+      "nameNormalized": "newyorkliberty",
+      "bestOdds": "+480",
+      "bestOddsSource": "fox-sports-fanduel-betmgm",
+      "consensusOdds": "+480",
+      "oddsBySource": {
+        "fox-sports-fanduel-betmgm": "+480"
+      },
+      "impliedProbability": 0.1724,
+      "market": "outrights"
+    },
+    {
+      "name": "Phoenix Mercury",
+      "nameNormalized": "phoenixmercury",
+      "bestOdds": "+850",
+      "bestOddsSource": "fox-sports-fanduel-betmgm",
+      "consensusOdds": "+850",
+      "oddsBySource": {
+        "fox-sports-fanduel-betmgm": "+850"
+      },
+      "impliedProbability": 0.1053,
+      "market": "outrights"
+    },
+    {
+      "name": "Atlanta Dream",
+      "nameNormalized": "atlantadream",
+      "bestOdds": "+1500",
+      "bestOddsSource": "fox-sports-fanduel-betmgm",
+      "consensusOdds": "+1500",
+      "oddsBySource": {
+        "fox-sports-fanduel-betmgm": "+1500"
+      },
+      "impliedProbability": 0.0625,
+      "market": "outrights"
+    },
+    {
+      "name": "Seattle Storm",
+      "nameNormalized": "seattlestorm",
+      "bestOdds": "+1600",
+      "bestOddsSource": "fox-sports-fanduel-betmgm",
+      "consensusOdds": "+1600",
+      "oddsBySource": {
+        "fox-sports-fanduel-betmgm": "+1600"
+      },
+      "impliedProbability": 0.0588,
+      "market": "outrights"
+    },
+    {
+      "name": "Golden State Valkyries",
+      "nameNormalized": "goldenstatevalkyries",
+      "bestOdds": "+3000",
+      "bestOddsSource": "fox-sports-fanduel-betmgm",
+      "consensusOdds": "+3000",
+      "oddsBySource": {
+        "fox-sports-fanduel-betmgm": "+3000"
+      },
+      "impliedProbability": 0.0323,
+      "market": "outrights"
+    },
+    {
+      "name": "Los Angeles Sparks",
+      "nameNormalized": "losangelessparks",
+      "bestOdds": "+4000",
+      "bestOddsSource": "fox-sports-fanduel-betmgm",
+      "consensusOdds": "+4000",
+      "oddsBySource": {
+        "fox-sports-fanduel-betmgm": "+4000"
+      },
+      "impliedProbability": 0.0244,
+      "market": "outrights"
+    },
+    {
+      "name": "Dallas Wings",
+      "nameNormalized": "dallaswings",
+      "bestOdds": "+4500",
+      "bestOddsSource": "fox-sports-fanduel-betmgm",
+      "consensusOdds": "+4500",
+      "oddsBySource": {
+        "fox-sports-fanduel-betmgm": "+4500"
+      },
+      "impliedProbability": 0.0217,
+      "market": "outrights"
+    },
+    {
+      "name": "Washington Mystics",
+      "nameNormalized": "washingtonmystics",
+      "bestOdds": "+4500",
+      "bestOddsSource": "fox-sports-fanduel-betmgm",
+      "consensusOdds": "+4500",
+      "oddsBySource": {
+        "fox-sports-fanduel-betmgm": "+4500"
+      },
+      "impliedProbability": 0.0217,
+      "market": "outrights"
+    }
+  ]
+}

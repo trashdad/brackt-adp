@@ -1,0 +1,11 @@
+{
+  "source": "SportsBooKReview / VegasInsider",
+  "category": "Tennis",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "US Open Women's Odds",
+    "value": "Aryna Sabalenka +200, Iga Swiatek +350, Coco Gauff +800, Naomi Osaka +1600, Madison Keys +1800, Amanda Anisimova +2200, Jessica Pegula +2800, Emma Navarro +3300",
+    "context": "2026 US Open Women's"
+  }]
+}

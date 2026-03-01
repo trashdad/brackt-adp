@@ -1,0 +1,14 @@
+{
+  "source": "SportsBettingDime / Ladbrokes / BettingOdds.com / SI Soccer",
+  "category": "UEFA Champions League",
+  "timestamp": "2026-03-01T08-00-00Z",
+  "notes": "Only 16 teams remain (Round of 16 begins March 10). Eliminated teams have no active odds.",
+  "data": [
+    {
+      "type": "objective",
+      "key": "UEFA Champions League Winner Odds",
+      "value": "Arsenal +250, Bayern Munich +550, Barcelona +700, Paris Saint-Germain +900, Manchester City +900, Liverpool +1000, Real Madrid +2000, Chelsea +3100, Atletico Madrid +3300, Newcastle United +4700, Tottenham +5900, Sporting CP +13900, Bayer Leverkusen +19900, Atalanta +23900, Galatasaray +32900, Bodo/Glimt +50000",
+      "context": "2025-26 UCL"
+    }
+  ]
+}

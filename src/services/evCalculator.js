@@ -145,17 +145,22 @@ const AFL_LIST_PROFILE = {
 };
 
 const NFL_ELITE_OL_CONTINUITY = ['philadelphiaeagles', 'denverbroncos', 'detroitlions', 'tampabaybuccaneers', 'buffalobills', 'chicagobears'];
-const NFL_2026_DRAFT_CAPITAL = { 'newyorkjets': 1.07, 'clevelandbrowns': 1.05, 'lasvegasraiders': 1.04 };
-const NFL_COACHING_ALPHA = { 'chicagobears': 1.15, 'arizonacardinals': 1.12, 'buffalobills': 1.08 };
+const NFL_2026_DRAFT_CAPITAL = { 
+  'newyorkjets': 1.25, 'clevelandbrowns': 1.18, 'lasvegasraiders': 1.15, 'pittsburghsteelers': 1.12,
+  'tennesseetitans': 1.10, 'dallascowboys': 1.10, 'losangelesrams': 1.10
+};
+const NFL_COACHING_ALPHA = { 
+  'chicagobears': 1.15, 'arizonacardinals': 1.12, 'buffalobills': 1.08, 'atlantafalcons': 1.05, 'lasvegasraiders': 1.10 
+};
 const FIFA_2026_HOSTS = ['unitedstates', 'mexico', 'canada'];
 const FIFA_2026_CONTINENT = ['colombia', 'brazil', 'argentina', 'uruguay'];
 
 const GLOBAL_CONFIDENCE_INDEX = {
-  nba: 1.12, indycar: 0.88, f1: 1.12, llws: 1.12,
-  mlb: 0.94, nhl: 1.00, tennis_m: 1.06, tennis_w: 1.06, afl: 1.00,
-  nfl: 1.06, ncaaf: 1.00, ucl: 1.00, fifa: 1.00,
-  pga: 0.88, darts: 0.94, snooker: 1.06, csgo: 0.88,
-  ncaab: 0.94, wnba: 0.94, ncaaw: 0.94
+  nba: 1.15, indycar: 0.95, f1: 1.15, llws: 1.15,
+  mlb: 0.95, nhl: 0.95, tennis_m: 1.10, tennis_w: 1.10, afl: 1.10,
+  nfl: 1.05, ncaaf: 1.05, ucl: 1.05, fifa: 1.05,
+  pga: 0.95, darts: 1.10, snooker: 1.10, csgo: 0.90,
+  ncaab: 1.10, wnba: 0.90, ncaaw: 0.90
 };
 
 /**
@@ -172,12 +177,16 @@ const nflCalc = (ev, scarcity, sq, entry) => {
   const name = entry.nameNormalized || '';
   const age = NFL_SNAP_WEIGHTED_AGE[name] || 26.5; 
   const notes = (entry.notes || '').toLowerCase();
+  const odds = typeof entry.bestOdds === 'string' ? parseInt(entry.bestOdds.replace('+', '')) : 0;
+
   if (age <= 25.5) multiplier *= 1.15;
-  if (NFL_ELITE_OL_CONTINUITY.includes(name) || notes.includes('elite ol')) multiplier *= 1.12;
+  if (NFL_ELITE_OL_CONTINUITY.includes(name) || notes.includes('elite ol') || notes.includes('continuity')) multiplier *= 1.12;
   if (NFL_2026_DRAFT_CAPITAL[name]) multiplier *= NFL_2026_DRAFT_CAPITAL[name];
   if (NFL_COACHING_ALPHA[name]) multiplier *= NFL_COACHING_ALPHA[name];
-  if (notes.includes('elite defense') && notes.includes('poor offense')) multiplier *= 0.90;
-  multiplier = Math.min(1.15, multiplier);
+  if (odds >= 4000 && odds <= 8000) multiplier *= 1.16;
+  if ((notes.includes('elite defense') && notes.includes('poor offense')) || ['pittsburghsteelers', 'clevelandbrowns'].includes(name)) multiplier *= 0.90;
+  if (notes.includes('rookie qb') || notes.includes('new playcaller') || notes.includes('draft capital')) multiplier *= 1.10;
+
   const sqDampened = 1.0 / (1.0 + Math.max(0, sq - 1.15));
   return (ev + scarcity) * sqDampened * multiplier;
 };
@@ -186,19 +195,25 @@ const nbaCalc = (ev, scarcity, sq, entry) => {
   const name = entry.nameNormalized || '';
   const age = NBA_MINUTES_WEIGHTED_AGE[name] || 27.0;
   let multiplier = 1.0;
+  const notes = (entry.notes || '').toLowerCase();
   if (age < 25.5) multiplier *= 1.05; 
   else if (age > 28.5) multiplier *= 0.95;
+  if (notes.includes('new') || notes.includes('reset') || notes.includes('rookie') || notes.includes('draft')) multiplier *= 1.05;
+  
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj * Math.min(1.15, multiplier);
+  return (ev + scarcity) * sqAdj * multiplier;
 };
 
 const mlbCalc = (ev, scarcity, sq, entry) => {
   const notes = (entry.notes || '').toLowerCase();
   let multiplier = 1.0;
-  if (notes.includes('stuff+') || notes.includes('pitching+')) multiplier *= 1.15;
-  if (notes.includes('veteran core')) multiplier *= 0.85; 
+  if (notes.includes('stuff+') || notes.includes('pitching+') || notes.includes('high stuff')) multiplier *= 1.15;
+  if (notes.includes('breakout rotation') || notes.includes('young pitching') || notes.includes('velo')) multiplier *= 1.12;
+  const name = entry.nameNormalized || '';
+  if (notes.includes('veteran core') || notes.includes('aging') || ['newyorkmets', 'losangelesdodgers'].includes(name)) multiplier *= 0.85;
+  
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + (scarcity * 1.2)) * sqAdj * Math.min(1.15, multiplier);
+  return (ev + (scarcity * 1.2)) * sqAdj * multiplier;
 };
 
 const nhlCalc = (ev, scarcity, sq, entry) => {
@@ -207,7 +222,7 @@ const nhlCalc = (ev, scarcity, sq, entry) => {
   if (notes.includes('gsax') || notes.includes('elite goalie')) multiplier *= 1.15;
   if (notes.includes('xgf%') || notes.includes('high danger')) multiplier *= 1.12;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj * Math.min(1.15, multiplier);
+  return (ev + scarcity) * sqAdj * multiplier;
 };
 
 const tennisCalc = (ev, scarcity, sq, entry) => {
@@ -216,7 +231,7 @@ const tennisCalc = (ev, scarcity, sq, entry) => {
   if (notes.includes('surface specialist')) multiplier *= 1.15;
   if (notes.includes('fatigue')) multiplier *= 0.90;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj * Math.min(1.15, multiplier);
+  return (ev + scarcity) * sqAdj * multiplier;
 };
 
 const csgoCalc = (ev, scarcity, sq, entry) => {
@@ -225,7 +240,7 @@ const csgoCalc = (ev, scarcity, sq, entry) => {
   if (notes.includes('stable roster')) multiplier *= 1.15;
   if (notes.includes('new roster')) multiplier *= 0.85;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj * Math.min(1.15, multiplier);
+  return (ev + scarcity) * sqAdj * multiplier;
 };
 
 const aflCalc = (ev, scarcity, sq, entry) => {
@@ -242,7 +257,7 @@ const pgaCalc = (ev, scarcity, sq, entry) => {
   let multiplier = 1.0;
   if (notes.includes('sg:ttg') || notes.includes('ball striking')) multiplier *= 1.15;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev * 0.6 + (sqAdj * 20) * 0.4) + scarcity * Math.min(1.20, multiplier);
+  return (ev * 0.6 + (sqAdj * 20) * 0.4) + scarcity * multiplier;
 };
 
 const uclCalc = (ev, scarcity, sq, entry) => {
@@ -250,7 +265,7 @@ const uclCalc = (ev, scarcity, sq, entry) => {
   let multiplier = 1.0;
   if (notes.includes('clinical') || notes.includes('overperforming xg')) multiplier *= 1.12;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj * Math.min(1.15, multiplier);
+  return (ev + scarcity) * sqAdj * multiplier;
 };
 
 const fifaCalc = (ev, scarcity, sq, entry) => {
@@ -259,7 +274,7 @@ const fifaCalc = (ev, scarcity, sq, entry) => {
   if (FIFA_2026_HOSTS.includes(name)) multiplier *= 1.20;
   if (FIFA_2026_CONTINENT.includes(name)) multiplier *= 1.12;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj * Math.min(1.25, multiplier);
+  return (ev + scarcity) * sqAdj * multiplier;
 };
 
 /**
@@ -279,19 +294,17 @@ const F1_TECH_ALPHA = {
 
 const INDY_TECH_ALPHA = {
   // Elite Engineering (Ganassi / Andretti)
-  'alexpalou': 1.20, 'scottdixon': 1.20, 'coltonherta': 1.20, 'kylekirkwood': 1.20, 'marcusericsson': 1.20,
+  'alexpalou': 1.25, 'scottdixon': 1.25, 'coltonherta': 1.25, 'kylekirkwood': 1.25, 'marcusericsson': 1.25,
   // Volume Engineering (Penske / McLaren)
-  'josefnewgarden': 1.10, 'scottmclaughlin': 1.10, 'willpower': 1.10, 'patooward': 1.10, 'davidmalukas': 1.10,
+  'josefnewgarden': 1.12, 'scottmclaughlin': 1.12, 'willpower': 1.12, 'patooward': 1.12, 'davidmalukas': 1.12,
   // Technical Partnership / Satellite
-  'christianlundgaard': 0.95, 'felixrosenqvist': 0.95, 'grahamrahal': 0.95, 'santinoferrucci': 0.90
+  'christianlundgaard': 1.0, 'felixrosenqvist': 1.0, 'grahamrahal': 1.0, 'santinoferrucci': 0.90
 };
 
 const f1Calc = (ev, scarcity, sq, entry) => {
   const name = entry.nameNormalized || '';
   const notes = (entry.notes || '').toLowerCase();
   let techAlpha = F1_TECH_ALPHA[name] || 0.85;
-
-  // Dynamic Technical Steam/Fade
   if (notes.includes('upgrade') || notes.includes('new floor') || notes.includes('aero package')) techAlpha *= 1.10;
   if (notes.includes('correlation error') || notes.includes('budget cap') || notes.includes('stalled')) techAlpha *= 0.90;
 
@@ -305,29 +318,36 @@ const indycarCalc = (ev, scarcity, sq, entry) => {
   let techAlpha = INDY_TECH_ALPHA[name] || 0.85;
   let participationMult = 1.0;
 
-  // 1. Engineering Alpha
   if (notes.includes('hybrid') || notes.includes('dampers') || notes.includes('engineering')) techAlpha *= 1.05;
-
-  // 2. Participation Penalty
   if (name === 'takumasato' || notes.includes('500 only')) participationMult = 0.05;
   else if (notes.includes('partial') || notes.includes('road course only')) participationMult = 0.55; 
+  if (notes.includes('pay driver') || notes.includes('funded') || ['stingrayrobb', 'kyffinsimpson', 'nolansiegel', 'devlindefrancesco'].includes(name)) techAlpha *= 0.80;
 
+  const sqTiebreaker = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.15;
+  return (ev + scarcity) * techAlpha * participationMult * sqTiebreaker;
+};
+
+const llwsCalc = (ev, scarcity, sq, entry) => {
+  let multiplier = 1.0;
+  const notes = (entry.notes || '').toLowerCase();
+  const region = (entry.region || '').toLowerCase();
+  const name = entry.nameNormalized || '';
+  if (['asia-pacific', 'japan', 'taiwan', 'south korea', 'chinese taipei'].includes(region) || ['taipei', 'tokyo', 'seoul', 'taoyuan'].some(r => name.includes(r))) multiplier *= 1.35;
+  else if (region === 'caribbean' || notes.includes('curacao') || name.includes('willemstad')) multiplier *= 1.25;
+  else if (['west', 'hawaii', 'california', 'honolulu', 'el segundo'].some(r => name.includes(r) || region.includes(r))) multiplier *= 1.20;
+  if (notes.includes('pitching depth') || notes.includes('multiple aces') || notes.includes('3+ arms')) multiplier *= 1.25;
+  else if (notes.includes('one-man team') || notes.includes('single ace') || notes.includes('relies on one')) multiplier *= 0.85;
+  if (notes.includes('high run differential') || notes.includes('gamechanger') || notes.includes('run rule') || notes.includes('elite ops')) multiplier *= 1.15;
+  if (!['asia-pacific', 'japan', 'taiwan', 'south korea'].includes(region) && (notes.includes('size advantage') || notes.includes('power hitting') || notes.includes('thick'))) multiplier *= 1.10;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj * techAlpha * participationMult;
+  return (ev + scarcity) * sqAdj * multiplier;
 };
 
 const SPORT_CALCULATORS = {
   nfl: nflCalc, nba: nbaCalc, mlb: mlbCalc, nhl: nhlCalc, afl: aflCalc, 
   pga: pgaCalc, ucl: uclCalc, fifa: fifaCalc, 
   tennis_m: tennisCalc, tennis_w: tennisCalc, csgo: csgoCalc,
-  llws: (ev, s, sq, entry) => {
-      const region = (entry.region || '').toLowerCase();
-      let mult = 1.0;
-      if (['asia-pacific', 'japan', 'taiwan'].includes(region)) mult = 1.35;
-      const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-      return (ev + s) * sqAdj * mult;
-  },
-  indycar: indycarCalc,
+  llws: llwsCalc, indycar: indycarCalc,
   f1: f1Calc
 };
 
@@ -338,34 +358,17 @@ const SPORT_REPLACEMENT_LEVELS = {
   snooker: 0.73, tennis_m: 0.73, tennis_w: 0.73, ucl: 0.73, wnba: 0.73
 };
 
-/**
- * --- SPORT VOLATILITY SCALING ---
- * Accounts for inherent parity/luck in a sport independent of sample size.
- * 1.0 = Baseline (NFL)
- * > 1.0 = High Parity / Luck (NHL, MLB)
- * < 1.0 = High Predictability / Star Power (NBA, F1)
- */
 const SPORT_VOLATILITY_SCALING = {
-  nhl: 1.12,   // High parity / goalie variance
-  mlb: 1.08,   // High parity
-  nba: 0.94,   // High star-power predictability
-  f1: 0.85,    // Extreme equipment dominance
-  llws: 1.10   // Youth volatility
+  nhl: 1.12, mlb: 1.08, nba: 0.94, f1: 0.85, llws: 1.10
 };
 
 const BASE_SIGMA = 35;
 function getStabilitySigma(sportId) {
     const samples = STABILITY_SAMPLES[sportId] || 1;
     const scaling = SPORT_VOLATILITY_SCALING[sportId] || 1.0;
-    // Law of Large Numbers: Risk scales with 1/sqrt(N), adjusted by sport parity
     return (BASE_SIGMA * scaling) / Math.sqrt(samples);
 }
 
-/**
- * --- MARKET LIQUIDITY / SHARP MONEY WEIGHTING ---
- * Highly liquid markets (NFL, UCL, Premier League) have 'sharper' odds.
- * Low liquidity markets (WNBA, Darts, LLWS) are less efficient, making their raw EV slightly less trustworthy.
- */
 const MARKET_LIQUIDITY_MODIFIER = {
   nfl: 1.05, ucl: 1.05, nba: 1.03, f1: 1.02, mlb: 1.02,
   nhl: 1.00, pga: 1.00, tennis_m: 1.00, tennis_w: 1.00, fifa: 1.00,
@@ -411,14 +414,10 @@ export function applyPositionalScarcity(sportEntries, globalModifier) {
     const efficiency = hybridValue / Math.sqrt(sigma);
 
     // --- FATIGUE & FRAGILITY SHOCK PENALTIES ---
-    // Derived from 300k iteration Negative Binomial Shock testing.
     let shockPenalty = 1.0;
-    
-    // Schedule Strength / Travel Fatigue Drag (Particularly impacts 82/162 game seasons)
     if (notes.includes('travel fatigue') || notes.includes('tough schedule') || notes.includes('brutal stretch')) {
         shockPenalty *= 0.95; 
     }
-    // Roster Fragility / Injury Risk (Impacts thin rosters or aging stars)
     if (notes.includes('injury prone') || notes.includes('shallow depth') || notes.includes('thin roster') || notes.includes('injury risk')) {
         shockPenalty *= 0.92;
     }
@@ -444,7 +443,6 @@ export function applyPositionalScarcity(sportEntries, globalModifier) {
     current.remainingUndrafted = remainingUndrafted;
     current.scarcityBonus = parseFloat(scarcityBonus.toFixed(2));
     
-    // Apply all advanced constraints: Base * GCI * Efficiency * Bye * Liquidity * Shock
     current.adpScore = parseFloat((baseAdpScore * confidenceMult * efficiencyMult * byeAlpha * liquidityMult * shockPenalty).toFixed(2));
   }
   // Velocity pass

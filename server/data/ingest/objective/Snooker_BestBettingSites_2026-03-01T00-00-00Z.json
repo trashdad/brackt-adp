@@ -1,0 +1,11 @@
+{
+  "source": "BestBettingSites / William Hill",
+  "category": "Snooker",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "World Snooker Championship Odds",
+    "value": "Judd Trump 7/2, Mark Selby 5/1, Neil Robertson 7/1, Kyren Wilson 13/2, Mark Allen 12/1, John Higgins 14/1, Mark Williams 16/1, Ronnie O'Sullivan 20/1",
+    "context": "2026 World Snooker Championship"
+  }]
+}

@@ -1,0 +1,14 @@
+{
+  "source": "Estimated / Season Preview",
+  "category": "Indycar",
+  "timestamp": "2026-03-01T08-30-00Z",
+  "notes": "Colton Herta departed for Cadillac F1 reserve role. Conor Daly and Devlin DeFrancesco are part-time/reserve entrants. Assigned long-shot odds consistent with field pricing.",
+  "data": [
+    {
+      "type": "objective",
+      "key": "IndyCar 2026 Season Championship Odds",
+      "value": "Conor Daly +50000, Devlin DeFrancesco +100000, Colton Herta +200000",
+      "context": "2026 IndyCar Series Championship"
+    }
+  ]
+}

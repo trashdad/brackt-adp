@@ -1,0 +1,13 @@
+{
+  "source": "On3 / Pickswise / The Big Lead / SportsbookReview",
+  "category": "NCAA Football",
+  "timestamp": "2026-03-01T08-00-00Z",
+  "data": [
+    {
+      "type": "objective",
+      "key": "CFP National Championship 2027 Odds",
+      "value": "Ohio State Buckeyes +600, Notre Dame Fighting Irish +700, Texas Longhorns +700, Indiana Hoosiers +800, Oregon Ducks +800, Georgia Bulldogs +900, LSU Tigers +1500, Alabama Crimson Tide +1500, Texas A&M Aggies +1500, Miami Hurricanes +2000, Oklahoma Sooners +3000, USC Trojans +3500, Michigan Wolverines +4000, Ole Miss Rebels +4000, Florida Gators +5000, Penn State Nittany Lions +5500, Tennessee Volunteers +6000, Utah Utes +6000, Auburn Tigers +6500, Missouri Tigers +8000, Florida State Seminoles +10000, Clemson Tigers +10000, Iowa Hawkeyes +12500, Washington Huskies +12500, Kansas State Wildcats +20000, TCU Horned Frogs +30000, Wisconsin Badgers +30000, Oklahoma State Cowboys +50000, North Carolina Tar Heels +50000, Illinois Fighting Illini +50000",
+      "context": "2026-27 CFP Championship"
+    }
+  ]
+}
