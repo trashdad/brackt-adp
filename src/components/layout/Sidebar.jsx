@@ -1,9 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import SPORTS, { SPORT_COLORS } from '../../data/sports';
 import { useScraper } from '../../context/ScraperContext';
+import { useLock } from '../../context/LockContext';
 
 export default function Sidebar() {
   const { logs } = useScraper();
+  const { showDevPanel } = useLock();
 
   return (
     <aside className="w-64 shrink-0 bg-retro-panel border-r-2 border-black flex flex-col hidden lg:flex shadow-[4px_0_15px_rgba(0,0,0,0.3)]">
@@ -37,8 +39,8 @@ export default function Sidebar() {
         </nav>
       </div>
 
-      {/* Scraper Log Pane */}
-      <div className="border-t-2 border-black bg-[#0a0a14] flex flex-col h-80">
+      {/* Scraper Log Pane — shown only when dev panel is toggled on */}
+      {showDevPanel && <div className="border-t-2 border-black bg-[#0a0a14] flex flex-col h-80">
         <div className="px-4 py-3 border-b border-white/5 bg-[#0f0f1b] flex items-center justify-between">
           <h3 className="text-[10px] font-retro text-retro-purple uppercase tracking-widest">
             _KERNEL_OUTPUT
@@ -64,7 +66,7 @@ export default function Sidebar() {
             ))
           )}
         </div>
-      </div>
+      </div>}
     </aside>
   );
 }

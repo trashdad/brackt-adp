@@ -8,6 +8,7 @@ import OddsTooltip from './OddsTooltip';
 import PriorityTooltip from './PriorityTooltip';
 import SocialTooltip from './SocialTooltip';
 import PlayerTooltip from './PlayerTooltip';
+import { useLock } from '../../context/LockContext';
 
 const getVelocityColor = (v) => {
   if (v > 1.8) return 'text-retro-red font-black'; // Extreme cliff
@@ -20,6 +21,7 @@ export default function ADPRow({ entry, onToggleDraft }) {
   const color = SPORT_COLORS[entry.sport] || '#888';
   const val = (v) => entry.isPlaceholder ? '—' : v;
   const velocity = entry.dropoffVelocity ?? 1.0;
+  const { isUnlocked } = useLock();
 
   return (
     <tr
@@ -133,11 +135,20 @@ export default function ADPRow({ entry, onToggleDraft }) {
       {/* Status */}
       <td className="px-3 py-2">
         {entry.drafted ? (
-          <DraftedBadge draftedBy={entry.draftedBy} onClick={() => onToggleDraft(entry.id)} />
+          <DraftedBadge
+            draftedBy={entry.draftedBy}
+            onClick={isUnlocked ? () => onToggleDraft(entry.id) : undefined}
+            locked={!isUnlocked}
+          />
         ) : !entry.isPlaceholder ? (
           <button
             onClick={() => onToggleDraft(entry.id)}
-            className="px-3 py-1 bg-retro-purple hover:bg-retro-magenta text-white border border-black font-retro text-[11px] tracking-wider shadow-[inset_-1px_-1px_0_0_rgba(0,0,0,0.4)] transition-all active:translate-y-0.5"
+            disabled={!isUnlocked}
+            className={`px-3 py-1 text-white border border-black font-retro text-[11px] tracking-wider shadow-[inset_-1px_-1px_0_0_rgba(0,0,0,0.4)] transition-all active:translate-y-0.5 ${
+              isUnlocked
+                ? 'bg-retro-purple hover:bg-retro-magenta cursor-pointer'
+                : 'bg-retro-panel opacity-30 cursor-not-allowed'
+            }`}
           >
             DRAFT
           </button>

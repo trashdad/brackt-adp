@@ -52,32 +52,28 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
         <SearchBar value={search} onChange={setSearch} />
         <div className="h-6 w-px bg-white/5 hidden lg:block" />
         <ScoringToggle showDrafted={showDrafted} onToggle={setShowDrafted} />
+        <div className="h-6 w-px bg-white/5 hidden lg:block" />
+        <div className="flex items-center gap-3">
+          <label className="font-retro text-[11px] text-retro-light/50 uppercase tracking-widest whitespace-nowrap">
+            SCARCITY_MOD
+          </label>
+          <input
+            type="number"
+            min="0"
+            max="5"
+            step="0.1"
+            value={scarcityModifier}
+            onChange={(e) => {
+              const val = parseFloat(e.target.value);
+              if (!isNaN(val) && val >= 0) onScarcityChange(val);
+            }}
+            className="w-20 px-2 py-1 bg-black/40 border border-white/10 font-mono text-[13px] text-retro-cyan text-center tabular-nums focus:outline-none focus:border-retro-cyan/50"
+          />
+        </div>
       </div>
 
       <div className="overflow-x-auto no-scrollbar">
         <SportFilter selected={sportFilter} onChange={setSportFilter} />
-      </div>
-
-      {/* EV Scarcity Modifier */}
-      <div className="flex items-center gap-4 px-4 py-3 bg-black/20 border border-white/5">
-        <label className="font-retro text-[11px] text-retro-light/60 uppercase tracking-widest whitespace-nowrap">
-          EV Scarcity Modifier
-        </label>
-        <input
-          type="number"
-          min="0"
-          max="5"
-          step="0.1"
-          value={scarcityModifier}
-          onChange={(e) => {
-            const val = parseFloat(e.target.value);
-            if (!isNaN(val) && val >= 0) onScarcityChange(val);
-          }}
-          className="w-24 px-3 py-1.5 bg-black/40 border border-white/10 font-mono text-[13px] text-retro-cyan text-center tabular-nums focus:outline-none focus:border-retro-cyan/50"
-        />
-        <span className="font-mono text-[10px] text-retro-light/30 tracking-wider">
-          Controls Draft Priority Score scarcity bonus
-        </span>
       </div>
 
       {loading ? (

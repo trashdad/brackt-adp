@@ -9,6 +9,7 @@ import Settings from './pages/Settings';
 import useOddsData from './hooks/useOddsData';
 import useDraftBoard from './hooks/useDraftBoard';
 import { ScraperProvider } from './context/ScraperContext';
+import { LockProvider } from './context/LockContext';
 import { fetchAppConfig, saveAppConfig } from './utils/storage';
 import { exportBoard, importBoard } from './utils/csvManager';
 
@@ -66,6 +67,7 @@ export default function App() {
 
   return (
     <ScraperProvider>
+    <LockProvider>
       <Routes>
         <Route element={
           <Layout
@@ -115,6 +117,7 @@ export default function App() {
         className="hidden"
         onChange={handleImport}
       />
+    </LockProvider>
     </ScraperProvider>
   );
 }

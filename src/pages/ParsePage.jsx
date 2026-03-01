@@ -5,8 +5,10 @@ import ROSTERS from '../data/rosters';
 import { SPORTSBOOKS } from '../data/sportsbooks';
 import { parseOddsText, matchTeams } from '../utils/oddsTextParser';
 import { slugify } from '../utils/formatters';
+import { useLock } from '../context/LockContext';
 
 export default function ParsePage({ onOddsSubmitted }) {
+  const { isUnlocked } = useLock();
   const [text, setText] = useState('');
   const [sportId, setSportId] = useState('nfl');
   const [tournamentId, setTournamentId] = useState('');
@@ -122,6 +124,19 @@ export default function ParsePage({ onOddsSubmitted }) {
           &lt;&lt; BACK_TO_DASHBOARD
         </Link>
       </div>
+
+      {/* Lock overlay */}
+      <div className="relative">
+        {!isUnlocked && (
+          <div className="absolute inset-0 z-10 bg-black/60 flex flex-col items-center justify-center gap-3 pointer-events-auto cursor-not-allowed">
+            <svg viewBox="0 0 24 24" className="w-10 h-10 text-retro-red/70" fill="currentColor">
+              <rect x="5" y="11" width="14" height="10" rx="1"/>
+              <path d="M8 11V7a4 4 0 018 0v4" stroke="currentColor" strokeWidth="2" fill="none"/>
+            </svg>
+            <span className="font-retro text-retro-red/80 text-[12px] tracking-[0.3em] uppercase">ACCESS_DENIED</span>
+            <span className="font-mono text-white/30 text-[10px] tracking-wider">Click the wizard in the header to unlock</span>
+          </div>
+        )}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Left panel — input */}
@@ -318,6 +333,7 @@ export default function ParsePage({ onOddsSubmitted }) {
           )}
         </div>
       </div>
+      </div>{/* end lock wrapper */}
     </div>
   );
 }

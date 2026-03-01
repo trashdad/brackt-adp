@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useScraper } from "../../context/ScraperContext";
+import { useLock } from "../../context/LockContext";
 
 const SOURCES = [
   { id: "draftkings", name: "DraftKings" },
@@ -23,6 +24,7 @@ export default function ScraperControlBar() {
     apiKeyStatuses,
     validateKeys,
   } = useScraper();
+  const { isUnlocked } = useLock();
 
   const pollRef = useRef(null);
 
@@ -128,10 +130,10 @@ export default function ScraperControlBar() {
       {/* Fire Button */}
       <button
         onClick={fireScrapers}
-        disabled={isRunning}
+        disabled={isRunning || !isUnlocked}
         className={`px-10 flex items-center justify-center font-retro text-[13px] tracking-[0.15em] transition-all border-r-2 border-black ${
-          isRunning
-            ? "bg-retro-panel text-white opacity-60"
+          isRunning || !isUnlocked
+            ? "bg-retro-panel text-white opacity-30 cursor-not-allowed"
             : "bg-gradient-to-br from-retro-purple to-retro-magenta hover:from-retro-magenta hover:to-retro-purple text-white active:translate-y-0.5"
         }`}
         style={{
