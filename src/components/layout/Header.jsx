@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import ScraperControlBar from './ScraperControlBar';
 import { useTheme } from '../../context/ThemeContext';
 import { useLock } from '../../context/LockContext';
+import { useDungeonGate } from '../../context/DungeonGateContext';
 
 // Pixel-art robot head — toggles the dev panel (scraper bar + kernel log)
 function RobotIcon({ active }) {
@@ -86,6 +87,7 @@ function WizardIcon({ unlocked }) {
 export default function Header({ onExport, onImportClick, importStatus }) {
   const { theme, setTheme } = useTheme();
   const { isUnlocked, showDevPanel, toggleDevPanel, handleWizardClick, wizardClicks } = useLock();
+  const { userName, reopenGate } = useDungeonGate();
 
   return (
     <header className="bg-gradient-to-b from-retro-magenta to-retro-purple border-b-2 border-black shadow-[inset_0_-2px_0_0_rgba(0,0,0,0.5),0_4px_12px_rgba(0,0,0,0.5)] relative z-20">
@@ -198,9 +200,15 @@ export default function Header({ onExport, onImportClick, importStatus }) {
             </div>
           </div>
 
-          <nav className="flex gap-10 font-retro text-[12px] tracking-widest uppercase">
+          <nav className="flex gap-10 font-retro text-[12px] tracking-widest uppercase items-center">
             <Link to="/" className="text-white/80 hover:text-retro-cyan hover:underline underline-offset-8 decoration-2 transition-all">SYSTEM_BOARD</Link>
             <Link to="/settings" className="text-white/80 hover:text-retro-cyan hover:underline underline-offset-8 decoration-2 transition-all">TERMINAL_CFG</Link>
+            <button
+              onClick={reopenGate}
+              className="px-3 py-1.5 bg-white/10 text-retro-light/70 border border-white/20 hover:bg-white/20 hover:text-white transition-all active:translate-y-0.5"
+            >
+              {userName ? userName.toUpperCase() : 'LOGIN'}
+            </button>
           </nav>
         </div>
       </div>

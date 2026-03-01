@@ -18,7 +18,7 @@ const COLUMNS = [
 ];
 
 export default function ADPTable({ entries, onToggleDraft }) {
-  const { sorted, sortKey, sortDir, toggleSort } = useSorting(entries);
+  const { sorted, sortKey, sortDir, toggleSort } = useSorting(entries, 'adpScore', 'desc');
 
   if (entries.length === 0) {
     return (

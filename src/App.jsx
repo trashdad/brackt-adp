@@ -1,4 +1,4 @@
-import { useCallback, useState, useRef, useEffect } from 'react';
+import { useCallback, useMemo, useState, useRef, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Dashboard from './pages/Dashboard';
@@ -10,6 +10,8 @@ import useOddsData from './hooks/useOddsData';
 import useDraftBoard from './hooks/useDraftBoard';
 import { ScraperProvider } from './context/ScraperContext';
 import { LockProvider } from './context/LockContext';
+import { useDungeonGate } from './context/DungeonGateContext';
+import { applyDungeonFog } from './utils/dungeonFog';
 import { fetchAppConfig, saveAppConfig } from './utils/storage';
 import { exportBoard, importBoard } from './utils/csvManager';
 
@@ -25,11 +27,18 @@ export default function App() {
   const { entries, loading, lastUpdated, refresh } = useOddsData(scarcityModifier);
   const { boardEntries, toggleDrafted, resetDraft, syncDraft } = useDraftBoard(entries);
 
+  // DUNGEON_FOE: randomize display values for non-friends (never mutates real data)
+  const { isFoe, seed } = useDungeonGate();
+  const displayEntries = useMemo(
+    () => applyDungeonFog(boardEntries, isFoe, seed),
+    [boardEntries, isFoe, seed]
+  );
+
   // Import state lifted to App so Header can trigger it
   const [importStatus, setImportStatus] = useState(null);
   const fileInputRef = useRef(null);
 
-  const handleExport = useCallback(() => exportBoard(boardEntries), [boardEntries]);
+  const handleExport = useCallback(() => exportBoard(displayEntries), [displayEntries]);
 
   const handleScarcityChange = useCallback((val) => {
     setScarcityModifier(val);
@@ -80,7 +89,7 @@ export default function App() {
             index
             element={
               <Dashboard
-                boardEntries={boardEntries}
+                boardEntries={displayEntries}
                 loading={loading}
                 lastUpdated={lastUpdated}
                 onToggleDraft={toggleDrafted}
@@ -93,11 +102,11 @@ export default function App() {
           />
           <Route
             path="sport/:id"
-            element={<SportView boardEntries={boardEntries} onToggleDraft={toggleDrafted} />}
+            element={<SportView boardEntries={displayEntries} onToggleDraft={toggleDrafted} />}
           />
           <Route
             path="player/:id"
-            element={<PlayerDetail boardEntries={boardEntries} onToggleDraft={toggleDrafted} />}
+            element={<PlayerDetail boardEntries={displayEntries} onToggleDraft={toggleDrafted} />}
           />
           <Route
             path="parse"

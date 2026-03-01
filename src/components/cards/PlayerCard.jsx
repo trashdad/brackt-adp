@@ -3,10 +3,12 @@ import { SPORT_COLORS } from '../../data/sports';
 import { formatAmericanOdds } from '../../services/oddsConverter';
 import { formatNumber, formatPercent } from '../../utils/formatters';
 import EVTooltip from '../board/EVTooltip';
+import { useDungeonGate } from '../../context/DungeonGateContext';
 
 export default function PlayerCard({ entry, onToggleDraft }) {
   const color = SPORT_COLORS[entry.sport] || '#888';
   const val = (v) => entry.isPlaceholder ? '—' : v;
+  const { isFoe } = useDungeonGate();
 
   return (
     <div
@@ -15,7 +17,7 @@ export default function PlayerCard({ entry, onToggleDraft }) {
       }`}
     >
       <div className="flex items-start justify-between mb-4">
-        <span className="font-retro text-[8px] text-retro-light/40">#{entry.adpRank}</span>
+        <span className="font-retro text-[8px] text-retro-light/40">{isFoe ? '—' : `#${entry.adpRank}`}</span>
         <span
           className="font-retro text-[7px] text-white px-2 py-1 border border-black shadow-[2px_2px_0_0_rgba(0,0,0,0.3)]"
           style={{ backgroundColor: color }}
