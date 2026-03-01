@@ -1,15 +1,22 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import { fetchAppConfig, saveAppConfig } from '../utils/storage';
 
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('brackt-theme') || 'snes';
-  });
+  const [theme, setTheme] = useState('snes'); // default until server responds
 
+  // Load theme from server on mount
   useEffect(() => {
-    localStorage.setItem('brackt-theme', theme);
+    fetchAppConfig().then((cfg) => {
+      if (cfg.theme) setTheme(cfg.theme);
+    });
+  }, []);
+
+  // Apply theme to DOM and persist to server on change
+  useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    saveAppConfig({ theme });
   }, [theme]);
 
   return (

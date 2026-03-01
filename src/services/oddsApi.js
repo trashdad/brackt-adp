@@ -1,50 +1,40 @@
-import { loadSettings } from '../utils/storage';
+/**
+ * oddsApi.js — Fetches futures odds from The Odds API.
+ * Cache is in-memory (per session) — nothing written to the browser.
+ */
 
 const BASE_URL = 'https://api.the-odds-api.com/v4';
 
-function getCacheTTL() {
-  const { refreshInterval } = loadSettings();
+// In-memory cache: sportApiKey → { data, timestamp }
+const _cache = new Map();
+let _apiRemaining = null;
+
+function getCacheTTL(refreshInterval) {
   return (refreshInterval || 24) * 60 * 60 * 1000;
 }
 
-function getCacheKey(sport) {
-  return `brackt_odds_${sport}`;
-}
-
-function getFromCache(sport) {
-  try {
-    const raw = localStorage.getItem(getCacheKey(sport));
-    if (!raw) return null;
-    const { data, timestamp } = JSON.parse(raw);
-    if (Date.now() - timestamp > getCacheTTL()) {
-      localStorage.removeItem(getCacheKey(sport));
-      return null;
-    }
-    return data;
-  } catch {
+function getFromCache(sport, refreshInterval) {
+  const entry = _cache.get(sport);
+  if (!entry) return null;
+  if (Date.now() - entry.timestamp > getCacheTTL(refreshInterval)) {
+    _cache.delete(sport);
     return null;
   }
+  return entry.data;
 }
 
 function setCache(sport, data) {
-  try {
-    localStorage.setItem(
-      getCacheKey(sport),
-      JSON.stringify({ data, timestamp: Date.now() })
-    );
-  } catch {
-    // storage full — ignore
-  }
+  _cache.set(sport, { data, timestamp: Date.now() });
 }
 
 /**
  * Fetch futures odds for a sport from The Odds API.
- * Returns an array of { name, odds } entries.
+ * Returns an array of { name, odds } entries, or null on failure.
  */
-export async function fetchOddsForSport(sportApiKey, apiKey) {
+export async function fetchOddsForSport(sportApiKey, apiKey, refreshInterval) {
   if (!sportApiKey || !apiKey) return null;
 
-  const cached = getFromCache(sportApiKey);
+  const cached = getFromCache(sportApiKey, refreshInterval);
   if (cached) return cached;
 
   const url = `${BASE_URL}/sports/${sportApiKey}/odds?apiKey=${encodeURIComponent(apiKey)}&regions=us&markets=outrights&oddsFormat=american`;
@@ -56,7 +46,7 @@ export async function fetchOddsForSport(sportApiKey, apiKey) {
   }
 
   const remaining = res.headers.get('x-requests-remaining');
-  if (remaining) localStorage.setItem('brackt_api_remaining', remaining);
+  if (remaining) _apiRemaining = remaining;
 
   const json = await res.json();
 
@@ -86,8 +76,8 @@ export async function fetchOddsForSport(sportApiKey, apiKey) {
 }
 
 /**
- * Get the remaining requests count from localStorage (set after API calls).
+ * Returns the API remaining requests count (from last successful API call this session).
  */
 export function getRemainingRequests() {
-  return localStorage.getItem('brackt_api_remaining') || 'Unknown';
+  return _apiRemaining || 'Unknown';
 }

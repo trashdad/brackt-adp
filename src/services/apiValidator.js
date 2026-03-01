@@ -1,4 +1,4 @@
-import { loadSettings } from '../utils/storage';
+import { fetchAppConfig } from '../utils/storage';
 
 /**
  * Validate The Odds API Key
@@ -42,7 +42,7 @@ async function validateApiSports(key) {
 }
 
 export async function checkAllApiKeys() {
-  const { apiKey, oddsApiIoKey, apiSportsKey } = loadSettings();
+  const { apiKey, oddsApiIoKey, apiSportsKey } = await fetchAppConfig();
   
   const results = await Promise.all([
     validateTheOddsApi(apiKey),

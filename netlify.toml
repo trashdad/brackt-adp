@@ -3,6 +3,11 @@
   publish = "dist"
 
 [[redirects]]
+  from = "/api/app-settings"
+  to = "/.netlify/functions/app-settings"
+  status = 200
+
+[[redirects]]
   from = "/api/draft-state"
   to = "/.netlify/functions/draft-state"
   status = 200

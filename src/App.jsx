@@ -1,4 +1,4 @@
-import { useCallback, useState, useRef } from 'react';
+import { useCallback, useState, useRef, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Dashboard from './pages/Dashboard';
@@ -9,11 +9,18 @@ import Settings from './pages/Settings';
 import useOddsData from './hooks/useOddsData';
 import useDraftBoard from './hooks/useDraftBoard';
 import { ScraperProvider } from './context/ScraperContext';
-import { saveLocalDraftState, saveLocalManualOdds, loadScarcityModifier, saveScarcityModifier } from './utils/storage';
+import { fetchAppConfig, saveAppConfig } from './utils/storage';
 import { exportBoard, importBoard } from './utils/csvManager';
 
 export default function App() {
-  const [scarcityModifier, setScarcityModifier] = useState(() => loadScarcityModifier());
+  const [scarcityModifier, setScarcityModifier] = useState(0.5); // default; overwritten from server
+
+  // Load scarcity modifier from server on mount
+  useEffect(() => {
+    fetchAppConfig().then((cfg) => {
+      if (cfg.scarcityModifier != null) setScarcityModifier(cfg.scarcityModifier);
+    });
+  }, []);
   const { entries, loading, lastUpdated, refresh } = useOddsData(scarcityModifier);
   const { boardEntries, toggleDrafted, resetDraft, syncDraft } = useDraftBoard(entries);
 
@@ -25,7 +32,7 @@ export default function App() {
 
   const handleScarcityChange = useCallback((val) => {
     setScarcityModifier(val);
-    saveScarcityModifier(val);
+    saveAppConfig({ scarcityModifier: val });
   }, []);
 
   const handleImport = useCallback(async (e) => {
@@ -47,8 +54,6 @@ export default function App() {
 
   const handleClearAll = useCallback(async () => {
     resetDraft();
-    saveLocalDraftState({});
-    saveLocalManualOdds({});
     await fetch('/api/manual-odds', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

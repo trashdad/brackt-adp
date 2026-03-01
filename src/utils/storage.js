@@ -1,109 +1,55 @@
-const SETTINGS_KEY = 'brackt_settings';
-const DRAFT_KEY = 'brackt_draft_state_local';
-const MANUAL_ODDS_KEY = 'brackt_manual_odds_local';
-const SCARCITY_KEY = 'brackt_scarcity_modifier';
-const SOCIAL_CACHE_KEY = 'brackt_social_scores_cache';
+/**
+ * storage.js — All persistent data lives on the server (Netlify Blobs).
+ * Nothing is written to localStorage, sessionStorage, or any browser cache.
+ */
 
-// Settings remain local-only (API keys are per-user credentials, not shared)
-export function loadSettings() {
+const APP_CONFIG_ENDPOINT = '/api/app-settings';
+
+const CONFIG_DEFAULTS = {
+  apiKey: '',
+  oddsApiIoKey: '',
+  apiSportsKey: '',
+  refreshInterval: 24,
+  scarcityModifier: 0.5,
+  theme: 'snes',
+};
+
+// ── Server-side app config (settings + scarcity + theme) ────────────────────
+
+/**
+ * Fetch the full app config from the server.
+ * Returns merged result of server data + defaults for any missing keys.
+ */
+export async function fetchAppConfig() {
   try {
-    const raw = localStorage.getItem(SETTINGS_KEY);
-    return raw ? JSON.parse(raw) : {
-      apiKey: '',
-      oddsApiIoKey: '',
-      apiSportsKey: '',
-      refreshInterval: 24,
-    };
+    const res = await fetch(APP_CONFIG_ENDPOINT);
+    if (!res.ok) return { ...CONFIG_DEFAULTS };
+    const data = await res.json();
+    return { ...CONFIG_DEFAULTS, ...data };
   } catch {
-    return {
-      apiKey: '',
-      oddsApiIoKey: '',
-      apiSportsKey: '',
-      refreshInterval: 24,
-    };
+    return { ...CONFIG_DEFAULTS };
   }
 }
 
-export function saveSettings(settings) {
+/**
+ * Merge a partial config update into the server-stored config.
+ * Uses server-side merge so partial calls don't overwrite unrelated keys.
+ */
+export async function saveAppConfig(partialConfig) {
   try {
-    localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+    await fetch(APP_CONFIG_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(partialConfig),
+    });
   } catch (err) {
-    if (err.name === 'QuotaExceededError') {
-      console.error('[BRACKT] localStorage full — settings not saved');
-    }
+    console.error('[BRACKT] Failed to save app config to server:', err.message);
   }
 }
 
-// ── Scarcity Modifier ────────────────────────────────────────────────────────
-
-export function loadScarcityModifier() {
-  try {
-    const val = localStorage.getItem(SCARCITY_KEY);
-    return val !== null ? parseFloat(val) : 0.5;
-  } catch {
-    return 0.5;
-  }
-}
-
-export function saveScarcityModifier(val) {
-  try {
-    localStorage.setItem(SCARCITY_KEY, String(val));
-  } catch {}
-}
-
-// ── Social Scores Cache ─────────────────────────────────────────────────────
-
-export function loadSocialScoresCache() {
-  try {
-    const raw = localStorage.getItem(SOCIAL_CACHE_KEY);
-    return raw ? JSON.parse(raw) : {};
-  } catch {
-    return {};
-  }
-}
-
-export function saveSocialScoresCache(scores) {
-  try {
-    localStorage.setItem(SOCIAL_CACHE_KEY, JSON.stringify(scores));
-  } catch {}
-}
-
-// ── Local Fallback Storage ───────────────────────────────────────────────────
-
-export function loadLocalDraftState() {
-  try {
-    const raw = localStorage.getItem(DRAFT_KEY);
-    return raw ? JSON.parse(raw) : {};
-  } catch {
-    return {};
-  }
-}
-
-export function saveLocalDraftState(state) {
-  try {
-    localStorage.setItem(DRAFT_KEY, JSON.stringify(state));
-  } catch (err) {
-    if (err.name === 'QuotaExceededError') {
-      console.error('[BRACKT] localStorage full — draft state not saved');
-    }
-  }
-}
-
-export function loadLocalManualOdds() {
-  try {
-    const raw = localStorage.getItem(MANUAL_ODDS_KEY);
-    return raw ? JSON.parse(raw) : {};
-  } catch {
-    return {};
-  }
-}
-
-export function saveLocalManualOdds(odds) {
-  try {
-    localStorage.setItem(MANUAL_ODDS_KEY, JSON.stringify(odds));
-  } catch (err) {
-    if (err.name === 'QuotaExceededError') {
-      console.error('[BRACKT] localStorage full — manual odds not saved');
-    }
-  }
-}
+// ── Removed: all localStorage functions ─────────────────────────────────────
+// loadSettings / saveSettings             → fetchAppConfig / saveAppConfig
+// loadScarcityModifier / saveScarcityModifier → fetchAppConfig / saveAppConfig
+// loadSocialScoresCache / saveSocialScoresCache → always fetch /api/social-scores
+// loadLocalDraftState / saveLocalDraftState → /api/draft-state (Netlify Blobs)
+// loadLocalManualOdds / saveLocalManualOdds → /api/manual-odds (Netlify Blobs)

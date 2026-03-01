@@ -4,7 +4,7 @@ import ROSTERS from '../data/rosters';
 import { fetchOddsForSport } from '../services/oddsApi';
 import { calculateSeasonTotalEV, calculateHistoricallyWeightedEV, applyPositionalScarcity } from '../services/evCalculator';
 import { slugify } from '../utils/formatters';
-import { loadSettings, loadLocalManualOdds, loadSocialScoresCache, saveSocialScoresCache } from '../utils/storage';
+import { fetchAppConfig } from '../utils/storage';
 import { loadAllPipelineData } from '../services/dataLoader';
 import { americanToImpliedProbability, removeVig, probabilityToAmerican } from '../services/oddsConverter';
 
@@ -251,7 +251,7 @@ export default function useOddsData(scarcityModifier) {
 
   const refresh = useCallback(async () => {
     setLoading(true);
-    const { apiKey } = loadSettings();
+    const { apiKey, refreshInterval } = await fetchAppConfig();
 
     const activeSports = SPORTS.filter((s) => s.active);
     const sportIds = activeSports.map((s) => s.id);
@@ -282,16 +282,14 @@ export default function useOddsData(scarcityModifier) {
           rawBySport[sport.id] = [];
           return;
         }
-        const result = await fetchOddsForSport(sport.apiKey, apiKey);
+        const result = await fetchOddsForSport(sport.apiKey, apiKey, refreshInterval);
         rawBySport[sport.id] = result || [];
       })
     );
 
-    // Step 3: Merge manual odds from server + local fallback
+    // Step 3: Load manual odds from server
     const manualOddsResp = await fetch('/api/manual-odds').catch(() => null);
-    const serverManualOdds = manualOddsResp?.ok ? await manualOddsResp.json() : {};
-    const localManualOdds = loadLocalManualOdds();
-    const manualOdds = { ...localManualOdds, ...serverManualOdds };
+    const manualOdds = manualOddsResp?.ok ? await manualOddsResp.json() : {};
 
     for (const [entryId, manual] of Object.entries(manualOdds)) {
       const { sport, name, oddsBySource: manualSources, oddsByTournament: manualTournaments } = manual;
@@ -402,16 +400,15 @@ export default function useOddsData(scarcityModifier) {
       }
     }
 
-    // Step 5: Load social scores (try server, then local cache)
-    let socialScores = loadSocialScoresCache();
+    // Step 5: Load social scores from server
+    let socialScores = {};
     try {
       const socialScoresResp = await fetch('/api/social-scores');
       if (socialScoresResp.ok) {
         socialScores = await socialScoresResp.json();
-        saveSocialScoresCache(socialScores);
       }
-    } catch (e) {
-      // Ignore if social scores not available yet
+    } catch {
+      // Social scores unavailable — continue without them
     }
 
     setEntries(buildEntries(rawBySport, historicalBySport, scarcityModifier, socialScores));
@@ -426,10 +423,12 @@ export default function useOddsData(scarcityModifier) {
 
   useEffect(() => {
     refreshRef.current();
-    const { refreshInterval } = loadSettings();
-    const intervalMs = (refreshInterval || 24) * 60 * 60 * 1000;
-    const timer = setInterval(() => refreshRef.current(), intervalMs);
-    return () => clearInterval(timer);
+    let timer;
+    fetchAppConfig().then((cfg) => {
+      const intervalMs = ((cfg.refreshInterval) || 24) * 60 * 60 * 1000;
+      timer = setInterval(() => refreshRef.current(), intervalMs);
+    });
+    return () => { if (timer) clearInterval(timer); };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps -- intentionally stable via ref
 
   return { entries, loading, lastUpdated, refresh };

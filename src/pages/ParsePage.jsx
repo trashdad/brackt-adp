@@ -4,7 +4,6 @@ import SPORTS from '../data/sports';
 import ROSTERS from '../data/rosters';
 import { SPORTSBOOKS } from '../data/sportsbooks';
 import { parseOddsText, matchTeams } from '../utils/oddsTextParser';
-import { loadLocalManualOdds, saveLocalManualOdds } from '../utils/storage';
 import { slugify } from '../utils/formatters';
 
 export default function ParsePage({ onOddsSubmitted }) {
@@ -60,9 +59,7 @@ export default function ParsePage({ onOddsSubmitted }) {
 
     const submitSport = parsedSportId || sportId;
     const resp = await fetch('/api/manual-odds').catch(() => null);
-    const serverManual = resp?.ok ? await resp.json() : {};
-    const localManual = loadLocalManualOdds();
-    const manual = { ...localManual, ...serverManual };
+    const manual = resp?.ok ? await resp.json() : {};
 
     for (const row of results) {
       const finalName = row.matchedName === '__custom__' ? (row.customName || '').trim() : row.matchedName;
@@ -98,7 +95,6 @@ export default function ParsePage({ onOddsSubmitted }) {
       manual[entryId].timestamp = Date.now();
     }
 
-    saveLocalManualOdds(manual);
     await fetch('/api/manual-odds', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

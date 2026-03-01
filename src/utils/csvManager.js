@@ -1,9 +1,3 @@
-import {
-  saveLocalDraftState,
-  saveLocalManualOdds,
-  loadSocialScoresCache,
-  saveSocialScoresCache
-} from './storage';
 
 // Known sportsbook sources — each gets its own column
 const ODDS_SOURCES = [
@@ -233,14 +227,6 @@ export function importBoard(file) {
               neg: isNaN(socialNeg) ? 0 : socialNeg,
             };
           }
-        }
-
-        // Save to local fallback immediately for responsiveness
-        saveLocalManualOdds(manualOdds);
-        saveLocalDraftState(draftState);
-        if (Object.keys(socialScores).length > 0) {
-          const existingSocial = loadSocialScoresCache();
-          saveSocialScoresCache({ ...existingSocial, ...socialScores });
         }
 
         await Promise.all([

@@ -1,13 +1,19 @@
-import { useState } from 'react';
-import { loadSettings, saveSettings } from '../utils/storage';
+import { useState, useEffect } from 'react';
+import { fetchAppConfig, saveAppConfig } from '../utils/storage';
 import { useScraper } from '../context/ScraperContext';
 
 export default function Settings({ onClearAll }) {
-  const [settings, setSettings] = useState(() => loadSettings());
+  const [settings, setSettings] = useState({
+    apiKey: '', oddsApiIoKey: '', apiSportsKey: '', refreshInterval: 24,
+  });
   const [saved, setSaved] = useState(false);
   const [wiping, setWiping] = useState(false);
   const [wiped, setWiped] = useState(false);
   const { validateKeys } = useScraper();
+
+  useEffect(() => {
+    fetchAppConfig().then((cfg) => setSettings((s) => ({ ...s, ...cfg })));
+  }, []);
 
   const handleWipe = async () => {
     if (!confirm('CONFIRM: Erase all draft state and manual odds? This cannot be undone.')) return;
@@ -18,10 +24,10 @@ export default function Settings({ onClearAll }) {
     setTimeout(() => setWiped(false), 3000);
   };
 
-  const handleSave = () => {
-    saveSettings(settings);
+  const handleSave = async () => {
+    await saveAppConfig(settings);
     setSaved(true);
-    validateKeys(); // Re-validate new keys
+    validateKeys();
     setTimeout(() => setSaved(false), 2000);
   };
 
@@ -32,7 +38,7 @@ export default function Settings({ onClearAll }) {
       <div className="snes-panel p-10 space-y-8 bg-gradient-to-br from-[#2D2D44] to-[#1A1A2E] border-black/60 shadow-2xl">
         <section className="space-y-6">
           <p className="font-mono text-[9px] text-retro-gold/60 tracking-wider leading-relaxed border border-retro-gold/20 bg-retro-gold/5 px-4 py-3">
-            API_KEYS_STORED_IN_BROWSER_LOCAL_STORAGE. DO_NOT_ENTER_KEYS_ON_SHARED_MACHINES.
+            API_KEYS_STORED_SERVER_SIDE_VIA_NETLIFY_BLOBS. SHARED_ACROSS_ALL_SESSIONS.
           </p>
           <div>
             <label className="block font-retro text-[11px] text-retro-purple mb-3 uppercase tracking-widest">
