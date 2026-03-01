@@ -9,15 +9,15 @@ export function DungeonGateProvider({ children }) {
   const [gateState, setGateState] = useState(() => {
     try {
       const stored = JSON.parse(sessionStorage.getItem(STORAGE_KEY));
-      if (stored?.resolved) return stored;
+      if (stored?.resolved) return { ...stored, version: 0 };
     } catch { /* ignore */ }
-    return { resolved: false, userName: null, isFoe: false, seed: null };
+    return { resolved: false, userName: null, isFoe: false, seed: null, version: 0 };
   });
 
   const resolveGate = useCallback((name) => {
     const isFoe = !DUNGEON_FRIENDS.includes(name.toLowerCase().trim());
     const seed = isFoe ? Math.floor(Math.random() * 2147483647) : null;
-    const state = { resolved: true, userName: name, isFoe, seed };
+    const state = { resolved: true, userName: name, isFoe, seed, version: Date.now() };
     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     setGateState(state);
   }, []);
@@ -28,7 +28,7 @@ export function DungeonGateProvider({ children }) {
 
   const reopenGate = useCallback(() => {
     sessionStorage.removeItem(STORAGE_KEY);
-    setGateState({ resolved: false, userName: null, isFoe: false, seed: null });
+    setGateState({ resolved: false, userName: null, isFoe: false, seed: null, version: Date.now() });
   }, []);
 
   return (

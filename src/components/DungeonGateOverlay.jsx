@@ -16,7 +16,7 @@ export default function DungeonGateOverlay() {
   };
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-black/50 flex items-center justify-center">
+    <div className="fixed inset-0 z-[9999] bg-black flex items-center justify-center">
       <div className="snes-panel p-10 bg-gradient-to-br from-[#2D2D44] to-[#1A1A2E] border-2 border-black shadow-[8px_8px_0_0_#000] max-w-sm w-full mx-4 space-y-6">
         <h2 className="font-retro text-[22px] text-retro-cyan text-center tracking-widest drop-shadow-md">
           WHO ARE YOU?
