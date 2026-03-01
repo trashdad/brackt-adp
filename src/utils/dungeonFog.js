@@ -37,7 +37,8 @@ function fogOdds(oddsVal, rand) {
 }
 
 export function applyDungeonFog(entries, isFoe, seed) {
-  if (isFoe !== true || !seed) return entries;
+  // Always return a NEW array so React detects the change when switching foe→friend
+  if (isFoe !== true || !seed) return entries.map((e) => ({ ...e }));
 
   return entries.filter((entry) => !entry.isPlaceholder).map((entry) => {
     const r = (field) => fieldRandom(seed, entry.id, field);

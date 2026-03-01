@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState, useRef, useEffect } from 'react';
+import { useCallback, useState, useRef, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Dashboard from './pages/Dashboard';
@@ -29,10 +29,7 @@ export default function App() {
 
   // DUNGEON_FOE: randomize display values for non-friends (never mutates real data)
   const { isFoe, seed } = useDungeonGate();
-  const displayEntries = useMemo(
-    () => applyDungeonFog(boardEntries, isFoe, seed),
-    [boardEntries, isFoe, seed]
-  );
+  const displayEntries = applyDungeonFog(boardEntries, isFoe, seed);
 
   // Import state lifted to App so Header can trigger it
   const [importStatus, setImportStatus] = useState(null);
