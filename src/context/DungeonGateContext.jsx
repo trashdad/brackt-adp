@@ -16,7 +16,7 @@ export function DungeonGateProvider({ children }) {
 
   const resolveGate = useCallback((name) => {
     const isFoe = !DUNGEON_FRIENDS.includes(name.toLowerCase().trim());
-    const seed = Math.floor(Math.random() * 2147483647);
+    const seed = isFoe ? Math.floor(Math.random() * 2147483647) : null;
     const state = { resolved: true, userName: name, isFoe, seed };
     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     setGateState(state);

@@ -37,7 +37,7 @@ function fogOdds(oddsVal, rand) {
 }
 
 export function applyDungeonFog(entries, isFoe, seed) {
-  if (!isFoe || !seed) return entries;
+  if (isFoe !== true || !seed) return entries;
 
   return entries.filter((entry) => !entry.isPlaceholder).map((entry) => {
     const r = (field) => fieldRandom(seed, entry.id, field);
