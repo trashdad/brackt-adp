@@ -3,12 +3,12 @@ import { SPORT_COLORS } from '../../data/sports';
 import { formatAmericanOdds } from '../../services/oddsConverter';
 import { formatNumber, formatPercent } from '../../utils/formatters';
 import EVTooltip from '../board/EVTooltip';
-import { useDungeonGate } from '../../context/DungeonGateContext';
+
 
 export default function PlayerCard({ entry, onToggleDraft }) {
   const color = SPORT_COLORS[entry.sport] || '#888';
   const val = (v) => entry.isPlaceholder ? '—' : v;
-  const { isFoe } = useDungeonGate();
+
 
   return (
     <div
@@ -37,7 +37,7 @@ export default function PlayerCard({ entry, onToggleDraft }) {
         <Link to={`/player/${entry.id}`} className="font-retro text-[13px] text-retro-light hover:text-retro-cyan tracking-tight leading-relaxed">
           {entry.name.toUpperCase()}
         </Link>
-        <span className="font-retro text-[10px] text-retro-light/40">{isFoe ? '—' : `#${entry.adpRank}`}</span>
+        <span className="font-retro text-[10px] text-retro-light/40">#{entry.adpRank}</span>
       </div>
 
       {/* Stats grid */}

@@ -9,7 +9,7 @@ import PriorityTooltip from './PriorityTooltip';
 import SocialTooltip from './SocialTooltip';
 import PlayerTooltip from './PlayerTooltip';
 import { useLock } from '../../context/LockContext';
-import { useDungeonGate } from '../../context/DungeonGateContext';
+
 
 const getVelocityColor = (v) => {
   if (v > 1.8) return 'text-retro-red font-black'; // Extreme cliff
@@ -23,7 +23,7 @@ export default function ADPRow({ entry, onToggleDraft }) {
   const val = (v) => entry.isPlaceholder ? '—' : v;
   const velocity = entry.dropoffVelocity ?? 1.0;
   const { isUnlocked } = useLock();
-  const { isFoe } = useDungeonGate();
+
 
   return (
     <tr
@@ -52,7 +52,7 @@ export default function ADPRow({ entry, onToggleDraft }) {
 
       {/* Rank */}
       <td className="px-3 py-2 font-mono text-[11px] text-retro-light/40 w-10 border-r border-black/10 tabular-nums text-center">
-        {isFoe ? '—' : entry.adpRank}
+        {entry.adpRank}
       </td>
 
       {/* Name */}
