@@ -1,0 +1,10 @@
+{
+  "source": "bet365 / OLBG / PDC.tv",
+  "category": "PDC Darts",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Luke Littler Outlook", "value": "Won the 2026 PDC World Championship for his second consecutive title at just 18 years old. Odds-on at 4/5 for a third straight title. Performing under pressure like a seasoned pro at historic levels.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Luke Humphries Outlook", "value": "2026 finalist and world number two at 6/1 — the most credible threat to Littler's streak. Reached the business end of most majors in the past 12 months. The Battle of the Lukes is the defining storyline.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Michael van Gerwen Concern", "value": "Three-time world champion now listed as big as 20/1, reflecting inconsistent form and inability to close in major finals recently. Once the dominant force, now well down the betting hierarchy.", "sentiment": "negative"}
+  ]
+}

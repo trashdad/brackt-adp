@@ -1,0 +1,11 @@
+{
+  "source": "Fox Sports / DraftKings",
+  "category": "Indycar",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "IndyCar Championship Odds",
+    "value": "Alex Palou 4/7, Pato O'Ward 11/2, Kyle Kirkwood 7/1, Scott McLaughlin 8/1, Josef Newgarden 8/1, Scott Dixon 16/1, David Malukas 18/1, Christian Lundgaard 20/1, Will Power 20/1, Mick Schumacher 130/1",
+    "context": "2026 IndyCar Season"
+  }]
+}

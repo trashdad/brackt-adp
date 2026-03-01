@@ -1,0 +1,19 @@
+{
+  "source": "Google Search / Multiple",
+  "category": "NCAA Football",
+  "timestamp": "2026-02-28T23-46-22-109Z",
+  "data": [
+    {
+      "type": "subjective",
+      "key": "Ohio State Outlook",
+      "value": "Bolstered by return of Julian Sayin and Jeremiah Smith.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Indiana Outlook",
+      "value": "Fifth-best favorite to repeat after historic 16-0 season.",
+      "sentiment": "neutral"
+    }
+  ]
+}

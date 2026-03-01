@@ -1,0 +1,19 @@
+{
+  "source": "Google Search / Multiple",
+  "category": "Tennis",
+  "timestamp": "2026-02-28T23-46-46-103Z",
+  "data": [
+    {
+      "type": "subjective",
+      "key": "Djokovic Longevity",
+      "value": "Ongoing quest for 25th Major despite aging.",
+      "sentiment": "neutral"
+    },
+    {
+      "type": "subjective",
+      "key": "Sabalenka Defense",
+      "value": "Entered as favorite to defend title.",
+      "sentiment": "positive"
+    }
+  ]
+}

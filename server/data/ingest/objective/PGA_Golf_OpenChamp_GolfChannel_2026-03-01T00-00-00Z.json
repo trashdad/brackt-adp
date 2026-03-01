@@ -1,0 +1,11 @@
+{
+  "source": "Golf Channel / SportsBettingDime",
+  "category": "PGA Golf",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "Open Championship 2026 Odds",
+    "value": "Scottie Scheffler +300, Rory McIlroy +650, Jon Rahm +1100, Tommy Fleetwood +1400, Xander Schauffele +1600, Bryson DeChambeau +1800, Ludvig Aberg +2500, Marco Penge +12000",
+    "context": "2026 Open Championship"
+  }]
+}

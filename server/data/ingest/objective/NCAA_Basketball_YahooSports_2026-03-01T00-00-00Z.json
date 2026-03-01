@@ -1,0 +1,11 @@
+{
+  "source": "Yahoo Sports / DraftKings",
+  "category": "NCAA Basketball",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "March Madness Championship Odds",
+    "value": "Michigan Wolverines +375, Duke Blue Devils +425, Arizona Wildcats +475, Houston Cougars +900, Illinois Fighting Illini +1100, Florida Gators +1100, Iowa State Cyclones +1400, UConn Huskies +1400, Louisville Cardinals +1400, Purdue Boilermakers +2500, Kansas Jayhawks +2500, Michigan State Spartans +4000, Gonzaga Bulldogs +4000",
+    "context": "2025-26 Season"
+  }]
+}

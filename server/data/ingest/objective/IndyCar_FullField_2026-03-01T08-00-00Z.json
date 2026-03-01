@@ -1,0 +1,13 @@
+{
+  "source": "Fox Sports / DraftKings / MyBookie",
+  "category": "Indycar",
+  "timestamp": "2026-03-01T08-00-00Z",
+  "data": [
+    {
+      "type": "objective",
+      "key": "IndyCar 2026 Season Championship Odds",
+      "value": "Alex Palou -175, Pato O'Ward +550, Kyle Kirkwood +700, Scott McLaughlin +800, Josef Newgarden +800, Scott Dixon +1600, David Malukas +1800, Christian Lundgaard +2000, Will Power +2000, Alexander Rossi +7000, Felix Rosenqvist +8000, Christian Rasmussen +10000, Marcus Ericsson +10000, Marcus Armstrong +10000, Santino Ferrucci +12000, Takuma Sato +12000, Mick Schumacher +13000, Rinus VeeKay +20000, Louis Foster +20000, Kyffin Simpson +20000, Graham Rahal +20000, Jacob Abel +20000, Nolan Siegel +30000, Callum Ilott +100000, Sting Ray Robb +100000, Robert Shwartzman +100000",
+      "context": "2026 IndyCar Series Championship"
+    }
+  ]
+}

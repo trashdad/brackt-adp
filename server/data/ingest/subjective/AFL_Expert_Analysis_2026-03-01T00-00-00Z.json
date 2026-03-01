@@ -1,0 +1,12 @@
+{
+  "source": "ESPN Australia / AFL Football / Rohan Connolly",
+  "category": "AFL",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Brisbane Lions Outlook", "value": "Chasing a historic three-peat and are better positioned for it than comparable dynasty teams, according to analyst Rohan Connolly. Added Oscar Allen and Sam Draper in the offseason to strengthen further.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Collingwood Magpies Concern", "value": "Carry the oldest list in the competition with nine players over 30. Forward structure weakened by Brody Mihocek departure. Analysts are cautious about whether the Magpies can sustain the required intensity all season.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Gold Coast Suns Outlook", "value": "One of the biggest movers in AFL betting for 2026. Acquired Brownlow medallist Christian Petracca from Melbourne and are managed by triple premiership coach Damien Hardwick.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Melbourne Demons Concern", "value": "Melbourne faces significant midfield rebuild after losing Christian Petracca (traded to Gold Coast) and Clayton Oliver (retired). Analysts skeptical about immediate replacements filling the void.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Sydney Swans Outlook", "value": "Biggest market mover upwards despite missing finals last season. Charlie Curnow addition drove significant betting movement into genuine contender territory at $10.", "sentiment": "positive"}
+  ]
+}

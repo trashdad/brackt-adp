@@ -1,0 +1,537 @@
+{
+  "sport": "nba",
+  "entries": [
+    {
+      "name": "Oklahoma City",
+      "nameNormalized": "oklahomacity",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+120",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+120",
+      "currentOdds": "+120"
+    },
+    {
+      "name": "Denver",
+      "nameNormalized": "denver",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+650",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+650",
+      "currentOdds": "+650"
+    },
+    {
+      "name": "San Antonio",
+      "nameNormalized": "sanantonio",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+3000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+3000",
+      "currentOdds": "+3000"
+    },
+    {
+      "name": "Cleveland",
+      "nameNormalized": "cleveland",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+1800",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+1800",
+      "currentOdds": "+1800"
+    },
+    {
+      "name": "Boston",
+      "nameNormalized": "boston",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+4000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+4000",
+      "currentOdds": "+4000"
+    },
+    {
+      "name": "Detroit",
+      "nameNormalized": "detroit",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+2500",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+2500",
+      "currentOdds": "+2500"
+    },
+    {
+      "name": "New York",
+      "nameNormalized": "newyork",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+1400",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+1400",
+      "currentOdds": "+1400"
+    },
+    {
+      "name": "Houston",
+      "nameNormalized": "houston",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+1100",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+1100",
+      "currentOdds": "+1100"
+    },
+    {
+      "name": "Minnesota",
+      "nameNormalized": "minnesota",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+3000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+3000",
+      "currentOdds": "+3000"
+    },
+    {
+      "name": "L.A. Lakers",
+      "nameNormalized": "lalakers",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+1300",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+1300",
+      "currentOdds": "+1300"
+    },
+    {
+      "name": "Philadelphia",
+      "nameNormalized": "philadelphia",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+7500",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+7500",
+      "currentOdds": "+7500"
+    },
+    {
+      "name": "Orlando",
+      "nameNormalized": "orlando",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+3500",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+3500",
+      "currentOdds": "+3500"
+    },
+    {
+      "name": "Charlotte",
+      "nameNormalized": "charlotte",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+200000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+200000",
+      "currentOdds": "+200000"
+    },
+    {
+      "name": "Golden State",
+      "nameNormalized": "goldenstate",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+3000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+3000",
+      "currentOdds": "+3000"
+    },
+    {
+      "name": "Miami",
+      "nameNormalized": "miami",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+6500",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+6500",
+      "currentOdds": "+6500"
+    },
+    {
+      "name": "Phoenix",
+      "nameNormalized": "phoenix",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+70000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+70000",
+      "currentOdds": "+70000"
+    },
+    {
+      "name": "Toronto",
+      "nameNormalized": "toronto",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+10000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+10000",
+      "currentOdds": "+10000"
+    },
+    {
+      "name": "Washington",
+      "nameNormalized": "washington",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+200000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+200000",
+      "currentOdds": "+200000"
+    },
+    {
+      "name": "L.A. Clippers",
+      "nameNormalized": "laclippers",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+20000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+20000",
+      "currentOdds": "+20000"
+    },
+    {
+      "name": "Indiana",
+      "nameNormalized": "indiana",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+200000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+200000",
+      "currentOdds": "+200000"
+    },
+    {
+      "name": "Milwaukee",
+      "nameNormalized": "milwaukee",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+15000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+15000",
+      "currentOdds": "+15000"
+    },
+    {
+      "name": "Atlanta",
+      "nameNormalized": "atlanta",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+6000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+6000",
+      "currentOdds": "+6000"
+    },
+    {
+      "name": "Utah",
+      "nameNormalized": "utah",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+200000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+200000",
+      "currentOdds": "+200000"
+    },
+    {
+      "name": "Brooklyn",
+      "nameNormalized": "brooklyn",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+200000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+200000",
+      "currentOdds": "+200000"
+    },
+    {
+      "name": "Chicago",
+      "nameNormalized": "chicago",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+40000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+40000",
+      "currentOdds": "+40000"
+    },
+    {
+      "name": "Dallas",
+      "nameNormalized": "dallas",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+25000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+25000",
+      "currentOdds": "+25000"
+    },
+    {
+      "name": "Memphis",
+      "nameNormalized": "memphis",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+200000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+200000",
+      "currentOdds": "+200000"
+    },
+    {
+      "name": "New Orleans",
+      "nameNormalized": "neworleans",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+200000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+200000",
+      "currentOdds": "+200000"
+    },
+    {
+      "name": "Portland",
+      "nameNormalized": "portland",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+100000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+100000",
+      "currentOdds": "+100000"
+    },
+    {
+      "name": "Sacramento",
+      "nameNormalized": "sacramento",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+200000",
+          "source": "covers"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+200000",
+      "currentOdds": "+200000"
+    },
+    {
+      "name": "Basketball",
+      "nameNormalized": "basketball",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+3",
+          "source": "oddsportal"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+3",
+      "currentOdds": "+3"
+    },
+    {
+      "name": "19:30",
+      "nameNormalized": "1930",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+3",
+          "source": "oddsportal"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+3",
+      "currentOdds": "+3"
+    },
+    {
+      "name": "20:00",
+      "nameNormalized": "2000",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+3",
+          "source": "oddsportal"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+3",
+      "currentOdds": "+3"
+    },
+    {
+      "name": "22:00",
+      "nameNormalized": "2200",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+3",
+          "source": "oddsportal"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+3",
+      "currentOdds": "+1"
+    },
+    {
+      "name": "Tomorrow, 26 Feb",
+      "nameNormalized": "tomorrow26feb",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+1",
+          "source": "oddsportal"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+1",
+      "currentOdds": "+1"
+    },
+    {
+      "name": "21:00",
+      "nameNormalized": "2100",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+1",
+          "source": "oddsportal"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+1",
+      "currentOdds": "+1"
+    },
+    {
+      "name": "18 Mar 2026",
+      "nameNormalized": "18mar2026",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+3",
+          "source": "oddsportal"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+3",
+      "currentOdds": "+3"
+    },
+    {
+      "name": "31 Mar 2026",
+      "nameNormalized": "31mar2026",
+      "history": [
+        {
+          "date": "2026-02-26",
+          "odds": "+3",
+          "source": "oddsportal"
+        }
+      ],
+      "trend": "stable",
+      "openingOdds": "+3",
+      "currentOdds": "+3"
+    }
+  ]
+}

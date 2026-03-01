@@ -1,0 +1,11 @@
+{
+  "source": "VegasInsider / Opta",
+  "category": "UEFA Champions League",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "Champions League Winner Odds",
+    "value": "Arsenal +240, Liverpool +600, Barcelona +600, PSG +600, Real Madrid +800, Manchester City +900, Bayern Munich +1000, Inter Milan +1200, Atletico Madrid +1400, Chelsea +1600, Bayer Leverkusen +2000, Aston Villa +2500, Sporting CP +3000",
+    "context": "2025-26 UCL Season"
+  }]
+}

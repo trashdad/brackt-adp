@@ -1,0 +1,13 @@
+{
+  "source": "bet365 / William Hill / Sporting Life / Flashscore",
+  "category": "PDC Darts",
+  "timestamp": "2026-03-01T08-00-00Z",
+  "data": [
+    {
+      "type": "objective",
+      "key": "PDC World Darts Championship Odds",
+      "value": "Luke Littler -110, Luke Humphries +400, Gian van Veen +1200, Gerwyn Price +1400, Josh Rock +1400, Michael van Gerwen +2000, Nathan Aspinall +3500, Stephen Bunting +4000, Danny Noppert +5000, Gary Anderson +5000, James Wade +6000, Chris Dobey +6600, Jonny Clayton +6600, Rob Cross +8000, Ross Smith +8000, Martin Schindler +8000, Ryan Searle +10000, Jermaine Wattimena +10000, Damon Heta +10000, Dimitri Van den Bergh +10000, Peter Wright +10000, Joe Cullen +12000, Michael Smith +12000, Dirk van Duijvenbode +15000, Dave Chisnall +15000, Andrew Gilding +20000, Ricardo Pietreczko +20000, Brendan Dolan +25000, Callan Rydz +25000, Mensur Suljovic +33000, Jose de Sousa +33000",
+      "context": "PDC World Championship"
+    }
+  ]
+}

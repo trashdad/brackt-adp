@@ -1,0 +1,11 @@
+{
+  "source": "SportsBettingDime / ESPN / Fox Sports",
+  "category": "NFL",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "Super Bowl LXI Odds",
+    "value": "Seattle Seahawks +950, Los Angeles Rams +950, Buffalo Bills +1100, Philadelphia Eagles +1300, Baltimore Ravens +1300, New England Patriots +1300, Detroit Lions +1400, Green Bay Packers +1400, Los Angeles Chargers +1500, Kansas City Chiefs +1500, San Francisco 49ers +1700, Denver Broncos +1800, Houston Texans +2000, Jacksonville Jaguars +2100, Chicago Bears +2600, Cincinnati Bengals +2750, Dallas Cowboys +3250, Tampa Bay Buccaneers +4500, Indianapolis Colts +5000, Washington Commanders +5250, Minnesota Vikings +5750, Atlanta Falcons +6500, New York Giants +7250, Pittsburgh Steelers +8000, Carolina Panthers +12500, Tennessee Titans +12500, New Orleans Saints +13750, Cleveland Browns +13750, Las Vegas Raiders +15250, New York Jets +22500, Arizona Cardinals +23750, Miami Dolphins +23750",
+    "context": "2026-27 Season"
+  }]
+}

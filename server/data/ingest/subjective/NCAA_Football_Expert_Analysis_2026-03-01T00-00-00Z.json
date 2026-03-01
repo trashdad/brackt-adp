@@ -1,0 +1,11 @@
+{
+  "source": "ESPN / Covers / DraftKings",
+  "category": "NCAA Football",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Indiana Hoosiers Concern", "value": "Defending national champions after a historic 16-0 season, but Indiana must replace 10+ starters including Heisman QB Fernando Mendoza who entered the transfer portal. Added 39 newcomers including 17 transfers.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Ohio State Buckeyes Outlook", "value": "Returned as co-favorites at +700 despite losing to Miami in the 2025-26 quarterfinals. The Buckeyes remain a perennial powerhouse with elite recruiting and an experienced coaching staff.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Notre Dame Fighting Irish Outlook", "value": "Strong returning nucleus and elite recruiting class make Notre Dame perennial contenders at +750 for another deep CFP run.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Texas Longhorns Outlook", "value": "Consistent playoff contender in the Big Ten era with strong NIL program and recruiting pipeline keeping them among co-favorites at +750.", "sentiment": "positive"}
+  ]
+}

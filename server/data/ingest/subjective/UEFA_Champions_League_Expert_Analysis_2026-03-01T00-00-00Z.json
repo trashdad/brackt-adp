@@ -1,0 +1,12 @@
+{
+  "source": "Goal.com / beIN Sports / CBS Sports / ESPN",
+  "category": "UEFA Champions League",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Arsenal Outlook", "value": "Clear UCL favorites with 27.4% Opta win probability after finishing first in the league phase. Cannot face Real Madrid, Bayern, or Man City until a potential final. Simultaneously leading the Premier League.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Bayern Munich Outlook", "value": "Strongest non-Arsenal team featuring Harry Kane, Michael Olise, Jamal Musiala, and Luis Diaz all approaching full fitness. Multiple predictions have Bayern reaching the UCL final.", "sentiment": "positive"},
+    {"type": "subjective", "key": "PSG Concern", "value": "Goal.com power rankings dropped PSG after a shaky path through the play-offs. Analysts not treating PSG as a legitimate title contender, questioning defensive cohesion and depth.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Real Madrid Concern", "value": "Real Madrid came through the UCL play-offs in unconvincing fashion, prompting concerns from analysts. Viewed as capable of turning it on in knockouts but clearly not at their usual dominance level.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Chelsea Outlook", "value": "2025 Club World Cup champions are boosted by recent international tournament victory and squad depth at +1600. Considered a dark horse for the UCL crown.", "sentiment": "positive"}
+  ]
+}

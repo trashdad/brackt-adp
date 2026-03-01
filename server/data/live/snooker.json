@@ -1,0 +1,381 @@
+{
+  "sport": "snooker",
+  "lastUpdated": "2026-03-01T07:59:01.031Z",
+  "sources": [
+    "google-search-multiple",
+    "bestbettingsites-william-hill",
+    "bet365-betway-oddschecker-the-punters-page"
+  ],
+  "entries": [
+    {
+      "name": "Judd Trump",
+      "nameNormalized": "juddtrump",
+      "bestOdds": "+350",
+      "bestOddsSource": "google-search-multiple",
+      "consensusOdds": "+350",
+      "oddsBySource": {
+        "google-search-multiple": "+350",
+        "bestbettingsites-william-hill": "+350",
+        "bet365-betway-oddschecker-the-punters-page": "+350"
+      },
+      "impliedProbability": 0.2222,
+      "market": "outrights"
+    },
+    {
+      "name": "Ronnie O Sullivan",
+      "nameNormalized": "ronnieosullivan",
+      "bestOdds": "+2000",
+      "bestOddsSource": "bestbettingsites-william-hill",
+      "consensusOdds": "+688",
+      "oddsBySource": {
+        "google-search-multiple": "+500",
+        "bestbettingsites-william-hill": "+2000",
+        "bet365-betway-oddschecker-the-punters-page": "+500"
+      },
+      "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "Mark Selby",
+      "nameNormalized": "markselby",
+      "bestOdds": "+500",
+      "bestOddsSource": "bestbettingsites-william-hill",
+      "consensusOdds": "+500",
+      "oddsBySource": {
+        "bestbettingsites-william-hill": "+500",
+        "bet365-betway-oddschecker-the-punters-page": "+500"
+      },
+      "impliedProbability": 0.1667,
+      "market": "outrights"
+    },
+    {
+      "name": "Neil Robertson",
+      "nameNormalized": "neilrobertson",
+      "bestOdds": "+700",
+      "bestOddsSource": "bestbettingsites-william-hill",
+      "consensusOdds": "+700",
+      "oddsBySource": {
+        "bestbettingsites-william-hill": "+700",
+        "bet365-betway-oddschecker-the-punters-page": "+700"
+      },
+      "impliedProbability": 0.125,
+      "market": "outrights"
+    },
+    {
+      "name": "Kyren Wilson",
+      "nameNormalized": "kyrenwilson",
+      "bestOdds": "+650",
+      "bestOddsSource": "bestbettingsites-william-hill",
+      "consensusOdds": "+650",
+      "oddsBySource": {
+        "bestbettingsites-william-hill": "+650",
+        "bet365-betway-oddschecker-the-punters-page": "+650"
+      },
+      "impliedProbability": 0.1333,
+      "market": "outrights"
+    },
+    {
+      "name": "Mark Allen",
+      "nameNormalized": "markallen",
+      "bestOdds": "+3000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+1732",
+      "oddsBySource": {
+        "bestbettingsites-william-hill": "+1200",
+        "bet365-betway-oddschecker-the-punters-page": "+3000"
+      },
+      "impliedProbability": 0.0323,
+      "market": "outrights"
+    },
+    {
+      "name": "John Higgins",
+      "nameNormalized": "johnhiggins",
+      "bestOdds": "+1400",
+      "bestOddsSource": "bestbettingsites-william-hill",
+      "consensusOdds": "+1293",
+      "oddsBySource": {
+        "bestbettingsites-william-hill": "+1400",
+        "bet365-betway-oddschecker-the-punters-page": "+1200"
+      },
+      "impliedProbability": 0.0667,
+      "market": "outrights"
+    },
+    {
+      "name": "Mark Williams",
+      "nameNormalized": "markwilliams",
+      "bestOdds": "+1600",
+      "bestOddsSource": "bestbettingsites-william-hill",
+      "consensusOdds": "+1494",
+      "oddsBySource": {
+        "bestbettingsites-william-hill": "+1600",
+        "bet365-betway-oddschecker-the-punters-page": "+1400"
+      },
+      "impliedProbability": 0.0588,
+      "market": "outrights"
+    },
+    {
+      "name": "Zhao Xintong",
+      "nameNormalized": "zhaoxintong",
+      "bestOdds": "+1000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+1000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+1000"
+      },
+      "impliedProbability": 0.0909,
+      "market": "outrights"
+    },
+    {
+      "name": "Ding Junhui",
+      "nameNormalized": "dingjunhui",
+      "bestOdds": "+2000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+2000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+2000"
+      },
+      "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "Shaun Murphy",
+      "nameNormalized": "shaunmurphy",
+      "bestOdds": "+2500",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+2500",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+2500"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Luca Brecel",
+      "nameNormalized": "lucabrecel",
+      "bestOdds": "+2500",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+2500",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+2500"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Jack Lisowski",
+      "nameNormalized": "jacklisowski",
+      "bestOdds": "+3300",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+3300",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+3300"
+      },
+      "impliedProbability": 0.0294,
+      "market": "outrights"
+    },
+    {
+      "name": "Si Jiahui",
+      "nameNormalized": "sijiahui",
+      "bestOdds": "+5000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Zhang Anda",
+      "nameNormalized": "zhanganda",
+      "bestOdds": "+5000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Barry Hawkins",
+      "nameNormalized": "barryhawkins",
+      "bestOdds": "+5000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Stuart Bingham",
+      "nameNormalized": "stuartbingham",
+      "bestOdds": "+5000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Xiao Guodong",
+      "nameNormalized": "xiaoguodong",
+      "bestOdds": "+6600",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+6600",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+6600"
+      },
+      "impliedProbability": 0.0149,
+      "market": "outrights"
+    },
+    {
+      "name": "Wu Yize",
+      "nameNormalized": "wuyize",
+      "bestOdds": "+6600",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+6600",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+6600"
+      },
+      "impliedProbability": 0.0149,
+      "market": "outrights"
+    },
+    {
+      "name": "Chris Wakelin",
+      "nameNormalized": "chriswakelin",
+      "bestOdds": "+8000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "Ryan Day",
+      "nameNormalized": "ryanday",
+      "bestOdds": "+8000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "David Gilbert",
+      "nameNormalized": "davidgilbert",
+      "bestOdds": "+10000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Robert Milkins",
+      "nameNormalized": "robertmilkins",
+      "bestOdds": "+10000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Elliot Slessor",
+      "nameNormalized": "elliotslessor",
+      "bestOdds": "+15000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Anthony McGill",
+      "nameNormalized": "anthonymcgill",
+      "bestOdds": "+15000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Tom Ford",
+      "nameNormalized": "tomford",
+      "bestOdds": "+15000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Fan Zhengyi",
+      "nameNormalized": "fanzhengyi",
+      "bestOdds": "+15000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Joe Perry",
+      "nameNormalized": "joeperry",
+      "bestOdds": "+20000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+20000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+20000"
+      },
+      "impliedProbability": 0.005,
+      "market": "outrights"
+    },
+    {
+      "name": "Michael White",
+      "nameNormalized": "michaelwhite",
+      "bestOdds": "+25000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+25000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+25000"
+      },
+      "impliedProbability": 0.004,
+      "market": "outrights"
+    },
+    {
+      "name": "Matthew Selt",
+      "nameNormalized": "matthewselt",
+      "bestOdds": "+25000",
+      "bestOddsSource": "bet365-betway-oddschecker-the-punters-page",
+      "consensusOdds": "+25000",
+      "oddsBySource": {
+        "bet365-betway-oddschecker-the-punters-page": "+25000"
+      },
+      "impliedProbability": 0.004,
+      "market": "outrights"
+    }
+  ]
+}

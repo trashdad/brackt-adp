@@ -1,0 +1,11 @@
+{
+  "source": "Fox Sports / BetMGM / DraftKings",
+  "category": "FIFA World Cup",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "FIFA World Cup Winner Odds",
+    "value": "Spain +400, England +600, France +700, Brazil +800, Argentina +800, Portugal +1000, Germany +1200, Netherlands +2000, Norway +2800, Italy +3000, Belgium +4000, Colombia +5000, Uruguay +6500, Mexico +8000, USA +8000, Switzerland +8000, Morocco +8000, Ecuador +8000, Croatia +10000, Japan +10000, Senegal +12000, Ghana +15000, South Korea +15000, Canada +25000",
+    "context": "2026 FIFA World Cup"
+  }]
+}

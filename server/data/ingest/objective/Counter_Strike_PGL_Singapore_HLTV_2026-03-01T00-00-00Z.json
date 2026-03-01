@@ -1,0 +1,11 @@
+{
+  "source": "CS2Bet / HLTV",
+  "category": "Counter Strike",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "PGL Singapore Major Odds",
+    "value": "Team Spirit +250, Natus Vincere +350, Team Vitality +400, G2 Esports +450, FaZe Clan +600",
+    "context": "PGL Singapore Major 2026"
+  }]
+}

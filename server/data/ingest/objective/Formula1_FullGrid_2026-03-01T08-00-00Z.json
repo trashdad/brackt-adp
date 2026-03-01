@@ -1,0 +1,13 @@
+{
+  "source": "Ladbrokes / GPFans / bet365",
+  "category": "Formula 1",
+  "timestamp": "2026-03-01T08-00-00Z",
+  "data": [
+    {
+      "type": "objective",
+      "key": "Formula 1 2026 Drivers Championship Odds",
+      "value": "George Russell +200, Max Verstappen +275, Lando Norris +450, Oscar Piastri +750, Fernando Alonso +750, Kimi Antonelli +1000, Charles Leclerc +2000, Lewis Hamilton +3300, Carlos Sainz +6600, Isack Hadjar +10000, Alex Albon +10000, Pierre Gasly +15000, Nico Hulkenberg +15000, Gabriel Bortoleto +15000, Oliver Bearman +20000, Liam Lawson +25000, Esteban Ocon +25000, Arvid Lindblad +25000, Jack Doohan +25000, Yuki Tsunoda +30000, Lance Stroll +40000, Franco Colapinto +50000, Valtteri Bottas +50000, Sergio Perez +50000",
+      "context": "2026 F1 Championship"
+    }
+  ]
+}

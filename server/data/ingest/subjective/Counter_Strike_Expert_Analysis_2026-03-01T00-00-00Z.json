@@ -1,0 +1,14 @@
+{
+  "source": "HLTV / Esports.gg / EGamersWorld",
+  "category": "Counter Strike",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Team Vitality Outlook", "value": "Dominated CS2 in 2026, winning IEM Krakow and PGL Cluj-Napoca, with ZywOo taking MVP honors. Nine Tier 1 event wins in 2025 and continuing in 2026. Rated the most stable team in any bracket.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Team Spirit Outlook", "value": "donk carries a 1.32 rating — among the highest in the world. Spirit considered one of the most dangerous teams in any bracket and favorites for IEM Cologne and Singapore.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Natus Vincere Outlook", "value": "The historic return of s1mple with a 1.24 rating is the biggest CS2 storyline of 2026. NAVI's legacy and s1mple's hunger for redemption make them compelling value at +300 for IEM Cologne.", "sentiment": "positive"},
+    {"type": "subjective", "key": "G2 Esports Concern", "value": "Notably absent from the BLAST Open Rotterdam field despite being one of the world's top teams. Missed the $1.6M invitation cut-off, significantly changing the event's power dynamic.", "sentiment": "negative"},
+    {"type": "subjective", "key": "MOUZ Concern", "value": "Top-ranked globally but a trophy remains an unfulfilled dream. Amazing potential but analysts say they have not yet cleared the final hurdle against Vitality or FURIA in high-stakes maps.", "sentiment": "neutral"},
+    {"type": "subjective", "key": "FURIA Esports Outlook", "value": "Holds #2 HLTV ranking, reached IEM Krakow grand final, and represents the clearest challenger to Vitality's dominance with a deep, athletically aggressive style.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Team Liquid Concern", "value": "Expert models predict Liquid will miss the Cologne Major with only a 27.4% qualification chance. A major disappointment for the North American organization early in 2026.", "sentiment": "negative"}
+  ]
+}

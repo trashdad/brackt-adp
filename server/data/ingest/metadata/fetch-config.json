@@ -1,0 +1,509 @@
+{
+  "_meta": {
+    "description": "Fetch configuration for all sports — source URLs, search queries, and category metadata",
+    "version": "1.0",
+    "lastUpdated": "2026-03-01"
+  },
+  "sports": {
+    "nfl": {
+      "label": "NFL",
+      "category": "NFL",
+      "championship": "Super Bowl",
+      "season": "2026-27",
+      "searchQueries": [
+        "NFL Super Bowl 2027 odds futures betting lines",
+        "Super Bowl LXI winner odds 2027 sportsbook",
+        "NFL championship odds 2026-27 season"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://www.covers.com/nfl/odds",
+          "https://www.espn.com/nfl/story/_/id/future-odds",
+          "https://www.cbssports.com/nfl/news/super-bowl-odds/",
+          "https://www.actionnetwork.com/nfl/super-bowl-odds",
+          "https://oddschecker.com/american-football/nfl/winner"
+        ],
+        "analyst": [
+          "https://www.pff.com/betting/nfl-super-bowl-odds",
+          "https://establishtherun.com/nfl-super-bowl-futures/",
+          "https://www.actionnetwork.com/nfl/picks"
+        ],
+        "niche": [
+          "https://www.footballoutsiders.com/",
+          "https://nextgenstats.nfl.com/"
+        ]
+      }
+    },
+    "nba": {
+      "label": "NBA",
+      "category": "NBA",
+      "championship": "NBA Championship",
+      "season": "2025-26",
+      "searchQueries": [
+        "NBA Championship Finals 2026 odds futures betting",
+        "NBA title odds 2025-26 season sportsbook",
+        "NBA Finals winner odds 2026"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://www.covers.com/nba/odds",
+          "https://www.espn.com/nba/story/_/id/future-odds",
+          "https://www.cbssports.com/nba/news/nba-championship-odds/",
+          "https://www.actionnetwork.com/nba/nba-championship-odds",
+          "https://oddschecker.com/basketball/nba/winner"
+        ],
+        "analyst": [
+          "https://cleaningtheglass.com/",
+          "https://www.pff.com/betting/nba-odds"
+        ],
+        "niche": [
+          "https://www.basketball-reference.com/",
+          "https://hoopshype.com/"
+        ]
+      }
+    },
+    "mlb": {
+      "label": "MLB",
+      "category": "MLB",
+      "championship": "World Series",
+      "season": "2026",
+      "searchQueries": [
+        "MLB World Series 2026 odds futures betting",
+        "World Series winner odds 2026 sportsbook",
+        "MLB championship odds 2026 season"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://www.covers.com/mlb/odds",
+          "https://www.espn.com/mlb/story/_/id/future-odds",
+          "https://www.cbssports.com/mlb/news/world-series-odds/",
+          "https://oddschecker.com/baseball/usa/mlb/world-series-winner"
+        ],
+        "analyst": [
+          "https://www.fangraphs.com/",
+          "https://www.pitcherlist.com/",
+          "https://www.baseball-reference.com/"
+        ],
+        "niche": [
+          "https://baseballsavant.mlb.com/"
+        ]
+      }
+    },
+    "nhl": {
+      "label": "NHL",
+      "category": "NHL",
+      "championship": "Stanley Cup",
+      "season": "2025-26",
+      "searchQueries": [
+        "NHL Stanley Cup 2026 odds futures betting lines",
+        "Stanley Cup winner odds 2025-26 season sportsbook",
+        "NHL championship futures odds 2026"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://www.covers.com/nhl/odds",
+          "https://www.espn.com/nhl/story/_/id/future-odds",
+          "https://www.cbssports.com/nhl/news/stanley-cup-odds/",
+          "https://www.dailyfaceoff.com/",
+          "https://oddschecker.com/ice-hockey/stanley-cup-winner"
+        ],
+        "analyst": [
+          "https://www.naturalstattrick.com/",
+          "https://moneypuck.com/predictions.htm",
+          "https://evolving-hockey.com/"
+        ],
+        "niche": [
+          "https://www.hockey-reference.com/",
+          "https://puckpedia.com/"
+        ]
+      }
+    },
+    "ncaaf": {
+      "label": "NCAA Football",
+      "category": "NCAA Football",
+      "championship": "CFP Championship",
+      "season": "2026-27",
+      "searchQueries": [
+        "College Football Playoff Championship 2027 odds futures",
+        "CFP national championship odds 2026-27 season betting",
+        "NCAAF title odds 2027 sportsbook"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://www.covers.com/college-football/odds",
+          "https://www.espn.com/college-football/story/_/id/future-odds",
+          "https://www.cbssports.com/college-football/news/college-football-playoff-odds/"
+        ],
+        "analyst": [
+          "https://www.footballoutsiders.com/",
+          "https://www.espn.com/college-football/story/_/id/sp-plus"
+        ],
+        "niche": [
+          "https://www.sports-reference.com/cfb/",
+          "https://247sports.com/",
+          "https://www.rivals.com/"
+        ]
+      }
+    },
+    "ncaab": {
+      "label": "NCAA Basketball",
+      "category": "NCAA Basketball",
+      "championship": "March Madness",
+      "season": "2025-26",
+      "searchQueries": [
+        "NCAA Basketball March Madness 2026 odds championship futures",
+        "March Madness winner odds 2026 sportsbook betting",
+        "NCAAB national championship odds 2026"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://www.covers.com/college-basketball/odds",
+          "https://www.espn.com/mens-college-basketball/story/_/id/future-odds",
+          "https://www.cbssports.com/college-basketball/news/march-madness-odds/"
+        ],
+        "analyst": [
+          "https://kenpom.com/",
+          "https://barttorvik.com/"
+        ],
+        "niche": [
+          "https://www.sports-reference.com/cbb/",
+          "https://www.ncaa.com/sports/basketball-men"
+        ]
+      }
+    },
+    "ncaaw": {
+      "label": "NCAA Women's Basketball",
+      "category": "NCAA Women's Basketball",
+      "championship": "Women's March Madness",
+      "season": "2025-26",
+      "searchQueries": [
+        "NCAA Women's Basketball championship 2026 odds futures",
+        "Women's March Madness winner odds 2026 sportsbook",
+        "NCAAW title odds 2026 betting"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://www.covers.com/womens-college-basketball/odds",
+          "https://www.espn.com/womens-college-basketball/story/_/id/future-odds"
+        ],
+        "niche": [
+          "https://barttorvik.com/?tvalue=wbb",
+          "https://winsidr.com/",
+          "https://thenexthoops.com/"
+        ]
+      }
+    },
+    "wnba": {
+      "label": "WNBA",
+      "category": "WNBA",
+      "championship": "WNBA Championship",
+      "season": "2026",
+      "searchQueries": [
+        "WNBA Championship 2026 odds futures betting lines",
+        "WNBA Finals winner odds 2026 sportsbook",
+        "WNBA title odds 2026 season"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://www.covers.com/wnba/odds",
+          "https://www.espn.com/wnba/story/_/id/future-odds",
+          "https://oddschecker.com/basketball/wnba/winner"
+        ],
+        "niche": [
+          "https://www.herhoopstats.com/",
+          "https://winsidr.com/",
+          "https://acrossthetimeline.com/"
+        ]
+      }
+    },
+    "pga": {
+      "label": "PGA Golf",
+      "category": "PGA Golf",
+      "championship": "Golf Majors",
+      "season": "2026",
+      "tournaments": ["masters", "pga-champ", "us-open", "open-champ"],
+      "searchQueries": [
+        "Masters 2026 golf odds futures betting favorites",
+        "PGA Championship 2026 odds winner betting",
+        "US Open golf 2026 odds futures",
+        "The Open Championship 2026 odds betting",
+        "PGA Tour major winners odds 2026"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://www.covers.com/golf/odds",
+          "https://oddschecker.com/golf/the-masters/winner",
+          "https://oddschecker.com/golf/us-pga-championship/winner",
+          "https://oddschecker.com/golf/us-open/winner",
+          "https://oddschecker.com/golf/the-open-championship/winner"
+        ],
+        "niche": [
+          "https://datagolf.com/pre-tournament-predictions",
+          "https://www.pgatour.com/stats",
+          "https://www.golfdigest.com/story/betting"
+        ]
+      }
+    },
+    "tennis_m": {
+      "label": "Tennis (Men's)",
+      "category": "Tennis",
+      "championship": "Grand Slams",
+      "season": "2026",
+      "tournaments": ["aus-open", "french-open", "wimbledon", "us-open"],
+      "searchQueries": [
+        "Australian Open men's 2026 odds betting favorites",
+        "French Open men's 2026 odds Roland Garros betting",
+        "Wimbledon men's 2026 odds betting favorites",
+        "US Open men's tennis 2026 odds betting",
+        "ATP Grand Slam odds 2026"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://oddschecker.com/tennis/australian-open/mens-singles/winner",
+          "https://oddschecker.com/tennis/french-open/mens-singles/winner",
+          "https://oddschecker.com/tennis/wimbledon/mens-singles/winner",
+          "https://oddschecker.com/tennis/us-open/mens-singles/winner"
+        ],
+        "niche": [
+          "https://www.tennisabstract.com/",
+          "https://www.atptour.com/en/rankings/singles"
+        ]
+      }
+    },
+    "tennis_w": {
+      "label": "Tennis (Women's)",
+      "category": "Tennis",
+      "championship": "Grand Slams",
+      "season": "2026",
+      "tournaments": ["aus-open", "french-open", "wimbledon", "us-open"],
+      "searchQueries": [
+        "Australian Open women's 2026 odds betting favorites",
+        "French Open women's 2026 odds Roland Garros betting",
+        "Wimbledon women's 2026 odds betting favorites",
+        "US Open women's tennis 2026 odds betting",
+        "WTA Grand Slam odds 2026"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://oddschecker.com/tennis/australian-open/ladies-singles/winner",
+          "https://oddschecker.com/tennis/french-open/ladies-singles/winner",
+          "https://oddschecker.com/tennis/wimbledon/ladies-singles/winner",
+          "https://oddschecker.com/tennis/us-open/ladies-singles/winner"
+        ],
+        "niche": [
+          "https://www.tennisabstract.com/",
+          "https://www.wtatennis.com/rankings"
+        ]
+      }
+    },
+    "csgo": {
+      "label": "Counter-Strike 2",
+      "category": "Counter Strike",
+      "championship": "CS2 Majors",
+      "season": "2026",
+      "tournaments": ["blast-spring-2026", "cologne-2026", "blast-fall-2026", "singapore-2026"],
+      "searchQueries": [
+        "BLAST Spring Rotterdam 2026 CS2 odds betting favorites",
+        "IEM Cologne 2026 CS2 odds betting",
+        "PGL Singapore Major 2026 CS2 odds",
+        "CS2 Major 2026 winner odds betting esports"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://oddschecker.com/esports/cs-go/winner"
+        ],
+        "niche": [
+          "https://www.hltv.org/ranking/teams/",
+          "https://liquipedia.net/counterstrike/S-Tier_Tournaments",
+          "https://www.dust2.us/"
+        ]
+      }
+    },
+    "f1": {
+      "label": "Formula 1",
+      "category": "Formula 1",
+      "championship": "F1 Drivers Championship",
+      "season": "2026",
+      "searchQueries": [
+        "Formula 1 drivers championship 2026 odds betting futures",
+        "F1 world champion 2026 odds sportsbook betting",
+        "F1 2026 season winner odds betting favorites"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://www.covers.com/formula-1/odds",
+          "https://oddschecker.com/formula-1/world-championship/winner"
+        ],
+        "niche": [
+          "https://www.autosport.com/f1/news/",
+          "https://www.skysports.com/f1",
+          "https://www.motorsport.com/f1/"
+        ]
+      }
+    },
+    "indycar": {
+      "label": "IndyCar",
+      "category": "Indycar",
+      "championship": "IndyCar Championship",
+      "season": "2026",
+      "searchQueries": [
+        "IndyCar Series championship 2026 odds betting favorites",
+        "IndyCar season champion 2026 odds sportsbook",
+        "Indianapolis 500 2026 winner odds betting"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://oddschecker.com/motorsports/indy-car/indy-500-winner"
+        ],
+        "niche": [
+          "https://www.racer.com/indycar/",
+          "https://www.motorsport.com/indycar/"
+        ]
+      }
+    },
+    "afl": {
+      "label": "AFL",
+      "category": "AFL",
+      "championship": "AFL Premiership",
+      "season": "2026",
+      "searchQueries": [
+        "AFL Premiership 2026 odds betting favorites",
+        "AFL grand final winner 2026 odds sportsbook",
+        "AFL 2026 season premiership odds"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://oddschecker.com/australian-rules/afl/winner"
+        ],
+        "niche": [
+          "https://www.footywire.com/",
+          "https://www.theroar.com.au/afl/"
+        ]
+      }
+    },
+    "fifa": {
+      "label": "FIFA World Cup",
+      "category": "FIFA World Cup",
+      "championship": "FIFA World Cup",
+      "season": "2026",
+      "searchQueries": [
+        "FIFA World Cup 2026 winner odds betting favorites",
+        "World Cup 2026 champion odds sportsbook",
+        "FIFA 2026 tournament winner odds betting lines"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://www.covers.com/soccer/world-cup/odds",
+          "https://oddschecker.com/football/world-cup/winner"
+        ],
+        "niche": [
+          "https://fbref.com/en/comps/1/World-Cup-Stats",
+          "https://www.transfermarkt.com/",
+          "https://www.bbc.com/sport/football/world-cup"
+        ]
+      }
+    },
+    "ucl": {
+      "label": "UEFA Champions League",
+      "category": "UEFA Champions League",
+      "championship": "Champions League",
+      "season": "2025-26",
+      "searchQueries": [
+        "UEFA Champions League 2026 winner odds betting",
+        "Champions League 2025-26 champion odds sportsbook",
+        "UCL 2026 winner futures odds betting favorites"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://www.covers.com/soccer/champions-league/odds",
+          "https://oddschecker.com/football/champions-league/winner"
+        ],
+        "niche": [
+          "https://fbref.com/en/comps/8/Champions-League-Stats",
+          "https://www.skysports.com/champions-league"
+        ]
+      }
+    },
+    "darts": {
+      "label": "PDC Darts",
+      "category": "PDC Darts",
+      "championship": "PDC World Championship",
+      "season": "2026-27",
+      "searchQueries": [
+        "PDC World Darts Championship 2027 odds betting favorites",
+        "Darts world championship winner 2027 odds sportsbook",
+        "PDC 2026-27 darts odds betting"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://oddschecker.com/darts/world-championship/winner",
+          "https://www.skysports.com/darts"
+        ],
+        "niche": [
+          "https://www.dartsnews.com/",
+          "https://www.live-darts.com/"
+        ]
+      }
+    },
+    "snooker": {
+      "label": "Snooker",
+      "category": "Snooker",
+      "championship": "World Snooker Championship",
+      "season": "2026",
+      "searchQueries": [
+        "World Snooker Championship 2026 odds betting favorites Crucible",
+        "Snooker world championship winner 2026 odds sportsbook",
+        "Crucible 2026 snooker odds betting"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://oddschecker.com/snooker/world-championship/winner",
+          "https://www.sportinglife.com/snooker/results"
+        ],
+        "niche": [
+          "https://www.worldsnookertour.com/",
+          "https://snooker.org/res/index.asp"
+        ]
+      }
+    },
+    "llws": {
+      "label": "Little League World Series",
+      "category": "LLWS",
+      "championship": "LLWS",
+      "season": "2026",
+      "searchQueries": [
+        "Little League World Series 2026 odds betting favorites",
+        "LLWS 2026 winner prediction odds",
+        "Little League World Series champion 2026 teams"
+      ],
+      "targetUrls": {
+        "mainstream": [
+          "https://www.espn.com/little-league-world-series/",
+          "https://www.littleleague.org/world-series/"
+        ],
+        "niche": [
+          "https://www.gamechanger.io/",
+          "https://www.perfectgame.org/"
+        ]
+      }
+    }
+  },
+  "sourceCategories": {
+    "analyst": [
+      "Establish The Run", "Rotoviz", "In-The-Money Media", "Sharp Football Analysis",
+      "RotoGrinders", "4for4 Fantasy Football", "Underdog Network", "Footballguys",
+      "Dynasty League Football", "Late Round Fantasy", "Stealing Signals", "The Scorecrow",
+      "OddsJam", "PFF", "Action Network", "FTN Network", "RotoBaller", "FantasyPros",
+      "Fantasy Points", "Sportsline", "Daily Faceoff", "Pitcher List", "Fangraphs",
+      "The Athletic", "Dynasty Nerds", "Fantasy Football Today", "Fantasy Dirt",
+      "RotoWire", "PlayerProfiler", "Reception Perception"
+    ],
+    "mainstream": [
+      "ESPN Sports Betting", "CBS Sports", "Yahoo Sports", "Fox Sports", "USA Today",
+      "Bleacher Report", "VSiN", "Covers.com", "The Power Rank", "Sporting News",
+      "Associated Press Sports", "Reuters Sports", "The Guardian", "New York Times",
+      "BBC Sport", "Sports Illustrated", "Deadspin", "Awesemo", "Lineups.com",
+      "OddsChecker", "WagerTalk", "PicksWise"
+    ]
+  }
+}

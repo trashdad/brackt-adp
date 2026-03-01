@@ -1,0 +1,16 @@
+{
+  "source": "SI.com / CBS Sports / OddsChecker",
+  "category": "NHL",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Colorado Avalanche Outlook", "value": "The Avalanche are 37-9-9, leading the NHL in points, goal differential, and goals scored. Nathan MacKinnon at Hart Trophy level, Cale Makar the best defenseman on the planet.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Colorado Avalanche Concern", "value": "Nathan MacKinnon didn't look 100% at the Winter Olympics, raising health concerns. Analyst warns this is a must-monitor situation heading into the playoffs.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Tampa Bay Lightning Outlook", "value": "Despite dealing with a long injury list, Tampa continues to roll. Kucherov on pace for 146 points, Vasilevskiy like a brick wall, and Tampa is 19-2 since December 20.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Carolina Hurricanes Outlook", "value": "Carolina is running away with the Metropolitan Division for the fourth time in six seasons, allowing only 163 goals in 57 games. At +700, analysts call them the best value for those fading Colorado.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Carolina Hurricanes Concern", "value": "The Hurricanes lack a McDavid-level superstar finisher and have faced postseason scoring concerns for years. Questions remain about whether their system can carry them through four playoff rounds.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Minnesota Wild Outlook", "value": "Minnesota surged since acquiring Quinn Hughes, going 16-5-5 in that stretch. Would have shorter odds if not in the same division as Colorado. A significant dark horse value play at +1900.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Florida Panthers Concern", "value": "The back-to-back 2024-25 Stanley Cup champions are on the outside of the playoff picture looking in. Currently struggling to replicate their championship form despite historic dynasty pedigree.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Edmonton Oilers Concern", "value": "Connor McDavid keeps Edmonton in contention, but the team's below-average defensive structure is a genuine liability heading into the playoffs.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Detroit Red Wings Outlook", "value": "Detroit is on the verge of their first playoff appearance since 2016, representing one of the better underdog stories in the league this year.", "sentiment": "positive"}
+  ]
+}

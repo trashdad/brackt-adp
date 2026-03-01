@@ -1,0 +1,237 @@
+{
+  "sport": "llws",
+  "lastUpdated": "2026-03-01T07:59:01.031Z",
+  "sources": [
+    "sports-gambling-podcast-gambling911-legalsportsbetting"
+  ],
+  "entries": [
+    {
+      "name": "Asia-Pacific",
+      "nameNormalized": "asiapacific",
+      "bestOdds": "+175",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+175",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+175"
+      },
+      "impliedProbability": 0.3636,
+      "market": "outrights"
+    },
+    {
+      "name": "Japan",
+      "nameNormalized": "japan",
+      "bestOdds": "+225",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+225",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+225"
+      },
+      "impliedProbability": 0.3077,
+      "market": "outrights"
+    },
+    {
+      "name": "Caribbean",
+      "nameNormalized": "caribbean",
+      "bestOdds": "+550",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+550",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+550"
+      },
+      "impliedProbability": 0.1538,
+      "market": "outrights"
+    },
+    {
+      "name": "USA West",
+      "nameNormalized": "usawest",
+      "bestOdds": "+350",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+350",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+350"
+      },
+      "impliedProbability": 0.2222,
+      "market": "outrights"
+    },
+    {
+      "name": "USA Southeast",
+      "nameNormalized": "usasoutheast",
+      "bestOdds": "+400",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+400",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+400"
+      },
+      "impliedProbability": 0.2,
+      "market": "outrights"
+    },
+    {
+      "name": "Latin America",
+      "nameNormalized": "latinamerica",
+      "bestOdds": "+500",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+500",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+500"
+      },
+      "impliedProbability": 0.1667,
+      "market": "outrights"
+    },
+    {
+      "name": "USA Southwest",
+      "nameNormalized": "usasouthwest",
+      "bestOdds": "+600",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+600",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+600"
+      },
+      "impliedProbability": 0.1429,
+      "market": "outrights"
+    },
+    {
+      "name": "USA Northwest",
+      "nameNormalized": "usanorthwest",
+      "bestOdds": "+700",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+700",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+700"
+      },
+      "impliedProbability": 0.125,
+      "market": "outrights"
+    },
+    {
+      "name": "USA Mid-Atlantic",
+      "nameNormalized": "usamidatlantic",
+      "bestOdds": "+900",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+900",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+900"
+      },
+      "impliedProbability": 0.1,
+      "market": "outrights"
+    },
+    {
+      "name": "Mexico",
+      "nameNormalized": "mexico",
+      "bestOdds": "+1000",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+1000",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+1000"
+      },
+      "impliedProbability": 0.0909,
+      "market": "outrights"
+    },
+    {
+      "name": "USA Midwest",
+      "nameNormalized": "usamidwest",
+      "bestOdds": "+1000",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+1000",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+1000"
+      },
+      "impliedProbability": 0.0909,
+      "market": "outrights"
+    },
+    {
+      "name": "USA Mountain",
+      "nameNormalized": "usamountain",
+      "bestOdds": "+1000",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+1000",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+1000"
+      },
+      "impliedProbability": 0.0909,
+      "market": "outrights"
+    },
+    {
+      "name": "Panama",
+      "nameNormalized": "panama",
+      "bestOdds": "+1200",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+1200",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+1200"
+      },
+      "impliedProbability": 0.0769,
+      "market": "outrights"
+    },
+    {
+      "name": "USA Metro",
+      "nameNormalized": "usametro",
+      "bestOdds": "+1600",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+1600",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+1600"
+      },
+      "impliedProbability": 0.0588,
+      "market": "outrights"
+    },
+    {
+      "name": "Canada",
+      "nameNormalized": "canada",
+      "bestOdds": "+1800",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+1800",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+1800"
+      },
+      "impliedProbability": 0.0526,
+      "market": "outrights"
+    },
+    {
+      "name": "Europe-Africa",
+      "nameNormalized": "europeafrica",
+      "bestOdds": "+2000",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+2000",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+2000"
+      },
+      "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "USA New England",
+      "nameNormalized": "usanewengland",
+      "bestOdds": "+2500",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+2500",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+2500"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "USA Great Lakes",
+      "nameNormalized": "usagreatlakes",
+      "bestOdds": "+2500",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+2500",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+2500"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Australia",
+      "nameNormalized": "australia",
+      "bestOdds": "+3300",
+      "bestOddsSource": "sports-gambling-podcast-gambling911-legalsportsbetting",
+      "consensusOdds": "+3300",
+      "oddsBySource": {
+        "sports-gambling-podcast-gambling911-legalsportsbetting": "+3300"
+      },
+      "impliedProbability": 0.0294,
+      "market": "outrights"
+    }
+  ]
+}

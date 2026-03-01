@@ -1,0 +1,36 @@
+{
+  "analyst_driven": [
+    "Establish The Run", "Rotoviz", "In-The-Money Media", "Sharp Football Analysis", "RotoGrinders",
+    "4for4 Fantasy Football", "Underdog Network", "Footballguys", "Dynasty League Football",
+    "Late Round Fantasy", "Stealing Signals", "The Scorecrow", "OddsJam", "PFF", "Action Network",
+    "FTN Network", "RotoBaller", "FantasyPros", "Fantasy Points", "Sportsline", "Daily Faceoff",
+    "Pitcher List", "Fangraphs", "The Athletic", "Dynasty Nerds", "Fantasy Football Today",
+    "Fantasy Dirt", "RotoWire", "PlayerProfiler", "Reception Perception"
+  ],
+  "mainstream": [
+    "ESPN Sports Betting", "CBS Sports", "Yahoo Sports", "Fox Sports", "USA Today", "Bleacher Report",
+    "VSiN", "Covers.com", "The Power Rank", "Sporting News", "Associated Press Sports",
+    "Reuters Sports", "The Guardian", "New York Times", "BBC Sport", "Sports Illustrated",
+    "Deadspin", "Awesemo", "Lineups.com", "OddsChecker", "WagerTalk", "PicksWise"
+  ],
+  "niche": {
+    "Aussie Rules Football": ["AFL Analysis", "Footywire", "Mongrel Punt", "First Crack", "The Roar", "AFL Ratings", "Champion Data AFL", "SEN AFL"],
+    "Counter Strike": ["HLTV.org", "Dust2.us", "CSGOLounge", "Reddit r/GlobalOffensive", "Liquipedia CS", "GosuGamers CS:GO", "Esports Insiders", "BettingTop10"],
+    "FIFA": ["WhoScored.com", "Transfermarkt", "FBref", "The Athletic Soccer", "BBC Football", "Sky Sports Football", "ESPN FC", "World Soccer Talk"],
+    "Formula 1": ["F1 Fantasy Tracker", "Formula 1", "Sky Sports F1", "Autosport", "The Race", "GPFans", "Motorsport.com", "PlanetF1"],
+    "Indycar": ["Trackside", "IndyCar", "RACER IndyCar", "Motorsport IndyCar", "OpenWheel", "IndyStar", "Autosport IndyCar", "Beyond The Flag IndyCar"],
+    "LLWS": ["Little League International", "ESPN LLWS Coverage", "Williamsport Sun-Gazette", "Pittsburgh Post-Gazette", "Boston Globe", "GameChanger", "Prep Baseball Report", "Perfect Game", "Baseball America"],
+    "MLB": ["Fangraphs", "Baseball Reference", "Pitcher List", "Baseball America", "Brooks Baseball", "Statcast", "Effectively Wild", "RotoWire MLB"],
+    "NBA": ["Basketball-Reference", "CLEANING THE GLASS", "FiveThirtyEight", "RealGM", "HoopsHype", "Dunc'on", "Reddit r/nba", "RotoWire NBA"],
+    "NCAA Basketball": ["KenPom.com", "BartTorvik.com", "Synergy Sports", "NCAA.com", "The Athletic College Hoops", "Three Man Weave", "The Next", "Winsidr"],
+    "NCAA Football": ["Football Outsiders", "SP+ Analytics", "The Athletic CFB", "Rivals.com", "247Sports", "Reddit r/CFB", "Dave Campbell's Texas Football", "Football Reference"],
+    "NFL": ["Football Outsiders", "PFF", "Next Gen Stats", "Establish The Run", "Late Round Fantasy Football", "Sharp Football Analysis", "Footballguys", "Dynasty League Football"],
+    "NHL": ["Hockey-Reference", "Natural Stat Trick", "MoneyPuck.com", "Evolving-Hockey", "Daily Faceoff", "PuckPedia", "The Athletic NHL", "The Hockey News"],
+    "PDC Darts": ["Darts Orakel", "PDC.tv", "Reddit r/Darts", "Live-Darts.com", "Dartsnews.com", "Weekly Dartscast", "Sporting Life Darts", "Sky Sports Darts"],
+    "PGA Golf": ["Data Golf", "pgatour.com", "Golf Digest", "Reddit r/golf", "Golf.com", "GOLFSTAT", "The Fried Egg", "No Laying Up"],
+    "Snooker": ["World Snooker Tour", "Snooker.org", "Eurosport Snooker", "BBC Snooker", "Reddit r/snooker", "Sporting Life Snooker", "The Cue View", "Inside Snooker"],
+    "Tennis": ["Tennis Abstract", "ATPTour.com", "WTATennis.com", "Tennis Explorer", "The Body Serve", "Inside Tennis", "Reddit r/tennis", "TennisNow", "Flashscore"],
+    "UEFA Champions League": ["WhoScored.com", "Transfermarkt", "FBref", "UEFA.com", "Sky Sports Football", "ESPN FC", "BBC Football", "Goal.com"],
+    "WNBA": ["Across The Timeline", "WNBA", "The Next hoops", "Winsidr", "Swish Appeal", "Reddit r/wnba", "Her Hoop Stats", "ESPN WNBA"]
+  }
+}

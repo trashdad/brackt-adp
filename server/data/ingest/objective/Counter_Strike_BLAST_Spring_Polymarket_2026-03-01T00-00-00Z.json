@@ -1,0 +1,11 @@
+{
+  "source": "Polymarket / HLTV",
+  "category": "Counter Strike",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "BLAST Open Spring Rotterdam Odds",
+    "value": "Team Vitality -240, FURIA Esports +600, Team Spirit +650, Team Falcons +700, PARIVISION +800, MOUZ +1100, Natus Vincere +1400, The MongolZ +1900, Aurora Gaming +2400, FaZe Clan +2400, Ninjas in Pyjamas +3200, Team Liquid +3200, B8 +2200, NRG Esports +4700",
+    "context": "BLAST Open Spring Rotterdam 2026"
+  }]
+}

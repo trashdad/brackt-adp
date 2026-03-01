@@ -1,0 +1,19 @@
+{
+  "source": "Google Search / Multiple",
+  "category": "NBA",
+  "timestamp": "2026-02-28T23-46-00-585Z",
+  "data": [
+    {
+      "type": "subjective",
+      "key": "Giannis MVP Outlook",
+      "value": "Strong analyst pick for MVP.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Luka Doncic Move",
+      "value": "Now with the Lakers; significant focus on adjustment.",
+      "sentiment": "neutral"
+    }
+  ]
+}

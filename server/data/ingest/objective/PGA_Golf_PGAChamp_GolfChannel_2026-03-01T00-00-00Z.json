@@ -1,0 +1,11 @@
+{
+  "source": "Golf Channel / BetMGM",
+  "category": "PGA Golf",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "PGA Championship 2026 Odds",
+    "value": "Scottie Scheffler +350, Rory McIlroy +650, Bryson DeChambeau +1000, Jon Rahm +1200, Xander Schauffele +1400, Ludvig Aberg +1800, Tommy Fleetwood +2000, Ben Griffin +8000",
+    "context": "2026 PGA Championship"
+  }]
+}

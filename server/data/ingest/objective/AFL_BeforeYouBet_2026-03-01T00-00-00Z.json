@@ -1,0 +1,11 @@
+{
+  "source": "BeforeYouBet / Bets.com.au",
+  "category": "AFL",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "AFL Premiership Odds",
+    "value": "Brisbane Lions +400, Geelong Cats +700, Hawthorn Hawks +700, Gold Coast Suns +700, Sydney Swans +900, Adelaide Crows +1100, GWS Giants +1100, Melbourne Demons +1100, Western Bulldogs +1100, Collingwood Magpies +1000, Fremantle Dockers +1500, Richmond Tigers +1900, Carlton Blues +1900, St Kilda Saints +2400, West Coast Eagles +9900",
+    "context": "2026 AFL Season"
+  }]
+}

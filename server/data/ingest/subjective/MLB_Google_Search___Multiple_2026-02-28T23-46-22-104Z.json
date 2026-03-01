@@ -1,0 +1,19 @@
+{
+  "source": "Google Search / Multiple",
+  "category": "MLB",
+  "timestamp": "2026-02-28T23-46-22-104Z",
+  "data": [
+    {
+      "type": "subjective",
+      "key": "Dodgers Outlook",
+      "value": "Team to beat following back-to-back titles.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Mariners Outlook",
+      "value": "Significant value in Seattle citing elite starting pitching.",
+      "sentiment": "positive"
+    }
+  ]
+}

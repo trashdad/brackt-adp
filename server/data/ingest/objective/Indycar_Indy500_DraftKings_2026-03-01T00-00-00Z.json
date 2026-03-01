@@ -1,0 +1,11 @@
+{
+  "source": "DraftKings / Beyond The Flag",
+  "category": "Indycar",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "Indianapolis 500 Odds",
+    "value": "Pato O'Ward +550, Alex Palou +600, Josef Newgarden +600, Scott Dixon +900, Takuma Sato +1000, Scott McLaughlin +1000, David Malukas +1000",
+    "context": "2026 Indianapolis 500"
+  }]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "ESPN / CBS Sports / Tennis365 / SI.com / ATP Tour",
+  "category": "Tennis",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Carlos Alcaraz Outlook", "value": "Won the 2026 Australian Open defeating Djokovic in the final — his sixth major at age 22, completing the career Grand Slam as the youngest man in history. Overwhelming favorite for remaining 2026 Slams.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Jannik Sinner Outlook", "value": "Still one of two players dominating men's tennis. His relentless consistency, improved durability, and mental toughness make him the favorite at every Slam. Lost AO final but remains world No. 1.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Novak Djokovic Outlook", "value": "Reached the 2026 AO final at age 38 — still a Grand Slam threat. Wimbledon viewed as his best shot at a record 25th major given his seven titles on grass and the serve-based game suiting the surface.", "sentiment": "neutral"},
+    {"type": "subjective", "key": "Aryna Sabalenka Outlook", "value": "World No. 1 opened 2026 flawlessly, winning Brisbane without dropping a set. Lost AO final to Rybakina but is dominant on all surfaces and remains the tour's top player heading into the clay season.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Elena Rybakina Outlook", "value": "Won the 2026 Australian Open defeating heavy favorite Sabalenka 6-4, 4-6, 6-4. Two-time Grand Slam champion with aggressive serve-and-forehand game tailor-made for grass courts.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Iga Swiatek Outlook", "value": "Chasing career Grand Slam at Australian Open. Won Wimbledon in 2025 to bring major count to six. Retooled serve under Wim Fissette has elevated her game, posting a career-high 243 aces in 2025.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Mirra Andreeva Outlook", "value": "The 18-year-old Russian phenom is an emerging clay-court threat priced at +1000 for the French Open. Her aggressive baseline game translates well to Roland Garros. Considered the next generational talent on tour.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Amanda Anisimova Outlook", "value": "Multiple analysts specifically calling for Anisimova to break through and win her first career major in 2026. Improvements in consistency and mental resilience flagged. 2025 Wimbledon finalist.", "sentiment": "positive"}
+  ]
+}

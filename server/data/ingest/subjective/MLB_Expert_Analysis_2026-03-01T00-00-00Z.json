@@ -1,0 +1,14 @@
+{
+  "source": "ESPN / Opta Analyst / Yahoo Sports / MLB.com",
+  "category": "MLB",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Los Angeles Dodgers Outlook", "value": "The Dodgers' +230 odds are the shortest World Series preseason odds in 20 years. Added outfielder Kyle Tucker to an already loaded lineup featuring Ohtani, Betts, and Freeman. Pursuing an unprecedented three-peat.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Seattle Mariners Outlook", "value": "Seattle represents strong value with one of baseball's most elite starting rotations — Bryan Woo, Logan Gilbert, and George Kirby among the most efficient strikeout-to-walk pitchers in modern MLB history.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Toronto Blue Jays Outlook", "value": "The 2025 AL champions added Dylan Cease to the rotation after a near-miss World Series run, making them one of the most complete teams in the AL heading into 2026.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Detroit Tigers Outlook", "value": "Detroit is a genuine World Series dark horse. Back-to-back Cy Young winner Tarik Skubal now paired with ace Framber Valdez gives the Tigers a playoff rotation that can match any team in baseball.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Philadelphia Phillies Concern", "value": "Phillies' odds drifted from 13-1 to 14-1 due to uncertainty around ace Zack Wheeler's status heading into spring training. Wheeler's health is the single biggest question mark.", "sentiment": "negative"},
+    {"type": "subjective", "key": "New York Yankees Concern", "value": "Yankees' odds lengthened from +850 to +950 this offseason reflecting rotation depth concerns. The pitching lacks depth and the lineup has meaningful question marks outside of Aaron Judge.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Baltimore Orioles Outlook", "value": "At least one prominent ESPN analyst made the bold prediction that the Orioles will win the 2026 World Series, citing their young core coming into its prime and improved pitching.", "sentiment": "positive"}
+  ]
+}

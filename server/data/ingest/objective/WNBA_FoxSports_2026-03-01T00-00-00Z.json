@@ -1,0 +1,11 @@
+{
+  "source": "Fox Sports / FanDuel / BetMGM",
+  "category": "WNBA",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "WNBA Championship Odds",
+    "value": "Minnesota Lynx +350, Las Vegas Aces +350, Indiana Fever +390, New York Liberty +480, Phoenix Mercury +850, Atlanta Dream +1500, Seattle Storm +1600, Golden State Valkyries +3000, Los Angeles Sparks +4000, Dallas Wings +4500, Washington Mystics +4500",
+    "context": "2026 Season"
+  }]
+}

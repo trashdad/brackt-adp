@@ -160,7 +160,8 @@ export default function ExpertRankings({ entries, sportId }) {
   if (ranked.length === 0 && sources.length === 0) return null;
 
   const color = SPORT_COLORS[sportId] || '#888';
-  const maxScore = ranked.length > 0 ? ranked[0].socialSources.expert.score : 1;
+  const getScore = (e) => e.socialSources.expert.sourcesAgreed ?? e.socialSources.expert.score ?? 0;
+  const maxScore = ranked.length > 0 ? (getScore(ranked[0]) || 1) : 1;
 
   return (
     <div className="snes-panel border-black/40 p-0 overflow-hidden">
@@ -182,7 +183,7 @@ export default function ExpertRankings({ entries, sportId }) {
           <div className="space-y-1">
             {ranked.map((entry) => {
               const expert = entry.socialSources.expert;
-              const barWidth = (expert.score / maxScore) * 100;
+              const barWidth = (getScore(entry) / maxScore) * 100;
               return (
                 <div key={entry.id} className="flex items-center gap-2 group">
                   {/* Rank */}
@@ -211,7 +212,7 @@ export default function ExpertRankings({ entries, sportId }) {
 
                   {/* Score */}
                   <span className="font-mono text-[11px] text-retro-lime w-8 text-right tabular-nums">
-                    {expert.score.toFixed(1)}
+                    {getScore(entry).toFixed(1)}
                   </span>
                 </div>
               );

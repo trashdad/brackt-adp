@@ -112,6 +112,134 @@ export default function PlayerDetail({ boardEntries, onToggleDraft }) {
           </div>
         )}
 
+        {!entry.isPlaceholder && entry.math && (
+          <div className="mt-12 pt-12 border-t-2 border-white/10 border-dotted space-y-10">
+            <h2 className="font-retro text-lg text-retro-cyan tracking-[0.2em] uppercase">Mathematical_Breakdown</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              {/* Pillar 1: Surplus Value (VBD) */}
+              <div className="space-y-4">
+                <h3 className="font-retro text-[10px] text-white/60 uppercase border-b border-white/10 pb-2 flex justify-between">
+                  Pillar_1: Surplus_Value (VBD)
+                  <span className="text-retro-cyan font-mono">{formatNumber(entry.math.marginalValue)}</span>
+                </h3>
+                <div className="bg-black/20 p-4 border border-white/5 rounded-sm space-y-3">
+                  <p className="font-mono text-[11px] text-retro-light/70 leading-relaxed">
+                    Instead of raw points, we measure <span className="text-white italic">Value Over Replacement (VOR)</span>. 
+                    The replacement level for <span className="text-retro-cyan">{entry.sport.toUpperCase()}</span> is currently set at <span className="text-white">{formatNumber(entry.math.replacementEV)} EV</span>.
+                  </p>
+                  <p className="font-mono text-[11px] text-retro-light/70 leading-relaxed border-t border-white/5 pt-3">
+                    <span className="text-retro-gold font-bold">HYBRID_SCORE:</span> We blend 50% VOR and 50% Raw EV to ensure we don't pass on elite total point volume while still respecting positional scarcity.
+                  </p>
+                </div>
+              </div>
+
+              {/* Pillar 2: Stability Risk (Sigma) */}
+              <div className="space-y-4">
+                <h3 className="font-retro text-[10px] text-white/60 uppercase border-b border-white/10 pb-2 flex justify-between">
+                  Pillar_2: Stability_Risk (Sigma)
+                  <span className="text-retro-purple font-mono">{formatNumber(entry.math.sigma, 2)}</span>
+                </h3>
+                <div className="bg-black/20 p-4 border border-white/5 rounded-sm space-y-3">
+                  <p className="font-mono text-[11px] text-retro-light/70 leading-relaxed">
+                    <span className="text-retro-purple font-bold">MODEL:</span> {entry.math.modelUsed.toUpperCase()}
+                  </p>
+                  <p className="font-mono text-[11px] text-retro-light/70 leading-relaxed">
+                    {entry.math.events > 1 ? (
+                      `Because this sport has ${entry.math.events} events, we apply the Law of Large Numbers. The risk (sigma) is reduced by the square root of the event count, making this a highly predictable anchor for your lineup.`
+                    ) : (
+                      "As a single-event sport, this entry carries the baseline variance. Points are high-reward but high-risk compared to multi-event anchors."
+                    )}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Pillar 3: Efficiency & Multipliers */}
+            <div className="space-y-6 bg-retro-cyan/5 p-8 border-2 border-retro-cyan/20 rounded-lg">
+              <div className="flex justify-between items-center mb-4">
+                <span className="font-retro text-[12px] text-retro-cyan uppercase tracking-widest">FINAL_EFFICIENCY_CALCULATION</span>
+                <span className="font-mono text-3xl font-black text-retro-lime drop-shadow-[0_0_10px_rgba(163,230,53,0.3)]">
+                  {formatNumber(entry.adpScore)}
+                </span>
+              </div>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center space-y-1">
+                  <p className="font-retro text-[8px] text-white/40 uppercase">GCI_Coeff</p>
+                  <p className="font-mono text-lg text-white">x{entry.math.confidenceMult.toFixed(2)}</p>
+                  <p className="text-[7px] text-retro-light/30 italic">Predictability boost</p>
+                </div>
+                <div className="text-center space-y-1">
+                  <p className="font-retro text-[8px] text-white/40 uppercase">Floor_Boost</p>
+                  <p className="font-mono text-lg text-white">x{entry.math.efficiencyMult.toFixed(2)}</p>
+                  <p className="text-[7px] text-retro-light/30 italic">Win Prob &gt; 5% bonus</p>
+                </div>
+                <div className="text-center space-y-1">
+                  <p className="font-retro text-[8px] text-white/40 uppercase">Adj_Sentiment</p>
+                  <p className="font-mono text-lg text-white">x{entry.math.adjSq.toFixed(2)}</p>
+                  <p className="text-[7px] text-retro-light/30 italic">Social tie-breaker</p>
+                </div>
+                <div className="text-center space-y-1">
+                  <p className="font-retro text-[8px] text-white/40 uppercase">Scarcity</p>
+                  <p className="font-mono text-lg text-white">+{formatNumber(entry.math.scarcityBonus)}</p>
+                  <p className="text-[7px] text-retro-light/30 italic">Tier gap premium</p>
+                </div>
+              </div>
+
+              <div className="border-t border-retro-cyan/10 mt-6 pt-6">
+                <p className="font-mono text-[10px] text-retro-light/50 italic leading-relaxed text-center">
+                  FORMULA: ( (HybridValue / sqrt(Sigma)) * 10 + Scarcity ) * GCI * EfficiencyMult * Sentiment
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {!entry.isPlaceholder && entry.ev && entry.ev.dist && (
+          <div className="mt-12 p-8 bg-retro-gold/5 border-2 border-retro-gold/20 rounded-lg space-y-6">
+            <h2 className="font-retro text-[12px] text-retro-gold uppercase tracking-[0.2em]">Scoring_Probability_Model (Plackett-Luce)</h2>
+            <p className="font-mono text-[11px] text-retro-light/60 leading-relaxed italic">
+              Our model does not just predict winners. We use a <span className="text-white italic">Field Approximation Model</span> to calculate the likelihood of every finishing position. 
+              Because your league rewards 70pts for 2nd and 50pts for 3rd, favorites are heavily weighted for their ability to capture these "Safety Net" points.
+            </p>
+            <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
+              {Object.entries(entry.ev.dist).slice(0, 8).map(([rank, prob]) => (
+                <div key={rank} className="bg-black/40 p-2 border border-white/5 text-center space-y-1">
+                  <p className="font-retro text-[7px] text-white/30">Rank_{rank}</p>
+                  <p className="font-mono text-[10px] text-retro-gold">{(prob * 100).toFixed(1)}%</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-[9px] text-white/20 font-mono uppercase text-center tracking-widest">
+              Total_Points_Probability_Weighted_Across_Field
+            </p>
+          </div>
+        )}
+
+        {/* Tournament Compilation for Multi-Event Sports */}
+        {!entry.isPlaceholder && entry.tournaments && Object.keys(entry.tournaments).length > 0 && (
+          <div className="mt-12 p-8 bg-black/40 border-2 border-retro-purple/30 rounded-lg space-y-6">
+            <h2 className="font-retro text-[12px] text-retro-purple uppercase tracking-[0.2em]">Tournament_Compilation_Model</h2>
+            <p className="font-mono text-[11px] text-retro-light/60 leading-relaxed italic">
+              Individual events do not award points. We compile odds from all scheduled tournaments to derive a <span className="text-white italic">Canonical Season Probability</span>. 
+              This prevents a single "hot week" from skewing the final season standing prediction.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {Object.entries(entry.tournaments).map(([tId, tData]) => (
+                <div key={tId} className="bg-white/5 p-3 border border-white/10 flex justify-between items-center">
+                  <span className="font-mono text-[10px] text-retro-light/40 uppercase">{tId.replace(/-/g, ' ')}</span>
+                  <span className="font-mono text-[11px] text-retro-gold font-bold">{tData.odds}</span>
+                </div>
+              ))}
+            </div>
+            <div className="pt-4 border-t border-white/10 flex justify-between items-center">
+              <span className="font-retro text-[9px] text-white/40 uppercase">DERIVED_AVERAGE_ODDS:</span>
+              <span className="font-mono text-xl text-retro-gold drop-shadow-[0_0_5px_rgba(234,179,8,0.3)]">{entry.odds}</span>
+            </div>
+          </div>
+        )}
+
         {!entry.isPlaceholder && (
           <div className="mt-12 pt-12 border-t-2 border-white/10 border-dotted">
             <EVBreakdown entry={entry} />

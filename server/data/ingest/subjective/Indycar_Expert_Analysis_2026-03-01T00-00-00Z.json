@@ -1,0 +1,10 @@
+{
+  "source": "Fox Sports / Beyond The Flag",
+  "category": "Indycar",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Alex Palou Outlook", "value": "Made history in 2025 by winning his third consecutive and fourth overall IndyCar title. Won eight races and 11 podiums including the Indianapolis 500. First to defend successfully since Franchitti in 2010.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Pato O Ward Outlook", "value": "Named as the most likely driver to dethrone Palou. Has been top-three in the odds board for two years. Finished second or third at Indy in consecutive years. The outright Indy 500 favorite at +550.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Mick Schumacher Concern", "value": "Has never started an IndyCar race and has never competed on an oval. Analysts say he should have no expectation of challenging for a title in his debut season. Listed at 130/1.", "sentiment": "negative"}
+  ]
+}

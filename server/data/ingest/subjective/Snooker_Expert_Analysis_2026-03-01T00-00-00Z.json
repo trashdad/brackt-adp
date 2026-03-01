@@ -1,0 +1,12 @@
+{
+  "source": "BestBettingSites / JustBookies / Betway",
+  "category": "Snooker",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "Judd Trump Outlook", "value": "World number one and clear favorite at 7/2. Most consistent player on tour right now. Has a difficult head-to-head record against defending champion Kyren Wilson this season.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Mark Selby Outlook", "value": "Four-time World Champion with almost unparalleled combination of tactical acumen, break-building consistency, and mental resilience. Demonstrated excellent late-season form. The Crucible suits his grinding style.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Kyren Wilson Concern", "value": "Defending champion faces the famous Crucible Curse — no first-time winner has successfully defended the title since the tournament moved to Sheffield in 1977. However, Wilson's current form and head-to-head record against Trump are strong.", "sentiment": "neutral"},
+    {"type": "subjective", "key": "Neil Robertson Outlook", "value": "Won the 2026 Masters creating a near-impossible snooker record per analysts. Current form is arguably among the best of his career, making him dangerous at 7/1.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Ronnie O Sullivan Concern", "value": "Seven-time world champion listed at 20/1 reflecting concerns over age and inconsistent recent form. Still dangerous at the Crucible but bookmakers view a ninth title as unlikely.", "sentiment": "negative"}
+  ]
+}

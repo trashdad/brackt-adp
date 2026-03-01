@@ -59,8 +59,10 @@ export default function SocialTooltip({ entry, children }) {
           </div>
 
           <div className="mt-2 pt-2 border-t border-white/10">
-            <div className="text-[9px] text-white/30 leading-relaxed italic font-mono">
-              Adj. SQ multiplies Base EV. Accounts for volatility drag (high neg sentiment), market-lead alpha (fading experts), and event scarcity.
+            <div className="text-[9px] text-white/30 leading-relaxed italic font-mono uppercase tracking-tighter">
+              Dampening: SQ_ADJ = 1 + (SQ - 1) * 0.5<br/>
+              Prevents hype from overriding fundamentals.<br/>
+              Acts as tie-breaker for equivalent EV.
             </div>
           </div>
         </>,

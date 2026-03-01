@@ -1,0 +1,19 @@
+{
+  "source": "Google Search / Multiple",
+  "category": "NCAA Basketball",
+  "timestamp": "2026-02-28T23-46-22-107Z",
+  "data": [
+    {
+      "type": "subjective",
+      "key": "Michigan Outlook",
+      "value": "Overwhelming favorite under Dusty May.",
+      "sentiment": "positive"
+    },
+    {
+      "type": "subjective",
+      "key": "Arizona Outlook",
+      "value": "Freshman core likened to 2012 Kentucky.",
+      "sentiment": "positive"
+    }
+  ]
+}

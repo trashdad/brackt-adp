@@ -1,0 +1,11 @@
+{
+  "source": "CS2Bet / HLTV",
+  "category": "Counter Strike",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [{
+    "type": "objective",
+    "key": "IEM Cologne Major Odds",
+    "value": "Team Spirit +200, Natus Vincere +300, Team Vitality +350, G2 Esports +400, FaZe Clan +550",
+    "context": "IEM Cologne Major 2026"
+  }]
+}

@@ -1,0 +1,241 @@
+{
+  "sport": "ucl",
+  "lastUpdated": "2026-03-01T07:59:01.031Z",
+  "sources": [
+    "google-search-multiple",
+    "vegasinsider-opta",
+    "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer"
+  ],
+  "entries": [
+    {
+      "name": "Arsenal",
+      "nameNormalized": "arsenal",
+      "bestOdds": "+350",
+      "bestOddsSource": "google-search-multiple",
+      "consensusOdds": "+274",
+      "oddsBySource": {
+        "google-search-multiple": "+350",
+        "vegasinsider-opta": "+240",
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+250"
+      },
+      "impliedProbability": 0.2222,
+      "market": "outrights"
+    },
+    {
+      "name": "Bayern Munich",
+      "nameNormalized": "bayernmunich",
+      "bestOdds": "+1000",
+      "bestOddsSource": "vegasinsider-opta",
+      "consensusOdds": "+603",
+      "oddsBySource": {
+        "google-search-multiple": "+450",
+        "vegasinsider-opta": "+1000",
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+550"
+      },
+      "impliedProbability": 0.0909,
+      "market": "outrights"
+    },
+    {
+      "name": "Manchester City",
+      "nameNormalized": "manchestercity",
+      "bestOdds": "+900",
+      "bestOddsSource": "vegasinsider-opta",
+      "consensusOdds": "+823",
+      "oddsBySource": {
+        "google-search-multiple": "+700",
+        "vegasinsider-opta": "+900",
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+900"
+      },
+      "impliedProbability": 0.1,
+      "market": "outrights"
+    },
+    {
+      "name": "Liverpool",
+      "nameNormalized": "liverpool",
+      "bestOdds": "+1000",
+      "bestOddsSource": "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer",
+      "consensusOdds": "+756",
+      "oddsBySource": {
+        "vegasinsider-opta": "+600",
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+1000"
+      },
+      "impliedProbability": 0.0909,
+      "market": "outrights"
+    },
+    {
+      "name": "Barcelona",
+      "nameNormalized": "barcelona",
+      "bestOdds": "+700",
+      "bestOddsSource": "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer",
+      "consensusOdds": "+647",
+      "oddsBySource": {
+        "vegasinsider-opta": "+600",
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+700"
+      },
+      "impliedProbability": 0.125,
+      "market": "outrights"
+    },
+    {
+      "name": "PSG",
+      "nameNormalized": "psg",
+      "bestOdds": "+900",
+      "bestOddsSource": "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer",
+      "consensusOdds": "+724",
+      "oddsBySource": {
+        "vegasinsider-opta": "+600",
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+900"
+      },
+      "impliedProbability": 0.1,
+      "market": "outrights"
+    },
+    {
+      "name": "Real Madrid",
+      "nameNormalized": "realmadrid",
+      "bestOdds": "+2000",
+      "bestOddsSource": "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer",
+      "consensusOdds": "+1160",
+      "oddsBySource": {
+        "vegasinsider-opta": "+800",
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+2000"
+      },
+      "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "Inter Milan",
+      "nameNormalized": "intermilan",
+      "bestOdds": "+1200",
+      "bestOddsSource": "vegasinsider-opta",
+      "consensusOdds": "+1200",
+      "oddsBySource": {
+        "vegasinsider-opta": "+1200"
+      },
+      "impliedProbability": 0.0769,
+      "market": "outrights"
+    },
+    {
+      "name": "Atletico Madrid",
+      "nameNormalized": "atleticomadrid",
+      "bestOdds": "+3300",
+      "bestOddsSource": "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer",
+      "consensusOdds": "+1982",
+      "oddsBySource": {
+        "vegasinsider-opta": "+1400",
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+3300"
+      },
+      "impliedProbability": 0.0294,
+      "market": "outrights"
+    },
+    {
+      "name": "Chelsea",
+      "nameNormalized": "chelsea",
+      "bestOdds": "+3100",
+      "bestOddsSource": "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer",
+      "consensusOdds": "+2120",
+      "oddsBySource": {
+        "vegasinsider-opta": "+1600",
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+3100"
+      },
+      "impliedProbability": 0.0313,
+      "market": "outrights"
+    },
+    {
+      "name": "Bayer Leverkusen",
+      "nameNormalized": "bayerleverkusen",
+      "bestOdds": "+19900",
+      "bestOddsSource": "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer",
+      "consensusOdds": "+3701",
+      "oddsBySource": {
+        "vegasinsider-opta": "+2000",
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+19900"
+      },
+      "impliedProbability": 0.005,
+      "market": "outrights"
+    },
+    {
+      "name": "Aston Villa",
+      "nameNormalized": "astonvilla",
+      "bestOdds": "+2500",
+      "bestOddsSource": "vegasinsider-opta",
+      "consensusOdds": "+2500",
+      "oddsBySource": {
+        "vegasinsider-opta": "+2500"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Sporting CP",
+      "nameNormalized": "sportingcp",
+      "bestOdds": "+13900",
+      "bestOddsSource": "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer",
+      "consensusOdds": "+4976",
+      "oddsBySource": {
+        "vegasinsider-opta": "+3000",
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+13900"
+      },
+      "impliedProbability": 0.0071,
+      "market": "outrights"
+    },
+    {
+      "name": "Newcastle",
+      "nameNormalized": "newcastle",
+      "bestOdds": "+4700",
+      "bestOddsSource": "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer",
+      "consensusOdds": "+4700",
+      "oddsBySource": {
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+4700"
+      },
+      "impliedProbability": 0.0208,
+      "market": "outrights"
+    },
+    {
+      "name": "Tottenham",
+      "nameNormalized": "tottenham",
+      "bestOdds": "+5900",
+      "bestOddsSource": "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer",
+      "consensusOdds": "+5900",
+      "oddsBySource": {
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+5900"
+      },
+      "impliedProbability": 0.0167,
+      "market": "outrights"
+    },
+    {
+      "name": "Atalanta",
+      "nameNormalized": "atalanta",
+      "bestOdds": "+23900",
+      "bestOddsSource": "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer",
+      "consensusOdds": "+23900",
+      "oddsBySource": {
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+23900"
+      },
+      "impliedProbability": 0.0042,
+      "market": "outrights"
+    },
+    {
+      "name": "Galatasaray",
+      "nameNormalized": "galatasaray",
+      "bestOdds": "+32900",
+      "bestOddsSource": "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer",
+      "consensusOdds": "+32900",
+      "oddsBySource": {
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+32900"
+      },
+      "impliedProbability": 0.003,
+      "market": "outrights"
+    },
+    {
+      "name": "Bodo Glimt",
+      "nameNormalized": "bodoglimt",
+      "bestOdds": "+50000",
+      "bestOddsSource": "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer",
+      "consensusOdds": "+50000",
+      "oddsBySource": {
+        "sportsbettingdime-ladbrokes-bettingodds-com-si-soccer": "+50000"
+      },
+      "impliedProbability": 0.002,
+      "market": "outrights"
+    }
+  ]
+}

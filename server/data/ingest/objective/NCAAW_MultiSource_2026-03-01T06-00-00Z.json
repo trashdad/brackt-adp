@@ -1,0 +1,13 @@
+{
+  "source": "DraftKings / FanDuel / ESPN / Covers",
+  "category": "NCAA Women's Basketball",
+  "timestamp": "2026-03-01T06-00-00Z",
+  "data": [
+    {
+      "type": "objective",
+      "key": "Women's March Madness Championship Odds",
+      "value": "UConn Huskies -285, UCLA Bruins +700, South Carolina Gamecocks +900, Texas Longhorns +1100, LSU Tigers +1600, Vanderbilt Commodores +3300, Duke Blue Devils +7500, Michigan Wolverines +7500, Iowa Hawkeyes +8000, Oklahoma Sooners +10000, NC State Wolfpack +10000, Louisville Cardinals +10000, Iowa State Cyclones +10000, Tennessee Lady Volunteers +11000, Texas Tech Lady Raiders +12000, Ole Miss Rebels +12000, Notre Dame Fighting Irish +15000, USC Trojans +15000, Baylor Bears +15000, Kentucky Wildcats +15000",
+      "context": "2025-26 Season"
+    }
+  ]
+}

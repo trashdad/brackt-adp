@@ -1,0 +1,14 @@
+{
+  "source": "Sky Sports F1 / Motorsport.com / GPFans / The Race",
+  "category": "Formula 1",
+  "timestamp": "2026-03-01T00-00-00Z",
+  "data": [
+    {"type": "subjective", "key": "George Russell Outlook", "value": "Mercedes performed strongest across both Bahrain pre-season testing weeks. Russell's race simulations described as controlled and repeatable. Widely regarded as the 2026 title favorite given Mercedes' power unit advantage under new 50/50 regulations.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Ferrari Outlook", "value": "Ferrari were labeled the testing winners, posting the only sub-1:32 lap and debuting a revolutionary active rear wing. Both Leclerc and Hamilton in his first Ferrari season are genuine championship contenders.", "sentiment": "positive"},
+    {"type": "subjective", "key": "Lewis Hamilton Concern", "value": "GPFans analysis bluntly states Hamilton at 33/1 is at risk of being outpaced at Ferrari during his settling-in period at a new team. Combined with Ferrari's uncertain regulation adaptation, expectations are low.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Red Bull Concern", "value": "Red Bull technical director publicly stated the team is behind Ferrari, Mercedes, and McLaren in the 2026 car hierarchy. A significant admission for the reigning constructors champions.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Aston Martin Concern", "value": "Despite Adrian Newey's arrival, Aston Martin was beset by mechanical breakdowns throughout Bahrain testing. Analysts openly concerned the Newey-designed concept will not be competitive at the start of 2026.", "sentiment": "negative"},
+    {"type": "subjective", "key": "Lando Norris Outlook", "value": "Reigning 2025 world champion carrying the #1 car number for the first time. McLaren navigated testing without drama and Norris is a legitimate title contender as the defending champion.", "sentiment": "positive"},
+    {"type": "subjective", "key": "FIA Regulations Concern", "value": "A mid-season rule change to power unit regulations has been confirmed by the FIA following an engine dispute between manufacturers. This adds further unpredictability to the championship.", "sentiment": "negative"}
+  ]
+}

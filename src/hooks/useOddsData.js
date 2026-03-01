@@ -84,10 +84,10 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
         let ev;
         if (historical && historical.history && historical.history.length >= 2) {
           ev = calculateHistoricallyWeightedEV(
-            apiItem.odds, sport.category, sport.eventsPerSeason, historical
+            apiItem.odds, sport.category, sport.eventsPerSeason, historical, sport.id
           );
         } else {
-          ev = calculateSeasonTotalEV(apiItem.odds, sport.category, sport.eventsPerSeason);
+          ev = calculateSeasonTotalEV(apiItem.odds, sport.category, sport.eventsPerSeason, sport.id);
         }
         if (sport.evMultiplier != null && ev) {
           ev = { ...ev, singleEvent: ev.singleEvent * sport.evMultiplier, seasonTotal: ev.seasonTotal * sport.evMultiplier };
@@ -96,6 +96,7 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
         entries.push({
           id: entryId,
           name,
+          nameNormalized: normalize(name),
           sport: sport.id,
           sportName: sport.name,
           sportIcon: sport.icon,
@@ -108,6 +109,8 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
           mktVsExp: social.mktVsExp || 0,
           expertComments: social.expertComments || [],
           socialSources: social.sources || {},
+          notes: social.sources?.expert?.notes || '',
+          trapSignal: social.trapSignal || 'NEUTRAL',
           adpScore: 0,
           scarcityBonus: 0,
           evGap: 0,
@@ -131,6 +134,7 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
         entries.push({
           id: entryId,
           name,
+          nameNormalized: normalize(name),
           sport: sport.id,
           sportName: sport.name,
           sportIcon: sport.icon,
@@ -143,6 +147,8 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
           mktVsExp: social.mktVsExp || 0,
           expertComments: social.expertComments || [],
           socialSources: social.sources || {},
+          notes: social.sources?.expert?.notes || '',
+          trapSignal: social.trapSignal || 'NEUTRAL',
           adpScore: -1,
           scarcityBonus: 0,
           evGap: 0,
@@ -165,10 +171,10 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
         let ev;
         if (historical && historical.history && historical.history.length >= 2) {
           ev = calculateHistoricallyWeightedEV(
-            item.odds, sport.category, sport.eventsPerSeason, historical
+            item.odds, sport.category, sport.eventsPerSeason, historical, sport.id
           );
         } else {
-          ev = calculateSeasonTotalEV(item.odds, sport.category, sport.eventsPerSeason);
+          ev = calculateSeasonTotalEV(item.odds, sport.category, sport.eventsPerSeason, sport.id);
         }
         if (sport.evMultiplier != null && ev) {
           ev = { ...ev, singleEvent: ev.singleEvent * sport.evMultiplier, seasonTotal: ev.seasonTotal * sport.evMultiplier };
@@ -177,6 +183,7 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
         entries.push({
           id: entryId,
           name: item.name,
+          nameNormalized: normalize(item.name),
           sport: sport.id,
           sportName: sport.name,
           sportIcon: sport.icon,
@@ -189,6 +196,8 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
           mktVsExp: social.mktVsExp || 0,
           expertComments: social.expertComments || [],
           socialSources: social.sources || {},
+          notes: social.sources?.expert?.notes || '',
+          trapSignal: social.trapSignal || 'NEUTRAL',
           adpScore: 0,
           scarcityBonus: 0,
           evGap: 0,
@@ -396,7 +405,7 @@ export default function useOddsData(scarcityModifier) {
     // Step 5: Load social scores (try server, then local cache)
     let socialScores = loadSocialScoresCache();
     try {
-      const socialScoresResp = await fetch('/data/social-scores.json');
+      const socialScoresResp = await fetch('/api/social-scores');
       if (socialScoresResp.ok) {
         socialScores = await socialScoresResp.json();
         saveSocialScoresCache(socialScores);
