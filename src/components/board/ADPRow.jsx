@@ -31,12 +31,31 @@ export default function ADPRow({ entry, onToggleDraft }) {
         entry.drafted ? 'opacity-30 grayscale bg-black/20' : entry.isPlaceholder ? 'opacity-40 italic' : ''
       }`}
     >
+      {/* Draft Priority Score */}
+      <td className="px-3 py-2 font-mono text-[14px] font-bold text-retro-purple tabular-nums">
+        <PriorityTooltip entry={entry}>
+          <div className="flex flex-col leading-tight relative">
+            <span className="drop-shadow-[0_0_4px_rgba(157,80,187,0.4)] text-retro-cyan">
+              {val(formatNumber(entry.adpScore))}
+              {entry.exceedsCapacity && (
+                <span className="ml-1 text-retro-gold text-[10px]" title="EXCEEDS_CAPACITY">▲</span>
+              )}
+            </span>
+            {!entry.isPlaceholder && entry.scarcityBonus > 0 && (
+              <span className="text-[10px] font-normal text-retro-gold/80">
+                +{entry.scarcityBonus.toFixed(1)}
+              </span>
+            )}
+          </div>
+        </PriorityTooltip>
+      </td>
+
       {/* Rank */}
       <td className="px-3 py-2 font-mono text-[11px] text-retro-light/40 w-10 border-r border-black/10 tabular-nums text-center">
         {isFoe ? '—' : entry.adpRank}
       </td>
 
-      {/* Name — Pixelify Sans is far more legible than Silkscreen/PressStart */}
+      {/* Name */}
       <td className="px-3 py-2">
         <PlayerTooltip entry={entry}>
           <Link
@@ -86,25 +105,6 @@ export default function ADPRow({ entry, onToggleDraft }) {
             {velocity.toFixed(2)}x
           </span>
         )}
-      </td>
-
-      {/* Draft Priority Score */}
-      <td className="px-3 py-2 font-mono text-[14px] font-bold text-retro-purple tabular-nums">
-        <PriorityTooltip entry={entry}>
-          <div className="flex flex-col leading-tight relative">
-            <span className="drop-shadow-[0_0_4px_rgba(157,80,187,0.4)] text-retro-cyan">
-              {val(formatNumber(entry.adpScore))}
-              {entry.exceedsCapacity && (
-                <span className="ml-1 text-retro-gold text-[10px]" title="EXCEEDS_CAPACITY">▲</span>
-              )}
-            </span>
-            {!entry.isPlaceholder && entry.scarcityBonus > 0 && (
-              <span className="text-[10px] font-normal text-retro-gold/80">
-                +{entry.scarcityBonus.toFixed(1)}
-              </span>
-            )}
-          </div>
-        </PriorityTooltip>
       </td>
 
       {/* Social Score */}

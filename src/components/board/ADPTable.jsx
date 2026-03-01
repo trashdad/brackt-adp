@@ -3,6 +3,7 @@ import ADPRow from './ADPRow';
 import useSorting from '../../hooks/useSorting';
 
 const COLUMNS = [
+  { label: 'Draft Priority Score', key: 'adpScore' },
   { label: 'Rank', key: 'adpRank' },
   { label: 'Name', key: 'name' },
   { label: 'Sport', key: 'sportName' },
@@ -10,7 +11,6 @@ const COLUMNS = [
   { label: 'Odds', key: 'odds' },
   { label: 'Season EV', key: 'ev.seasonTotal' },
   { label: 'Dropoff Velocity', key: 'dropoffVelocity' },
-  { label: 'Draft Priority Score', key: 'adpScore' },
   { label: 'Social', key: 'socialPos' },
   { label: 'Mkt vs Exp', key: 'mktVsExp' },
   { label: 'Adj. SQ', key: 'adjSq' },
