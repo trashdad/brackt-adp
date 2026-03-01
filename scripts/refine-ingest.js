@@ -231,36 +231,64 @@ const CHAMPIONSHIP_PATTERNS = {
   snooker: [/world championship/i, /futures/i, /odds/i],
   llws:    [/world series/i, /championship/i, /futures/i],
   // QP sports also accept per-tournament keys
-  pga:     [/masters/i, /pga champ/i, /us open/i, /open champ/i, /world/i, /futures/i, /odds/i, /favorite/i],
-  tennis_m:[/australian open/i, /french open/i, /wimbledon/i, /us open/i, /grand slam/i, /futures/i, /finals/i],
-  tennis_w:[/australian open/i, /french open/i, /wimbledon/i, /us open/i, /grand slam/i, /futures/i, /finals/i],
+  pga:     [/masters/i, /pga champ/i, /us open/i, /open champ/i, /world/i, /futures/i, /odds/i, /favorite/i, /the players/i, /match play/i, /genesis/i, /arnold palmer/i, /bmw/i, /riviera/i, /bay hill/i],
+  tennis_m:[/australian open/i, /french open/i, /wimbledon/i, /us open/i, /grand slam/i, /futures/i, /finals/i, /indian wells/i, /miami open/i, /monte.carlo/i, /madrid open/i, /italian open/i, /roland garros/i, /rome/i, /canada open/i, /cincinnati/i],
+  tennis_w:[/australian open/i, /french open/i, /wimbledon/i, /us open/i, /grand slam/i, /futures/i, /finals/i, /indian wells/i, /miami open/i, /madrid open/i, /italian open/i, /roland garros/i, /rome/i, /canada open/i, /cincinnati/i],
   csgo:    [/blast/i, /iem/i, /pgl/i, /major/i, /futures/i, /odds/i],
 };
 
 // Map ingest key text → tournament ID for QP sports
+// Includes both QP-scoring events and reference-only events (qpEvent: false in sports.js).
+// All are tracked in oddsByTournament; the QP calc only uses eventsPerSeason worth of events.
 const TOURNAMENT_KEY_MAP = {
   pga: {
+    // QP events
     'masters': 'masters', 'the masters': 'masters',
     'pga championship': 'pga-champ', 'pga champ': 'pga-champ',
     'us open': 'us-open',
     'open championship': 'open-champ', 'the open': 'open-champ', 'british open': 'open-champ',
+    // Reference events (form signal only — highest value: The Players, WGC Match Play)
+    'the players': 'the-players', 'players championship': 'the-players', 'tpc sawgrass': 'the-players',
+    'wgc match play': 'wgc-match-play', 'dell match play': 'wgc-match-play', 'match play': 'wgc-match-play',
+    'genesis invitational': 'genesis', 'genesis': 'genesis', 'riviera': 'genesis',
+    'arnold palmer': 'arnold-palmer', 'bay hill': 'arnold-palmer',
+    'bmw championship': 'bmw-championship', 'bmw': 'bmw-championship',
   },
   tennis_m: {
+    // QP events (Grand Slams)
     'australian open': 'aus-open', 'aus open': 'aus-open',
     'french open': 'french-open', 'roland garros': 'french-open',
     'wimbledon': 'wimbledon',
     'us open': 'us-open',
+    // Reference events — clay swing is highest signal (immediate pre-French Open form)
+    'indian wells': 'indian-wells', 'bnp paribas open': 'indian-wells',
+    'miami open': 'miami-open', 'miami': 'miami-open',
+    'monte carlo': 'monte-carlo', 'monte-carlo masters': 'monte-carlo', 'rolex monte carlo': 'monte-carlo',
+    'madrid open': 'madrid-open', 'mutua madrid': 'madrid-open',
+    'italian open': 'rome', 'rome': 'rome', 'internazionali bnl': 'rome',
+    'canada open': 'canada-open', 'canadian open': 'canada-open', 'national bank open': 'canada-open',
+    'cincinnati open': 'cincinnati', 'western & southern': 'cincinnati', 'cincinnati': 'cincinnati',
   },
   tennis_w: {
+    // QP events (Grand Slams)
     'australian open': 'aus-open', 'aus open': 'aus-open',
     'french open': 'french-open', 'roland garros': 'french-open',
     'wimbledon': 'wimbledon',
     'us open': 'us-open',
+    // Reference events — same high-signal clay swing as men's
+    'indian wells': 'indian-wells', 'bnp paribas open': 'indian-wells',
+    'miami open': 'miami-open', 'miami': 'miami-open',
+    'madrid open': 'madrid-open', 'mutua madrid': 'madrid-open',
+    'italian open': 'rome', 'rome': 'rome', 'internazionali bnl': 'rome',
+    'canada open': 'canada-open', 'canadian open': 'canada-open', 'national bank open': 'canada-open',
+    'cincinnati open': 'cincinnati', 'western & southern': 'cincinnati', 'cincinnati': 'cincinnati',
   },
   csgo: {
+    // QP events (BLAST Opens only)
     'blast spring': 'blast-spring-2026', 'blast open spring': 'blast-spring-2026',
-    'iem cologne': 'cologne-2026', 'cologne': 'cologne-2026',
     'blast fall': 'blast-fall-2026', 'blast open fall': 'blast-fall-2026',
+    // Reference events
+    'iem cologne': 'cologne-2026', 'cologne': 'cologne-2026',
     'pgl singapore': 'singapore-2026', 'singapore': 'singapore-2026',
   },
 };
@@ -671,8 +699,52 @@ function main() {
   const socialScoresPath = join(SERVER_DATA, 'social-scores.json');
   const socialScores = readJson(socialScoresPath) || {};
 
-  const POSITIVE_CATALYSTS = /\b(rookie|recruit|return|breakout|sleeper|debut|emerge|prospect|core|elite|favorite|champion|dominant|dynasty)\b/i;
-  const NEGATIVE_CATALYSTS = /\b(transfer|leaving|fired|traded|exit|curse|fade|risk|volatility|aging|decline|depart|withdraw|suspension|injury)\b/i;
+  // Generic catalysts (fallback for sports without specific patterns)
+  const POSITIVE_CATALYSTS = /\b(rookie|recruit|return|breakout|sleeper|debut|emerge|prospect|core|elite|favorite|champion|dominant|dynasty|upgrade|acquisition|blockbuster)\b/i;
+  const NEGATIVE_CATALYSTS = /\b(transfer|leaving|fired|traded|exit|curse|fade|risk|volatility|aging|decline|depart|withdraw|suspension|injury|out for season|key loss|interim|rebuild)\b/i;
+
+  // Sport-specific catalyst keywords — stronger adjSq nudge when matched
+  const SPORT_CATALYSTS = {
+    nfl: {
+      positive: /\b(elite qb|franchise qb|coaching upgrade|new coach|coordinator promoted|cap space|draft capital|offensive line|top pick|qb upgrade)\b/i,
+      negative: /\b(cap hell|coaching carousel|fired mid-season|interim|aging roster|turnover prone|qb controversy|key departure|torn acl|out for season)\b/i,
+    },
+    nba: {
+      positive: /\b(trade acquisition|blockbuster trade|chemistry|young core|all-star|mvp candidate|playoff experience|deep bench|superteam)\b/i,
+      negative: /\b(aging core|tanking|chemistry issues|trade demand|key loss|max contract|luxury tax|load management|injury prone)\b/i,
+    },
+    nhl: {
+      positive: /\b(elite goalie|gsax|vezina|depth scoring|power play|strong defense|cup contender|deadline acquisition)\b/i,
+      negative: /\b(goalie crisis|cap crunch|aging core|defensive issues|penalty kill|rebuild|key departure|injury prone)\b/i,
+    },
+    mlb: {
+      positive: /\b(stuff\+|bullpen depth|pitching\+|rotation depth|lineup stacked|farm system|deadline acquisition|cy young)\b/i,
+      negative: /\b(aging rotation|bullpen issues|payroll cut|rebuild|prospect bust|injury prone|declining|regression)\b/i,
+    },
+    tennis_m: {
+      positive: /\b(surface specialist|clay king|grass expert|hard court|hot streak|peak form|dominant serve|fitness)\b/i,
+      negative: /\b(declining|injury prone|aging|fitness concerns|slump|surface weakness|mental fragility)\b/i,
+    },
+    tennis_w: {
+      positive: /\b(surface specialist|clay queen|grass expert|hard court|hot streak|peak form|dominant serve|consistency)\b/i,
+      negative: /\b(declining|injury prone|aging|fitness concerns|slump|surface weakness|inconsistent)\b/i,
+    },
+    f1: {
+      positive: /\b(new regulations|wind tunnel|budget advantage|constructor upgrade|engine upgrade|aero package|race pace)\b/i,
+      negative: /\b(budget cap penalty|reliability issues|engine penalty|aero deficit|team orders|number two driver)\b/i,
+    },
+    indycar: {
+      positive: /\b(team upgrade|equipment advantage|oval specialist|road course|race pace|championship pedigree)\b/i,
+      negative: /\b(equipment downgrade|team change|reliability|oval weakness|road course weakness)\b/i,
+    },
+    pga: {
+      positive: /\b(sg:ttg|strokes gained|course history|driving accuracy|putting hot|iron play|major contender)\b/i,
+      negative: /\b(missed cut|putting woes|driving issues|course fit poor|form slump|injury)\b/i,
+    },
+  };
+
+  // Movement catalysts — traded/acquired/departed trigger stronger adjustments
+  const MOVEMENT_CATALYSTS = /\b(traded|acquired|departed|signed|free agent|blockbuster trade|key loss|out for season|torn acl|season-ending|waived|released|called up)\b/i;
 
   for (const file of subjectiveFiles) {
     if (isProcessed(file)) continue;
@@ -738,15 +810,49 @@ function main() {
           // Adjust pos/neg counts
           if (sentiment === 'positive') {
             ss.pos = (ss.pos || 0) + 1;
-            // Tiny nudge for positive catalysts
-            if (POSITIVE_CATALYSTS.test(value) && ss.adjSq != null) {
-              ss.adjSq = Math.min(ss.adjSq + 0.02, 1.35);
-            }
           } else if (sentiment === 'negative') {
             ss.neg = (ss.neg || 0) + 1;
-            // Tiny nudge for negative catalysts
-            if (NEGATIVE_CATALYSTS.test(value) && ss.adjSq != null) {
-              ss.adjSq = Math.max(ss.adjSq - 0.02, 0.85);
+          }
+
+          // Apply adjSq nudges based on catalyst strength
+          if (ss.adjSq != null) {
+            const sportCatalysts = SPORT_CATALYSTS[finalSportId];
+            const isMovement = MOVEMENT_CATALYSTS.test(value);
+
+            if (sentiment === 'positive') {
+              const isSportSpecific = sportCatalysts && sportCatalysts.positive.test(value);
+              const isGeneric = POSITIVE_CATALYSTS.test(value);
+              // Sport-specific or movement: ±0.04, generic: ±0.02
+              const nudge = (isSportSpecific || isMovement) ? 0.04 : (isGeneric ? 0.02 : 0);
+              ss.adjSq = Math.min(ss.adjSq + nudge, 1.50);
+            } else if (sentiment === 'negative') {
+              const isSportSpecific = sportCatalysts && sportCatalysts.negative.test(value);
+              const isGeneric = NEGATIVE_CATALYSTS.test(value);
+              const nudge = (isSportSpecific || isMovement) ? 0.04 : (isGeneric ? 0.02 : 0);
+              ss.adjSq = Math.max(ss.adjSq - nudge, 0.70);
+            }
+          }
+
+          // Parse expertComments for calculator-ready notes keywords
+          if (ss.expertComments && ss.expertComments.length > 0) {
+            const allComments = ss.expertComments.join(' ').toLowerCase();
+            const noteKeywords = [];
+            const sportCatalysts = SPORT_CATALYSTS[finalSportId];
+            if (sportCatalysts) {
+              const posMatches = allComments.match(sportCatalysts.positive);
+              const negMatches = allComments.match(sportCatalysts.negative);
+              if (posMatches) noteKeywords.push(...posMatches);
+              if (negMatches) noteKeywords.push(...negMatches);
+            }
+            const movMatches = allComments.match(MOVEMENT_CATALYSTS);
+            if (movMatches) noteKeywords.push(...movMatches);
+            if (noteKeywords.length > 0) {
+              const existing = ss.sources?.expert?.notes || '';
+              const unique = [...new Set(noteKeywords.map(k => k.toLowerCase()))];
+              const combined = existing ? `${existing}, ${unique.join(', ')}` : unique.join(', ');
+              if (!ss.sources) ss.sources = {};
+              if (!ss.sources.expert) ss.sources.expert = {};
+              ss.sources.expert.notes = combined;
             }
           }
 

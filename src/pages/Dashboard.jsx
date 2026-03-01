@@ -9,7 +9,7 @@ import ScoringToggle from '../components/filters/ScoringToggle';
 export default function Dashboard({ boardEntries, loading, lastUpdated, onToggleDraft, onRefresh, scarcityModifier, onScarcityChange }) {
   const [sportFilter, setSportFilter] = useState([]);
   const [search, setSearch] = useState('');
-  const [showDrafted, setShowDrafted] = useState(true);
+  const [showDrafted, setShowDrafted] = useState(false);
 
   const filtered = useMemo(() => {
     let items = boardEntries;

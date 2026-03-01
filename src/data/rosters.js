@@ -201,7 +201,7 @@ const ROSTERS = {
     'Davis Thompson', 'Ben Griffin', 'Patrick Reed', 'Chris Gotterup',
   ],
 
-  // ── Tennis Men's (ATP) — Top 44 players ─────────────────────────
+  // ── Tennis Men's (ATP) — Top 56 players ─────────────────────────
   tennis_m: [
     'Carlos Alcaraz', 'Jannik Sinner', 'Alexander Zverev', 'Novak Djokovic',
     'Felix Auger-Aliassime', 'Taylor Fritz', 'Alex de Minaur', 'Lorenzo Musetti',
@@ -215,9 +215,13 @@ const ROSTERS = {
     'Gabriel Diallo', 'Alex Michelsen', 'Nicolas Jarry', 'Lorenzo Sonego',
     'Jan-Lennard Struff', 'Cameron Norrie', 'Reilly Opelka', 'Tomas Machac',
     'Nick Kyrgios', 'Tallon Griekspoor',
+    // Expanded coverage (ATP 45–70)
+    'Alexei Popyrin', 'Miomir Kecmanovic', 'Nuno Borges', 'Alejandro Tabilo',
+    'Mariano Navone', 'Botic van de Zandschulp', 'Daniel Altmaier', 'Roman Safiullin',
+    'Mattia Bellucci', 'Brandon Nakashima', 'Hamad Medjedovic', 'Luca Van Assche',
   ],
 
-  // ── Tennis Women's (WTA) — Top 35 players ──────────────────────
+  // ── Tennis Women's (WTA) — Top 47 players ──────────────────────
   tennis_w: [
     'Aryna Sabalenka', 'Iga Swiatek', 'Coco Gauff', 'Elena Rybakina',
     'Jessica Pegula', 'Madison Keys', 'Jasmine Paolini', 'Mirra Andreeva',
@@ -228,6 +232,10 @@ const ROSTERS = {
     'Victoria Mboko', 'Marketa Vondrousova', 'Iva Jovic', 'Barbora Krejcikova',
     'Maya Joint', 'Paula Badosa', 'Anastasia Potapova', 'Sonay Kartal',
     'Marta Kostyuk', 'Tereza Valentova', 'Veronika Kudermetova',
+    // Expanded coverage (WTA 16–50)
+    'Daria Kasatkina', 'Caroline Garcia', 'Donna Vekic', 'Maria Sakkari',
+    'Beatriz Haddad Maia', 'Dayana Yastremska', 'Danielle Collins', 'Magdalena Frech',
+    'Sorana Cirstea', 'Sofia Kenin', 'Anhelina Kalinina', 'Diane Parry',
   ],
 
   // ── Counter-Strike 2 — Top 20 teams (Feb 2026 HLTV) ─────────────

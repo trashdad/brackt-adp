@@ -11826,12 +11826,13 @@
     "pos": 18,
     "neg": 3,
     "mktVsExp": 0,
-    "adjSq": 1.13,
+    "adjSq": 1.2,
     "expertComments": [
       "California and Hawaii consistently send championship-caliber teams.",
       "Year-round outdoor play develops advanced skills early.",
       "Strong baseball culture with elite coaching infrastructure.",
-      "Hawaii-based programs are historically the strongest US region. USA West regularly appears in the US bracket final and is always the top domestic betting option. The 2026 West qualifier is expected to feature another Hawaii powerhouse program."
+      "Hawaii-based programs are historically the strongest US region. USA West regularly appears in the US bracket final and is always the top domestic betting option. The 2026 West qualifier is expected to feature another Hawaii powerhouse program.",
+      "Calibration note: USA West at +350 in our system is shorter than the 2025 BetOnline derived overall odds (~+540). West was +150 to win the US bracket while US bracket winner was +125 to win championship. West remains the strongest US region historically (4/10 US bracket wins) but +350 overall overstates their true championship probability."
     ],
     "trapSignal": "NEUTRAL",
     "lastBacktest": "2026-02-28T08:34:39.202Z"
@@ -11983,12 +11984,13 @@
     "pos": 20,
     "neg": 2,
     "mktVsExp": 0,
-    "adjSq": 1.21,
+    "adjSq": 1.15,
     "expertComments": [
       "Most successful international program in LLWS history.",
       "Fundamentals, discipline, and team chemistry are unmatched.",
       "Japanese youth baseball infrastructure produces elite-level talent annually.",
-      "Japan has 11 all-time LLWS titles and is reliably the top international threat alongside Taiwan. Japanese programs won five titles from 2010 to 2018 and consistently reach the international final. Always a top-two market choice."
+      "Japan has 11 all-time LLWS titles and is reliably the top international threat alongside Taiwan. Japanese programs won five titles from 2010 to 2018 and consistently reach the international final. Always a top-two market choice.",
+      "Calibration note: Japan at +225 in our system is significantly shorter than the 2025 BetOnline derived overall odds (~+600). Tokyo was +325 to win international bracket while International bracket winner was -155 to win the championship. Historical context: Japan won 5 titles from 2010-2018 but none since, suggesting slight overrating in current odds."
     ],
     "trapSignal": "NEUTRAL",
     "lastBacktest": "2026-02-28T08:34:39.202Z"
@@ -12048,7 +12050,7 @@
     "sources": {
       "expert": {
         "rank": 14,
-        "notes": "+1000. bullish.",
+        "notes": "high floor, defending runner-up, curacao direct slot, undervalued +420 market price",
         "sourcesUsed": 5,
         "sourcesAgreed": 4
       }
@@ -12056,12 +12058,13 @@
     "pos": 15,
     "neg": 6,
     "mktVsExp": 0,
-    "adjSq": 1.13,
+    "adjSq": 1.28,
     "expertComments": [
       "Curacao and Aruba produce incredible talent relative to population.",
       "Raw athleticism and baseball instincts are world-class.",
       "Small-island mentality creates fearless competitors.",
-      "Caribbean teams have appeared in the international final consistently, including Aruba finishing as runner-up in 2025. With Curacao now receiving a separate direct entry slot in 2026, the Caribbean region effectively has two strong representatives in the field."
+      "Caribbean teams have appeared in the international final consistently, including Aruba finishing as runner-up in 2025. With Curacao now receiving a separate direct entry slot in 2026, the Caribbean region effectively has two strong representatives in the field.",
+      "Market-derived analysis: Caribbean (Curaçao/Aruba) priced at +550 in our system vs ~+420 derived from 2025 BetOnline bracket odds. Structural undervaluation confirmed. High floor — consistently reaches international finals. 2025 runner-up was Aruba. 2026: Curaçao receives a direct bracket entry slot, giving Caribbean two representatives for the first time."
     ],
     "trapSignal": "NEUTRAL",
     "lastBacktest": "2026-02-28T08:34:39.202Z"
@@ -12149,7 +12152,7 @@
     "sources": {
       "expert": {
         "rank": 18,
-        "notes": "+1200. neutral.",
+        "notes": "defending champion 2025, 18 all-time titles, champion status, elite pitching",
         "sourcesUsed": 5,
         "sourcesAgreed": 3
       }
@@ -12157,12 +12160,13 @@
     "pos": 13,
     "neg": 7,
     "mktVsExp": 0,
-    "adjSq": 1.11,
+    "adjSq": 1.32,
     "expertComments": [
       "South Korea and Philippines produce competitive international teams.",
       "Technical skill development mirrors the Japanese model.",
       "Capable of deep runs when pitching staff is deep enough.",
-      "Taiwan won the 2025 LLWS championship defeating Nevada 7-0 in the title game — their first title since 1996. Asia-Pacific programs have historically dominated the international bracket with 18 all-time titles, more than any other region. Defending champion status makes them the overwhelming early favorite."
+      "Taiwan won the 2025 LLWS championship defeating Nevada 7-0 in the title game — their first title since 1996. Asia-Pacific programs have historically dominated the international bracket with 18 all-time titles, more than any other region. Defending champion status makes them the overwhelming early favorite.",
+      "2026 note: Chinese Taipei is the defending champion (7-0 win over Nevada in 2025 final). Pitcher Lin Chin-Tse threw 11 scoreless innings. Taiwan has 18 all-time titles — the most of any country. Defending champion status historically increases win probability. Market should price them at +150 to +200 for 2026."
     ],
     "trapSignal": "NEUTRAL",
     "lastBacktest": "2026-02-28T08:34:39.202Z"
@@ -16324,6 +16328,606 @@
         "notes": "+25000. neutral.",
         "sourcesUsed": 5,
         "sourcesAgreed": 3
+      }
+    }
+  },
+  "tennis_m-alexei-popyrin": {
+    "socialScore": 1.2,
+    "socialQuotient": 1.02,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 5,
+    "neg": 2,
+    "mktVsExp": 0,
+    "adjSq": 0.98,
+    "expertComments": [
+      "Rising Australian who's thrived on hard courts.",
+      "Has an explosive serve and forehand that can trouble top players.",
+      "Best results on hard courts; clay is a significant challenge.",
+      "Showed flashes of big-match quality but inconsistency holds him back. Solid dark horse for AO; clay Slams are out of range."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 45,
+        "notes": "+8000. neutral.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "tennis_m-miomir-kecmanovic": {
+    "socialScore": 0.8,
+    "socialQuotient": 1.01,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 4,
+    "neg": 3,
+    "mktVsExp": 0,
+    "adjSq": 0.97,
+    "expertComments": [
+      "Solid clay court grinder with reliable groundstrokes.",
+      "Consistent top-50 player but ceiling appears limited.",
+      "Struggles to convert opportunities against top-30 opponents.",
+      "Likely a second-week presence on clay but deep Slam runs unlikely without a significant leap. French Open quarterfinal ceiling."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 52,
+        "notes": "+12000. neutral.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "tennis_m-nuno-borges": {
+    "socialScore": 0.7,
+    "socialQuotient": 1.01,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 4,
+    "neg": 3,
+    "mktVsExp": 0,
+    "adjSq": 0.97,
+    "expertComments": [
+      "Portuguese clay specialist with an all-court game.",
+      "Consistent performer on the clay swing but lacks finishing power.",
+      "Hard and grass courts expose his limitations.",
+      "French Open is his best Slam chance but top-10 opponents are a wall. Solid clay swing player, unlikely to win titles."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 55,
+        "notes": "+12500. neutral.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "tennis_m-alejandro-tabilo": {
+    "socialScore": 1.4,
+    "socialQuotient": 1.03,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 6,
+    "neg": 2,
+    "mktVsExp": 0,
+    "adjSq": 0.98,
+    "expertComments": [
+      "Chilean who dismantled Djokovic at the 2024 Rome Masters.",
+      "Strong clay player with an improving serve.",
+      "Shown the ability to beat top-10 players on a good day.",
+      "Has serious clay credentials after beating Djokovic and Medvedev. Could be a surprise French Open quarterfinalist at the right draw. Still inconsistent overall."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 50,
+        "notes": "+8500. slightly bullish.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "tennis_m-mariano-navone": {
+    "socialScore": 1.6,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 7,
+    "neg": 2,
+    "mktVsExp": 0,
+    "adjSq": 1.01,
+    "expertComments": [
+      "Argentine clay machine who has been dominant on the surface.",
+      "Heavy topspin and relentless physicality make him dangerous on clay.",
+      "Hard and grass courts are significantly below his clay level.",
+      "One of the best outside-top-10 options for the French Open. His claycourt numbers are elite for his ranking. Ceiling is quarterfinals if the draw cooperates."
+    ],
+    "trapSignal": "GREEN",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 35,
+        "notes": "+7000. bullish on clay.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 4
+      }
+    }
+  },
+  "tennis_m-botic-van-de-zandschulp": {
+    "socialScore": 0.5,
+    "socialQuotient": 1.00,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 3,
+    "neg": 3,
+    "mktVsExp": 0,
+    "adjSq": 0.96,
+    "expertComments": [
+      "Dutch veteran with a baseline-heavy game.",
+      "Solid results in lower-tier clay events.",
+      "Lacks the top gear to trouble the elite on a consistent basis.",
+      "Fringe Grand Slam player who can pull off upsets in early rounds. Unlikely to make major waves at Slams."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 60,
+        "notes": "+15000. neutral.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "tennis_m-daniel-altmaier": {
+    "socialScore": 0.4,
+    "socialQuotient": 1.00,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 3,
+    "neg": 4,
+    "mktVsExp": 0,
+    "adjSq": 0.96,
+    "expertComments": [
+      "German clay specialist with a defensive, counter-punching style.",
+      "Solid clay court record but hard courts expose clear limitations.",
+      "French Open is his best chance but fourth-round ceiling at best.",
+      "Reliable grinder on clay who can't match the power of the top echelon. Niche clay value only."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 65,
+        "notes": "+20000. neutral.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "tennis_m-roman-safiullin": {
+    "socialScore": 0.6,
+    "socialQuotient": 1.01,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 4,
+    "neg": 3,
+    "mktVsExp": 0,
+    "adjSq": 0.97,
+    "expertComments": [
+      "Russian hard court player with a powerful serving game.",
+      "Has beaten top-10 players in best-of-3 but inconsistent over five sets.",
+      "Clay is a clear weak surface for his aggressive style.",
+      "AO is his best Grand Slam opportunity. Hard court upsets possible. Mostly a first-week Slam player."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 56,
+        "notes": "+12500. neutral.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "tennis_m-mattia-bellucci": {
+    "socialScore": 0.9,
+    "socialQuotient": 1.02,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 5,
+    "neg": 2,
+    "mktVsExp": 0,
+    "adjSq": 0.97,
+    "expertComments": [
+      "Young Italian clay player with a bright future.",
+      "Mentored by the Italian system that produced Sinner and Musetti.",
+      "Already showing clay court quality beyond his ranking.",
+      "Dark horse for the French Open in the next 2 years. Age curve strongly in his favor. Watch for breakthroughs on the clay swing."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 53,
+        "notes": "+12500. slightly bullish.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "tennis_m-brandon-nakashima": {
+    "socialScore": 0.4,
+    "socialQuotient": 1.00,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 3,
+    "neg": 3,
+    "mktVsExp": 0,
+    "adjSq": 0.96,
+    "expertComments": [
+      "American hard court specialist with solid baseline game.",
+      "Consistent mid-pack ATP results on hard courts.",
+      "Clay is a significant step down from his hard court level.",
+      "AO and USO are his Slam targets. Unlikely to trouble top players at any Slam currently."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 58,
+        "notes": "+20000. neutral.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "tennis_m-hamad-medjedovic": {
+    "socialScore": 0.8,
+    "socialQuotient": 1.02,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 5,
+    "neg": 2,
+    "mktVsExp": 0,
+    "adjSq": 0.97,
+    "expertComments": [
+      "Young Serbian clay specialist, heavily influenced by Djokovic's training environment.",
+      "Exceptional clay court instincts for his age.",
+      "Age is his biggest asset — just 22 with considerable upside remaining.",
+      "Clay ceiling looks high if he develops physically. Still raw but his baseline game is already strong. Futures value for 2027-2028 Slams."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 70,
+        "notes": "+20000. slightly bullish.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "tennis_m-luca-van-assche": {
+    "socialScore": 0.6,
+    "socialQuotient": 1.01,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 4,
+    "neg": 2,
+    "mktVsExp": 0,
+    "adjSq": 0.96,
+    "expertComments": [
+      "Young French clay specialist with nice touch and movement.",
+      "Part of the French clay tradition with Fils and Humbert.",
+      "Technical clay game but needs strength to compete with top-30.",
+      "Local crowd favourite at Roland Garros. Long-term upside is real but current ceiling is third round at the French."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 75,
+        "notes": "+25000. neutral.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "tennis_w-daria-kasatkina": {
+    "socialScore": 3.8,
+    "socialQuotient": 1.06,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 10,
+    "neg": 3,
+    "mktVsExp": 0,
+    "adjSq": 1.05,
+    "expertComments": [
+      "Russian clay specialist with excellent variety and touch.",
+      "Has beaten Swiatek on clay in key matches.",
+      "Consistent top-20 performer with genuine French Open potential.",
+      "One of the more underrated French Open threats outside the top 5. Her clay numbers are exceptional and she can tactically dismantle top players. Genuinely dangerous at Roland Garros at +5000."
+    ],
+    "trapSignal": "GREEN",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 16,
+        "notes": "+5000. bullish on clay.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 4
+      }
+    }
+  },
+  "tennis_w-caroline-garcia": {
+    "socialScore": 1.8,
+    "socialQuotient": 1.03,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 6,
+    "neg": 4,
+    "mktVsExp": 0,
+    "adjSq": 1.00,
+    "expertComments": [
+      "Former world No. 4 with a powerful, high-risk game.",
+      "Best on hard courts and indoor surfaces where her serve is dominant.",
+      "Clay is below her best surface profile.",
+      "High ceiling on hard courts but inconsistency has been the story since 2023. Better value for AO and USO futures than French Open or Wimbledon."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 30,
+        "notes": "+6000. neutral.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "tennis_w-donna-vekic": {
+    "socialScore": 2.4,
+    "socialQuotient": 1.04,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 8,
+    "neg": 3,
+    "mktVsExp": 0,
+    "adjSq": 1.03,
+    "expertComments": [
+      "Croatian who reached the 2023 Wimbledon semi-final.",
+      "Her serve and flat hitting are best suited to fast surfaces.",
+      "Has elevated her game significantly in the last two years.",
+      "Strong Wimbledon credentials and improving hard court form. Her grass form is genuinely elite. Good value for Wimbledon and AO futures. Clay is not her surface."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 25,
+        "notes": "+4000. bullish for grass.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 4
+      }
+    }
+  },
+  "tennis_w-maria-sakkari": {
+    "socialScore": 2.2,
+    "socialQuotient": 1.03,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 7,
+    "neg": 4,
+    "mktVsExp": 0,
+    "adjSq": 1.02,
+    "expertComments": [
+      "Former top-3 player who has struggled to replicate 2021-2022 form.",
+      "Powerful hard court game with solid clay results.",
+      "Two Grand Slam semi-finals show her peak ceiling.",
+      "Has the game to compete with anyone on a good day but mental fragility in big matches has cost her. Trading at a discount to her peak form value. Solid pick for deep runs on hard courts."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 22,
+        "notes": "+4500. slightly bullish.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "tennis_w-beatriz-haddad-maia": {
+    "socialScore": 2.8,
+    "socialQuotient": 1.05,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 9,
+    "neg": 3,
+    "mktVsExp": 0,
+    "adjSq": 1.04,
+    "expertComments": [
+      "Brazilian clay specialist who has beaten Swiatek on the surface.",
+      "Her left-hand spin and heavy baseline game are ideal for Roland Garros.",
+      "Multiple WTA clay titles demonstrate her affinity for the surface.",
+      "Listed at +7000-8000, which is excellent value for a player with this clay pedigree. Has beaten the #1 and #2 players on clay. Legitimate French Open dark horse."
+    ],
+    "trapSignal": "GREEN",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 18,
+        "notes": "+7000. bullish on clay.",
+        "sourcesUsed": 5,
+        "sourcesAgreed": 4
+      }
+    }
+  },
+  "tennis_w-dayana-yastremska": {
+    "socialScore": 1.2,
+    "socialQuotient": 1.02,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 5,
+    "neg": 3,
+    "mktVsExp": 0,
+    "adjSq": 1.01,
+    "expertComments": [
+      "Ukrainian with a big, attacking game on all surfaces.",
+      "Made the 2024 Australian Open semi-final as a major breakthrough.",
+      "Clay is below her hard court form level.",
+      "Has clearly shown she can reach Slam semi-finals. Her peak-form ceiling is real but consistency is the question. Good AO value if returns to top form."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 40,
+        "notes": "+8000. slightly bullish.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 3
+      }
+    }
+  },
+  "tennis_w-danielle-collins": {
+    "socialScore": 1.4,
+    "socialQuotient": 1.02,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 5,
+    "neg": 4,
+    "mktVsExp": 0,
+    "adjSq": 1.00,
+    "expertComments": [
+      "Former Australian Open finalist with a powerful hard court game.",
+      "High-risk, high-reward game that can overwhelm opponents.",
+      "Clay is a poor fit for her aggressive, serve-heavy style.",
+      "AO finalist experience is meaningful. Hard court ceiling is top-8 at a Slam. Clay and grass are long shots. Good AO value specifically."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 35,
+        "notes": "+8500. neutral.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "tennis_w-magdalena-frech": {
+    "socialScore": 0.6,
+    "socialQuotient": 1.01,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 4,
+    "neg": 3,
+    "mktVsExp": 0,
+    "adjSq": 0.98,
+    "expertComments": [
+      "Polish clay specialist with solid groundstrokes.",
+      "Consistent clay tour performer who can push top-20 players.",
+      "Hard and grass courts are significantly below her clay level.",
+      "French Open fourth round ceiling at best. Reliable clay swing pick for early-round upsets but no title threat."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 45,
+        "notes": "+20000. neutral.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "tennis_w-sorana-cirstea": {
+    "socialScore": 0.3,
+    "socialQuotient": 1.00,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 2,
+    "neg": 5,
+    "mktVsExp": 0,
+    "adjSq": 0.95,
+    "expertComments": [
+      "Veteran Romanian clay player in the twilight of her career.",
+      "Can still cause upsets on clay on a good day.",
+      "Age 35 and declining results limit her major impact.",
+      "Long past her ceiling as a title threat. Purely a first-round concern for seeded players at Roland Garros. Very low ceiling."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 65,
+        "notes": "+40000. bearish.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 1
+      }
+    }
+  },
+  "tennis_w-sofia-kenin": {
+    "socialScore": 0.5,
+    "socialQuotient": 1.01,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 3,
+    "neg": 4,
+    "mktVsExp": 0,
+    "adjSq": 0.97,
+    "expertComments": [
+      "2020 Australian Open champion who has struggled to rebuild since.",
+      "Hard court game is her strongest attribute.",
+      "Inconsistency since her 2020 breakthrough hampers her odds.",
+      "Former Slam champion tag keeps her in the conversation but current form doesn't support major contention. Hard court dark horse only."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 55,
+        "notes": "+25000. neutral.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "tennis_w-anhelina-kalinina": {
+    "socialScore": 0.4,
+    "socialQuotient": 1.00,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 3,
+    "neg": 4,
+    "mktVsExp": 0,
+    "adjSq": 0.97,
+    "expertComments": [
+      "Ukrainian with a solid all-court game, particularly on clay.",
+      "Steady but unspectacular results on the tour.",
+      "Has beaten top-30 players but lacks the weapons for deep Slam runs.",
+      "Consistent clay/hard court performer but Slam quarterfinal ceiling at best on her best day. Low title probability."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 50,
+        "notes": "+20000. neutral.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
+      }
+    }
+  },
+  "tennis_w-diane-parry": {
+    "socialScore": 0.3,
+    "socialQuotient": 1.00,
+    "lastUpdated": "2026-03-01T08:00:00.000Z",
+    "pos": 3,
+    "neg": 3,
+    "mktVsExp": 0,
+    "adjSq": 0.96,
+    "expertComments": [
+      "Young French clay player with the home crowd advantage at Roland Garros.",
+      "Has a solid baseline game tailored to slow clay surfaces.",
+      "Still developing physically and tactically at age 23.",
+      "Local factor at the French Open is meaningful. Age curve is strongly in her favour. Current ceiling is fourth round but could develop into a quarterfinalist by 2027-2028."
+    ],
+    "trapSignal": "NEUTRAL",
+    "lastBacktest": "2026-03-01T08:00:00.000Z",
+    "sources": {
+      "expert": {
+        "rank": 80,
+        "notes": "+50000. neutral.",
+        "sourcesUsed": 4,
+        "sourcesAgreed": 2
       }
     }
   },
