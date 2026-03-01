@@ -1,20 +1,9 @@
-import { getStore } from "@netlify/blobs";
+import { readStore } from './_store.js';
 
 export const handler = async (event) => {
-  const store = getStore("draft_storage");
-  const key = "subjective_data";
-
-  if (event.httpMethod === "GET") {
-    try {
-      const data = await store.get(key, { type: "json" });
-      return {
-        statusCode: 200,
-        body: JSON.stringify(data || {}),
-      };
-    } catch (err) {
-      return { statusCode: 500, body: JSON.stringify({ error: err.message }) };
-    }
+  if (event.httpMethod === 'GET') {
+    return { statusCode: 200, body: JSON.stringify(readStore('subjective-data')) };
   }
 
-  return { statusCode: 405, body: "Method Not Allowed" };
+  return { statusCode: 405, body: 'Method Not Allowed' };
 };

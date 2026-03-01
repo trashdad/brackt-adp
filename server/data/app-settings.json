@@ -1,0 +1,8 @@
+{
+  "apiKey": "",
+  "oddsApiIoKey": "",
+  "apiSportsKey": "",
+  "refreshInterval": 24,
+  "scarcityModifier": 0.5,
+  "theme": "snes"
+}

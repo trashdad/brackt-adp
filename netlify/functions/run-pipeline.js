@@ -1,4 +1,4 @@
-import { getStore } from "@netlify/blobs";
+import { writePipelineFile } from './_store.js';
 
 /**
  * Netlify Function that runs the Node API-based pipeline sources directly.
@@ -283,7 +283,6 @@ export const handler = async (event) => {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
 
-  const store = getStore("pipeline_data");
   const sourceResults = {};
 
   // Define sources with their env var keys
@@ -292,13 +291,6 @@ export const handler = async (event) => {
     { id: "odds-api-io", key: process.env.ODDS_API_IO_KEY, fetcher: fetchOddsApiIo },
     { id: "api-sports", key: process.env.API_SPORTS_KEY, fetcher: fetchApiSports },
   ];
-
-  // Write initial status so polling can see "running"
-  try {
-    await store.setJSON("status", { running: true, sources: {}, lastRun: new Date().toISOString() });
-  } catch {
-    // Non-fatal
-  }
 
   // Fetch all API sources in parallel
   const allRawData = {};
@@ -325,30 +317,21 @@ export const handler = async (event) => {
   // Merge all fetched data
   const mergedBySport = mergeAllSources(allRawData);
 
-  // Write merged data to Blobs
+  // Write merged data to /tmp/brackt-data/pipeline/ for pipeline-data.js to serve
   const manifest = {
     lastUpdated: new Date().toISOString(),
     sports: {},
   };
 
-  const writePromises = [];
   for (const [sportId, merged] of Object.entries(mergedBySport)) {
-    writePromises.push(store.setJSON(`live_${sportId}`, merged));
+    try { writePipelineFile(`live/${sportId}.json`, merged); } catch { /* non-fatal */ }
     manifest.sports[sportId] = {
       entryCount: merged.entries.length,
       sources: merged.sources,
       lastUpdated: merged.lastUpdated,
     };
   }
-  writePromises.push(store.setJSON("manifest", manifest));
-  writePromises.push(
-    store.setJSON("status", {
-      running: false,
-      sources: sourceResults,
-      lastRun: new Date().toISOString(),
-    })
-  );
-  await Promise.all(writePromises);
+  try { writePipelineFile('live/manifest.json', manifest); } catch { /* non-fatal */ }
 
   const totalEntries = Object.values(mergedBySport).reduce(
     (sum, s) => sum + s.entries.length,

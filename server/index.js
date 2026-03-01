@@ -51,6 +51,23 @@ app.post('/api/draft-state', (req, res) => {
   res.json({ ok: true });
 });
 
+// ── App Settings ──────────────────────────────────────────────────────────────
+// GET  /api/app-settings        → return stored settings
+// POST /api/app-settings        → merge partial update into stored settings
+
+app.get('/api/app-settings', (_req, res) => {
+  res.json(readStore('app-settings'));
+});
+
+app.post('/api/app-settings', (req, res) => {
+  if (typeof req.body !== 'object' || req.body === null) {
+    return res.status(400).json({ error: 'Expected JSON object' });
+  }
+  const existing = readStore('app-settings');
+  writeStore('app-settings', { ...existing, ...req.body });
+  res.json({ ok: true });
+});
+
 // ── Pipeline Data Serving ─────────────────────────────────────────────────────
 // Serve pipeline output files directly so the frontend doesn't need a manual copy step.
 
