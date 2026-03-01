@@ -5,6 +5,17 @@ import PlayerCard from '../components/cards/PlayerCard';
 import SportFilter from '../components/filters/SportFilter';
 import SearchBar from '../components/filters/SearchBar';
 import ScoringToggle from '../components/filters/ScoringToggle';
+import useSorting from '../hooks/useSorting';
+
+const MOBILE_SORT_OPTIONS = [
+  { label: 'DPS', key: 'adpScore', defaultDir: 'desc' },
+  { label: 'RANK', key: 'adpRank', defaultDir: 'asc' },
+  { label: 'NAME', key: 'name', defaultDir: 'asc' },
+  { label: 'WIN %', key: 'ev.winProbability', defaultDir: 'desc' },
+  { label: 'ODDS', key: 'odds', defaultDir: 'desc' },
+  { label: 'SEASON EV', key: 'ev.seasonTotal', defaultDir: 'desc' },
+  { label: 'SPORT', key: 'sportName', defaultDir: 'asc' },
+];
 
 export default function Dashboard({ boardEntries, loading, lastUpdated, onToggleDraft, onRefresh, scarcityModifier, onScarcityChange }) {
   const [sportFilter, setSportFilter] = useState([]);
@@ -21,6 +32,8 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
     }
     return items;
   }, [boardEntries, sportFilter, search, showDrafted]);
+
+  const { sorted: mobileSorted, sortKey: mobileSortKey, sortDir: mobileSortDir, toggleSort: mobileToggleSort } = useSorting(filtered, 'adpScore', 'desc');
 
   return (
     <div className="space-y-4">
@@ -86,11 +99,31 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
           <div className="hidden md:block">
             <ADPTable entries={filtered} onToggleDraft={onToggleDraft} />
           </div>
-          {/* Mobile cards */}
-          <div className="md:hidden grid gap-3 grid-cols-1 sm:grid-cols-2">
-            {filtered.map((entry) => (
-              <PlayerCard key={entry.id} entry={entry} onToggleDraft={onToggleDraft} />
-            ))}
+          {/* Mobile sort + cards */}
+          <div className="md:hidden space-y-3">
+            <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+              {MOBILE_SORT_OPTIONS.map((opt) => {
+                const isActive = mobileSortKey === opt.key;
+                return (
+                  <button
+                    key={opt.key}
+                    onClick={() => mobileToggleSort(opt.key)}
+                    className={`shrink-0 font-retro text-[9px] px-3 py-1.5 border uppercase tracking-wider transition-all active:translate-y-0.5 ${
+                      isActive
+                        ? 'bg-retro-cyan/20 text-retro-cyan border-retro-cyan/40'
+                        : 'bg-white/5 text-retro-light/50 border-white/10'
+                    }`}
+                  >
+                    {opt.label}{isActive ? (mobileSortDir === 'asc' ? ' ▲' : ' ▼') : ''}
+                  </button>
+                );
+              })}
+            </div>
+            <div className="grid gap-3 grid-cols-1 sm:grid-cols-2">
+              {mobileSorted.map((entry) => (
+                <PlayerCard key={entry.id} entry={entry} onToggleDraft={onToggleDraft} />
+              ))}
+            </div>
           </div>
         </>
       )}
