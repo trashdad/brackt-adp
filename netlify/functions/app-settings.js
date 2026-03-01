@@ -2,7 +2,7 @@ import { readStore, writeStore } from './_store.js';
 
 export const handler = async (event) => {
   if (event.httpMethod === 'GET') {
-    return { statusCode: 200, body: JSON.stringify(readStore('app-settings')) };
+    return { statusCode: 200, body: JSON.stringify(await readStore('app-settings')) };
   }
 
   if (event.httpMethod === 'POST') {
@@ -12,8 +12,8 @@ export const handler = async (event) => {
     } catch {
       return { statusCode: 400, body: JSON.stringify({ error: 'Invalid JSON' }) };
     }
-    const existing = readStore('app-settings');
-    writeStore('app-settings', { ...existing, ...incoming });
+    const existing = await readStore('app-settings');
+    await writeStore('app-settings', { ...existing, ...incoming });
     return { statusCode: 200, body: JSON.stringify({ ok: true }) };
   }
 

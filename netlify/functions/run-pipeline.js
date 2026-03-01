@@ -324,14 +324,14 @@ export const handler = async (event) => {
   };
 
   for (const [sportId, merged] of Object.entries(mergedBySport)) {
-    try { writePipelineFile(`live/${sportId}.json`, merged); } catch { /* non-fatal */ }
+    try { await writePipelineFile(`live/${sportId}.json`, merged); } catch { /* non-fatal */ }
     manifest.sports[sportId] = {
       entryCount: merged.entries.length,
       sources: merged.sources,
       lastUpdated: merged.lastUpdated,
     };
   }
-  try { writePipelineFile('live/manifest.json', manifest); } catch { /* non-fatal */ }
+  try { await writePipelineFile('live/manifest.json', manifest); } catch { /* non-fatal */ }
 
   const totalEntries = Object.values(mergedBySport).reduce(
     (sum, s) => sum + s.entries.length,

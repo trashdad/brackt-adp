@@ -5,6 +5,9 @@
 [functions]
   included_files = ["server/data/**"]
 
+[context.production.environment]
+  STORAGE_BACKEND = "blobs"
+
 [[redirects]]
   from = "/api/app-settings"
   to = "/.netlify/functions/app-settings"

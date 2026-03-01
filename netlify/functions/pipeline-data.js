@@ -21,7 +21,7 @@ export const handler = async (event) => {
   // "manifest" → "live/manifest.json", "live/nfl" → "live/nfl.json"
   const filePath = subPath === 'manifest' ? 'live/manifest.json' : `${subPath}.json`;
 
-  const data = readPipelineFile(filePath);
+  const data = await readPipelineFile(filePath);
   if (data === null) {
     return { statusCode: 404, body: JSON.stringify(null) };
   }

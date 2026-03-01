@@ -2,7 +2,7 @@ import { readStore, writeStore } from './_store.js';
 
 export const handler = async (event) => {
   if (event.httpMethod === 'GET') {
-    return { statusCode: 200, body: JSON.stringify(readStore('draft-state')) };
+    return { statusCode: 200, body: JSON.stringify(await readStore('draft-state')) };
   }
 
   if (event.httpMethod === 'POST') {
@@ -12,7 +12,7 @@ export const handler = async (event) => {
     } catch {
       return { statusCode: 400, body: JSON.stringify({ error: 'Invalid JSON' }) };
     }
-    writeStore('draft-state', body);
+    await writeStore('draft-state', body);
     return { statusCode: 200, body: JSON.stringify({ ok: true }) };
   }
 

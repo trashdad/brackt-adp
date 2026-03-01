@@ -13,6 +13,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@netlify/blobs": "^10.7.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "react": "^18.3.1",
