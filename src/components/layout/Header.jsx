@@ -1,38 +1,37 @@
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ScraperControlBar from './ScraperControlBar';
 import { useTheme } from '../../context/ThemeContext';
 import { useLock } from '../../context/LockContext';
 import { useDungeonGate } from '../../context/DungeonGateContext';
 
+// Theme colors for mouth cycling
+const MOUTH_COLORS = ['#FF2D55', '#FF9F0A', '#39FF14', '#00C7FF', '#BF5AF2'];
+
 // Pixel-art robot head — toggles the dev panel (scraper bar + kernel log)
 function RobotIcon({ active }) {
+  const [frame, setFrame] = useState(0);
+  const intervalRef = useRef(null);
+
+  useEffect(() => {
+    if (active) {
+      // 6 frames: 5 color frames + 1 "off" frame
+      intervalRef.current = setInterval(() => setFrame((f) => (f + 1) % 6), 300);
+    } else {
+      clearInterval(intervalRef.current);
+      setFrame(0);
+    }
+    return () => clearInterval(intervalRef.current);
+  }, [active]);
+
+  const isOff = frame === 5; // brief blackout frame
+  const eyeColor = active ? (isOff ? '#220000' : '#FF3030') : '#444';
+  const m1 = active ? (isOff ? '#0a0a14' : MOUTH_COLORS[frame % 5]) : '#0a0a14';
+  const m2 = active ? (isOff ? '#0a0a14' : MOUTH_COLORS[(frame + 2) % 5]) : '#0a0a14';
+  const m3 = active ? (isOff ? '#0a0a14' : MOUTH_COLORS[(frame + 4) % 5]) : '#0a0a14';
+
   return (
     <svg viewBox="0 0 16 16" className="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {active && (
-        <style>{`
-          @keyframes robot-eye-pulse {
-            0%,100%  { opacity:1; }
-            45%,55%  { opacity:0; }
-          }
-          @keyframes robot-mouth-cycle {
-            0%    { fill:#FF2D55; }
-            20%   { fill:#FF9F0A; }
-            40%   { fill:#39FF14; }
-            60%   { fill:#00C7FF; }
-            80%   { fill:#BF5AF2; }
-            95%   { fill:#FF2D55; }
-            100%  { opacity:0; }
-          }
-          @keyframes robot-mouth-off {
-            0%,80% { opacity:1; }
-            85%,100% { opacity:0; }
-          }
-          .rb-eye  { animation: robot-eye-pulse 1.8s ease-in-out infinite; }
-          .rb-m1   { animation: robot-mouth-cycle 1.8s linear infinite, robot-mouth-off 1.8s ease-in-out infinite; }
-          .rb-m2   { animation: robot-mouth-cycle 1.8s linear -0.2s infinite, robot-mouth-off 1.8s ease-in-out -0.2s infinite; }
-          .rb-m3   { animation: robot-mouth-cycle 1.8s linear -0.4s infinite, robot-mouth-off 1.8s ease-in-out -0.4s infinite; }
-        `}</style>
-      )}
       {/* Antenna */}
       <rect x="7" y="0" width="2" height="2" fill="currentColor"/>
       <rect x="6" y="2" width="4" height="1" fill="currentColor"/>
@@ -41,30 +40,13 @@ function RobotIcon({ active }) {
       {/* Eye sockets */}
       <rect x="3" y="5" width="4" height="3" fill="#0a0a14"/>
       <rect x="9" y="5" width="4" height="3" fill="#0a0a14"/>
-      {/* Pupils — red + pulsing when active */}
-      <rect x="4" y="6" width="2" height="1"
-        fill={active ? '#FF3030' : '#444'}
-        className={active ? 'rb-eye' : ''}
-        style={active ? { filter:'drop-shadow(0 0 2px #FF3030)' } : {}}
-      />
-      <rect x="10" y="6" width="2" height="1"
-        fill={active ? '#FF3030' : '#444'}
-        className={active ? 'rb-eye' : ''}
-        style={active ? { filter:'drop-shadow(0 0 2px #FF3030)' } : {}}
-      />
-      {/* Mouth dots — static when inactive, color-cycling when active */}
-      <rect x="3"  y="11" width="2" height="1"
-        fill={active ? '#FF2D55' : '#0a0a14'}
-        className={active ? 'rb-m1' : ''}
-      />
-      <rect x="7"  y="11" width="2" height="1"
-        fill={active ? '#39FF14' : '#0a0a14'}
-        className={active ? 'rb-m2' : ''}
-      />
-      <rect x="11" y="11" width="2" height="1"
-        fill={active ? '#00C7FF' : '#0a0a14'}
-        className={active ? 'rb-m3' : ''}
-      />
+      {/* Pupils */}
+      <rect x="4" y="6" width="2" height="1" fill={eyeColor}/>
+      <rect x="10" y="6" width="2" height="1" fill={eyeColor}/>
+      {/* Mouth dots */}
+      <rect x="3"  y="11" width="2" height="1" fill={m1}/>
+      <rect x="7"  y="11" width="2" height="1" fill={m2}/>
+      <rect x="11" y="11" width="2" height="1" fill={m3}/>
       {/* Ear bolts */}
       <rect x="0" y="6" width="1" height="4" fill="currentColor"/>
       <rect x="15" y="6" width="1" height="4" fill="currentColor"/>
