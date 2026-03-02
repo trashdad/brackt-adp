@@ -23,5 +23,3 @@ public/data/historical/
 .dev.vars*
 !.dev.vars.example
 !.env.example
-# Server-side runtime data (manual-odds not committed)
-server/data/manual-odds.json
