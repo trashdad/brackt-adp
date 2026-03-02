@@ -81,15 +81,15 @@ for (const sport of SPORTS) {
         const odds = item?.odds || null;
         if (!odds) continue;
 
-        const ev = calculateSeasonTotalEV(odds, sport.category, sport.eventsPerSeason);
+        const ev = calculateSeasonTotalEV(odds, sport.category, sport.eventsPerSeason, sport.id);
         
         sportEntries.push({
             id: entryId,
             name,
             sport: sport.id,
-            bestOdds: odds,
-            ev,
-            adjSq: social.socialQuotient || 1.0,
+            odds: odds,
+            ev: ev,
+            adjSq: social.adjSq || social.socialQuotient || 1.0,
             drafted: false,
             notes: social.sources?.expert?.notes || ''
         });
@@ -103,13 +103,27 @@ for (const sport of SPORTS) {
 
 allEntries.sort((a, b) => (b.adpScore || 0) - (a.adpScore || 0));
 
+// Add rank and flatten for full analysis
+const analysisOutput = allEntries.map((e, i) => ({
+    rank: i + 1,
+    name: e.name,
+    sport: e.sport,
+    dps: e.adpScore,
+    odds: e.odds,
+    ev: e.ev.seasonTotal,
+    math: e.math,
+    adjSq: e.adjSq
+}));
+
+fs.writeFileSync(path.join(__dirname, 'full_undrafted_analysis.json'), Buffer.from('\uFEFF' + JSON.stringify(analysisOutput, null, 2), 'utf16le'));
+
 console.log("--- DEFINITIVE TOP 30 UNDRAFTED SELECTIONS (UPDATED DPS) ---");
-console.table(allEntries.slice(0, 30).map((e, i) => ({
-    Rank: i + 1,
+console.table(analysisOutput.slice(0, 30).map((e, i) => ({
+    Rank: e.rank,
     Name: e.name.substring(0, 22),
     Sport: e.sport.toUpperCase(),
-    Odds: e.bestOdds,
-    DPS: e.adpScore.toFixed(2),
-    EV: e.ev.seasonTotal.toFixed(2),
+    Odds: e.odds,
+    DPS: e.dps.toFixed(2),
+    EV: e.ev.toFixed(2),
     SQ: e.adjSq.toFixed(2)
 })));

@@ -429,8 +429,8 @@ const INDY_TECH_ALPHA = {
 // GCI calibrated to backtest predictability (top-3 hit rate, 2021-2025):
 // F1: 100% → 1.15 | NFL/MLB/NHL: ~50% → 1.02-1.05 | NBA: 25% → 1.08 (upset-prone)
 const GLOBAL_CONFIDENCE_INDEX = {
-  nba: 1.08, indycar: 0.95, f1: 1.15, llws: 1.15,  // NBA reduced: 25% top-3 backtest hit rate
-  mlb: 1.02, nhl: 0.95, tennis_m: 1.10, tennis_w: 1.10, afl: 1.10,  // MLB raised: 50% top-3 hit rate
+  nba: 1.05, indycar: 0.95, f1: 1.15, llws: 1.15,  // NBA reduced: 25% top-3 backtest hit rate
+  mlb: 0.98, nhl: 0.95, tennis_m: 1.10, tennis_w: 1.10, afl: 1.10,  // MLB normalized
   nfl: 1.05, ncaaf: 1.05, ucl: 1.05, fifa: 1.05,
   pga: 0.95, darts: 1.10, snooker: 1.10, csgo: 0.90,
   ncaab: 1.10, wnba: 0.90, ncaaw: 0.90

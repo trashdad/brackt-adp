@@ -1,10 +1,11 @@
-import { useCallback, useState, useRef, useEffect } from 'react';
+import { useCallback, useState, useRef, useEffect, useMemo } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Dashboard from './pages/Dashboard';
 import SportView from './pages/SportView';
 import PlayerDetail from './pages/PlayerDetail';
 import ParsePage from './pages/ParsePage';
+import DraftPage from './pages/DraftPage';
 import Settings from './pages/Settings';
 import useOddsData from './hooks/useOddsData';
 import useDraftBoard from './hooks/useDraftBoard';
@@ -14,6 +15,7 @@ import { useDungeonGate } from './context/DungeonGateContext';
 import { applyDungeonFog } from './utils/dungeonFog';
 import { fetchAppConfig, saveAppConfig } from './utils/storage';
 import { exportBoard, importBoard } from './utils/csvManager';
+import { computeIkynEV } from './utils/ikynEV';
 
 export default function App() {
   const [scarcityModifier, setScarcityModifier] = useState(0.5); // default; overwritten from server
@@ -26,6 +28,10 @@ export default function App() {
   }, []);
   const { entries, loading, lastUpdated, refresh } = useOddsData(scarcityModifier);
   const { boardEntries, toggleDrafted, resetDraft, syncDraft } = useDraftBoard(entries);
+
+  // ikyn_EV: computed once from real boardEntries (300k-sim Plackett-Luce per sport).
+  // Shared by Dashboard and DraftPage so both always show the same live numbers.
+  const ikynEVMap = useMemo(() => computeIkynEV(boardEntries), [boardEntries]);
 
   // DUNGEON_FOE: randomize display values for non-friends (never mutates real data)
   const { isFoe, seed } = useDungeonGate();
@@ -87,6 +93,7 @@ export default function App() {
             element={
               <Dashboard
                 boardEntries={displayEntries}
+                ikynEVMap={ikynEVMap}
                 loading={loading}
                 lastUpdated={lastUpdated}
                 onToggleDraft={toggleDrafted}
@@ -99,7 +106,7 @@ export default function App() {
           />
           <Route
             path="sport/:id"
-            element={<SportView boardEntries={displayEntries} onToggleDraft={toggleDrafted} />}
+            element={<SportView boardEntries={displayEntries} ikynEVMap={ikynEVMap} onToggleDraft={toggleDrafted} />}
           />
           <Route
             path="player/:id"
@@ -108,6 +115,10 @@ export default function App() {
           <Route
             path="parse"
             element={<ParsePage onOddsSubmitted={refresh} />}
+          />
+          <Route
+            path="draft"
+            element={<DraftPage boardEntries={displayEntries} ikynEVMap={ikynEVMap} />}
           />
           <Route
             path="settings"

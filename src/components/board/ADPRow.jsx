@@ -4,6 +4,8 @@ import { formatAmericanOdds } from '../../services/oddsConverter';
 import { formatNumber, formatPercent } from '../../utils/formatters';
 import DraftedBadge from './DraftedBadge';
 import EVTooltip from './EVTooltip';
+import IkynEVTooltip from './IkynEVTooltip';
+import WAEVTooltip from './WAEVTooltip';
 import OddsTooltip from './OddsTooltip';
 import PriorityTooltip from './PriorityTooltip';
 import SocialTooltip from './SocialTooltip';
@@ -50,6 +52,53 @@ export default function ADPRow({ entry, onToggleDraft }) {
         </PriorityTooltip>
       </td>
 
+      {/* ikyn_EV */}
+      <td className="px-2 py-2 font-mono tabular-nums text-center w-16">
+        {entry.ikynEV == null ? (
+          <span className="text-retro-light/20 text-[11px]">—</span>
+        ) : (
+          <IkynEVTooltip entry={entry}>
+            <span
+              className={`font-bold ${entry.isPlaceholder ? 'text-[11px] opacity-40' : 'text-[13px]'}`}
+              style={{ color: entry.isPlaceholder ? '#888' : `hsl(${Math.min(entry.ikynEV, 100) * 1.2}deg 100% 55%)` }}
+            >
+              {entry.ikynEV.toFixed(1)}
+            </span>
+          </IkynEVTooltip>
+        )}
+      </td>
+
+      {/* WA_EV */}
+      <td className="px-2 py-2 font-mono tabular-nums text-center w-16">
+        {entry.waEV == null ? (
+          <span className="text-retro-light/20 text-[11px]">—</span>
+        ) : (
+          <WAEVTooltip entry={entry}>
+            <span
+              className={`font-bold ${entry.isPlaceholder ? 'text-[11px] opacity-40' : 'text-[13px]'}`}
+              style={{ color: entry.isPlaceholder ? '#888' : `hsl(${Math.min(entry.waEV, 100) * 1.2}deg 100% 65%)` }}
+            >
+              {entry.waEV.toFixed(1)}
+            </span>
+          </WAEVTooltip>
+        )}
+      </td>
+
+      {/* Wizard_EV */}
+      <td className="px-2 py-2 font-mono tabular-nums text-center w-16">
+        {entry.wizardEV == null ? (
+          <span className="text-retro-light/20 text-[11px]">—</span>
+        ) : (
+          <span
+            className={`font-bold ${entry.isPlaceholder ? 'text-[11px] opacity-40' : 'text-[13px]'}`}
+            style={{ color: entry.isPlaceholder ? '#888' : `hsl(${270 + Math.min(entry.wizardEV, 100) * 0.3}deg 80% 65%)` }}
+            title={entry.ikynDetail?.wizardModel === 'ikyn' ? 'PL-MC (fixed field)' : 'WA (variable field)'}
+          >
+            {entry.wizardEV.toFixed(1)}
+          </span>
+        )}
+      </td>
+
       {/* Rank */}
       <td className="px-3 py-2 font-mono text-[11px] text-retro-light/40 w-10 border-r border-black/10 tabular-nums text-center">
         {entry.adpRank}
@@ -84,22 +133,22 @@ export default function ADPRow({ entry, onToggleDraft }) {
       </td>
 
       {/* Win % */}
-      <td className="px-3 py-2 font-mono text-[13px] text-retro-cyan/90 tabular-nums">
+      <td className="px-1.5 py-2 font-mono text-[13px] text-retro-cyan/90 tabular-nums">
         {val(formatPercent(entry.ev?.winProbability))}
       </td>
 
       {/* Odds */}
-      <td className="px-3 py-2 font-mono text-[13px] text-retro-light/70 tabular-nums">
+      <td className="px-1.5 py-2 font-mono text-[13px] text-retro-light/70 tabular-nums">
         <OddsTooltip entry={entry}>{val(formatAmericanOdds(entry.odds))}</OddsTooltip>
       </td>
 
       {/* Season EV */}
-      <td className="px-3 py-2 font-mono text-[13px] font-bold text-retro-light tabular-nums">
+      <td className="px-1.5 py-2 font-mono text-[13px] font-bold text-retro-light tabular-nums">
         <EVTooltip entry={entry}>{val(formatNumber(entry.ev?.seasonTotal))}</EVTooltip>
       </td>
 
       {/* Dropoff Velocity */}
-      <td className="px-3 py-2 font-mono text-[13px] tabular-nums">
+      <td className="px-1.5 py-2 font-mono text-[13px] tabular-nums">
         {entry.isPlaceholder ? '—' : (
           <span className={getVelocityColor(velocity)} title="MOMENTUM / INERTIA (Rate of EV decay)">
             {velocity.toFixed(2)}x
@@ -108,7 +157,7 @@ export default function ADPRow({ entry, onToggleDraft }) {
       </td>
 
       {/* Social Score */}
-      <td className="px-3 py-2 font-mono text-[13px] tabular-nums">
+      <td className="px-1.5 py-2 font-mono text-[13px] tabular-nums">
         <SocialTooltip entry={entry}>
           <div className="flex gap-1 items-center justify-center">
             <span className="text-retro-light/50">[</span>
@@ -121,7 +170,7 @@ export default function ADPRow({ entry, onToggleDraft }) {
       </td>
 
       {/* Mkt vs Exp */}
-      <td className="px-3 py-2 font-mono text-[13px] tabular-nums text-center">
+      <td className="px-1.5 py-2 font-mono text-[13px] tabular-nums text-center">
         {!entry.isPlaceholder && entry.mktVsExp !== undefined ? (
            <span className={entry.mktVsExp > 0 ? 'text-retro-lime' : entry.mktVsExp < 0 ? 'text-retro-red' : 'text-retro-light/50'}>
              {entry.mktVsExp > 0 ? `+${entry.mktVsExp}` : entry.mktVsExp}
@@ -130,7 +179,7 @@ export default function ADPRow({ entry, onToggleDraft }) {
       </td>
 
       {/* Adj SQ */}
-      <td className="px-3 py-2 font-mono text-[13px] text-retro-gold/80 tabular-nums">
+      <td className="px-1.5 py-2 font-mono text-[13px] text-retro-gold/80 tabular-nums">
         <SocialTooltip entry={entry}>{val(formatNumber(entry.adjSq || 1.0))}</SocialTooltip>
       </td>
 

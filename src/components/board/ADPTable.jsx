@@ -4,6 +4,9 @@ import useSorting from '../../hooks/useSorting';
 
 const COLUMNS = [
   { label: 'Draft Priority Score', key: 'adpScore' },
+  { label: 'ikyn_EV', key: 'ikynEV' },
+  { label: 'WA_EV', key: 'waEV' },
+  { label: 'Wizard_EV', key: 'wizardEV' },
   { label: 'Rank', key: 'adpRank' },
   { label: 'Name', key: 'name' },
   { label: 'Sport', key: 'sportName' },

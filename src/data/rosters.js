@@ -172,16 +172,19 @@ const ROSTERS = {
     'Australia', 'Panama',
   ],
 
-  // ── IndyCar — Full-time drivers (2025) ──────────────────────────
+  // ── IndyCar — 2026 season (full-time + confirmed Indy 500 entrants) ──
   indycar: [
+    // Full-time
     'Josef Newgarden', 'Alex Palou', 'Scott McLaughlin', "Pato O'Ward",
-    'Will Power', 'Scott Dixon', 'Colton Herta', 'Kyle Kirkwood',
-    'Marcus Ericsson', 'Christian Lundgaard', 'Santino Ferrucci', 'Graham Rahal',
-    'Alexander Rossi', 'Felix Rosenqvist', 'Rinus VeeKay', 'David Malukas',
-    'Nolan Siegel', 'Kyffin Simpson', 'Sting Ray Robb', 'Marcus Armstrong',
-    'Conor Daly', 'Robert Shwartzman', 'Callum Ilott', 'Louis Foster',
-    'Devlin DeFrancesco', 'Christian Rasmussen', 'Jacob Abel', 'Mick Schumacher',
-    'Takuma Sato',
+    'Will Power', 'Scott Dixon', 'Kyle Kirkwood', 'Marcus Ericsson',
+    'Christian Lundgaard', 'Santino Ferrucci', 'Graham Rahal', 'Alexander Rossi',
+    'Felix Rosenqvist', 'Rinus VeeKay', 'David Malukas', 'Nolan Siegel',
+    'Kyffin Simpson', 'Sting Ray Robb', 'Marcus Armstrong', 'Robert Shwartzman',
+    'Callum Ilott', 'Louis Foster', 'Christian Rasmussen', 'Jacob Abel',
+    'Mick Schumacher', 'Romain Grosjean', 'Dennis Hauger', 'Caio Collet',
+    // Indy 500 entries / part-time
+    'Takuma Sato', 'Helio Castroneves', 'Ryan Hunter-Reay', 'Jack Harvey',
+    'Ed Carpenter', 'Conor Daly',
   ],
 
   // ── PGA Golf — Top 50 players ───────────────────────────────────
@@ -201,41 +204,96 @@ const ROSTERS = {
     'Davis Thompson', 'Ben Griffin', 'Patrick Reed', 'Chris Gotterup',
   ],
 
-  // ── Tennis Men's (ATP) — Top 56 players ─────────────────────────
+  // ── Tennis Men's (ATP) — Top 128 players (Mar 2026 rankings) ────
   tennis_m: [
-    'Carlos Alcaraz', 'Jannik Sinner', 'Alexander Zverev', 'Novak Djokovic',
-    'Felix Auger-Aliassime', 'Taylor Fritz', 'Alex de Minaur', 'Lorenzo Musetti',
-    'Ben Shelton', 'Jack Draper', 'Alexander Bublik', 'Casper Ruud',
-    'Daniil Medvedev', 'Holger Rune', 'Andrey Rublev', 'Tommy Paul',
-    'Karen Khachanov', 'Jiri Lehecka', 'Jakub Mensik', 'Francisco Cerundolo',
-    'Flavio Cobolli', 'Denis Shapovalov', 'Joao Fonseca', 'Stefanos Tsitsipas',
-    'Frances Tiafoe', 'Ugo Humbert', 'Arthur Fils', 'Grigor Dimitrov',
-    'Matteo Berrettini', 'Alejandro Davidovich Fokina', 'Hubert Hurkacz',
-    'Giovanni Mpetshi Perricard', 'Sebastian Korda', 'Learner Tien',
-    'Gabriel Diallo', 'Alex Michelsen', 'Nicolas Jarry', 'Lorenzo Sonego',
-    'Jan-Lennard Struff', 'Cameron Norrie', 'Reilly Opelka', 'Tomas Machac',
-    'Nick Kyrgios', 'Tallon Griekspoor',
-    // Expanded coverage (ATP 45–70)
-    'Alexei Popyrin', 'Miomir Kecmanovic', 'Nuno Borges', 'Alejandro Tabilo',
-    'Mariano Navone', 'Botic van de Zandschulp', 'Daniel Altmaier', 'Roman Safiullin',
-    'Mattia Bellucci', 'Brandon Nakashima', 'Hamad Medjedovic', 'Luca Van Assche',
+    // ATP 1–10
+    'Carlos Alcaraz', 'Jannik Sinner', 'Novak Djokovic', 'Alexander Zverev',
+    'Lorenzo Musetti', 'Alex de Minaur', 'Taylor Fritz', 'Ben Shelton',
+    'Felix Auger-Aliassime', 'Alexander Bublik',
+    // ATP 11–20
+    'Daniil Medvedev', 'Jakub Mensik', 'Casper Ruud', 'Jack Draper',
+    'Flavio Cobolli', 'Karen Khachanov', 'Andrey Rublev', 'Holger Rune',
+    'Alejandro Davidovich Fokina', 'Francisco Cerundolo',
+    // ATP 21–30
+    'Luciano Darderi', 'Frances Tiafoe', 'Jiri Lehecka', 'Tommy Paul',
+    'Tallon Griekspoor', 'Valentin Vacherot', 'Learner Tien', 'Arthur Rinderknech',
+    'Cameron Norrie', 'Brandon Nakashima',
+    // ATP 31–40
+    'Tomas Martin Etcheverry', 'Arthur Fils', 'Corentin Moutet', 'Ugo Humbert',
+    'Joao Fonseca', 'Jaume Munar', 'Sebastian Korda', 'Gabriel Diallo',
+    'Denis Shapovalov', 'Alejandro Tabilo',
+    // ATP 41–50
+    'Jenson Brooksby', 'Grigor Dimitrov', 'Stefanos Tsitsipas', 'Alex Michelsen',
+    'Alexei Popyrin', 'Fabian Marozsan', 'Zizou Bergs', 'Adrian Mannarino',
+    'Nuno Borges', 'Tomas Machac',
+    // ATP 51–60
+    'Marin Cilic', 'Terence Atmane', 'Sebastian Baez', 'Giovanni Mpetshi Perricard',
+    'Daniel Altmaier', 'Marton Fucsovics', 'Kamil Majchrzak', 'Miomir Kecmanovic',
+    'Botic van de Zandschulp', 'Valentin Royer',
+    // ATP 61–70
+    'Lorenzo Sonego', 'Vit Kopriva', 'Ignacio Buse', 'Damir Dzumhur',
+    'Yannick Hanfmann', 'Matteo Berrettini', 'Camilo Ugo Carabelli', 'Reilly Opelka',
+    'Marcos Giron', 'Juan Manuel Cerundolo',
+    // ATP 71–80
+    'Hubert Hurkacz', 'Aleksandar Kovacevic', 'Ethan Quinn', 'Thiago Agustin Tirante',
+    'Emilio Nava', 'Arthur Cazaux', 'Raphael Collignon', 'Eliot Spizzirri',
+    'Mariano Navone', 'Jan-Lennard Struff',
+    // ATP 81–90
+    'Alexandre Muller', 'Francisco Comesana', 'James Duckworth', 'Filip Misolic',
+    'Matteo Arnaldi', 'Jesper de Jong', 'Jacob Fearnley', 'Alexander Shevchenko',
+    'Aleksandar Vukic', 'Cristian Garin',
+    // ATP 91–100
+    'Adam Walton', 'Stan Wawrinka', 'Roberto Bautista Agut', 'Mattia Bellucci',
+    'Patrick Kypson', 'Hugo Gaston', 'Alexander Blockx', 'Roman Andres Burruchaga',
+    'Zachary Svajda', 'Carlos Taberner',
+    // ATP 101–110
+    'Vilius Gaubas', 'Quentin Halys', 'Rafael Jodar', 'Adolfo Daniel Vallejo',
+    'Luca Van Assche', 'Pedro Martinez', 'Pablo Carreno Busta', 'Sebastian Ofner',
+    'Dalibor Svrcina', 'Hamad Medjedovic',
+    // ATP 111–120
+    'Benjamin Bonzi', 'Yibing Wu', 'Sho Shimabukuro', 'Francesco Maestrelli',
+    'Marcelo Tomas Barrios Vera', 'Jordan Thompson', 'Rinky Hijikata', 'Tristan Schoolkate',
+    'Dino Prizmic', 'Dusan Lajovic',
+    // ATP 121–128
+    'Elmer Moller', 'Jan Choinski', 'Coleman Wong', 'Titouan Droguet',
+    'Andrea Pellegrino', 'Mackenzie McDonald', 'Christopher O\'Connell', 'Otto Virtanen',
+    // Notable wildcards / former top players likely to appear
+    'Nicolas Jarry', 'Nick Kyrgios', 'Gael Monfils', 'David Goffin',
+    'Borna Coric', 'Luca Nardi', 'Roman Safiullin',
   ],
 
-  // ── Tennis Women's (WTA) — Top 47 players ──────────────────────
+  // ── Tennis Women's (WTA) — Top 64 players (Mar 2026 rankings) ──
   tennis_w: [
-    'Aryna Sabalenka', 'Iga Swiatek', 'Coco Gauff', 'Elena Rybakina',
-    'Jessica Pegula', 'Madison Keys', 'Jasmine Paolini', 'Mirra Andreeva',
-    'Amanda Anisimova', 'Belinda Bencic', 'Clara Tauson', 'Linda Noskova',
-    'Elina Svitolina', 'Emma Navarro', 'Naomi Osaka', 'Karolina Muchova',
-    'Diana Shnaider', 'Elise Mertens', 'Leylah Fernandez', 'Jelena Ostapenko',
-    'Qinwen Zheng', 'Emma Raducanu', 'Ekaterina Alexandrova', 'Liudmila Samsonova',
-    'Victoria Mboko', 'Marketa Vondrousova', 'Iva Jovic', 'Barbora Krejcikova',
-    'Maya Joint', 'Paula Badosa', 'Anastasia Potapova', 'Sonay Kartal',
-    'Marta Kostyuk', 'Tereza Valentova', 'Veronika Kudermetova',
-    // Expanded coverage (WTA 16–50)
-    'Daria Kasatkina', 'Caroline Garcia', 'Donna Vekic', 'Maria Sakkari',
-    'Beatriz Haddad Maia', 'Dayana Yastremska', 'Danielle Collins', 'Magdalena Frech',
-    'Sorana Cirstea', 'Sofia Kenin', 'Anhelina Kalinina', 'Diane Parry',
+    // WTA 1–10
+    'Aryna Sabalenka', 'Iga Swiatek', 'Elena Rybakina', 'Coco Gauff',
+    'Jessica Pegula', 'Amanda Anisimova', 'Jasmine Paolini', 'Mirra Andreeva',
+    'Elina Svitolina', 'Victoria Mboko',
+    // WTA 11–20
+    'Ekaterina Alexandrova', 'Belinda Bencic', 'Karolina Muchova', 'Linda Noskova',
+    'Madison Keys', 'Naomi Osaka', 'Clara Tauson', 'Iva Jovic',
+    'Liudmila Samsonova', 'Emma Navarro',
+    // WTA 21–30
+    'Diana Shnaider', 'Elise Mertens', 'Anna Kalinskaya', 'Qinwen Zheng',
+    'Emma Raducanu', 'Jelena Ostapenko', 'Leylah Fernandez', 'Marta Kostyuk',
+    'Maya Joint', 'Wang Xinyu',
+    // WTA 31–40
+    'Alexandra Eala', 'Maria Sakkari', 'Jaqueline Cristian', 'Marie Bouzkova',
+    'Sorana Cirstea', 'Janice Tjen', 'Sara Bejlek', 'Lois Boisson',
+    'Ann Li', 'McCartney Kessler',
+    // WTA 41–50
+    'Elisabetta Cocciaretto', 'Hailey Baptiste', 'Katerina Siniakova', 'Sofia Kenin',
+    'Marketa Vondrousova', 'Tereza Valentova', 'Magda Linette', 'Jessica Bouzas Maneiro',
+    'Dayana Yastremska', 'Barbora Krejcikova',
+    // WTA 51–64
+    'Antonia Ruzic', 'Sonay Kartal', 'Laura Siegemund', 'Veronika Kudermetova',
+    'Tatjana Maria', 'Varvara Gracheva', 'Magdalena Frech', 'Daria Kasatkina',
+    'Emiliana Arango', 'Elsa Jacquemot', 'Camila Osorio', 'Peyton Stearns',
+    'Cristina Bucsa', 'Solana Sierra',
+    // WTA just outside top 64 — frequent Grand Slam participants
+    'Beatriz Haddad Maia', 'Paula Badosa', 'Danielle Collins', 'Donna Vekic',
+    'Anastasia Potapova', 'Lulu Sun', 'Katie Boulter', 'Yulia Putintseva',
+    'Ajla Tomljanovic', 'Caty McNally', 'Caroline Garcia', 'Victoria Azarenka',
+    'Ons Jabeur',
   ],
 
   // ── Counter-Strike 2 — Top 20 teams (Feb 2026 HLTV) ─────────────

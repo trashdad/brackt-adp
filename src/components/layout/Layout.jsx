@@ -16,7 +16,7 @@ export default function Layout({ onExport, onImportClick, importStatus }) {
       <Header onExport={onExport} onImportClick={onImportClick} importStatus={importStatus} />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />
-        <main className="flex-1 overflow-y-auto p-6 lg:p-10 relative">
+        <main className="flex-1 overflow-auto p-6 lg:p-10 relative">
           <div className="max-w-screen-2xl mx-auto">
             <Outlet />
           </div>

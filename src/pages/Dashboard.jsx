@@ -17,7 +17,7 @@ const MOBILE_SORT_OPTIONS = [
   { label: 'SPORT', key: 'sportName', defaultDir: 'asc' },
 ];
 
-export default function Dashboard({ boardEntries, loading, lastUpdated, onToggleDraft, onRefresh, scarcityModifier, onScarcityChange }) {
+export default function Dashboard({ boardEntries, ikynEVMap = {}, loading, lastUpdated, onToggleDraft, onRefresh, scarcityModifier, onScarcityChange }) {
   const [sportFilter, setSportFilter] = useState([]);
   const [search, setSearch] = useState('');
   const [showDrafted, setShowDrafted] = useState(false);
@@ -32,6 +32,30 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
     }
     return items;
   }, [boardEntries, sportFilter, search, showDrafted]);
+
+  const totalIkynEV = useMemo(
+    () => Object.values(ikynEVMap).reduce((s, v) => s + (v?.ev ?? 0), 0),
+    [ikynEVMap]
+  );
+
+  const totalWaEV = useMemo(
+    () => Object.values(ikynEVMap).reduce((s, v) => s + (v?.waEV ?? 0), 0),
+    [ikynEVMap]
+  );
+
+  const totalWizardEV = useMemo(
+    () => Object.values(ikynEVMap).reduce((s, v) => s + (v?.wizardEV ?? 0), 0),
+    [ikynEVMap]
+  );
+
+  // Enrich filtered entries with ikynEV + waEV + wizardEV + pos breakdown before passing down
+  const enrichedFiltered = useMemo(
+    () => filtered.map(e => {
+      const d = ikynEVMap[e.id];
+      return { ...e, ikynEV: d?.ev ?? null, waEV: d?.waEV ?? null, wizardEV: d?.wizardEV ?? null, ikynDetail: d ?? null };
+    }),
+    [filtered, ikynEVMap]
+  );
 
   const { sorted: mobileSorted, sortKey: mobileSortKey, sortDir: mobileSortDir, toggleSort: mobileToggleSort } = useSorting(filtered, 'adpScore', 'desc');
 
@@ -50,6 +74,12 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
             className="font-retro text-[11px] px-4 py-2 bg-white/5 text-retro-cyan border border-retro-cyan/30 hover:bg-white/10 transition-all active:translate-y-0.5 uppercase tracking-wider"
           >
             PARSE
+          </Link>
+          <Link
+            to="/draft"
+            className="font-retro text-[11px] px-4 py-2 bg-white/5 text-retro-gold border border-retro-gold/30 hover:bg-white/10 transition-all active:translate-y-0.5 uppercase tracking-wider"
+          >
+            DRAFT
           </Link>
           <button
             onClick={onRefresh}
@@ -83,6 +113,40 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
             className="w-20 px-2 py-1 bg-black/40 border border-white/10 font-mono text-[13px] text-retro-cyan text-center tabular-nums focus:outline-none focus:border-retro-cyan/50"
           />
         </div>
+        <div className="h-6 w-px bg-white/5 hidden lg:block" />
+        <div className="flex flex-col justify-center px-3 py-1 border border-retro-lime/20 bg-black/20 min-w-[140px]">
+          <span className="font-mono text-[8px] text-retro-light/30 tracking-widest uppercase leading-none mb-0.5">
+            TOTAL_IKYN_EV
+          </span>
+          <span className="font-mono text-[15px] font-bold text-retro-lime tabular-nums leading-none">
+            {totalIkynEV > 0 ? totalIkynEV.toFixed(1) : '—'}
+          </span>
+          <span className="font-mono text-[8px] text-retro-light/20 leading-none mt-0.5">
+            / 6800 max
+          </span>
+        </div>
+        <div className="flex flex-col justify-center px-3 py-1 border border-retro-cyan/20 bg-black/20 min-w-[140px]">
+          <span className="font-mono text-[8px] text-retro-light/30 tracking-widest uppercase leading-none mb-0.5">
+            TOTAL_WA_EV
+          </span>
+          <span className="font-mono text-[15px] font-bold text-retro-cyan tabular-nums leading-none">
+            {totalWaEV > 0 ? totalWaEV.toFixed(1) : '—'}
+          </span>
+          <span className="font-mono text-[8px] text-retro-light/20 leading-none mt-0.5">
+            / 6800 · α calibrated
+          </span>
+        </div>
+        <div className="flex flex-col justify-center px-3 py-1 border border-retro-purple/30 bg-black/20 min-w-[140px]">
+          <span className="font-mono text-[8px] text-retro-light/30 tracking-widest uppercase leading-none mb-0.5">
+            TOTAL_WIZARD_EV
+          </span>
+          <span className="font-mono text-[15px] font-bold text-retro-purple tabular-nums leading-none">
+            {totalWizardEV > 0 ? totalWizardEV.toFixed(1) : '—'}
+          </span>
+          <span className="font-mono text-[8px] text-retro-light/20 leading-none mt-0.5">
+            ikyn∣wa per sport
+          </span>
+        </div>
       </div>
 
       <div className="overflow-x-auto no-scrollbar">
@@ -97,7 +161,7 @@ export default function Dashboard({ boardEntries, loading, lastUpdated, onToggle
         <>
           {/* Desktop table */}
           <div className="hidden md:block">
-            <ADPTable entries={filtered} onToggleDraft={onToggleDraft} />
+            <ADPTable entries={enrichedFiltered} onToggleDraft={onToggleDraft} />
           </div>
           {/* Mobile sort + cards */}
           <div className="md:hidden space-y-3">
