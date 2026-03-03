@@ -1,4 +1,4 @@
-import { useMemo, useState, useCallback } from 'react';
+import { useMemo, useState, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SPORT_COLORS } from '../data/sports';
 
@@ -119,12 +119,23 @@ function findEntry(selection, bracktSport, boardEntries) {
   );
 }
 
-// ─── All completed draft picks ───────────────────────────────────────────────
+// ─── Draft_EV: average of ikynEV and wizardEV ────────────────────────────────
+// For fixed-field sports wizardEV = ikynEV so result = ikynEV unchanged.
+// For variable-field sports (PGA, tennis, IndyCar…) they differ → blended.
+function draftEV(ikynData) {
+  if (!ikynData) return null;
+  const ikyn = ikynData.ev   ?? null;
+  const wiz  = ikynData.wizardEV ?? null;
+  if (ikyn != null && wiz != null) return (ikyn + wiz) / 2;
+  return ikyn ?? wiz ?? null;
+}
+
+// ─── Hardcoded fallback picks (used until API loads or on error) ──────────────
 // r  = round (1-based)
 // ti = team index (0–13, column order)
 // Serpentine: odd rounds L→R (ti = pickPos-1), even rounds R→L (ti = 14-pickPos)
 // bv = brackt.com value shown in the cell; null when "N/A" or draft not yet reached
-const RAW_PICKS = [
+const FALLBACK_PICKS = [
   // ── Round 1 (L→R) ─────────────────────────────────────────────────────────
   { r:1,  ti:0,  selection:'Scottie Scheffler',          sport:'PGA Golf',                      bv:35.44 },
   { r:1,  ti:1,  selection:'Carlos Alcaraz',              sport:"Tennis - Men's",                bv:59.17 },
@@ -183,7 +194,7 @@ const RAW_PICKS = [
   { r:4,  ti:4,  selection:'Paris Saint-Germain',         sport:'UEFA Champions League',         bv:45.30 },
   { r:4,  ti:3,  selection:'Houston',                     sport:"NCAA Basketball - Men's",       bv:29.84 },
   { r:4,  ti:2,  selection:'Manchester City',             sport:'UEFA Champions League',         bv:42.68 },
-  { r:4,  ti:1,  selection:'Seattle Seahawks',            sport:'NFL',                           bv:26.16 },
+  { r:4,  ti:1,  selection:'Seattle Seahawks',            sport:'NFL',                           bv:28.48 },
   { r:4,  ti:0,  selection:'Gian van Veen',               sport:'PDC Darts',                     bv:29.01 },
   // ── Round 5 (L→R) ─────────────────────────────────────────────────────────
   { r:5,  ti:0,  selection:'Andrea Kimi Antonelli',       sport:'Formula 1',                     bv:37.32 },
@@ -192,7 +203,7 @@ const RAW_PICKS = [
   { r:5,  ti:3,  selection:'Wu Yize',                     sport:'Snooker',                       bv:13.00 },
   { r:5,  ti:4,  selection:'Neil Robertson',              sport:'Snooker',                       bv:11.07 },
   { r:5,  ti:5,  selection:'Scott McLaughlin',            sport:'Indycar Series',                bv:30.56 },
-  { r:5,  ti:6,  selection:'San Antonio Spurs',           sport:'NBA',                           bv:null  },
+  { r:5,  ti:6,  selection:'San Antonio Spurs',           sport:'NBA',                           bv:30.56 },
   { r:5,  ti:7,  selection:'Ohio State',                  sport:'NCAA Football',                 bv:32.57 },
   { r:5,  ti:8,  selection:'Xander Schauffele',           sport:'PGA Golf',                      bv:11.86 },
   { r:5,  ti:9,  selection:'Oscar Piastri',               sport:'Formula 1',                     bv:33.25 },
@@ -210,7 +221,7 @@ const RAW_PICKS = [
   { r:6,  ti:7,  selection:'Phoenix Mercury',             sport:'WNBA',                          bv:34.64 },
   { r:6,  ti:6,  selection:'Illinois',                    sport:"NCAA Basketball - Men's",       bv:21.24 },
   { r:6,  ti:5,  selection:'Geelong Cats',                sport:'Aussie Rules Football',         bv:30.00 },
-  { r:6,  ti:4,  selection:'Texas',                       sport:'NCAA Football',                 bv:null  },
+  { r:6,  ti:4,  selection:'Texas',                       sport:'NCAA Football',                 bv:32.47 },
   { r:6,  ti:3,  selection:'Team Spirit',                 sport:'Counter Strike',                bv:17.14 },
   { r:6,  ti:2,  selection:'New York Yankees',            sport:'MLB',                           bv:26.04 },
   { r:6,  ti:1,  selection:'Adelaide Crows',              sport:'Aussie Rules Football',         bv:24.67 },
@@ -225,93 +236,152 @@ const RAW_PICKS = [
   { r:7,  ti:6,  selection:'Vanderbilt',                  sport:"NCAA Basketball - Women's",     bv:13.93 },
   { r:7,  ti:7,  selection:'Portugal',                    sport:"FIFA Men's World Cup",          bv:22.79 },
   { r:7,  ti:8,  selection:'Connecticut',                 sport:"NCAA Basketball - Men's",       bv:13.85 },
-  { r:7,  ti:9,  selection:'Boston Celtics',              sport:'NBA',                           bv:null  },
-  { r:7,  ti:10, selection:'Latin America',               sport:'Little League World Series',    bv:null  },
-  { r:7,  ti:11, selection:'Amanda Anisimova',            sport:"Tennis - Women's",              bv:null  },
-  { r:7,  ti:12, selection:'Dallas Stars',                sport:'NHL',                           bv:null  },
-  { r:7,  ti:13, selection:'Minnesota Wild',              sport:'NHL',                           bv:null  },
+  { r:7,  ti:9,  selection:'Boston Celtics',              sport:'NBA',                           bv:29.08 },
+  { r:7,  ti:10, selection:'Latin America',               sport:'Little League World Series',    bv:24.58 },
+  { r:7,  ti:11, selection:'Amanda Anisimova',            sport:"Tennis - Women's",              bv:20.34 },
+  { r:7,  ti:12, selection:'Dallas Stars',                sport:'NHL',                           bv:16.81 },
+  { r:7,  ti:13, selection:'Minnesota Wild',              sport:'NHL',                           bv:17.54 },
   // ── Round 8 (R→L) ─────────────────────────────────────────────────────────
-  { r:8,  ti:13, selection:'Cleveland Cavaliers',         sport:'NBA',                           bv:null  },
-  { r:8,  ti:12, selection:'Seattle Mariners',            sport:'MLB',                           bv:null  },
-  { r:8,  ti:11, selection:'Bryson DeChambeau',           sport:'PGA Golf',                      bv:null  },
-  { r:8,  ti:10, selection:'Vegas Golden Knights',        sport:'NHL',                           bv:null  },
-  { r:8,  ti:9,  selection:'Sydney Swans',                sport:'Aussie Rules Football',         bv:null  },
-  { r:8,  ti:8,  selection:'Madison Keys',                sport:"Tennis - Women's",              bv:null  },
-  { r:8,  ti:7,  selection:'New York Knicks',             sport:'NBA',                           bv:null  },
-  { r:8,  ti:6,  selection:'Will Power',                  sport:'Indycar Series',                bv:null  },
-  { r:8,  ti:5,  selection:'Western Bulldogs',            sport:'Aussie Rules Football',         bv:null  },
-  { r:8,  ti:4,  selection:'LSU',                         sport:"NCAA Basketball - Women's",     bv:null  },
-  { r:8,  ti:3,  selection:'Michigan',                    sport:"NCAA Basketball - Women's",     bv:null  },
-  { r:8,  ti:2,  selection:'Kansas',                      sport:"NCAA Basketball - Men's",       bv:null  },
-  { r:8,  ti:1,  selection:'Oregon',                      sport:'NCAA Football',                 bv:null  },
-  { r:8,  ti:0,  selection:'Seattle Storm',               sport:'WNBA',                          bv:null  },
+  { r:8,  ti:13, selection:'Cleveland Cavaliers',         sport:'NBA',                           bv:29.11 },
+  { r:8,  ti:12, selection:'Seattle Mariners',            sport:'MLB',                           bv:21.37 },
+  { r:8,  ti:11, selection:'Bryson DeChambeau',           sport:'PGA Golf',                      bv:20.54 },
+  { r:8,  ti:10, selection:'Vegas Golden Knights',        sport:'NHL',                           bv:30.51 },
+  { r:8,  ti:9,  selection:'Sydney Swans',                sport:'Aussie Rules Football',         bv:29.89 },
+  { r:8,  ti:8,  selection:'Madison Keys',                sport:"Tennis - Women's",              bv:11.11 },
+  { r:8,  ti:7,  selection:'New York Knicks',             sport:'NBA',                           bv:26.48 },
+  { r:8,  ti:6,  selection:'Will Power',                  sport:'Indycar Series',                bv:20.89 },
+  { r:8,  ti:5,  selection:'Western Bulldogs',            sport:'Aussie Rules Football',         bv:21.56 },
+  { r:8,  ti:4,  selection:'LSU',                         sport:"NCAA Basketball - Women's",     bv:25.60 },
+  { r:8,  ti:3,  selection:'Michigan',                    sport:"NCAA Basketball - Women's",     bv:8.91  },
+  { r:8,  ti:2,  selection:'Kansas',                      sport:"NCAA Basketball - Men's",       bv:13.75 },
+  { r:8,  ti:1,  selection:'Oregon',                      sport:'NCAA Football',                 bv:28.58 },
+  { r:8,  ti:0,  selection:'Seattle Storm',               sport:'WNBA',                          bv:22.59 },
   // ── Round 9 (L→R) ─────────────────────────────────────────────────────────
-  { r:9,  ti:0,  selection:'Iowa St.',                    sport:"NCAA Basketball - Men's",       bv:null  },
-  { r:9,  ti:1,  selection:'Florida',                     sport:"NCAA Basketball - Men's",       bv:null  },
-  { r:9,  ti:2,  selection:'Edmonton Oilers',             sport:'NHL',                           bv:null  },
-  { r:9,  ti:3,  selection:'Atlanta Dream',               sport:'WNBA',                          bv:null  },
-  { r:9,  ti:4,  selection:'Golden State Valkyries',      sport:'WNBA',                          bv:null  },
-  { r:9,  ti:5,  selection:'Jessica Pegula',              sport:"Tennis - Women's",              bv:null  },
-  { r:9,  ti:6,  selection:'Florida Panthers',            sport:'NHL',                           bv:null  },
-  { r:9,  ti:7,  selection:'GWS Giants',                  sport:'Aussie Rules Football',         bv:null  },
-  { r:9,  ti:8,  selection:'Minnesota Timberwolves',      sport:'NBA',                           bv:null  },
-  { r:9,  ti:9,  selection:"Ronnie O'Sullivan",           sport:'Snooker',                       bv:null  },
-  { r:9,  ti:10, selection:'Caribbean',                   sport:'Little League World Series',    bv:null  },
-  { r:9,  ti:11, selection:'Philadelphia Phillies',       sport:'MLB',                           bv:null  },
-  { r:9,  ti:12, selection:'Georgia',                     sport:'NCAA Football',                 bv:null  },
-  { r:9,  ti:13, selection:'Toronto Blue Jays',           sport:'MLB',                           bv:null  },
-  // ── Round 10 (R→L) — complete ────────────────────────────────────────────
-  { r:10, ti:13, selection:'Mirra Andreeva',              sport:"Tennis - Women's",              bv:null  },
-  { r:10, ti:12, selection:'US - Southeast',              sport:'Little League World Series',    bv:null  },
-  { r:10, ti:11, selection:'Chelsea',                     sport:'UEFA Champions League',         bv:null  },
-  { r:10, ti:10, selection:'Houston Rockets',             sport:'NBA',                           bv:null  },
-  { r:10, ti:9,  selection:'Germany',                     sport:"FIFA Men's World Cup",          bv:null  },
-  { r:10, ti:8,  selection:'Detroit Red Wings',           sport:'NHL',                           bv:null  },
-  { r:10, ti:7,  selection:'Christian Lundgaard',         sport:'Indycar Series',                bv:null  },
-  { r:10, ti:6,  selection:'US - Southwest',              sport:'Little League World Series',    bv:null  },
-  { r:10, ti:5,  selection:'Atlanta Braves',              sport:'MLB',                           bv:null  },
-  { r:10, ti:4,  selection:'New York Mets',               sport:'MLB',                           bv:null  },
-  { r:10, ti:3,  selection:'Detroit Tigers',              sport:'MLB',                           bv:null  },
-  { r:10, ti:2,  selection:'Green Bay Packers',           sport:'NFL',                           bv:null  },
-  { r:10, ti:1,  selection:'Boston Red Sox',              sport:'MLB',                           bv:null  },
-  { r:10, ti:0,  selection:'Baltimore Ravens',            sport:'NFL',                           bv:null  },
-  // ── Round 11 (L→R) ─────────────────────────────────────────────────────────
-  { r:11, ti:0,  selection:'Buffalo Bills',               sport:'NFL',                           bv:null  },
-  { r:11, ti:1,  selection:'Real Madrid',                 sport:'UEFA Champions League',         bv:null  },
-  { r:11, ti:2,  selection:'Norway',                      sport:"FIFA Men's World Cup",          bv:null  },
-  { r:11, ti:3,  selection:'Lorenzo Musetti',             sport:"Tennis - Men's",                bv:null  },
-  { r:11, ti:4,  selection:'Ben Shelton',                 sport:"Tennis - Men's",                bv:null  },
-  { r:11, ti:5,  selection:'John Higgins',                sport:'Snooker',                       bv:null  },
-  { r:11, ti:6,  selection:'Fernando Alonso',             sport:'Formula 1',                     bv:null  },
-  { r:11, ti:7,  selection:'Jon Rahm',                    sport:'PGA Golf',                      bv:null  },
+  { r:9,  ti:0,  selection:'Iowa St.',                    sport:"NCAA Basketball - Men's",       bv:0.00  },
+  { r:9,  ti:1,  selection:'Florida',                     sport:"NCAA Basketball - Men's",       bv:21.18 },
+  { r:9,  ti:2,  selection:'Edmonton Oilers',             sport:'NHL',                           bv:26.94 },
+  { r:9,  ti:3,  selection:'Atlanta Dream',               sport:'WNBA',                          bv:23.49 },
+  { r:9,  ti:4,  selection:'Golden State Valkyries',      sport:'WNBA',                          bv:16.86 },
+  { r:9,  ti:5,  selection:'Jessica Pegula',              sport:"Tennis - Women's",              bv:6.46  },
+  { r:9,  ti:6,  selection:'Florida Panthers',            sport:'NHL',                           bv:12.73 },
+  { r:9,  ti:7,  selection:'GWS Giants',                  sport:'Aussie Rules Football',         bv:16.41 },
+  { r:9,  ti:8,  selection:'Minnesota Timberwolves',      sport:'NBA',                           bv:14.23 },
+  { r:9,  ti:9,  selection:"Ronnie O'Sullivan",           sport:'Snooker',                       bv:18.47 },
+  { r:9,  ti:10, selection:'Caribbean',                   sport:'Little League World Series',    bv:28.97 },
+  { r:9,  ti:11, selection:'Philadelphia Phillies',       sport:'MLB',                           bv:18.15 },
+  { r:9,  ti:12, selection:'Georgia',                     sport:'NCAA Football',                 bv:25.36 },
+  { r:9,  ti:13, selection:'Toronto Blue Jays',           sport:'MLB',                           bv:19.34 },
+  // ── Round 10 (R→L) ───────────────────────────────────────────────────────
+  { r:10, ti:13, selection:'Mirra Andreeva',              sport:"Tennis - Women's",              bv:13.61 },
+  { r:10, ti:12, selection:'US - Southeast',              sport:'Little League World Series',    bv:27.14 },
+  { r:10, ti:11, selection:'Jack Draper',                 sport:"Tennis - Men's",                bv:14.58 },
+  { r:10, ti:10, selection:'Houston Rockets',             sport:'NBA',                           bv:18.13 },
+  { r:10, ti:9,  selection:'Germany',                     sport:"FIFA Men's World Cup",          bv:18.78 },
+  { r:10, ti:8,  selection:'Detroit Red Wings',           sport:'NHL',                           bv:6.99  },
+  { r:10, ti:7,  selection:'Christian Lundgaard',         sport:'Indycar Series',                bv:15.90 },
+  { r:10, ti:6,  selection:'US - Southwest',              sport:'Little League World Series',    bv:22.22 },
+  { r:10, ti:5,  selection:'Atlanta Braves',              sport:'MLB',                           bv:17.21 },
+  { r:10, ti:4,  selection:'New York Mets',               sport:'MLB',                           bv:20.21 },
+  { r:10, ti:3,  selection:'Detroit Tigers',              sport:'MLB',                           bv:14.04 },
+  { r:10, ti:2,  selection:'Green Bay Packers',           sport:'NFL',                           bv:18.65 },
+  { r:10, ti:1,  selection:'Boston Red Sox',              sport:'MLB',                           bv:18.39 },
+  { r:10, ti:0,  selection:'Baltimore Ravens',            sport:'NFL',                           bv:21.21 },
+  // ── Round 11 (L→R) ────────────────────────────────────────────────────────
+  { r:11, ti:0,  selection:'Buffalo Bills',               sport:'NFL',                           bv:21.21 },
+  { r:11, ti:1,  selection:'Real Madrid',                 sport:'UEFA Champions League',         bv:0.00  },
+  { r:11, ti:2,  selection:'Norway',                      sport:"FIFA Men's World Cup",          bv:11.55 },
+  { r:11, ti:3,  selection:'Lorenzo Musetti',             sport:"Tennis - Men's",                bv:5.01  },
+  { r:11, ti:4,  selection:'Ben Shelton',                 sport:"Tennis - Men's",                bv:9.45  },
+  { r:11, ti:5,  selection:'John Higgins',                sport:'Snooker',                       bv:9.81  },
+  { r:11, ti:6,  selection:'Fernando Alonso',             sport:'Formula 1',                     bv:16.96 },
+  { r:11, ti:7,  selection:'Jon Rahm',                    sport:'PGA Golf',                      bv:14.60 },
+  { r:11, ti:8,  selection:'Natus Vincere',               sport:'Counter Strike',                bv:14.63 },
+  { r:11, ti:9,  selection:'David Malukas',               sport:'Indycar Series',                bv:15.80 },
+  { r:11, ti:10, selection:'Collingwood Magpies',         sport:'Aussie Rules Football',         bv:18.96 },
+  { r:11, ti:11, selection:'Josh Rock',                   sport:'PDC Darts',                     bv:11.73 },
+  { r:11, ti:12, selection:'Chelsea',                     sport:'UEFA Champions League',         bv:27.40 },
+  { r:11, ti:13, selection:'The MongolZ',                 sport:'Counter Strike',                bv:11.68 },
+  // ── Round 12 (R→L) ────────────────────────────────────────────────────────
+  { r:12, ti:13, selection:'Fremantle Dockers',           sport:'Aussie Rules Football',         bv:21.51 },
+  { r:12, ti:12, selection:'Gerwyn Price',                sport:'PDC Darts',                     bv:12.57 },
+  { r:12, ti:11, selection:'Philadelphia Eagles',         sport:'NFL',                           bv:17.62 },
+  { r:12, ti:10, selection:'Denver Broncos',              sport:'NFL',                           bv:13.90 },
+  { r:12, ti:9,  selection:'San Francisco 49ers',         sport:'NFL',                           bv:14.57 },
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────
 export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
+  // ── Live picks state — starts from fallback, updated via brackt.com API ────
+  const [picks, setPicks] = useState(FALLBACK_PICKS);
+  const [syncStatus, setSyncStatus] = useState('init');   // 'init'|'loading'|'ok'|'error'|'stale'
+  const [lastSynced, setLastSynced] = useState(null);
+  const [currentPickNum, setCurrentPickNum] = useState(null);
+
+  const syncDraft = useCallback(async () => {
+    setSyncStatus('loading');
+    try {
+      const resp = await fetch('/api/brackt-draft');
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const data = await resp.json();
+
+      if (data.stale) {
+        setSyncStatus('stale');
+      } else {
+        setSyncStatus('ok');
+        setLastSynced(Date.now());
+      }
+
+      if (data.picks?.length > 0) {
+        // Convert API picks → same shape as FALLBACK_PICKS
+        setPicks(data.picks.map(p => ({
+          r:         p.round,
+          ti:        p.teamIndex,
+          selection: p.selection,
+          sport:     p.sport,
+          bv:        p.bracktValue,
+        })));
+      }
+
+      if (data.currentPickNumber != null) setCurrentPickNum(data.currentPickNumber);
+    } catch (err) {
+      console.warn('[BRACKT] draft sync failed:', err.message);
+      setSyncStatus('error');
+    }
+  }, []);
+
+  // Sync on mount; then every 60 s
+  useEffect(() => {
+    syncDraft();
+    const id = setInterval(syncDraft, 60_000);
+    return () => clearInterval(id);
+  }, [syncDraft]);
+
   // Build matrix[roundIdx][teamIdx] = { selection, sport, bracktValue, entry }
   const matrix = useMemo(() => {
     const m = Array.from({ length: TOTAL_ROUNDS }, () =>
       Array(TEAMS.length).fill(null)
     );
-    for (const p of RAW_PICKS) {
+    for (const p of picks) {
+      if (p.r < 1 || p.r > TOTAL_ROUNDS) continue;
+      if (p.ti < 0 || p.ti >= TEAMS.length) continue;
       m[p.r - 1][p.ti] = {
-        selection: p.selection,
-        sport:     p.sport,
+        selection:   p.selection,
+        sport:       p.sport,
         bracktValue: p.bv,
         entry: findEntry(p.selection, p.sport, boardEntries),
       };
     }
     return m;
-  }, [boardEntries]);
+  }, [picks, boardEntries]);
 
-  // Team EV = sum of ikyn_EV across all picks in the column
+  // Team EV = sum of (ikynEV + wizardEV)/2 across all matched picks in the column
   const teamEVs = useMemo(() => {
     return TEAMS.map((_, ti) => {
       let sum = 0, n = 0;
       for (let r = 0; r < TOTAL_ROUNDS; r++) {
         const entry = matrix[r][ti]?.entry;
         if (!entry) continue;
-        const dev = ikynEVMap[entry.id]?.ev;
+        const dev = draftEV(ikynEVMap[entry.id]);
         if (dev != null && !isNaN(dev)) { sum += dev; n++; }
       }
       return n > 0 ? sum : null;
@@ -337,7 +407,7 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
         const entry = matrix[r][ti]?.entry;
         if (!entry) continue;
         totalPicks++;
-        const dev = ikynEVMap[entry.id]?.ev;
+        const dev = draftEV(ikynEVMap[entry.id]);
         if (dev != null && !isNaN(dev)) totalEV += dev;
       }
     }
@@ -355,7 +425,6 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
     const totalPicks = reportData.reduce((s, r) => s + r.numDrafted, 0);
     const totalRounds = reportData.reduce((s, r) => s + TOTAL_ROUNDS, 0);
 
-    // Raw data per row
     const dataRows = reportData.map((row, i) => ({
       rank:  medals[i] ?? String(i + 1),
       name:  row.name,
@@ -363,11 +432,9 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
       picks: `${row.numDrafted}/${TOTAL_ROUNDS}`,
     }));
 
-    // Pad helpers (right-pad for text, left-pad for numbers)
     const rpad = (s, n) => s + ' '.repeat(Math.max(0, n - s.length));
     const lpad = (s, n) => ' '.repeat(Math.max(0, n - s.length)) + s;
 
-    // Column widths: max of header label vs any data value
     const wRank  = Math.max(2,  ...dataRows.map(r => r.rank.length));
     const wName  = Math.max(4,  ...dataRows.map(r => r.name.length));
     const wEV    = Math.max(8,  ...dataRows.map(r => r.ev.length));
@@ -381,7 +448,7 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
 
     const table = [
       `🕹️  BRACKT · RUMBLE LEAGUE 2026 · DRAFT_EV STANDINGS`,
-      `     Plackett-Luce Monte Carlo · 3,000 sims · ${totalPicks}/${totalRounds} picks complete`,
+      `     Blended EV · (PL-MC + WizardEV) / 2 · ${totalPicks}/${totalRounds} picks complete`,
       ``,
       '```',
       sep,
@@ -399,6 +466,21 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
     });
   }, [reportData]);
 
+  // ── Sync status chip label + colour ────────────────────────────────────────
+  const syncChip = useMemo(() => {
+    if (syncStatus === 'loading' || syncStatus === 'init') {
+      return { label: '⟳ SYNCING', cls: 'text-retro-cyan/60 border-retro-cyan/20 bg-white/5 animate-pulse' };
+    }
+    if (syncStatus === 'ok') {
+      const ago = lastSynced ? Math.round((Date.now() - lastSynced) / 1000) : 0;
+      return { label: `✓ LIVE ${ago < 5 ? 'NOW' : `${ago}s ago`}`, cls: 'text-retro-lime/70 border-retro-lime/20 bg-retro-lime/5' };
+    }
+    if (syncStatus === 'stale') {
+      return { label: '⚠ STALE', cls: 'text-retro-gold/70 border-retro-gold/20 bg-retro-gold/5' };
+    }
+    return { label: '✗ OFFLINE', cls: 'text-retro-red/60 border-retro-red/20 bg-retro-red/5' };
+  }, [syncStatus, lastSynced]);
+
   return (
     <div style={{ minWidth: `${38 + TEAMS.length * 155}px` }}>
 
@@ -414,8 +496,22 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
           <span className="font-mono text-[9px] text-retro-light/30 tracking-widest hidden sm:block whitespace-nowrap">
             RUMBLE LEAGUE 2026 · 14 TEAMS · 25 ROUNDS · SERPENTINE
           </span>
+          {currentPickNum != null && (
+            <span className="font-mono text-[9px] text-retro-gold/50 tracking-widest hidden md:block whitespace-nowrap">
+              PICK {currentPickNum} ON THE CLOCK
+            </span>
+          )}
         </div>
         <div className="flex items-center gap-3 flex-shrink-0">
+          {/* Live sync status */}
+          <button
+            onClick={syncDraft}
+            title="Click to force-refresh from brackt.com"
+            className={`font-retro text-[10px] px-2 py-1 border transition-all active:translate-y-px whitespace-nowrap ${syncChip.cls}`}
+          >
+            {syncChip.label}
+          </button>
+
           {/* REPORT button */}
           <button
             onClick={handleReport}
@@ -471,6 +567,15 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
           </span>
           <span className="font-mono text-[22px] font-bold text-retro-light/70 leading-none">
             {boardStats.avgEV != null ? boardStats.avgEV.toFixed(2) : '—'}
+          </span>
+        </div>
+        {/* EV formula note */}
+        <div className="flex flex-col justify-center px-4 py-2 border border-white/5 bg-white/[0.01] min-w-[180px]">
+          <span className="font-mono text-[8px] text-retro-light/20 tracking-widest uppercase mb-0.5">
+            Formula
+          </span>
+          <span className="font-mono text-[9px] text-retro-purple/60 leading-none">
+            (ikynEV + wizardEV) / 2
           </span>
         </div>
       </div>
@@ -559,7 +664,8 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
                   const sportColor = sportId ? (SPORT_COLORS[sportId] ?? '#888') : '#888';
                   const sportAbbr  = SPORT_ABBR[cell.sport] ?? cell.sport;
                   const ev         = cell.entry?.ev?.seasonTotal;
-                  const ikynEV     = cell.entry ? ikynEVMap[cell.entry.id]?.ev : null;
+                  const ikynData   = cell.entry ? ikynEVMap[cell.entry.id] : null;
+                  const devVal     = draftEV(ikynData);
 
                   return (
                     <td
@@ -603,16 +709,23 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
                           </div>
                         </div>
 
-                        {/* ── Right: ikyn_EV ───────────────────────────────── */}
-                        <div className="w-10 flex-shrink-0 border-l border-white/[0.06]
-                                        flex flex-col items-center justify-center gap-0.5 py-1">
+                        {/* ── Right: Draft_EV ──────────────────────────────── */}
+                        <div
+                          className="w-10 flex-shrink-0 border-l border-white/[0.06]
+                                     flex flex-col items-center justify-center gap-0.5 py-1"
+                          title={ikynData
+                            ? `ikynEV=${ikynData.ev?.toFixed(1)} wizardEV=${ikynData.wizardEV?.toFixed(1)} → dEV=${devVal?.toFixed(1)}`
+                            : 'No match found'}
+                        >
                           <span className="font-retro text-[7px] text-retro-light/25 tracking-widest leading-none uppercase">
-                            iEV
+                            dEV
                           </span>
-                          {ikynEV != null ? (
-                            <span className="font-mono text-[13px] font-black tabular-nums leading-none"
-                                  style={{ color: '#39FF14' }}>
-                              {ikynEV.toFixed(1)}
+                          {devVal != null ? (
+                            <span
+                              className="font-mono text-[13px] font-black tabular-nums leading-none"
+                              style={{ color: '#39FF14' }}
+                            >
+                              {devVal.toFixed(1)}
                             </span>
                           ) : (
                             <span className="font-mono text-[11px] text-retro-light/15 leading-none">—</span>
@@ -635,9 +748,9 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
         <span className="text-retro-light/40">LEGEND</span>
         <span><span className="text-retro-light/40">##.##</span> = BRACKT.COM SCORE</span>
         <span><span className="text-retro-cyan/50">EV ##.#</span> = OUR EV (MATCHED FROM BOARD)</span>
-        <span><span className="text-retro-cyan/35">TEAM EV</span> = SUM OF MATCHED EVs</span>
-        <span><span style={{ color: '#39FF14' }}>iEV</span> = IKYN_EV (MONTE CARLO 300K, PLACKETT-LUCE, STANDARD SCORING)</span>
-        <span className="ml-auto">SOURCE: BRACKT.COM · RUMBLE LEAGUE 2026</span>
+        <span><span className="text-retro-cyan/35">TEAM EV</span> = SUM OF MATCHED dEVs</span>
+        <span><span style={{ color: '#39FF14' }}>dEV</span> = DRAFT_EV · (PL-MC ikynEV + WizardEV) / 2</span>
+        <span className="ml-auto">SOURCE: BRACKT.COM · RUMBLE LEAGUE 2026 · AUTO-SYNC 60s</span>
       </div>
     </div>
   );

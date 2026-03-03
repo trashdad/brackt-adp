@@ -13,6 +13,60 @@ const PROJECT_ROOT = join(__dirname, '..');
 // In-memory pipeline run state (reset on server restart)
 let pipelineState = { running: false, sources: {}, lastRun: null };
 
+// ── Brackt.com draft live sync ─────────────────────────────────────────────
+// brackt.com uses React Router v7 "single fetch" (.data endpoint).
+// The response is Content-Type: text/x-script — a flat reference array
+// (turbo-stream format) that we decode before extracting pick data.
+const BRACKT_LEAGUE_ID = '2258084d-b9ed-45f5-bb53-0a628892e23c';
+const BRACKT_SEASON_ID = '053984c5-26d9-48b4-b51b-af5bbd8dee19';
+const BRACKT_DATA_URL  = `https://www.brackt.com/leagues/${BRACKT_LEAGUE_ID}/draft/${BRACKT_SEASON_ID}.data`;
+const BRACKT_ROUTE_KEY = 'routes/leagues/$leagueId.draft.$seasonId';
+const BRACKT_TEAMS     = 14;
+const BRACKT_TTL_MS    = 60_000; // re-fetch brackt.com at most once per minute
+let bracktCache    = null;
+let bracktCacheTs  = 0;
+
+/**
+ * Decode a React Router v7 turbo-stream flat reference array.
+ * Format: arr[0] = root descriptor {_keyIdx: valIdx, ...}
+ * Negative indices = null/undefined.
+ * Special arrays: ["D", ms] = Date, ["SingleFetchFallback"] = null.
+ * Number arrays = arrays of index refs that each get decoded.
+ */
+function decodeTurboStream(arr) {
+  const memo = new Map();
+  function decode(idx) {
+    if (typeof idx !== 'number') return idx;
+    if (idx < 0) return null;
+    if (memo.has(idx)) return memo.get(idx);
+    const val = arr[idx];
+    if (val === null || val === undefined) return val;
+    if (typeof val !== 'object') return val;
+    if (Array.isArray(val)) {
+      if (val[0] === 'D' && val.length === 2 && typeof val[1] === 'number') return new Date(val[1]);
+      if (val[0] === 'SingleFetchFallback') return null;
+      // Array of number indices → decode each element
+      if (val.length > 0 && typeof val[0] === 'number') {
+        const result = [];
+        memo.set(idx, result);
+        for (const elemIdx of val) result.push(decode(elemIdx));
+        return result;
+      }
+      return val;
+    }
+    // Object with {_kIdx: vIdx} reference pairs
+    const result = {};
+    memo.set(idx, result);
+    for (const [k, v] of Object.entries(val)) {
+      if (!k.startsWith('_')) continue;
+      const keyName = arr[parseInt(k.slice(1))];
+      if (keyName !== undefined) result[keyName] = decode(v);
+    }
+    return result;
+  }
+  return decode(0);
+}
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -192,6 +246,64 @@ app.post('/api/run-pipeline', (_req, res) => {
     console.error('[BRACKT] Pipeline process error:', err.message);
     pipelineState.running = false;
   });
+});
+
+// ── Brackt Draft Sync ─────────────────────────────────────────────────────
+// Proxies brackt.com's React Router data-loader so the DraftPage can poll
+// for new picks without hitting brackt.com from the browser (CORS).
+// Cached for 60 s server-side to avoid hammering the upstream.
+
+app.get('/api/brackt-draft', async (_req, res) => {
+  const now = Date.now();
+  if (bracktCache && now - bracktCacheTs < BRACKT_TTL_MS) {
+    return res.json(bracktCache);
+  }
+
+  try {
+    const upstream = await fetch(BRACKT_DATA_URL, {
+      headers: { Accept: 'text/x-script, */*', 'User-Agent': 'brackt-adp/1.0' },
+    });
+    if (!upstream.ok) throw new Error(`brackt.com returned HTTP ${upstream.status}`);
+
+    // Decode turbo-stream flat reference array → plain JS object
+    const text = await upstream.text();
+    const arr  = JSON.parse(text);
+    const decoded = decodeTurboStream(arr);
+
+    // Path: decoded[routeKey].data.{season, draftPicks, ...}
+    const routeData  = decoded?.[BRACKT_ROUTE_KEY]?.data ?? {};
+    const season     = routeData.season ?? {};
+    const draftPicks = routeData.draftPicks ?? [];
+
+    // Normalise pick array into the same shape used by DraftPage FALLBACK_PICKS
+    const picks = draftPicks
+      .filter(p => p?.participant?.name)
+      .map(p => ({
+        pickNumber:  p.pickNumber,
+        round:       p.round,
+        // pickInRound is 1-indexed column position (same for all rounds)
+        teamIndex:   p.pickInRound - 1,
+        selection:   p.participant.name,
+        sport:       p.sport?.name ?? '',
+        bracktValue: p.participant.expectedValue != null
+          ? parseFloat(p.participant.expectedValue)
+          : null,
+      }));
+
+    bracktCache = {
+      picks,
+      currentPickNumber: season.currentPickNumber ?? null,
+      totalPicks: BRACKT_TEAMS * (season.draftRounds ?? 25),
+      lastFetched: now,
+    };
+    bracktCacheTs = now;
+    res.json(bracktCache);
+  } catch (err) {
+    console.error('[BRACKT] brackt-draft sync error:', err.message);
+    // Return stale cache rather than a hard error so the UI doesn't break
+    if (bracktCache) return res.json({ ...bracktCache, stale: true });
+    res.status(502).json({ error: err.message });
+  }
 });
 
 app.listen(PORT, () => {
