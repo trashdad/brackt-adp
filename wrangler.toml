@@ -1,15 +1,9 @@
 name = "brackt-adp"
-pages_build_output_dir = "./dist"
-main = "worker.js"
 compatibility_date = "2025-01-01"
 
-# ── KV namespace ──────────────────────────────────────────────────────────────
-[[kv_namespaces]]
-  binding = "BRACKT_KV"
-  id      = "f6bda5e8d29e4905b99933566bc6def1"
+# KV binding: configure in CF Pages dashboard →
+#   Workers & Pages → brackt-adp → Settings → Variables & Secrets → KV namespace bindings
+#   Binding name: BRACKT_KV   Namespace: BRACKT_KV (f6bda5e8d29e4905b99933566bc6def1)
 
-# ── API key secrets ───────────────────────────────────────────────────────────
-# Set in CF dashboard → Settings → Variables & Secrets, or:
-#   wrangler secret put THE_ODDS_API_KEY
-#   wrangler secret put ODDS_API_IO_KEY
-#   wrangler secret put API_SPORTS_KEY
+# API key secrets: configure in CF Pages dashboard → Settings → Variables & Secrets
+#   THE_ODDS_API_KEY, ODDS_API_IO_KEY, API_SPORTS_KEY
