@@ -7,7 +7,7 @@
     "dev": "vite",
     "server": "node server/index.js",
     "dev:all": "concurrently \"npm run server\" \"npm run dev\"",
-    "build": "vite build && npx esbuild worker.js --bundle --format=esm --outfile=dist/_worker.js",
+    "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest"
