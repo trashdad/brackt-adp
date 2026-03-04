@@ -264,7 +264,7 @@ const FALLBACK_PICKS = [
   { r:9,  ti:4,  selection:'Golden State Valkyries',      sport:'WNBA',                          bv:16.86 },
   { r:9,  ti:5,  selection:'Jessica Pegula',              sport:"Tennis - Women's",              bv:6.46  },
   { r:9,  ti:6,  selection:'Florida Panthers',            sport:'NHL',                           bv:12.73 },
-  { r:9,  ti:7,  selection:'GWS Giants',                  sport:'Aussie Rules Football',         bv:16.41 },
+  { r:9,  ti:7,  selection:'Greater Western Sydney Giants', sport:'Aussie Rules Football',         bv:16.41 },
   { r:9,  ti:8,  selection:'Minnesota Timberwolves',      sport:'NBA',                           bv:14.23 },
   { r:9,  ti:9,  selection:"Ronnie O'Sullivan",           sport:'Snooker',                       bv:18.47 },
   { r:9,  ti:10, selection:'Caribbean',                   sport:'Little League World Series',    bv:28.97 },

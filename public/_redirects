@@ -1,3 +1,0 @@
-# SPA fallback — all non-file, non-API paths serve index.html
-# Cloudflare Pages respects this file in the build output.
-/* /index.html 200

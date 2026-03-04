@@ -1,0 +1,25 @@
+name = "brackt-adp"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
+
+# ── KV namespace ──────────────────────────────────────────────────────────────
+# Create: wrangler kv namespace create BRACKT_KV
+# Then uncomment and fill in real IDs for local dev:
+#
+# [[kv_namespaces]]
+#   binding    = "BRACKT_KV"
+#   id         = "<production-namespace-id>"
+#   preview_id = "<preview-namespace-id>"
+#
+# For production: set BRACKT_KV in CF dashboard →
+#   Workers & Pages → brackt-adp → Settings → Variables & Secrets → KV bindings
+
+# ── API key secrets ───────────────────────────────────────────────────────────
+# Set in CF dashboard → Settings → Variables & Secrets, or:
+#   wrangler secret put THE_ODDS_API_KEY
+#   wrangler secret put ODDS_API_IO_KEY
+#   wrangler secret put API_SPORTS_KEY
