@@ -1,21 +1,20 @@
 {
   "sport": "f1",
-  "lastUpdated": "2026-03-03T10:00:00.000Z",
+  "lastUpdated": "2026-03-03T11:00:00.000Z",
   "sources": [
+    "sportsbookreview",
     "bet365",
-    "williamhill",
-    "oddschecker"
+    "gpfans"
   ],
   "entries": [
     {
       "name": "George Russell",
       "nameNormalized": "georgerussell",
       "bestOdds": "+200",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+225",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+200",
       "oddsBySource": {
-        "bet365": "+200",
-        "williamhill": "+225"
+        "sportsbookreview": "+200"
       },
       "impliedProbability": 0.3333,
       "market": "outrights"
@@ -24,11 +23,10 @@
       "name": "Max Verstappen",
       "nameNormalized": "maxverstappen",
       "bestOdds": "+300",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+330",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+300",
       "oddsBySource": {
-        "bet365": "+300",
-        "williamhill": "+350"
+        "sportsbookreview": "+300"
       },
       "impliedProbability": 0.25,
       "market": "outrights"
@@ -37,11 +35,10 @@
       "name": "Charles Leclerc",
       "nameNormalized": "charlesleclerc",
       "bestOdds": "+500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+550",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+500",
       "oddsBySource": {
-        "bet365": "+500",
-        "williamhill": "+600"
+        "sportsbookreview": "+500"
       },
       "impliedProbability": 0.1667,
       "market": "outrights"
@@ -50,11 +47,10 @@
       "name": "Lewis Hamilton",
       "nameNormalized": "lewishamilton",
       "bestOdds": "+700",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+800",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+700",
       "oddsBySource": {
-        "bet365": "+700",
-        "williamhill": "+800"
+        "sportsbookreview": "+700"
       },
       "impliedProbability": 0.125,
       "market": "outrights"
@@ -63,11 +59,10 @@
       "name": "Kimi Antonelli",
       "nameNormalized": "kimiantonelli",
       "bestOdds": "+800",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+900",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+800",
       "oddsBySource": {
-        "bet365": "+800",
-        "williamhill": "+1000"
+        "sportsbookreview": "+800"
       },
       "impliedProbability": 0.1111,
       "market": "outrights"
@@ -75,86 +70,181 @@
     {
       "name": "Lando Norris",
       "nameNormalized": "landonorris",
-      "bestOdds": "+900",
-      "bestOddsSource": "consensus",
+      "bestOdds": "+1000",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+1000",
       "oddsBySource": {
-        "bet365": "+900",
-        "williamhill": "+1100"
+        "sportsbookreview": "+1000"
       },
-      "impliedProbability": 0.1,
+      "impliedProbability": 0.0909,
       "market": "outrights"
     },
     {
       "name": "Oscar Piastri",
       "nameNormalized": "oscarpiastri",
       "bestOdds": "+1400",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1600",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1400",
       "oddsBySource": {
-        "bet365": "+1400"
+        "sportsbookreview": "+1400"
       },
       "impliedProbability": 0.0667,
       "market": "outrights"
     },
     {
-      "name": "Carlos Sainz",
-      "nameNormalized": "carlossainz",
-      "bestOdds": "+2000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2500",
-      "oddsBySource": {
-        "bet365": "+2000"
-      },
-      "impliedProbability": 0.0476,
-      "market": "outrights"
-    },
-    {
       "name": "Fernando Alonso",
       "nameNormalized": "fernandoalonso",
-      "bestOdds": "+3300",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+4000",
+      "bestOdds": "+2800",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+2800",
       "oddsBySource": {
-        "bet365": "+3300"
+        "sportsbookreview": "+2800"
       },
-      "impliedProbability": 0.0294,
+      "impliedProbability": 0.0345,
       "market": "outrights"
     },
     {
-      "name": "Nico Hulkenberg",
-      "nameNormalized": "nicohulkenberg",
-      "bestOdds": "+5000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+6600",
-      "oddsBySource": {
-        "bet365": "+5000"
-      },
-      "impliedProbability": 0.0196,
-      "market": "outrights"
-    },
-    {
-      "name": "Liam Lawson",
-      "nameNormalized": "liamlawson",
+      "name": "Carlos Sainz",
+      "nameNormalized": "carlossainz",
       "bestOdds": "+10000",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+10000",
       "oddsBySource": {
-        "bet365": "+10000"
+        "sportsbookreview": "+10000"
       },
       "impliedProbability": 0.0099,
       "market": "outrights"
     },
     {
-      "name": "Gabriel Bortoleto",
-      "nameNormalized": "gabrielbortoleto",
-      "bestOdds": "+15000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+20000",
+      "name": "Isack Hadjar",
+      "nameNormalized": "isackhadjar",
+      "bestOdds": "+10000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+10000",
       "oddsBySource": {
-        "bet365": "+15000"
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Pierre Gasly",
+      "nameNormalized": "pierregasly",
+      "bestOdds": "+15000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "sportsbookreview": "+15000"
       },
       "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Alexander Albon",
+      "nameNormalized": "alexanderalbon",
+      "bestOdds": "+20000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+20000",
+      "oddsBySource": {
+        "sportsbookreview": "+20000"
+      },
+      "impliedProbability": 0.005,
+      "market": "outrights"
+    },
+    {
+      "name": "Lance Stroll",
+      "nameNormalized": "lancestroll",
+      "bestOdds": "+25000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+25000",
+      "oddsBySource": {
+        "sportsbookreview": "+25000"
+      },
+      "impliedProbability": 0.004,
+      "market": "outrights"
+    },
+    {
+      "name": "Oliver Bearman",
+      "nameNormalized": "oliverbearman",
+      "bestOdds": "+40000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+40000",
+      "oddsBySource": {
+        "sportsbookreview": "+40000"
+      },
+      "impliedProbability": 0.0025,
+      "market": "outrights"
+    },
+    {
+      "name": "Esteban Ocon",
+      "nameNormalized": "estebanocon",
+      "bestOdds": "+40000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+40000",
+      "oddsBySource": {
+        "sportsbookreview": "+40000"
+      },
+      "impliedProbability": 0.0025,
+      "market": "outrights"
+    },
+    {
+      "name": "Liam Lawson",
+      "nameNormalized": "liamlawson",
+      "bestOdds": "+40000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+40000",
+      "oddsBySource": {
+        "sportsbookreview": "+40000"
+      },
+      "impliedProbability": 0.0025,
+      "market": "outrights"
+    },
+    {
+      "name": "Nico Hulkenberg",
+      "nameNormalized": "nicohulkenberg",
+      "bestOdds": "+50000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+50000",
+      "oddsBySource": {
+        "sportsbookreview": "+50000"
+      },
+      "impliedProbability": 0.002,
+      "market": "outrights"
+    },
+    {
+      "name": "Franco Colapinto",
+      "nameNormalized": "francocolapinto",
+      "bestOdds": "+50000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+50000",
+      "oddsBySource": {
+        "sportsbookreview": "+50000"
+      },
+      "impliedProbability": 0.002,
+      "market": "outrights"
+    },
+    {
+      "name": "Gabriel Bortoleto",
+      "nameNormalized": "gabrielbortoleto",
+      "bestOdds": "+50000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+50000",
+      "oddsBySource": {
+        "sportsbookreview": "+50000"
+      },
+      "impliedProbability": 0.002,
+      "market": "outrights"
+    },
+    {
+      "name": "Yuki Tsunoda",
+      "nameNormalized": "yukitsunoda",
+      "bestOdds": "+40000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+40000",
+      "oddsBySource": {
+        "sportsbookreview": "+40000"
+      },
+      "impliedProbability": 0.0025,
       "market": "outrights"
     }
   ]
