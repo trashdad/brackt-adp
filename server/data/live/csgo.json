@@ -1,6 +1,153 @@
 {
-    "sport": "csgo",
-    "lastUpdated": "2026-03-01T23:55:42.000Z",
-    "sources": [],
-    "entries": []
+  "sport": "csgo",
+  "lastUpdated": "2026-03-03T10:00:00.000Z",
+  "sources": [
+    "hltv"
+  ],
+  "entries": [
+    {
+      "name": "Vitality",
+      "nameNormalized": "vitality",
+      "bestOdds": "+150",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+150",
+      "oddsBySource": {
+        "hltv": "Rank 1"
+      },
+      "impliedProbability": 0.4,
+      "market": "outrights"
+    },
+    {
+      "name": "Team Spirit",
+      "nameNormalized": "teamspirit",
+      "bestOdds": "+400",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+400",
+      "oddsBySource": {
+        "hltv": "Rank 2"
+      },
+      "impliedProbability": 0.2,
+      "market": "outrights"
+    },
+    {
+      "name": "MOUZ",
+      "nameNormalized": "mouz",
+      "bestOdds": "+600",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+600",
+      "oddsBySource": {
+        "hltv": "Rank 3"
+      },
+      "impliedProbability": 0.1429,
+      "market": "outrights"
+    },
+    {
+      "name": "The MongolZ",
+      "nameNormalized": "themongolz",
+      "bestOdds": "+900",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+900",
+      "oddsBySource": {
+        "hltv": "Rank 4"
+      },
+      "impliedProbability": 0.1,
+      "market": "outrights"
+    },
+    {
+      "name": "FaZe Clan",
+      "nameNormalized": "fazeclan",
+      "bestOdds": "+1000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1000",
+      "oddsBySource": {
+        "hltv": "Rank 5"
+      },
+      "impliedProbability": 0.0909,
+      "market": "outrights"
+    },
+    {
+      "name": "PARIVISION",
+      "nameNormalized": "parivision",
+      "bestOdds": "+1200",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1200",
+      "oddsBySource": {
+        "hltv": "Rank 6"
+      },
+      "impliedProbability": 0.0769,
+      "market": "outrights"
+    },
+    {
+      "name": "G2 Esports",
+      "nameNormalized": "g2esports",
+      "bestOdds": "+1400",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1400",
+      "oddsBySource": {
+        "hltv": "Rank 7"
+      },
+      "impliedProbability": 0.0667,
+      "market": "outrights"
+    },
+    {
+      "name": "Natus Vincere",
+      "nameNormalized": "natusvincere",
+      "bestOdds": "+1600",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1600",
+      "oddsBySource": {
+        "hltv": "Rank 8"
+      },
+      "impliedProbability": 0.0588,
+      "market": "outrights"
+    },
+    {
+      "name": "Astralis",
+      "nameNormalized": "astralis",
+      "bestOdds": "+1800",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1800",
+      "oddsBySource": {
+        "hltv": "Rank 9"
+      },
+      "impliedProbability": 0.0526,
+      "market": "outrights"
+    },
+    {
+      "name": "Team Liquid",
+      "nameNormalized": "teamliquid",
+      "bestOdds": "+2500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2500",
+      "oddsBySource": {
+        "hltv": "Rank 11"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "FURIA",
+      "nameNormalized": "furia",
+      "bestOdds": "+2500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2500",
+      "oddsBySource": {
+        "hltv": "Rank 2 (Previous)"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Falcons",
+      "nameNormalized": "falcons",
+      "bestOdds": "+3000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+3000",
+      "oddsBySource": {
+        "hltv": "Rank 3 (Previous)"
+      },
+      "impliedProbability": 0.0323,
+      "market": "outrights"
+    }
+  ]
 }

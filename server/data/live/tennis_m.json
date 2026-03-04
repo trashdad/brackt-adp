@@ -1,6 +1,154 @@
 {
-    "sport": "tennis_m",
-    "lastUpdated": "2026-03-01T23:55:42.000Z",
-    "sources": [],
-    "entries": []
+  "sport": "tennis_m",
+  "lastUpdated": "2026-03-03T10:00:00.000Z",
+  "sources": [
+    "lineups",
+    "fanduel"
+  ],
+  "entries": [
+    {
+      "name": "Carlos Alcaraz",
+      "nameNormalized": "carlosalcaraz",
+      "bestOdds": "+150",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+150",
+      "oddsBySource": {
+        "lineups": "+150"
+      },
+      "impliedProbability": 0.4,
+      "market": "outrights"
+    },
+    {
+      "name": "Jannik Sinner",
+      "nameNormalized": "janniksinner",
+      "bestOdds": "+150",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+150",
+      "oddsBySource": {
+        "lineups": "+150"
+      },
+      "impliedProbability": 0.4,
+      "market": "outrights"
+    },
+    {
+      "name": "Novak Djokovic",
+      "nameNormalized": "novakdjokovic",
+      "bestOdds": "+1300",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1300",
+      "oddsBySource": {
+        "lineups": "+1300"
+      },
+      "impliedProbability": 0.0714,
+      "market": "outrights"
+    },
+    {
+      "name": "Jack Draper",
+      "nameNormalized": "jackdraper",
+      "bestOdds": "+1600",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1600",
+      "oddsBySource": {
+        "lineups": "Defending Champ"
+      },
+      "impliedProbability": 0.0588,
+      "market": "outrights"
+    },
+    {
+      "name": "Daniil Medvedev",
+      "nameNormalized": "daniilmedvedev",
+      "bestOdds": "+1800",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1800",
+      "oddsBySource": {
+        "fanduel": "+1800"
+      },
+      "impliedProbability": 0.0526,
+      "market": "outrights"
+    },
+    {
+      "name": "Alexander Zverev",
+      "nameNormalized": "alexanderzverev",
+      "bestOdds": "+2000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2000",
+      "oddsBySource": {
+        "fanduel": "+2000"
+      },
+      "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "Taylor Fritz",
+      "nameNormalized": "taylorfritz",
+      "bestOdds": "+2500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2500",
+      "oddsBySource": {
+        "fanduel": "+2500"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Holger Rune",
+      "nameNormalized": "holgerrune",
+      "bestOdds": "+2800",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2800",
+      "oddsBySource": {
+        "fanduel": "+2800"
+      },
+      "impliedProbability": 0.0345,
+      "market": "outrights"
+    },
+    {
+      "name": "Casper Ruud",
+      "nameNormalized": "casperruud",
+      "bestOdds": "+3300",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+3300",
+      "oddsBySource": {
+        "fanduel": "+3300"
+      },
+      "impliedProbability": 0.0294,
+      "market": "outrights"
+    },
+    {
+      "name": "Grigor Dimitrov",
+      "nameNormalized": "grigordimitrov",
+      "bestOdds": "+4000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+4000",
+      "oddsBySource": {
+        "fanduel": "+4000"
+      },
+      "impliedProbability": 0.0244,
+      "market": "outrights"
+    },
+    {
+      "name": "Lorenzo Musetti",
+      "nameNormalized": "lorenzomusetti",
+      "bestOdds": "+5000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "fanduel": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Ben Shelton",
+      "nameNormalized": "benshelton",
+      "bestOdds": "+5000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "fanduel": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    }
+  ]
 }

@@ -1,39 +1,32 @@
 {
   "sport": "indycar",
-  "lastUpdated": "2026-03-01T07:59:01.031Z",
+  "lastUpdated": "2026-03-03T10:00:00.000Z",
   "sources": [
-    "google-search-multiple",
-    "fox-sports-draftkings",
-    "draftkings-beyond-the-flag",
-    "fox-sports-draftkings-mybookie",
-    "estimated-season-preview"
+    "frontstretch",
+    "foxsports",
+    "beyondtheflag"
   ],
   "entries": [
     {
       "name": "Alex Palou",
       "nameNormalized": "alexpalou",
-      "bestOdds": "+600",
-      "bestOddsSource": "draftkings-beyond-the-flag",
-      "consensusOdds": "-109",
+      "bestOdds": "-175",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "-175",
       "oddsBySource": {
-        "google-search-multiple": "-200",
-        "fox-sports-draftkings": "-175",
-        "draftkings-beyond-the-flag": "+600",
-        "fox-sports-draftkings-mybookie": "-175"
+        "frontstretch": "-175"
       },
-      "impliedProbability": 0.1429,
+      "impliedProbability": 0.6364,
       "market": "outrights"
     },
     {
       "name": "Pato O'Ward",
       "nameNormalized": "patooward",
       "bestOdds": "+550",
-      "bestOddsSource": "fox-sports-draftkings",
+      "bestOddsSource": "consensus",
       "consensusOdds": "+550",
       "oddsBySource": {
-        "fox-sports-draftkings": "+550",
-        "draftkings-beyond-the-flag": "+550",
-        "fox-sports-draftkings-mybookie": "+550"
+        "frontstretch": "+550"
       },
       "impliedProbability": 0.1538,
       "market": "outrights"
@@ -42,39 +35,34 @@
       "name": "Kyle Kirkwood",
       "nameNormalized": "kylekirkwood",
       "bestOdds": "+700",
-      "bestOddsSource": "fox-sports-draftkings",
+      "bestOddsSource": "consensus",
       "consensusOdds": "+700",
       "oddsBySource": {
-        "fox-sports-draftkings": "+700",
-        "fox-sports-draftkings-mybookie": "+700"
+        "frontstretch": "+700"
       },
       "impliedProbability": 0.125,
-      "market": "outrights"
-    },
-    {
-      "name": "Scott McLaughlin",
-      "nameNormalized": "scottmclaughlin",
-      "bestOdds": "+1000",
-      "bestOddsSource": "draftkings-beyond-the-flag",
-      "consensusOdds": "+858",
-      "oddsBySource": {
-        "fox-sports-draftkings": "+800",
-        "draftkings-beyond-the-flag": "+1000",
-        "fox-sports-draftkings-mybookie": "+800"
-      },
-      "impliedProbability": 0.0909,
       "market": "outrights"
     },
     {
       "name": "Josef Newgarden",
       "nameNormalized": "josefnewgarden",
       "bestOdds": "+800",
-      "bestOddsSource": "fox-sports-draftkings",
-      "consensusOdds": "+722",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+800",
       "oddsBySource": {
-        "fox-sports-draftkings": "+800",
-        "draftkings-beyond-the-flag": "+600",
-        "fox-sports-draftkings-mybookie": "+800"
+        "frontstretch": "+800"
+      },
+      "impliedProbability": 0.1111,
+      "market": "outrights"
+    },
+    {
+      "name": "Scott McLaughlin",
+      "nameNormalized": "scottmclaughlin",
+      "bestOdds": "+800",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+800",
+      "oddsBySource": {
+        "frontstretch": "+800"
       },
       "impliedProbability": 0.1111,
       "market": "outrights"
@@ -83,296 +71,60 @@
       "name": "Scott Dixon",
       "nameNormalized": "scottdixon",
       "bestOdds": "+1600",
-      "bestOddsSource": "fox-sports-draftkings",
-      "consensusOdds": "+1278",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1600",
       "oddsBySource": {
-        "fox-sports-draftkings": "+1600",
-        "draftkings-beyond-the-flag": "+900",
-        "fox-sports-draftkings-mybookie": "+1600"
+        "frontstretch": "+1600"
       },
       "impliedProbability": 0.0588,
-      "market": "outrights"
-    },
-    {
-      "name": "David Malukas",
-      "nameNormalized": "davidmalukas",
-      "bestOdds": "+1800",
-      "bestOddsSource": "fox-sports-draftkings",
-      "consensusOdds": "+1429",
-      "oddsBySource": {
-        "fox-sports-draftkings": "+1800",
-        "draftkings-beyond-the-flag": "+1000",
-        "fox-sports-draftkings-mybookie": "+1800"
-      },
-      "impliedProbability": 0.0526,
-      "market": "outrights"
-    },
-    {
-      "name": "Christian Lundgaard",
-      "nameNormalized": "christianlundgaard",
-      "bestOdds": "+2000",
-      "bestOddsSource": "fox-sports-draftkings",
-      "consensusOdds": "+2000",
-      "oddsBySource": {
-        "fox-sports-draftkings": "+2000",
-        "fox-sports-draftkings-mybookie": "+2000"
-      },
-      "impliedProbability": 0.0476,
       "market": "outrights"
     },
     {
       "name": "Will Power",
       "nameNormalized": "willpower",
       "bestOdds": "+2000",
-      "bestOddsSource": "fox-sports-draftkings",
+      "bestOddsSource": "consensus",
       "consensusOdds": "+2000",
       "oddsBySource": {
-        "fox-sports-draftkings": "+2000",
-        "fox-sports-draftkings-mybookie": "+2000"
+        "frontstretch": "+2000"
       },
       "impliedProbability": 0.0476,
       "market": "outrights"
     },
     {
-      "name": "Mick Schumacher",
-      "nameNormalized": "mickschumacher",
-      "bestOdds": "+13000",
-      "bestOddsSource": "fox-sports-draftkings",
-      "consensusOdds": "+13000",
+      "name": "Christian Lundgaard",
+      "nameNormalized": "christianlundgaard",
+      "bestOdds": "+2500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2500",
       "oddsBySource": {
-        "fox-sports-draftkings": "+13000",
-        "fox-sports-draftkings-mybookie": "+13000"
+        "frontstretch": "+2500"
       },
-      "impliedProbability": 0.0076,
+      "impliedProbability": 0.0385,
       "market": "outrights"
     },
     {
-      "name": "Takuma Sato",
-      "nameNormalized": "takumasato",
-      "bestOdds": "+12000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+1917",
+      "name": "David Malukas",
+      "nameNormalized": "davidmalukas",
+      "bestOdds": "+3300",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+3300",
       "oddsBySource": {
-        "draftkings-beyond-the-flag": "+1000",
-        "fox-sports-draftkings-mybookie": "+12000"
+        "frontstretch": "+3300"
       },
-      "impliedProbability": 0.0083,
-      "market": "outrights"
-    },
-    {
-      "name": "Alexander Rossi",
-      "nameNormalized": "alexanderrossi",
-      "bestOdds": "+7000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+7000",
-      "oddsBySource": {
-        "fox-sports-draftkings-mybookie": "+7000"
-      },
-      "impliedProbability": 0.0141,
-      "market": "outrights"
-    },
-    {
-      "name": "Felix Rosenqvist",
-      "nameNormalized": "felixrosenqvist",
-      "bestOdds": "+8000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+8000",
-      "oddsBySource": {
-        "fox-sports-draftkings-mybookie": "+8000"
-      },
-      "impliedProbability": 0.0123,
-      "market": "outrights"
-    },
-    {
-      "name": "Christian Rasmussen",
-      "nameNormalized": "christianrasmussen",
-      "bestOdds": "+10000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "fox-sports-draftkings-mybookie": "+10000"
-      },
-      "impliedProbability": 0.0099,
+      "impliedProbability": 0.0294,
       "market": "outrights"
     },
     {
       "name": "Marcus Ericsson",
       "nameNormalized": "marcusericsson",
-      "bestOdds": "+10000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+10000",
+      "bestOdds": "+4000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+4000",
       "oddsBySource": {
-        "fox-sports-draftkings-mybookie": "+10000"
+        "frontstretch": "+4000"
       },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "Marcus Armstrong",
-      "nameNormalized": "marcusarmstrong",
-      "bestOdds": "+10000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "fox-sports-draftkings-mybookie": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "Santino Ferrucci",
-      "nameNormalized": "santinoferrucci",
-      "bestOdds": "+12000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+12000",
-      "oddsBySource": {
-        "fox-sports-draftkings-mybookie": "+12000"
-      },
-      "impliedProbability": 0.0083,
-      "market": "outrights"
-    },
-    {
-      "name": "Rinus VeeKay",
-      "nameNormalized": "rinusveekay",
-      "bestOdds": "+20000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "fox-sports-draftkings-mybookie": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Louis Foster",
-      "nameNormalized": "louisfoster",
-      "bestOdds": "+20000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "fox-sports-draftkings-mybookie": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Kyffin Simpson",
-      "nameNormalized": "kyffinsimpson",
-      "bestOdds": "+20000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "fox-sports-draftkings-mybookie": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Graham Rahal",
-      "nameNormalized": "grahamrahal",
-      "bestOdds": "+20000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "fox-sports-draftkings-mybookie": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Jacob Abel",
-      "nameNormalized": "jacobabel",
-      "bestOdds": "+20000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "fox-sports-draftkings-mybookie": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Nolan Siegel",
-      "nameNormalized": "nolansiegel",
-      "bestOdds": "+30000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+30000",
-      "oddsBySource": {
-        "fox-sports-draftkings-mybookie": "+30000"
-      },
-      "impliedProbability": 0.0033,
-      "market": "outrights"
-    },
-    {
-      "name": "Callum Ilott",
-      "nameNormalized": "callumilott",
-      "bestOdds": "+100000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+100000",
-      "oddsBySource": {
-        "fox-sports-draftkings-mybookie": "+100000"
-      },
-      "impliedProbability": 0.001,
-      "market": "outrights"
-    },
-    {
-      "name": "Sting Ray Robb",
-      "nameNormalized": "stingrayrobb",
-      "bestOdds": "+100000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+100000",
-      "oddsBySource": {
-        "fox-sports-draftkings-mybookie": "+100000"
-      },
-      "impliedProbability": 0.001,
-      "market": "outrights"
-    },
-    {
-      "name": "Robert Shwartzman",
-      "nameNormalized": "robertshwartzman",
-      "bestOdds": "+100000",
-      "bestOddsSource": "fox-sports-draftkings-mybookie",
-      "consensusOdds": "+100000",
-      "oddsBySource": {
-        "fox-sports-draftkings-mybookie": "+100000"
-      },
-      "impliedProbability": 0.001,
-      "market": "outrights"
-    },
-    {
-      "name": "Conor Daly",
-      "nameNormalized": "conordaly",
-      "bestOdds": "+50000",
-      "bestOddsSource": "estimated-season-preview",
-      "consensusOdds": "+50000",
-      "oddsBySource": {
-        "estimated-season-preview": "+50000"
-      },
-      "impliedProbability": 0.002,
-      "market": "outrights"
-    },
-    {
-      "name": "Devlin DeFrancesco",
-      "nameNormalized": "devlindefrancesco",
-      "bestOdds": "+100000",
-      "bestOddsSource": "estimated-season-preview",
-      "consensusOdds": "+100000",
-      "oddsBySource": {
-        "estimated-season-preview": "+100000"
-      },
-      "impliedProbability": 0.001,
-      "market": "outrights"
-    },
-    {
-      "name": "Colton Herta",
-      "nameNormalized": "coltonherta",
-      "bestOdds": "+200000",
-      "bestOddsSource": "estimated-season-preview",
-      "consensusOdds": "+200000",
-      "oddsBySource": {
-        "estimated-season-preview": "+200000"
-      },
-      "impliedProbability": 0.0005,
+      "impliedProbability": 0.0244,
       "market": "outrights"
     }
   ]

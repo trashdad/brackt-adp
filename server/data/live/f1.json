@@ -1,309 +1,160 @@
 {
   "sport": "f1",
-  "lastUpdated": "2026-03-01T07:59:01.031Z",
+  "lastUpdated": "2026-03-03T10:00:00.000Z",
   "sources": [
-    "google-search-multiple",
-    "gpfans-bet365",
-    "ladbrokes-gpfans-bet365"
+    "bet365",
+    "williamhill",
+    "oddschecker"
   ],
   "entries": [
     {
       "name": "George Russell",
       "nameNormalized": "georgerussell",
-      "bestOdds": "+275",
-      "bestOddsSource": "gpfans-bet365",
-      "consensusOdds": "+221",
+      "bestOdds": "+200",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+225",
       "oddsBySource": {
-        "google-search-multiple": "+200",
-        "gpfans-bet365": "+275",
-        "ladbrokes-gpfans-bet365": "+200"
+        "bet365": "+200",
+        "williamhill": "+225"
       },
-      "impliedProbability": 0.2667,
+      "impliedProbability": 0.3333,
       "market": "outrights"
     },
     {
       "name": "Max Verstappen",
       "nameNormalized": "maxverstappen",
       "bestOdds": "+300",
-      "bestOddsSource": "google-search-multiple",
-      "consensusOdds": "+283",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+330",
       "oddsBySource": {
-        "google-search-multiple": "+300",
-        "gpfans-bet365": "+275",
-        "ladbrokes-gpfans-bet365": "+275"
+        "bet365": "+300",
+        "williamhill": "+350"
       },
       "impliedProbability": 0.25,
       "market": "outrights"
     },
     {
-      "name": "Lando Norris",
-      "nameNormalized": "landonorris",
-      "bestOdds": "+450",
-      "bestOddsSource": "gpfans-bet365",
-      "consensusOdds": "+450",
-      "oddsBySource": {
-        "gpfans-bet365": "+450",
-        "ladbrokes-gpfans-bet365": "+450"
-      },
-      "impliedProbability": 0.1818,
-      "market": "outrights"
-    },
-    {
-      "name": "Oscar Piastri",
-      "nameNormalized": "oscarpiastri",
-      "bestOdds": "+750",
-      "bestOddsSource": "gpfans-bet365",
-      "consensusOdds": "+750",
-      "oddsBySource": {
-        "gpfans-bet365": "+750",
-        "ladbrokes-gpfans-bet365": "+750"
-      },
-      "impliedProbability": 0.1176,
-      "market": "outrights"
-    },
-    {
-      "name": "Fernando Alonso",
-      "nameNormalized": "fernandoalonso",
-      "bestOdds": "+750",
-      "bestOddsSource": "gpfans-bet365",
-      "consensusOdds": "+750",
-      "oddsBySource": {
-        "gpfans-bet365": "+750",
-        "ladbrokes-gpfans-bet365": "+750"
-      },
-      "impliedProbability": 0.1176,
-      "market": "outrights"
-    },
-    {
-      "name": "Kimi Antonelli",
-      "nameNormalized": "kimiantonelli",
-      "bestOdds": "+1000",
-      "bestOddsSource": "gpfans-bet365",
-      "consensusOdds": "+1000",
-      "oddsBySource": {
-        "gpfans-bet365": "+1000",
-        "ladbrokes-gpfans-bet365": "+1000"
-      },
-      "impliedProbability": 0.0909,
-      "market": "outrights"
-    },
-    {
       "name": "Charles Leclerc",
       "nameNormalized": "charlesleclerc",
-      "bestOdds": "+2000",
-      "bestOddsSource": "gpfans-bet365",
-      "consensusOdds": "+2000",
+      "bestOdds": "+500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+550",
       "oddsBySource": {
-        "gpfans-bet365": "+2000",
-        "ladbrokes-gpfans-bet365": "+2000"
+        "bet365": "+500",
+        "williamhill": "+600"
       },
-      "impliedProbability": 0.0476,
+      "impliedProbability": 0.1667,
       "market": "outrights"
     },
     {
       "name": "Lewis Hamilton",
       "nameNormalized": "lewishamilton",
-      "bestOdds": "+3300",
-      "bestOddsSource": "gpfans-bet365",
-      "consensusOdds": "+3300",
+      "bestOdds": "+700",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+800",
       "oddsBySource": {
-        "gpfans-bet365": "+3300",
-        "ladbrokes-gpfans-bet365": "+3300"
+        "bet365": "+700",
+        "williamhill": "+800"
       },
-      "impliedProbability": 0.0294,
+      "impliedProbability": 0.125,
+      "market": "outrights"
+    },
+    {
+      "name": "Kimi Antonelli",
+      "nameNormalized": "kimiantonelli",
+      "bestOdds": "+800",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+900",
+      "oddsBySource": {
+        "bet365": "+800",
+        "williamhill": "+1000"
+      },
+      "impliedProbability": 0.1111,
+      "market": "outrights"
+    },
+    {
+      "name": "Lando Norris",
+      "nameNormalized": "landonorris",
+      "bestOdds": "+900",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1000",
+      "oddsBySource": {
+        "bet365": "+900",
+        "williamhill": "+1100"
+      },
+      "impliedProbability": 0.1,
+      "market": "outrights"
+    },
+    {
+      "name": "Oscar Piastri",
+      "nameNormalized": "oscarpiastri",
+      "bestOdds": "+1400",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1600",
+      "oddsBySource": {
+        "bet365": "+1400"
+      },
+      "impliedProbability": 0.0667,
       "market": "outrights"
     },
     {
       "name": "Carlos Sainz",
       "nameNormalized": "carlossainz",
-      "bestOdds": "+6600",
-      "bestOddsSource": "gpfans-bet365",
-      "consensusOdds": "+6600",
+      "bestOdds": "+2000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2500",
       "oddsBySource": {
-        "gpfans-bet365": "+6600",
-        "ladbrokes-gpfans-bet365": "+6600"
+        "bet365": "+2000"
       },
-      "impliedProbability": 0.0149,
+      "impliedProbability": 0.0476,
       "market": "outrights"
     },
     {
-      "name": "Isack Hadjar",
-      "nameNormalized": "isackhadjar",
-      "bestOdds": "+10000",
-      "bestOddsSource": "ladbrokes-gpfans-bet365",
-      "consensusOdds": "+10000",
+      "name": "Fernando Alonso",
+      "nameNormalized": "fernandoalonso",
+      "bestOdds": "+3300",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+4000",
       "oddsBySource": {
-        "ladbrokes-gpfans-bet365": "+10000"
+        "bet365": "+3300"
       },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "Alex Albon",
-      "nameNormalized": "alexalbon",
-      "bestOdds": "+10000",
-      "bestOddsSource": "ladbrokes-gpfans-bet365",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "ladbrokes-gpfans-bet365": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "Pierre Gasly",
-      "nameNormalized": "pierregasly",
-      "bestOdds": "+15000",
-      "bestOddsSource": "ladbrokes-gpfans-bet365",
-      "consensusOdds": "+15000",
-      "oddsBySource": {
-        "ladbrokes-gpfans-bet365": "+15000"
-      },
-      "impliedProbability": 0.0066,
+      "impliedProbability": 0.0294,
       "market": "outrights"
     },
     {
       "name": "Nico Hulkenberg",
       "nameNormalized": "nicohulkenberg",
-      "bestOdds": "+15000",
-      "bestOddsSource": "ladbrokes-gpfans-bet365",
-      "consensusOdds": "+15000",
+      "bestOdds": "+5000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+6600",
       "oddsBySource": {
-        "ladbrokes-gpfans-bet365": "+15000"
+        "bet365": "+5000"
       },
-      "impliedProbability": 0.0066,
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Liam Lawson",
+      "nameNormalized": "liamlawson",
+      "bestOdds": "+10000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "bet365": "+10000"
+      },
+      "impliedProbability": 0.0099,
       "market": "outrights"
     },
     {
       "name": "Gabriel Bortoleto",
       "nameNormalized": "gabrielbortoleto",
       "bestOdds": "+15000",
-      "bestOddsSource": "ladbrokes-gpfans-bet365",
-      "consensusOdds": "+15000",
-      "oddsBySource": {
-        "ladbrokes-gpfans-bet365": "+15000"
-      },
-      "impliedProbability": 0.0066,
-      "market": "outrights"
-    },
-    {
-      "name": "Oliver Bearman",
-      "nameNormalized": "oliverbearman",
-      "bestOdds": "+20000",
-      "bestOddsSource": "ladbrokes-gpfans-bet365",
+      "bestOddsSource": "consensus",
       "consensusOdds": "+20000",
       "oddsBySource": {
-        "ladbrokes-gpfans-bet365": "+20000"
+        "bet365": "+15000"
       },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Liam Lawson",
-      "nameNormalized": "liamlawson",
-      "bestOdds": "+25000",
-      "bestOddsSource": "ladbrokes-gpfans-bet365",
-      "consensusOdds": "+25000",
-      "oddsBySource": {
-        "ladbrokes-gpfans-bet365": "+25000"
-      },
-      "impliedProbability": 0.004,
-      "market": "outrights"
-    },
-    {
-      "name": "Esteban Ocon",
-      "nameNormalized": "estebanocon",
-      "bestOdds": "+25000",
-      "bestOddsSource": "ladbrokes-gpfans-bet365",
-      "consensusOdds": "+25000",
-      "oddsBySource": {
-        "ladbrokes-gpfans-bet365": "+25000"
-      },
-      "impliedProbability": 0.004,
-      "market": "outrights"
-    },
-    {
-      "name": "Arvid Lindblad",
-      "nameNormalized": "arvidlindblad",
-      "bestOdds": "+25000",
-      "bestOddsSource": "ladbrokes-gpfans-bet365",
-      "consensusOdds": "+25000",
-      "oddsBySource": {
-        "ladbrokes-gpfans-bet365": "+25000"
-      },
-      "impliedProbability": 0.004,
-      "market": "outrights"
-    },
-    {
-      "name": "Jack Doohan",
-      "nameNormalized": "jackdoohan",
-      "bestOdds": "+25000",
-      "bestOddsSource": "ladbrokes-gpfans-bet365",
-      "consensusOdds": "+25000",
-      "oddsBySource": {
-        "ladbrokes-gpfans-bet365": "+25000"
-      },
-      "impliedProbability": 0.004,
-      "market": "outrights"
-    },
-    {
-      "name": "Yuki Tsunoda",
-      "nameNormalized": "yukitsunoda",
-      "bestOdds": "+30000",
-      "bestOddsSource": "ladbrokes-gpfans-bet365",
-      "consensusOdds": "+30000",
-      "oddsBySource": {
-        "ladbrokes-gpfans-bet365": "+30000"
-      },
-      "impliedProbability": 0.0033,
-      "market": "outrights"
-    },
-    {
-      "name": "Lance Stroll",
-      "nameNormalized": "lancestroll",
-      "bestOdds": "+40000",
-      "bestOddsSource": "ladbrokes-gpfans-bet365",
-      "consensusOdds": "+40000",
-      "oddsBySource": {
-        "ladbrokes-gpfans-bet365": "+40000"
-      },
-      "impliedProbability": 0.0025,
-      "market": "outrights"
-    },
-    {
-      "name": "Franco Colapinto",
-      "nameNormalized": "francocolapinto",
-      "bestOdds": "+50000",
-      "bestOddsSource": "ladbrokes-gpfans-bet365",
-      "consensusOdds": "+50000",
-      "oddsBySource": {
-        "ladbrokes-gpfans-bet365": "+50000"
-      },
-      "impliedProbability": 0.002,
-      "market": "outrights"
-    },
-    {
-      "name": "Valtteri Bottas",
-      "nameNormalized": "valtteribottas",
-      "bestOdds": "+50000",
-      "bestOddsSource": "ladbrokes-gpfans-bet365",
-      "consensusOdds": "+50000",
-      "oddsBySource": {
-        "ladbrokes-gpfans-bet365": "+50000"
-      },
-      "impliedProbability": 0.002,
-      "market": "outrights"
-    },
-    {
-      "name": "Sergio Perez",
-      "nameNormalized": "sergioperez",
-      "bestOdds": "+50000",
-      "bestOddsSource": "ladbrokes-gpfans-bet365",
-      "consensusOdds": "+50000",
-      "oddsBySource": {
-        "ladbrokes-gpfans-bet365": "+50000"
-      },
-      "impliedProbability": 0.002,
+      "impliedProbability": 0.0066,
       "market": "outrights"
     }
   ]

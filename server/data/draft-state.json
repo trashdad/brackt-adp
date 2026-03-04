@@ -531,9 +531,9 @@
     "drafted": true,
     "draftedBy": null
   },
-  "afl-gws-giants": {
+  "afl-greater-western-sydney-giants": {
     "drafted": true,
-    "draftedBy": null
+    "draftedBy": "Madmike"
   },
   "llws-caribbean": {
     "drafted": true,
@@ -602,10 +602,6 @@
   "ncaab-iowa-state-cyclones": {
     "drafted": true,
     "draftedBy": "code.monkey"
-  },
-  "afl-greater-western-sydney-giants": {
-    "drafted": true,
-    "draftedBy": "Madmike"
   },
   "mlb-philadelphia-phillies": {
     "drafted": true,
@@ -692,6 +688,110 @@
     "draftedBy": null
   },
   "nfl-philadelphia-eagles": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "nfl-denver-broncos": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "nfl-detroit-lions": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "nfl-san-francisco-49ers": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "nfl-kansas-city-chiefs": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "snooker-mark-williams": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "fifa-netherlands": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "darts-gary-anderson": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "snooker-shaun-murphy": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "tennis_m-taylor-fritz": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "ncaaf-miami-hurricanes": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "wnba-dallas-wings": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "fifa-usa": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "ncaaf-texas-tech-red-raiders": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "ncaaf-lsu-tigers": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "csgo-g2-esports": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "csgo-faze-clan": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "csgo-furia-esports": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "snooker-mark-allen": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "mlb-chicago-cubs": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "mlb-houston-astros": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "ncaaf-texas-a-m-aggies": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "ncaaf-alabama-crimson-tide": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "nfl-new-england-patriots": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "ucl-inter-milan": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "afl-melbourne-demons": {
+    "drafted": true,
+    "draftedBy": null
+  },
+  "ucl-aston-villa": {
     "drafted": true,
     "draftedBy": null
   }

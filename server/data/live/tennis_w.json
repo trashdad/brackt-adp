@@ -1,6 +1,142 @@
 {
-    "sport": "tennis_w",
-    "lastUpdated": "2026-03-01T23:55:42.000Z",
-    "sources": [],
-    "entries": []
+  "sport": "tennis_w",
+  "lastUpdated": "2026-03-03T10:00:00.000Z",
+  "sources": [
+    "lineups",
+    "fanduel"
+  ],
+  "entries": [
+    {
+      "name": "Aryna Sabalenka",
+      "nameNormalized": "arynasabalenka",
+      "bestOdds": "+275",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+275",
+      "oddsBySource": {
+        "lineups": "+275"
+      },
+      "impliedProbability": 0.2667,
+      "market": "outrights"
+    },
+    {
+      "name": "Iga Swiatek",
+      "nameNormalized": "igaswiatek",
+      "bestOdds": "+700",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+700",
+      "oddsBySource": {
+        "lineups": "+700"
+      },
+      "impliedProbability": 0.125,
+      "market": "outrights"
+    },
+    {
+      "name": "Coco Gauff",
+      "nameNormalized": "cocogauff",
+      "bestOdds": "+1200",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1200",
+      "oddsBySource": {
+        "lineups": "+1200"
+      },
+      "impliedProbability": 0.0769,
+      "market": "outrights"
+    },
+    {
+      "name": "Mirra Andreeva",
+      "nameNormalized": "mirraandreeva",
+      "bestOdds": "+1500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1500",
+      "oddsBySource": {
+        "lineups": "Defending Champ"
+      },
+      "impliedProbability": 0.0625,
+      "market": "outrights"
+    },
+    {
+      "name": "Elena Rybakina",
+      "nameNormalized": "elenarybakina",
+      "bestOdds": "+1000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1100",
+      "oddsBySource": {
+        "fanduel": "+1000"
+      },
+      "impliedProbability": 0.0909,
+      "market": "outrights"
+    },
+    {
+      "name": "Jessica Pegula",
+      "nameNormalized": "jessicapegula",
+      "bestOdds": "+1800",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1800",
+      "oddsBySource": {
+        "fanduel": "+1800"
+      },
+      "impliedProbability": 0.0526,
+      "market": "outrights"
+    },
+    {
+      "name": "Qinwen Zheng",
+      "nameNormalized": "qinwenzheng",
+      "bestOdds": "+2000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2000",
+      "oddsBySource": {
+        "fanduel": "+2000"
+      },
+      "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "Maria Sakkari",
+      "nameNormalized": "mariasakkari",
+      "bestOdds": "+2500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2500",
+      "oddsBySource": {
+        "fanduel": "+2500"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Amanda Anisimova",
+      "nameNormalized": "amandaanisimova",
+      "bestOdds": "+3300",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+3300",
+      "oddsBySource": {
+        "fanduel": "+3300"
+      },
+      "impliedProbability": 0.0294,
+      "market": "outrights"
+    },
+    {
+      "name": "Madison Keys",
+      "nameNormalized": "madisonkeys",
+      "bestOdds": "+4000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+4000",
+      "oddsBySource": {
+        "fanduel": "+4000"
+      },
+      "impliedProbability": 0.0244,
+      "market": "outrights"
+    },
+    {
+      "name": "Karolina Muchova",
+      "nameNormalized": "karolinamuchova",
+      "bestOdds": "+4000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+4000",
+      "oddsBySource": {
+        "fanduel": "+4000"
+      },
+      "impliedProbability": 0.0244,
+      "market": "outrights"
+    }
+  ]
 }

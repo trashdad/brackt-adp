@@ -1,22 +1,34 @@
 {
   "sport": "ncaab",
-  "lastUpdated": "2026-03-01T07:59:01.031Z",
+  "lastUpdated": "2026-03-03T10:00:00.000Z",
   "sources": [
-    "google-search-multiple",
-    "yahoo-sports-draftkings",
-    "yahoo-sports-fox-sports-si-com-covers"
+    "vegasinsider",
+    "foxsports",
+    "covers"
   ],
   "entries": [
     {
       "name": "Michigan Wolverines",
       "nameNormalized": "michiganwolverines",
-      "bestOdds": "+375",
-      "bestOddsSource": "google-search-multiple",
+      "bestOdds": "+325",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+325",
+      "oddsBySource": {
+        "vegasinsider": "+325",
+        "foxsports": "+330"
+      },
+      "impliedProbability": 0.2353,
+      "market": "outrights"
+    },
+    {
+      "name": "Duke Blue Devils",
+      "nameNormalized": "dukebluedevils",
+      "bestOdds": "+350",
+      "bestOddsSource": "consensus",
       "consensusOdds": "+375",
       "oddsBySource": {
-        "google-search-multiple": "+375",
-        "yahoo-sports-draftkings": "+375",
-        "yahoo-sports-fox-sports-si-com-covers": "+375"
+        "vegasinsider": "+350",
+        "foxsports": "+400"
       },
       "impliedProbability": 0.2105,
       "market": "outrights"
@@ -24,423 +36,161 @@
     {
       "name": "Arizona Wildcats",
       "nameNormalized": "arizonawildcats",
-      "bestOdds": "+475",
-      "bestOddsSource": "yahoo-sports-draftkings",
-      "consensusOdds": "+457",
+      "bestOdds": "+450",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+460",
       "oddsBySource": {
-        "google-search-multiple": "+425",
-        "yahoo-sports-draftkings": "+475",
-        "yahoo-sports-fox-sports-si-com-covers": "+475"
+        "vegasinsider": "+450",
+        "foxsports": "+475"
       },
-      "impliedProbability": 0.1739,
-      "market": "outrights"
-    },
-    {
-      "name": "Duke Blue Devils",
-      "nameNormalized": "dukebluedevils",
-      "bestOdds": "+425",
-      "bestOddsSource": "yahoo-sports-draftkings",
-      "consensusOdds": "+416",
-      "oddsBySource": {
-        "google-search-multiple": "+400",
-        "yahoo-sports-draftkings": "+425",
-        "yahoo-sports-fox-sports-si-com-covers": "+425"
-      },
-      "impliedProbability": 0.1905,
-      "market": "outrights"
-    },
-    {
-      "name": "Houston Cougars",
-      "nameNormalized": "houstoncougars",
-      "bestOdds": "+900",
-      "bestOddsSource": "yahoo-sports-draftkings",
-      "consensusOdds": "+900",
-      "oddsBySource": {
-        "yahoo-sports-draftkings": "+900",
-        "yahoo-sports-fox-sports-si-com-covers": "+900"
-      },
-      "impliedProbability": 0.1,
-      "market": "outrights"
-    },
-    {
-      "name": "Illinois Fighting Illini",
-      "nameNormalized": "illinoisfightingillini",
-      "bestOdds": "+1100",
-      "bestOddsSource": "yahoo-sports-draftkings",
-      "consensusOdds": "+1100",
-      "oddsBySource": {
-        "yahoo-sports-draftkings": "+1100",
-        "yahoo-sports-fox-sports-si-com-covers": "+1100"
-      },
-      "impliedProbability": 0.0833,
+      "impliedProbability": 0.1786,
       "market": "outrights"
     },
     {
       "name": "Florida Gators",
       "nameNormalized": "floridagators",
-      "bestOdds": "+1100",
-      "bestOddsSource": "yahoo-sports-draftkings",
-      "consensusOdds": "+1100",
+      "bestOdds": "+800",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1000",
       "oddsBySource": {
-        "yahoo-sports-draftkings": "+1100",
-        "yahoo-sports-fox-sports-si-com-covers": "+1100"
+        "vegasinsider": "+800",
+        "foxsports": "+1200"
       },
-      "impliedProbability": 0.0833,
+      "impliedProbability": 0.0909,
       "market": "outrights"
     },
     {
-      "name": "Iowa State Cyclones",
-      "nameNormalized": "iowastatecyclones",
-      "bestOdds": "+1400",
-      "bestOddsSource": "yahoo-sports-draftkings",
-      "consensusOdds": "+1400",
+      "name": "Houston Cougars",
+      "nameNormalized": "houstoncougars",
+      "bestOdds": "+950",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1025",
       "oddsBySource": {
-        "yahoo-sports-draftkings": "+1400",
-        "yahoo-sports-fox-sports-si-com-covers": "+1400"
+        "vegasinsider": "+950",
+        "foxsports": "+1100"
       },
-      "impliedProbability": 0.0667,
+      "impliedProbability": 0.0889,
       "market": "outrights"
     },
     {
       "name": "UConn Huskies",
       "nameNormalized": "uconnhuskies",
-      "bestOdds": "+1800",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+1576",
+      "bestOdds": "+1300",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1300",
       "oddsBySource": {
-        "yahoo-sports-draftkings": "+1400",
-        "yahoo-sports-fox-sports-si-com-covers": "+1800"
+        "vegasinsider": "+1300",
+        "foxsports": "+1300"
       },
-      "impliedProbability": 0.0526,
-      "market": "outrights"
-    },
-    {
-      "name": "Louisville Cardinals",
-      "nameNormalized": "louisvillecardinals",
-      "bestOdds": "+4000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+2096",
-      "oddsBySource": {
-        "yahoo-sports-draftkings": "+1400",
-        "yahoo-sports-fox-sports-si-com-covers": "+4000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Purdue Boilermakers",
-      "nameNormalized": "purdueboilermakers",
-      "bestOdds": "+2500",
-      "bestOddsSource": "yahoo-sports-draftkings",
-      "consensusOdds": "+2500",
-      "oddsBySource": {
-        "yahoo-sports-draftkings": "+2500",
-        "yahoo-sports-fox-sports-si-com-covers": "+2500"
-      },
-      "impliedProbability": 0.0385,
+      "impliedProbability": 0.0714,
       "market": "outrights"
     },
     {
       "name": "Kansas Jayhawks",
       "nameNormalized": "kansasjayhawks",
-      "bestOdds": "+2500",
-      "bestOddsSource": "yahoo-sports-draftkings",
-      "consensusOdds": "+2223",
-      "oddsBySource": {
-        "yahoo-sports-draftkings": "+2500",
-        "yahoo-sports-fox-sports-si-com-covers": "+2000"
-      },
-      "impliedProbability": 0.0385,
-      "market": "outrights"
-    },
-    {
-      "name": "Michigan State Spartans",
-      "nameNormalized": "michiganstatespartans",
-      "bestOdds": "+4000",
-      "bestOddsSource": "yahoo-sports-draftkings",
-      "consensusOdds": "+3734",
-      "oddsBySource": {
-        "yahoo-sports-draftkings": "+4000",
-        "yahoo-sports-fox-sports-si-com-covers": "+3500"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Gonzaga Bulldogs",
-      "nameNormalized": "gonzagabulldogs",
-      "bestOdds": "+4000",
-      "bestOddsSource": "yahoo-sports-draftkings",
-      "consensusOdds": "+3431",
-      "oddsBySource": {
-        "yahoo-sports-draftkings": "+4000",
-        "yahoo-sports-fox-sports-si-com-covers": "+3000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Auburn Tigers",
-      "nameNormalized": "auburntigers",
       "bestOdds": "+2000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
+      "bestOddsSource": "consensus",
       "consensusOdds": "+2000",
       "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+2000"
+        "vegasinsider": "+2000"
       },
       "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "Alabama Crimson Tide",
+      "nameNormalized": "alabamacrimsontide",
+      "bestOdds": "+2000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2000",
+      "oddsBySource": {
+        "vegasinsider": "+2000"
+      },
+      "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "Arkansas Razorbacks",
+      "nameNormalized": "arkansasrazorbacks",
+      "bestOdds": "+2000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2000",
+      "oddsBySource": {
+        "vegasinsider": "+2000"
+      },
+      "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "Louisville Cardinals",
+      "nameNormalized": "louisvillecardinals",
+      "bestOdds": "+2000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2000",
+      "oddsBySource": {
+        "vegasinsider": "+2000"
+      },
+      "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "Tennessee Volunteers",
+      "nameNormalized": "tennesseevolunteers",
+      "bestOdds": "+2500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2500",
+      "oddsBySource": {
+        "vegasinsider": "+2500"
+      },
+      "impliedProbability": 0.0385,
       "market": "outrights"
     },
     {
       "name": "St. John's Red Storm",
       "nameNormalized": "stjohnsredstorm",
       "bestOdds": "+2500",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
+      "bestOddsSource": "consensus",
       "consensusOdds": "+2500",
       "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+2500"
+        "vegasinsider": "+2500"
       },
       "impliedProbability": 0.0385,
       "market": "outrights"
     },
     {
-      "name": "Kentucky Wildcats",
-      "nameNormalized": "kentuckywildcats",
+      "name": "Iowa State Cyclones",
+      "nameNormalized": "iowastatecyclones",
       "bestOdds": "+3000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
+      "bestOddsSource": "consensus",
       "consensusOdds": "+3000",
       "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+3000"
+        "vegasinsider": "+3000"
       },
       "impliedProbability": 0.0323,
       "market": "outrights"
     },
     {
-      "name": "UCLA Bruins",
-      "nameNormalized": "uclabruins",
-      "bestOdds": "+3000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+3000",
+      "name": "Purdue Boilermakers",
+      "nameNormalized": "purdueboilermakers",
+      "bestOdds": "+4000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+4000",
       "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+3000"
+        "vegasinsider": "+4000"
       },
-      "impliedProbability": 0.0323,
+      "impliedProbability": 0.0244,
       "market": "outrights"
     },
     {
-      "name": "Tennessee Volunteers",
-      "nameNormalized": "tennesseevolunteers",
-      "bestOdds": "+3000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+3000",
+      "name": "Michigan State Spartans",
+      "nameNormalized": "michiganstatespartans",
+      "bestOdds": "+4000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+4000",
       "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+3000"
+        "vegasinsider": "+4000"
       },
-      "impliedProbability": 0.0323,
-      "market": "outrights"
-    },
-    {
-      "name": "Alabama Crimson Tide",
-      "nameNormalized": "alabamacrimsontide",
-      "bestOdds": "+3500",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+3500",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+3500"
-      },
-      "impliedProbability": 0.0278,
-      "market": "outrights"
-    },
-    {
-      "name": "Arkansas Razorbacks",
-      "nameNormalized": "arkansasrazorbacks",
-      "bestOdds": "+4500",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+4500",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+4500"
-      },
-      "impliedProbability": 0.0217,
-      "market": "outrights"
-    },
-    {
-      "name": "Indiana Hoosiers",
-      "nameNormalized": "indianahoosiers",
-      "bestOdds": "+5000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+5000",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+5000"
-      },
-      "impliedProbability": 0.0196,
-      "market": "outrights"
-    },
-    {
-      "name": "North Carolina Tar Heels",
-      "nameNormalized": "northcarolinatarheels",
-      "bestOdds": "+5000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+5000",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+5000"
-      },
-      "impliedProbability": 0.0196,
-      "market": "outrights"
-    },
-    {
-      "name": "Creighton Bluejays",
-      "nameNormalized": "creightonbluejays",
-      "bestOdds": "+5000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+5000",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+5000"
-      },
-      "impliedProbability": 0.0196,
-      "market": "outrights"
-    },
-    {
-      "name": "Nebraska Cornhuskers",
-      "nameNormalized": "nebraskacornhuskers",
-      "bestOdds": "+5000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+5000",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+5000"
-      },
-      "impliedProbability": 0.0196,
-      "market": "outrights"
-    },
-    {
-      "name": "Wisconsin Badgers",
-      "nameNormalized": "wisconsinbadgers",
-      "bestOdds": "+6000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+6000",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+6000"
-      },
-      "impliedProbability": 0.0164,
-      "market": "outrights"
-    },
-    {
-      "name": "Oregon Ducks",
-      "nameNormalized": "oregonducks",
-      "bestOdds": "+6000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+6000",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+6000"
-      },
-      "impliedProbability": 0.0164,
-      "market": "outrights"
-    },
-    {
-      "name": "Texas Tech Red Raiders",
-      "nameNormalized": "texastechredraiders",
-      "bestOdds": "+6000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+6000",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+6000"
-      },
-      "impliedProbability": 0.0164,
-      "market": "outrights"
-    },
-    {
-      "name": "Marquette Golden Eagles",
-      "nameNormalized": "marquettegoldeneagles",
-      "bestOdds": "+10000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "San Diego State Aztecs",
-      "nameNormalized": "sandiegostateaztecs",
-      "bestOdds": "+15000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+15000",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+15000"
-      },
-      "impliedProbability": 0.0066,
-      "market": "outrights"
-    },
-    {
-      "name": "Xavier Musketeers",
-      "nameNormalized": "xaviermusketeers",
-      "bestOdds": "+15000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+15000",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+15000"
-      },
-      "impliedProbability": 0.0066,
-      "market": "outrights"
-    },
-    {
-      "name": "Memphis Tigers",
-      "nameNormalized": "memphistigers",
-      "bestOdds": "+20000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Missouri Tigers",
-      "nameNormalized": "missouritigers",
-      "bestOdds": "+20000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Ole Miss Rebels",
-      "nameNormalized": "olemissrebels",
-      "bestOdds": "+20000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Virginia Cavaliers",
-      "nameNormalized": "virginiacavaliers",
-      "bestOdds": "+20000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Utah Utes",
-      "nameNormalized": "utahutes",
-      "bestOdds": "+20000",
-      "bestOddsSource": "yahoo-sports-fox-sports-si-com-covers",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "yahoo-sports-fox-sports-si-com-covers": "+20000"
-      },
-      "impliedProbability": 0.005,
+      "impliedProbability": 0.0244,
       "market": "outrights"
     }
   ]

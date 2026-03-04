@@ -134,6 +134,7 @@ function getCanonicalName(name, sportId) {
 
   // Special case for common abbreviations
   const abbreviations = {
+    // NFL
     'kc': 'Kansas City Chiefs',
     'la': null, // Ambiguous
     'ny': null, // Ambiguous
@@ -167,9 +168,16 @@ function getCanonicalName(name, sportId) {
     'no': 'New Orleans Saints',
     'ten': 'Tennessee Titans',
     'was': 'Washington Commanders',
+
+    // AFL
+    'gws': 'Greater Western Sydney Giants',
+    'gwsgiants': 'Greater Western Sydney Giants',
+    'north': 'North Melbourne Kangaroos',
+    'port': 'Port Adelaide Power',
+    'essendon': 'Essendon Bombers',
   };
 
-  if (sportId === 'nfl' && abbreviations[normalizedInput]) {
+  if ((sportId === 'nfl' || sportId === 'afl') && abbreviations[normalizedInput]) {
     return abbreviations[normalizedInput];
   }
 

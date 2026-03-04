@@ -1,6 +1,148 @@
 {
-    "sport": "pga",
-    "lastUpdated": "2026-03-01T23:55:42.000Z",
-    "sources": [],
-    "entries": []
+  "sport": "pga",
+  "lastUpdated": "2026-03-03T10:00:00.000Z",
+  "sources": [
+    "betmgm",
+    "covers",
+    "golfchannel"
+  ],
+  "entries": [
+    {
+      "name": "Scottie Scheffler",
+      "nameNormalized": "scottiescheffler",
+      "bestOdds": "+275",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+300",
+      "oddsBySource": {
+        "betmgm": "+275",
+        "covers": "+325"
+      },
+      "impliedProbability": 0.2667,
+      "market": "outrights"
+    },
+    {
+      "name": "Rory McIlroy",
+      "nameNormalized": "rorymcilroy",
+      "bestOdds": "+700",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+725",
+      "oddsBySource": {
+        "betmgm": "+700",
+        "covers": "+750"
+      },
+      "impliedProbability": 0.125,
+      "market": "outrights"
+    },
+    {
+      "name": "Xander Schauffele",
+      "nameNormalized": "xanderschauffele",
+      "bestOdds": "+1100",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1300",
+      "oddsBySource": {
+        "betmgm": "+1100",
+        "covers": "+1600"
+      },
+      "impliedProbability": 0.0833,
+      "market": "outrights"
+    },
+    {
+      "name": "Jon Rahm",
+      "nameNormalized": "jonrahm",
+      "bestOdds": "+1400",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1500",
+      "oddsBySource": {
+        "betmgm": "+1400",
+        "covers": "+1600"
+      },
+      "impliedProbability": 0.0667,
+      "market": "outrights"
+    },
+    {
+      "name": "Ludvig Åberg",
+      "nameNormalized": "ludvigaberg",
+      "bestOdds": "+1600",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1900",
+      "oddsBySource": {
+        "betmgm": "+1600",
+        "covers": "+2200"
+      },
+      "impliedProbability": 0.0588,
+      "market": "outrights"
+    },
+    {
+      "name": "Brooks Koepka",
+      "nameNormalized": "brookskoepka",
+      "bestOdds": "+1800",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2000",
+      "oddsBySource": {
+        "betmgm": "+1800"
+      },
+      "impliedProbability": 0.0526,
+      "market": "outrights"
+    },
+    {
+      "name": "Viktor Hovland",
+      "nameNormalized": "viktorhovland",
+      "bestOdds": "+2000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2200",
+      "oddsBySource": {
+        "betmgm": "+2000"
+      },
+      "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "Collin Morikawa",
+      "nameNormalized": "collinmorikawa",
+      "bestOdds": "+2200",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2500",
+      "oddsBySource": {
+        "betmgm": "+2200"
+      },
+      "impliedProbability": 0.0435,
+      "market": "outrights"
+    },
+    {
+      "name": "Jordan Spieth",
+      "nameNormalized": "jordanspieth",
+      "bestOdds": "+2500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2800",
+      "oddsBySource": {
+        "betmgm": "+2500"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Tommy Fleetwood",
+      "nameNormalized": "tommyfleetwood",
+      "bestOdds": "+2500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+3000",
+      "oddsBySource": {
+        "betmgm": "+2500"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Bryson DeChambeau",
+      "nameNormalized": "brysondechambeau",
+      "bestOdds": "+2500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+3300",
+      "oddsBySource": {
+        "betmgm": "+2500"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    }
+  ]
 }

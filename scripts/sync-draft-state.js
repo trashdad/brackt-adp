@@ -219,7 +219,7 @@ const RAW_PICKS = [
   { r:9,  ti:4,  selection:'Golden State Valkyries',      sport:'WNBA'                          },
   { r:9,  ti:5,  selection:'Jessica Pegula',              sport:"Tennis - Women's"              },
   { r:9,  ti:6,  selection:'Florida Panthers',            sport:'NHL'                           },
-  { r:9,  ti:7,  selection:'GWS Giants',                  sport:'Aussie Rules Football'         },
+  { r:9,  ti:7,  selection:'Greater Western Sydney Giants', sport:'Aussie Rules Football'         },
   { r:9,  ti:8,  selection:'Minnesota Timberwolves',      sport:'NBA'                           },
   { r:9,  ti:9,  selection:"Ronnie O'Sullivan",           sport:'Snooker'                       },
   { r:9,  ti:10, selection:'Caribbean',                   sport:'Little League World Series'    },

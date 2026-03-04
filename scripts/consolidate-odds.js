@@ -148,19 +148,29 @@ function main() {
     manualByNorm[key] = entryId;
   }
 
-  const PIPELINE_SPORTS = ['nfl', 'nba', 'mlb', 'nhl'];
+  const PIPELINE_SPORTS = [
+    'nfl', 'nba', 'mlb', 'nhl', 'afl', 'f1', 'csgo', 'ncaab', 'ncaaf', 'ncaaw',
+    'wnba', 'ucl', 'fifa', 'darts', 'snooker', 'indycar', 'pga', 'tennis_m', 'tennis_w', 'llws'
+  ];
   let totalMerged = 0;
 
   for (const sportId of PIPELINE_SPORTS) {
     const pipelinePath = join(PIPELINE_LIVE_DIR, `${sportId}.json`);
-    if (!existsSync(pipelinePath)) {
-      console.log(`${sportId}: no pipeline file found, skipping`);
+    const serverLivePath = join(__dirname, '..', 'server', 'data', 'live', `${sportId}.json`);
+
+    let pipelineData;
+    if (existsSync(pipelinePath)) {
+      pipelineData = JSON.parse(readFileSync(pipelinePath, 'utf8'));
+    } else if (existsSync(serverLivePath)) {
+      // Fallback to server/data/live if pipeline/output/live is empty (local dev)
+      pipelineData = JSON.parse(readFileSync(serverLivePath, 'utf8'));
+    } else {
+      console.log(`${sportId}: no data file found, skipping`);
       continue;
     }
 
-    const pipelineData = JSON.parse(readFileSync(pipelinePath, 'utf8'));
     if (!pipelineData.entries || pipelineData.entries.length === 0) {
-      console.log(`${sportId}: no entries in pipeline data`);
+      console.log(`${sportId}: no entries in data`);
       continue;
     }
 
@@ -180,18 +190,16 @@ function main() {
       const manualEntry = manual[manualEntryId];
       if (!manualEntry.oddsBySource) manualEntry.oddsBySource = {};
 
-      // Merge each pipeline source
+      // Merge each source (OVERWRITE existing to refresh odds)
       for (const [source, odds] of Object.entries(pEntry.oddsBySource || {})) {
-        if (!manualEntry.oddsBySource[source]) {
-          manualEntry.oddsBySource[source] = odds;
-          sportMerged++;
-        }
+        manualEntry.oddsBySource[source] = odds;
+        sportMerged++;
       }
 
       manualEntry.timestamp = Date.now();
     }
 
-    console.log(`${sportId}: merged ${sportMerged} source odds from pipeline`);
+    console.log(`${sportId}: refreshed ${sportMerged} source odds`);
     totalMerged += sportMerged;
   }
 

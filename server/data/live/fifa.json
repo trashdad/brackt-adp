@@ -1,20 +1,20 @@
 {
   "sport": "fifa",
-  "lastUpdated": "2026-03-01T07:59:01.031Z",
+  "lastUpdated": "2026-03-03T10:00:00.000Z",
   "sources": [
-    "google-search-multiple",
-    "fox-sports-betmgm-draftkings"
+    "foxsports",
+    "sportsbettingdime",
+    "goal"
   ],
   "entries": [
     {
       "name": "Spain",
       "nameNormalized": "spain",
       "bestOdds": "+450",
-      "bestOddsSource": "google-search-multiple",
-      "consensusOdds": "+424",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+450",
       "oddsBySource": {
-        "google-search-multiple": "+450",
-        "fox-sports-betmgm-draftkings": "+400"
+        "foxsports": "+450"
       },
       "impliedProbability": 0.1818,
       "market": "outrights"
@@ -22,37 +22,35 @@
     {
       "name": "England",
       "nameNormalized": "england",
-      "bestOdds": "+600",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+574",
+      "bestOdds": "+550",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+550",
       "oddsBySource": {
-        "google-search-multiple": "+550",
-        "fox-sports-betmgm-draftkings": "+600"
+        "foxsports": "+550"
       },
-      "impliedProbability": 0.1429,
+      "impliedProbability": 0.1538,
       "market": "outrights"
     },
     {
       "name": "France",
       "nameNormalized": "france",
-      "bestOdds": "+750",
-      "bestOddsSource": "google-search-multiple",
-      "consensusOdds": "+724",
+      "bestOdds": "+700",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+700",
       "oddsBySource": {
-        "google-search-multiple": "+750",
-        "fox-sports-betmgm-draftkings": "+700"
+        "foxsports": "+700"
       },
-      "impliedProbability": 0.1176,
+      "impliedProbability": 0.125,
       "market": "outrights"
     },
     {
       "name": "Brazil",
       "nameNormalized": "brazil",
       "bestOdds": "+800",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
+      "bestOddsSource": "consensus",
       "consensusOdds": "+800",
       "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+800"
+        "foxsports": "+800"
       },
       "impliedProbability": 0.1111,
       "market": "outrights"
@@ -61,10 +59,10 @@
       "name": "Argentina",
       "nameNormalized": "argentina",
       "bestOdds": "+800",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
+      "bestOddsSource": "consensus",
       "consensusOdds": "+800",
       "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+800"
+        "foxsports": "+800"
       },
       "impliedProbability": 0.1111,
       "market": "outrights"
@@ -73,10 +71,10 @@
       "name": "Portugal",
       "nameNormalized": "portugal",
       "bestOdds": "+1000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
+      "bestOddsSource": "consensus",
       "consensusOdds": "+1000",
       "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+1000"
+        "foxsports": "+1000"
       },
       "impliedProbability": 0.0909,
       "market": "outrights"
@@ -85,10 +83,10 @@
       "name": "Germany",
       "nameNormalized": "germany",
       "bestOdds": "+1200",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
+      "bestOddsSource": "consensus",
       "consensusOdds": "+1200",
       "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+1200"
+        "foxsports": "+1200"
       },
       "impliedProbability": 0.0769,
       "market": "outrights"
@@ -96,205 +94,37 @@
     {
       "name": "Netherlands",
       "nameNormalized": "netherlands",
-      "bestOdds": "+2000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+2000",
+      "bestOdds": "+1600",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1600",
       "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+2000"
+        "foxsports": "+1600"
       },
-      "impliedProbability": 0.0476,
-      "market": "outrights"
-    },
-    {
-      "name": "Norway",
-      "nameNormalized": "norway",
-      "bestOdds": "+2800",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+2800",
-      "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+2800"
-      },
-      "impliedProbability": 0.0345,
+      "impliedProbability": 0.0588,
       "market": "outrights"
     },
     {
       "name": "Italy",
       "nameNormalized": "italy",
-      "bestOdds": "+3000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+3000",
+      "bestOdds": "+2000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2000",
       "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+3000"
+        "foxsports": "+2000"
       },
-      "impliedProbability": 0.0323,
-      "market": "outrights"
-    },
-    {
-      "name": "Belgium",
-      "nameNormalized": "belgium",
-      "bestOdds": "+4000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+4000",
-      "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+4000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Colombia",
-      "nameNormalized": "colombia",
-      "bestOdds": "+5000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+5000",
-      "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+5000"
-      },
-      "impliedProbability": 0.0196,
+      "impliedProbability": 0.0476,
       "market": "outrights"
     },
     {
       "name": "Uruguay",
       "nameNormalized": "uruguay",
-      "bestOdds": "+6500",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+6500",
+      "bestOdds": "+2500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2500",
       "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+6500"
+        "foxsports": "+2500"
       },
-      "impliedProbability": 0.0152,
-      "market": "outrights"
-    },
-    {
-      "name": "Mexico",
-      "nameNormalized": "mexico",
-      "bestOdds": "+8000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+8000",
-      "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+8000"
-      },
-      "impliedProbability": 0.0123,
-      "market": "outrights"
-    },
-    {
-      "name": "USA",
-      "nameNormalized": "usa",
-      "bestOdds": "+8000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+8000",
-      "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+8000"
-      },
-      "impliedProbability": 0.0123,
-      "market": "outrights"
-    },
-    {
-      "name": "Switzerland",
-      "nameNormalized": "switzerland",
-      "bestOdds": "+8000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+8000",
-      "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+8000"
-      },
-      "impliedProbability": 0.0123,
-      "market": "outrights"
-    },
-    {
-      "name": "Morocco",
-      "nameNormalized": "morocco",
-      "bestOdds": "+8000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+8000",
-      "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+8000"
-      },
-      "impliedProbability": 0.0123,
-      "market": "outrights"
-    },
-    {
-      "name": "Ecuador",
-      "nameNormalized": "ecuador",
-      "bestOdds": "+8000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+8000",
-      "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+8000"
-      },
-      "impliedProbability": 0.0123,
-      "market": "outrights"
-    },
-    {
-      "name": "Croatia",
-      "nameNormalized": "croatia",
-      "bestOdds": "+10000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "Japan",
-      "nameNormalized": "japan",
-      "bestOdds": "+10000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "Senegal",
-      "nameNormalized": "senegal",
-      "bestOdds": "+12000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+12000",
-      "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+12000"
-      },
-      "impliedProbability": 0.0083,
-      "market": "outrights"
-    },
-    {
-      "name": "Ghana",
-      "nameNormalized": "ghana",
-      "bestOdds": "+15000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+15000",
-      "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+15000"
-      },
-      "impliedProbability": 0.0066,
-      "market": "outrights"
-    },
-    {
-      "name": "South Korea",
-      "nameNormalized": "southkorea",
-      "bestOdds": "+15000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+15000",
-      "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+15000"
-      },
-      "impliedProbability": 0.0066,
-      "market": "outrights"
-    },
-    {
-      "name": "Canada",
-      "nameNormalized": "canada",
-      "bestOdds": "+25000",
-      "bestOddsSource": "fox-sports-betmgm-draftkings",
-      "consensusOdds": "+25000",
-      "oddsBySource": {
-        "fox-sports-betmgm-draftkings": "+25000"
-      },
-      "impliedProbability": 0.004,
+      "impliedProbability": 0.0385,
       "market": "outrights"
     }
   ]

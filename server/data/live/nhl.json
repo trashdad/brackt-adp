@@ -1,424 +1,161 @@
 {
   "sport": "nhl",
-  "lastUpdated": "2026-03-01T07:59:01.031Z",
+  "lastUpdated": "2026-03-03T10:00:00.000Z",
   "sources": [
-    "covers",
-    "google-search-multiple",
-    "si-com-the-spread-oddschecker"
+    "si",
+    "oddspedia",
+    "covers"
   ],
   "entries": [
     {
       "name": "Colorado Avalanche",
       "nameNormalized": "coloradoavalanche",
-      "bestOdds": "+320",
-      "bestOddsSource": "covers",
-      "consensusOdds": "+289",
+      "bestOdds": "+300",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+325",
       "oddsBySource": {
-        "covers": "+320",
-        "google-search-multiple": "+270",
-        "si-com-the-spread-oddschecker": "+280"
+        "si": "+300",
+        "oddspedia": "+350"
       },
-      "impliedProbability": 0.2381,
-      "market": "outrights"
-    },
-    {
-      "name": "Carolina Hurricanes",
-      "nameNormalized": "carolinahurricanes",
-      "bestOdds": "+700",
-      "bestOddsSource": "covers",
-      "consensusOdds": "+700",
-      "oddsBySource": {
-        "covers": "+700",
-        "google-search-multiple": "+700",
-        "si-com-the-spread-oddschecker": "+700"
-      },
-      "impliedProbability": 0.125,
+      "impliedProbability": 0.25,
       "market": "outrights"
     },
     {
       "name": "Tampa Bay Lightning",
       "nameNormalized": "tampabaylightning",
-      "bestOdds": "+800",
-      "bestOddsSource": "covers",
-      "consensusOdds": "+566",
+      "bestOdds": "+400",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+425",
       "oddsBySource": {
-        "covers": "+800",
-        "google-search-multiple": "+480",
-        "si-com-the-spread-oddschecker": "+500"
+        "si": "+400",
+        "oddspedia": "+450"
+      },
+      "impliedProbability": 0.2,
+      "market": "outrights"
+    },
+    {
+      "name": "Carolina Hurricanes",
+      "nameNormalized": "carolinahurricanes",
+      "bestOdds": "+450",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+525",
+      "oddsBySource": {
+        "si": "+450",
+        "oddspedia": "+600"
+      },
+      "impliedProbability": 0.1818,
+      "market": "outrights"
+    },
+    {
+      "name": "Vegas Golden Knights",
+      "nameNormalized": "vegasgoldenknights",
+      "bestOdds": "+800",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+825",
+      "oddsBySource": {
+        "si": "+800",
+        "oddspedia": "+850"
       },
       "impliedProbability": 0.1111,
       "market": "outrights"
     },
     {
-      "name": "Florida Panthers",
-      "nameNormalized": "floridapanthers",
-      "bestOdds": "+3000",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+1354",
+      "name": "Edmonton Oilers",
+      "nameNormalized": "edmontonoilers",
+      "bestOdds": "+1000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1100",
       "oddsBySource": {
-        "covers": "+850",
-        "si-com-the-spread-oddschecker": "+3000"
+        "si": "+1000",
+        "oddspedia": "+1200"
       },
-      "impliedProbability": 0.0323,
+      "impliedProbability": 0.0909,
       "market": "outrights"
     },
     {
       "name": "Dallas Stars",
       "nameNormalized": "dallasstars",
       "bestOdds": "+1400",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+1169",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1500",
       "oddsBySource": {
-        "covers": "+1000",
-        "si-com-the-spread-oddschecker": "+1400"
+        "si": "+1400",
+        "oddspedia": "+1600"
       },
       "impliedProbability": 0.0667,
       "market": "outrights"
     },
     {
-      "name": "Edmonton Oilers",
-      "nameNormalized": "edmontonoilers",
-      "bestOdds": "+1200",
-      "bestOddsSource": "covers",
-      "consensusOdds": "+1200",
-      "oddsBySource": {
-        "covers": "+1200",
-        "si-com-the-spread-oddschecker": "+1200"
-      },
-      "impliedProbability": 0.0769,
-      "market": "outrights"
-    },
-    {
-      "name": "Washington Capitals",
-      "nameNormalized": "washingtoncapitals",
-      "bestOdds": "+4000",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+2497",
-      "oddsBySource": {
-        "covers": "+1800",
-        "si-com-the-spread-oddschecker": "+4000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "New Jersey Devils",
-      "nameNormalized": "newjerseydevils",
-      "bestOdds": "+20000",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+4028",
-      "oddsBySource": {
-        "covers": "+2200",
-        "si-com-the-spread-oddschecker": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Los Angeles Kings",
-      "nameNormalized": "losangeleskings",
-      "bestOdds": "+3500",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+3112",
-      "oddsBySource": {
-        "covers": "+2800",
-        "si-com-the-spread-oddschecker": "+3500"
-      },
-      "impliedProbability": 0.0278,
-      "market": "outrights"
-    },
-    {
-      "name": "Ottawa Senators",
-      "nameNormalized": "ottawasenators",
-      "bestOdds": "+8000",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+4885",
-      "oddsBySource": {
-        "covers": "+3500",
-        "si-com-the-spread-oddschecker": "+8000"
-      },
-      "impliedProbability": 0.0123,
-      "market": "outrights"
-    },
-    {
-      "name": "New York Rangers",
-      "nameNormalized": "newyorkrangers",
-      "bestOdds": "+50000",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+6617",
-      "oddsBySource": {
-        "covers": "+3500",
-        "si-com-the-spread-oddschecker": "+50000"
-      },
-      "impliedProbability": 0.002,
-      "market": "outrights"
-    },
-    {
-      "name": "Winnipeg Jets",
-      "nameNormalized": "winnipegjets",
-      "bestOdds": "+50000",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+7480",
-      "oddsBySource": {
-        "covers": "+4000",
-        "si-com-the-spread-oddschecker": "+50000"
-      },
-      "impliedProbability": 0.002,
-      "market": "outrights"
-    },
-    {
       "name": "Minnesota Wild",
       "nameNormalized": "minnesotawild",
-      "bestOdds": "+4500",
-      "bestOddsSource": "covers",
-      "consensusOdds": "+2688",
+      "bestOdds": "+1800",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1800",
       "oddsBySource": {
-        "covers": "+4500",
-        "si-com-the-spread-oddschecker": "+1900"
+        "si": "+1800"
       },
-      "impliedProbability": 0.0217,
+      "impliedProbability": 0.0526,
+      "market": "outrights"
+    },
+    {
+      "name": "Florida Panthers",
+      "nameNormalized": "floridapanthers",
+      "bestOdds": "+2200",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2600",
+      "oddsBySource": {
+        "si": "+2200",
+        "oddspedia": "+3000"
+      },
+      "impliedProbability": 0.0435,
       "market": "outrights"
     },
     {
       "name": "Montreal Canadiens",
       "nameNormalized": "montrealcanadiens",
-      "bestOdds": "+4500",
-      "bestOddsSource": "covers",
-      "consensusOdds": "+4236",
+      "bestOdds": "+3000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+3500",
       "oddsBySource": {
-        "covers": "+4500",
-        "si-com-the-spread-oddschecker": "+4000"
+        "si": "+3000"
       },
-      "impliedProbability": 0.0217,
-      "market": "outrights"
-    },
-    {
-      "name": "Anaheim Ducks",
-      "nameNormalized": "anaheimducks",
-      "bestOdds": "+10000",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+7105",
-      "oddsBySource": {
-        "covers": "+5500",
-        "si-com-the-spread-oddschecker": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "New York Islanders",
-      "nameNormalized": "newyorkislanders",
-      "bestOdds": "+10000",
-      "bestOddsSource": "covers",
-      "consensusOdds": "+8238",
-      "oddsBySource": {
-        "covers": "+10000",
-        "si-com-the-spread-oddschecker": "+7000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "St. Louis Blues",
-      "nameNormalized": "stlouisblues",
-      "bestOdds": "+100000",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+18249",
-      "oddsBySource": {
-        "covers": "+10000",
-        "si-com-the-spread-oddschecker": "+100000"
-      },
-      "impliedProbability": 0.001,
+      "impliedProbability": 0.0323,
       "market": "outrights"
     },
     {
       "name": "Buffalo Sabres",
       "nameNormalized": "buffalosabres",
-      "bestOdds": "+15000",
-      "bestOddsSource": "covers",
-      "consensusOdds": "+5714",
+      "bestOdds": "+4000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+4000",
       "oddsBySource": {
-        "covers": "+15000",
-        "si-com-the-spread-oddschecker": "+3500"
+        "si": "+4000"
       },
-      "impliedProbability": 0.0066,
-      "market": "outrights"
-    },
-    {
-      "name": "Pittsburgh Penguins",
-      "nameNormalized": "pittsburghpenguins",
-      "bestOdds": "+15000",
-      "bestOddsSource": "covers",
-      "consensusOdds": "+9559",
-      "oddsBySource": {
-        "covers": "+15000",
-        "si-com-the-spread-oddschecker": "+7000"
-      },
-      "impliedProbability": 0.0066,
-      "market": "outrights"
-    },
-    {
-      "name": "Boston Bruins",
-      "nameNormalized": "bostonbruins",
-      "bestOdds": "+20000",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+17145",
-      "oddsBySource": {
-        "covers": "+15000",
-        "si-com-the-spread-oddschecker": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Philadelphia Flyers",
-      "nameNormalized": "philadelphiaflyers",
-      "bestOdds": "+30000",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+20011",
-      "oddsBySource": {
-        "covers": "+15000",
-        "si-com-the-spread-oddschecker": "+30000"
-      },
-      "impliedProbability": 0.0033,
-      "market": "outrights"
-    },
-    {
-      "name": "Seattle Kraken",
-      "nameNormalized": "seattlekraken",
-      "bestOdds": "+20000",
-      "bestOddsSource": "covers",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "covers": "+20000",
-        "si-com-the-spread-oddschecker": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Vancouver Canucks",
-      "nameNormalized": "vancouvercanucks",
-      "bestOdds": "+50000",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+28590",
-      "oddsBySource": {
-        "covers": "+20000",
-        "si-com-the-spread-oddschecker": "+50000"
-      },
-      "impliedProbability": 0.002,
-      "market": "outrights"
-    },
-    {
-      "name": "Calgary Flames",
-      "nameNormalized": "calgaryflames",
-      "bestOdds": "+50000",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+37506",
-      "oddsBySource": {
-        "covers": "+30000",
-        "si-com-the-spread-oddschecker": "+50000"
-      },
-      "impliedProbability": 0.002,
-      "market": "outrights"
-    },
-    {
-      "name": "Chicago Blackhawks",
-      "nameNormalized": "chicagoblackhawks",
-      "bestOdds": "+50000",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+44446",
-      "oddsBySource": {
-        "covers": "+40000",
-        "si-com-the-spread-oddschecker": "+50000"
-      },
-      "impliedProbability": 0.002,
-      "market": "outrights"
-    },
-    {
-      "name": "Nashville Predators",
-      "nameNormalized": "nashvillepredators",
-      "bestOdds": "+50000",
-      "bestOddsSource": "covers",
-      "consensusOdds": "+37506",
-      "oddsBySource": {
-        "covers": "+50000",
-        "si-com-the-spread-oddschecker": "+30000"
-      },
-      "impliedProbability": 0.002,
-      "market": "outrights"
-    },
-    {
-      "name": "San Jose Sharks",
-      "nameNormalized": "sanjosesharks",
-      "bestOdds": "+50000",
-      "bestOddsSource": "covers",
-      "consensusOdds": "+37506",
-      "oddsBySource": {
-        "covers": "+50000",
-        "si-com-the-spread-oddschecker": "+30000"
-      },
-      "impliedProbability": 0.002,
-      "market": "outrights"
-    },
-    {
-      "name": "Vegas Golden Knights",
-      "nameNormalized": "vegasgoldenknights",
-      "bestOdds": "+900",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+900",
-      "oddsBySource": {
-        "si-com-the-spread-oddschecker": "+900"
-      },
-      "impliedProbability": 0.1,
-      "market": "outrights"
-    },
-    {
-      "name": "Utah Mammoth",
-      "nameNormalized": "utahmammoth",
-      "bestOdds": "+2800",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+2800",
-      "oddsBySource": {
-        "si-com-the-spread-oddschecker": "+2800"
-      },
-      "impliedProbability": 0.0345,
+      "impliedProbability": 0.0244,
       "market": "outrights"
     },
     {
       "name": "Detroit Red Wings",
       "nameNormalized": "detroitredwings",
-      "bestOdds": "+5000",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+5000",
+      "bestOdds": "+4000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+4000",
       "oddsBySource": {
-        "si-com-the-spread-oddschecker": "+5000"
+        "si": "+4000"
       },
-      "impliedProbability": 0.0196,
+      "impliedProbability": 0.0244,
       "market": "outrights"
     },
     {
-      "name": "Toronto Maple Leafs",
-      "nameNormalized": "torontomapleleafs",
-      "bestOdds": "+6500",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+6500",
+      "name": "New York Rangers",
+      "nameNormalized": "newyorkrangers",
+      "bestOdds": "+100000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+100000",
       "oddsBySource": {
-        "si-com-the-spread-oddschecker": "+6500"
+        "si": "+100000"
       },
-      "impliedProbability": 0.0152,
-      "market": "outrights"
-    },
-    {
-      "name": "Columbus Blue Jackets",
-      "nameNormalized": "columbusbluejackets",
-      "bestOdds": "+10000",
-      "bestOddsSource": "si-com-the-spread-oddschecker",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "si-com-the-spread-oddschecker": "+10000"
-      },
-      "impliedProbability": 0.0099,
+      "impliedProbability": 0.0001,
       "market": "outrights"
     }
   ]

@@ -36,7 +36,8 @@
     "sport": "csgo",
     "name": "Team Spirit",
     "oddsBySource": {
-      "draftkings": "+1400"
+      "draftkings": "+1400",
+      "hltv": "Rank 2"
     },
     "oddsByTournament": {
       "blast-spring-2026": {
@@ -52,7 +53,7 @@
         "draftkings": "+1400"
       }
     },
-    "timestamp": 1772426569783
+    "timestamp": 1772584962838
   },
   "csgo-team-falcons": {
     "sport": "csgo",
@@ -69,7 +70,8 @@
     "sport": "csgo",
     "name": "PARIVISION",
     "oddsBySource": {
-      "draftkings": "+1400"
+      "draftkings": "+1400",
+      "hltv": "Rank 6"
     },
     "oddsByTournament": {
       "blast-spring-2026": {
@@ -79,13 +81,14 @@
         "draftkings": "+1400"
       }
     },
-    "timestamp": 1772426569783
+    "timestamp": 1772584962838
   },
   "csgo-mouz": {
     "sport": "csgo",
     "name": "MOUZ",
     "oddsBySource": {
-      "draftkings": "+700"
+      "draftkings": "+700",
+      "hltv": "Rank 3"
     },
     "oddsByTournament": {
       "blast-spring-2026": {
@@ -95,12 +98,14 @@
         "draftkings": "+700"
       }
     },
-    "timestamp": 1772426569783
+    "timestamp": 1772584962838
   },
   "csgo-natus-vincere": {
     "sport": "csgo",
     "name": "Natus Vincere",
-    "oddsBySource": {},
+    "oddsBySource": {
+      "hltv": "Rank 8"
+    },
     "oddsByTournament": {
       "blast-spring-2026": {
         "polymarket-hltv": "+1400"
@@ -112,18 +117,20 @@
         "cs2bet-hltv": "+350"
       }
     },
-    "timestamp": 1772331473549
+    "timestamp": 1772584962838
   },
   "csgo-the-mongolz": {
     "sport": "csgo",
     "name": "The MongolZ",
-    "oddsBySource": {},
+    "oddsBySource": {
+      "hltv": "Rank 4"
+    },
     "oddsByTournament": {
       "blast-spring-2026": {
         "polymarket-hltv": "+1900"
       }
     },
-    "timestamp": 1772331473549
+    "timestamp": 1772584962838
   },
   "csgo-aurora-gaming": {
     "sport": "csgo",
@@ -139,7 +146,9 @@
   "csgo-faze-clan": {
     "sport": "csgo",
     "name": "FaZe Clan",
-    "oddsBySource": {},
+    "oddsBySource": {
+      "hltv": "Rank 5"
+    },
     "oddsByTournament": {
       "blast-spring-2026": {
         "polymarket-hltv": "+2400"
@@ -151,7 +160,7 @@
         "cs2bet-hltv": "+600"
       }
     },
-    "timestamp": 1772331473549
+    "timestamp": 1772584962838
   },
   "csgo-ninjas-in-pyjamas": {
     "sport": "csgo",
@@ -167,13 +176,15 @@
   "csgo-team-liquid": {
     "sport": "csgo",
     "name": "Team Liquid",
-    "oddsBySource": {},
+    "oddsBySource": {
+      "hltv": "Rank 11"
+    },
     "oddsByTournament": {
       "blast-spring-2026": {
         "polymarket-hltv": "+3200"
       }
     },
-    "timestamp": 1772331473549
+    "timestamp": 1772584962838
   },
   "csgo-nrg-esports": {
     "sport": "csgo",
@@ -189,7 +200,9 @@
   "csgo-g2-esports": {
     "sport": "csgo",
     "name": "G2 Esports",
-    "oddsBySource": {},
+    "oddsBySource": {
+      "hltv": "Rank 7"
+    },
     "oddsByTournament": {
       "cologne-2026": {
         "cs2bet-hltv": "+400"
@@ -198,13 +211,15 @@
         "cs2bet-hltv": "+450"
       }
     },
-    "timestamp": 1772331473549
+    "timestamp": 1772584962838
   },
   "pga-scottie-scheffler": {
     "sport": "pga",
     "name": "Scottie Scheffler",
     "oddsBySource": {
-      "draftkings": "+300"
+      "draftkings": "+300",
+      "betmgm": "+275",
+      "covers": "+325"
     },
     "oddsByTournament": {
       "masters": {
@@ -220,13 +235,15 @@
         "golf-channel-sportsbettingdime": "+320"
       }
     },
-    "timestamp": 1772426608373
+    "timestamp": 1772584962841
   },
   "pga-rory-mcilroy": {
     "sport": "pga",
     "name": "Rory McIlroy",
     "oddsBySource": {
-      "draftkings": "+425"
+      "draftkings": "+425",
+      "betmgm": "+700",
+      "covers": "+750"
     },
     "oddsByTournament": {
       "masters": {
@@ -242,13 +259,15 @@
         "golf-channel-sportsbettingdime": "+650"
       }
     },
-    "timestamp": 1772426608373
+    "timestamp": 1772584962841
   },
   "pga-xander-schauffele": {
     "sport": "pga",
     "name": "Xander Schauffele",
     "oddsBySource": {
-      "draftkings": "+1100"
+      "draftkings": "+1100",
+      "betmgm": "+1100",
+      "covers": "+1600"
     },
     "oddsByTournament": {
       "masters": {
@@ -264,13 +283,14 @@
         "golf-channel-sportsbettingdime": "+1400"
       }
     },
-    "timestamp": 1772426608373
+    "timestamp": 1772584962841
   },
   "pga-bryson-dechambeau": {
     "sport": "pga",
     "name": "Bryson DeChambeau",
     "oddsBySource": {
-      "draftkings": "+2000"
+      "draftkings": "+2000",
+      "betmgm": "+2500"
     },
     "oddsByTournament": {
       "masters": {
@@ -286,13 +306,15 @@
         "golf-channel-sportsbettingdime": "+1000"
       }
     },
-    "timestamp": 1772426608373
+    "timestamp": 1772584962841
   },
   "pga-jon-rahm": {
     "sport": "pga",
     "name": "Jon Rahm",
     "oddsBySource": {
-      "draftkings": "+1600"
+      "draftkings": "+1600",
+      "betmgm": "+1400",
+      "covers": "+1600"
     },
     "oddsByTournament": {
       "masters": {
@@ -308,13 +330,14 @@
         "golf-channel-sportsbettingdime": "+1200"
       }
     },
-    "timestamp": 1772427806154
+    "timestamp": 1772584962841
   },
   "pga-tommy-fleetwood": {
     "sport": "pga",
     "name": "Tommy Fleetwood",
     "oddsBySource": {
-      "draftkings": "+2500"
+      "draftkings": "+2500",
+      "betmgm": "+2500"
     },
     "oddsByTournament": {
       "masters": {
@@ -330,7 +353,7 @@
         "golf-channel-sportsbettingdime": "+2000"
       }
     },
-    "timestamp": 1772426608373
+    "timestamp": 1772584962841
   },
   "pga-ludvig-aberg": {
     "sport": "pga",
@@ -355,13 +378,15 @@
   "pga-collin-morikawa": {
     "sport": "pga",
     "name": "Collin Morikawa",
-    "oddsBySource": {},
+    "oddsBySource": {
+      "betmgm": "+2200"
+    },
     "oddsByTournament": {
       "masters": {
         "golf-channel-draftkings": "+1800"
       }
     },
-    "timestamp": 1772331473556
+    "timestamp": 1772584962841
   },
   "pga-justin-thomas": {
     "sport": "pga",
@@ -388,24 +413,28 @@
   "pga-brooks-koepka": {
     "sport": "pga",
     "name": "Brooks Koepka",
-    "oddsBySource": {},
+    "oddsBySource": {
+      "betmgm": "+1800"
+    },
     "oddsByTournament": {
       "masters": {
         "golf-channel-draftkings": "+3500"
       }
     },
-    "timestamp": 1772331473556
+    "timestamp": 1772584962841
   },
   "pga-viktor-hovland": {
     "sport": "pga",
     "name": "Viktor Hovland",
-    "oddsBySource": {},
+    "oddsBySource": {
+      "betmgm": "+2000"
+    },
     "oddsByTournament": {
       "masters": {
         "golf-channel-draftkings": "+3500"
       }
     },
-    "timestamp": 1772331473556
+    "timestamp": 1772584962841
   },
   "pga-joaquin-niemann": {
     "sport": "pga",
@@ -421,13 +450,15 @@
   "pga-jordan-spieth": {
     "sport": "pga",
     "name": "Jordan Spieth",
-    "oddsBySource": {},
+    "oddsBySource": {
+      "betmgm": "+2500"
+    },
     "oddsByTournament": {
       "masters": {
         "golf-channel-draftkings": "+4000"
       }
     },
-    "timestamp": 1772331473556
+    "timestamp": 1772584962841
   },
   "pga-patrick-cantlay": {
     "sport": "pga",
@@ -499,7 +530,8 @@
     "sport": "tennis_m",
     "name": "Jannik Sinner",
     "oddsBySource": {
-      "draftkings": "-150"
+      "draftkings": "-150",
+      "lineups": "+150"
     },
     "oddsByTournament": {
       "aus-open": {
@@ -515,13 +547,14 @@
         "vegasinsider-bet365": "+175"
       }
     },
-    "timestamp": 1772426609619
+    "timestamp": 1772584962841
   },
   "tennis_m-carlos-alcaraz": {
     "sport": "tennis_m",
     "name": "Carlos Alcaraz",
     "oddsBySource": {
-      "draftkings": "+100"
+      "draftkings": "+100",
+      "lineups": "+150"
     },
     "oddsByTournament": {
       "aus-open": {
@@ -537,13 +570,14 @@
         "vegasinsider-bet365": "+110"
       }
     },
-    "timestamp": 1772426609619
+    "timestamp": 1772584962841
   },
   "tennis_m-novak-djokovic": {
     "sport": "tennis_m",
     "name": "Novak Djokovic",
     "oddsBySource": {
-      "draftkings": "+1000"
+      "draftkings": "+1000",
+      "lineups": "+1300"
     },
     "oddsByTournament": {
       "aus-open": {
@@ -556,13 +590,14 @@
         "vegasinsider-bet365": "+700"
       }
     },
-    "timestamp": 1772426609619
+    "timestamp": 1772584962841
   },
   "tennis_m-alexander-zverev": {
     "sport": "tennis_m",
     "name": "Alexander Zverev",
     "oddsBySource": {
-      "draftkings": "+3500"
+      "draftkings": "+3500",
+      "fanduel": "+2000"
     },
     "oddsByTournament": {
       "aus-open": {
@@ -578,12 +613,14 @@
         "vegasinsider-bet365": "+1600"
       }
     },
-    "timestamp": 1772426609619
+    "timestamp": 1772584962841
   },
   "tennis_m-jack-draper": {
     "sport": "tennis_m",
     "name": "Jack Draper",
-    "oddsBySource": {},
+    "oddsBySource": {
+      "lineups": "Defending Champ"
+    },
     "oddsByTournament": {
       "french-open": {
         "fanduel-sportsbettingdime": "+2700"
@@ -595,7 +632,7 @@
         "vegasinsider-bet365": "+1600"
       }
     },
-    "timestamp": 1772331473557
+    "timestamp": 1772584962841
   },
   "tennis_m-joao-fonseca": {
     "sport": "tennis_m",
@@ -612,25 +649,28 @@
     "sport": "tennis_m",
     "name": "Lorenzo Musetti",
     "oddsBySource": {
-      "draftkings": "+8000"
+      "draftkings": "+8000",
+      "fanduel": "+5000"
     },
     "oddsByTournament": {
       "french-open": {
         "fanduel-sportsbettingdime": "+2700"
       }
     },
-    "timestamp": 1772427806548
+    "timestamp": 1772584962841
   },
   "tennis_m-taylor-fritz": {
     "sport": "tennis_m",
     "name": "Taylor Fritz",
-    "oddsBySource": {},
+    "oddsBySource": {
+      "fanduel": "+2500"
+    },
     "oddsByTournament": {
       "wimbledon": {
         "vegasinsider-bet365": "+2200"
       }
     },
-    "timestamp": 1772331473557
+    "timestamp": 1772584962841
   },
   "tennis_m-amanda-anisimova": {
     "sport": "tennis_m",
@@ -650,7 +690,8 @@
     "sport": "tennis_w",
     "name": "Aryna Sabalenka",
     "oddsBySource": {
-      "draftkings": "-140"
+      "draftkings": "-140",
+      "lineups": "+275"
     },
     "oddsByTournament": {
       "aus-open": {
@@ -666,13 +707,14 @@
         "vegasinsider": "+275"
       }
     },
-    "timestamp": 1772426611487
+    "timestamp": 1772584962841
   },
   "tennis_w-iga-swiatek": {
     "sport": "tennis_w",
     "name": "Iga Swiatek",
     "oddsBySource": {
-      "draftkings": "+350"
+      "draftkings": "+350",
+      "lineups": "+700"
     },
     "oddsByTournament": {
       "aus-open": {
@@ -688,13 +730,14 @@
         "vegasinsider": "+275"
       }
     },
-    "timestamp": 1772426611487
+    "timestamp": 1772584962841
   },
   "tennis_w-coco-gauff": {
     "sport": "tennis_w",
     "name": "Coco Gauff",
     "oddsBySource": {
-      "draftkings": "+1000"
+      "draftkings": "+1000",
+      "lineups": "+1200"
     },
     "oddsByTournament": {
       "aus-open": {
@@ -710,13 +753,14 @@
         "vegasinsider": "+600"
       }
     },
-    "timestamp": 1772426611487
+    "timestamp": 1772584962841
   },
   "tennis_w-mirra-andreeva": {
     "sport": "tennis_w",
     "name": "Mirra Andreeva",
     "oddsBySource": {
-      "draftkings": "+1500"
+      "draftkings": "+1500",
+      "lineups": "Defending Champ"
     },
     "oddsByTournament": {
       "aus-open": {
@@ -729,13 +773,14 @@
         "vegasinsider": "+1200"
       }
     },
-    "timestamp": 1772426611487
+    "timestamp": 1772584962841
   },
   "tennis_w-madison-keys": {
     "sport": "tennis_w",
     "name": "Madison Keys",
     "oddsBySource": {
-      "draftkings": "+3500"
+      "draftkings": "+3500",
+      "fanduel": "+4000"
     },
     "oddsByTournament": {
       "aus-open": {
@@ -745,13 +790,14 @@
         "sportsbookreview-vegasinsider": "+1800"
       }
     },
-    "timestamp": 1772426611487
+    "timestamp": 1772584962841
   },
   "tennis_w-elena-rybakina": {
     "sport": "tennis_w",
     "name": "Elena Rybakina",
     "oddsBySource": {
-      "draftkings": "+800"
+      "draftkings": "+800",
+      "fanduel": "+1000"
     },
     "oddsByTournament": {
       "french-open": {
@@ -761,13 +807,14 @@
         "vegasinsider": "+600"
       }
     },
-    "timestamp": 1772426611487
+    "timestamp": 1772584962841
   },
   "tennis_w-jessica-pegula": {
     "sport": "tennis_w",
     "name": "Jessica Pegula",
     "oddsBySource": {
-      "draftkings": "+2000"
+      "draftkings": "+2000",
+      "fanduel": "+1800"
     },
     "oddsByTournament": {
       "french-open": {
@@ -777,7 +824,7 @@
         "sportsbookreview-vegasinsider": "+2800"
       }
     },
-    "timestamp": 1772426611487
+    "timestamp": 1772584962841
   },
   "tennis_w-emma-navarro": {
     "sport": "tennis_w",
@@ -794,531 +841,719 @@
     "sport": "darts",
     "name": "Luke Littler",
     "oddsBySource": {
-      "draftkings": "-110"
+      "draftkings": "-110",
+      "ladbrokes": "+250"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "-110"
       }
     },
-    "timestamp": 1772426564708
+    "timestamp": 1772584962840
   },
   "darts-luke-humphries": {
     "sport": "darts",
     "name": "Luke Humphries",
     "oddsBySource": {
-      "draftkings": "+400"
+      "draftkings": "+400",
+      "ladbrokes": "+700"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+400"
       }
     },
-    "timestamp": 1772426564708
+    "timestamp": 1772584962840
   },
   "darts-gian-van-veen": {
     "sport": "darts",
     "name": "Gian van Veen",
     "oddsBySource": {
-      "draftkings": "+550"
+      "draftkings": "+550",
+      "ladbrokes": "+1100"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+550"
       }
     },
-    "timestamp": 1772426564708
+    "timestamp": 1772584962840
   },
   "darts-michael-van-gerwen": {
     "sport": "darts",
     "name": "Michael van Gerwen",
     "oddsBySource": {
-      "draftkings": "+300"
+      "draftkings": "+300",
+      "ladbrokes": "+1600"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+300"
       }
     },
-    "timestamp": 1772426564708
+    "timestamp": 1772584962840
   },
   "snooker-zhao-xintong": {
     "sport": "snooker",
     "name": "Zhao Xintong",
     "oddsBySource": {
-      "draftkings": "+470"
+      "draftkings": "+470",
+      "betfair": "+350"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+470"
       }
     },
-    "timestamp": 1772426567634
+    "timestamp": 1772584962840
   },
   "snooker-judd-trump": {
     "sport": "snooker",
     "name": "Judd Trump",
     "oddsBySource": {
-      "draftkings": "+430"
+      "draftkings": "+430",
+      "betfair": "+350"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+430"
       }
     },
-    "timestamp": 1772426567634
+    "timestamp": 1772584962840
   },
   "snooker-kyren-wilson": {
     "sport": "snooker",
     "name": "Kyren Wilson",
     "oddsBySource": {
-      "draftkings": "+850"
+      "draftkings": "+850",
+      "betfair": "+800"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+850"
       }
     },
-    "timestamp": 1772426567634
+    "timestamp": 1772584962840
   },
   "snooker-wu-yize": {
     "sport": "snooker",
     "name": "Wu Yize",
     "oddsBySource": {
-      "draftkings": "+5000"
+      "draftkings": "+5000",
+      "betfair": "+1200"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+5000"
       }
     },
-    "timestamp": 1772426567634
+    "timestamp": 1772584962840
   },
   "snooker-neil-robertson": {
     "sport": "snooker",
     "name": "Neil Robertson",
     "oddsBySource": {
-      "draftkings": "+900"
+      "draftkings": "+900",
+      "betfair": "+1200"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+900"
       }
     },
-    "timestamp": 1772426567634
+    "timestamp": 1772584962840
   },
   "snooker-mark-selby": {
     "sport": "snooker",
     "name": "Mark Selby",
     "oddsBySource": {
-      "draftkings": "+650"
+      "draftkings": "+650",
+      "betfair": "+500"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+650"
       }
     },
-    "timestamp": 1772426567634
+    "timestamp": 1772584962840
   },
   "snooker-ronnie-o-sullivan": {
     "sport": "snooker",
     "name": "Ronnie O'Sullivan",
     "oddsBySource": {
-      "draftkings": "+350"
+      "draftkings": "+350",
+      "betfair": "+600"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+350"
       }
     },
-    "timestamp": 1772426567634
+    "timestamp": 1772584962840
   },
   "indycar-alex-palou": {
     "sport": "indycar",
     "name": "Alex Palou",
     "oddsBySource": {
-      "draftkings": "-175"
+      "draftkings": "-175",
+      "frontstretch": "-175"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "-175"
       }
     },
-    "timestamp": 1772426568848
+    "timestamp": 1772584962840
   },
   "indycar-josef-newgarden": {
     "sport": "indycar",
     "name": "Josef Newgarden",
     "oddsBySource": {
-      "draftkings": "+800"
+      "draftkings": "+800",
+      "frontstretch": "+800"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+800"
       }
     },
-    "timestamp": 1772426568848
+    "timestamp": 1772584962840
   },
   "indycar-pato-o-ward": {
     "sport": "indycar",
     "name": "Pato O'Ward",
     "oddsBySource": {
-      "draftkings": "+550"
+      "draftkings": "+550",
+      "frontstretch": "+550"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+550"
       }
     },
-    "timestamp": 1772426568848
+    "timestamp": 1772584962840
   },
   "indycar-kyle-kirkwood": {
     "sport": "indycar",
     "name": "Kyle Kirkwood",
     "oddsBySource": {
-      "draftkings": "+700"
+      "draftkings": "+700",
+      "frontstretch": "+700"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+700"
       }
     },
-    "timestamp": 1772426568848
+    "timestamp": 1772584962840
   },
   "indycar-scott-mclaughlin": {
     "sport": "indycar",
     "name": "Scott McLaughlin",
     "oddsBySource": {
-      "draftkings": "+800"
+      "draftkings": "+800",
+      "frontstretch": "+800"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+800"
       }
     },
-    "timestamp": 1772426568848
+    "timestamp": 1772584962840
   },
   "indycar-scott-dixon": {
     "sport": "indycar",
     "name": "Scott Dixon",
     "oddsBySource": {
-      "draftkings": "+1600"
+      "draftkings": "+1600",
+      "frontstretch": "+1600"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+1600"
       }
     },
-    "timestamp": 1772426568848
+    "timestamp": 1772584962840
   },
   "indycar-will-power": {
     "sport": "indycar",
     "name": "Will Power",
     "oddsBySource": {
-      "draftkings": "+2000"
+      "draftkings": "+2000",
+      "frontstretch": "+2000"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+2000"
       }
     },
-    "timestamp": 1772426568848
+    "timestamp": 1772584962840
   },
   "indycar-christian-lundgaard": {
     "sport": "indycar",
     "name": "Christian Lundgaard",
     "oddsBySource": {
-      "draftkings": "+2000"
+      "draftkings": "+2000",
+      "frontstretch": "+2500"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+2000"
       }
     },
-    "timestamp": 1772426568848
+    "timestamp": 1772584962840
   },
   "csgo-furia": {
     "sport": "csgo",
     "name": "FURIA",
     "oddsBySource": {
-      "draftkings": "+350"
+      "draftkings": "+350",
+      "hltv": "Rank 2 (Previous)"
     },
     "oddsByTournament": {
       "season": {
         "draftkings": "+350"
       }
     },
-    "timestamp": 1772426569783
+    "timestamp": 1772584962838
   },
   "afl-brisbane-lions": {
     "sport": "afl",
     "name": "Brisbane Lions",
     "oddsBySource": {
-      "draftkings": "+400"
+      "ladbrokes": "+375",
+      "tab": "+375",
+      "sportsbet": "+375",
+      "ladbrokes-tab-zerohanger": "+375"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426573903
+    "timestamp": 1772584962837
   },
   "afl-gold-coast-suns": {
     "sport": "afl",
     "name": "Gold Coast Suns",
     "oddsBySource": {
-      "draftkings": "+800"
+      "ladbrokes": "+700",
+      "tab": "+700",
+      "sportsbet": "+700",
+      "ladbrokes-tab-zerohanger": "+700"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426573903
-  },
-  "afl-geelong-cats": {
-    "sport": "afl",
-    "name": "Geelong Cats",
-    "oddsBySource": {
-      "draftkings": "+850"
-    },
-    "oddsByTournament": {},
-    "timestamp": 1772426573903
-  },
-  "afl-hawthorn-hawks": {
-    "sport": "afl",
-    "name": "Hawthorn Hawks",
-    "oddsBySource": {
-      "draftkings": "+800"
-    },
-    "oddsByTournament": {},
-    "timestamp": 1772426573903
-  },
-  "afl-adelaide-crows": {
-    "sport": "afl",
-    "name": "Adelaide Crows",
-    "oddsBySource": {
-      "draftkings": "+1200"
-    },
-    "oddsByTournament": {},
-    "timestamp": 1772426573903
-  },
-  "afl-western-bulldogs": {
-    "sport": "afl",
-    "name": "Western Bulldogs",
-    "oddsBySource": {
-      "draftkings": "+1400"
-    },
-    "oddsByTournament": {},
-    "timestamp": 1772426573903
+    "timestamp": 1772584962837
   },
   "afl-sydney-swans": {
     "sport": "afl",
     "name": "Sydney Swans",
     "oddsBySource": {
-      "draftkings": "+900"
+      "ladbrokes": "+800",
+      "tab": "+800",
+      "sportsbet": "+850",
+      "ladbrokes-tab-zerohanger": "+800"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426573903
+    "timestamp": 1772584962837
+  },
+  "afl-hawthorn-hawks": {
+    "sport": "afl",
+    "name": "Hawthorn Hawks",
+    "oddsBySource": {
+      "ladbrokes": "+900",
+      "tab": "+900",
+      "sportsbet": "+900",
+      "ladbrokes-tab-zerohanger": "+900"
+    },
+    "oddsByTournament": {},
+    "timestamp": 1772584962837
+  },
+  "afl-geelong-cats": {
+    "sport": "afl",
+    "name": "Geelong Cats",
+    "oddsBySource": {
+      "ladbrokes": "+900",
+      "tab": "+900",
+      "sportsbet": "+1000",
+      "ladbrokes-tab-zerohanger": "+900"
+    },
+    "oddsByTournament": {},
+    "timestamp": 1772584962837
+  },
+  "afl-fremantle-dockers": {
+    "sport": "afl",
+    "name": "Fremantle Dockers",
+    "oddsBySource": {
+      "ladbrokes": "+1100",
+      "tab": "+1100",
+      "sportsbet": "+1100",
+      "ladbrokes-tab-zerohanger": "+1100"
+    },
+    "oddsByTournament": {},
+    "timestamp": 1772584962837
+  },
+  "afl-adelaide-crows": {
+    "sport": "afl",
+    "name": "Adelaide Crows",
+    "oddsBySource": {
+      "ladbrokes": "+1200",
+      "tab": "+1200",
+      "sportsbet": "+1300",
+      "ladbrokes-tab-zerohanger": "+1200"
+    },
+    "oddsByTournament": {},
+    "timestamp": 1772584962837
+  },
+  "afl-western-bulldogs": {
+    "sport": "afl",
+    "name": "Western Bulldogs",
+    "oddsBySource": {
+      "ladbrokes": "+1400",
+      "tab": "+1400",
+      "sportsbet": "+1400",
+      "ladbrokes-tab-zerohanger": "+1400"
+    },
+    "oddsByTournament": {},
+    "timestamp": 1772584962837
+  },
+  "afl-collingwood-magpies": {
+    "sport": "afl",
+    "name": "Collingwood Magpies",
+    "oddsBySource": {
+      "ladbrokes": "+1600",
+      "tab": "+1600",
+      "sportsbet": "+1700",
+      "ladbrokes-tab-zerohanger": "+1600"
+    },
+    "oddsByTournament": {},
+    "timestamp": 1772584962837
+  },
+  "afl-st-kilda-saints": {
+    "sport": "afl",
+    "name": "St Kilda Saints",
+    "oddsBySource": {
+      "ladbrokes": "+1600",
+      "tab": "+1600",
+      "sportsbet": "+1600",
+      "ladbrokes-tab-zerohanger": "+1600"
+    },
+    "oddsByTournament": {},
+    "timestamp": 1772584962837
   },
   "afl-greater-western-sydney-giants": {
     "sport": "afl",
     "name": "Greater Western Sydney Giants",
     "oddsBySource": {
-      "draftkings": "+1600"
+      "ladbrokes": "+2000",
+      "tab": "+2000",
+      "sportsbet": "+2000",
+      "ladbrokes-tab-zerohanger": "+2000"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426573903
+    "timestamp": 1772584962837
+  },
+  "afl-carlton-blues": {
+    "sport": "afl",
+    "name": "Carlton Blues",
+    "oddsBySource": {
+      "ladbrokes": "+4000",
+      "tab": "+4000",
+      "sportsbet": "+4000",
+      "ladbrokes-tab-zerohanger": "+4000"
+    },
+    "oddsByTournament": {},
+    "timestamp": 1772584962837
+  },
+  "afl-port-adelaide-power": {
+    "sport": "afl",
+    "name": "Port Adelaide Power",
+    "oddsBySource": {
+      "ladbrokes": "+5000",
+      "tab": "+5000",
+      "sportsbet": "+6600",
+      "ladbrokes-tab-zerohanger": "+5000"
+    },
+    "oddsByTournament": {},
+    "timestamp": 1772584962837
+  },
+  "afl-melbourne-demons": {
+    "sport": "afl",
+    "name": "Melbourne Demons",
+    "oddsBySource": {
+      "ladbrokes": "+8000",
+      "tab": "+8000",
+      "sportsbet": "+8000",
+      "ladbrokes-tab-zerohanger": "+8000"
+    },
+    "oddsByTournament": {},
+    "timestamp": 1772584962837
+  },
+  "afl-essendon-bombers": {
+    "sport": "afl",
+    "name": "Essendon Bombers",
+    "oddsBySource": {
+      "ladbrokes": "+10000",
+      "tab": "+10000",
+      "sportsbet": "+10000",
+      "ladbrokes-tab-zerohanger": "+10000"
+    },
+    "oddsByTournament": {},
+    "timestamp": 1772584962837
+  },
+  "afl-north-melbourne-kangaroos": {
+    "sport": "afl",
+    "name": "North Melbourne Kangaroos",
+    "oddsBySource": {
+      "ladbrokes": "+15000",
+      "tab": "+15000",
+      "sportsbet": "+15000",
+      "ladbrokes-tab-zerohanger": "+15000"
+    },
+    "oddsByTournament": {},
+    "timestamp": 1772584962837
+  },
+  "afl-richmond-tigers": {
+    "sport": "afl",
+    "name": "Richmond Tigers",
+    "oddsBySource": {
+      "ladbrokes": "+25000",
+      "tab": "+25000",
+      "sportsbet": "+25000",
+      "ladbrokes-tab-zerohanger": "+25000"
+    },
+    "oddsByTournament": {},
+    "timestamp": 1772584962837
+  },
+  "afl-west-coast-eagles": {
+    "sport": "afl",
+    "name": "West Coast Eagles",
+    "oddsBySource": {
+      "ladbrokes": "+25000",
+      "tab": "+25000",
+      "sportsbet": "+25000",
+      "ladbrokes-tab-zerohanger": "+25000"
+    },
+    "oddsByTournament": {},
+    "timestamp": 1772584962837
   },
   "wnba-las-vegas-aces": {
     "sport": "wnba",
     "name": "Las Vegas Aces",
     "oddsBySource": {
-      "draftkings": "+310"
+      "draftkings": "+310",
+      "betmgm": "+250"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426575813
+    "timestamp": 1772584962839
   },
   "wnba-minnesota-lynx": {
     "sport": "wnba",
     "name": "Minnesota Lynx",
     "oddsBySource": {
-      "draftkings": "+300"
+      "draftkings": "+300",
+      "betmgm": "+375"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426575813
+    "timestamp": 1772584962839
   },
   "wnba-indiana-fever": {
     "sport": "wnba",
     "name": "Indiana Fever",
     "oddsBySource": {
-      "draftkings": "+390"
+      "draftkings": "+390",
+      "betmgm": "+300"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426575813
+    "timestamp": 1772584962839
   },
   "wnba-new-york-liberty": {
     "sport": "wnba",
     "name": "New York Liberty",
     "oddsBySource": {
-      "draftkings": "+480"
+      "draftkings": "+480",
+      "betmgm": "+475"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426575813
+    "timestamp": 1772584962839
   },
   "wnba-phoenix-mercury": {
     "sport": "wnba",
     "name": "Phoenix Mercury",
     "oddsBySource": {
-      "draftkings": "+850"
+      "draftkings": "+850",
+      "betmgm": "+900"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426575813
+    "timestamp": 1772584962839
   },
   "wnba-seattle-storm": {
     "sport": "wnba",
     "name": "Seattle Storm",
     "oddsBySource": {
-      "draftkings": "+1600"
+      "draftkings": "+1600",
+      "betmgm": "+2000"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426575813
+    "timestamp": 1772584962839
   },
   "wnba-atlanta-dream": {
     "sport": "wnba",
     "name": "Atlanta Dream",
     "oddsBySource": {
-      "draftkings": "+1500"
+      "draftkings": "+1500",
+      "betmgm": "+1700"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426575813
+    "timestamp": 1772584962839
   },
   "wnba-golden-state-valkyries": {
     "sport": "wnba",
     "name": "Golden State Valkyries",
     "oddsBySource": {
-      "draftkings": "+3000"
+      "draftkings": "+3000",
+      "betmgm": "+2500"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426575813
+    "timestamp": 1772584962839
   },
   "nfl-seattle-seahawks": {
     "sport": "nfl",
     "name": "Seattle Seahawks",
     "oddsBySource": {
-      "draftkings": "+950"
+      "draftkings": "+950",
+      "covers": "+600",
+      "vegasinsider": "+800"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426576653
+    "timestamp": 1772584962833
   },
   "nfl-los-angeles-rams": {
     "sport": "nfl",
     "name": "Los Angeles Rams",
     "oddsBySource": {
-      "draftkings": "+950"
+      "draftkings": "+950",
+      "covers": "+370",
+      "vegasinsider": "+850"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426576653
+    "timestamp": 1772584962833
   },
   "nba-san-antonio-spurs": {
     "sport": "nba",
     "name": "San Antonio Spurs",
     "oddsBySource": {
-      "draftkings": "+1000"
+      "draftkings": "+1000",
+      "covers": "+3000"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426587646
+    "timestamp": 1772584962836
   },
   "nba-detroit-pistons": {
     "sport": "nba",
     "name": "Detroit Pistons",
     "oddsBySource": {
-      "draftkings": "+1300"
+      "draftkings": "+1300",
+      "covers": "+2500"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426587646
+    "timestamp": 1772584962836
   },
   "nba-boston-celtics": {
     "sport": "nba",
     "name": "Boston Celtics",
     "oddsBySource": {
-      "draftkings": "+1100"
+      "draftkings": "+1100",
+      "covers": "+4000"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426587646
+    "timestamp": 1772584962836
   },
   "nba-cleveland-cavaliers": {
     "sport": "nba",
     "name": "Cleveland Cavaliers",
     "oddsBySource": {
-      "draftkings": "+1200"
+      "draftkings": "+1200",
+      "covers": "+1800"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426587646
+    "timestamp": 1772584962836
   },
   "nba-new-york-knicks": {
     "sport": "nba",
     "name": "New York Knicks",
     "oddsBySource": {
-      "draftkings": "+1500"
+      "draftkings": "+1500",
+      "covers": "+1400"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426587646
+    "timestamp": 1772584962836
   },
   "nba-houston-rockets": {
     "sport": "nba",
     "name": "Houston Rockets",
     "oddsBySource": {
-      "draftkings": "+2500"
+      "draftkings": "+2500",
+      "covers": "+1100"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426587646
+    "timestamp": 1772584962836
   },
   "nba-minnesota-timberwolves": {
     "sport": "nba",
     "name": "Minnesota Timberwolves",
     "oddsBySource": {
-      "draftkings": "+3500"
+      "draftkings": "+3500",
+      "covers": "+3000"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426587646
+    "timestamp": 1772584962836
   },
   "nhl-tampa-bay-lightning": {
     "sport": "nhl",
     "name": "Tampa Bay Lightning",
     "oddsBySource": {
-      "draftkings": "+1500"
+      "draftkings": "+1500",
+      "covers": "+800"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426589498
+    "timestamp": 1772584962836
   },
   "nhl-colorado-avalanche": {
     "sport": "nhl",
     "name": "Colorado Avalanche",
     "oddsBySource": {
-      "draftkings": "+800"
+      "draftkings": "+800",
+      "covers": "+320"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426589498
+    "timestamp": 1772584962836
   },
   "nhl-carolina-hurricanes": {
     "sport": "nhl",
     "name": "Carolina Hurricanes",
     "oddsBySource": {
-      "draftkings": "+900"
+      "draftkings": "+900",
+      "covers": "+700"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426589498
+    "timestamp": 1772584962836
   },
   "nhl-dallas-stars": {
     "sport": "nhl",
     "name": "Dallas Stars",
     "oddsBySource": {
-      "draftkings": "+1000"
+      "draftkings": "+1000",
+      "covers": "+1000"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426589498
+    "timestamp": 1772584962836
   },
   "nhl-minnesota-wild": {
     "sport": "nhl",
     "name": "Minnesota Wild",
     "oddsBySource": {
-      "draftkings": "+3500"
+      "draftkings": "+3500",
+      "covers": "+4500"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426589498
+    "timestamp": 1772584962836
   },
   "nhl-vegas-golden-knights": {
     "sport": "nhl",
@@ -1333,19 +1568,21 @@
     "sport": "nhl",
     "name": "Edmonton Oilers",
     "oddsBySource": {
-      "draftkings": "+650"
+      "draftkings": "+650",
+      "covers": "+1200"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426589498
+    "timestamp": 1772584962836
   },
   "nhl-florida-panthers": {
     "sport": "nhl",
     "name": "Florida Panthers",
     "oddsBySource": {
-      "draftkings": "+750"
+      "draftkings": "+750",
+      "covers": "+850"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426589498
+    "timestamp": 1772584962836
   },
   "nhl-detroit-red-wings": {
     "sport": "nhl",
@@ -1360,19 +1597,21 @@
     "sport": "mlb",
     "name": "New York Yankees",
     "oddsBySource": {
-      "draftkings": "+950"
+      "draftkings": "+950",
+      "covers": "+850"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426591289
+    "timestamp": 1772584962836
   },
   "mlb-seattle-mariners": {
     "sport": "mlb",
     "name": "Seattle Mariners",
     "oddsBySource": {
-      "draftkings": "+1300"
+      "draftkings": "+1300",
+      "covers": "+1200"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426591289
+    "timestamp": 1772584962836
   },
   "mlb-toronto-blue-jays": {
     "sport": "mlb",
@@ -1387,28 +1626,31 @@
     "sport": "mlb",
     "name": "Atlanta Braves",
     "oddsBySource": {
-      "draftkings": "+1600"
+      "draftkings": "+1600",
+      "covers": "+1700"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426591289
+    "timestamp": 1772584962836
   },
   "mlb-new-york-mets": {
     "sport": "mlb",
     "name": "New York Mets",
     "oddsBySource": {
-      "draftkings": "+1400"
+      "draftkings": "+1400",
+      "covers": "+1700"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426591289
+    "timestamp": 1772584962836
   },
   "mlb-detroit-tigers": {
     "sport": "mlb",
     "name": "Detroit Tigers",
     "oddsBySource": {
-      "draftkings": "+2500"
+      "draftkings": "+2500",
+      "covers": "+2800"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426591289
+    "timestamp": 1772584962836
   },
   "mlb-boston-red-sox": {
     "sport": "mlb",
@@ -1423,10 +1665,11 @@
     "sport": "mlb",
     "name": "Philadelphia Phillies",
     "oddsBySource": {
-      "draftkings": "+1400"
+      "draftkings": "+1400",
+      "covers": "+1200"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426591289
+    "timestamp": 1772584962836
   },
   "ncaab-michigan-wolverines": {
     "sport": "ncaab",
@@ -1441,37 +1684,44 @@
     "sport": "ncaab",
     "name": "Duke Blue Devils",
     "oddsBySource": {
-      "draftkings": "+425"
+      "draftkings": "+425",
+      "vegasinsider": "+350",
+      "foxsports": "+400"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426595120
+    "timestamp": 1772584962838
   },
   "ncaab-houston-cougars": {
     "sport": "ncaab",
     "name": "Houston Cougars",
     "oddsBySource": {
-      "draftkings": "+900"
+      "draftkings": "+900",
+      "vegasinsider": "+950",
+      "foxsports": "+1100"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426595120
+    "timestamp": 1772584962838
   },
   "ncaab-arizona-wildcats": {
     "sport": "ncaab",
     "name": "Arizona Wildcats",
     "oddsBySource": {
-      "draftkings": "+425"
+      "draftkings": "+425",
+      "vegasinsider": "+450",
+      "foxsports": "+475"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426595120
+    "timestamp": 1772584962838
   },
   "ncaab-illinois-fighting-illini": {
     "sport": "ncaab",
     "name": "Illinois Fighting Illini",
     "oddsBySource": {
-      "draftkings": "+2000"
+      "draftkings": "+2000",
+      "on3-pickswise-the-big-lead-sportsbookreview": "+50000"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426595120
+    "timestamp": 1772584962838
   },
   "ncaab-uconn-huskies": {
     "sport": "ncaab",
@@ -1486,55 +1736,65 @@
     "sport": "ncaab",
     "name": "Iowa State Cyclones",
     "oddsBySource": {
-      "draftkings": "+2000"
+      "draftkings": "+2000",
+      "vegasinsider": "+3000"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426595120
+    "timestamp": 1772584962838
   },
   "ncaab-florida-gators": {
     "sport": "ncaab",
     "name": "Florida Gators",
     "oddsBySource": {
-      "draftkings": "+1900"
+      "draftkings": "+1900",
+      "vegasinsider": "+800",
+      "foxsports": "+1200",
+      "on3-pickswise-the-big-lead-sportsbookreview": "+5000"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426595120
+    "timestamp": 1772584962838
   },
   "ncaab-kansas-jayhawks": {
     "sport": "ncaab",
     "name": "Kansas Jayhawks",
     "oddsBySource": {
-      "draftkings": "+2000"
+      "draftkings": "+2000",
+      "vegasinsider": "+2000"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426595120
+    "timestamp": 1772584962838
   },
   "ncaaw-uconn-huskies": {
     "sport": "ncaaw",
     "name": "UConn Huskies",
     "oddsBySource": {
-      "draftkings": "-285"
+      "draftkings": "-285",
+      "vegasinsider": "+1300",
+      "foxsports": "+1300",
+      "fanduel": "-320"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426596796
+    "timestamp": 1772584962839
   },
   "ncaaw-south-carolina-gamecocks": {
     "sport": "ncaaw",
     "name": "South Carolina Gamecocks",
     "oddsBySource": {
-      "draftkings": "+900"
+      "draftkings": "+900",
+      "fanduel": "+950"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426596796
+    "timestamp": 1772584962839
   },
   "ncaaw-ucla-bruins": {
     "sport": "ncaaw",
     "name": "UCLA Bruins",
     "oddsBySource": {
-      "draftkings": "+650"
+      "draftkings": "+650",
+      "fanduel": "+700"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426596796
+    "timestamp": 1772584962839
   },
   "ncaaw-texas-longhorns": {
     "sport": "ncaaw",
@@ -1549,109 +1809,141 @@
     "sport": "ncaaw",
     "name": "LSU Tigers",
     "oddsBySource": {
-      "draftkings": "+1200"
+      "draftkings": "+1200",
+      "covers-com-draftkings": "+1500",
+      "on3-pickswise-the-big-lead-sportsbookreview": "+1500",
+      "fanduel": "+1400"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426596796
+    "timestamp": 1772584962839
   },
   "ncaaw-michigan-wolverines": {
     "sport": "ncaaw",
     "name": "Michigan Wolverines",
     "oddsBySource": {
-      "draftkings": "+6000"
+      "draftkings": "+6000",
+      "vegasinsider": "+325",
+      "foxsports": "+330",
+      "on3-pickswise-the-big-lead-sportsbookreview": "+4000",
+      "fanduel": "+3300"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426596796
+    "timestamp": 1772584962839
   },
   "ncaaw-vanderbilt-commodores": {
     "sport": "ncaaw",
     "name": "Vanderbilt Commodores",
     "oddsBySource": {
-      "draftkings": "+5000"
+      "draftkings": "+5000",
+      "fanduel": "+2000"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426596796
+    "timestamp": 1772584962839
   },
   "ncaaf-ohio-state-buckeyes": {
     "sport": "ncaaf",
     "name": "Ohio State Buckeyes",
     "oddsBySource": {
-      "draftkings": "+600"
+      "draftkings": "+600",
+      "google-search-multiple": "+600",
+      "covers-com-draftkings": "+700",
+      "on3-pickswise-the-big-lead-sportsbookreview": "+600",
+      "fanduel": "+2500"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426598259
+    "timestamp": 1772584962839
   },
   "ncaaf-notre-dame-fighting-irish": {
     "sport": "ncaaf",
     "name": "Notre Dame Fighting Irish",
     "oddsBySource": {
-      "draftkings": "+700"
+      "draftkings": "+700",
+      "google-search-multiple": "+650",
+      "covers-com-draftkings": "+750",
+      "on3-pickswise-the-big-lead-sportsbookreview": "+700",
+      "fanduel": "+700"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426598259
+    "timestamp": 1772584962839
   },
   "ncaaf-indiana-hoosiers": {
     "sport": "ncaaf",
     "name": "Indiana Hoosiers",
     "oddsBySource": {
-      "draftkings": "+800"
+      "draftkings": "+800",
+      "covers-com-draftkings": "+700",
+      "on3-pickswise-the-big-lead-sportsbookreview": "+800"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426598259
+    "timestamp": 1772584962838
   },
   "ncaaf-texas-longhorns": {
     "sport": "ncaaf",
     "name": "Texas Longhorns",
     "oddsBySource": {
-      "draftkings": "+700"
+      "draftkings": "+700",
+      "google-search-multiple": "+700",
+      "covers-com-draftkings": "+750",
+      "on3-pickswise-the-big-lead-sportsbookreview": "+700",
+      "fanduel": "+950"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426598259
+    "timestamp": 1772584962839
   },
   "ncaaf-oregon-ducks": {
     "sport": "ncaaf",
     "name": "Oregon Ducks",
     "oddsBySource": {
-      "draftkings": "+700"
+      "draftkings": "+700",
+      "covers-com-draftkings": "+900",
+      "on3-pickswise-the-big-lead-sportsbookreview": "+800"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426598259
+    "timestamp": 1772584962838
   },
   "ncaaf-georgia-bulldogs": {
     "sport": "ncaaf",
     "name": "Georgia Bulldogs",
     "oddsBySource": {
-      "draftkings": "+900"
+      "draftkings": "+900",
+      "covers-com-draftkings": "+1100",
+      "on3-pickswise-the-big-lead-sportsbookreview": "+900"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426598259
+    "timestamp": 1772584962838
   },
   "ucl-arsenal": {
     "sport": "ucl",
     "name": "Arsenal",
     "oddsBySource": {
-      "draftkings": "+370"
+      "draftkings": "+370",
+      "bet365": "+250",
+      "fanduel": "+350"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426601405
+    "timestamp": 1772584962839
   },
   "ucl-bayern-munich": {
     "sport": "ucl",
     "name": "Bayern Munich",
     "oddsBySource": {
-      "draftkings": "+550"
+      "draftkings": "+550",
+      "bet365": "+450",
+      "fanduel": "+550"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426601405
+    "timestamp": 1772584962839
   },
   "ucl-barcelona": {
     "sport": "ucl",
     "name": "Barcelona",
     "oddsBySource": {
-      "draftkings": "+600"
+      "draftkings": "+600",
+      "bet365": "+650",
+      "fanduel": "+800"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426601405
+    "timestamp": 1772584962839
   },
   "ucl-liverpool": {
     "sport": "ucl",
@@ -1666,226 +1958,261 @@
     "sport": "ucl",
     "name": "Chelsea",
     "oddsBySource": {
-      "draftkings": "+2500"
+      "draftkings": "+2500",
+      "bet365": "+3300"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426601405
+    "timestamp": 1772584962839
   },
   "ucl-psg": {
     "sport": "ucl",
     "name": "PSG",
     "oddsBySource": {
-      "draftkings": "+1000"
+      "draftkings": "+1000",
+      "bet365": "+700",
+      "fanduel": "+1000"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426601405
+    "timestamp": 1772584962839
   },
   "fifa-spain": {
     "sport": "fifa",
     "name": "Spain",
     "oddsBySource": {
-      "draftkings": "+450"
+      "draftkings": "+450",
+      "foxsports": "+450"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426602786
+    "timestamp": 1772584962839
   },
   "fifa-argentina": {
     "sport": "fifa",
     "name": "Argentina",
     "oddsBySource": {
-      "draftkings": "+800"
+      "draftkings": "+800",
+      "foxsports": "+800"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426602786
+    "timestamp": 1772584962839
   },
   "fifa-brazil": {
     "sport": "fifa",
     "name": "Brazil",
     "oddsBySource": {
-      "draftkings": "+800"
+      "draftkings": "+800",
+      "foxsports": "+800"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426602786
+    "timestamp": 1772584962839
   },
   "fifa-england": {
     "sport": "fifa",
     "name": "England",
     "oddsBySource": {
-      "draftkings": "+550"
+      "draftkings": "+550",
+      "foxsports": "+550"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426602786
+    "timestamp": 1772584962839
   },
   "fifa-france": {
     "sport": "fifa",
     "name": "France",
     "oddsBySource": {
-      "draftkings": "+750"
+      "draftkings": "+750",
+      "foxsports": "+700"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426602786
+    "timestamp": 1772584962839
   },
   "fifa-portugal": {
     "sport": "fifa",
     "name": "Portugal",
     "oddsBySource": {
-      "draftkings": "+1000"
+      "draftkings": "+1000",
+      "foxsports": "+1000"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426602786
+    "timestamp": 1772584962839
   },
   "fifa-germany": {
     "sport": "fifa",
     "name": "Germany",
     "oddsBySource": {
-      "draftkings": "+1200"
+      "draftkings": "+1200",
+      "foxsports": "+1200"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426602786
+    "timestamp": 1772584962839
   },
   "f1-george-russell": {
     "sport": "f1",
     "name": "George Russell",
     "oddsBySource": {
-      "draftkings": "+230"
+      "draftkings": "+230",
+      "bet365": "+200",
+      "williamhill": "+225"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426604685
+    "timestamp": 1772584962837
   },
   "f1-lando-norris": {
     "sport": "f1",
     "name": "Lando Norris",
     "oddsBySource": {
-      "draftkings": "+430"
+      "draftkings": "+430",
+      "bet365": "+900",
+      "williamhill": "+1100"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426604685
+    "timestamp": 1772584962837
   },
   "f1-kimi-antonelli": {
     "sport": "f1",
     "name": "Kimi Antonelli",
     "oddsBySource": {
-      "draftkings": "+1300"
+      "draftkings": "+1300",
+      "bet365": "+800",
+      "williamhill": "+1000"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426604685
+    "timestamp": 1772584962837
   },
   "f1-max-verstappen": {
     "sport": "f1",
     "name": "Max Verstappen",
     "oddsBySource": {
-      "draftkings": "+240"
+      "draftkings": "+240",
+      "bet365": "+300",
+      "williamhill": "+350"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426604685
+    "timestamp": 1772584962837
   },
   "f1-charles-leclerc": {
     "sport": "f1",
     "name": "Charles Leclerc",
     "oddsBySource": {
-      "draftkings": "+2200"
+      "draftkings": "+2200",
+      "bet365": "+500",
+      "williamhill": "+600"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426604685
+    "timestamp": 1772584962837
   },
   "f1-lewis-hamilton": {
     "sport": "f1",
     "name": "Lewis Hamilton",
     "oddsBySource": {
-      "draftkings": "+3300"
+      "draftkings": "+3300",
+      "bet365": "+700",
+      "williamhill": "+800"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426604685
+    "timestamp": 1772584962837
   },
   "f1-oscar-piastri": {
     "sport": "f1",
     "name": "Oscar Piastri",
     "oddsBySource": {
-      "draftkings": "+900"
+      "draftkings": "+900",
+      "bet365": "+1400"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426604685
+    "timestamp": 1772584962837
   },
   "tennis_w-amanda-anisimova": {
     "sport": "tennis_w",
     "name": "Amanda Anisimova",
     "oddsBySource": {
-      "draftkings": "+1000"
+      "draftkings": "+1000",
+      "fanduel": "+3300"
     },
     "oddsByTournament": {},
-    "timestamp": 1772426611487
+    "timestamp": 1772584962841
   },
   "csgo-vitality": {
     "sport": "csgo",
     "name": "Vitality",
     "oddsBySource": {
-      "draftkings": "+250"
+      "draftkings": "+250",
+      "hltv": "Rank 1"
     },
     "oddsByTournament": {},
-    "timestamp": 1772427426432
+    "timestamp": 1772584962838
   },
   "csgo-falcons": {
     "sport": "csgo",
     "name": "Falcons",
     "oddsBySource": {
-      "draftkings": "+600"
+      "draftkings": "+600",
+      "hltv": "Rank 3 (Previous)"
     },
     "oddsByTournament": {},
-    "timestamp": 1772427426432
+    "timestamp": 1772584962838
   },
   "nfl-baltimore-ravens": {
     "sport": "nfl",
     "name": "Baltimore Ravens",
     "oddsBySource": {
-      "draftkings": "+1300"
+      "draftkings": "+1300",
+      "covers": "+4500",
+      "vegasinsider": "+1200"
     },
     "oddsByTournament": {},
-    "timestamp": 1772427805883
+    "timestamp": 1772584962833
   },
   "nfl-buffalo-bills": {
     "sport": "nfl",
     "name": "Buffalo Bills",
     "oddsBySource": {
-      "draftkings": "+1000"
+      "draftkings": "+1000",
+      "covers": "+950",
+      "vegasinsider": "+1100"
     },
     "oddsByTournament": {},
-    "timestamp": 1772427805883
+    "timestamp": 1772584962833
   },
   "ucl-real-madrid": {
     "sport": "ucl",
     "name": "Real Madrid",
     "oddsBySource": {
-      "draftkings": "+1100"
+      "draftkings": "+1100",
+      "bet365": "+900",
+      "fanduel": "+1200"
     },
     "oddsByTournament": {},
-    "timestamp": 1772427806022
+    "timestamp": 1772584962839
   },
   "f1-fernando-alonso": {
     "sport": "f1",
     "name": "Fernando Alonso",
     "oddsBySource": {
-      "draftkings": "+700"
+      "draftkings": "+700",
+      "bet365": "+3300"
     },
     "oddsByTournament": {},
-    "timestamp": 1772427806289
+    "timestamp": 1772584962837
   },
   "snooker-john-higgins": {
     "sport": "snooker",
     "name": "John Higgins",
     "oddsBySource": {
-      "draftkings": "+700"
+      "draftkings": "+700",
+      "betfair": "+2500"
     },
     "oddsByTournament": {},
-    "timestamp": 1772427806418
+    "timestamp": 1772584962840
   },
   "tennis_m-ben-shelton": {
     "sport": "tennis_m",
     "name": "Ben Shelton",
     "oddsBySource": {
-      "draftkings": "+6000"
+      "draftkings": "+6000",
+      "fanduel": "+5000"
     },
     "oddsByTournament": {},
-    "timestamp": 1772427806548
+    "timestamp": 1772584962841
   },
   "tennis_w-naomi-osaka": {
     "sport": "tennis_w",
