@@ -1,479 +1,54 @@
 {
   "sport": "fifa",
-  "lastUpdated": "2026-03-03T11:00:00.000Z",
+  "lastUpdated": "2026-03-03T12:00:00.000Z",
   "sources": [
     "sportsbookreview",
-    "sportsbettingdime",
-    "bet365"
+    "fanduel",
+    "thescore"
   ],
   "entries": [
-    {
-      "name": "Spain",
-      "nameNormalized": "spain",
-      "bestOdds": "+450",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+450",
-      "oddsBySource": {
-        "sportsbookreview": "+450"
-      },
-      "impliedProbability": 0.1818,
-      "market": "outrights"
-    },
-    {
-      "name": "England",
-      "nameNormalized": "england",
-      "bestOdds": "+550",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+550",
-      "oddsBySource": {
-        "sportsbookreview": "+550"
-      },
-      "impliedProbability": 0.1538,
-      "market": "outrights"
-    },
-    {
-      "name": "France",
-      "nameNormalized": "france",
-      "bestOdds": "+700",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+700",
-      "oddsBySource": {
-        "sportsbookreview": "+700"
-      },
-      "impliedProbability": 0.125,
-      "market": "outrights"
-    },
-    {
-      "name": "Brazil",
-      "nameNormalized": "brazil",
-      "bestOdds": "+700",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+700",
-      "oddsBySource": {
-        "sportsbookreview": "+700"
-      },
-      "impliedProbability": 0.125,
-      "market": "outrights"
-    },
-    {
-      "name": "Argentina",
-      "nameNormalized": "argentina",
-      "bestOdds": "+800",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+800",
-      "oddsBySource": {
-        "sportsbookreview": "+800"
-      },
-      "impliedProbability": 0.1111,
-      "market": "outrights"
-    },
-    {
-      "name": "Portugal",
-      "nameNormalized": "portugal",
-      "bestOdds": "+1000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1000",
-      "oddsBySource": {
-        "sportsbookreview": "+1000"
-      },
-      "impliedProbability": 0.0909,
-      "market": "outrights"
-    },
-    {
-      "name": "Germany",
-      "nameNormalized": "germany",
-      "bestOdds": "+1200",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1200",
-      "oddsBySource": {
-        "sportsbookreview": "+1200"
-      },
-      "impliedProbability": 0.0769,
-      "market": "outrights"
-    },
-    {
-      "name": "Netherlands",
-      "nameNormalized": "netherlands",
-      "bestOdds": "+2000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2000",
-      "oddsBySource": {
-        "sportsbookreview": "+2000"
-      },
-      "impliedProbability": 0.0476,
-      "market": "outrights"
-    },
-    {
-      "name": "Norway",
-      "nameNormalized": "norway",
-      "bestOdds": "+2800",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2800",
-      "oddsBySource": {
-        "sportsbookreview": "+2800"
-      },
-      "impliedProbability": 0.0345,
-      "market": "outrights"
-    },
-    {
-      "name": "Italy",
-      "nameNormalized": "italy",
-      "bestOdds": "+3300",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+3300",
-      "oddsBySource": {
-        "sportsbookreview": "+3300"
-      },
-      "impliedProbability": 0.0294,
-      "market": "outrights"
-    },
-    {
-      "name": "Uruguay",
-      "nameNormalized": "uruguay",
-      "bestOdds": "+3300",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+3300",
-      "oddsBySource": {
-        "sportsbookreview": "+3300"
-      },
-      "impliedProbability": 0.0294,
-      "market": "outrights"
-    },
-    {
-      "name": "Belgium",
-      "nameNormalized": "belgium",
-      "bestOdds": "+4000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+4000",
-      "oddsBySource": {
-        "sportsbookreview": "+4000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Colombia",
-      "nameNormalized": "colombia",
-      "bestOdds": "+4000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+4000",
-      "oddsBySource": {
-        "sportsbookreview": "+4000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Mexico",
-      "nameNormalized": "mexico",
-      "bestOdds": "+5000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+5000",
-      "oddsBySource": {
-        "sportsbookreview": "+5000"
-      },
-      "impliedProbability": 0.0196,
-      "market": "outrights"
-    },
-    {
-      "name": "United States",
-      "nameNormalized": "unitedstates",
-      "bestOdds": "+5000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+5000",
-      "oddsBySource": {
-        "sportsbookreview": "+5000"
-      },
-      "impliedProbability": 0.0196,
-      "market": "outrights"
-    },
-    {
-      "name": "Ecuador",
-      "nameNormalized": "ecuador",
-      "bestOdds": "+8000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+8000",
-      "oddsBySource": {
-        "sportsbookreview": "+8000"
-      },
-      "impliedProbability": 0.0123,
-      "market": "outrights"
-    },
-    {
-      "name": "Morocco",
-      "nameNormalized": "morocco",
-      "bestOdds": "+8000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+8000",
-      "oddsBySource": {
-        "sportsbookreview": "+8000"
-      },
-      "impliedProbability": 0.0123,
-      "market": "outrights"
-    },
-    {
-      "name": "Switzerland",
-      "nameNormalized": "switzerland",
-      "bestOdds": "+8000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+8000",
-      "oddsBySource": {
-        "sportsbookreview": "+8000"
-      },
-      "impliedProbability": 0.0123,
-      "market": "outrights"
-    },
-    {
-      "name": "Croatia",
-      "nameNormalized": "croatia",
-      "bestOdds": "+10000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "sportsbookreview": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "Canada",
-      "nameNormalized": "canada",
-      "bestOdds": "+10000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "sportsbookreview": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "Japan",
-      "nameNormalized": "japan",
-      "bestOdds": "+12500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+12500",
-      "oddsBySource": {
-        "sportsbookreview": "+12500"
-      },
-      "impliedProbability": 0.0079,
-      "market": "outrights"
-    },
-    {
-      "name": "Senegal",
-      "nameNormalized": "senegal",
-      "bestOdds": "+12500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+12500",
-      "oddsBySource": {
-        "sportsbookreview": "+12500"
-      },
-      "impliedProbability": 0.0079,
-      "market": "outrights"
-    },
-    {
-      "name": "Denmark",
-      "nameNormalized": "denmark",
-      "bestOdds": "+15000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+15000",
-      "oddsBySource": {
-        "sportsbookreview": "+15000"
-      },
-      "impliedProbability": 0.0066,
-      "market": "outrights"
-    },
-    {
-      "name": "Austria",
-      "nameNormalized": "austria",
-      "bestOdds": "+15000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+15000",
-      "oddsBySource": {
-        "sportsbookreview": "+15000"
-      },
-      "impliedProbability": 0.0066,
-      "market": "outrights"
-    },
-    {
-      "name": "Egypt",
-      "nameNormalized": "egypt",
-      "bestOdds": "+15000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+15000",
-      "oddsBySource": {
-        "sportsbookreview": "+15000"
-      },
-      "impliedProbability": 0.0066,
-      "market": "outrights"
-    },
-    {
-      "name": "Ghana",
-      "nameNormalized": "ghana",
-      "bestOdds": "+20000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "sportsbookreview": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "South Korea",
-      "nameNormalized": "southkorea",
-      "bestOdds": "+20000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "sportsbookreview": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Algeria",
-      "nameNormalized": "algeria",
-      "bestOdds": "+20000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "sportsbookreview": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Ivory Coast",
-      "nameNormalized": "ivorycoast",
-      "bestOdds": "+20000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "sportsbookreview": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Paraguay",
-      "nameNormalized": "paraguay",
-      "bestOdds": "+20000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "sportsbookreview": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Poland",
-      "nameNormalized": "poland",
-      "bestOdds": "+20000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "sportsbookreview": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Scotland",
-      "nameNormalized": "scotland",
-      "bestOdds": "+20000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "sportsbookreview": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Turkey",
-      "nameNormalized": "turkey",
-      "bestOdds": "+20000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "sportsbookreview": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Iran",
-      "nameNormalized": "iran",
-      "bestOdds": "+25000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+25000",
-      "oddsBySource": {
-        "sportsbookreview": "+25000"
-      },
-      "impliedProbability": 0.004,
-      "market": "outrights"
-    },
-    {
-      "name": "Australia",
-      "nameNormalized": "australia",
-      "bestOdds": "+50000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+50000",
-      "oddsBySource": {
-        "sportsbookreview": "+50000"
-      },
-      "impliedProbability": 0.002,
-      "market": "outrights"
-    },
-    {
-      "name": "South Africa",
-      "nameNormalized": "southafrica",
-      "bestOdds": "+50000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+50000",
-      "oddsBySource": {
-        "sportsbookreview": "+50000"
-      },
-      "impliedProbability": 0.002,
-      "market": "outrights"
-    },
-    {
-      "name": "Qatar",
-      "nameNormalized": "qatar",
-      "bestOdds": "+75000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+75000",
-      "oddsBySource": {
-        "sportsbookreview": "+75000"
-      },
-      "impliedProbability": 0.0013,
-      "market": "outrights"
-    },
-    {
-      "name": "New Zealand",
-      "nameNormalized": "newzealand",
-      "bestOdds": "+100000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+100000",
-      "oddsBySource": {
-        "sportsbookreview": "+100000"
-      },
-      "impliedProbability": 0.001,
-      "market": "outrights"
-    },
-    {
-      "name": "Wales",
-      "nameNormalized": "wales",
-      "bestOdds": "+25000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+25000",
-      "oddsBySource": {
-        "sportsbookreview": "+25000"
-      },
-      "impliedProbability": 0.004,
-      "market": "outrights"
-    }
+    { "name": "Spain", "nameNormalized": "spain", "bestOdds": "+450", "consensusOdds": "+450", "oddsBySource": { "sportsbookreview": "+450" }, "impliedProbability": 0.1818 },
+    { "name": "England", "nameNormalized": "england", "bestOdds": "+550", "consensusOdds": "+550", "oddsBySource": { "sportsbookreview": "+550" }, "impliedProbability": 0.1538 },
+    { "name": "France", "nameNormalized": "france", "bestOdds": "+650", "consensusOdds": "+650", "oddsBySource": { "sportsbookreview": "+650" }, "impliedProbability": 0.1333 },
+    { "name": "Brazil", "nameNormalized": "brazil", "bestOdds": "+700", "consensusOdds": "+700", "oddsBySource": { "sportsbookreview": "+700" }, "impliedProbability": 0.125 },
+    { "name": "Argentina", "nameNormalized": "argentina", "bestOdds": "+800", "consensusOdds": "+800", "oddsBySource": { "sportsbookreview": "+800" }, "impliedProbability": 0.1111 },
+    { "name": "Portugal", "nameNormalized": "portugal", "bestOdds": "+1000", "consensusOdds": "+1000", "oddsBySource": { "sportsbookreview": "+1000" }, "impliedProbability": 0.0909 },
+    { "name": "Germany", "nameNormalized": "germany", "bestOdds": "+1200", "consensusOdds": "+1200", "oddsBySource": { "sportsbookreview": "+1200" }, "impliedProbability": 0.0769 },
+    { "name": "Netherlands", "nameNormalized": "netherlands", "bestOdds": "+1900", "consensusOdds": "+1900", "oddsBySource": { "sportsbookreview": "+1900" }, "impliedProbability": 0.05 },
+    { "name": "Norway", "nameNormalized": "norway", "bestOdds": "+2200", "consensusOdds": "+2200", "oddsBySource": { "sportsbookreview": "+2200" }, "impliedProbability": 0.0435 },
+    { "name": "Colombia", "nameNormalized": "colombia", "bestOdds": "+2800", "consensusOdds": "+2800", "oddsBySource": { "sportsbookreview": "+2800" }, "impliedProbability": 0.0345 },
+    { "name": "Italy", "nameNormalized": "italy", "bestOdds": "+3000", "consensusOdds": "+3000", "oddsBySource": { "sportsbookreview": "+3000" }, "impliedProbability": 0.0323 },
+    { "name": "Uruguay", "nameNormalized": "uruguay", "bestOdds": "+3300", "consensusOdds": "+3300", "oddsBySource": { "sportsbookreview": "+3300" }, "impliedProbability": 0.0294 },
+    { "name": "Belgium", "nameNormalized": "belgium", "bestOdds": "+4000", "consensusOdds": "+4000", "oddsBySource": { "sportsbookreview": "+4000" }, "impliedProbability": 0.0244 },
+    { "name": "United States", "nameNormalized": "unitedstates", "bestOdds": "+5000", "consensusOdds": "+5000", "oddsBySource": { "sportsbookreview": "+5000" }, "impliedProbability": 0.0196 },
+    { "name": "Mexico", "nameNormalized": "mexico", "bestOdds": "+5000", "consensusOdds": "+5000", "oddsBySource": { "sportsbookreview": "+5000" }, "impliedProbability": 0.0196 },
+    { "name": "Ecuador", "nameNormalized": "ecuador", "bestOdds": "+8000", "consensusOdds": "+8000", "oddsBySource": { "sportsbookreview": "+8000" }, "impliedProbability": 0.0123 },
+    { "name": "Morocco", "nameNormalized": "morocco", "bestOdds": "+8000", "consensusOdds": "+8000", "oddsBySource": { "sportsbookreview": "+8000" }, "impliedProbability": 0.0123 },
+    { "name": "Switzerland", "nameNormalized": "switzerland", "bestOdds": "+8000", "consensusOdds": "+8000", "oddsBySource": { "sportsbookreview": "+8000" }, "impliedProbability": 0.0123 },
+    { "name": "Canada", "nameNormalized": "canada", "bestOdds": "+10000", "consensusOdds": "+10000", "oddsBySource": { "sportsbookreview": "+10000" }, "impliedProbability": 0.0099 },
+    { "name": "Croatia", "nameNormalized": "croatia", "bestOdds": "+10000", "consensusOdds": "+10000", "oddsBySource": { "sportsbookreview": "+10000" }, "impliedProbability": 0.0099 },
+    { "name": "Senegal", "nameNormalized": "senegal", "bestOdds": "+15000", "consensusOdds": "+15000", "oddsBySource": { "sportsbookreview": "+15000" }, "impliedProbability": 0.0066 },
+    { "name": "Japan", "nameNormalized": "japan", "bestOdds": "+15000", "consensusOdds": "+15000", "oddsBySource": { "sportsbookreview": "+15000" }, "impliedProbability": 0.0066 },
+    { "name": "South Korea", "nameNormalized": "southkorea", "bestOdds": "+15000", "consensusOdds": "+15000", "oddsBySource": { "sportsbookreview": "+15000" }, "impliedProbability": 0.0066 },
+    { "name": "Ivory Coast", "nameNormalized": "ivorycoast", "bestOdds": "+15000", "consensusOdds": "+15000", "oddsBySource": { "sportsbookreview": "+15000" }, "impliedProbability": 0.0066 },
+    { "name": "Austria", "nameNormalized": "austria", "bestOdds": "+17500", "consensusOdds": "+17500", "oddsBySource": { "sportsbookreview": "+17500" }, "impliedProbability": 0.0057 },
+    { "name": "Scotland", "nameNormalized": "scotland", "bestOdds": "+17500", "consensusOdds": "+17500", "oddsBySource": { "sportsbookreview": "+17500" }, "impliedProbability": 0.0057 },
+    { "name": "Egypt", "nameNormalized": "egypt", "bestOdds": "+20000", "consensusOdds": "+20000", "oddsBySource": { "sportsbookreview": "+20000" }, "impliedProbability": 0.005 },
+    { "name": "Ghana", "nameNormalized": "ghana", "bestOdds": "+20000", "consensusOdds": "+20000", "oddsBySource": { "sportsbookreview": "+20000" }, "impliedProbability": 0.005 },
+    { "name": "Algeria", "nameNormalized": "algeria", "bestOdds": "+20000", "consensusOdds": "+20000", "oddsBySource": { "sportsbookreview": "+20000" }, "impliedProbability": 0.005 },
+    { "name": "Denmark", "nameNormalized": "denmark", "bestOdds": "+20000", "consensusOdds": "+20000", "oddsBySource": { "sportsbookreview": "+20000" }, "impliedProbability": 0.005 },
+    { "name": "Turkey", "nameNormalized": "turkey", "bestOdds": "+20000", "consensusOdds": "+20000", "oddsBySource": { "sportsbookreview": "+20000" }, "impliedProbability": 0.005 },
+    { "name": "Sweden", "nameNormalized": "sweden", "bestOdds": "+20000", "consensusOdds": "+20000", "oddsBySource": { "sportsbookreview": "+20000" }, "impliedProbability": 0.005 },
+    { "name": "Australia", "nameNormalized": "australia", "bestOdds": "+30000", "consensusOdds": "+30000", "oddsBySource": { "sportsbookreview": "+30000" }, "impliedProbability": 0.0033 },
+    { "name": "Paraguay", "nameNormalized": "paraguay", "bestOdds": "+30000", "consensusOdds": "+30000", "oddsBySource": { "sportsbookreview": "+30000" }, "impliedProbability": 0.0033 },
+    { "name": "Iran", "nameNormalized": "iran", "bestOdds": "+30000", "consensusOdds": "+30000", "oddsBySource": { "sportsbookreview": "+30000" }, "impliedProbability": 0.0033 },
+    { "name": "Tunisia", "nameNormalized": "tunisia", "bestOdds": "+30000", "consensusOdds": "+30000", "oddsBySource": { "sportsbookreview": "+30000" }, "impliedProbability": 0.0033 },
+    { "name": "Panama", "nameNormalized": "panama", "bestOdds": "+40000", "consensusOdds": "+40000", "oddsBySource": { "sportsbookreview": "+40000" }, "impliedProbability": 0.0025 },
+    { "name": "Saudi Arabia", "nameNormalized": "saudiarabia", "bestOdds": "+40000", "consensusOdds": "+40000", "oddsBySource": { "sportsbookreview": "+40000" }, "impliedProbability": 0.0025 },
+    { "name": "South Africa", "nameNormalized": "southafrica", "bestOdds": "+40000", "consensusOdds": "+40000", "oddsBySource": { "sportsbookreview": "+40000" }, "impliedProbability": 0.0025 },
+    { "name": "Poland", "nameNormalized": "poland", "bestOdds": "+40000", "consensusOdds": "+40000", "oddsBySource": { "sportsbookreview": "+40000" }, "impliedProbability": 0.0025 },
+    { "name": "Ukraine", "nameNormalized": "ukraine", "bestOdds": "+40000", "consensusOdds": "+40000", "oddsBySource": { "sportsbookreview": "+40000" }, "impliedProbability": 0.0025 },
+    { "name": "Qatar", "nameNormalized": "qatar", "bestOdds": "+50000", "consensusOdds": "+50000", "oddsBySource": { "sportsbookreview": "+50000" }, "impliedProbability": 0.002 },
+    { "name": "New Zealand", "nameNormalized": "newzealand", "bestOdds": "+75000", "consensusOdds": "+75000", "oddsBySource": { "sportsbookreview": "+75000" }, "impliedProbability": 0.0013 }
   ]
 }

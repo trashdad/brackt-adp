@@ -1,213 +1,50 @@
 {
   "sport": "csgo",
-  "lastUpdated": "2026-03-03T11:00:00.000Z",
+  "lastUpdated": "2026-03-03T12:00:00.000Z",
   "sources": [
-    "hltv"
+    "hltv",
+    "sportsbookreview"
   ],
   "entries": [
-    {
-      "name": "Vitality",
-      "nameNormalized": "vitality",
-      "bestOdds": "+150",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+150",
-      "oddsBySource": {
-        "hltv": "Rank 1"
-      },
-      "impliedProbability": 0.4,
-      "market": "outrights"
-    },
-    {
-      "name": "Team Spirit",
-      "nameNormalized": "teamspirit",
-      "bestOdds": "+400",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+400",
-      "oddsBySource": {
-        "hltv": "Rank 2"
-      },
-      "impliedProbability": 0.2,
-      "market": "outrights"
-    },
-    {
-      "name": "Falcons",
-      "nameNormalized": "falcons",
-      "bestOdds": "+650",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+650",
-      "oddsBySource": {
-        "hltv": "Rank 3"
-      },
-      "impliedProbability": 0.1333,
-      "market": "outrights"
-    },
-    {
-      "name": "MOUZ",
-      "nameNormalized": "mouz",
-      "bestOdds": "+700",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+700",
-      "oddsBySource": {
-        "hltv": "Rank 4"
-      },
-      "impliedProbability": 0.125,
-      "market": "outrights"
-    },
-    {
-      "name": "The MongolZ",
-      "nameNormalized": "themongolz",
-      "bestOdds": "+900",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+900",
-      "oddsBySource": {
-        "hltv": "Rank 5"
-      },
-      "impliedProbability": 0.1,
-      "market": "outrights"
-    },
-    {
-      "name": "FaZe Clan",
-      "nameNormalized": "fazeclan",
-      "bestOdds": "+1000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1000",
-      "oddsBySource": {
-        "hltv": "Rank 6"
-      },
-      "impliedProbability": 0.0909,
-      "market": "outrights"
-    },
-    {
-      "name": "Natus Vincere",
-      "nameNormalized": "natusvincere",
-      "bestOdds": "+1200",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1200",
-      "oddsBySource": {
-        "hltv": "Rank 7"
-      },
-      "impliedProbability": 0.0769,
-      "market": "outrights"
-    },
-    {
-      "name": "G2 Esports",
-      "nameNormalized": "g2esports",
-      "bestOdds": "+1400",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1400",
-      "oddsBySource": {
-        "hltv": "Rank 8"
-      },
-      "impliedProbability": 0.0667,
-      "market": "outrights"
-    },
-    {
-      "name": "Aurora",
-      "nameNormalized": "aurora",
-      "bestOdds": "+1600",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1600",
-      "oddsBySource": {
-        "hltv": "Rank 9"
-      },
-      "impliedProbability": 0.0588,
-      "market": "outrights"
-    },
-    {
-      "name": "Astralis",
-      "nameNormalized": "astralis",
-      "bestOdds": "+1800",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1800",
-      "oddsBySource": {
-        "hltv": "Rank 10"
-      },
-      "impliedProbability": 0.0526,
-      "market": "outrights"
-    },
-    {
-      "name": "3DMAX",
-      "nameNormalized": "3dmax",
-      "bestOdds": "+2500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2500",
-      "oddsBySource": {
-        "hltv": "Rank 14"
-      },
-      "impliedProbability": 0.0385,
-      "market": "outrights"
-    },
-    {
-      "name": "GamerLegion",
-      "nameNormalized": "gamerlegion",
-      "bestOdds": "+3300",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+3300",
-      "oddsBySource": {
-        "hltv": "Rank 16"
-      },
-      "impliedProbability": 0.0294,
-      "market": "outrights"
-    },
-    {
-      "name": "paiN Gaming",
-      "nameNormalized": "paingaming",
-      "bestOdds": "+4000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+4000",
-      "oddsBySource": {
-        "hltv": "Rank 17"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Heroic",
-      "nameNormalized": "heroic",
-      "bestOdds": "+4000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+4000",
-      "oddsBySource": {
-        "hltv": "Rank 18"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "B8",
-      "nameNormalized": "b8",
-      "bestOdds": "+5000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+5000",
-      "oddsBySource": {
-        "hltv": "Rank 19"
-      },
-      "impliedProbability": 0.0196,
-      "market": "outrights"
-    },
-    {
-      "name": "NRG",
-      "nameNormalized": "nrg",
-      "bestOdds": "+6600",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+6600",
-      "oddsBySource": {
-        "hltv": "Rank 21"
-      },
-      "impliedProbability": 0.0149,
-      "market": "outrights"
-    },
-    {
-      "name": "Team Liquid",
-      "nameNormalized": "teamliquid",
-      "bestOdds": "+2500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2500",
-      "oddsBySource": {
-        "hltv": "Rank 11"
-      },
-      "impliedProbability": 0.0385,
-      "market": "outrights"
-    }
+    { "name": "Vitality", "nameNormalized": "vitality", "bestOdds": "+150", "consensusOdds": "+150", "oddsBySource": { "hltv": "Rank 1" }, "impliedProbability": 0.4 },
+    { "name": "G2 Esports", "nameNormalized": "g2esports", "bestOdds": "+300", "consensusOdds": "+300", "oddsBySource": { "hltv": "Rank 2" }, "impliedProbability": 0.25 },
+    { "name": "Natus Vincere", "nameNormalized": "natusvincere", "bestOdds": "+450", "consensusOdds": "+450", "oddsBySource": { "hltv": "Rank 3" }, "impliedProbability": 0.1818 },
+    { "name": "MOUZ", "nameNormalized": "mouz", "bestOdds": "+600", "consensusOdds": "+600", "oddsBySource": { "hltv": "Rank 4" }, "impliedProbability": 0.1429 },
+    { "name": "Team Spirit", "nameNormalized": "teamspirit", "bestOdds": "+650", "consensusOdds": "+650", "oddsBySource": { "hltv": "Rank 5" }, "impliedProbability": 0.1333 },
+    { "name": "FaZe Clan", "nameNormalized": "fazeclan", "bestOdds": "+800", "consensusOdds": "+800", "oddsBySource": { "hltv": "Rank 6" }, "impliedProbability": 0.1111 },
+    { "name": "The MongolZ", "nameNormalized": "themongolz", "bestOdds": "+1000", "consensusOdds": "+1000", "oddsBySource": { "hltv": "Rank 7" }, "impliedProbability": 0.0909 },
+    { "name": "Team Liquid", "nameNormalized": "teamliquid", "bestOdds": "+1200", "consensusOdds": "+1200", "oddsBySource": { "hltv": "Rank 8" }, "impliedProbability": 0.0769 },
+    { "name": "FURIA", "nameNormalized": "furia", "bestOdds": "+1400", "consensusOdds": "+1400", "oddsBySource": { "hltv": "Rank 9" }, "impliedProbability": 0.0667 },
+    { "name": "Falcons", "nameNormalized": "falcons", "bestOdds": "+1600", "consensusOdds": "+1600", "oddsBySource": { "hltv": "Rank 10" }, "impliedProbability": 0.0588 },
+    { "name": "Astralis", "nameNormalized": "astralis", "bestOdds": "+2000", "consensusOdds": "+2000", "oddsBySource": { "hltv": "Rank 11" }, "impliedProbability": 0.0476 },
+    { "name": "MIBR", "nameNormalized": "mibr", "bestOdds": "+2500", "consensusOdds": "+2500", "oddsBySource": { "hltv": "Rank 12" }, "impliedProbability": 0.0385 },
+    { "name": "Heroic", "nameNormalized": "heroic", "bestOdds": "+2500", "consensusOdds": "+2500", "oddsBySource": { "hltv": "Rank 13" }, "impliedProbability": 0.0385 },
+    { "name": "Virtus.pro", "nameNormalized": "virtuspro", "bestOdds": "+3300", "consensusOdds": "+3300", "oddsBySource": { "hltv": "Rank 14" }, "impliedProbability": 0.0294 },
+    { "name": "paiN Gaming", "nameNormalized": "paingaming", "bestOdds": "+4000", "consensusOdds": "+4000", "oddsBySource": { "hltv": "Rank 15" }, "impliedProbability": 0.0244 },
+    { "name": "Ninjas in Pyjamas", "nameNormalized": "ninjasinpyjamas", "bestOdds": "+5000", "consensusOdds": "+5000", "oddsBySource": { "hltv": "Rank 16" }, "impliedProbability": 0.0196 },
+    { "name": "SAW", "nameNormalized": "saw", "bestOdds": "+5000", "consensusOdds": "+5000", "oddsBySource": { "hltv": "Rank 17" }, "impliedProbability": 0.0196 },
+    { "name": "9PANTHAS", "nameNormalized": "9panthas", "bestOdds": "+6600", "consensusOdds": "+6600", "oddsBySource": { "hltv": "Rank 18" }, "impliedProbability": 0.0149 },
+    { "name": "Sangal", "nameNormalized": "sangal", "bestOdds": "+7500", "consensusOdds": "+7500", "oddsBySource": { "hltv": "Rank 19" }, "impliedProbability": 0.0132 },
+    { "name": "OG", "nameNormalized": "og", "bestOdds": "+8000", "consensusOdds": "+8000", "oddsBySource": { "hltv": "Rank 20" }, "impliedProbability": 0.0123 },
+    { "name": "FlyQuest", "nameNormalized": "flyquest", "bestOdds": "+10000", "consensusOdds": "+10000", "oddsBySource": { "hltv": "Rank 21" }, "impliedProbability": 0.0099 },
+    { "name": "B8", "nameNormalized": "b8", "bestOdds": "+10000", "consensusOdds": "+10000", "oddsBySource": { "hltv": "Rank 22" }, "impliedProbability": 0.0099 },
+    { "name": "Cloud9", "nameNormalized": "cloud9", "bestOdds": "+10000", "consensusOdds": "+10000", "oddsBySource": { "hltv": "Rank 23" }, "impliedProbability": 0.0099 },
+    { "name": "BetBoom Team", "nameNormalized": "betboomteam", "bestOdds": "+12500", "consensusOdds": "+12500", "oddsBySource": { "hltv": "Rank 24" }, "impliedProbability": 0.0079 },
+    { "name": "Eternal Fire", "nameNormalized": "eternalfire", "bestOdds": "+12500", "consensusOdds": "+12500", "oddsBySource": { "hltv": "Rank 25" }, "impliedProbability": 0.0079 },
+    { "name": "M80", "nameNormalized": "m80", "bestOdds": "+15000", "consensusOdds": "+15000", "oddsBySource": { "hltv": "Rank 26" }, "impliedProbability": 0.0066 },
+    { "name": "fnatic", "nameNormalized": "fnatic", "bestOdds": "+15000", "consensusOdds": "+15000", "oddsBySource": { "hltv": "Rank 27" }, "impliedProbability": 0.0066 },
+    { "name": "Passion UA", "nameNormalized": "passionua", "bestOdds": "+20000", "consensusOdds": "+20000", "oddsBySource": { "hltv": "Rank 28" }, "impliedProbability": 0.005 },
+    { "name": "9z", "nameNormalized": "9z", "bestOdds": "+20000", "consensusOdds": "+20000", "oddsBySource": { "hltv": "Rank 29" }, "impliedProbability": 0.005 },
+    { "name": "ENCE", "nameNormalized": "ence", "bestOdds": "+25000", "consensusOdds": "+25000", "oddsBySource": { "hltv": "Rank 30" }, "impliedProbability": 0.004 },
+    { "name": "3DMAX", "nameNormalized": "3dmax", "bestOdds": "+25000", "consensusOdds": "+25000", "oddsBySource": { "hltv": "Rank 31" }, "impliedProbability": 0.004 },
+    { "name": "Monte", "nameNormalized": "monte", "bestOdds": "+30000", "consensusOdds": "+30000", "oddsBySource": { "hltv": "Rank 32" }, "impliedProbability": 0.0033 },
+    { "name": "GamerLegion", "nameNormalized": "gamerlegion", "bestOdds": "+30000", "consensusOdds": "+30000", "oddsBySource": { "hltv": "Rank 33" }, "impliedProbability": 0.0033 },
+    { "name": "Complexity", "nameNormalized": "complexity", "bestOdds": "+40000", "consensusOdds": "+40000", "oddsBySource": { "hltv": "Rank 34" }, "impliedProbability": 0.0025 },
+    { "name": "BIG", "nameNormalized": "big", "bestOdds": "+40000", "consensusOdds": "+40000", "oddsBySource": { "hltv": "Rank 35" }, "impliedProbability": 0.0025 },
+    { "name": "Aurora", "nameNormalized": "aurora", "bestOdds": "+40000", "consensusOdds": "+40000", "oddsBySource": { "hltv": "Rank 36" }, "impliedProbability": 0.0025 },
+    { "name": "Nemiga", "nameNormalized": "nemiga", "bestOdds": "+50000", "consensusOdds": "+50000", "oddsBySource": { "hltv": "Rank 37" }, "impliedProbability": 0.002 },
+    { "name": "KOI", "nameNormalized": "koi", "bestOdds": "+50000", "consensusOdds": "+50000", "oddsBySource": { "hltv": "Rank 38" }, "impliedProbability": 0.002 },
+    { "name": "Metizport", "nameNormalized": "metizport", "bestOdds": "+50000", "consensusOdds": "+50000", "oddsBySource": { "hltv": "Rank 39" }, "impliedProbability": 0.002 },
+    { "name": "Imperial", "nameNormalized": "imperial", "bestOdds": "+50000", "consensusOdds": "+50000", "oddsBySource": { "hltv": "Rank 40" }, "impliedProbability": 0.002 }
   ]
 }
