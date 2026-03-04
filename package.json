@@ -8,6 +8,7 @@
     "server": "node server/index.js",
     "dev:all": "concurrently \"npm run server\" \"npm run dev\"",
     "build": "vite build",
+    "seed-kv": "node scripts/seed-kv.js",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest"

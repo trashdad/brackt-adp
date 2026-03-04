@@ -1,34 +1,33 @@
 {
   "sport": "snooker",
-  "lastUpdated": "2026-03-03T10:00:00.000Z",
+  "lastUpdated": "2026-03-03T11:00:00.000Z",
   "sources": [
-    "betfair",
-    "bet365",
+    "tab",
     "parimatch"
   ],
   "entries": [
     {
       "name": "Judd Trump",
       "nameNormalized": "juddtrump",
-      "bestOdds": "+350",
+      "bestOdds": "+400",
       "bestOddsSource": "consensus",
-      "consensusOdds": "+350",
+      "consensusOdds": "+400",
       "oddsBySource": {
-        "betfair": "+350"
+        "tab": "+400"
       },
-      "impliedProbability": 0.2222,
+      "impliedProbability": 0.2,
       "market": "outrights"
     },
     {
       "name": "Zhao Xintong",
       "nameNormalized": "zhaoxintong",
-      "bestOdds": "+350",
+      "bestOdds": "+450",
       "bestOddsSource": "consensus",
-      "consensusOdds": "+350",
+      "consensusOdds": "+450",
       "oddsBySource": {
-        "betfair": "+350"
+        "tab": "+450"
       },
-      "impliedProbability": 0.2222,
+      "impliedProbability": 0.1818,
       "market": "outrights"
     },
     {
@@ -38,7 +37,7 @@
       "bestOddsSource": "consensus",
       "consensusOdds": "+500",
       "oddsBySource": {
-        "betfair": "+500"
+        "tab": "+500"
       },
       "impliedProbability": 0.1667,
       "market": "outrights"
@@ -46,25 +45,49 @@
     {
       "name": "Ronnie O'Sullivan",
       "nameNormalized": "ronnieosullivan",
-      "bestOdds": "+600",
+      "bestOdds": "+800",
       "bestOddsSource": "consensus",
-      "consensusOdds": "+600",
+      "consensusOdds": "+800",
       "oddsBySource": {
-        "betfair": "+600"
+        "tab": "+800"
       },
-      "impliedProbability": 0.1429,
+      "impliedProbability": 0.1111,
       "market": "outrights"
     },
     {
       "name": "Kyren Wilson",
       "nameNormalized": "kyrenwilson",
-      "bestOdds": "+800",
+      "bestOdds": "+850",
       "bestOddsSource": "consensus",
-      "consensusOdds": "+800",
+      "consensusOdds": "+850",
       "oddsBySource": {
-        "betfair": "+800"
+        "tab": "+850"
       },
-      "impliedProbability": 0.1111,
+      "impliedProbability": 0.1053,
+      "market": "outrights"
+    },
+    {
+      "name": "Neil Robertson",
+      "nameNormalized": "neilrobertson",
+      "bestOdds": "+1000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1000",
+      "oddsBySource": {
+        "tab": "+1000"
+      },
+      "impliedProbability": 0.0909,
+      "market": "outrights"
+    },
+    {
+      "name": "Shaun Murphy",
+      "nameNormalized": "shaunmurphy",
+      "bestOdds": "+1200",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1200",
+      "oddsBySource": {
+        "tab": "+1200"
+      },
+      "impliedProbability": 0.0769,
       "market": "outrights"
     },
     {
@@ -72,35 +95,11 @@
       "nameNormalized": "wuyize",
       "bestOdds": "+1200",
       "bestOddsSource": "consensus",
-      "consensusOdds": "+1400",
+      "consensusOdds": "+1200",
       "oddsBySource": {
-        "betfair": "+1200"
+        "tab": "+1200"
       },
       "impliedProbability": 0.0769,
-      "market": "outrights"
-    },
-    {
-      "name": "Neil Robertson",
-      "nameNormalized": "neilrobertson",
-      "bestOdds": "+1200",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1400",
-      "oddsBySource": {
-        "betfair": "+1200"
-      },
-      "impliedProbability": 0.0769,
-      "market": "outrights"
-    },
-    {
-      "name": "Shaun Murphy",
-      "nameNormalized": "shaunmurphy",
-      "bestOdds": "+1600",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1800",
-      "oddsBySource": {
-        "betfair": "+1600"
-      },
-      "impliedProbability": 0.0588,
       "market": "outrights"
     },
     {
@@ -108,9 +107,21 @@
       "nameNormalized": "markwilliams",
       "bestOdds": "+2000",
       "bestOddsSource": "consensus",
-      "consensusOdds": "+2500",
+      "consensusOdds": "+2000",
       "oddsBySource": {
-        "betfair": "+2000"
+        "tab": "+2000"
+      },
+      "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "Mark Allen",
+      "nameNormalized": "markallen",
+      "bestOdds": "+2000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2000",
+      "oddsBySource": {
+        "tab": "+2000"
       },
       "impliedProbability": 0.0476,
       "market": "outrights"
@@ -118,13 +129,313 @@
     {
       "name": "John Higgins",
       "nameNormalized": "johnhiggins",
+      "bestOdds": "+2000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2000",
+      "oddsBySource": {
+        "tab": "+2000"
+      },
+      "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "Barry Hawkins",
+      "nameNormalized": "barryhawkins",
       "bestOdds": "+2500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2500",
+      "oddsBySource": {
+        "tab": "+2500"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Ding Junhui",
+      "nameNormalized": "dingjunhui",
+      "bestOdds": "+2500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2500",
+      "oddsBySource": {
+        "tab": "+2500"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Xiao Guodong",
+      "nameNormalized": "xiaoguodong",
+      "bestOdds": "+2800",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+2800",
+      "oddsBySource": {
+        "tab": "+2800"
+      },
+      "impliedProbability": 0.0345,
+      "market": "outrights"
+    },
+    {
+      "name": "Gary Wilson",
+      "nameNormalized": "garywilson",
+      "bestOdds": "+3300",
       "bestOddsSource": "consensus",
       "consensusOdds": "+3300",
       "oddsBySource": {
-        "betfair": "+2500"
+        "tab": "+3300"
       },
-      "impliedProbability": 0.0385,
+      "impliedProbability": 0.0294,
+      "market": "outrights"
+    },
+    {
+      "name": "Jack Lisowski",
+      "nameNormalized": "jacklisowski",
+      "bestOdds": "+3300",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+3300",
+      "oddsBySource": {
+        "tab": "+3300"
+      },
+      "impliedProbability": 0.0294,
+      "market": "outrights"
+    },
+    {
+      "name": "Si Jiahui",
+      "nameNormalized": "sijiahui",
+      "bestOdds": "+3300",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+3300",
+      "oddsBySource": {
+        "tab": "+3300"
+      },
+      "impliedProbability": 0.0294,
+      "market": "outrights"
+    },
+    {
+      "name": "Ali Carter",
+      "nameNormalized": "alicarter",
+      "bestOdds": "+3300",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+3300",
+      "oddsBySource": {
+        "tab": "+3300"
+      },
+      "impliedProbability": 0.0294,
+      "market": "outrights"
+    },
+    {
+      "name": "Luca Brecel",
+      "nameNormalized": "lucabrecel",
+      "bestOdds": "+4000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+4000",
+      "oddsBySource": {
+        "tab": "+4000"
+      },
+      "impliedProbability": 0.0244,
+      "market": "outrights"
+    },
+    {
+      "name": "Zhou Yuelong",
+      "nameNormalized": "zhouyuelong",
+      "bestOdds": "+4000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+4000",
+      "oddsBySource": {
+        "tab": "+4000"
+      },
+      "impliedProbability": 0.0244,
+      "market": "outrights"
+    },
+    {
+      "name": "Joe O'Connor",
+      "nameNormalized": "joeoconnor",
+      "bestOdds": "+5000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "tab": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Stan Moody",
+      "nameNormalized": "stanmoody",
+      "bestOdds": "+5000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "tab": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Zhang Anda",
+      "nameNormalized": "zhanganda",
+      "bestOdds": "+5000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "tab": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Jak Jones",
+      "nameNormalized": "jakjones",
+      "bestOdds": "+5000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "tab": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Chris Wakelin",
+      "nameNormalized": "chriswakelin",
+      "bestOdds": "+5000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "tab": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "David Gilbert",
+      "nameNormalized": "davidgilbert",
+      "bestOdds": "+6600",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+6600",
+      "oddsBySource": {
+        "tab": "+6600"
+      },
+      "impliedProbability": 0.0149,
+      "market": "outrights"
+    },
+    {
+      "name": "Stuart Bingham",
+      "nameNormalized": "stuartbingham",
+      "bestOdds": "+6600",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+6600",
+      "oddsBySource": {
+        "tab": "+6600"
+      },
+      "impliedProbability": 0.0149,
+      "market": "outrights"
+    },
+    {
+      "name": "Elliot Slessor",
+      "nameNormalized": "elliotslessor",
+      "bestOdds": "+8000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "tab": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "Pang Junxu",
+      "nameNormalized": "pangjunxu",
+      "bestOdds": "+8000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "tab": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "Jackson Page",
+      "nameNormalized": "jacksonpage",
+      "bestOdds": "+8000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "tab": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "Aaron Hill",
+      "nameNormalized": "aaronhill",
+      "bestOdds": "+8000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "tab": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "Hossein Vafaei",
+      "nameNormalized": "hosseinvafaei",
+      "bestOdds": "+8000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "tab": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "Stephen Maguire",
+      "nameNormalized": "stephenmaguire",
+      "bestOdds": "+8000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "tab": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "Thepchaiya Un-Nooh",
+      "nameNormalized": "thepchaiyaunnooh",
+      "bestOdds": "+8000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "tab": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "Anthony McGill",
+      "nameNormalized": "anthonymcgill",
+      "bestOdds": "+10000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "tab": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Yuan Sijun",
+      "nameNormalized": "yuansijun",
+      "bestOdds": "+10000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "tab": "+10000"
+      },
+      "impliedProbability": 0.0099,
       "market": "outrights"
     }
   ]

@@ -1,142 +1,393 @@
 {
   "sport": "darts",
-  "lastUpdated": "2026-03-03T10:00:00.000Z",
+  "lastUpdated": "2026-03-03T11:00:00.000Z",
   "sources": [
-    "ladbrokes",
-    "olbg",
-    "dartsrankings"
+    "sportsbookreview",
+    "spreadex"
   ],
   "entries": [
     {
       "name": "Luke Littler",
       "nameNormalized": "lukelittler",
-      "bestOdds": "+250",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+250",
+      "bestOdds": "-138",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "-138",
       "oddsBySource": {
-        "ladbrokes": "+250"
+        "sportsbookreview": "-138"
       },
-      "impliedProbability": 0.2857,
+      "impliedProbability": 0.5798,
       "market": "outrights"
     },
     {
       "name": "Luke Humphries",
       "nameNormalized": "lukehumphries",
-      "bestOdds": "+700",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+700",
+      "bestOdds": "+600",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+600",
       "oddsBySource": {
-        "ladbrokes": "+700"
+        "sportsbookreview": "+600"
       },
-      "impliedProbability": 0.125,
+      "impliedProbability": 0.1429,
       "market": "outrights"
     },
     {
       "name": "Gian van Veen",
       "nameNormalized": "gianvanveen",
-      "bestOdds": "+1100",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1100",
+      "bestOdds": "+650",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+650",
       "oddsBySource": {
-        "ladbrokes": "+1100"
+        "sportsbookreview": "+650"
       },
-      "impliedProbability": 0.0833,
-      "market": "outrights"
-    },
-    {
-      "name": "Gerwyn Price",
-      "nameNormalized": "gerwynprice",
-      "bestOdds": "+1100",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1100",
-      "oddsBySource": {
-        "ladbrokes": "+1100"
-      },
-      "impliedProbability": 0.0833,
-      "market": "outrights"
-    },
-    {
-      "name": "Michael van Gerwen",
-      "nameNormalized": "michaelvangerwen",
-      "bestOdds": "+1600",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1600",
-      "oddsBySource": {
-        "ladbrokes": "+1600"
-      },
-      "impliedProbability": 0.0588,
+      "impliedProbability": 0.1333,
       "market": "outrights"
     },
     {
       "name": "Josh Rock",
       "nameNormalized": "joshrock",
-      "bestOdds": "+2000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2000",
+      "bestOdds": "+1600",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1600",
       "oddsBySource": {
-        "ladbrokes": "+2000"
+        "sportsbookreview": "+1600"
       },
-      "impliedProbability": 0.0476,
+      "impliedProbability": 0.0588,
       "market": "outrights"
     },
     {
-      "name": "Jonny Clayton",
-      "nameNormalized": "jonnyclayton",
-      "bestOdds": "+2500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2500",
+      "name": "Gerwyn Price",
+      "nameNormalized": "gerwynprice",
+      "bestOdds": "+1800",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1800",
       "oddsBySource": {
-        "ladbrokes": "+2500"
+        "sportsbookreview": "+1800"
       },
-      "impliedProbability": 0.0385,
+      "impliedProbability": 0.0526,
       "market": "outrights"
     },
     {
-      "name": "Rob Cross",
-      "nameNormalized": "robcross",
-      "bestOdds": "+2500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2500",
+      "name": "Michael van Gerwen",
+      "nameNormalized": "michaelvangerwen",
+      "bestOdds": "+1800",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1800",
       "oddsBySource": {
-        "ladbrokes": "+2500"
+        "sportsbookreview": "+1800"
       },
-      "impliedProbability": 0.0385,
+      "impliedProbability": 0.0526,
       "market": "outrights"
     },
     {
       "name": "Gary Anderson",
       "nameNormalized": "garyanderson",
-      "bestOdds": "+3300",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+3300",
+      "bestOdds": "+2500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+2500",
       "oddsBySource": {
-        "ladbrokes": "+3300"
+        "sportsbookreview": "+2500"
       },
-      "impliedProbability": 0.0294,
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Nathan Aspinall",
+      "nameNormalized": "nathanaspinall",
+      "bestOdds": "+4000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+4000",
+      "oddsBySource": {
+        "sportsbookreview": "+4000"
+      },
+      "impliedProbability": 0.0244,
+      "market": "outrights"
+    },
+    {
+      "name": "Stephen Bunting",
+      "nameNormalized": "stephenbunting",
+      "bestOdds": "+4000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+4000",
+      "oddsBySource": {
+        "sportsbookreview": "+4000"
+      },
+      "impliedProbability": 0.0244,
+      "market": "outrights"
+    },
+    {
+      "name": "Danny Noppert",
+      "nameNormalized": "dannynoppert",
+      "bestOdds": "+5000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "sportsbookreview": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Wessel Nijman",
+      "nameNormalized": "wesselnijman",
+      "bestOdds": "+5000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "sportsbookreview": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Jonny Clayton",
+      "nameNormalized": "jonnyclayton",
+      "bestOdds": "+5000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "sportsbookreview": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Rob Cross",
+      "nameNormalized": "robcross",
+      "bestOdds": "+6000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+6000",
+      "oddsBySource": {
+        "sportsbookreview": "+6000"
+      },
+      "impliedProbability": 0.0164,
+      "market": "outrights"
+    },
+    {
+      "name": "Ryan Searle",
+      "nameNormalized": "ryansearle",
+      "bestOdds": "+6600",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+6600",
+      "oddsBySource": {
+        "sportsbookreview": "+6600"
+      },
+      "impliedProbability": 0.0149,
+      "market": "outrights"
+    },
+    {
+      "name": "Beau Greaves",
+      "nameNormalized": "beaugreaves",
+      "bestOdds": "+6600",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+6600",
+      "oddsBySource": {
+        "sportsbookreview": "+6600"
+      },
+      "impliedProbability": 0.0149,
       "market": "outrights"
     },
     {
       "name": "Chris Dobey",
       "nameNormalized": "chrisdobey",
-      "bestOdds": "+3300",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+3300",
+      "bestOdds": "+6600",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+6600",
       "oddsBySource": {
-        "ladbrokes": "+3300"
+        "sportsbookreview": "+6600"
       },
-      "impliedProbability": 0.0294,
+      "impliedProbability": 0.0149,
+      "market": "outrights"
+    },
+    {
+      "name": "James Wade",
+      "nameNormalized": "jameswade",
+      "bestOdds": "+8000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "sportsbookreview": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "Justin Hood",
+      "nameNormalized": "justinhood",
+      "bestOdds": "+10000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Callan Rydz",
+      "nameNormalized": "callanrydz",
+      "bestOdds": "+10000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Dirk van Duijvenbode",
+      "nameNormalized": "dirkvanduijvenbode",
+      "bestOdds": "+10000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Jermaine Wattimena",
+      "nameNormalized": "jermainewattimena",
+      "bestOdds": "+10000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Damon Heta",
+      "nameNormalized": "damonheta",
+      "bestOdds": "+10000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Charlie Manby",
+      "nameNormalized": "charliemanby",
+      "bestOdds": "+10000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Ross Smith",
+      "nameNormalized": "rosssmith",
+      "bestOdds": "+10000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
       "market": "outrights"
     },
     {
       "name": "Michael Smith",
       "nameNormalized": "michaelsmith",
       "bestOdds": "+10000",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+10000",
       "oddsBySource": {
-        "ladbrokes": "+10000"
+        "sportsbookreview": "+10000"
       },
       "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Niko Springer",
+      "nameNormalized": "nikospringer",
+      "bestOdds": "+10000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Mike De Decker",
+      "nameNormalized": "mikededecker",
+      "bestOdds": "+12500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+12500",
+      "oddsBySource": {
+        "sportsbookreview": "+12500"
+      },
+      "impliedProbability": 0.0079,
+      "market": "outrights"
+    },
+    {
+      "name": "Dave Chisnall",
+      "nameNormalized": "davechisnall",
+      "bestOdds": "+12500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+12500",
+      "oddsBySource": {
+        "sportsbookreview": "+12500"
+      },
+      "impliedProbability": 0.0079,
+      "market": "outrights"
+    },
+    {
+      "name": "Daryl Gurney",
+      "nameNormalized": "darylgurney",
+      "bestOdds": "+15000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "sportsbookreview": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Martin Schindler",
+      "nameNormalized": "martinschindler",
+      "bestOdds": "+15000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "sportsbookreview": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Krzysztof Ratajski",
+      "nameNormalized": "krzysztofratajski",
+      "bestOdds": "+15000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "sportsbookreview": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Luke Woodhouse",
+      "nameNormalized": "lukewoodhouse",
+      "bestOdds": "+15000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "sportsbookreview": "+15000"
+      },
+      "impliedProbability": 0.0066,
       "market": "outrights"
     }
   ]

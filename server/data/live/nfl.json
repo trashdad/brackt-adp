@@ -1,28 +1,28 @@
 {
   "sport": "nfl",
-  "lastUpdated": "2026-03-03T10:00:00.000Z",
+  "lastUpdated": "2026-03-03T11:00:00.000Z",
   "sources": [
     "sportsbookreview",
     "si"
   ],
   "entries": [
     {
-      "name": "Seattle Seahawks",
-      "nameNormalized": "seattleseahawks",
-      "bestOdds": "+950",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+950",
+      "name": "Los Angeles Rams",
+      "nameNormalized": "losangelesrams",
+      "bestOdds": "+900",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+900",
       "oddsBySource": {
-        "sportsbookreview": "+950"
+        "sportsbookreview": "+900"
       },
-      "impliedProbability": 0.0952,
+      "impliedProbability": 0.1,
       "market": "outrights"
     },
     {
-      "name": "Los Angeles Rams",
-      "nameNormalized": "losangelesrams",
+      "name": "Seattle Seahawks",
+      "nameNormalized": "seattleseahawks",
       "bestOdds": "+950",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+950",
       "oddsBySource": {
         "sportsbookreview": "+950"
@@ -33,56 +33,20 @@
     {
       "name": "Buffalo Bills",
       "nameNormalized": "buffalobills",
-      "bestOdds": "+1100",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1100",
+      "bestOdds": "+1200",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1200",
       "oddsBySource": {
-        "sportsbookreview": "+1100"
+        "sportsbookreview": "+1200"
       },
-      "impliedProbability": 0.0833,
+      "impliedProbability": 0.0769,
       "market": "outrights"
     },
     {
       "name": "Baltimore Ravens",
       "nameNormalized": "baltimoreravens",
-      "bestOdds": "+1300",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1300",
-      "oddsBySource": {
-        "sportsbookreview": "+1300"
-      },
-      "impliedProbability": 0.0714,
-      "market": "outrights"
-    },
-    {
-      "name": "Philadelphia Eagles",
-      "nameNormalized": "philadelphiaeagles",
-      "bestOdds": "+1300",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1300",
-      "oddsBySource": {
-        "sportsbookreview": "+1300"
-      },
-      "impliedProbability": 0.0714,
-      "market": "outrights"
-    },
-    {
-      "name": "New England Patriots",
-      "nameNormalized": "newenglandpatriots",
-      "bestOdds": "+1300",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1300",
-      "oddsBySource": {
-        "sportsbookreview": "+1300"
-      },
-      "impliedProbability": 0.0714,
-      "market": "outrights"
-    },
-    {
-      "name": "Detroit Lions",
-      "nameNormalized": "detroitlions",
       "bestOdds": "+1400",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+1400",
       "oddsBySource": {
         "sportsbookreview": "+1400"
@@ -94,7 +58,7 @@
       "name": "Green Bay Packers",
       "nameNormalized": "greenbaypackers",
       "bestOdds": "+1400",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+1400",
       "oddsBySource": {
         "sportsbookreview": "+1400"
@@ -103,22 +67,10 @@
       "market": "outrights"
     },
     {
-      "name": "Los Angeles Chargers",
-      "nameNormalized": "losangeleschargers",
-      "bestOdds": "+1400",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1400",
-      "oddsBySource": {
-        "sportsbookreview": "+1400"
-      },
-      "impliedProbability": 0.0667,
-      "market": "outrights"
-    },
-    {
-      "name": "Kansas City Chiefs",
-      "nameNormalized": "kansascitychiefs",
+      "name": "Philadelphia Eagles",
+      "nameNormalized": "philadelphiaeagles",
       "bestOdds": "+1500",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+1500",
       "oddsBySource": {
         "sportsbookreview": "+1500"
@@ -127,10 +79,46 @@
       "market": "outrights"
     },
     {
-      "name": "San Francisco 49ers",
-      "nameNormalized": "sanfrancisco49ers",
+      "name": "Los Angeles Chargers",
+      "nameNormalized": "losangeleschargers",
+      "bestOdds": "+1600",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1600",
+      "oddsBySource": {
+        "sportsbookreview": "+1600"
+      },
+      "impliedProbability": 0.0588,
+      "market": "outrights"
+    },
+    {
+      "name": "Kansas City Chiefs",
+      "nameNormalized": "kansascitychiefs",
+      "bestOdds": "+1600",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1600",
+      "oddsBySource": {
+        "sportsbookreview": "+1600"
+      },
+      "impliedProbability": 0.0588,
+      "market": "outrights"
+    },
+    {
+      "name": "Detroit Lions",
+      "nameNormalized": "detroitlions",
+      "bestOdds": "+1600",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1600",
+      "oddsBySource": {
+        "sportsbookreview": "+1600"
+      },
+      "impliedProbability": 0.0588,
+      "market": "outrights"
+    },
+    {
+      "name": "New England Patriots",
+      "nameNormalized": "newenglandpatriots",
       "bestOdds": "+1700",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+1700",
       "oddsBySource": {
         "sportsbookreview": "+1700"
@@ -139,34 +127,10 @@
       "market": "outrights"
     },
     {
-      "name": "Houston Texans",
-      "nameNormalized": "houstontexans",
-      "bestOdds": "+1900",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1900",
-      "oddsBySource": {
-        "sportsbookreview": "+1900"
-      },
-      "impliedProbability": 0.05,
-      "market": "outrights"
-    },
-    {
-      "name": "Denver Broncos",
-      "nameNormalized": "denverbroncos",
-      "bestOdds": "+1900",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1900",
-      "oddsBySource": {
-        "sportsbookreview": "+1900"
-      },
-      "impliedProbability": 0.05,
-      "market": "outrights"
-    },
-    {
-      "name": "Jacksonville Jaguars",
-      "nameNormalized": "jacksonvillejaguars",
+      "name": "San Francisco 49ers",
+      "nameNormalized": "sanfrancisco49ers",
       "bestOdds": "+2000",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+2000",
       "oddsBySource": {
         "sportsbookreview": "+2000"
@@ -175,34 +139,70 @@
       "market": "outrights"
     },
     {
+      "name": "Denver Broncos",
+      "nameNormalized": "denverbroncos",
+      "bestOdds": "+2000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+2000",
+      "oddsBySource": {
+        "sportsbookreview": "+2000"
+      },
+      "impliedProbability": 0.0476,
+      "market": "outrights"
+    },
+    {
+      "name": "Jacksonville Jaguars",
+      "nameNormalized": "jacksonvillejaguars",
+      "bestOdds": "+2200",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+2200",
+      "oddsBySource": {
+        "sportsbookreview": "+2200"
+      },
+      "impliedProbability": 0.0435,
+      "market": "outrights"
+    },
+    {
+      "name": "Houston Texans",
+      "nameNormalized": "houstontexans",
+      "bestOdds": "+2200",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+2200",
+      "oddsBySource": {
+        "sportsbookreview": "+2200"
+      },
+      "impliedProbability": 0.0435,
+      "market": "outrights"
+    },
+    {
       "name": "Chicago Bears",
       "nameNormalized": "chicagobears",
-      "bestOdds": "+2500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2500",
+      "bestOdds": "+2700",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+2700",
       "oddsBySource": {
-        "sportsbookreview": "+2500"
+        "sportsbookreview": "+2700"
       },
-      "impliedProbability": 0.0385,
+      "impliedProbability": 0.0357,
       "market": "outrights"
     },
     {
       "name": "Cincinnati Bengals",
       "nameNormalized": "cincinnatibengals",
-      "bestOdds": "+2800",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2800",
+      "bestOdds": "+3000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+3000",
       "oddsBySource": {
-        "sportsbookreview": "+2800"
+        "sportsbookreview": "+3000"
       },
-      "impliedProbability": 0.0345,
+      "impliedProbability": 0.0323,
       "market": "outrights"
     },
     {
       "name": "Dallas Cowboys",
       "nameNormalized": "dallascowboys",
       "bestOdds": "+3500",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+3500",
       "oddsBySource": {
         "sportsbookreview": "+3500"
@@ -213,25 +213,181 @@
     {
       "name": "Tampa Bay Buccaneers",
       "nameNormalized": "tampabaybuccaneers",
-      "bestOdds": "+4000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+4000",
+      "bestOdds": "+4500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+4500",
       "oddsBySource": {
-        "sportsbookreview": "+4000"
+        "sportsbookreview": "+4500"
       },
-      "impliedProbability": 0.0244,
+      "impliedProbability": 0.0217,
       "market": "outrights"
     },
     {
-      "name": "Pittsburgh Steelers",
-      "nameNormalized": "pittsburghsteelers",
+      "name": "Indianapolis Colts",
+      "nameNormalized": "indianapoliscolts",
       "bestOdds": "+6000",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+6000",
       "oddsBySource": {
         "sportsbookreview": "+6000"
       },
       "impliedProbability": 0.0164,
+      "market": "outrights"
+    },
+    {
+      "name": "Minnesota Vikings",
+      "nameNormalized": "minnesotavikings",
+      "bestOdds": "+6000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+6000",
+      "oddsBySource": {
+        "sportsbookreview": "+6000"
+      },
+      "impliedProbability": 0.0164,
+      "market": "outrights"
+    },
+    {
+      "name": "Washington Commanders",
+      "nameNormalized": "washingtoncommanders",
+      "bestOdds": "+6000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+6000",
+      "oddsBySource": {
+        "sportsbookreview": "+6000"
+      },
+      "impliedProbability": 0.0164,
+      "market": "outrights"
+    },
+    {
+      "name": "New York Giants",
+      "nameNormalized": "newyorkgiants",
+      "bestOdds": "+7500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+7500",
+      "oddsBySource": {
+        "sportsbookreview": "+7500"
+      },
+      "impliedProbability": 0.0132,
+      "market": "outrights"
+    },
+    {
+      "name": "Atlanta Falcons",
+      "nameNormalized": "atlantafalcons",
+      "bestOdds": "+10000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Pittsburgh Steelers",
+      "nameNormalized": "pittsburghsteelers",
+      "bestOdds": "+10000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Carolina Panthers",
+      "nameNormalized": "carolinapanthers",
+      "bestOdds": "+15000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "sportsbookreview": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Tennessee Titans",
+      "nameNormalized": "tennesseetitans",
+      "bestOdds": "+15000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "sportsbookreview": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "New Orleans Saints",
+      "nameNormalized": "neworleanssaints",
+      "bestOdds": "+15000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "sportsbookreview": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Cleveland Browns",
+      "nameNormalized": "clevelandbrowns",
+      "bestOdds": "+15000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "sportsbookreview": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Las Vegas Raiders",
+      "nameNormalized": "lasvegasraiders",
+      "bestOdds": "+20000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+20000",
+      "oddsBySource": {
+        "sportsbookreview": "+20000"
+      },
+      "impliedProbability": 0.005,
+      "market": "outrights"
+    },
+    {
+      "name": "New York Jets",
+      "nameNormalized": "newyorkjets",
+      "bestOdds": "+25000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+25000",
+      "oddsBySource": {
+        "sportsbookreview": "+25000"
+      },
+      "impliedProbability": 0.004,
+      "market": "outrights"
+    },
+    {
+      "name": "Arizona Cardinals",
+      "nameNormalized": "arizonacardinals",
+      "bestOdds": "+30000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+30000",
+      "oddsBySource": {
+        "sportsbookreview": "+30000"
+      },
+      "impliedProbability": 0.0033,
+      "market": "outrights"
+    },
+    {
+      "name": "Miami Dolphins",
+      "nameNormalized": "miamidolphins",
+      "bestOdds": "+30000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+30000",
+      "oddsBySource": {
+        "sportsbookreview": "+30000"
+      },
+      "impliedProbability": 0.0033,
       "market": "outrights"
     }
   ]

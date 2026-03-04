@@ -1,31 +1,32 @@
 {
   "sport": "tennis_m",
-  "lastUpdated": "2026-03-03T10:00:00.000Z",
+  "lastUpdated": "2026-03-03T11:00:00.000Z",
   "sources": [
-    "lineups",
+    "sportsbookreview",
+    "betmgm",
     "fanduel"
   ],
   "entries": [
     {
       "name": "Carlos Alcaraz",
       "nameNormalized": "carlosalcaraz",
-      "bestOdds": "+150",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+150",
+      "bestOdds": "+120",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+120",
       "oddsBySource": {
-        "lineups": "+150"
+        "sportsbookreview": "+120"
       },
-      "impliedProbability": 0.4,
+      "impliedProbability": 0.4545,
       "market": "outrights"
     },
     {
       "name": "Jannik Sinner",
       "nameNormalized": "janniksinner",
       "bestOdds": "+150",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+150",
       "oddsBySource": {
-        "lineups": "+150"
+        "sportsbookreview": "+150"
       },
       "impliedProbability": 0.4,
       "market": "outrights"
@@ -33,121 +34,277 @@
     {
       "name": "Novak Djokovic",
       "nameNormalized": "novakdjokovic",
-      "bestOdds": "+1300",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1300",
+      "bestOdds": "+800",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+800",
       "oddsBySource": {
-        "lineups": "+1300"
+        "sportsbookreview": "+800"
       },
-      "impliedProbability": 0.0714,
+      "impliedProbability": 0.1111,
+      "market": "outrights"
+    },
+    {
+      "name": "Alexander Zverev",
+      "nameNormalized": "alexanderzverev",
+      "bestOdds": "+1600",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1600",
+      "oddsBySource": {
+        "sportsbookreview": "+1600"
+      },
+      "impliedProbability": 0.0588,
       "market": "outrights"
     },
     {
       "name": "Jack Draper",
       "nameNormalized": "jackdraper",
       "bestOdds": "+1600",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+1600",
       "oddsBySource": {
-        "lineups": "Defending Champ"
+        "sportsbookreview": "+1600"
       },
       "impliedProbability": 0.0588,
       "market": "outrights"
     },
     {
-      "name": "Daniil Medvedev",
-      "nameNormalized": "daniilmedvedev",
-      "bestOdds": "+1800",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1800",
-      "oddsBySource": {
-        "fanduel": "+1800"
-      },
-      "impliedProbability": 0.0526,
-      "market": "outrights"
-    },
-    {
-      "name": "Alexander Zverev",
-      "nameNormalized": "alexanderzverev",
-      "bestOdds": "+2000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2000",
-      "oddsBySource": {
-        "fanduel": "+2000"
-      },
-      "impliedProbability": 0.0476,
-      "market": "outrights"
-    },
-    {
       "name": "Taylor Fritz",
       "nameNormalized": "taylorfritz",
-      "bestOdds": "+2500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2500",
+      "bestOdds": "+2200",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+2200",
       "oddsBySource": {
-        "fanduel": "+2500"
+        "sportsbookreview": "+2200"
       },
-      "impliedProbability": 0.0385,
-      "market": "outrights"
-    },
-    {
-      "name": "Holger Rune",
-      "nameNormalized": "holgerrune",
-      "bestOdds": "+2800",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2800",
-      "oddsBySource": {
-        "fanduel": "+2800"
-      },
-      "impliedProbability": 0.0345,
-      "market": "outrights"
-    },
-    {
-      "name": "Casper Ruud",
-      "nameNormalized": "casperruud",
-      "bestOdds": "+3300",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+3300",
-      "oddsBySource": {
-        "fanduel": "+3300"
-      },
-      "impliedProbability": 0.0294,
-      "market": "outrights"
-    },
-    {
-      "name": "Grigor Dimitrov",
-      "nameNormalized": "grigordimitrov",
-      "bestOdds": "+4000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+4000",
-      "oddsBySource": {
-        "fanduel": "+4000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Lorenzo Musetti",
-      "nameNormalized": "lorenzomusetti",
-      "bestOdds": "+5000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+5000",
-      "oddsBySource": {
-        "fanduel": "+5000"
-      },
-      "impliedProbability": 0.0196,
+      "impliedProbability": 0.0435,
       "market": "outrights"
     },
     {
       "name": "Ben Shelton",
       "nameNormalized": "benshelton",
+      "bestOdds": "+3300",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+3300",
+      "oddsBySource": {
+        "sportsbookreview": "+3300"
+      },
+      "impliedProbability": 0.0294,
+      "market": "outrights"
+    },
+    {
+      "name": "Daniil Medvedev",
+      "nameNormalized": "daniilmedvedev",
+      "bestOdds": "+4000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+4000",
+      "oddsBySource": {
+        "sportsbookreview": "+4000"
+      },
+      "impliedProbability": 0.0244,
+      "market": "outrights"
+    },
+    {
+      "name": "Alex de Minaur",
+      "nameNormalized": "alexdeminaur",
+      "bestOdds": "+4500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+4500",
+      "oddsBySource": {
+        "sportsbookreview": "+4500"
+      },
+      "impliedProbability": 0.0217,
+      "market": "outrights"
+    },
+    {
+      "name": "Andrey Rublev",
+      "nameNormalized": "andreyrublev",
       "bestOdds": "+5000",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+5000",
       "oddsBySource": {
-        "fanduel": "+5000"
+        "sportsbookreview": "+5000"
       },
       "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Felix Auger-Aliassime",
+      "nameNormalized": "felixaugeraliassime",
+      "bestOdds": "+6600",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+6600",
+      "oddsBySource": {
+        "sportsbookreview": "+6600"
+      },
+      "impliedProbability": 0.0149,
+      "market": "outrights"
+    },
+    {
+      "name": "Alexander Bublik",
+      "nameNormalized": "alexanderbublik",
+      "bestOdds": "+8000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "sportsbookreview": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "Casper Ruud",
+      "nameNormalized": "casperruud",
+      "bestOdds": "+8000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "sportsbookreview": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "Lorenzo Musetti",
+      "nameNormalized": "lorenzomusetti",
+      "bestOdds": "+10000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Flavio Cobolli",
+      "nameNormalized": "flaviocobolli",
+      "bestOdds": "+12500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+12500",
+      "oddsBySource": {
+        "sportsbookreview": "+12500"
+      },
+      "impliedProbability": 0.0079,
+      "market": "outrights"
+    },
+    {
+      "name": "Karen Khachanov",
+      "nameNormalized": "karenkhachanov",
+      "bestOdds": "+12500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+12500",
+      "oddsBySource": {
+        "sportsbookreview": "+12500"
+      },
+      "impliedProbability": 0.0079,
+      "market": "outrights"
+    },
+    {
+      "name": "Frances Tiafoe",
+      "nameNormalized": "francestiafoe",
+      "bestOdds": "+15000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "sportsbookreview": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Tommy Paul",
+      "nameNormalized": "tommypaul",
+      "bestOdds": "+15000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "sportsbookreview": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Sebastian Korda",
+      "nameNormalized": "sebastiankorda",
+      "bestOdds": "+15000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "sportsbookreview": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Hubert Hurkacz",
+      "nameNormalized": "huberthurkacz",
+      "bestOdds": "+15000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "sportsbookreview": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Stefanos Tsitsipas",
+      "nameNormalized": "stefanostsitsipas",
+      "bestOdds": "+20000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+20000",
+      "oddsBySource": {
+        "sportsbookreview": "+20000"
+      },
+      "impliedProbability": 0.005,
+      "market": "outrights"
+    },
+    {
+      "name": "Grigor Dimitrov",
+      "nameNormalized": "grigordimitrov",
+      "bestOdds": "+20000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+20000",
+      "oddsBySource": {
+        "sportsbookreview": "+20000"
+      },
+      "impliedProbability": 0.005,
+      "market": "outrights"
+    },
+    {
+      "name": "Nick Kyrgios",
+      "nameNormalized": "nickkyrgios",
+      "bestOdds": "+25000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+25000",
+      "oddsBySource": {
+        "sportsbookreview": "+25000"
+      },
+      "impliedProbability": 0.004,
+      "market": "outrights"
+    },
+    {
+      "name": "Gael Monfils",
+      "nameNormalized": "gaelmonfils",
+      "bestOdds": "+30000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+30000",
+      "oddsBySource": {
+        "sportsbookreview": "+30000"
+      },
+      "impliedProbability": 0.0033,
+      "market": "outrights"
+    },
+    {
+      "name": "Stan Wawrinka",
+      "nameNormalized": "stanwawrinka",
+      "bestOdds": "+50000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+50000",
+      "oddsBySource": {
+        "sportsbookreview": "+50000"
+      },
+      "impliedProbability": 0.002,
       "market": "outrights"
     }
   ]

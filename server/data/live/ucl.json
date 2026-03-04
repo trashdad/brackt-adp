@@ -1,137 +1,405 @@
 {
   "sport": "ucl",
-  "lastUpdated": "2026-03-03T10:00:00.000Z",
+  "lastUpdated": "2026-03-03T11:00:00.000Z",
   "sources": [
-    "bet365",
-    "fanduel",
-    "williamhill",
-    "oddschecker"
+    "sportsbookreview",
+    "fanduel"
   ],
   "entries": [
     {
       "name": "Arsenal",
       "nameNormalized": "arsenal",
-      "bestOdds": "+250",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+300",
+      "bestOdds": "+240",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+240",
       "oddsBySource": {
-        "bet365": "+250",
-        "fanduel": "+350"
+        "sportsbookreview": "+240"
       },
-      "impliedProbability": 0.2857,
+      "impliedProbability": 0.2941,
       "market": "outrights"
     },
     {
       "name": "Bayern Munich",
       "nameNormalized": "bayernmunich",
-      "bestOdds": "+450",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+500",
+      "bestOdds": "+550",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+550",
       "oddsBySource": {
-        "bet365": "+450",
-        "fanduel": "+550"
+        "sportsbookreview": "+550"
       },
-      "impliedProbability": 0.1818,
+      "impliedProbability": 0.1538,
       "market": "outrights"
     },
     {
       "name": "Barcelona",
       "nameNormalized": "barcelona",
       "bestOdds": "+650",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+725",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+650",
       "oddsBySource": {
-        "bet365": "+650",
-        "fanduel": "+800"
+        "sportsbookreview": "+650"
       },
       "impliedProbability": 0.1333,
       "market": "outrights"
     },
     {
-      "name": "PSG",
-      "nameNormalized": "psg",
-      "bestOdds": "+700",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+850",
+      "name": "Manchester City",
+      "nameNormalized": "manchestercity",
+      "bestOdds": "+800",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+800",
       "oddsBySource": {
-        "bet365": "+700",
-        "fanduel": "+1000"
+        "sportsbookreview": "+800"
       },
-      "impliedProbability": 0.125,
+      "impliedProbability": 0.1111,
       "market": "outrights"
     },
     {
-      "name": "Manchester City",
-      "nameNormalized": "manchestercity",
-      "bestOdds": "+700",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+750",
+      "name": "Paris Saint-Germain",
+      "nameNormalized": "parissaintgermain",
+      "bestOdds": "+1000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1000",
       "oddsBySource": {
-        "bet365": "+700",
-        "fanduel": "+800"
+        "sportsbookreview": "+1000"
       },
-      "impliedProbability": 0.125,
+      "impliedProbability": 0.0909,
+      "market": "outrights"
+    },
+    {
+      "name": "Liverpool",
+      "nameNormalized": "liverpool",
+      "bestOdds": "+1000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1000",
+      "oddsBySource": {
+        "sportsbookreview": "+1000"
+      },
+      "impliedProbability": 0.0909,
       "market": "outrights"
     },
     {
       "name": "Real Madrid",
       "nameNormalized": "realmadrid",
-      "bestOdds": "+900",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1050",
+      "bestOdds": "+1200",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1200",
       "oddsBySource": {
-        "bet365": "+900",
-        "fanduel": "+1200"
+        "sportsbookreview": "+1200"
       },
-      "impliedProbability": 0.1,
-      "market": "outrights"
-    },
-    {
-      "name": "Inter Milan",
-      "nameNormalized": "intermilan",
-      "bestOdds": "+1400",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1600",
-      "oddsBySource": {
-        "bet365": "+1400"
-      },
-      "impliedProbability": 0.0667,
+      "impliedProbability": 0.0769,
       "market": "outrights"
     },
     {
       "name": "Atletico Madrid",
       "nameNormalized": "atleticomadrid",
-      "bestOdds": "+2000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2500",
+      "bestOdds": "+1600",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1600",
       "oddsBySource": {
-        "bet365": "+2000"
+        "sportsbookreview": "+1600"
       },
-      "impliedProbability": 0.0476,
-      "market": "outrights"
-    },
-    {
-      "name": "Bayer Leverkusen",
-      "nameNormalized": "bayerleverkusen",
-      "bestOdds": "+2500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+3300",
-      "oddsBySource": {
-        "bet365": "+2500"
-      },
-      "impliedProbability": 0.0385,
+      "impliedProbability": 0.0588,
       "market": "outrights"
     },
     {
       "name": "Chelsea",
       "nameNormalized": "chelsea",
-      "bestOdds": "+3300",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+4000",
+      "bestOdds": "+2500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+2500",
       "oddsBySource": {
-        "bet365": "+3300"
+        "sportsbookreview": "+2500"
       },
-      "impliedProbability": 0.0294,
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Newcastle United",
+      "nameNormalized": "newcastleunited",
+      "bestOdds": "+2500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+2500",
+      "oddsBySource": {
+        "sportsbookreview": "+2500"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Tottenham Hotspur",
+      "nameNormalized": "tottenhamhotspur",
+      "bestOdds": "+2500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+2500",
+      "oddsBySource": {
+        "sportsbookreview": "+2500"
+      },
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Sporting CP",
+      "nameNormalized": "sportingcp",
+      "bestOdds": "+4500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+4500",
+      "oddsBySource": {
+        "sportsbookreview": "+4500"
+      },
+      "impliedProbability": 0.0217,
+      "market": "outrights"
+    },
+    {
+      "name": "Bodo/Glimt",
+      "nameNormalized": "bodoglimt",
+      "bestOdds": "+4500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+4500",
+      "oddsBySource": {
+        "sportsbookreview": "+4500"
+      },
+      "impliedProbability": 0.0217,
+      "market": "outrights"
+    },
+    {
+      "name": "Bayer Leverkusen",
+      "nameNormalized": "bayerleverkusen",
+      "bestOdds": "+7000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+7000",
+      "oddsBySource": {
+        "sportsbookreview": "+7000"
+      },
+      "impliedProbability": 0.0141,
+      "market": "outrights"
+    },
+    {
+      "name": "Atalanta",
+      "nameNormalized": "atalanta",
+      "bestOdds": "+8000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "sportsbookreview": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "Galatasaray",
+      "nameNormalized": "galatasaray",
+      "bestOdds": "+12500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+12500",
+      "oddsBySource": {
+        "sportsbookreview": "+12500"
+      },
+      "impliedProbability": 0.0079,
+      "market": "outrights"
+    },
+    {
+      "name": "Borussia Dortmund",
+      "nameNormalized": "borussiadortmund",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "Juventus",
+      "nameNormalized": "juventus",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "Napoli",
+      "nameNormalized": "napoli",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "Inter Milan",
+      "nameNormalized": "intermilan",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "Benfica",
+      "nameNormalized": "benfica",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "AC Milan",
+      "nameNormalized": "acmilan",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "Monaco",
+      "nameNormalized": "monaco",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "Marseille",
+      "nameNormalized": "marseille",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "Ajax",
+      "nameNormalized": "ajax",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "PSV Eindhoven",
+      "nameNormalized": "psveindhoven",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "Eintracht Frankfurt",
+      "nameNormalized": "eintrachtfrankfurt",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "Athletic Bilbao",
+      "nameNormalized": "athleticbilbao",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "Villarreal",
+      "nameNormalized": "villarreal",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "Club Brugge",
+      "nameNormalized": "clubbrugge",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "Olympiacos",
+      "nameNormalized": "olympiacos",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "Slavia Prague",
+      "nameNormalized": "slaviaprague",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
+      "market": "outrights"
+    },
+    {
+      "name": "Copenhagen",
+      "nameNormalized": "copenhagen",
+      "bestOdds": "+1000000",
+      "bestOddsSource": "eliminated",
+      "consensusOdds": "+1000000",
+      "oddsBySource": {
+        "eliminated": "true"
+      },
+      "impliedProbability": 0.0001,
       "market": "outrights"
     }
   ]

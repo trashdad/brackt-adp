@@ -1,44 +1,43 @@
 {
   "sport": "mlb",
-  "lastUpdated": "2026-03-03T10:00:00.000Z",
+  "lastUpdated": "2026-03-03T11:00:00.000Z",
   "sources": [
-    "draftkings",
-    "si",
-    "sportsbettingdime"
+    "sportsbookreview",
+    "si"
   ],
   "entries": [
     {
       "name": "Los Angeles Dodgers",
       "nameNormalized": "losangelesdodgers",
-      "bestOdds": "+230",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+230",
+      "bestOdds": "+225",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+225",
       "oddsBySource": {
-        "draftkings": "+230"
+        "sportsbookreview": "+225"
       },
-      "impliedProbability": 0.303,
+      "impliedProbability": 0.3077,
       "market": "outrights"
     },
     {
       "name": "New York Yankees",
       "nameNormalized": "newyorkyankees",
-      "bestOdds": "+1100",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1100",
+      "bestOdds": "+950",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+950",
       "oddsBySource": {
-        "draftkings": "+1100"
+        "sportsbookreview": "+950"
       },
-      "impliedProbability": 0.0833,
+      "impliedProbability": 0.0952,
       "market": "outrights"
     },
     {
       "name": "Seattle Mariners",
       "nameNormalized": "seattlemariners",
       "bestOdds": "+1200",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+1200",
       "oddsBySource": {
-        "draftkings": "+1200"
+        "sportsbookreview": "+1200"
       },
       "impliedProbability": 0.0769,
       "market": "outrights"
@@ -46,59 +45,59 @@
     {
       "name": "New York Mets",
       "nameNormalized": "newyorkmets",
-      "bestOdds": "+1400",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1400",
+      "bestOdds": "+1300",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1300",
       "oddsBySource": {
-        "draftkings": "+1400"
+        "sportsbookreview": "+1300"
       },
-      "impliedProbability": 0.0667,
-      "market": "outrights"
-    },
-    {
-      "name": "Atlanta Braves",
-      "nameNormalized": "atlantabraves",
-      "bestOdds": "+1500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1500",
-      "oddsBySource": {
-        "draftkings": "+1500"
-      },
-      "impliedProbability": 0.0625,
+      "impliedProbability": 0.0714,
       "market": "outrights"
     },
     {
       "name": "Toronto Blue Jays",
       "nameNormalized": "torontobluejays",
-      "bestOdds": "+1500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1500",
+      "bestOdds": "+1400",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1400",
       "oddsBySource": {
-        "draftkings": "+1500"
+        "sportsbookreview": "+1400"
       },
-      "impliedProbability": 0.0625,
+      "impliedProbability": 0.0667,
       "market": "outrights"
     },
     {
       "name": "Philadelphia Phillies",
       "nameNormalized": "philadelphiaphillies",
-      "bestOdds": "+1600",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1600",
+      "bestOdds": "+1400",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1400",
       "oddsBySource": {
-        "draftkings": "+1600"
+        "sportsbookreview": "+1400"
       },
-      "impliedProbability": 0.0588,
+      "impliedProbability": 0.0667,
       "market": "outrights"
     },
     {
       "name": "Boston Red Sox",
       "nameNormalized": "bostonredsox",
+      "bestOdds": "+1500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1500",
+      "oddsBySource": {
+        "sportsbookreview": "+1500"
+      },
+      "impliedProbability": 0.0625,
+      "market": "outrights"
+    },
+    {
+      "name": "Atlanta Braves",
+      "nameNormalized": "atlantabraves",
       "bestOdds": "+1600",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+1600",
       "oddsBySource": {
-        "draftkings": "+1600"
+        "sportsbookreview": "+1600"
       },
       "impliedProbability": 0.0588,
       "market": "outrights"
@@ -107,94 +106,94 @@
       "name": "Chicago Cubs",
       "nameNormalized": "chicagocubs",
       "bestOdds": "+1800",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+1800",
       "oddsBySource": {
-        "draftkings": "+1800"
+        "sportsbookreview": "+1800"
       },
       "impliedProbability": 0.0526,
       "market": "outrights"
     },
     {
-      "name": "Detroit Tigers",
-      "nameNormalized": "detroittigers",
-      "bestOdds": "+2000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2000",
+      "name": "Houston Astros",
+      "nameNormalized": "houstonastros",
+      "bestOdds": "+2200",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+2200",
       "oddsBySource": {
-        "draftkings": "+2000"
+        "sportsbookreview": "+2200"
       },
-      "impliedProbability": 0.0476,
+      "impliedProbability": 0.0435,
       "market": "outrights"
     },
     {
       "name": "Baltimore Orioles",
       "nameNormalized": "baltimoreorioles",
       "bestOdds": "+2200",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+2200",
       "oddsBySource": {
-        "draftkings": "+2200"
+        "sportsbookreview": "+2200"
       },
       "impliedProbability": 0.0435,
       "market": "outrights"
     },
     {
-      "name": "Houston Astros",
-      "nameNormalized": "houstonastros",
+      "name": "Detroit Tigers",
+      "nameNormalized": "detroittigers",
       "bestOdds": "+2500",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+2500",
       "oddsBySource": {
-        "draftkings": "+2500"
+        "sportsbookreview": "+2500"
       },
       "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Milwaukee Brewers",
+      "nameNormalized": "milwaukeebrewers",
+      "bestOdds": "+2800",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+2800",
+      "oddsBySource": {
+        "sportsbookreview": "+2800"
+      },
+      "impliedProbability": 0.0345,
+      "market": "outrights"
+    },
+    {
+      "name": "San Diego Padres",
+      "nameNormalized": "sandiegopadres",
+      "bestOdds": "+2800",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+2800",
+      "oddsBySource": {
+        "sportsbookreview": "+2800"
+      },
+      "impliedProbability": 0.0345,
       "market": "outrights"
     },
     {
       "name": "Texas Rangers",
       "nameNormalized": "texasrangers",
       "bestOdds": "+3000",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+3000",
       "oddsBySource": {
-        "draftkings": "+3000"
+        "sportsbookreview": "+3000"
       },
       "impliedProbability": 0.0323,
-      "market": "outrights"
-    },
-    {
-      "name": "San Diego Padres",
-      "nameNormalized": "sandiegopadres",
-      "bestOdds": "+3000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+3000",
-      "oddsBySource": {
-        "draftkings": "+3000"
-      },
-      "impliedProbability": 0.0323,
-      "market": "outrights"
-    },
-    {
-      "name": "Milwaukee Brewers",
-      "nameNormalized": "milwaukeebrewers",
-      "bestOdds": "+3500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+3500",
-      "oddsBySource": {
-        "draftkings": "+3500"
-      },
-      "impliedProbability": 0.0278,
       "market": "outrights"
     },
     {
       "name": "Kansas City Royals",
       "nameNormalized": "kansascityroyals",
       "bestOdds": "+4000",
-      "bestOddsSource": "consensus",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+4000",
       "oddsBySource": {
-        "draftkings": "+4000"
+        "sportsbookreview": "+4000"
       },
       "impliedProbability": 0.0244,
       "market": "outrights"
@@ -202,25 +201,169 @@
     {
       "name": "Cincinnati Reds",
       "nameNormalized": "cincinnatireds",
-      "bestOdds": "+4500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+4500",
+      "bestOdds": "+4000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+4000",
       "oddsBySource": {
-        "draftkings": "+4500"
+        "sportsbookreview": "+4000"
       },
-      "impliedProbability": 0.0217,
+      "impliedProbability": 0.0244,
       "market": "outrights"
     },
     {
       "name": "Cleveland Guardians",
       "nameNormalized": "clevelandguardians",
-      "bestOdds": "+6000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+6000",
+      "bestOdds": "+5000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+5000",
       "oddsBySource": {
-        "draftkings": "+6000"
+        "sportsbookreview": "+5000"
       },
-      "impliedProbability": 0.0164,
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Arizona Diamondbacks",
+      "nameNormalized": "arizonadiamondbacks",
+      "bestOdds": "+6500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+6500",
+      "oddsBySource": {
+        "sportsbookreview": "+6500"
+      },
+      "impliedProbability": 0.0152,
+      "market": "outrights"
+    },
+    {
+      "name": "San Francisco Giants",
+      "nameNormalized": "sanfranciscogiants",
+      "bestOdds": "+6500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+6500",
+      "oddsBySource": {
+        "sportsbookreview": "+6500"
+      },
+      "impliedProbability": 0.0152,
+      "market": "outrights"
+    },
+    {
+      "name": "Tampa Bay Rays",
+      "nameNormalized": "tampabayrays",
+      "bestOdds": "+9000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+9000",
+      "oddsBySource": {
+        "sportsbookreview": "+9000"
+      },
+      "impliedProbability": 0.011,
+      "market": "outrights"
+    },
+    {
+      "name": "Minnesota Twins",
+      "nameNormalized": "minnesotatwins",
+      "bestOdds": "+10000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Oakland Athletics",
+      "nameNormalized": "oaklandathletics",
+      "bestOdds": "+10000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Pittsburgh Pirates",
+      "nameNormalized": "pittsburghpirates",
+      "bestOdds": "+10000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Miami Marlins",
+      "nameNormalized": "miamimarlins",
+      "bestOdds": "+20000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+20000",
+      "oddsBySource": {
+        "sportsbookreview": "+20000"
+      },
+      "impliedProbability": 0.005,
+      "market": "outrights"
+    },
+    {
+      "name": "St. Louis Cardinals",
+      "nameNormalized": "stlouiscardinals",
+      "bestOdds": "+20000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+20000",
+      "oddsBySource": {
+        "sportsbookreview": "+20000"
+      },
+      "impliedProbability": 0.005,
+      "market": "outrights"
+    },
+    {
+      "name": "Los Angeles Angels",
+      "nameNormalized": "losangelesangels",
+      "bestOdds": "+25000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+25000",
+      "oddsBySource": {
+        "sportsbookreview": "+25000"
+      },
+      "impliedProbability": 0.004,
+      "market": "outrights"
+    },
+    {
+      "name": "Colorado Rockies",
+      "nameNormalized": "coloradorockies",
+      "bestOdds": "+50000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+50000",
+      "oddsBySource": {
+        "sportsbookreview": "+50000"
+      },
+      "impliedProbability": 0.002,
+      "market": "outrights"
+    },
+    {
+      "name": "Chicago White Sox",
+      "nameNormalized": "chicagowhitesox",
+      "bestOdds": "+50000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+50000",
+      "oddsBySource": {
+        "sportsbookreview": "+50000"
+      },
+      "impliedProbability": 0.002,
+      "market": "outrights"
+    },
+    {
+      "name": "Washington Nationals",
+      "nameNormalized": "washingtonnationals",
+      "bestOdds": "+50000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+50000",
+      "oddsBySource": {
+        "sportsbookreview": "+50000"
+      },
+      "impliedProbability": 0.002,
       "market": "outrights"
     }
   ]

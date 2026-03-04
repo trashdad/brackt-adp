@@ -136,6 +136,10 @@ const ALIASES = {
   'columbus': 'columbusblueackets', 'bluejackets': 'columbusbluejackets',
   'sanjose': 'sanjosesharks', 'sharks': 'sanjosesharks',
   'utahhockeyclub': 'utahhockeyclub',
+  // LLWS
+  'taipei': 'asiapacific', 'chinesetaipei': 'asiapacific',
+  // UCL
+  'tottenham': 'tottenhamhotspur', 'newcastle': 'newcastleunited',
 };
 
 function main() {

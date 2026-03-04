@@ -1,176 +1,176 @@
 {
   "sport": "ncaaf",
-  "lastUpdated": "2026-03-01T07:59:01.031Z",
+  "lastUpdated": "2026-03-03T11:00:00.000Z",
   "sources": [
-    "google-search-multiple",
-    "covers-com-draftkings",
-    "on3-pickswise-the-big-lead-sportsbookreview"
+    "sportsbookreview",
+    "fanduel",
+    "betmgm"
   ],
   "entries": [
     {
       "name": "Ohio State Buckeyes",
       "nameNormalized": "ohiostatebuckeyes",
-      "bestOdds": "+700",
-      "bestOddsSource": "covers-com-draftkings",
-      "consensusOdds": "+630",
+      "bestOdds": "+600",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+600",
       "oddsBySource": {
-        "google-search-multiple": "+600",
-        "covers-com-draftkings": "+700",
-        "on3-pickswise-the-big-lead-sportsbookreview": "+600"
+        "sportsbookreview": "+600"
       },
-      "impliedProbability": 0.125,
+      "impliedProbability": 0.1429,
       "market": "outrights"
     },
     {
       "name": "Notre Dame Fighting Irish",
       "nameNormalized": "notredamefightingirish",
-      "bestOdds": "+750",
-      "bestOddsSource": "covers-com-draftkings",
-      "consensusOdds": "+698",
+      "bestOdds": "+700",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+700",
       "oddsBySource": {
-        "google-search-multiple": "+650",
-        "covers-com-draftkings": "+750",
-        "on3-pickswise-the-big-lead-sportsbookreview": "+700"
+        "sportsbookreview": "+700"
       },
-      "impliedProbability": 0.1176,
-      "market": "outrights"
-    },
-    {
-      "name": "Texas Longhorns",
-      "nameNormalized": "texaslonghorns",
-      "bestOdds": "+750",
-      "bestOddsSource": "covers-com-draftkings",
-      "consensusOdds": "+716",
-      "oddsBySource": {
-        "google-search-multiple": "+700",
-        "covers-com-draftkings": "+750",
-        "on3-pickswise-the-big-lead-sportsbookreview": "+700"
-      },
-      "impliedProbability": 0.1176,
+      "impliedProbability": 0.125,
       "market": "outrights"
     },
     {
       "name": "Indiana Hoosiers",
       "nameNormalized": "indianahoosiers",
-      "bestOdds": "+800",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
-      "consensusOdds": "+747",
+      "bestOdds": "+700",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+700",
       "oddsBySource": {
-        "covers-com-draftkings": "+700",
-        "on3-pickswise-the-big-lead-sportsbookreview": "+800"
+        "sportsbookreview": "+700"
       },
-      "impliedProbability": 0.1111,
+      "impliedProbability": 0.125,
+      "market": "outrights"
+    },
+    {
+      "name": "Texas Longhorns",
+      "nameNormalized": "texaslonghorns",
+      "bestOdds": "+700",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+700",
+      "oddsBySource": {
+        "sportsbookreview": "+700"
+      },
+      "impliedProbability": 0.125,
       "market": "outrights"
     },
     {
       "name": "Oregon Ducks",
       "nameNormalized": "oregonducks",
-      "bestOdds": "+900",
-      "bestOddsSource": "covers-com-draftkings",
-      "consensusOdds": "+847",
+      "bestOdds": "+1000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1000",
       "oddsBySource": {
-        "covers-com-draftkings": "+900",
-        "on3-pickswise-the-big-lead-sportsbookreview": "+800"
+        "sportsbookreview": "+1000"
       },
-      "impliedProbability": 0.1,
+      "impliedProbability": 0.0909,
       "market": "outrights"
     },
     {
       "name": "Georgia Bulldogs",
       "nameNormalized": "georgiabulldogs",
       "bestOdds": "+1100",
-      "bestOddsSource": "covers-com-draftkings",
-      "consensusOdds": "+991",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1100",
       "oddsBySource": {
-        "covers-com-draftkings": "+1100",
-        "on3-pickswise-the-big-lead-sportsbookreview": "+900"
+        "sportsbookreview": "+1100"
       },
       "impliedProbability": 0.0833,
+      "market": "outrights"
+    },
+    {
+      "name": "LSU Tigers",
+      "nameNormalized": "lsutigers",
+      "bestOdds": "+1300",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1300",
+      "oddsBySource": {
+        "sportsbookreview": "+1300"
+      },
+      "impliedProbability": 0.0714,
+      "market": "outrights"
+    },
+    {
+      "name": "Texas Tech Red Raiders",
+      "nameNormalized": "texastechredraiders",
+      "bestOdds": "+1500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1500",
+      "oddsBySource": {
+        "sportsbookreview": "+1500"
+      },
+      "impliedProbability": 0.0625,
       "market": "outrights"
     },
     {
       "name": "Texas A&M Aggies",
       "nameNormalized": "texasamaggies",
       "bestOdds": "+1600",
-      "bestOddsSource": "covers-com-draftkings",
-      "consensusOdds": "+1548",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1600",
       "oddsBySource": {
-        "covers-com-draftkings": "+1600",
-        "on3-pickswise-the-big-lead-sportsbookreview": "+1500"
+        "sportsbookreview": "+1600"
       },
       "impliedProbability": 0.0588,
       "market": "outrights"
     },
     {
-      "name": "LSU Tigers",
-      "nameNormalized": "lsutigers",
-      "bestOdds": "+1500",
-      "bestOddsSource": "covers-com-draftkings",
-      "consensusOdds": "+1500",
+      "name": "Miami Hurricanes",
+      "nameNormalized": "miamihurricanes",
+      "bestOdds": "+1900",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+1900",
       "oddsBySource": {
-        "covers-com-draftkings": "+1500",
-        "on3-pickswise-the-big-lead-sportsbookreview": "+1500"
+        "sportsbookreview": "+1900"
       },
-      "impliedProbability": 0.0625,
+      "impliedProbability": 0.05,
       "market": "outrights"
     },
     {
       "name": "Alabama Crimson Tide",
       "nameNormalized": "alabamacrimsontide",
-      "bestOdds": "+1800",
-      "bestOddsSource": "covers-com-draftkings",
-      "consensusOdds": "+1637",
+      "bestOdds": "+2200",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+2200",
       "oddsBySource": {
-        "covers-com-draftkings": "+1800",
-        "on3-pickswise-the-big-lead-sportsbookreview": "+1500"
+        "sportsbookreview": "+2200"
       },
-      "impliedProbability": 0.0526,
-      "market": "outrights"
-    },
-    {
-      "name": "Texas Tech Red Raiders",
-      "nameNormalized": "texastechredraiders",
-      "bestOdds": "+1400",
-      "bestOddsSource": "covers-com-draftkings",
-      "consensusOdds": "+1400",
-      "oddsBySource": {
-        "covers-com-draftkings": "+1400"
-      },
-      "impliedProbability": 0.0667,
-      "market": "outrights"
-    },
-    {
-      "name": "Miami Hurricanes",
-      "nameNormalized": "miamihurricanes",
-      "bestOdds": "+2000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
-      "consensusOdds": "+2000",
-      "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+2000"
-      },
-      "impliedProbability": 0.0476,
+      "impliedProbability": 0.0435,
       "market": "outrights"
     },
     {
       "name": "Oklahoma Sooners",
       "nameNormalized": "oklahomasooners",
-      "bestOdds": "+3000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
-      "consensusOdds": "+3000",
+      "bestOdds": "+3300",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+3300",
       "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+3000"
+        "sportsbookreview": "+3300"
       },
-      "impliedProbability": 0.0323,
+      "impliedProbability": 0.0294,
       "market": "outrights"
     },
     {
       "name": "USC Trojans",
       "nameNormalized": "usctrojans",
+      "bestOdds": "+3300",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+3300",
+      "oddsBySource": {
+        "sportsbookreview": "+3300"
+      },
+      "impliedProbability": 0.0294,
+      "market": "outrights"
+    },
+    {
+      "name": "Ole Miss Rebels",
+      "nameNormalized": "olemissrebels",
       "bestOdds": "+3500",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+3500",
       "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+3500"
+        "sportsbookreview": "+3500"
       },
       "impliedProbability": 0.0278,
       "market": "outrights"
@@ -179,34 +179,22 @@
       "name": "Michigan Wolverines",
       "nameNormalized": "michiganwolverines",
       "bestOdds": "+4000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+4000",
       "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+4000"
+        "sportsbookreview": "+4000"
       },
       "impliedProbability": 0.0244,
       "market": "outrights"
     },
     {
-      "name": "Ole Miss Rebels",
-      "nameNormalized": "olemissrebels",
-      "bestOdds": "+4000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
-      "consensusOdds": "+4000",
-      "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+4000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Florida Gators",
-      "nameNormalized": "floridagators",
+      "name": "Tennessee Volunteers",
+      "nameNormalized": "tennesseevolunteers",
       "bestOdds": "+5000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+5000",
       "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+5000"
+        "sportsbookreview": "+5000"
       },
       "impliedProbability": 0.0196,
       "market": "outrights"
@@ -215,34 +203,22 @@
       "name": "Penn State Nittany Lions",
       "nameNormalized": "pennstatenittanylions",
       "bestOdds": "+5500",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+5500",
       "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+5500"
+        "sportsbookreview": "+5500"
       },
       "impliedProbability": 0.0179,
-      "market": "outrights"
-    },
-    {
-      "name": "Tennessee Volunteers",
-      "nameNormalized": "tennesseevolunteers",
-      "bestOdds": "+6000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
-      "consensusOdds": "+6000",
-      "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+6000"
-      },
-      "impliedProbability": 0.0164,
       "market": "outrights"
     },
     {
       "name": "Utah Utes",
       "nameNormalized": "utahutes",
       "bestOdds": "+6000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+6000",
       "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+6000"
+        "sportsbookreview": "+6000"
       },
       "impliedProbability": 0.0164,
       "market": "outrights"
@@ -251,10 +227,10 @@
       "name": "Auburn Tigers",
       "nameNormalized": "auburntigers",
       "bestOdds": "+6500",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+6500",
       "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+6500"
+        "sportsbookreview": "+6500"
       },
       "impliedProbability": 0.0152,
       "market": "outrights"
@@ -263,34 +239,46 @@
       "name": "Missouri Tigers",
       "nameNormalized": "missouritigers",
       "bestOdds": "+8000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+8000",
       "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+8000"
+        "sportsbookreview": "+8000"
       },
       "impliedProbability": 0.0123,
       "market": "outrights"
     },
     {
-      "name": "Florida State Seminoles",
-      "nameNormalized": "floridastateseminoles",
+      "name": "Florida Gators",
+      "nameNormalized": "floridagators",
+      "bestOdds": "+8000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "sportsbookreview": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "BYU Cougars",
+      "nameNormalized": "byucougars",
       "bestOdds": "+10000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+10000",
       "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+10000"
+        "sportsbookreview": "+10000"
       },
       "impliedProbability": 0.0099,
       "market": "outrights"
     },
     {
-      "name": "Clemson Tigers",
-      "nameNormalized": "clemsontigers",
+      "name": "SMU Mustangs",
+      "nameNormalized": "smumustangs",
       "bestOdds": "+10000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+10000",
       "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+10000"
+        "sportsbookreview": "+10000"
       },
       "impliedProbability": 0.0099,
       "market": "outrights"
@@ -299,10 +287,46 @@
       "name": "Iowa Hawkeyes",
       "nameNormalized": "iowahawkeyes",
       "bestOdds": "+12500",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+12500",
       "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+12500"
+        "sportsbookreview": "+12500"
+      },
+      "impliedProbability": 0.0079,
+      "market": "outrights"
+    },
+    {
+      "name": "Virginia Cavaliers",
+      "nameNormalized": "virginiacavaliers",
+      "bestOdds": "+12500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+12500",
+      "oddsBySource": {
+        "sportsbookreview": "+12500"
+      },
+      "impliedProbability": 0.0079,
+      "market": "outrights"
+    },
+    {
+      "name": "Clemson Tigers",
+      "nameNormalized": "clemsontigers",
+      "bestOdds": "+12500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+12500",
+      "oddsBySource": {
+        "sportsbookreview": "+12500"
+      },
+      "impliedProbability": 0.0079,
+      "market": "outrights"
+    },
+    {
+      "name": "Vanderbilt Commodores",
+      "nameNormalized": "vanderbiltcommodores",
+      "bestOdds": "+12500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+12500",
+      "oddsBySource": {
+        "sportsbookreview": "+12500"
       },
       "impliedProbability": 0.0079,
       "market": "outrights"
@@ -311,84 +335,120 @@
       "name": "Washington Huskies",
       "nameNormalized": "washingtonhuskies",
       "bestOdds": "+12500",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
+      "bestOddsSource": "sportsbookreview",
       "consensusOdds": "+12500",
       "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+12500"
+        "sportsbookreview": "+12500"
       },
       "impliedProbability": 0.0079,
       "market": "outrights"
     },
     {
+      "name": "Arizona State Sun Devils",
+      "nameNormalized": "arizonastatesundevils",
+      "bestOdds": "+12000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+12000",
+      "oddsBySource": {
+        "sportsbookreview": "+12000"
+      },
+      "impliedProbability": 0.0083,
+      "market": "outrights"
+    },
+    {
+      "name": "Louisville Cardinals",
+      "nameNormalized": "louisvillecardinals",
+      "bestOdds": "+17500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+17500",
+      "oddsBySource": {
+        "sportsbookreview": "+17500"
+      },
+      "impliedProbability": 0.0057,
+      "market": "outrights"
+    },
+    {
+      "name": "Florida State Seminoles",
+      "nameNormalized": "floridastateseminoles",
+      "bestOdds": "+17500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+17500",
+      "oddsBySource": {
+        "sportsbookreview": "+17500"
+      },
+      "impliedProbability": 0.0057,
+      "market": "outrights"
+    },
+    {
+      "name": "Virginia Tech Hokies",
+      "nameNormalized": "virginiatechhokies",
+      "bestOdds": "+15000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "sportsbookreview": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Arizona Wildcats",
+      "nameNormalized": "arizonawildcats",
+      "bestOdds": "+22500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+22500",
+      "oddsBySource": {
+        "sportsbookreview": "+22500"
+      },
+      "impliedProbability": 0.0044,
+      "market": "outrights"
+    },
+    {
       "name": "Kansas State Wildcats",
       "nameNormalized": "kansasstatewildcats",
-      "bestOdds": "+20000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
-      "consensusOdds": "+20000",
+      "bestOdds": "+22500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+22500",
       "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+20000"
+        "sportsbookreview": "+22500"
       },
-      "impliedProbability": 0.005,
+      "impliedProbability": 0.0044,
       "market": "outrights"
     },
     {
-      "name": "TCU Horned Frogs",
-      "nameNormalized": "tcuhornedfrogs",
-      "bestOdds": "+30000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
-      "consensusOdds": "+30000",
+      "name": "South Carolina Gamecocks",
+      "nameNormalized": "southcarolinagamecocks",
+      "bestOdds": "+22500",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+22500",
       "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+30000"
+        "sportsbookreview": "+22500"
       },
-      "impliedProbability": 0.0033,
-      "market": "outrights"
-    },
-    {
-      "name": "Wisconsin Badgers",
-      "nameNormalized": "wisconsinbadgers",
-      "bestOdds": "+30000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
-      "consensusOdds": "+30000",
-      "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+30000"
-      },
-      "impliedProbability": 0.0033,
-      "market": "outrights"
-    },
-    {
-      "name": "Oklahoma State Cowboys",
-      "nameNormalized": "oklahomastatecowboys",
-      "bestOdds": "+50000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
-      "consensusOdds": "+50000",
-      "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+50000"
-      },
-      "impliedProbability": 0.002,
-      "market": "outrights"
-    },
-    {
-      "name": "North Carolina Tar Heels",
-      "nameNormalized": "northcarolinatarheels",
-      "bestOdds": "+50000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
-      "consensusOdds": "+50000",
-      "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+50000"
-      },
-      "impliedProbability": 0.002,
+      "impliedProbability": 0.0044,
       "market": "outrights"
     },
     {
       "name": "Illinois Fighting Illini",
       "nameNormalized": "illinoisfightingillini",
-      "bestOdds": "+50000",
-      "bestOddsSource": "on3-pickswise-the-big-lead-sportsbookreview",
-      "consensusOdds": "+50000",
+      "bestOdds": "+20000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+20000",
       "oddsBySource": {
-        "on3-pickswise-the-big-lead-sportsbookreview": "+50000"
+        "sportsbookreview": "+20000"
       },
-      "impliedProbability": 0.002,
+      "impliedProbability": 0.005,
+      "market": "outrights"
+    },
+    {
+      "name": "Houston Rockets",
+      "nameNormalized": "houstonrockets",
+      "bestOdds": "+20000",
+      "bestOddsSource": "sportsbookreview",
+      "consensusOdds": "+20000",
+      "oddsBySource": {
+        "sportsbookreview": "+20000"
+      },
+      "impliedProbability": 0.005,
       "market": "outrights"
     }
   ]

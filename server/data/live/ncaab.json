@@ -1,23 +1,23 @@
 {
   "sport": "ncaab",
-  "lastUpdated": "2026-03-03T10:00:00.000Z",
+  "lastUpdated": "2026-03-03T11:00:00.000Z",
   "sources": [
-    "vegasinsider",
+    "sportsbookreview",
     "foxsports",
-    "covers"
+    "fanduel",
+    "betmgm"
   ],
   "entries": [
     {
       "name": "Michigan Wolverines",
       "nameNormalized": "michiganwolverines",
-      "bestOdds": "+325",
+      "bestOdds": "+330",
       "bestOddsSource": "consensus",
-      "consensusOdds": "+325",
+      "consensusOdds": "+330",
       "oddsBySource": {
-        "vegasinsider": "+325",
-        "foxsports": "+330"
+        "sportsbookreview": "+330"
       },
-      "impliedProbability": 0.2353,
+      "impliedProbability": 0.2326,
       "market": "outrights"
     },
     {
@@ -25,25 +25,23 @@
       "nameNormalized": "dukebluedevils",
       "bestOdds": "+350",
       "bestOddsSource": "consensus",
-      "consensusOdds": "+375",
+      "consensusOdds": "+350",
       "oddsBySource": {
-        "vegasinsider": "+350",
-        "foxsports": "+400"
+        "sportsbookreview": "+350"
       },
-      "impliedProbability": 0.2105,
+      "impliedProbability": 0.2222,
       "market": "outrights"
     },
     {
       "name": "Arizona Wildcats",
       "nameNormalized": "arizonawildcats",
-      "bestOdds": "+450",
+      "bestOdds": "+475",
       "bestOddsSource": "consensus",
-      "consensusOdds": "+460",
+      "consensusOdds": "+475",
       "oddsBySource": {
-        "vegasinsider": "+450",
-        "foxsports": "+475"
+        "sportsbookreview": "+475"
       },
-      "impliedProbability": 0.1786,
+      "impliedProbability": 0.1739,
       "market": "outrights"
     },
     {
@@ -51,25 +49,23 @@
       "nameNormalized": "floridagators",
       "bestOdds": "+800",
       "bestOddsSource": "consensus",
-      "consensusOdds": "+1000",
+      "consensusOdds": "+800",
       "oddsBySource": {
-        "vegasinsider": "+800",
-        "foxsports": "+1200"
+        "sportsbookreview": "+800"
       },
-      "impliedProbability": 0.0909,
+      "impliedProbability": 0.1111,
       "market": "outrights"
     },
     {
       "name": "Houston Cougars",
       "nameNormalized": "houstoncougars",
-      "bestOdds": "+950",
+      "bestOdds": "+1000",
       "bestOddsSource": "consensus",
-      "consensusOdds": "+1025",
+      "consensusOdds": "+1000",
       "oddsBySource": {
-        "vegasinsider": "+950",
-        "foxsports": "+1100"
+        "sportsbookreview": "+1000"
       },
-      "impliedProbability": 0.0889,
+      "impliedProbability": 0.0909,
       "market": "outrights"
     },
     {
@@ -79,10 +75,33 @@
       "bestOddsSource": "consensus",
       "consensusOdds": "+1300",
       "oddsBySource": {
-        "vegasinsider": "+1300",
-        "foxsports": "+1300"
+        "sportsbookreview": "+1300"
       },
       "impliedProbability": 0.0714,
+      "market": "outrights"
+    },
+    {
+      "name": "Illinois Fighting Illini",
+      "nameNormalized": "illinoisfightingillini",
+      "bestOdds": "+1700",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1700",
+      "oddsBySource": {
+        "sportsbookreview": "+1700"
+      },
+      "impliedProbability": 0.0556,
+      "market": "outrights"
+    },
+    {
+      "name": "Iowa State Cyclones",
+      "nameNormalized": "iowastatecyclones",
+      "bestOdds": "+1900",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+1900",
+      "oddsBySource": {
+        "sportsbookreview": "+1900"
+      },
+      "impliedProbability": 0.05,
       "market": "outrights"
     },
     {
@@ -92,105 +111,381 @@
       "bestOddsSource": "consensus",
       "consensusOdds": "+2000",
       "oddsBySource": {
-        "vegasinsider": "+2000"
+        "sportsbookreview": "+2000"
       },
       "impliedProbability": 0.0476,
-      "market": "outrights"
-    },
-    {
-      "name": "Alabama Crimson Tide",
-      "nameNormalized": "alabamacrimsontide",
-      "bestOdds": "+2000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2000",
-      "oddsBySource": {
-        "vegasinsider": "+2000"
-      },
-      "impliedProbability": 0.0476,
-      "market": "outrights"
-    },
-    {
-      "name": "Arkansas Razorbacks",
-      "nameNormalized": "arkansasrazorbacks",
-      "bestOdds": "+2000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2000",
-      "oddsBySource": {
-        "vegasinsider": "+2000"
-      },
-      "impliedProbability": 0.0476,
-      "market": "outrights"
-    },
-    {
-      "name": "Louisville Cardinals",
-      "nameNormalized": "louisvillecardinals",
-      "bestOdds": "+2000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2000",
-      "oddsBySource": {
-        "vegasinsider": "+2000"
-      },
-      "impliedProbability": 0.0476,
-      "market": "outrights"
-    },
-    {
-      "name": "Tennessee Volunteers",
-      "nameNormalized": "tennesseevolunteers",
-      "bestOdds": "+2500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2500",
-      "oddsBySource": {
-        "vegasinsider": "+2500"
-      },
-      "impliedProbability": 0.0385,
-      "market": "outrights"
-    },
-    {
-      "name": "St. John's Red Storm",
-      "nameNormalized": "stjohnsredstorm",
-      "bestOdds": "+2500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2500",
-      "oddsBySource": {
-        "vegasinsider": "+2500"
-      },
-      "impliedProbability": 0.0385,
-      "market": "outrights"
-    },
-    {
-      "name": "Iowa State Cyclones",
-      "nameNormalized": "iowastatecyclones",
-      "bestOdds": "+3000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+3000",
-      "oddsBySource": {
-        "vegasinsider": "+3000"
-      },
-      "impliedProbability": 0.0323,
       "market": "outrights"
     },
     {
       "name": "Purdue Boilermakers",
       "nameNormalized": "purdueboilermakers",
-      "bestOdds": "+4000",
+      "bestOdds": "+2500",
       "bestOddsSource": "consensus",
-      "consensusOdds": "+4000",
+      "consensusOdds": "+2500",
       "oddsBySource": {
-        "vegasinsider": "+4000"
+        "sportsbookreview": "+2500"
       },
-      "impliedProbability": 0.0244,
+      "impliedProbability": 0.0385,
+      "market": "outrights"
+    },
+    {
+      "name": "Tennessee Volunteers",
+      "nameNormalized": "tennesseevolunteers",
+      "bestOdds": "+3000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+3000",
+      "oddsBySource": {
+        "sportsbookreview": "+3000"
+      },
+      "impliedProbability": 0.0323,
+      "market": "outrights"
+    },
+    {
+      "name": "UCLA Bruins",
+      "nameNormalized": "uclabruins",
+      "bestOdds": "+3000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+3000",
+      "oddsBySource": {
+        "sportsbookreview": "+3000"
+      },
+      "impliedProbability": 0.0323,
       "market": "outrights"
     },
     {
       "name": "Michigan State Spartans",
       "nameNormalized": "michiganstatespartans",
+      "bestOdds": "+3200",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+3200",
+      "oddsBySource": {
+        "sportsbookreview": "+3200"
+      },
+      "impliedProbability": 0.0303,
+      "market": "outrights"
+    },
+    {
+      "name": "Texas Tech Red Raiders",
+      "nameNormalized": "texastechredraiders",
+      "bestOdds": "+3300",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+3300",
+      "oddsBySource": {
+        "sportsbookreview": "+3300"
+      },
+      "impliedProbability": 0.0294,
+      "market": "outrights"
+    },
+    {
+      "name": "Arkansas Razorbacks",
+      "nameNormalized": "arkansasrazorbacks",
       "bestOdds": "+4000",
       "bestOddsSource": "consensus",
       "consensusOdds": "+4000",
       "oddsBySource": {
-        "vegasinsider": "+4000"
+        "sportsbookreview": "+4000"
       },
       "impliedProbability": 0.0244,
+      "market": "outrights"
+    },
+    {
+      "name": "Alabama Crimson Tide",
+      "nameNormalized": "alabamacrimsontide",
+      "bestOdds": "+4500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+4500",
+      "oddsBySource": {
+        "sportsbookreview": "+4500"
+      },
+      "impliedProbability": 0.0217,
+      "market": "outrights"
+    },
+    {
+      "name": "St. John's Red Storm",
+      "nameNormalized": "stjohnsredstorm",
+      "bestOdds": "+5000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "sportsbookreview": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Creighton Bluejays",
+      "nameNormalized": "creightonbluejays",
+      "bestOdds": "+5000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "sportsbookreview": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Indiana Hoosiers",
+      "nameNormalized": "indianahoosiers",
+      "bestOdds": "+5000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "sportsbookreview": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "BYU Cougars",
+      "nameNormalized": "byucougars",
+      "bestOdds": "+5000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "sportsbookreview": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Gonzaga Bulldogs",
+      "nameNormalized": "gonzagabulldogs",
+      "bestOdds": "+5500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+5500",
+      "oddsBySource": {
+        "sportsbookreview": "+5500"
+      },
+      "impliedProbability": 0.0179,
+      "market": "outrights"
+    },
+    {
+      "name": "Louisville Cardinals",
+      "nameNormalized": "louisvillecardinals",
+      "bestOdds": "+6000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+6000",
+      "oddsBySource": {
+        "sportsbookreview": "+6000"
+      },
+      "impliedProbability": 0.0164,
+      "market": "outrights"
+    },
+    {
+      "name": "Virginia Cavaliers",
+      "nameNormalized": "virginiacavaliers",
+      "bestOdds": "+6600",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+6600",
+      "oddsBySource": {
+        "sportsbookreview": "+6600"
+      },
+      "impliedProbability": 0.0149,
+      "market": "outrights"
+    },
+    {
+      "name": "Kentucky Wildcats",
+      "nameNormalized": "kentuckywildcats",
+      "bestOdds": "+7500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+7500",
+      "oddsBySource": {
+        "sportsbookreview": "+7500"
+      },
+      "impliedProbability": 0.0132,
+      "market": "outrights"
+    },
+    {
+      "name": "North Carolina Tar Heels",
+      "nameNormalized": "northcarolinatarheels",
+      "bestOdds": "+8000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+8000",
+      "oddsBySource": {
+        "sportsbookreview": "+8000"
+      },
+      "impliedProbability": 0.0123,
+      "market": "outrights"
+    },
+    {
+      "name": "Auburn Tigers",
+      "nameNormalized": "auburntigers",
+      "bestOdds": "+10000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Iowa Hawkeyes",
+      "nameNormalized": "iowahawkeyes",
+      "bestOdds": "+10000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Wisconsin Badgers",
+      "nameNormalized": "wisconsinbadgers",
+      "bestOdds": "+10000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Saint Louis Billikens",
+      "nameNormalized": "saintlouisbillikens",
+      "bestOdds": "+10000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Miami Hurricanes",
+      "nameNormalized": "miamihurricanes",
+      "bestOdds": "+10000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Missouri Tigers",
+      "nameNormalized": "missouritigers",
+      "bestOdds": "+10000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "NC State Wolfpack",
+      "nameNormalized": "ncstatewolfpack",
+      "bestOdds": "+10000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Rutgers Scarlet Knights",
+      "nameNormalized": "rutgersscarletknights",
+      "bestOdds": "+10000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+10000",
+      "oddsBySource": {
+        "sportsbookreview": "+10000"
+      },
+      "impliedProbability": 0.0099,
+      "market": "outrights"
+    },
+    {
+      "name": "Vanderbilt Commodores",
+      "nameNormalized": "vanderbiltcommodores",
+      "bestOdds": "+15000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+15000",
+      "oddsBySource": {
+        "sportsbookreview": "+15000"
+      },
+      "impliedProbability": 0.0066,
+      "market": "outrights"
+    },
+    {
+      "name": "Clemson Tigers",
+      "nameNormalized": "clemsontigers",
+      "bestOdds": "+17500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+17500",
+      "oddsBySource": {
+        "sportsbookreview": "+17500"
+      },
+      "impliedProbability": 0.0057,
+      "market": "outrights"
+    },
+    {
+      "name": "Nebraska Cornhuskers",
+      "nameNormalized": "nebraskacornhuskers",
+      "bestOdds": "+20000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+20000",
+      "oddsBySource": {
+        "sportsbookreview": "+20000"
+      },
+      "impliedProbability": 0.005,
+      "market": "outrights"
+    },
+    {
+      "name": "Memphis Tigers",
+      "nameNormalized": "memphistigers",
+      "bestOdds": "+20000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+20000",
+      "oddsBySource": {
+        "sportsbookreview": "+20000"
+      },
+      "impliedProbability": 0.005,
+      "market": "outrights"
+    },
+    {
+      "name": "Texas Longhorns",
+      "nameNormalized": "texaslonghorns",
+      "bestOdds": "+5000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "sportsbookreview": "+5000"
+      },
+      "impliedProbability": 0.0196,
+      "market": "outrights"
+    },
+    {
+      "name": "Villanova Wildcats",
+      "nameNormalized": "villanovawildcats",
+      "bestOdds": "+17500",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+17500",
+      "oddsBySource": {
+        "sportsbookreview": "+17500"
+      },
+      "impliedProbability": 0.0057,
+      "market": "outrights"
+    },
+    {
+      "name": "Marquette Golden Eagles",
+      "nameNormalized": "marquettegoldeneagles",
+      "bestOdds": "+5000",
+      "bestOddsSource": "consensus",
+      "consensusOdds": "+5000",
+      "oddsBySource": {
+        "sportsbookreview": "+5000"
+      },
+      "impliedProbability": 0.0196,
       "market": "outrights"
     }
   ]
