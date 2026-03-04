@@ -1,335 +1,51 @@
 {
   "sport": "tennis_w",
-  "lastUpdated": "2026-03-03T11:00:00.000Z",
+  "lastUpdated": "2026-03-03T12:00:00.000Z",
   "sources": [
     "sportsbookreview",
-    "betmgm",
-    "fanduel"
+    "everygame",
+    "luckyrebel"
   ],
   "entries": [
-    {
-      "name": "Aryna Sabalenka",
-      "nameNormalized": "arynasabalenka",
-      "bestOdds": "+275",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+275",
-      "oddsBySource": {
-        "sportsbookreview": "+275"
-      },
-      "impliedProbability": 0.2667,
-      "market": "outrights"
-    },
-    {
-      "name": "Iga Swiatek",
-      "nameNormalized": "igaswiatek",
-      "bestOdds": "+600",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+600",
-      "oddsBySource": {
-        "sportsbookreview": "+600"
-      },
-      "impliedProbability": 0.1429,
-      "market": "outrights"
-    },
-    {
-      "name": "Elena Rybakina",
-      "nameNormalized": "elenarybakina",
-      "bestOdds": "+650",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+650",
-      "oddsBySource": {
-        "sportsbookreview": "+650"
-      },
-      "impliedProbability": 0.1333,
-      "market": "outrights"
-    },
-    {
-      "name": "Coco Gauff",
-      "nameNormalized": "cocogauff",
-      "bestOdds": "+1200",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1200",
-      "oddsBySource": {
-        "sportsbookreview": "+1200"
-      },
-      "impliedProbability": 0.0769,
-      "market": "outrights"
-    },
-    {
-      "name": "Jessica Pegula",
-      "nameNormalized": "jessicapegula",
-      "bestOdds": "+1400",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1400",
-      "oddsBySource": {
-        "sportsbookreview": "+1400"
-      },
-      "impliedProbability": 0.0667,
-      "market": "outrights"
-    },
-    {
-      "name": "Amanda Anisimova",
-      "nameNormalized": "amandaanisimova",
-      "bestOdds": "+1600",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1600",
-      "oddsBySource": {
-        "sportsbookreview": "+1600"
-      },
-      "impliedProbability": 0.0588,
-      "market": "outrights"
-    },
-    {
-      "name": "Karolina Muchova",
-      "nameNormalized": "karolinamuchova",
-      "bestOdds": "+1600",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1600",
-      "oddsBySource": {
-        "sportsbookreview": "+1600"
-      },
-      "impliedProbability": 0.0588,
-      "market": "outrights"
-    },
-    {
-      "name": "Mirra Andreeva",
-      "nameNormalized": "mirraandreeva",
-      "bestOdds": "+1800",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+1800",
-      "oddsBySource": {
-        "sportsbookreview": "+1800"
-      },
-      "impliedProbability": 0.0526,
-      "market": "outrights"
-    },
-    {
-      "name": "Elina Svitolina",
-      "nameNormalized": "elinasvitolina",
-      "bestOdds": "+2500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2500",
-      "oddsBySource": {
-        "sportsbookreview": "+2500"
-      },
-      "impliedProbability": 0.0385,
-      "market": "outrights"
-    },
-    {
-      "name": "Victoria Mboko",
-      "nameNormalized": "victoriamboko",
-      "bestOdds": "+2500",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+2500",
-      "oddsBySource": {
-        "sportsbookreview": "+2500"
-      },
-      "impliedProbability": 0.0385,
-      "market": "outrights"
-    },
-    {
-      "name": "Jasmine Paolini",
-      "nameNormalized": "jasminepaolini",
-      "bestOdds": "+4000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+4000",
-      "oddsBySource": {
-        "sportsbookreview": "+4000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Zheng Qinwen",
-      "nameNormalized": "zhengqinwen",
-      "bestOdds": "+4000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+4000",
-      "oddsBySource": {
-        "sportsbookreview": "+4000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Beatriz Haddad Maia",
-      "nameNormalized": "beatrizhaddadmaia",
-      "bestOdds": "+5000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+5000",
-      "oddsBySource": {
-        "sportsbookreview": "+5000"
-      },
-      "impliedProbability": 0.0196,
-      "market": "outrights"
-    },
-    {
-      "name": "Diana Shnaider",
-      "nameNormalized": "dianashnaider",
-      "bestOdds": "+5000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+5000",
-      "oddsBySource": {
-        "sportsbookreview": "+5000"
-      },
-      "impliedProbability": 0.0196,
-      "market": "outrights"
-    },
-    {
-      "name": "Marta Kostyuk",
-      "nameNormalized": "martakostyuk",
-      "bestOdds": "+6600",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+6600",
-      "oddsBySource": {
-        "sportsbookreview": "+6600"
-      },
-      "impliedProbability": 0.0149,
-      "market": "outrights"
-    },
-    {
-      "name": "Linda Noskova",
-      "nameNormalized": "lindanoskova",
-      "bestOdds": "+6600",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+6600",
-      "oddsBySource": {
-        "sportsbookreview": "+6600"
-      },
-      "impliedProbability": 0.0149,
-      "market": "outrights"
-    },
-    {
-      "name": "Emma Raducanu",
-      "nameNormalized": "emmaraducanu",
-      "bestOdds": "+8000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+8000",
-      "oddsBySource": {
-        "sportsbookreview": "+8000"
-      },
-      "impliedProbability": 0.0123,
-      "market": "outrights"
-    },
-    {
-      "name": "Naomi Osaka",
-      "nameNormalized": "naomiosaka",
-      "bestOdds": "+10000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "sportsbookreview": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "Victoria Azarenka",
-      "nameNormalized": "victoriaazarenka",
-      "bestOdds": "+10000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "sportsbookreview": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "Paula Badosa",
-      "nameNormalized": "paulabadosa",
-      "bestOdds": "+10000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "sportsbookreview": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "Sloane Stephens",
-      "nameNormalized": "sloanestephens",
-      "bestOdds": "+15000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+15000",
-      "oddsBySource": {
-        "sportsbookreview": "+15000"
-      },
-      "impliedProbability": 0.0066,
-      "market": "outrights"
-    },
-    {
-      "name": "Maria Sakkari",
-      "nameNormalized": "mariasakkari",
-      "bestOdds": "+15000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+15000",
-      "oddsBySource": {
-        "sportsbookreview": "+15000"
-      },
-      "impliedProbability": 0.0066,
-      "market": "outrights"
-    },
-    {
-      "name": "Ons Jabeur",
-      "nameNormalized": "onsjabeur",
-      "bestOdds": "+15000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+15000",
-      "oddsBySource": {
-        "sportsbookreview": "+15000"
-      },
-      "impliedProbability": 0.0066,
-      "market": "outrights"
-    },
-    {
-      "name": "Danielle Collins",
-      "nameNormalized": "daniellecollins",
-      "bestOdds": "+20000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "sportsbookreview": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Magda Linette",
-      "nameNormalized": "magdalinette",
-      "bestOdds": "+25000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+25000",
-      "oddsBySource": {
-        "sportsbookreview": "+25000"
-      },
-      "impliedProbability": 0.004,
-      "market": "outrights"
-    },
-    {
-      "name": "Anna Kalinskaya",
-      "nameNormalized": "annakalinskaya",
-      "bestOdds": "+25000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+25000",
-      "oddsBySource": {
-        "sportsbookreview": "+25000"
-      },
-      "impliedProbability": 0.004,
-      "market": "outrights"
-    },
-    {
-      "name": "Leylah Fernandez",
-      "nameNormalized": "leylahfernandez",
-      "bestOdds": "+25000",
-      "bestOddsSource": "consensus",
-      "consensusOdds": "+25000",
-      "oddsBySource": {
-        "sportsbookreview": "+25000"
-      },
-      "impliedProbability": 0.004,
-      "market": "outrights"
-    }
+    { "name": "Aryna Sabalenka", "nameNormalized": "arynasabalenka", "bestOdds": "+275", "consensusOdds": "+275", "oddsBySource": { "sportsbookreview": "+275" }, "impliedProbability": 0.2667 },
+    { "name": "Elena Rybakina", "nameNormalized": "elenarybakina", "bestOdds": "+550", "consensusOdds": "+550", "oddsBySource": { "sportsbookreview": "+550" }, "impliedProbability": 0.1538 },
+    { "name": "Iga Swiatek", "nameNormalized": "igaswiatek", "bestOdds": "+700", "consensusOdds": "+700", "oddsBySource": { "sportsbookreview": "+700" }, "impliedProbability": 0.125 },
+    { "name": "Coco Gauff", "nameNormalized": "cocogauff", "bestOdds": "+1200", "consensusOdds": "+1200", "oddsBySource": { "sportsbookreview": "+1200" }, "impliedProbability": 0.0769 },
+    { "name": "Jessica Pegula", "nameNormalized": "jessicapegula", "bestOdds": "+1200", "consensusOdds": "+1200", "oddsBySource": { "sportsbookreview": "+1200" }, "impliedProbability": 0.0769 },
+    { "name": "Amanda Anisimova", "nameNormalized": "amandaanisimova", "bestOdds": "+1600", "consensusOdds": "+1600", "oddsBySource": { "sportsbookreview": "+1600" }, "impliedProbability": 0.0588 },
+    { "name": "Karolina Muchova", "nameNormalized": "karolinamuchova", "bestOdds": "+1600", "consensusOdds": "+1600", "oddsBySource": { "sportsbookreview": "+1600" }, "impliedProbability": 0.0588 },
+    { "name": "Mirra Andreeva", "nameNormalized": "mirraandreeva", "bestOdds": "+1600", "consensusOdds": "+1600", "oddsBySource": { "sportsbookreview": "+1600" }, "impliedProbability": 0.0588 },
+    { "name": "Elina Svitolina", "nameNormalized": "elinasvitolina", "bestOdds": "+2500", "consensusOdds": "+2500", "oddsBySource": { "sportsbookreview": "+2500" }, "impliedProbability": 0.0385 },
+    { "name": "Victoria Mboko", "nameNormalized": "victoriamboko", "bestOdds": "+2500", "consensusOdds": "+2500", "oddsBySource": { "sportsbookreview": "+2500" }, "impliedProbability": 0.0385 },
+    { "name": "Jasmine Paolini", "nameNormalized": "jasminepaolini", "bestOdds": "+4000", "consensusOdds": "+4000", "oddsBySource": { "sportsbookreview": "+4000" }, "impliedProbability": 0.0244 },
+    { "name": "Zheng Qinwen", "nameNormalized": "zhengqinwen", "bestOdds": "+4000", "consensusOdds": "+4000", "oddsBySource": { "sportsbookreview": "+4000" }, "impliedProbability": 0.0244 },
+    { "name": "Beatriz Haddad Maia", "nameNormalized": "beatrizhaddadmaia", "bestOdds": "+5000", "consensusOdds": "+5000", "oddsBySource": { "sportsbookreview": "+5000" }, "impliedProbability": 0.0196 },
+    { "name": "Diana Shnaider", "nameNormalized": "dianashnaider", "bestOdds": "+5000", "consensusOdds": "+5000", "oddsBySource": { "sportsbookreview": "+5000" }, "impliedProbability": 0.0196 },
+    { "name": "Marta Kostyuk", "nameNormalized": "martakostyuk", "bestOdds": "+6600", "consensusOdds": "+6600", "oddsBySource": { "sportsbookreview": "+6600" }, "impliedProbability": 0.0149 },
+    { "name": "Linda Noskova", "nameNormalized": "lindanoskova", "bestOdds": "+6600", "consensusOdds": "+6600", "oddsBySource": { "sportsbookreview": "+6600" }, "impliedProbability": 0.0149 },
+    { "name": "Emma Raducanu", "nameNormalized": "emmaraducanu", "bestOdds": "+8000", "consensusOdds": "+8000", "oddsBySource": { "sportsbookreview": "+8000" }, "impliedProbability": 0.0123 },
+    { "name": "Naomi Osaka", "nameNormalized": "naomiosaka", "bestOdds": "+10000", "consensusOdds": "+10000", "oddsBySource": { "sportsbookreview": "+10000" }, "impliedProbability": 0.0099 },
+    { "name": "Victoria Azarenka", "nameNormalized": "victoriaazarenka", "bestOdds": "+10000", "consensusOdds": "+10000", "oddsBySource": { "sportsbookreview": "+10000" }, "impliedProbability": 0.0099 },
+    { "name": "Paula Badosa", "nameNormalized": "paulabadosa", "bestOdds": "+10000", "consensusOdds": "+10000", "oddsBySource": { "sportsbookreview": "+10000" }, "impliedProbability": 0.0099 },
+    { "name": "Sloane Stephens", "nameNormalized": "sloanestephens", "bestOdds": "+15000", "consensusOdds": "+15000", "oddsBySource": { "sportsbookreview": "+15000" }, "impliedProbability": 0.0066 },
+    { "name": "Maria Sakkari", "nameNormalized": "mariasakkari", "bestOdds": "+15000", "consensusOdds": "+15000", "oddsBySource": { "sportsbookreview": "+15000" }, "impliedProbability": 0.0066 },
+    { "name": "Ons Jabeur", "nameNormalized": "onsjabeur", "bestOdds": "+15000", "consensusOdds": "+15000", "oddsBySource": { "sportsbookreview": "+15000" }, "impliedProbability": 0.0066 },
+    { "name": "Danielle Collins", "nameNormalized": "daniellecollins", "bestOdds": "+20000", "consensusOdds": "+20000", "oddsBySource": { "sportsbookreview": "+20000" }, "impliedProbability": 0.005 },
+    { "name": "Magda Linette", "nameNormalized": "magdalinette", "bestOdds": "+25000", "consensusOdds": "+25000", "oddsBySource": { "sportsbookreview": "+25000" }, "impliedProbability": 0.004 },
+    { "name": "Anna Kalinskaya", "nameNormalized": "annakalinskaya", "bestOdds": "+25000", "consensusOdds": "+25000", "oddsBySource": { "sportsbookreview": "+25000" }, "impliedProbability": 0.004 },
+    { "name": "Leylah Fernandez", "nameNormalized": "leylahfernandez", "bestOdds": "+25000", "consensusOdds": "+25000", "oddsBySource": { "sportsbookreview": "+25000" }, "impliedProbability": 0.004 },
+    { "name": "Ekaterina Alexandrova", "nameNormalized": "ekaterinaalexandrova", "bestOdds": "+10000", "consensusOdds": "+10000", "oddsBySource": { "sportsbookreview": "+10000" }, "impliedProbability": 0.0099 },
+    { "name": "Belinda Bencic", "nameNormalized": "belindabencic", "bestOdds": "+10000", "consensusOdds": "+10000", "oddsBySource": { "sportsbookreview": "+10000" }, "impliedProbability": 0.0099 },
+    { "name": "Clara Tauson", "nameNormalized": "claratauson", "bestOdds": "+12500", "consensusOdds": "+12500", "oddsBySource": { "sportsbookreview": "+12500" }, "impliedProbability": 0.0079 },
+    { "name": "Iva Jovic", "nameNormalized": "ivajovic", "bestOdds": "+12500", "consensusOdds": "+12500", "oddsBySource": { "sportsbookreview": "+12500" }, "impliedProbability": 0.0079 },
+    { "name": "Liudmila Samsonova", "nameNormalized": "liudmilasamsonova", "bestOdds": "+12500", "consensusOdds": "+12500", "oddsBySource": { "sportsbookreview": "+12500" }, "impliedProbability": 0.0079 },
+    { "name": "Elise Mertens", "nameNormalized": "elisemertens", "bestOdds": "+15000", "consensusOdds": "+15000", "oddsBySource": { "sportsbookreview": "+15000" }, "impliedProbability": 0.0066 },
+    { "name": "Jelena Ostapenko", "nameNormalized": "jelenaostapenko", "bestOdds": "+15000", "consensusOdds": "+15000", "oddsBySource": { "sportsbookreview": "+15000" }, "impliedProbability": 0.0066 },
+    { "name": "Maya Joint", "nameNormalized": "mayajoint", "bestOdds": "+17500", "consensusOdds": "+17500", "oddsBySource": { "sportsbookreview": "+17500" }, "impliedProbability": 0.0057 },
+    { "name": "Wang Xinyu", "nameNormalized": "wangxinyu", "bestOdds": "+17500", "consensusOdds": "+17500", "oddsBySource": { "sportsbookreview": "+17500" }, "impliedProbability": 0.0057 },
+    { "name": "Alexandra Eala", "nameNormalized": "alexandraeala", "bestOdds": "+20000", "consensusOdds": "+20000", "oddsBySource": { "sportsbookreview": "+20000" }, "impliedProbability": 0.005 },
+    { "name": "Jaqueline Cristian", "nameNormalized": "jaquelinecristian", "bestOdds": "+20000", "consensusOdds": "+20000", "oddsBySource": { "sportsbookreview": "+20000" }, "impliedProbability": 0.005 },
+    { "name": "Marie Bouzkova", "nameNormalized": "mariebouzkova", "bestOdds": "+20000", "consensusOdds": "+20000", "oddsBySource": { "sportsbookreview": "+20000" }, "impliedProbability": 0.005 },
+    { "name": "Venus Williams", "nameNormalized": "venuswilliams", "bestOdds": "+25000", "consensusOdds": "+25000", "oddsBySource": { "sportsbookreview": "+25000" }, "impliedProbability": 0.004 }
   ]
 }
