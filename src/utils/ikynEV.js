@@ -321,8 +321,36 @@ export function computeIkynEV(entries) {
       .reduce((s, d) => s + (d.geo?.waEV ?? 0), 0);
     const waScale = realWaTotal > 0 ? WA_TARGET / realWaTotal : 1;
 
-    for (const d of sportEntryData) {
-      const waEV = d.geo ? d.geo.waEV * waScale : null;
+    // Step 5: cap individual waEV at IKYN_SCORE_TABLE[0] (100) — no single entry
+    // can score more than 1st place in the contest. Redistribute excess proportionally
+    // to uncapped real entries, preserving the 340 total.
+    const MAX_ENTRY_EV = IKYN_SCORE_TABLE[0]; // 100
+    const scaledWaEVs = sportEntryData.map(d => d.geo ? d.geo.waEV * waScale : null);
+
+    // Iterative cap-and-redistribute: handles cascading overflow
+    const capped = new Set();
+    for (let iter = 0; iter < 12; iter++) {
+      let excess = 0;
+      for (let i = 0; i < scaledWaEVs.length; i++) {
+        if (scaledWaEVs[i] != null && !sportEntryData[i].e.isPlaceholder && !capped.has(i) && scaledWaEVs[i] > MAX_ENTRY_EV) {
+          excess += scaledWaEVs[i] - MAX_ENTRY_EV;
+          scaledWaEVs[i] = MAX_ENTRY_EV;
+          capped.add(i);
+        }
+      }
+      if (excess <= 0) break;
+      const uncappedReal = sportEntryData
+        .map((d, i) => ({ i, ev: scaledWaEVs[i] }))
+        .filter(({ i, ev }) => ev != null && !sportEntryData[i].e.isPlaceholder && !capped.has(i));
+      const uncappedSum = uncappedReal.reduce((s, { ev }) => s + ev, 0);
+      if (uncappedSum <= 0) break;
+      for (const { i, ev } of uncappedReal) {
+        scaledWaEVs[i] += excess * (ev / uncappedSum);
+      }
+    }
+
+    for (const [idx, d] of sportEntryData.entries()) {
+      const waEV = scaledWaEVs[idx];
 
       result[d.e.id] = {
         // PL-MC
@@ -342,7 +370,8 @@ export function computeIkynEV(entries) {
         waEV,
         waPosProbs:    d.geo?.waPosProbs ?? null,
         // wizardEV: PL-MC for fixed-field sports, normalized WA_EV for variable-field
-        wizardEV:      useIkyn ? d.ikynEV : waEV,
+        // Capped at MAX_ENTRY_EV (100) — no single entry can outscore 1st place
+        wizardEV:      Math.min(useIkyn ? d.ikynEV : (waEV ?? 0), MAX_ENTRY_EV),
         wizardModel:   useIkyn ? 'ikyn' : 'wa',
       };
     }
