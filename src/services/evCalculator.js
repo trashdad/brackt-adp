@@ -7,7 +7,7 @@ import SPORTS from '../data/sports.js';
  * Uses a Plackett-Luce inspired Field Approximation to determine the probability
  * of finishing in each rank (1st-16th) based on win probability.
  */
-function buildRankProbabilities(winProb, numPositions = 16, fieldSize = 30) {
+export function buildRankProbabilities(winProb, numPositions = 16, fieldSize = 30) {
   const probs = new Array(numPositions).fill(0);
   probs[0] = winProb;
   const q = (1 - winProb) / (fieldSize - 1);
@@ -474,19 +474,22 @@ const MARKET_LIQUIDITY_MODIFIER = {
 // PER-SPORT CALCULATORS
 // ============================================================================
 
-const genericCalc = (ev, scarcity, sq, entry) => {
+// All sport calculators return a MULTIPLIER only (entry) → number.
+// This multiplier adjusts win probability via log-odds, NOT EV directly.
+
+const genericCalc = (entry) => {
+  const sq = entry.adjSq || 1.0;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj;
+  return sqAdj;
 };
 
-const nflCalc = (ev, scarcity, sq, entry) => {
+const nflCalc = (entry) => {
   let multiplier = 1.0;
   const name = entry.nameNormalized || '';
   const age = NFL_SNAP_WEIGHTED_AGE[name] || 26.5;
   const notes = (entry.notes || '').toLowerCase();
   const odds = typeof entry.bestOdds === 'string' ? parseInt(entry.bestOdds.replace('+', '')) : 0;
 
-  // Phase 4: Continuous age curve replaces binary threshold
   multiplier *= (AGE_CURVES.nfl || (() => 1.0))(age);
 
   if (NFL_ELITE_OL_CONTINUITY.includes(name) || notes.includes('elite ol') || notes.includes('continuity')) multiplier *= 1.12;
@@ -496,67 +499,61 @@ const nflCalc = (ev, scarcity, sq, entry) => {
   if ((notes.includes('elite defense') && notes.includes('poor offense')) || ['pittsburghsteelers', 'clevelandbrowns'].includes(name)) multiplier *= 0.90;
   if (notes.includes('rookie qb') || notes.includes('new playcaller') || notes.includes('draft capital')) multiplier *= 1.10;
 
-  // Phase 7: Coaching keyword parsing (fall-through for teams not in static map)
   if (!NFL_COACHING_ALPHA[name]) {
     if (notes.includes('new coach') || notes.includes('first year hc')) multiplier *= 1.08;
     if (notes.includes('coordinator promoted') || notes.includes('internal hire')) multiplier *= 1.05;
     if (notes.includes('fired mid-season') || notes.includes('interim')) multiplier *= 0.85;
   }
 
-  // Phase 9: Roster movement
   if (notes.includes('acquired') || notes.includes('blockbuster')) multiplier *= 1.08;
   if (notes.includes('departed') || notes.includes('key loss') || notes.includes('out for season')) multiplier *= 0.92;
 
+  const sq = entry.adjSq || 1.0;
   const sqDampened = 1.0 / (1.0 + Math.max(0, sq - 1.15));
-  return (ev + scarcity) * sqDampened * multiplier;
+  return multiplier * sqDampened;
 };
 
-const nbaCalc = (ev, scarcity, sq, entry) => {
+const nbaCalc = (entry) => {
   const name = entry.nameNormalized || '';
   const age = NBA_MINUTES_WEIGHTED_AGE[name] || 27.0;
   let multiplier = 1.0;
   const notes = (entry.notes || '').toLowerCase();
 
-  // Phase 4: Continuous age curve
   multiplier *= (AGE_CURVES.nba || (() => 1.0))(age);
 
   if (notes.includes('new') || notes.includes('reset') || notes.includes('rookie') || notes.includes('draft')) multiplier *= 1.05;
 
-  // Phase 7B: Coaching tier
   if (NBA_COACHING_TIER[name]) multiplier *= NBA_COACHING_TIER[name];
   if (notes.includes('new coach') || notes.includes('coaching change')) multiplier *= 1.05;
   if (notes.includes('fired mid-season') || notes.includes('interim')) multiplier *= 0.90;
 
-  // Phase 9: Roster movement
   if (notes.includes('trade acquisition') || notes.includes('acquired') || notes.includes('blockbuster')) multiplier *= 1.08;
   if (notes.includes('aging core') || notes.includes('salary dump') || notes.includes('tanking')) multiplier *= 0.92;
 
+  const sq = entry.adjSq || 1.0;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj * multiplier;
+  return multiplier * sqAdj;
 };
 
-const mlbCalc = (ev, scarcity, sq, entry) => {
+const mlbCalc = (entry) => {
   const notes = (entry.notes || '').toLowerCase();
   let multiplier = 1.0;
-  const name = entry.nameNormalized || '';
 
-  // Phase 4: Age curve for team age
-  // MLB team ages not individually tracked — use notes-based aging
   if (notes.includes('stuff+') || notes.includes('pitching+') || notes.includes('high stuff')) multiplier *= 1.15;
   if (notes.includes('breakout rotation') || notes.includes('young pitching') || notes.includes('velo')) multiplier *= 1.12;
   if (notes.includes('bullpen depth') || notes.includes('deep bullpen')) multiplier *= 1.08;
   if (notes.includes('veteran core') || notes.includes('aging') || notes.includes('aging rotation')) multiplier *= 0.85;
 
+  const sq = entry.adjSq || 1.0;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + (scarcity * 1.2)) * sqAdj * multiplier;
+  return multiplier * sqAdj;
 };
 
-const nhlCalc = (ev, scarcity, sq, entry) => {
+const nhlCalc = (entry) => {
   const notes = (entry.notes || '').toLowerCase();
   const name = entry.nameNormalized || '';
   let multiplier = 1.0;
 
-  // Phase 8: Goalie quality model (GSAx-based)
   const goalieMult = NHL_GOALIE_QUALITY[name] || 1.0;
   multiplier *= goalieMult;
 
@@ -564,17 +561,16 @@ const nhlCalc = (ev, scarcity, sq, entry) => {
   if (notes.includes('xgf%') || notes.includes('high danger')) multiplier *= 1.12;
   if (notes.includes('goalie crisis') || notes.includes('goalie uncertainty')) multiplier *= 0.88;
 
+  const sq = entry.adjSq || 1.0;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj * multiplier;
+  return multiplier * sqAdj;
 };
 
-const tennisCalc = (ev, scarcity, sq, entry) => {
+const tennisCalc = (entry) => {
   const name = entry.nameNormalized || '';
   const notes = (entry.notes || '').toLowerCase();
   let multiplier = 1.0;
 
-  // Phase 5: Surface specialization — blended across 4 Grand Slams
-  // (2 hard court Slams, 1 clay, 1 grass)
   const surfaceData = SURFACE_RATINGS[name];
   if (surfaceData) {
     const blended = (surfaceData.hard * 2 + surfaceData.clay + surfaceData.grass) / 4;
@@ -583,19 +579,16 @@ const tennisCalc = (ev, scarcity, sq, entry) => {
     multiplier *= 1.15;
   }
 
-  // Reference event form signals (clay swing: Rome/Madrid predict French Open success)
-  // These notes flow from non-major reference events ingested via refine-ingest.js
   if (notes.includes('won rome') || notes.includes('won madrid') || notes.includes('won monte carlo')) {
-    multiplier *= 1.12; // clay form peak — strong French Open indicator
+    multiplier *= 1.12;
   }
   if (notes.includes('won indian wells') || notes.includes('won miami') || notes.includes('won cincinnati') || notes.includes('won canada')) {
-    multiplier *= 1.08; // hardcourt form — AO/USO indicator
+    multiplier *= 1.08;
   }
   if (notes.includes('lost early rome') || notes.includes('early exit madrid') || notes.includes('withdrew')) {
-    multiplier *= 0.92; // form concerns heading into clay major
+    multiplier *= 0.92;
   }
 
-  // Phase 4: Age curve
   const age = PLAYER_AGES[name];
   const sport = entry.sport || 'tennis_m';
   if (age && AGE_CURVES[sport]) {
@@ -605,20 +598,22 @@ const tennisCalc = (ev, scarcity, sq, entry) => {
   if (notes.includes('fatigue') || notes.includes('declining')) multiplier *= 0.90;
   if (notes.includes('hot streak') || notes.includes('peak form')) multiplier *= 1.10;
 
+  const sq = entry.adjSq || 1.0;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj * multiplier;
+  return multiplier * sqAdj;
 };
 
-const csgoCalc = (ev, scarcity, sq, entry) => {
+const csgoCalc = (entry) => {
   const notes = (entry.notes || '').toLowerCase();
   let multiplier = 1.0;
   if (notes.includes('stable roster') || notes.includes('chemistry')) multiplier *= 1.15;
   if (notes.includes('new roster') || notes.includes('roster change')) multiplier *= 0.85;
+  const sq = entry.adjSq || 1.0;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj * multiplier;
+  return multiplier * sqAdj;
 };
 
-const aflCalc = (ev, scarcity, sq, entry) => {
+const aflCalc = (entry) => {
   let multiplier = 1.0;
   const name = entry.nameNormalized || '';
   const profile = AFL_LIST_PROFILE[name];
@@ -626,15 +621,15 @@ const aflCalc = (ev, scarcity, sq, entry) => {
   if (profile?.window) multiplier *= 1.12;
   if (profile?.rebuild) multiplier *= 0.88;
 
-  // Phase 4: Age curve
   const age = profile?.age;
   if (age && AGE_CURVES.afl) multiplier *= AGE_CURVES.afl(age);
 
+  const sq = entry.adjSq || 1.0;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj * multiplier;
+  return multiplier * sqAdj;
 };
 
-const pgaCalc = (ev, scarcity, sq, entry) => {
+const pgaCalc = (entry) => {
   const notes = (entry.notes || '').toLowerCase();
   const name = entry.nameNormalized || '';
   let multiplier = 1.0;
@@ -642,64 +637,61 @@ const pgaCalc = (ev, scarcity, sq, entry) => {
   if (notes.includes('sg:ttg') || notes.includes('ball striking') || notes.includes('strokes gained')) multiplier *= 1.15;
   if (notes.includes('course history') || notes.includes('course fit')) multiplier *= 1.08;
 
-  // Reference event form signals — flow in from non-major ingest (The Players, WGC, Genesis etc.)
   if (notes.includes('won the players') || notes.includes('won players championship')) multiplier *= 1.10;
   if (notes.includes('won match play') || notes.includes('wgc match play winner')) multiplier *= 1.08;
   if (notes.includes('won genesis') || notes.includes('won riviera')) multiplier *= 1.06;
   if (notes.includes('won arnold palmer') || notes.includes('won bay hill')) multiplier *= 1.05;
   if (notes.includes('missed cut') || notes.includes('withdrew') || notes.includes('form slump')) multiplier *= 0.90;
 
-  // Phase 4: Age curve — PGA peaks 30-35
   const age = PLAYER_AGES[name];
   if (age && AGE_CURVES.pga) multiplier *= AGE_CURVES.pga(age);
 
+  const sq = entry.adjSq || 1.0;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev * 0.6 + (sqAdj * 20) * 0.4) + scarcity * multiplier;
+  return multiplier * sqAdj;
 };
 
-const uclCalc = (ev, scarcity, sq, entry) => {
+const uclCalc = (entry) => {
   const notes = (entry.notes || '').toLowerCase();
   let multiplier = 1.0;
   if (notes.includes('clinical') || notes.includes('overperforming xg')) multiplier *= 1.12;
   if (notes.includes('squad depth') || notes.includes('deep squad')) multiplier *= 1.08;
   if (notes.includes('fixture congestion') || notes.includes('multi-competition')) multiplier *= 0.92;
+  const sq = entry.adjSq || 1.0;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj * multiplier;
+  return multiplier * sqAdj;
 };
 
-const fifaCalc = (ev, scarcity, sq, entry) => {
+const fifaCalc = (entry) => {
   const name = entry.nameNormalized || '';
   let multiplier = 1.0;
   if (FIFA_2026_HOSTS.includes(name)) multiplier *= 1.20;
   if (FIFA_2026_CONTINENT.includes(name)) multiplier *= 1.12;
+  const sq = entry.adjSq || 1.0;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj * multiplier;
+  return multiplier * sqAdj;
 };
 
-const f1Calc = (ev, scarcity, sq, entry) => {
+const f1Calc = (entry) => {
   const name = entry.nameNormalized || '';
   const notes = (entry.notes || '').toLowerCase();
 
-  // Phase 6B: Blend tech alpha with constructor budget
   let techAlpha = F1_TECH_ALPHA[name] || 0.85;
   const constructor = F1_DRIVER_CONSTRUCTOR[name];
   const budgetMult = constructor ? (F1_CONSTRUCTOR_BUDGET[constructor] || 0.85) : 0.85;
   techAlpha = techAlpha * 0.7 + budgetMult * 0.3;
 
-  // Dynamic tech from notes
   if (notes.includes('upgrade') || notes.includes('new floor') || notes.includes('aero package')) techAlpha *= 1.10;
   if (notes.includes('correlation error') || notes.includes('budget cap') || notes.includes('stalled')) techAlpha *= 0.90;
   if (notes.includes('new regulations') || notes.includes('wind tunnel')) techAlpha *= 1.05;
 
-  // Phase 4: Age curve — F1 peaks at 29-32
   const age = PLAYER_AGES[name];
   if (age && AGE_CURVES.f1) techAlpha *= AGE_CURVES.f1(age);
 
-  const expertValue = (sq * 20);
-  return (ev * 0.6 + expertValue * 0.4) * techAlpha + scarcity;
+  return techAlpha;
 };
 
-const indycarCalc = (ev, scarcity, sq, entry) => {
+const indycarCalc = (entry) => {
   const name = entry.nameNormalized || '';
   const notes = (entry.notes || '').toLowerCase();
   let techAlpha = INDY_TECH_ALPHA[name] || 0.85;
@@ -710,18 +702,17 @@ const indycarCalc = (ev, scarcity, sq, entry) => {
   else if (notes.includes('partial') || notes.includes('road course only')) participationMult = 0.55;
   if (notes.includes('pay driver') || notes.includes('funded') || ['stingrayrobb', 'kyffinsimpson', 'nolansiegel', 'devlindefrancesco'].includes(name)) techAlpha *= 0.80;
 
+  const sq = entry.adjSq || 1.0;
   const sqTiebreaker = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.15;
-  return (ev + scarcity) * techAlpha * participationMult * sqTiebreaker;
+  return techAlpha * participationMult * sqTiebreaker;
 };
 
-const llwsCalc = (ev, scarcity, sq, entry) => {
+const llwsCalc = (entry) => {
   let multiplier = 1.0;
   const notes = (entry.notes || '').toLowerCase();
   const region = (entry.region || '').toLowerCase();
   const name = entry.nameNormalized || '';
 
-  // --- TIER 1: Asian programs --- historically dominant (Taiwan 18 titles, Japan 11)
-  // Chinese Taipei / Asia-Pacific: +175 in our odds, +200 actual 2025 market → well-calibrated
   const isTaiwanOrAP = ['taiwan', 'south korea', 'chinese taipei'].includes(region) ||
     ['taipei', 'korea', 'taoyuan', 'tainan'].some(r => name.includes(r)) ||
     name === 'asiapacific';
@@ -729,54 +720,39 @@ const llwsCalc = (ev, scarcity, sq, entry) => {
 
   if (isTaiwanOrAP) {
     multiplier *= 1.35;
-    // Defending champion bonus (Chinese Taipei won 2025)
     if (notes.includes('defending champion') || notes.includes('2025 champion') || notes.includes('champion status')) {
       multiplier *= 1.10;
     }
   } else if (isJapan) {
-    // Japan: our odds show +225 but 2025 market derived ~+600 overall.
-    // Japan is elite but NOT in the same tier as Taiwan historically post-1996.
-    // Reducing their internal multiplier to reflect true market position.
-    multiplier *= 1.15; // was implicitly 1.35 via shared condition — corrected down
+    multiplier *= 1.15;
   }
 
-  // --- TIER 2: Caribbean --- HIGH FLOOR team.
-  // Research: Curaçao/Aruba consistently reach international finals (runner-up 2025).
-  // Market derived ~+420 overall; our odds have them at +550 (undervalued by ~1.3x).
-  // 2026: Curaçao now receives a direct bracket entry slot, giving Caribbean two reps.
-  // Raising multiplier from 1.25 → 1.35 to reflect structural floor and dual-entry advantage.
   else if (region === 'caribbean' || name === 'caribbean' ||
     notes.includes('curacao') || notes.includes('curaçao') || notes.includes('aruba') ||
     name.includes('willemstad')) {
-    multiplier *= 1.35; // floor bonus: rarely eliminated early, always deep
-    // Additional bonus if Curaçao specifically qualifies (historically the strongest Caribbean team)
+    multiplier *= 1.35;
     if (notes.includes('curacao') || notes.includes('curaçao') || name.includes('willemstad')) {
       multiplier *= 1.08;
     }
   }
 
-  // --- TIER 3: USA West --- strongest US region (won 4 of last 10 US brackets)
-  // Market derived ~+540 overall; our odds show +350 (too short — calculator reduces this somewhat)
   else if (['west', 'hawaii', 'california', 'honolulu', 'el segundo'].some(r => name.includes(r) || region.includes(r))) {
     multiplier *= 1.20;
   }
 
-  // --- Pitching-depth bonus: in LLWS, dominant aces (11+ K games) predict outcomes better than any other metric ---
   if (notes.includes('pitching depth') || notes.includes('multiple aces') || notes.includes('3+ arms')) multiplier *= 1.25;
   else if (notes.includes('one-man team') || notes.includes('single ace') || notes.includes('relies on one')) multiplier *= 0.85;
 
-  // --- Run differential / dominance bonus ---
   if (notes.includes('high run differential') || notes.includes('gamechanger') || notes.includes('run rule') || notes.includes('elite ops')) multiplier *= 1.15;
 
-  // --- Physical advantage (non-Asian teams only — Asian teams win via fundamentals/pitching) ---
   if (!isTaiwanOrAP && !isJapan && (notes.includes('size advantage') || notes.includes('power hitting') || notes.includes('thick'))) multiplier *= 1.10;
 
+  const sq = entry.adjSq || 1.0;
   const sqAdj = 1.0 + (Math.max(1.0, sq) - 1.0) * 0.5;
-  return (ev + scarcity) * sqAdj * multiplier;
+  return multiplier * sqAdj;
 };
 
-// Snooker and Darts calculators with age curves
-const snookerCalc = (ev, scarcity, sq, entry) => {
+const snookerCalc = (entry) => {
   const name = entry.nameNormalized || '';
   const notes = (entry.notes || '').toLowerCase();
   let multiplier = 1.0;
@@ -784,17 +760,17 @@ const snookerCalc = (ev, scarcity, sq, entry) => {
   if (age && AGE_CURVES.snooker) multiplier *= AGE_CURVES.snooker(age);
   if (notes.includes('defending champion') || notes.includes('world number 1')) multiplier *= 1.10;
   if (notes.includes('crucible curse') || notes.includes('first round exit')) multiplier *= 0.90;
-  return (ev * 0.5 + (sq * 15) * 0.5) + scarcity * multiplier;
+  return multiplier;
 };
 
-const dartsCalc = (ev, scarcity, sq, entry) => {
+const dartsCalc = (entry) => {
   const name = entry.nameNormalized || '';
   const notes = (entry.notes || '').toLowerCase();
   let multiplier = 1.0;
   const age = PLAYER_AGES[name];
   if (age && AGE_CURVES.darts) multiplier *= AGE_CURVES.darts(age);
   if (notes.includes('world number 1') || notes.includes('dominant form')) multiplier *= 1.10;
-  return (ev * 0.5 + (sq * 15) * 0.5) + scarcity * multiplier;
+  return multiplier;
 };
 
 const SPORT_CALCULATORS = {
@@ -908,21 +884,27 @@ export function applyPositionalScarcity(sportEntries, globalModifier) {
     }
 
     const efficiencyMult = (winProb >= 0.05) ? 1.10 : 1.0;
-    const baseAdpScore = calc(efficiency * 10, scarcityBonus, (current.adjSq || 1.0), current);
+
+    // Sport calculator now returns multiplier only (entry) → number
+    const sportMult = calc(current);
+    const baseAdpScore = (efficiency * 10 + scarcityBonus) * sportMult;
 
     // Phase 3C: Trap signal multiplier
     let trapMult = 1.0;
     if (current.trapSignal === 'RED') trapMult = 0.90;
     else if (current.trapSignal === 'GREEN') trapMult = 1.10;
 
+    // probMultiplier: combined modifier for win% adjustment via log-odds
+    current.probMultiplier = sportMult * confidenceMult * efficiencyMult
+                            * byeAlpha * liquidityMult * shockPenalty * trapMult;
+
     current.math = {
       rawEV, replacementEV, marginalValue, hybridValue, sigma,
       efficiency, efficiencyMult, confidenceMult, scarcityBonus,
-      adjSq: current.adjSq || 1.0, baseAdpScore,
+      adjSq: current.adjSq || 1.0, baseAdpScore, sportMult,
       events: STABILITY_SAMPLES[sportId] || 1,
       modelUsed: byeAlpha > 1.0 ? 'Championship Bye' : (sportId === 'nfl' ? 'Alpha Hunter' : 'Stability Anchor'),
       shockPenalty, liquidityMult, trapMult,
-      // QP sport flag — rawEV is in standard-point scale via rank conversion
       qpRankConverted: QP_SPORT_IDS.includes(sportId) && current._qpStandardEV != null,
       qpExpectedQP: current.ev?.totalExpectedQP || null,
     };

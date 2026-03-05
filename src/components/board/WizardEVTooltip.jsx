@@ -11,7 +11,7 @@ export default function WizardEVTooltip({ entry, children }) {
 
   const { ev: ikynEV, waEV, wizardEV, wizardModel, posProbs, waPosProbs,
           dps, sportTotal, fieldSize, isPlaceholder,
-          sportAlpha, pBlend, winProb } = detail;
+          wizardWinPct, winProb } = detail;
 
   const isIkyn = wizardModel === 'ikyn';
   const activeProbs = isIkyn ? posProbs : waPosProbs;
@@ -38,7 +38,7 @@ export default function WizardEVTooltip({ entry, children }) {
           <div className="flex justify-between items-center">
             <span className="font-mono text-[9px] text-white/40 uppercase">Model</span>
             <span className={`font-retro text-[9px] px-1.5 py-0.5 ${isIkyn ? 'bg-retro-lime/10 text-retro-lime' : 'bg-retro-cyan/10 text-retro-cyan'}`}>
-              {isIkyn ? 'PL-MC (300k sims)' : 'WA (geometric)'}
+              {isIkyn ? 'PL-MC (300k sims)' : 'PL-WA (prob-first)'}
             </span>
           </div>
 
@@ -68,16 +68,16 @@ export default function WizardEVTooltip({ entry, children }) {
               <span className="text-white/40 font-mono">Field size</span>
               <span className="font-mono text-white/60">{fieldSize}</span>
             </div>
-            {sportAlpha != null && (
+            {winProb != null && (
               <div className="flex justify-between text-[10px]">
-                <span className="text-white/40 font-mono">Sport \u03b1</span>
-                <span className="font-mono text-retro-purple/80">{(sportAlpha * 100).toFixed(0)}%</span>
+                <span className="text-white/40 font-mono">Implied Win%</span>
+                <span className="font-mono text-retro-gold">{(winProb * 100).toFixed(2)}%</span>
               </div>
             )}
-            {pBlend != null && (
+            {wizardWinPct != null && (
               <div className="flex justify-between text-[10px]">
-                <span className="text-white/40 font-mono">p_blend</span>
-                <span className="font-mono text-retro-cyan">{(pBlend * 100).toFixed(2)}%</span>
+                <span className="text-white/40 font-mono">Wizard Win%</span>
+                <span className="font-mono text-retro-cyan">{(wizardWinPct * 100).toFixed(2)}%</span>
               </div>
             )}
           </div>

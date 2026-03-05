@@ -9,12 +9,10 @@ export default function WAEVTooltip({ entry, children }) {
   const detail = entry.ikynDetail;
   if (!detail?.waEV) return <span>{children}</span>;
 
-  const { waEV, waPosProbs, winProb, winProbNorm, dpsShare, pBlend, sportSumP, sportAlpha } = detail;
+  const { waEV, waPosProbs, winProb, wizardWinPct, dpsShare } = detail;
   const rawPct    = winProb != null ? (winProb * 100) : null;
-  const normPct   = winProbNorm != null ? (winProbNorm * 100) : null;
+  const wizPct    = wizardWinPct != null ? (wizardWinPct * 100) : null;
   const dpsPct    = (dpsShare * 100);
-  const blendPct  = (pBlend * 100);
-  const alphaPct  = sportAlpha != null ? (sportAlpha * 100).toFixed(0) : '0';
 
   return (
     <span
@@ -31,44 +29,24 @@ export default function WAEVTooltip({ entry, children }) {
             <span className="font-mono text-[13px] font-black text-retro-cyan">{waEV.toFixed(2)}</span>
           </div>
 
-          {/* Calibration info */}
-          <div className="flex justify-between">
-            <span className="font-mono text-[9px] text-white/30 uppercase">Sport α (DPS weight)</span>
-            <span className="font-mono text-[10px] text-retro-purple/80">{alphaPct}%</span>
-          </div>
-
-          {/* Blend components */}
+          {/* Probability components */}
           <div className="space-y-1">
-            {sportAlpha > 0 && (
+            <div className="flex justify-between">
+              <span className="font-mono text-[9px] text-white/40 uppercase">DPS share</span>
+              <span className="font-mono text-[10px] text-retro-lime">{dpsPct.toFixed(2)}%</span>
+            </div>
+            {rawPct != null && (
               <div className="flex justify-between">
-                <span className="font-mono text-[9px] text-white/40 uppercase">DPS share ({alphaPct}%)</span>
-                <span className="font-mono text-[10px] text-retro-lime">{dpsPct.toFixed(2)}%</span>
+                <span className="font-mono text-[9px] text-white/40 uppercase">Implied Win%</span>
+                <span className="font-mono text-[10px] text-retro-gold">{rawPct.toFixed(2)}%</span>
               </div>
             )}
-            {rawPct != null && (
-              <>
-                <div className="flex justify-between">
-                  <span className="font-mono text-[9px] text-white/40 uppercase">Market p (raw)</span>
-                  <span className="font-mono text-[10px] text-white/40">{rawPct.toFixed(2)}%</span>
-                </div>
-                {sportSumP > 1 && (
-                  <div className="flex justify-between">
-                    <span className="font-mono text-[9px] text-white/40 uppercase">Sport Σp</span>
-                    <span className="font-mono text-[10px] text-retro-red/60">{(sportSumP * 100).toFixed(1)}%</span>
-                  </div>
-                )}
-                <div className="flex justify-between">
-                  <span className="font-mono text-[9px] text-white/40 uppercase">
-                    Market p norm ({(100 - parseFloat(alphaPct)).toFixed(0)}%)
-                  </span>
-                  <span className="font-mono text-[10px] text-retro-gold">{normPct.toFixed(2)}%</span>
-                </div>
-              </>
+            {wizPct != null && (
+              <div className="flex justify-between border-t border-white/5 pt-1">
+                <span className="font-mono text-[9px] text-retro-cyan/70 uppercase">Wizard Win%</span>
+                <span className="font-mono text-[10px] font-bold text-retro-cyan">{wizPct.toFixed(2)}%</span>
+              </div>
             )}
-            <div className="flex justify-between border-t border-white/5 pt-1">
-              <span className="font-mono text-[9px] text-retro-cyan/70 uppercase">p_blend</span>
-              <span className="font-mono text-[10px] font-bold text-retro-cyan">{blendPct.toFixed(2)}%</span>
-            </div>
           </div>
 
           {/* Per-position breakdown */}
@@ -108,10 +86,8 @@ export default function WAEVTooltip({ entry, children }) {
           {/* Formula note */}
           <div className="border-t border-white/5 pt-1.5">
             <p className="font-mono text-[7px] text-white/20 leading-tight italic">
-              α auto-calibrated per sport → Σ WA_EV ≤ 340<br />
-              p = α×dps + (1-α)×mktNorm<br />
-              P(k) = p × (1-p)^k<br />
-              WA_EV = Σ score[k] × P(k)
+              odds → impliedWin% → ×modifiers via log-odds → wizardWin%<br />
+              PL rank distribution → WA_EV = Σ score[k] × P(k)
             </p>
           </div>
         </div>,

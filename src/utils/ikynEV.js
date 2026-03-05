@@ -6,14 +6,16 @@
  *    Captures competitive field dynamics. 300k sims per sport.
  *    Sum per sport = 340 (guaranteed when n ≥ 8).
  *
- * 2. Geometric Weighted Average (WA_EV)
- *    E(X) = Σ score[k] × p_blend × (1-p_blend)^k  for k = 0..7
- *    p_blend = α × (dps_i / Σdps) + (1-α) × (market_p_i / max(1, Σmarket_p))
+ * 2. Probability-First PL-WA (wizardEV)
+ *    Market Odds → Implied Win% → ×modifiers via log-odds → wizardWinPct
+ *    → PL rank distribution → wizardEV (naturally ≤340/sport)
  *
- *    α is calibrated PER SPORT via binary search to keep Σ WA_EV ≤ 340 per sport,
- *    as close to 340 as possible. Sports where α=0 already gives ≤340 keep α=0.
- *    Placeholders get waEV from DPS share only (their market component is 0).
+ *    Modifiers adjust win probability via log-odds transform, NOT EV directly.
+ *    PL distribution from real probabilities naturally produces ≤340 per sport.
  */
+
+import { buildRankProbabilities } from '../services/evCalculator.js';
+import SPORTS from '../data/sports.js';
 
 export const IKYN_SCORE_TABLE = [100, 70, 50, 40, 25, 25, 15, 15];
 export const IKYN_SIMS = 300_000;
@@ -23,7 +25,6 @@ const PLACEHOLDER_DPS_MULT = 0.5;
 const WIZARD_IKYN_SPORTS = new Set([
   'nfl', 'nba', 'mlb', 'nhl', 'wnba', 'afl', 'f1', 'darts', 'snooker', 'ucl', 'fifa',
 ]);
-const WA_TARGET = 340; // per-sport WA_EV target (same as PL-MC guarantee)
 
 // Sport-specific concentration gammas based on historical parity analysis (2016-2025).
 // gamma > 1 concentrates value on favorites (low-parity sports).
@@ -61,15 +62,8 @@ export const WA_CONCENTRATION_GAMMA_DEFAULT = 1.10; // fallback for unlisted spo
 // Regulation-change dampening: blends base gamma toward 1.0 (neutral) for seasons
 // where major rule/equipment changes increase parity beyond what historical norms capture.
 // Formula: effectiveGamma = baseGamma × (1 - d) + 1.0 × d
-// The market odds already flatten in uncertain years, so dampening prevents the gamma
-// from over-concentrating on top of already-flat odds (avoiding double-counting).
-//
-// Calibrated against F1 2022 (ground-effect regs): market was +150/+175 (flat vs typical
-// -175/-250), winner was rank 2. A dampening of 0.30 → gamma 1.35, which matches NBA-level
-// uncertainty ("strong favorites exist but 2nd/3rd pick wins 30-40%").
 const REG_CHANGE_DAMPENING = {
   // F1 2026: 50% electric power, active aero, tighter cost cap — largest overhaul since 2014.
-  // Historical pattern: 1 disruption year then new dominant force within 1-2 seasons.
   f1: { dampening: 0.30, reason: '2026 PU + active aero overhaul' },
 };
 
@@ -82,129 +76,60 @@ function getEffectiveGamma(sport) {
 }
 
 /**
- * Geometric EV for a single win probability p.
- * @returns {{ waEV: number, waPosProbs: number[] }} or null if p invalid
+ * Adjust a base probability using a multiplier via log-odds transform.
+ * This converts the multiplicative modifier into probability space while
+ * preserving (0,1) bounds via the logistic function.
+ * @param {number} baseProb - Implied win probability from market odds (0-1)
+ * @param {number} multiplier - Combined modifier (>1 = boost, <1 = penalize)
+ * @returns {number} Adjusted probability
  */
-function geometricEV(p) {
-  if (!p || p <= 0 || p >= 1) return null;
-  let waEV = 0;
-  const waPosProbs = [];
-  for (let k = 0; k < IKYN_SCORE_TABLE.length; k++) {
-    const prob = p * Math.pow(1 - p, k);
-    waPosProbs.push(prob);
-    waEV += IKYN_SCORE_TABLE[k] * prob;
-  }
-  return { waEV, waPosProbs };
+function adjustProbability(baseProb, multiplier) {
+  if (baseProb <= 0 || baseProb >= 1 || multiplier === 1) return baseProb;
+  const logOdds = Math.log(baseProb / (1 - baseProb));
+  return 1 / (1 + Math.exp(-(logOdds + Math.log(multiplier))));
 }
 
 /**
- * Apply concentration exponent to an array of pBlend values.
+ * Plackett-Luce analytical EV for a single adjusted win probability.
+ * Uses buildRankProbabilities (PL field approximation) to compute rank distribution,
+ * then EV = Σ score[k] × rankProb[k].
+ * @param {number} adjProb - Adjusted win probability (0-1)
+ * @param {number} fieldSize - Number of competitors in the field
+ * @returns {{ waEV: number, waPosProbs: number[] }} or null if adjProb invalid
+ */
+function plackettLuceEV(adjProb, fieldSize) {
+  if (!adjProb || adjProb <= 0 || adjProb >= 1) return null;
+  const numPositions = IKYN_SCORE_TABLE.length; // 8
+  const probs = buildRankProbabilities(adjProb, numPositions, fieldSize);
+  let waEV = 0;
+  for (let k = 0; k < numPositions; k++) {
+    waEV += IKYN_SCORE_TABLE[k] * probs[k];
+  }
+  return { waEV, waPosProbs: probs };
+}
+
+/**
+ * Apply concentration exponent to an array of probabilities.
  * Raises each to gamma, then rescales so the sum is preserved.
  * This widens gaps between favorites and longshots.
  */
-function concentratePBlends(pBlends, gamma) {
-  if (gamma === 1) return pBlends;
-  const origSum = pBlends.reduce((s, p) => s + p, 0);
-  if (origSum <= 0) return pBlends;
-  const powered = pBlends.map(p => p > 0 ? Math.pow(p, gamma) : 0);
+function concentrateProbabilities(probs, gamma) {
+  if (gamma === 1) return probs;
+  const origSum = probs.reduce((s, p) => s + p, 0);
+  if (origSum <= 0) return probs;
+  const powered = probs.map(p => p > 0 ? Math.pow(p, gamma) : 0);
   const powSum = powered.reduce((s, p) => s + p, 0);
-  if (powSum <= 0) return pBlends;
+  if (powSum <= 0) return probs;
   const scale = origSum / powSum;
   return powered.map(p => p * scale);
 }
 
 /**
- * Compute sport-level WA_EV total for a given alpha and pre-built allEntries.
- */
-function sportWaTotal(allEntries, sportDPSTotal, sumP, alpha) {
-  const marketScale = sumP > 1 ? 1 / sumP : 1;
-  let total = 0;
-  for (const e of allEntries) {
-    const dpsShare = sportDPSTotal > 0 ? e.s / sportDPSTotal : 0;
-    const mktNorm  = e.winProb != null ? e.winProb * marketScale : 0;
-    const pBlend   = e.winProb != null
-      ? alpha * dpsShare + (1 - alpha) * mktNorm
-      : dpsShare;
-    const geo = geometricEV(pBlend);
-    if (geo) total += geo.waEV;
-  }
-  return total;
-}
-
-/**
- * Binary-search for the smallest α ∈ [0,1] such that sportWaTotal ≤ WA_TARGET,
- * as close to WA_TARGET as possible.
- * Returns { alpha, total }.
- */
-function calibrateAlpha(allEntries, sportDPSTotal, sumP) {
-  const atZero = sportWaTotal(allEntries, sportDPSTotal, sumP, 0);
-  if (atZero <= WA_TARGET) return { alpha: 0, total: atZero };
-
-  // α=0 is over target — binary search upward (more DPS dilutes market concentration)
-  let lo = 0, hi = 1;
-  for (let i = 0; i < 24; i++) {
-    const mid = (lo + hi) / 2;
-    if (sportWaTotal(allEntries, sportDPSTotal, sumP, mid) > WA_TARGET) {
-      lo = mid;
-    } else {
-      hi = mid;
-    }
-  }
-  return { alpha: hi, total: sportWaTotal(allEntries, sportDPSTotal, sumP, hi) };
-}
-
-/**
- * Fast WA_EV-only sweep (no PL-MC) for testing different alpha values.
- * Returns { total, sportTotals } for a given global alpha.
- */
-export function sweepWaEV(entries, alpha) {
-  if (!entries?.length) return { total: 0, sportTotals: {} };
-
-  const realBySport = {};
-  const placeholderBySport = {};
-  for (const e of entries) {
-    if (!e.id || !e.sport) continue;
-    if (e.adpScore != null && e.adpScore > 0) {
-      (realBySport[e.sport] ??= []).push({
-        id: e.id, s: e.adpScore,
-        winProb: e.ev?.winProbability != null ? e.ev.winProbability / 100 : null,
-      });
-    } else if (e.isPlaceholder) {
-      (placeholderBySport[e.sport] ??= []).push({ id: e.id });
-    }
-  }
-
-  let total = 0;
-  const sportTotals = {};
-  const allSports = new Set([...Object.keys(realBySport), ...Object.keys(placeholderBySport)]);
-
-  for (const sport of allSports) {
-    const realEntries = realBySport[sport] ?? [];
-    const phEntries   = placeholderBySport[sport] ?? [];
-    if (realEntries.length === 0) continue;
-
-    const minRealDPS    = Math.min(...realEntries.map(e => e.s));
-    const baseDPS       = Math.max(minRealDPS * PLACEHOLDER_DPS_MULT, 0.01);
-    const allEntries    = [
-      ...realEntries,
-      ...phEntries.map(e => ({ id: e.id, s: baseDPS, winProb: null, isPlaceholder: true })),
-    ];
-    const sportDPSTotal = allEntries.reduce((s, e) => s + e.s, 0);
-    const sumP          = allEntries.reduce((s, e) => s + (e.winProb ?? 0), 0);
-    const rawT          = sportWaTotal(allEntries, sportDPSTotal, sumP, alpha);
-    const t             = WA_TARGET; // normalized to target
-    sportTotals[sport]  = t;
-    total              += t;
-  }
-  return { total, sportTotals };
-}
-
-/**
- * Compute ikyn_EV (PL-MC) and waEV (per-sport auto-calibrated geometric) for every entry.
+ * Compute ikyn_EV (PL-MC) and wizardEV (probability-first PL-WA) for every entry.
  * @param {Array} entries - boardEntries array
  * @returns {Object} map of entry.id → {
  *   ev, posProbs, dps, sportTotal, fieldSize, isPlaceholder,
- *   waEV, waPosProbs, winProb, winProbNorm, dpsShare, pBlend, sportSumP, sportAlpha
+ *   waEV, waPosProbs, winProb, wizardWinPct, wizardEV, wizardModel
  * }
  */
 export function computeIkynEV(entries) {
@@ -219,13 +144,14 @@ export function computeIkynEV(entries) {
         id: e.id,
         s: e.adpScore,
         winProb: e.ev?.winProbability != null ? e.ev.winProbability / 100 : null,
+        probMultiplier: e.probMultiplier ?? 1.0,
+        scarcityBonus: e.scarcityBonus ?? 0,
       });
     } else if (e.isPlaceholder) {
       (placeholderBySport[e.sport] ??= []).push({ id: e.id });
     }
   }
-  // Second pass: for sports where ALL real entries have adpScore=0 (single-entry early-return),
-  // add them with floor DPS so they appear in ikynEVMap and produce non-null draftEV.
+  // Second pass: for sports where ALL real entries have adpScore=0
   for (const e of entries) {
     if (!e.id || !e.sport || e.isPlaceholder || e.adpScore !== 0 || e.ev == null) continue;
     if (!realBySport[e.sport]) {
@@ -233,6 +159,8 @@ export function computeIkynEV(entries) {
         id: e.id,
         s: 0.01,
         winProb: e.ev.winProbability != null ? e.ev.winProbability / 100 : null,
+        probMultiplier: e.probMultiplier ?? 1.0,
+        scarcityBonus: e.scarcityBonus ?? 0,
       });
     }
   }
@@ -251,7 +179,7 @@ export function computeIkynEV(entries) {
 
     const allEntries = [
       ...realEntries,
-      ...phEntries.map(e => ({ id: e.id, s: baseDPS, winProb: null, isPlaceholder: true })),
+      ...phEntries.map(e => ({ id: e.id, s: baseDPS, winProb: null, isPlaceholder: true, probMultiplier: 1.0, scarcityBonus: 0 })),
     ];
     const n      = allEntries.length;
     const numPos = Math.min(n, IKYN_SCORE_TABLE.length);
@@ -281,96 +209,69 @@ export function computeIkynEV(entries) {
       }
     }
 
-    // ── WA_EV: per-sport calibrated α + concentration + normalization ──
-    const sportDPSTotal = allEntries.reduce((s, e) => s + e.s, 0);
-    const sumP          = allEntries.reduce((s, e) => s + (e.winProb ?? 0), 0);
-    const marketScale   = sumP > 1 ? 1 / sumP : 1;
+    // ── WA_EV: Probability-First PL-WA model ──
+    // Step 1: compute wizardWinPct per entry via log-odds adjustment
+    const wizardWinPcts = allEntries.map(e =>
+      e.winProb != null ? adjustProbability(e.winProb, e.probMultiplier) : null
+    );
 
-    const { alpha: sportAlpha } = calibrateAlpha(allEntries, sportDPSTotal, sumP);
-    const useIkyn = WIZARD_IKYN_SPORTS.has(sport);
+    // Placeholders: assign small proxy probability from remaining mass
+    const realProbSum = wizardWinPcts.filter(p => p != null).reduce((s, p) => s + p, 0);
+    const phCount = allEntries.filter(e => e.isPlaceholder).length;
+    const phProb = phCount > 0 ? Math.max((1 - realProbSum) / phCount, 0.001) : 0;
+    const allWinPcts = wizardWinPcts.map(p => p ?? phProb);
 
-    // Step 1: compute raw pBlend values for all entries
-    const rawPBlends = allEntries.map(e => {
-      const dpsShare = sportDPSTotal > 0 ? e.s / sportDPSTotal : 0;
-      const mktNorm  = e.winProb != null ? e.winProb * marketScale : 0;
-      return e.winProb != null
-        ? sportAlpha * dpsShare + (1 - sportAlpha) * mktNorm
-        : dpsShare;
-    });
-
-    // Step 2: apply sport-specific concentration exponent (with reg-change dampening)
+    // Step 2: gamma concentration on wizardWinPct
     const sportGamma = getEffectiveGamma(sport);
-    const concPBlends = concentratePBlends(rawPBlends, sportGamma);
+    const concWinPcts = concentrateProbabilities(allWinPcts, sportGamma);
 
-    // Step 3: compute geometric WA_EV with concentrated probabilities
+    // Field size: use sports.js value, or allEntries.length for indeterminate sports
+    const sportConfig = SPORTS.find(s => s.id === sport);
+    const fieldSize   = sportConfig?.fieldSize || n;
+
+    const useIkyn = WIZARD_IKYN_SPORTS.has(sport);
+    const sportDPSTotal = allEntries.reduce((s, e) => s + e.s, 0);
+    const MAX_ENTRY_EV = IKYN_SCORE_TABLE[0]; // 100
+
+    // Step 3: compute PL-WA EV from concentrated win probabilities
     const sportEntryData = [];
     for (let i = 0; i < n; i++) {
-      const e        = allEntries[i];
-      const pBlend   = concPBlends[i];
-      const geo      = geometricEV(pBlend);
-      const ikynEV   = totals[i] / IKYN_SIMS;
+      const e = allEntries[i];
+      const wizWinPct = concWinPcts[i];
+      const pl = plackettLuceEV(wizWinPct, fieldSize);
+      const ikynEV = totals[i] / IKYN_SIMS;
       const dpsShare = sportDPSTotal > 0 ? e.s / sportDPSTotal : 0;
-      const mktNorm  = e.winProb != null ? e.winProb * marketScale : 0;
-      sportEntryData.push({ e, pBlend, rawPBlend: rawPBlends[i], geo, ikynEV, dpsShare, mktNorm });
+      // Add scarcity bonus as small additive
+      const rawWaEV = pl ? pl.waEV + (e.scarcityBonus || 0) : null;
+      sportEntryData.push({ e, wizWinPct, pl, ikynEV, dpsShare, rawWaEV, idx: i });
     }
 
-    // Step 4: normalize WA_EV so REAL (non-placeholder) entries sum to WA_TARGET (340)
-    // Placeholders keep their raw share but don't eat into the 340 budget
-    const realWaTotal = sportEntryData
+    // Safety check: log warning if sport total exceeds 340 (should be natural with real probs)
+    const sportWaTotal = sportEntryData
       .filter(d => !d.e.isPlaceholder)
-      .reduce((s, d) => s + (d.geo?.waEV ?? 0), 0);
-    const waScale = realWaTotal > 0 ? WA_TARGET / realWaTotal : 1;
-
-    // Step 5: cap individual waEV at IKYN_SCORE_TABLE[0] (100) — no single entry
-    // can score more than 1st place in the contest. Redistribute excess proportionally
-    // to uncapped real entries, preserving the 340 total.
-    const MAX_ENTRY_EV = IKYN_SCORE_TABLE[0]; // 100
-    const scaledWaEVs = sportEntryData.map(d => d.geo ? d.geo.waEV * waScale : null);
-
-    // Iterative cap-and-redistribute: handles cascading overflow
-    const capped = new Set();
-    for (let iter = 0; iter < 12; iter++) {
-      let excess = 0;
-      for (let i = 0; i < scaledWaEVs.length; i++) {
-        if (scaledWaEVs[i] != null && !sportEntryData[i].e.isPlaceholder && !capped.has(i) && scaledWaEVs[i] > MAX_ENTRY_EV) {
-          excess += scaledWaEVs[i] - MAX_ENTRY_EV;
-          scaledWaEVs[i] = MAX_ENTRY_EV;
-          capped.add(i);
-        }
-      }
-      if (excess <= 0) break;
-      const uncappedReal = sportEntryData
-        .map((d, i) => ({ i, ev: scaledWaEVs[i] }))
-        .filter(({ i, ev }) => ev != null && !sportEntryData[i].e.isPlaceholder && !capped.has(i));
-      const uncappedSum = uncappedReal.reduce((s, { ev }) => s + ev, 0);
-      if (uncappedSum <= 0) break;
-      for (const { i, ev } of uncappedReal) {
-        scaledWaEVs[i] += excess * (ev / uncappedSum);
-      }
+      .reduce((s, d) => s + (d.rawWaEV ?? 0), 0);
+    if (sportWaTotal > 340) {
+      console.warn(`[ikynEV] ${sport} waEV total ${sportWaTotal.toFixed(1)} exceeds 340 — check probabilities`);
     }
 
-    for (const [idx, d] of sportEntryData.entries()) {
-      const waEV = scaledWaEVs[idx];
+    for (const d of sportEntryData) {
+      const waEV = d.rawWaEV;
 
       result[d.e.id] = {
         // PL-MC
         ev:            d.ikynEV,
-        posProbs:      Array.from(posCounts[allEntries.indexOf(d.e)], (c) => c / IKYN_SIMS),
+        posProbs:      Array.from(posCounts[d.idx], (c) => c / IKYN_SIMS),
         dps:           d.e.s,
         sportTotal:    sportDPSTotal,
         fieldSize:     n,
         isPlaceholder: d.e.isPlaceholder ?? false,
-        // Geometric (per-sport calibrated + concentrated + normalized)
+        // PL-WA (probability-first)
         winProb:       d.e.winProb,
-        winProbNorm:   d.e.winProb != null ? d.mktNorm : null,
+        wizardWinPct:  d.wizWinPct,
         dpsShare:      d.dpsShare,
-        pBlend:        d.pBlend,
-        sportSumP:     sumP,
-        sportAlpha,
         waEV,
-        waPosProbs:    d.geo?.waPosProbs ?? null,
-        // wizardEV: PL-MC for fixed-field sports, normalized WA_EV for variable-field
-        // Capped at MAX_ENTRY_EV (100) — no single entry can outscore 1st place
+        waPosProbs:    d.pl?.waPosProbs ?? null,
+        // wizardEV: PL-MC for fixed-field sports, PL-WA for variable-field
         wizardEV:      Math.min(useIkyn ? d.ikynEV : (waEV ?? 0), MAX_ENTRY_EV),
         wizardModel:   useIkyn ? 'ikyn' : 'wa',
       };
