@@ -142,9 +142,6 @@ export default function PlayerDetail({ boardEntries, onToggleDraft }) {
                 </h3>
                 <div className="bg-black/20 p-4 border border-white/5 rounded-sm space-y-3">
                   <p className="font-mono text-[11px] text-retro-light/70 leading-relaxed">
-                    <span className="text-retro-purple font-bold">MODEL:</span> {entry.math.modelUsed.toUpperCase()}
-                  </p>
-                  <p className="font-mono text-[11px] text-retro-light/70 leading-relaxed">
                     {entry.math.events > 1 ? (
                       `Because this sport has ${entry.math.events} events, we apply the Law of Large Numbers. The risk (sigma) is reduced by the square root of the event count, making this a highly predictable anchor for your lineup.`
                     ) : (
@@ -164,21 +161,11 @@ export default function PlayerDetail({ boardEntries, onToggleDraft }) {
                 </span>
               </div>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 gap-6">
                 <div className="text-center space-y-1">
-                  <p className="font-retro text-[8px] text-white/40 uppercase">GCI_Coeff</p>
-                  <p className="font-mono text-lg text-white">x{entry.math.confidenceMult.toFixed(2)}</p>
-                  <p className="text-[7px] text-retro-light/30 italic">Predictability boost</p>
-                </div>
-                <div className="text-center space-y-1">
-                  <p className="font-retro text-[8px] text-white/40 uppercase">Floor_Boost</p>
-                  <p className="font-mono text-lg text-white">x{entry.math.efficiencyMult.toFixed(2)}</p>
-                  <p className="text-[7px] text-retro-light/30 italic">Win Prob &gt; 5% bonus</p>
-                </div>
-                <div className="text-center space-y-1">
-                  <p className="font-retro text-[8px] text-white/40 uppercase">Adj_Sentiment</p>
-                  <p className="font-mono text-lg text-white">x{entry.math.adjSq.toFixed(2)}</p>
-                  <p className="text-[7px] text-retro-light/30 italic">Social tie-breaker</p>
+                  <p className="font-retro text-[8px] text-white/40 uppercase">Efficiency</p>
+                  <p className="font-mono text-lg text-white">{formatNumber(entry.math.efficiency, 2)}</p>
+                  <p className="text-[7px] text-retro-light/30 italic">hybridValue / sqrt(sigma)</p>
                 </div>
                 <div className="text-center space-y-1">
                   <p className="font-retro text-[8px] text-white/40 uppercase">Scarcity</p>
@@ -189,7 +176,7 @@ export default function PlayerDetail({ boardEntries, onToggleDraft }) {
 
               <div className="border-t border-retro-cyan/10 mt-6 pt-6">
                 <p className="font-mono text-[10px] text-retro-light/50 italic leading-relaxed text-center">
-                  FORMULA: ( (HybridValue / sqrt(Sigma)) * 10 + Scarcity ) * GCI * EfficiencyMult * Sentiment
+                  FORMULA: (hybridValue / sqrt(sigma)) × 10 + scarcity
                 </p>
               </div>
             </div>

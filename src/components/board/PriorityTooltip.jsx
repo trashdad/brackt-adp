@@ -66,20 +66,8 @@ export default function PriorityTooltip({ entry, children }) {
               </p>
             </div>
 
-            {/* Step 4: Multipliers */}
+            {/* Step 4: Scarcity */}
             <div className="border-t border-white/10 pt-1.5 space-y-1">
-              <div className="flex justify-between items-center text-[10px]">
-                <span className="text-retro-light/50 font-mono">Confidence (GCI)</span>
-                <span className="font-mono text-white">x{m.confidenceMult.toFixed(2)}</span>
-              </div>
-              <div className="flex justify-between items-center text-[10px]">
-                <span className="text-retro-light/50 font-mono">Eff. Floor Boost</span>
-                <span className="font-mono text-white">x{m.efficiencyMult.toFixed(2)}</span>
-              </div>
-              <div className="flex justify-between items-center text-[10px]">
-                <span className="text-retro-light/50 font-mono">Adj. SQ (Sentiment)</span>
-                <span className="font-mono text-white">x{m.adjSq.toFixed(2)}</span>
-              </div>
               <div className="flex justify-between items-center text-[10px]">
                 <span className="text-retro-light/50 font-mono">Scarcity Bonus</span>
                 <span className="font-mono text-retro-gold">+{formatNumber(m.scarcityBonus)}</span>
@@ -104,7 +92,7 @@ export default function PriorityTooltip({ entry, children }) {
               </span>
             </div>
             <div className="text-[7px] text-white/40 uppercase tracking-tighter text-right font-retro">
-              Model: {m.modelUsed}
+              Formula: (hybridValue / sqrt(sigma)) × 10 + scarcity
             </div>
           </div>
         </>,
