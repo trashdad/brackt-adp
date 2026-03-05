@@ -92,11 +92,9 @@ export function sweepWaEV(entries, alpha) {
   const placeholderBySport = {};
   for (const e of entries) {
     if (!e.id || !e.sport) continue;
-    if (!e.isPlaceholder && e.adpScore != null) {
-      // Floor at 0.01 so single-entry sports (where applyPositionalScarcity returns early,
-      // leaving adpScore=0) still participate and produce a non-null draftEV.
+    if (e.adpScore != null && e.adpScore > 0) {
       (realBySport[e.sport] ??= []).push({
-        id: e.id, s: Math.max(e.adpScore, 0.01),
+        id: e.id, s: e.adpScore,
         winProb: e.ev?.winProbability != null ? e.ev.winProbability / 100 : null,
       });
     } else if (e.isPlaceholder) {
@@ -143,16 +141,26 @@ export function computeIkynEV(entries) {
   const placeholderBySport = {};
   for (const e of entries) {
     if (!e.id || !e.sport) continue;
-    if (!e.isPlaceholder && e.adpScore != null) {
-      // Floor at 0.01 so single-entry sports (where applyPositionalScarcity returns early,
-      // leaving adpScore=0) still participate and produce a non-null draftEV.
+    if (e.adpScore != null && e.adpScore > 0) {
       (realBySport[e.sport] ??= []).push({
         id: e.id,
-        s: Math.max(e.adpScore, 0.01),
+        s: e.adpScore,
         winProb: e.ev?.winProbability != null ? e.ev.winProbability / 100 : null,
       });
     } else if (e.isPlaceholder) {
       (placeholderBySport[e.sport] ??= []).push({ id: e.id });
+    }
+  }
+  // Second pass: for sports where ALL real entries have adpScore=0 (single-entry early-return),
+  // add them with floor DPS so they appear in ikynEVMap and produce non-null draftEV.
+  for (const e of entries) {
+    if (!e.id || !e.sport || e.isPlaceholder || e.adpScore !== 0 || e.ev == null) continue;
+    if (!realBySport[e.sport]) {
+      (realBySport[e.sport] ??= []).push({
+        id: e.id,
+        s: 0.01,
+        winProb: e.ev.winProbability != null ? e.ev.winProbability / 100 : null,
+      });
     }
   }
 
