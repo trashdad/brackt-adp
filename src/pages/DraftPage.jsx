@@ -130,6 +130,8 @@ const NAME_FIX = {
   'bodø/glimt':                   'Bodo Glimt',
   // ── LLWS ───────────────────────────────────────────────────────────
   'us - mountain':                 'USA Mountain',
+  // ── NCAAF ──────────────────────────────────────────────────────────
+  'indiana':                       'Indiana Hoosiers',
 };
 
 // ─── Entry lookup: map brackt.com pick → boardEntry ──────────────────────────
@@ -444,6 +446,43 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
     };
   }, [matrix, ikynEVMap]);
 
+  // ── Diagnostics: exactly which picks match / fail and why ──────────────────
+  const diagnostics = useMemo(() => {
+    const issues = [];
+    const matched = [];
+    for (const p of picks) {
+      const sportId = BRACKT_SPORT_TO_ID[p.sport];
+      if (!sportId) {
+        issues.push({ r: p.r, ti: p.ti, sel: p.selection, sport: p.sport,
+          reason: `UNKNOWN SPORT: "${p.sport}"` });
+        continue;
+      }
+      const raw = p.selection ?? '';
+      const corrected = NAME_FIX[raw.toLowerCase()] ?? raw;
+      const entry = boardEntries.find(
+        (e) => e.sport === sportId && e.name.toLowerCase() === corrected.toLowerCase()
+      );
+      if (!entry) {
+        const avail = boardEntries
+          .filter((e) => e.sport === sportId)
+          .map((e) => e.name)
+          .slice(0, 4)
+          .join(', ');
+        issues.push({ r: p.r, ti: p.ti, sel: p.selection, sport: p.sport,
+          reason: `NO ROSTER MATCH: "${corrected}" in ${sportId}. Have: [${avail || 'none'}...]` });
+        continue;
+      }
+      const ikynData = ikynEVMap[entry.id];
+      if (!ikynData) {
+        issues.push({ r: p.r, ti: p.ti, sel: p.selection, sport: p.sport,
+          reason: `NO EV: entry found (id=${entry.id}) but missing from ikynEVMap` });
+        continue;
+      }
+      matched.push({ r: p.r, ti: p.ti, sel: p.selection });
+    }
+    return { issues, matched, total: picks.length };
+  }, [picks, boardEntries, ikynEVMap]);
+
   const [reportCopied, setReportCopied] = useState(false);
 
   const handleReport = useCallback(() => {
@@ -605,6 +644,46 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
           </span>
         </div>
       </div>
+
+      {/* ── Match diagnostics panel ───────────────────────────────────────── */}
+      <details className="border-b border-white/[0.06] bg-[#111128]">
+        <summary
+          className="flex items-center gap-3 px-4 py-2 cursor-pointer select-none
+                     font-retro text-[10px] tracking-widest list-none"
+        >
+          <span
+            className={diagnostics.issues.length === 0
+              ? 'text-retro-lime/80'
+              : 'text-retro-gold/80'}
+          >
+            {diagnostics.issues.length === 0 ? '✓' : '⚠'} DIAGNOSTICS
+          </span>
+          <span className="text-retro-lime/60">
+            {diagnostics.matched.length}/{diagnostics.total} PICKS MATCHED
+          </span>
+          {diagnostics.issues.length > 0 && (
+            <span className="text-retro-gold/70">
+              · {diagnostics.issues.length} UNMATCHED — EXPAND TO SEE
+            </span>
+          )}
+          <span className="ml-auto text-retro-light/20 text-[9px]">▼</span>
+        </summary>
+        <div className="px-4 py-2 font-mono text-[9px] space-y-0.5 max-h-64 overflow-y-auto">
+          {diagnostics.issues.length === 0 ? (
+            <div className="text-retro-lime/50">All picks matched — dEV should show for all.</div>
+          ) : (
+            diagnostics.issues.map((issue, i) => (
+              <div key={i} className="flex gap-2 text-retro-gold/70">
+                <span className="text-retro-light/30 shrink-0">
+                  R{issue.r} {TEAMS[issue.ti]}
+                </span>
+                <span className="text-retro-light/50 shrink-0">"{issue.sel}"</span>
+                <span className="text-retro-gold/50">{issue.reason}</span>
+              </div>
+            ))
+          )}
+        </div>
+      </details>
 
       {/* ── Draft matrix table ────────────────────────────────────────────── */}
       <table
