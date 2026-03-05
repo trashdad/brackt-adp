@@ -5,6 +5,7 @@ import { readFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { readStore, writeStore } from './store.js';
+import { readSportOdds, mergeSportOdds, getAllVersions } from './services/oddsStore.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PIPELINE_OUTPUT = join(__dirname, 'data');
@@ -86,6 +87,67 @@ app.post('/api/manual-odds', (req, res) => {
     return res.status(400).json({ error: 'Expected JSON object' });
   }
   writeStore('manual-odds', req.body);
+  res.json({ ok: true });
+});
+
+// ── Unified Odds Store ───────────────────────────────────────────────────────
+// GET  /api/odds/versions     → { sportId: version } for all sports
+// GET  /api/odds/:sportId     → full pre-computed odds for a sport
+// PATCH /api/odds/:sportId    → merge source-specific odds
+
+const SPORT_IDS = [
+  'afl', 'csgo', 'darts', 'fifa', 'f1', 'indycar', 'llws',
+  'mlb', 'nba', 'ncaab', 'ncaaf', 'ncaaw', 'nfl', 'nhl',
+  'pga', 'snooker', 'tennis_m', 'tennis_w', 'ucl', 'wnba',
+];
+
+app.get('/api/odds/versions', async (_req, res) => {
+  const versions = await getAllVersions(
+    (name) => Promise.resolve(readStore(name)),
+    SPORT_IDS
+  );
+  res.json(versions);
+});
+
+app.get('/api/odds/:sportId', async (req, res) => {
+  if (!SAFE_ID_PATTERN.test(req.params.sportId)) {
+    return res.status(400).json({ error: 'Invalid sport ID' });
+  }
+  const data = await readSportOdds(
+    (name) => Promise.resolve(readStore(name)),
+    req.params.sportId
+  );
+  res.json(data);
+});
+
+app.patch('/api/odds/:sportId', async (req, res) => {
+  if (!SAFE_ID_PATTERN.test(req.params.sportId)) {
+    return res.status(400).json({ error: 'Invalid sport ID' });
+  }
+  const { source, entries, tournament } = req.body;
+  if (!source || typeof source !== 'string') {
+    return res.status(400).json({ error: 'Missing "source" field' });
+  }
+  if (!entries || typeof entries !== 'object') {
+    return res.status(400).json({ error: 'Missing "entries" object' });
+  }
+
+  const store = await mergeSportOdds(
+    (name) => Promise.resolve(readStore(name)),
+    (name, data) => { writeStore(name, data); return Promise.resolve(); },
+    req.params.sportId,
+    source,
+    entries,
+    tournament || null
+  );
+  res.json({ ok: true, version: store.version });
+});
+
+app.delete('/api/odds/:sportId', (req, res) => {
+  if (!SAFE_ID_PATTERN.test(req.params.sportId)) {
+    return res.status(400).json({ error: 'Invalid sport ID' });
+  }
+  writeStore(`odds-${req.params.sportId}`, { version: 0, lastModified: null, entries: {} });
   res.json({ ok: true });
 });
 

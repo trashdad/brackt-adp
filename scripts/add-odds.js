@@ -56,15 +56,8 @@ async function main() {
     process.exit(1);
   }
 
-  // Fetch existing manual odds
-  const resp = await fetch(`${API_BASE}/api/manual-odds`).catch(() => null);
-  if (!resp?.ok) {
-    console.error('Could not reach the API server. Is it running? (npm run server)');
-    process.exit(1);
-  }
-  const manual = await resp.json();
-
-  let added = 0;
+  // Build entries for the PATCH endpoint
+  const entries = {};
   const newNames = [];
 
   for (const [name, odds] of oddsData) {
@@ -72,53 +65,36 @@ async function main() {
       console.warn(`Skipping invalid entry: [${name}, ${odds}]`);
       continue;
     }
-
-    const entryId = `${sportId}-${slugify(name)}`;
-
-    if (!manual[entryId]) {
-      manual[entryId] = {
-        sport: sportId,
-        name,
-        oddsBySource: {},
-        oddsByTournament: {},
-        timestamp: Date.now(),
-      };
-      newNames.push(name);
-    }
-
-    if (!manual[entryId].oddsByTournament) manual[entryId].oddsByTournament = {};
-
-    if (tournamentId) {
-      // Tournament-specific odds (tennis, golf, csgo)
-      if (!manual[entryId].oddsByTournament[tournamentId]) {
-        manual[entryId].oddsByTournament[tournamentId] = {};
-      }
-      manual[entryId].oddsByTournament[tournamentId][sourceLabel] = odds;
-    } else {
-      // Regular sport odds (nfl, nba, etc.)
-      if (!manual[entryId].oddsBySource) manual[entryId].oddsBySource = {};
-      manual[entryId].oddsBySource[sourceLabel] = odds;
-    }
-
-    manual[entryId].timestamp = Date.now();
-    added++;
+    const slug = slugify(name);
+    entries[slug] = { name, odds: String(odds) };
+    newNames.push(name);
   }
 
-  // Save back
-  const saveResp = await fetch(`${API_BASE}/api/manual-odds`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(manual),
-  });
-
-  if (!saveResp.ok) {
-    console.error('Failed to save:', await saveResp.text());
+  if (Object.keys(entries).length === 0) {
+    console.error('No valid entries to add');
     process.exit(1);
   }
 
-  console.log(`Added ${added} entries for ${sportId}${tournamentId ? ` / ${tournamentId}` : ''} (source: ${sourceLabel})`);
+  // PATCH to the unified odds store
+  const body = { source: sourceLabel, entries };
+  if (tournamentId) body.tournament = tournamentId;
+
+  const resp = await fetch(`${API_BASE}/api/odds/${sportId}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+
+  if (!resp.ok) {
+    const text = await resp.text();
+    console.error('Failed to save:', text);
+    process.exit(1);
+  }
+
+  const result = await resp.json();
+  console.log(`Added ${Object.keys(entries).length} entries for ${sportId}${tournamentId ? ` / ${tournamentId}` : ''} (source: ${sourceLabel}) [v${result.version}]`);
   if (newNames.length > 0) {
-    console.log(`New names (may need roster update): ${newNames.join(', ')}`);
+    console.log(`Names added: ${newNames.join(', ')}`);
   }
 }
 

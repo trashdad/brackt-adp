@@ -60,8 +60,7 @@ export default function ParsePage({ onOddsSubmitted }) {
     if (!source) return;
 
     const submitSport = parsedSportId || sportId;
-    const resp = await fetch('/api/manual-odds').catch(() => null);
-    const manual = resp?.ok ? await resp.json() : {};
+    const entries = {};
 
     for (const row of results) {
       const finalName = row.matchedName === '__custom__' ? (row.customName || '').trim() : row.matchedName;
@@ -71,38 +70,21 @@ export default function ParsePage({ onOddsSubmitted }) {
       if (isNaN(oddsNum) || Math.abs(oddsNum) < 100) continue;
 
       const normalizedOdds = (oddsNum > 0 ? '+' : '') + oddsNum;
-      const entryId = `${submitSport}-${slugify(finalName)}`;
-
-      if (!manual[entryId]) {
-        manual[entryId] = {
-          sport: submitSport,
-          name: finalName,
-          oddsBySource: {},
-          oddsByTournament: {},
-          timestamp: Date.now(),
-        };
-      }
-
-      if (!manual[entryId].oddsByTournament) manual[entryId].oddsByTournament = {};
-
-      if (activeSport?.tournaments && tournamentId) {
-        if (!manual[entryId].oddsByTournament[tournamentId]) {
-          manual[entryId].oddsByTournament[tournamentId] = {};
-        }
-        manual[entryId].oddsByTournament[tournamentId][source] = normalizedOdds;
-      } else {
-        manual[entryId].oddsBySource[source] = normalizedOdds;
-      }
-
-      manual[entryId].timestamp = Date.now();
+      const slug = slugify(finalName);
+      entries[slug] = { name: finalName, odds: normalizedOdds };
     }
 
-    await fetch('/api/manual-odds', {
-      method: 'POST',
+    if (Object.keys(entries).length === 0) return;
+
+    const body = { source, entries };
+    if (activeSport?.tournaments && tournamentId) body.tournament = tournamentId;
+
+    await fetch(`/api/odds/${submitSport}`, {
+      method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(manual),
+      body: JSON.stringify(body),
     }).catch((err) => {
-      console.warn('[BRACKT] Failed to sync manual odds to server:', err?.message || String(err));
+      console.warn('[BRACKT] Failed to sync odds to server:', err?.message || String(err));
     });
     setSubmitted(true);
     if (onOddsSubmitted) onOddsSubmitted();

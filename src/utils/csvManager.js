@@ -229,12 +229,70 @@ export function importBoard(file) {
           }
         }
 
+        // Convert manualOdds to per-sport PATCH calls for the unified odds store
+        const patchCalls = [];
+        const bySportSource = {}; // { sportId: { source: { slug: { name, odds } } } }
+        const bySportTournament = {}; // { sportId: { tournamentId: { source: { slug: { name, odds } } } } }
+
+        for (const [entryId, entry] of Object.entries(manualOdds)) {
+          const { sport, name, oddsBySource, oddsByTournament } = entry;
+          if (!sport) continue;
+          const slug = entryId.replace(`${sport}-`, '');
+
+          if (oddsBySource) {
+            for (const [source, odds] of Object.entries(oddsBySource)) {
+              if (!bySportSource[sport]) bySportSource[sport] = {};
+              if (!bySportSource[sport][source]) bySportSource[sport][source] = {};
+              bySportSource[sport][source][slug] = { name, odds };
+            }
+          }
+          if (oddsByTournament) {
+            for (const [tId, tSources] of Object.entries(oddsByTournament)) {
+              if (typeof tSources === 'object' && tSources.consensus) {
+                // Legacy tournament consensus format — use as 'import' source
+                if (!bySportTournament[sport]) bySportTournament[sport] = {};
+                if (!bySportTournament[sport][tId]) bySportTournament[sport][tId] = {};
+                if (!bySportTournament[sport][tId]['import']) bySportTournament[sport][tId]['import'] = {};
+                bySportTournament[sport][tId]['import'][slug] = { name, odds: tSources.consensus };
+              } else if (typeof tSources === 'object') {
+                for (const [source, odds] of Object.entries(tSources)) {
+                  if (!bySportTournament[sport]) bySportTournament[sport] = {};
+                  if (!bySportTournament[sport][tId]) bySportTournament[sport][tId] = {};
+                  if (!bySportTournament[sport][tId][source]) bySportTournament[sport][tId][source] = {};
+                  bySportTournament[sport][tId][source][slug] = { name, odds };
+                }
+              }
+            }
+          }
+        }
+
+        for (const [sportId, sources] of Object.entries(bySportSource)) {
+          for (const [source, entries] of Object.entries(sources)) {
+            patchCalls.push(
+              fetch(`/api/odds/${sportId}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ source, entries }),
+              })
+            );
+          }
+        }
+        for (const [sportId, tournaments] of Object.entries(bySportTournament)) {
+          for (const [tId, sources] of Object.entries(tournaments)) {
+            for (const [source, entries] of Object.entries(sources)) {
+              patchCalls.push(
+                fetch(`/api/odds/${sportId}`, {
+                  method: 'PATCH',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ source, entries, tournament: tId }),
+                })
+              );
+            }
+          }
+        }
+
         await Promise.all([
-          fetch('/api/manual-odds', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(manualOdds),
-          }),
+          ...patchCalls,
           fetch('/api/draft-state', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

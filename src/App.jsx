@@ -7,6 +7,7 @@ import PlayerDetail from './pages/PlayerDetail';
 import ParsePage from './pages/ParsePage';
 import DraftPage from './pages/DraftPage';
 import Settings from './pages/Settings';
+import SPORTS from './data/sports';
 import useOddsData from './hooks/useOddsData';
 import useDraftBoard from './hooks/useDraftBoard';
 import { ScraperProvider } from './context/ScraperContext';
@@ -79,13 +80,19 @@ export default function App() {
 
   const handleClearAll = useCallback(async () => {
     resetDraft();
-    await fetch('/api/manual-odds', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({}),
-    }).catch((err) => {
-      console.warn('[BRACKT] Failed to clear manual odds on server:', err.message);
-    });
+    // Clear all per-sport odds stores via DELETE
+    const clearCalls = SPORTS.filter(s => s.active).map(s =>
+      fetch(`/api/odds/${s.id}`, { method: 'DELETE' }).catch(() => {})
+    );
+    // Also clear legacy manual-odds store
+    clearCalls.push(
+      fetch('/api/manual-odds', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({}),
+      }).catch(() => {})
+    );
+    await Promise.all(clearCalls);
     await refresh();
   }, [resetDraft, refresh]);
 
