@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { SPORT_COLORS } from '../../data/sports';
 import { formatAmericanOdds } from '../../services/oddsConverter';
@@ -10,7 +11,6 @@ import OddsTooltip from './OddsTooltip';
 import PriorityTooltip from './PriorityTooltip';
 import SocialTooltip from './SocialTooltip';
 import PlayerTooltip from './PlayerTooltip';
-import { useLock } from '../../context/LockContext';
 
 
 const getVelocityColor = (v) => {
@@ -20,11 +20,10 @@ const getVelocityColor = (v) => {
   return 'text-retro-lime'; // Flattening
 };
 
-export default function ADPRow({ entry, onToggleDraft }) {
+function ADPRow({ entry, onToggleDraft, isUnlocked }) {
   const color = SPORT_COLORS[entry.sport] || '#888';
   const val = (v) => entry.isPlaceholder ? '—' : v;
   const velocity = entry.dropoffVelocity ?? 1.0;
-  const { isUnlocked } = useLock();
 
 
   return (
@@ -208,3 +207,5 @@ export default function ADPRow({ entry, onToggleDraft }) {
     </tr>
   );
 }
+
+export default memo(ADPRow);

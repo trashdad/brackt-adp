@@ -1,6 +1,7 @@
 import ColumnHeader from './ColumnHeader';
 import ADPRow from './ADPRow';
 import useSorting from '../../hooks/useSorting';
+import { useLock } from '../../context/LockContext';
 
 const COLUMNS = [
   { label: 'Draft Priority Score', key: 'adpScore' },
@@ -22,6 +23,7 @@ const COLUMNS = [
 
 export default function ADPTable({ entries, onToggleDraft }) {
   const { sorted, sortKey, sortDir, toggleSort } = useSorting(entries, 'adpScore', 'desc');
+  const { isUnlocked } = useLock();
 
   if (entries.length === 0) {
     return (
@@ -48,7 +50,7 @@ export default function ADPTable({ entries, onToggleDraft }) {
         </thead>
         <tbody className="bg-[#2D2D44]/40 divide-y border-t border-black/20">
           {sorted.map((entry) => (
-            <ADPRow key={entry.id} entry={entry} onToggleDraft={onToggleDraft} />
+            <ADPRow key={entry.id} entry={entry} onToggleDraft={onToggleDraft} isUnlocked={isUnlocked} />
           ))}
         </tbody>
       </table>
