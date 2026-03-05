@@ -25,14 +25,18 @@ const TOTAL_ROUNDS = 25;
 // ─── Sport mapping: brackt.com label → our internal sport ID ─────────────────
 const BRACKT_SPORT_TO_ID = {
   'PGA Golf':                      'pga',
-  "Tennis - Men's":                'tennis_m',
-  "Tennis - Women's":              'tennis_w',
+  "Tennis - Men's":                'tennis_m',  // fallback picks
+  "Tennis - Men":                  'tennis_m',  // live API
+  "Tennis - Women's":              'tennis_w',  // fallback picks
+  "Tennis - Women":                'tennis_w',  // live API
   'Formula 1':                     'f1',
   'PDC Darts':                     'darts',
   'Indycar Series':                'indycar',
   'MLB':                           'mlb',
-  "NCAA Basketball - Women's":     'ncaaw',
-  "NCAA Basketball - Men's":       'ncaab',
+  "NCAA Basketball - Women's":     'ncaaw',     // fallback picks
+  "NCAAW Basketball":              'ncaaw',     // live API
+  "NCAA Basketball - Men's":       'ncaab',     // fallback picks
+  "NCAAM Basketball":              'ncaab',     // live API
   'Counter Strike':                'csgo',
   'NHL':                           'nhl',
   'UEFA Champions League':         'ucl',
@@ -50,13 +54,17 @@ const BRACKT_SPORT_TO_ID = {
 const SPORT_ABBR = {
   'PGA Golf':                      'PGA',
   "Tennis - Men's":                'ATP',
+  "Tennis - Men":                  'ATP',
   "Tennis - Women's":              'WTA',
+  "Tennis - Women":                'WTA',
   'Formula 1':                     'F1',
   'PDC Darts':                     'DARTS',
   'Indycar Series':                'INDY',
   'MLB':                           'MLB',
   "NCAA Basketball - Women's":     'NCAAW',
+  "NCAAW Basketball":              'NCAAW',
   "NCAA Basketball - Men's":       'NCAAB',
+  "NCAAM Basketball":              'NCAAB',
   'Counter Strike':                'CS2',
   'NHL':                           'NHL',
   'UEFA Champions League':         'UCL',
