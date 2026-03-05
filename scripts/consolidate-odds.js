@@ -189,7 +189,19 @@ function main() {
         manualEntryId = manualByNorm[ALIASES[pNorm]];
       }
 
-      if (!manualEntryId) continue; // no match found
+      if (!manualEntryId) {
+        // Create NEW entry if missing
+        manualEntryId = `${sportId}-${slugify(pEntry.name)}`;
+        manual[manualEntryId] = {
+          sport: sportId,
+          name: pEntry.name,
+          oddsBySource: {},
+          oddsByTournament: {},
+          timestamp: Date.now()
+        };
+        manualByNorm[pNorm] = manualEntryId; // Update lookup for future matches
+        console.log(`${sportId}: created new entry for ${pEntry.name}`);
+      }
 
       const manualEntry = manual[manualEntryId];
       if (!manualEntry.oddsBySource) manualEntry.oddsBySource = {};
