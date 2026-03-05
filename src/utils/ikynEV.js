@@ -7,10 +7,9 @@
  *    Sum per sport = 340 (guaranteed when n ≥ 8).
  *
  * 2. Probability-First PL-WA (wizardEV)
- *    Market Odds → Implied Win% → ×modifiers via log-odds → wizardWinPct
+ *    Market Odds → Implied Win% → gamma concentration → wizardWinPct
  *    → PL rank distribution → wizardEV (naturally ≤340/sport)
  *
- *    Modifiers adjust win probability via log-odds transform, NOT EV directly.
  *    PL distribution from real probabilities naturally produces ≤340 per sport.
  */
 
@@ -21,51 +20,16 @@ export const IKYN_SCORE_TABLE = [100, 70, 50, 40, 25, 25, 15, 15];
 export const IKYN_SIMS = 300_000;
 const PLACEHOLDER_DPS_MULT = 0.5;
 
-// Fixed-field sports: use PL-MC (ikynEV) as wizardEV — known stable roster every year
+// Fixed-field sports use PL-MC (ikynEV) as wizardEV — known stable roster every year
 const WIZARD_IKYN_SPORTS = new Set([
   'nfl', 'nba', 'mlb', 'nhl', 'wnba', 'afl', 'f1', 'darts', 'snooker', 'ucl', 'fifa',
 ]);
 
-// Sport-specific concentration gammas based on historical parity analysis (2016-2025).
-// gamma > 1 concentrates value on favorites (low-parity sports).
-// gamma < 1 flattens distribution (high-parity sports where upsets are common).
-// gamma = 1 preserves raw market ordering.
-export const SPORT_GAMMA = {
-  // Very low parity — dominant favorites win most of the time
-  f1:        1.50,   // Verstappen/Hamilton won 8/10 years; fav wins ~60%
-  tennis_m:  1.45,   // Big Three → Sinner/Alcaraz; fav wins ~35% per slam
-  // Low-moderate parity — strong favorites but upsets happen
-  nba:       1.35,   // Fav wins ~40%; top-3 wins ~65-70%
-  ncaaw:     1.30,   // UConn/SC dominate; fav wins ~30%
-  indycar:   1.30,   // Penske/Ganassi only; Palou won 4 straight
-  ncaaf:     1.25,   // Same 5-8 programs; fav wins ~25%
-  wnba:      1.25,   // Small league, star-driven; fav wins ~30%
-  // Moderate parity — competitive but top contenders recognizable
-  darts:     1.15,   // Knockout format; fav wins ~25%; 6 diff winners in 10yr
-  snooker:   1.15,   // Deep field but legends win half; fav wins ~25%
-  fifa:      1.15,   // Only ~8 realistic nations; fav wins ~18%
-  ucl:       1.10,   // Top 6-8 clubs; fav wins ~12% but upsets frequent
-  csgo:      1.10,   // Roster churn, patch changes; fav wins ~20%
-  // High parity — anyone in top 10 can win, favorites overpriced
-  nfl:       1.05,   // Hard cap + single-elim; fav wins ~17%
-  afl:       1.05,   // Salary cap + draft; 8 diff winners in 10yr
-  tennis_w:  1.00,   // 15+ diff slam winners in 10yr; very unpredictable
-  nhl:       1.00,   // Hard cap + goalie variance; Blues 2019 from last place
-  ncaab:     1.00,   // 68-team single-elim chaos; fav wins ~10%
-  // Very high parity — essentially flat, market favorites systematically overpriced
-  mlb:       0.95,   // Only 2/9 favs won; Rangers at +4500 in 2023
-  pga:       0.90,   // 150-player fields; fav wins ~10% per major
-  llws:      0.85,   // Youth baseball, teams change every year, unpickable
-};
-export const WA_CONCENTRATION_GAMMA_DEFAULT = 1.10; // fallback for unlisted sports
+// gamma = 1 for all sports: pure market ordering, no parity adjustment.
+export const SPORT_GAMMA = {};
+export const WA_CONCENTRATION_GAMMA_DEFAULT = 1.0;
 
-// Regulation-change dampening: blends base gamma toward 1.0 (neutral) for seasons
-// where major rule/equipment changes increase parity beyond what historical norms capture.
-// Formula: effectiveGamma = baseGamma × (1 - d) + 1.0 × d
-const REG_CHANGE_DAMPENING = {
-  // F1 2026: 50% electric power, active aero, tighter cost cap — largest overhaul since 2014.
-  f1: { dampening: 0.30, reason: '2026 PU + active aero overhaul' },
-};
+const REG_CHANGE_DAMPENING = {};
 
 function getEffectiveGamma(sport) {
   const baseGamma = SPORT_GAMMA[sport] ?? WA_CONCENTRATION_GAMMA_DEFAULT;
@@ -76,31 +40,17 @@ function getEffectiveGamma(sport) {
 }
 
 /**
- * Adjust a base probability using a multiplier via log-odds transform.
- * This converts the multiplicative modifier into probability space while
- * preserving (0,1) bounds via the logistic function.
- * @param {number} baseProb - Implied win probability from market odds (0-1)
- * @param {number} multiplier - Combined modifier (>1 = boost, <1 = penalize)
- * @returns {number} Adjusted probability
- */
-function adjustProbability(baseProb, multiplier) {
-  if (baseProb <= 0 || baseProb >= 1 || multiplier === 1) return baseProb;
-  const logOdds = Math.log(baseProb / (1 - baseProb));
-  return 1 / (1 + Math.exp(-(logOdds + Math.log(multiplier))));
-}
-
-/**
- * Plackett-Luce analytical EV for a single adjusted win probability.
+ * Plackett-Luce analytical EV for a single win probability.
  * Uses buildRankProbabilities (PL field approximation) to compute rank distribution,
  * then EV = Σ score[k] × rankProb[k].
- * @param {number} adjProb - Adjusted win probability (0-1)
+ * @param {number} winProb - Win probability (0-1)
  * @param {number} fieldSize - Number of competitors in the field
- * @returns {{ waEV: number, waPosProbs: number[] }} or null if adjProb invalid
+ * @returns {{ waEV: number, waPosProbs: number[] }} or null if winProb invalid
  */
-function plackettLuceEV(adjProb, fieldSize) {
-  if (!adjProb || adjProb <= 0 || adjProb >= 1) return null;
+function plackettLuceEV(winProb, fieldSize) {
+  if (!winProb || winProb <= 0 || winProb >= 1) return null;
   const numPositions = IKYN_SCORE_TABLE.length; // 8
-  const probs = buildRankProbabilities(adjProb, numPositions, fieldSize);
+  const probs = buildRankProbabilities(winProb, numPositions, fieldSize);
   let waEV = 0;
   for (let k = 0; k < numPositions; k++) {
     waEV += IKYN_SCORE_TABLE[k] * probs[k];
@@ -144,8 +94,6 @@ export function computeIkynEV(entries) {
         id: e.id,
         s: e.adpScore,
         winProb: e.ev?.winProbability != null ? e.ev.winProbability / 100 : null,
-        probMultiplier: e.probMultiplier ?? 1.0,
-        scarcityBonus: e.scarcityBonus ?? 0,
       });
     } else if (e.isPlaceholder) {
       (placeholderBySport[e.sport] ??= []).push({ id: e.id });
@@ -159,8 +107,6 @@ export function computeIkynEV(entries) {
         id: e.id,
         s: 0.01,
         winProb: e.ev.winProbability != null ? e.ev.winProbability / 100 : null,
-        probMultiplier: e.probMultiplier ?? 1.0,
-        scarcityBonus: e.scarcityBonus ?? 0,
       });
     }
   }
@@ -179,7 +125,7 @@ export function computeIkynEV(entries) {
 
     const allEntries = [
       ...realEntries,
-      ...phEntries.map(e => ({ id: e.id, s: baseDPS, winProb: null, isPlaceholder: true, probMultiplier: 1.0, scarcityBonus: 0 })),
+      ...phEntries.map(e => ({ id: e.id, s: baseDPS, winProb: null, isPlaceholder: true })),
     ];
     const n      = allEntries.length;
     const numPos = Math.min(n, IKYN_SCORE_TABLE.length);
@@ -210,18 +156,16 @@ export function computeIkynEV(entries) {
     }
 
     // ── WA_EV: Probability-First PL-WA model ──
-    // Step 1: compute wizardWinPct per entry via log-odds adjustment
-    const wizardWinPcts = allEntries.map(e =>
-      e.winProb != null ? adjustProbability(e.winProb, e.probMultiplier) : null
-    );
+    // Step 1: collect market win probabilities per entry
+    const winPcts = allEntries.map(e => e.winProb != null ? e.winProb : null);
 
     // Placeholders: assign small proxy probability from remaining mass
-    const realProbSum = wizardWinPcts.filter(p => p != null).reduce((s, p) => s + p, 0);
+    const realProbSum = winPcts.filter(p => p != null).reduce((s, p) => s + p, 0);
     const phCount = allEntries.filter(e => e.isPlaceholder).length;
     const phProb = phCount > 0 ? Math.max((1 - realProbSum) / phCount, 0.001) : 0;
-    const allWinPcts = wizardWinPcts.map(p => p ?? phProb);
+    const allWinPcts = winPcts.map(p => p ?? phProb);
 
-    // Step 2: gamma concentration on wizardWinPct
+    // Step 2: gamma concentration on win probabilities
     const sportGamma = getEffectiveGamma(sport);
     const concWinPcts = concentrateProbabilities(allWinPcts, sportGamma);
 
@@ -241,8 +185,7 @@ export function computeIkynEV(entries) {
       const pl = plackettLuceEV(wizWinPct, fieldSize);
       const ikynEV = totals[i] / IKYN_SIMS;
       const dpsShare = sportDPSTotal > 0 ? e.s / sportDPSTotal : 0;
-      // Add scarcity bonus as small additive
-      const rawWaEV = pl ? pl.waEV + (e.scarcityBonus || 0) : null;
+      const rawWaEV = pl ? pl.waEV : null;
       sportEntryData.push({ e, wizWinPct, pl, ikynEV, dpsShare, rawWaEV, idx: i });
     }
 
