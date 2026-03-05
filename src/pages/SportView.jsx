@@ -16,18 +16,19 @@ export default function SportView({ boardEntries, ikynEVMap = {}, onToggleDraft 
     [boardEntries, id]
   );
 
+  // Totals exclude placeholders — sport pays exactly 340 to real entries only
   const sportIkynEV = useMemo(() =>
-    allSportEntries.reduce((s, e) => s + (e.ikynEV ?? 0), 0),
+    allSportEntries.filter(e => !e.isPlaceholder).reduce((s, e) => s + (e.ikynEV ?? 0), 0),
     [allSportEntries]
   );
 
   const sportWaEV = useMemo(() =>
-    allSportEntries.reduce((s, e) => s + (e.waEV ?? 0), 0),
+    allSportEntries.filter(e => !e.isPlaceholder).reduce((s, e) => s + (e.waEV ?? 0), 0),
     [allSportEntries]
   );
 
   const sportWizardEV = useMemo(() =>
-    allSportEntries.reduce((s, e) => s + (e.wizardEV ?? 0), 0),
+    allSportEntries.filter(e => !e.isPlaceholder).reduce((s, e) => s + (e.wizardEV ?? 0), 0),
     [allSportEntries]
   );
 

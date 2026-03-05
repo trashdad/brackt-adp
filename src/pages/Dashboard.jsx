@@ -33,18 +33,20 @@ export default function Dashboard({ boardEntries, ikynEVMap = {}, loading, lastU
     return items;
   }, [boardEntries, sportFilter, search, showDrafted]);
 
+  // Totals exclude placeholders — contest pays exactly 6800 (20×340) to real entries only.
+  // Placeholders exist for PL-MC field simulation accuracy, not as draftable value.
   const totalIkynEV = useMemo(
-    () => Object.values(ikynEVMap).reduce((s, v) => s + (v?.ev ?? 0), 0),
+    () => Object.values(ikynEVMap).reduce((s, v) => s + (v?.isPlaceholder ? 0 : (v?.ev ?? 0)), 0),
     [ikynEVMap]
   );
 
   const totalWaEV = useMemo(
-    () => Object.values(ikynEVMap).reduce((s, v) => s + (v?.waEV ?? 0), 0),
+    () => Object.values(ikynEVMap).reduce((s, v) => s + (v?.isPlaceholder ? 0 : (v?.waEV ?? 0)), 0),
     [ikynEVMap]
   );
 
   const totalWizardEV = useMemo(
-    () => Object.values(ikynEVMap).reduce((s, v) => s + (v?.wizardEV ?? 0), 0),
+    () => Object.values(ikynEVMap).reduce((s, v) => s + (v?.isPlaceholder ? 0 : (v?.wizardEV ?? 0)), 0),
     [ikynEVMap]
   );
 
