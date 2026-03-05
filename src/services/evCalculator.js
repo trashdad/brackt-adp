@@ -119,7 +119,7 @@ export function calculateSeasonTotalEV(americanOdds, category, eventsPerSeason, 
 // DATA CONSTANTS
 // ============================================================================
 
-const STABILITY_SAMPLES = {
+export const STABILITY_SAMPLES = {
   mlb: 162, nba: 82, nhl: 82, f1: 24, afl: 23, indycar: 18, nfl: 17,
   ucl: 13, llws: 6, tennis_m: 4, tennis_w: 4, pga: 4,
   csgo: 4, ncaaf: 12, ncaab: 31, fifa: 7,
@@ -451,7 +451,7 @@ const SPORT_REPLACEMENT_LEVELS = {
   csgo: 12.00,     // 24-player field, 2 BLAST QP events (IEM Cologne + PGL Singapore are reference-only) — 6th-7th QP rank → 15 pts
 };
 
-const SPORT_VOLATILITY_SCALING = {
+export const SPORT_VOLATILITY_SCALING = {
   nhl: 1.12, mlb: 1.08, nba: 0.94, f1: 0.85, llws: 1.10
 };
 

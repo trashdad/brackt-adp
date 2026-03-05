@@ -47,6 +47,24 @@ export default function PlayerTooltip({ entry, children }) {
             )}
           </div>
 
+          {/* Social sentiment (moved from table column) */}
+          {(entry.socialPos > 0 || entry.socialNeg > 0) && (
+            <div className="mt-3 pt-2 border-t border-white/10">
+              <div className="text-[10px] text-retro-gold/60 uppercase font-mono mb-1">Social Sentiment</div>
+              <div className="flex gap-3 items-center">
+                <div className="flex items-center gap-1">
+                  <span className="font-mono text-[11px] text-retro-lime font-bold">{entry.socialPos || 0}</span>
+                  <span className="font-mono text-[9px] text-white/30">POS</span>
+                </div>
+                <span className="text-white/20">/</span>
+                <div className="flex items-center gap-1">
+                  <span className="font-mono text-[11px] text-retro-red font-bold">{entry.socialNeg || 0}</span>
+                  <span className="font-mono text-[9px] text-white/30">NEG</span>
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="mt-3 pt-2 border-t border-white/10">
             <div className="text-[9px] text-white/20 leading-relaxed italic font-mono">
               Market consensus derived from aggregate sportsbook feeds. Expert summaries compiled from 12+ verified sports periodicals.

@@ -5,19 +5,15 @@ import { useLock } from '../../context/LockContext';
 
 const COLUMNS = [
   { label: 'Draft Priority Score', key: 'adpScore' },
-  { label: 'ikyn_EV', key: 'ikynEV' },
-  { label: 'WA_EV', key: 'waEV' },
   { label: 'Wizard_EV', key: 'wizardEV' },
+  { label: '\u00b1', key: 'plusMinus' },
   { label: 'Rank', key: 'adpRank' },
   { label: 'Name', key: 'name' },
   { label: 'Sport', key: 'sportName' },
   { label: 'Win %', key: 'ev.winProbability' },
   { label: 'Odds', key: 'odds' },
   { label: 'Season EV', key: 'ev.seasonTotal' },
-  { label: 'Dropoff Velocity', key: 'dropoffVelocity' },
-  { label: 'Social', key: 'socialPos' },
-  { label: 'Mkt vs Exp', key: 'mktVsExp' },
-  { label: 'Adj. SQ', key: 'adjSq' },
+  { label: 'Momentum', key: 'dropoffVelocity' },
   { label: 'Status', key: 'drafted' },
 ];
 

@@ -10,14 +10,10 @@ export default function SportView({ boardEntries, ikynEVMap = {}, onToggleDraft 
   const sport = getSportById(id);
   const [search, setSearch] = useState('');
 
+  // Entries are pre-enriched with ikynEV/waEV/wizardEV/confidence in App.jsx
   const allSportEntries = useMemo(() =>
-    boardEntries
-      .filter((e) => e.sport === id)
-      .map((e) => {
-        const d = ikynEVMap[e.id];
-        return { ...e, ikynEV: d?.ev ?? null, waEV: d?.waEV ?? null, wizardEV: d?.wizardEV ?? null, ikynDetail: d ?? null };
-      }),
-    [boardEntries, ikynEVMap, id]
+    boardEntries.filter((e) => e.sport === id),
+    [boardEntries, id]
   );
 
   const sportIkynEV = useMemo(() =>

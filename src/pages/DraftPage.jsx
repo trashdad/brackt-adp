@@ -134,28 +134,28 @@ const NAME_FIX = {
   'indiana':                       'Indiana Hoosiers',
 };
 
+// Strip all non-alphanumeric — same function useOddsData uses for nameNormalized
+const norm = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
 // ─── Entry lookup: map brackt.com pick → boardEntry ──────────────────────────
+// Uses nameNormalized so apostrophe variants (O'Ward vs O\u2019Ward etc.) all match.
 function findEntry(selection, bracktSport, boardEntries) {
   if (!selection || !boardEntries?.length) return null;
   const sportId = BRACKT_SPORT_TO_ID[bracktSport];
   if (!sportId) return null;
   const corrected = NAME_FIX[selection.toLowerCase()] ?? selection;
+  const correctedNorm = norm(corrected);
   return (
     boardEntries.find(
-      (e) => e.sport === sportId && e.name.toLowerCase() === corrected.toLowerCase()
+      (e) => e.sport === sportId && e.nameNormalized === correctedNorm
     ) ?? null
   );
 }
 
-// ─── Draft_EV: average of ikynEV and wizardEV ────────────────────────────────
-// For fixed-field sports wizardEV = ikynEV so result = ikynEV unchanged.
-// For variable-field sports (PGA, tennis, IndyCar…) they differ → blended.
+// ─── Draft_EV: direct port of wizardEV ───────────────────────────────────────
 function draftEV(ikynData) {
   if (!ikynData) return null;
-  const ikyn = ikynData.ev   ?? null;
-  const wiz  = ikynData.wizardEV ?? null;
-  if (ikyn != null && wiz != null) return (ikyn + wiz) / 2;
-  return ikyn ?? wiz ?? null;
+  return ikynData.wizardEV ?? null;
 }
 
 // ─── Hardcoded fallback picks (used until API loads or on error) ──────────────
@@ -459,8 +459,9 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
       }
       const raw = p.selection ?? '';
       const corrected = NAME_FIX[raw.toLowerCase()] ?? raw;
+      const correctedNorm = norm(corrected);
       const entry = boardEntries.find(
-        (e) => e.sport === sportId && e.name.toLowerCase() === corrected.toLowerCase()
+        (e) => e.sport === sportId && e.nameNormalized === correctedNorm
       );
       if (!entry) {
         const avail = boardEntries
@@ -513,7 +514,7 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
 
     const table = [
       `🕹️  BRACKT · RUMBLE LEAGUE 2026 · DRAFT_EV STANDINGS`,
-      `     Blended EV · (PL-MC + WizardEV) / 2 · ${totalPicks}/${totalRounds} picks complete`,
+      `     WizardEV · ${totalPicks}/${totalRounds} picks complete`,
       ``,
       '```',
       sep,
@@ -640,7 +641,7 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
             Formula
           </span>
           <span className="font-mono text-[9px] text-retro-purple/60 leading-none">
-            (ikynEV + wizardEV) / 2
+            wizardEV
           </span>
         </div>
       </div>
@@ -819,7 +820,7 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
                           className="w-10 flex-shrink-0 border-l border-white/[0.06]
                                      flex flex-col items-center justify-center gap-0.5 py-1"
                           title={ikynData
-                            ? `ikynEV=${ikynData.ev?.toFixed(1)} wizardEV=${ikynData.wizardEV?.toFixed(1)} → dEV=${devVal?.toFixed(1)}`
+                            ? `wizardEV=${ikynData.wizardEV?.toFixed(1)} (model=${ikynData.wizardModel})`
                             : 'No match found'}
                         >
                           <span className="font-retro text-[7px] text-retro-light/25 tracking-widest leading-none uppercase">
@@ -854,7 +855,7 @@ export default function DraftPage({ boardEntries = [], ikynEVMap = {} }) {
         <span><span className="text-retro-light/40">##.##</span> = BRACKT.COM SCORE</span>
         <span><span className="text-retro-cyan/50">EV ##.#</span> = OUR EV (MATCHED FROM BOARD)</span>
         <span><span className="text-retro-cyan/35">TEAM EV</span> = SUM OF MATCHED dEVs</span>
-        <span><span style={{ color: '#39FF14' }}>dEV</span> = DRAFT_EV · (PL-MC ikynEV + WizardEV) / 2</span>
+        <span><span style={{ color: '#39FF14' }}>dEV</span> = DRAFT_EV · WizardEV (PL-MC for fixed-field, geometric WA for variable-field)</span>
         <span className="ml-auto">SOURCE: BRACKT.COM · RUMBLE LEAGUE 2026 · AUTO-SYNC 60s</span>
       </div>
     </div>

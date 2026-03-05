@@ -48,14 +48,8 @@ export default function Dashboard({ boardEntries, ikynEVMap = {}, loading, lastU
     [ikynEVMap]
   );
 
-  // Enrich filtered entries with ikynEV + waEV + wizardEV + pos breakdown before passing down
-  const enrichedFiltered = useMemo(
-    () => filtered.map(e => {
-      const d = ikynEVMap[e.id];
-      return { ...e, ikynEV: d?.ev ?? null, waEV: d?.waEV ?? null, wizardEV: d?.wizardEV ?? null, ikynDetail: d ?? null };
-    }),
-    [filtered, ikynEVMap]
-  );
+  // Entries are pre-enriched with ikynEV/waEV/wizardEV/confidence in App.jsx
+  const enrichedFiltered = filtered;
 
   const { sorted: mobileSorted, sortKey: mobileSortKey, sortDir: mobileSortDir, toggleSort: mobileToggleSort } = useSorting(filtered, 'adpScore', 'desc');
 

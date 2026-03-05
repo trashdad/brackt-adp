@@ -5,11 +5,10 @@ import { formatAmericanOdds } from '../../services/oddsConverter';
 import { formatNumber, formatPercent } from '../../utils/formatters';
 import DraftedBadge from './DraftedBadge';
 import EVTooltip from './EVTooltip';
-import IkynEVTooltip from './IkynEVTooltip';
-import WAEVTooltip from './WAEVTooltip';
+import WizardEVTooltip from './WizardEVTooltip';
+import ConfidenceTooltip from './ConfidenceTooltip';
 import OddsTooltip from './OddsTooltip';
 import PriorityTooltip from './PriorityTooltip';
-import SocialTooltip from './SocialTooltip';
 import PlayerTooltip from './PlayerTooltip';
 
 
@@ -22,7 +21,7 @@ const getVelocityColor = (v) => {
 
 function ADPRow({ entry, onToggleDraft, isUnlocked }) {
   const color = SPORT_COLORS[entry.sport] || '#888';
-  const val = (v) => entry.isPlaceholder ? '—' : v;
+  const val = (v) => entry.isPlaceholder ? '\u2014' : v;
   const velocity = entry.dropoffVelocity ?? 1.0;
 
 
@@ -39,7 +38,7 @@ function ADPRow({ entry, onToggleDraft, isUnlocked }) {
             <span className="drop-shadow-[0_0_4px_rgba(157,80,187,0.4)] text-retro-cyan">
               {val(formatNumber(entry.adpScore))}
               {entry.exceedsCapacity && (
-                <span className="ml-1 text-retro-gold text-[10px]" title="EXCEEDS_CAPACITY">▲</span>
+                <span className="ml-1 text-retro-gold text-[10px]" title="EXCEEDS_CAPACITY">{'\u25b2'}</span>
               )}
             </span>
             {!entry.isPlaceholder && entry.scarcityBonus > 0 && (
@@ -51,50 +50,32 @@ function ADPRow({ entry, onToggleDraft, isUnlocked }) {
         </PriorityTooltip>
       </td>
 
-      {/* ikyn_EV */}
-      <td className="px-2 py-2 font-mono tabular-nums text-center w-16">
-        {entry.ikynEV == null ? (
-          <span className="text-retro-light/20 text-[11px]">—</span>
-        ) : (
-          <IkynEVTooltip entry={entry}>
-            <span
-              className={`font-bold ${entry.isPlaceholder ? 'text-[11px] opacity-40' : 'text-[13px]'}`}
-              style={{ color: entry.isPlaceholder ? '#888' : `hsl(${Math.min(entry.ikynEV, 100) * 1.2}deg 100% 55%)` }}
-            >
-              {entry.ikynEV.toFixed(1)}
-            </span>
-          </IkynEVTooltip>
-        )}
-      </td>
-
-      {/* WA_EV */}
-      <td className="px-2 py-2 font-mono tabular-nums text-center w-16">
-        {entry.waEV == null ? (
-          <span className="text-retro-light/20 text-[11px]">—</span>
-        ) : (
-          <WAEVTooltip entry={entry}>
-            <span
-              className={`font-bold ${entry.isPlaceholder ? 'text-[11px] opacity-40' : 'text-[13px]'}`}
-              style={{ color: entry.isPlaceholder ? '#888' : `hsl(${Math.min(entry.waEV, 100) * 1.2}deg 100% 65%)` }}
-            >
-              {entry.waEV.toFixed(1)}
-            </span>
-          </WAEVTooltip>
-        )}
-      </td>
-
-      {/* Wizard_EV */}
+      {/* Wizard_EV (absorbs ikynEV + waEV into tooltip) */}
       <td className="px-2 py-2 font-mono tabular-nums text-center w-16">
         {entry.wizardEV == null ? (
-          <span className="text-retro-light/20 text-[11px]">—</span>
+          <span className="text-retro-light/20 text-[11px]">{'\u2014'}</span>
         ) : (
-          <span
-            className={`font-bold ${entry.isPlaceholder ? 'text-[11px] opacity-40' : 'text-[13px]'}`}
-            style={{ color: entry.isPlaceholder ? '#888' : `hsl(${270 + Math.min(entry.wizardEV, 100) * 0.3}deg 80% 65%)` }}
-            title={entry.ikynDetail?.wizardModel === 'ikyn' ? 'PL-MC (fixed field)' : 'WA (variable field)'}
-          >
-            {entry.wizardEV.toFixed(1)}
-          </span>
+          <WizardEVTooltip entry={entry}>
+            <span
+              className={`font-bold ${entry.isPlaceholder ? 'text-[11px] opacity-40' : 'text-[13px]'}`}
+              style={{ color: entry.isPlaceholder ? '#888' : `hsl(${270 + Math.min(entry.wizardEV, 100) * 0.3}deg 80% 65%)` }}
+            >
+              {entry.wizardEV.toFixed(1)}
+            </span>
+          </WizardEVTooltip>
+        )}
+      </td>
+
+      {/* Confidence (± error band) */}
+      <td className="px-1.5 py-2 font-mono text-[12px] tabular-nums text-center w-14">
+        {entry.plusMinus == null ? (
+          <span className="text-retro-light/20 text-[11px]">{'\u2014'}</span>
+        ) : (
+          <ConfidenceTooltip entry={entry}>
+            <span className={`font-bold ${entry.confidenceColor}`}>
+              {'\u00b1'}{entry.plusMinus.toFixed(0)}
+            </span>
+          </ConfidenceTooltip>
         )}
       </td>
 
@@ -146,40 +127,13 @@ function ADPRow({ entry, onToggleDraft, isUnlocked }) {
         <EVTooltip entry={entry}>{val(formatNumber(entry.ev?.seasonTotal))}</EVTooltip>
       </td>
 
-      {/* Dropoff Velocity */}
+      {/* Momentum (formerly Dropoff Velocity) */}
       <td className="px-1.5 py-2 font-mono text-[13px] tabular-nums">
-        {entry.isPlaceholder ? '—' : (
+        {entry.isPlaceholder ? '\u2014' : (
           <span className={getVelocityColor(velocity)} title="MOMENTUM / INERTIA (Rate of EV decay)">
             {velocity.toFixed(2)}x
           </span>
         )}
-      </td>
-
-      {/* Social Score */}
-      <td className="px-1.5 py-2 font-mono text-[13px] tabular-nums">
-        <SocialTooltip entry={entry}>
-          <div className="flex gap-1 items-center justify-center">
-            <span className="text-retro-light/50">[</span>
-            <span className="text-retro-lime font-bold">{entry.socialPos || 0}</span>
-            <span className="text-retro-light/50">/</span>
-            <span className="text-retro-red font-bold">{entry.socialNeg || 0}</span>
-            <span className="text-retro-light/50">]</span>
-          </div>
-        </SocialTooltip>
-      </td>
-
-      {/* Mkt vs Exp */}
-      <td className="px-1.5 py-2 font-mono text-[13px] tabular-nums text-center">
-        {!entry.isPlaceholder && entry.mktVsExp !== undefined ? (
-           <span className={entry.mktVsExp > 0 ? 'text-retro-lime' : entry.mktVsExp < 0 ? 'text-retro-red' : 'text-retro-light/50'}>
-             {entry.mktVsExp > 0 ? `+${entry.mktVsExp}` : entry.mktVsExp}
-           </span>
-        ) : '—'}
-      </td>
-
-      {/* Adj SQ */}
-      <td className="px-1.5 py-2 font-mono text-[13px] text-retro-gold/80 tabular-nums">
-        <SocialTooltip entry={entry}>{val(formatNumber(entry.adjSq || 1.0))}</SocialTooltip>
       </td>
 
       {/* Status */}

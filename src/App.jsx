@@ -16,6 +16,7 @@ import { applyDungeonFog } from './utils/dungeonFog';
 import { fetchAppConfig, saveAppConfig } from './utils/storage';
 import { exportBoard, importBoard } from './utils/csvManager';
 import { computeIkynEV } from './utils/ikynEV';
+import { enrichWithConfidence } from './utils/confidenceScore';
 
 export default function App() {
   const [scarcityModifier, setScarcityModifier] = useState(0.5); // default; overwritten from server
@@ -33,9 +34,20 @@ export default function App() {
   // affect adpScore/winProbability so recomputing 300k-sim PL-MC on every draft is wasted.
   const ikynEVMap = useMemo(() => computeIkynEV(entries), [entries]);
 
+  // Pre-enrich entries with ikynEV + waEV + wizardEV + confidence data
+  // This avoids duplicating the enrichment in Dashboard/SportView/etc.
+  const enrichedEntries = useMemo(() => {
+    const enriched = boardEntries.map(e => {
+      const d = ikynEVMap[e.id];
+      return { ...e, ikynEV: d?.ev ?? null, waEV: d?.waEV ?? null, wizardEV: d?.wizardEV ?? null, ikynDetail: d ?? null };
+    });
+    enrichWithConfidence(enriched, ikynEVMap);
+    return enriched;
+  }, [boardEntries, ikynEVMap]);
+
   // DUNGEON_FOE: randomize display values for non-friends (never mutates real data)
   const { isFoe, seed } = useDungeonGate();
-  const displayEntries = applyDungeonFog(boardEntries, isFoe, seed);
+  const displayEntries = applyDungeonFog(enrichedEntries, isFoe, seed);
 
   // Import state lifted to App so Header can trigger it
   const [importStatus, setImportStatus] = useState(null);

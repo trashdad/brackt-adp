@@ -23,7 +23,63 @@ const PLACEHOLDER_DPS_MULT = 0.5;
 const WIZARD_IKYN_SPORTS = new Set([
   'nfl', 'nba', 'mlb', 'nhl', 'wnba', 'afl', 'f1', 'darts', 'snooker', 'ucl', 'fifa',
 ]);
-const WA_TARGET = 340; // per-sport WA_EV ceiling (same as PL-MC guarantee)
+const WA_TARGET = 340; // per-sport WA_EV target (same as PL-MC guarantee)
+
+// Sport-specific concentration gammas based on historical parity analysis (2016-2025).
+// gamma > 1 concentrates value on favorites (low-parity sports).
+// gamma < 1 flattens distribution (high-parity sports where upsets are common).
+// gamma = 1 preserves raw market ordering.
+export const SPORT_GAMMA = {
+  // Very low parity — dominant favorites win most of the time
+  f1:        1.50,   // Verstappen/Hamilton won 8/10 years; fav wins ~60%
+  tennis_m:  1.45,   // Big Three → Sinner/Alcaraz; fav wins ~35% per slam
+  // Low-moderate parity — strong favorites but upsets happen
+  nba:       1.35,   // Fav wins ~40%; top-3 wins ~65-70%
+  ncaaw:     1.30,   // UConn/SC dominate; fav wins ~30%
+  indycar:   1.30,   // Penske/Ganassi only; Palou won 4 straight
+  ncaaf:     1.25,   // Same 5-8 programs; fav wins ~25%
+  wnba:      1.25,   // Small league, star-driven; fav wins ~30%
+  // Moderate parity — competitive but top contenders recognizable
+  darts:     1.15,   // Knockout format; fav wins ~25%; 6 diff winners in 10yr
+  snooker:   1.15,   // Deep field but legends win half; fav wins ~25%
+  fifa:      1.15,   // Only ~8 realistic nations; fav wins ~18%
+  ucl:       1.10,   // Top 6-8 clubs; fav wins ~12% but upsets frequent
+  csgo:      1.10,   // Roster churn, patch changes; fav wins ~20%
+  // High parity — anyone in top 10 can win, favorites overpriced
+  nfl:       1.05,   // Hard cap + single-elim; fav wins ~17%
+  afl:       1.05,   // Salary cap + draft; 8 diff winners in 10yr
+  tennis_w:  1.00,   // 15+ diff slam winners in 10yr; very unpredictable
+  nhl:       1.00,   // Hard cap + goalie variance; Blues 2019 from last place
+  ncaab:     1.00,   // 68-team single-elim chaos; fav wins ~10%
+  // Very high parity — essentially flat, market favorites systematically overpriced
+  mlb:       0.95,   // Only 2/9 favs won; Rangers at +4500 in 2023
+  pga:       0.90,   // 150-player fields; fav wins ~10% per major
+  llws:      0.85,   // Youth baseball, teams change every year, unpickable
+};
+export const WA_CONCENTRATION_GAMMA_DEFAULT = 1.10; // fallback for unlisted sports
+
+// Regulation-change dampening: blends base gamma toward 1.0 (neutral) for seasons
+// where major rule/equipment changes increase parity beyond what historical norms capture.
+// Formula: effectiveGamma = baseGamma × (1 - d) + 1.0 × d
+// The market odds already flatten in uncertain years, so dampening prevents the gamma
+// from over-concentrating on top of already-flat odds (avoiding double-counting).
+//
+// Calibrated against F1 2022 (ground-effect regs): market was +150/+175 (flat vs typical
+// -175/-250), winner was rank 2. A dampening of 0.30 → gamma 1.35, which matches NBA-level
+// uncertainty ("strong favorites exist but 2nd/3rd pick wins 30-40%").
+const REG_CHANGE_DAMPENING = {
+  // F1 2026: 50% electric power, active aero, tighter cost cap — largest overhaul since 2014.
+  // Historical pattern: 1 disruption year then new dominant force within 1-2 seasons.
+  f1: { dampening: 0.30, reason: '2026 PU + active aero overhaul' },
+};
+
+function getEffectiveGamma(sport) {
+  const baseGamma = SPORT_GAMMA[sport] ?? WA_CONCENTRATION_GAMMA_DEFAULT;
+  const regChange = REG_CHANGE_DAMPENING[sport];
+  if (!regChange) return baseGamma;
+  const d = regChange.dampening;
+  return baseGamma * (1 - d) + 1.0 * d;
+}
 
 /**
  * Geometric EV for a single win probability p.
@@ -39,6 +95,22 @@ function geometricEV(p) {
     waEV += IKYN_SCORE_TABLE[k] * prob;
   }
   return { waEV, waPosProbs };
+}
+
+/**
+ * Apply concentration exponent to an array of pBlend values.
+ * Raises each to gamma, then rescales so the sum is preserved.
+ * This widens gaps between favorites and longshots.
+ */
+function concentratePBlends(pBlends, gamma) {
+  if (gamma === 1) return pBlends;
+  const origSum = pBlends.reduce((s, p) => s + p, 0);
+  if (origSum <= 0) return pBlends;
+  const powered = pBlends.map(p => p > 0 ? Math.pow(p, gamma) : 0);
+  const powSum = powered.reduce((s, p) => s + p, 0);
+  if (powSum <= 0) return pBlends;
+  const scale = origSum / powSum;
+  return powered.map(p => p * scale);
 }
 
 /**
@@ -119,7 +191,8 @@ export function sweepWaEV(entries, alpha) {
     ];
     const sportDPSTotal = allEntries.reduce((s, e) => s + e.s, 0);
     const sumP          = allEntries.reduce((s, e) => s + (e.winProb ?? 0), 0);
-    const t             = sportWaTotal(allEntries, sportDPSTotal, sumP, alpha);
+    const rawT          = sportWaTotal(allEntries, sportDPSTotal, sumP, alpha);
+    const t             = WA_TARGET; // normalized to target
     sportTotals[sport]  = t;
     total              += t;
   }
@@ -208,45 +281,68 @@ export function computeIkynEV(entries) {
       }
     }
 
-    // ── WA_EV: per-sport calibrated α ───────────────────────────
+    // ── WA_EV: per-sport calibrated α + concentration + normalization ──
     const sportDPSTotal = allEntries.reduce((s, e) => s + e.s, 0);
     const sumP          = allEntries.reduce((s, e) => s + (e.winProb ?? 0), 0);
     const marketScale   = sumP > 1 ? 1 / sumP : 1;
 
-    // Find α that keeps this sport's WA_EV ≤ 340, as close as possible
     const { alpha: sportAlpha } = calibrateAlpha(allEntries, sportDPSTotal, sumP);
     const useIkyn = WIZARD_IKYN_SPORTS.has(sport);
 
-    for (let i = 0; i < n; i++) {
-      const e        = allEntries[i];
+    // Step 1: compute raw pBlend values for all entries
+    const rawPBlends = allEntries.map(e => {
       const dpsShare = sportDPSTotal > 0 ? e.s / sportDPSTotal : 0;
       const mktNorm  = e.winProb != null ? e.winProb * marketScale : 0;
-      const pBlend   = e.winProb != null
+      return e.winProb != null
         ? sportAlpha * dpsShare + (1 - sportAlpha) * mktNorm
-        : dpsShare; // placeholders: 100% DPS share
+        : dpsShare;
+    });
+
+    // Step 2: apply sport-specific concentration exponent (with reg-change dampening)
+    const sportGamma = getEffectiveGamma(sport);
+    const concPBlends = concentratePBlends(rawPBlends, sportGamma);
+
+    // Step 3: compute geometric WA_EV with concentrated probabilities
+    const sportEntryData = [];
+    for (let i = 0; i < n; i++) {
+      const e        = allEntries[i];
+      const pBlend   = concPBlends[i];
       const geo      = geometricEV(pBlend);
       const ikynEV   = totals[i] / IKYN_SIMS;
-      const waEV     = geo?.waEV ?? null;
+      const dpsShare = sportDPSTotal > 0 ? e.s / sportDPSTotal : 0;
+      const mktNorm  = e.winProb != null ? e.winProb * marketScale : 0;
+      sportEntryData.push({ e, pBlend, rawPBlend: rawPBlends[i], geo, ikynEV, dpsShare, mktNorm });
+    }
 
-      result[e.id] = {
+    // Step 4: normalize WA_EV so REAL (non-placeholder) entries sum to WA_TARGET (340)
+    // Placeholders keep their raw share but don't eat into the 340 budget
+    const realWaTotal = sportEntryData
+      .filter(d => !d.e.isPlaceholder)
+      .reduce((s, d) => s + (d.geo?.waEV ?? 0), 0);
+    const waScale = realWaTotal > 0 ? WA_TARGET / realWaTotal : 1;
+
+    for (const d of sportEntryData) {
+      const waEV = d.geo ? d.geo.waEV * waScale : null;
+
+      result[d.e.id] = {
         // PL-MC
-        ev:            ikynEV,
-        posProbs:      Array.from(posCounts[i], (c) => c / IKYN_SIMS),
-        dps:           e.s,
+        ev:            d.ikynEV,
+        posProbs:      Array.from(posCounts[allEntries.indexOf(d.e)], (c) => c / IKYN_SIMS),
+        dps:           d.e.s,
         sportTotal:    sportDPSTotal,
         fieldSize:     n,
-        isPlaceholder: e.isPlaceholder ?? false,
-        // Geometric (per-sport calibrated)
-        winProb:       e.winProb,
-        winProbNorm:   e.winProb != null ? mktNorm : null,
-        dpsShare,
-        pBlend,
+        isPlaceholder: d.e.isPlaceholder ?? false,
+        // Geometric (per-sport calibrated + concentrated + normalized)
+        winProb:       d.e.winProb,
+        winProbNorm:   d.e.winProb != null ? d.mktNorm : null,
+        dpsShare:      d.dpsShare,
+        pBlend:        d.pBlend,
         sportSumP:     sumP,
         sportAlpha,
         waEV,
-        waPosProbs:    geo?.waPosProbs ?? null,
-        // wizardEV: PL-MC for fixed-field sports, WA_EV for variable-field sports
-        wizardEV:      useIkyn ? ikynEV : waEV,
+        waPosProbs:    d.geo?.waPosProbs ?? null,
+        // wizardEV: PL-MC for fixed-field sports, normalized WA_EV for variable-field
+        wizardEV:      useIkyn ? d.ikynEV : waEV,
         wizardModel:   useIkyn ? 'ikyn' : 'wa',
       };
     }

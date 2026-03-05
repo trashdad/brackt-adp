@@ -84,6 +84,14 @@ export default function PriorityTooltip({ entry, children }) {
                 <span className="text-retro-light/50 font-mono">Scarcity Bonus</span>
                 <span className="font-mono text-retro-gold">+{formatNumber(m.scarcityBonus)}</span>
               </div>
+              {entry.mktVsExp !== undefined && (
+                <div className="flex justify-between items-center text-[10px]">
+                  <span className="text-retro-light/50 font-mono">Mkt vs Expected</span>
+                  <span className={`font-mono ${entry.mktVsExp > 0 ? 'text-retro-lime' : entry.mktVsExp < 0 ? 'text-retro-red' : 'text-white/50'}`}>
+                    {entry.mktVsExp > 0 ? `+${entry.mktVsExp}` : entry.mktVsExp}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
 
