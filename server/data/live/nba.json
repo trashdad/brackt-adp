@@ -1,371 +1,41 @@
 {
   "sport": "nba",
-  "lastUpdated": "2026-03-03T11:00:00.000Z",
+  "lastUpdated": "2026-03-03T14:00:00.000Z",
   "sources": [
     "sportsbookreview",
-    "fanduel",
-    "betmgm"
+    "foxsports",
+    "fanduel"
   ],
   "entries": [
-    {
-      "name": "Oklahoma City Thunder",
-      "nameNormalized": "oklahomacitythunder",
-      "bestOdds": "+130",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+130",
-      "oddsBySource": {
-        "sportsbookreview": "+130"
-      },
-      "impliedProbability": 0.4348,
-      "market": "outrights"
-    },
-    {
-      "name": "Denver Nuggets",
-      "nameNormalized": "denvernuggets",
-      "bestOdds": "+550",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+550",
-      "oddsBySource": {
-        "sportsbookreview": "+550"
-      },
-      "impliedProbability": 0.1538,
-      "market": "outrights"
-    },
-    {
-      "name": "San Antonio Spurs",
-      "nameNormalized": "sanantoniospurs",
-      "bestOdds": "+700",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+700",
-      "oddsBySource": {
-        "sportsbookreview": "+700"
-      },
-      "impliedProbability": 0.125,
-      "market": "outrights"
-    },
-    {
-      "name": "Boston Celtics",
-      "nameNormalized": "bostonceltics",
-      "bestOdds": "+850",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+850",
-      "oddsBySource": {
-        "sportsbookreview": "+850"
-      },
-      "impliedProbability": 0.1053,
-      "market": "outrights"
-    },
-    {
-      "name": "Cleveland Cavaliers",
-      "nameNormalized": "clevelandcavaliers",
-      "bestOdds": "+950",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+950",
-      "oddsBySource": {
-        "sportsbookreview": "+950"
-      },
-      "impliedProbability": 0.0952,
-      "market": "outrights"
-    },
-    {
-      "name": "Detroit Pistons",
-      "nameNormalized": "detroitpistons",
-      "bestOdds": "+1600",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+1600",
-      "oddsBySource": {
-        "sportsbookreview": "+1600"
-      },
-      "impliedProbability": 0.0588,
-      "market": "outrights"
-    },
-    {
-      "name": "New York Knicks",
-      "nameNormalized": "newyorkknicks",
-      "bestOdds": "+1700",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+1700",
-      "oddsBySource": {
-        "sportsbookreview": "+1700"
-      },
-      "impliedProbability": 0.0556,
-      "market": "outrights"
-    },
-    {
-      "name": "Houston Rockets",
-      "nameNormalized": "houstonrockets",
-      "bestOdds": "+2200",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+2200",
-      "oddsBySource": {
-        "sportsbookreview": "+2200"
-      },
-      "impliedProbability": 0.0435,
-      "market": "outrights"
-    },
-    {
-      "name": "Minnesota Timberwolves",
-      "nameNormalized": "minnesotatimberwolves",
-      "bestOdds": "+4000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+4000",
-      "oddsBySource": {
-        "sportsbookreview": "+4000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Los Angeles Lakers",
-      "nameNormalized": "losangeleslakers",
-      "bestOdds": "+8000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+8000",
-      "oddsBySource": {
-        "sportsbookreview": "+8000"
-      },
-      "impliedProbability": 0.0123,
-      "market": "outrights"
-    },
-    {
-      "name": "Philadelphia 76ers",
-      "nameNormalized": "philadelphia76ers",
-      "bestOdds": "+10000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "sportsbookreview": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "Orlando Magic",
-      "nameNormalized": "orlandomagic",
-      "bestOdds": "+12500",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+12500",
-      "oddsBySource": {
-        "sportsbookreview": "+12500"
-      },
-      "impliedProbability": 0.0079,
-      "market": "outrights"
-    },
-    {
-      "name": "Charlotte Hornets",
-      "nameNormalized": "charlottehornets",
-      "bestOdds": "+15000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+15000",
-      "oddsBySource": {
-        "sportsbookreview": "+15000"
-      },
-      "impliedProbability": 0.0066,
-      "market": "outrights"
-    },
-    {
-      "name": "Toronto Raptors",
-      "nameNormalized": "torontoraptors",
-      "bestOdds": "+17500",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+17500",
-      "oddsBySource": {
-        "sportsbookreview": "+17500"
-      },
-      "impliedProbability": 0.0057,
-      "market": "outrights"
-    },
-    {
-      "name": "Miami Heat",
-      "nameNormalized": "miamiheat",
-      "bestOdds": "+20000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "sportsbookreview": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Golden State Warriors",
-      "nameNormalized": "goldenstatewarriors",
-      "bestOdds": "+25000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+25000",
-      "oddsBySource": {
-        "sportsbookreview": "+25000"
-      },
-      "impliedProbability": 0.004,
-      "market": "outrights"
-    },
-    {
-      "name": "Phoenix Suns",
-      "nameNormalized": "phoenixsuns",
-      "bestOdds": "+30000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+30000",
-      "oddsBySource": {
-        "sportsbookreview": "+30000"
-      },
-      "impliedProbability": 0.0033,
-      "market": "outrights"
-    },
-    {
-      "name": "Los Angeles Clippers",
-      "nameNormalized": "losangelesclippers",
-      "bestOdds": "+40000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+40000",
-      "oddsBySource": {
-        "sportsbookreview": "+40000"
-      },
-      "impliedProbability": 0.0025,
-      "market": "outrights"
-    },
-    {
-      "name": "Atlanta Hawks",
-      "nameNormalized": "atlantahawks",
-      "bestOdds": "+150000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+150000",
-      "oddsBySource": {
-        "sportsbookreview": "+150000"
-      },
-      "impliedProbability": 0.0007,
-      "market": "outrights"
-    },
-    {
-      "name": "Milwaukee Bucks",
-      "nameNormalized": "milwaukeebucks",
-      "bestOdds": "+250000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+250000",
-      "oddsBySource": {
-        "sportsbookreview": "+250000"
-      },
-      "impliedProbability": 0.0004,
-      "market": "outrights"
-    },
-    {
-      "name": "Portland Trail Blazers",
-      "nameNormalized": "portlandtrailblazers",
-      "bestOdds": "+250000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+250000",
-      "oddsBySource": {
-        "sportsbookreview": "+250000"
-      },
-      "impliedProbability": 0.0004,
-      "market": "outrights"
-    },
-    {
-      "name": "Dallas Mavericks",
-      "nameNormalized": "dallasmavericks",
-      "bestOdds": "+500000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+500000",
-      "oddsBySource": {
-        "sportsbookreview": "+500000"
-      },
-      "impliedProbability": 0.00002,
-      "market": "outrights"
-    },
-    {
-      "name": "Brooklyn Nets",
-      "nameNormalized": "brooklynnets",
-      "bestOdds": "+500000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+500000",
-      "oddsBySource": {
-        "sportsbookreview": "+500000"
-      },
-      "impliedProbability": 0.00002,
-      "market": "outrights"
-    },
-    {
-      "name": "Chicago Bulls",
-      "nameNormalized": "chicagobulls",
-      "bestOdds": "+500000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+500000",
-      "oddsBySource": {
-        "sportsbookreview": "+500000"
-      },
-      "impliedProbability": 0.00002,
-      "market": "outrights"
-    },
-    {
-      "name": "Washington Wizards",
-      "nameNormalized": "washingtonwizards",
-      "bestOdds": "+500000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+500000",
-      "oddsBySource": {
-        "sportsbookreview": "+500000"
-      },
-      "impliedProbability": 0.00002,
-      "market": "outrights"
-    },
-    {
-      "name": "Sacramento Kings",
-      "nameNormalized": "sacramentokings",
-      "bestOdds": "+500000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+500000",
-      "oddsBySource": {
-        "sportsbookreview": "+500000"
-      },
-      "impliedProbability": 0.00002,
-      "market": "outrights"
-    },
-    {
-      "name": "Utah Jazz",
-      "nameNormalized": "utahjazz",
-      "bestOdds": "+500000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+500000",
-      "oddsBySource": {
-        "sportsbookreview": "+500000"
-      },
-      "impliedProbability": 0.00002,
-      "market": "outrights"
-    },
-    {
-      "name": "Memphis Grizzlies",
-      "nameNormalized": "memphisgrizzlies",
-      "bestOdds": "+500000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+500000",
-      "oddsBySource": {
-        "sportsbookreview": "+500000"
-      },
-      "impliedProbability": 0.00002,
-      "market": "outrights"
-    },
-    {
-      "name": "New Orleans Pelicans",
-      "nameNormalized": "neworleanspelicans",
-      "bestOdds": "+500000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+500000",
-      "oddsBySource": {
-        "sportsbookreview": "+500000"
-      },
-      "impliedProbability": 0.00002,
-      "market": "outrights"
-    },
-    {
-      "name": "Indiana Pacers",
-      "nameNormalized": "indianapacers",
-      "bestOdds": "+500000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+500000",
-      "oddsBySource": {
-        "sportsbookreview": "+500000"
-      },
-      "impliedProbability": 0.00002,
-      "market": "outrights"
-    }
+    { "name": "Oklahoma City Thunder", "nameNormalized": "oklahomacitythunder", "bestOdds": "+140", "consensusOdds": "+140", "oddsBySource": { "sportsbookreview": "+140" }, "impliedProbability": 0.4167 },
+    { "name": "San Antonio Spurs", "nameNormalized": "sanantoniospurs", "bestOdds": "+700", "consensusOdds": "+700", "oddsBySource": { "sportsbookreview": "+700" }, "impliedProbability": 0.125 },
+    { "name": "Denver Nuggets", "nameNormalized": "denvernuggets", "bestOdds": "+750", "consensusOdds": "+750", "oddsBySource": { "sportsbookreview": "+750" }, "impliedProbability": 0.1176 },
+    { "name": "Boston Celtics", "nameNormalized": "bostonceltics", "bestOdds": "+850", "consensusOdds": "+850", "oddsBySource": { "sportsbookreview": "+850" }, "impliedProbability": 0.1053 },
+    { "name": "Cleveland Cavaliers", "nameNormalized": "clevelandcavaliers", "bestOdds": "+950", "consensusOdds": "+950", "oddsBySource": { "sportsbookreview": "+950" }, "impliedProbability": 0.0952 },
+    { "name": "Detroit Pistons", "nameNormalized": "detroitpistons", "bestOdds": "+1600", "consensusOdds": "+1600", "oddsBySource": { "sportsbookreview": "+1600" }, "impliedProbability": 0.0588 },
+    { "name": "New York Knicks", "nameNormalized": "newyorkknicks", "bestOdds": "+1700", "consensusOdds": "+1700", "oddsBySource": { "sportsbookreview": "+1700" }, "impliedProbability": 0.0556 },
+    { "name": "Houston Rockets", "nameNormalized": "houstonrockets", "bestOdds": "+2200", "consensusOdds": "+2200", "oddsBySource": { "sportsbookreview": "+2200" }, "impliedProbability": 0.0435 },
+    { "name": "Minnesota Timberwolves", "nameNormalized": "minnesotatimberwolves", "bestOdds": "+4000", "consensusOdds": "+4000", "oddsBySource": { "sportsbookreview": "+4000" }, "impliedProbability": 0.0244 },
+    { "name": "Los Angeles Lakers", "nameNormalized": "losangeleslakers", "bestOdds": "+8000", "consensusOdds": "+8000", "oddsBySource": { "sportsbookreview": "+8000" }, "impliedProbability": 0.0123 },
+    { "name": "Philadelphia 76ers", "nameNormalized": "philadelphia76ers", "bestOdds": "+10000", "consensusOdds": "+10000", "oddsBySource": { "sportsbookreview": "+10000" }, "impliedProbability": 0.0099 },
+    { "name": "Orlando Magic", "nameNormalized": "orlandomagic", "bestOdds": "+12500", "consensusOdds": "+12500", "oddsBySource": { "sportsbookreview": "+12500" }, "impliedProbability": 0.0079 },
+    { "name": "Charlotte Hornets", "nameNormalized": "charlottehornets", "bestOdds": "+15000", "consensusOdds": "+15000", "oddsBySource": { "sportsbookreview": "+15000" }, "impliedProbability": 0.0066 },
+    { "name": "Toronto Raptors", "nameNormalized": "torontoraptors", "bestOdds": "+17500", "consensusOdds": "+17500", "oddsBySource": { "sportsbookreview": "+17500" }, "impliedProbability": 0.0057 },
+    { "name": "Miami Heat", "nameNormalized": "miamiheat", "bestOdds": "+20000", "consensusOdds": "+20000", "oddsBySource": { "sportsbookreview": "+20000" }, "impliedProbability": 0.005 },
+    { "name": "Golden State Warriors", "nameNormalized": "goldenstatewarriors", "bestOdds": "+25000", "consensusOdds": "+25000", "oddsBySource": { "sportsbookreview": "+25000" }, "impliedProbability": 0.004 },
+    { "name": "Phoenix Suns", "nameNormalized": "phoenixsuns", "bestOdds": "+30000", "consensusOdds": "+30000", "oddsBySource": { "sportsbookreview": "+30000" }, "impliedProbability": 0.0033 },
+    { "name": "Los Angeles Clippers", "nameNormalized": "losangelesclippers", "bestOdds": "+40000", "consensusOdds": "+40000", "oddsBySource": { "sportsbookreview": "+40000" }, "impliedProbability": 0.0025 },
+    { "name": "Atlanta Hawks", "nameNormalized": "atlantahawks", "bestOdds": "+150000", "consensusOdds": "+150000", "oddsBySource": { "sportsbookreview": "+150000" }, "impliedProbability": 0.0007 },
+    { "name": "Milwaukee Bucks", "nameNormalized": "milwaukeebucks", "bestOdds": "+250000", "consensusOdds": "+250000", "oddsBySource": { "sportsbookreview": "+250000" }, "impliedProbability": 0.0004 },
+    { "name": "Portland Trail Blazers", "nameNormalized": "portlandtrailblazers", "bestOdds": "+250000", "consensusOdds": "+250000", "oddsBySource": { "sportsbookreview": "+250000" }, "impliedProbability": 0.0004 },
+    { "name": "Dallas Mavericks", "nameNormalized": "dallasmavericks", "bestOdds": "+500000", "consensusOdds": "+500000", "oddsBySource": { "sportsbookreview": "+500000" }, "impliedProbability": 0.00002 },
+    { "name": "Brooklyn Nets", "nameNormalized": "brooklynnets", "bestOdds": "+500000", "consensusOdds": "+500000", "oddsBySource": { "sportsbookreview": "+500000" }, "impliedProbability": 0.00002 },
+    { "name": "Chicago Bulls", "nameNormalized": "chicagobulls", "bestOdds": "+500000", "consensusOdds": "+500000", "oddsBySource": { "sportsbookreview": "+500000" }, "impliedProbability": 0.00002 },
+    { "name": "Washington Wizards", "nameNormalized": "washingtonwizards", "bestOdds": "+500000", "consensusOdds": "+500000", "oddsBySource": { "sportsbookreview": "+500000" }, "impliedProbability": 0.00002 },
+    { "name": "Sacramento Kings", "nameNormalized": "sacramentokings", "bestOdds": "+500000", "consensusOdds": "+500000", "oddsBySource": { "sportsbookreview": "+500000" }, "impliedProbability": 0.00002 },
+    { "name": "Utah Jazz", "nameNormalized": "utahjazz", "bestOdds": "+500000", "consensusOdds": "+500000", "oddsBySource": { "sportsbookreview": "+500000" }, "impliedProbability": 0.00002 },
+    { "name": "Memphis Grizzlies", "nameNormalized": "memphisgrizzlies", "bestOdds": "+500000", "consensusOdds": "+500000", "oddsBySource": { "sportsbookreview": "+500000" }, "impliedProbability": 0.00002 },
+    { "name": "New Orleans Pelicans", "nameNormalized": "neworleanspelicans", "bestOdds": "+500000", "consensusOdds": "+500000", "oddsBySource": { "sportsbookreview": "+500000" }, "impliedProbability": 0.00002 },
+    { "name": "Indiana Pacers", "nameNormalized": "indianapacers", "bestOdds": "+500000", "consensusOdds": "+500000", "oddsBySource": { "sportsbookreview": "+500000" }, "impliedProbability": 0.00002 }
   ]
 }

@@ -1,393 +1,43 @@
 {
   "sport": "nhl",
-  "lastUpdated": "2026-03-03T11:00:00.000Z",
+  "lastUpdated": "2026-03-03T14:00:00.000Z",
   "sources": [
-    "sportsbookreview"
+    "sportsbookreview",
+    "si",
+    "oddspedia"
   ],
   "entries": [
-    {
-      "name": "Colorado Avalanche",
-      "nameNormalized": "coloradoavalanche",
-      "bestOdds": "+350",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+350",
-      "oddsBySource": {
-        "sportsbookreview": "+350"
-      },
-      "impliedProbability": 0.2222,
-      "market": "outrights"
-    },
-    {
-      "name": "Tampa Bay Lightning",
-      "nameNormalized": "tampabaylightning",
-      "bestOdds": "+500",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+500",
-      "oddsBySource": {
-        "sportsbookreview": "+500"
-      },
-      "impliedProbability": 0.1667,
-      "market": "outrights"
-    },
-    {
-      "name": "Carolina Hurricanes",
-      "nameNormalized": "carolinahurricanes",
-      "bestOdds": "+700",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+700",
-      "oddsBySource": {
-        "sportsbookreview": "+700"
-      },
-      "impliedProbability": 0.125,
-      "market": "outrights"
-    },
-    {
-      "name": "Vegas Golden Knights",
-      "nameNormalized": "vegasgoldenknights",
-      "bestOdds": "+1100",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+1100",
-      "oddsBySource": {
-        "sportsbookreview": "+1100"
-      },
-      "impliedProbability": 0.0833,
-      "market": "outrights"
-    },
-    {
-      "name": "Edmonton Oilers",
-      "nameNormalized": "edmontonoilers",
-      "bestOdds": "+1200",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+1200",
-      "oddsBySource": {
-        "sportsbookreview": "+1200"
-      },
-      "impliedProbability": 0.0769,
-      "market": "outrights"
-    },
-    {
-      "name": "Dallas Stars",
-      "nameNormalized": "dallasstars",
-      "bestOdds": "+1800",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+1800",
-      "oddsBySource": {
-        "sportsbookreview": "+1800"
-      },
-      "impliedProbability": 0.0526,
-      "market": "outrights"
-    },
-    {
-      "name": "Minnesota Wild",
-      "nameNormalized": "minnesotawild",
-      "bestOdds": "+2000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+2000",
-      "oddsBySource": {
-        "sportsbookreview": "+2000"
-      },
-      "impliedProbability": 0.0476,
-      "market": "outrights"
-    },
-    {
-      "name": "Buffalo Sabres",
-      "nameNormalized": "buffalosabres",
-      "bestOdds": "+4000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+4000",
-      "oddsBySource": {
-        "sportsbookreview": "+4000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Montreal Canadiens",
-      "nameNormalized": "montrealcanadiens",
-      "bestOdds": "+4000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+4000",
-      "oddsBySource": {
-        "sportsbookreview": "+4000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Florida Panthers",
-      "nameNormalized": "floridapanthers",
-      "bestOdds": "+4000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+4000",
-      "oddsBySource": {
-        "sportsbookreview": "+4000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Utah Hockey Club",
-      "nameNormalized": "utahhockeyclub",
-      "bestOdds": "+4000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+4000",
-      "oddsBySource": {
-        "sportsbookreview": "+4000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Detroit Red Wings",
-      "nameNormalized": "detroitredwings",
-      "bestOdds": "+5000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+5000",
-      "oddsBySource": {
-        "sportsbookreview": "+5000"
-      },
-      "impliedProbability": 0.0196,
-      "market": "outrights"
-    },
-    {
-      "name": "Los Angeles Kings",
-      "nameNormalized": "losangeleskings",
-      "bestOdds": "+6000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+6000",
-      "oddsBySource": {
-        "sportsbookreview": "+6000"
-      },
-      "impliedProbability": 0.0164,
-      "market": "outrights"
-    },
-    {
-      "name": "Washington Capitals",
-      "nameNormalized": "washingtoncapitals",
-      "bestOdds": "+6000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+6000",
-      "oddsBySource": {
-        "sportsbookreview": "+6000"
-      },
-      "impliedProbability": 0.0164,
-      "market": "outrights"
-    },
-    {
-      "name": "Pittsburgh Penguins",
-      "nameNormalized": "pittsburghpenguins",
-      "bestOdds": "+7500",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+7500",
-      "oddsBySource": {
-        "sportsbookreview": "+7500"
-      },
-      "impliedProbability": 0.0132,
-      "market": "outrights"
-    },
-    {
-      "name": "Ottawa Senators",
-      "nameNormalized": "ottawasenators",
-      "bestOdds": "+8000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+8000",
-      "oddsBySource": {
-        "sportsbookreview": "+8000"
-      },
-      "impliedProbability": 0.0123,
-      "market": "outrights"
-    },
-    {
-      "name": "New York Islanders",
-      "nameNormalized": "newyorkislanders",
-      "bestOdds": "+9000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+9000",
-      "oddsBySource": {
-        "sportsbookreview": "+9000"
-      },
-      "impliedProbability": 0.011,
-      "market": "outrights"
-    },
-    {
-      "name": "Toronto Maple Leafs",
-      "nameNormalized": "torontomapleleafs",
-      "bestOdds": "+10000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "sportsbookreview": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "Anaheim Ducks",
-      "nameNormalized": "anaheimducks",
-      "bestOdds": "+10000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "sportsbookreview": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "Columbus Blue Jackets",
-      "nameNormalized": "columbusbluejackets",
-      "bestOdds": "+10000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "sportsbookreview": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "Boston Bruins",
-      "nameNormalized": "bostonbruins",
-      "bestOdds": "+20000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+20000",
-      "oddsBySource": {
-        "sportsbookreview": "+20000"
-      },
-      "impliedProbability": 0.005,
-      "market": "outrights"
-    },
-    {
-      "name": "Nashville Predators",
-      "nameNormalized": "nashvillepredators",
-      "bestOdds": "+30000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+30000",
-      "oddsBySource": {
-        "sportsbookreview": "+30000"
-      },
-      "impliedProbability": 0.0033,
-      "market": "outrights"
-    },
-    {
-      "name": "Philadelphia Flyers",
-      "nameNormalized": "philadelphiaflyers",
-      "bestOdds": "+30000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+30000",
-      "oddsBySource": {
-        "sportsbookreview": "+30000"
-      },
-      "impliedProbability": 0.0033,
-      "market": "outrights"
-    },
-    {
-      "name": "Seattle Kraken",
-      "nameNormalized": "seattlekraken",
-      "bestOdds": "+35000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+35000",
-      "oddsBySource": {
-        "sportsbookreview": "+35000"
-      },
-      "impliedProbability": 0.0028,
-      "market": "outrights"
-    },
-    {
-      "name": "San Jose Sharks",
-      "nameNormalized": "sanjosesharks",
-      "bestOdds": "+40000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+40000",
-      "oddsBySource": {
-        "sportsbookreview": "+40000"
-      },
-      "impliedProbability": 0.0025,
-      "market": "outrights"
-    },
-    {
-      "name": "New Jersey Devils",
-      "nameNormalized": "newjerseydevils",
-      "bestOdds": "+50000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+50000",
-      "oddsBySource": {
-        "sportsbookreview": "+50000"
-      },
-      "impliedProbability": 0.002,
-      "market": "outrights"
-    },
-    {
-      "name": "Winnipeg Jets",
-      "nameNormalized": "winnipegjets",
-      "bestOdds": "+50000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+50000",
-      "oddsBySource": {
-        "sportsbookreview": "+50000"
-      },
-      "impliedProbability": 0.002,
-      "market": "outrights"
-    },
-    {
-      "name": "New York Rangers",
-      "nameNormalized": "newyorkrangers",
-      "bestOdds": "+100000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+100000",
-      "oddsBySource": {
-        "sportsbookreview": "+100000"
-      },
-      "impliedProbability": 0.001,
-      "market": "outrights"
-    },
-    {
-      "name": "St. Louis Blues",
-      "nameNormalized": "stlouisblues",
-      "bestOdds": "+150000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+150000",
-      "oddsBySource": {
-        "sportsbookreview": "+150000"
-      },
-      "impliedProbability": 0.0007,
-      "market": "outrights"
-    },
-    {
-      "name": "Chicago Blackhawks",
-      "nameNormalized": "chicagoblackhawks",
-      "bestOdds": "+150000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+150000",
-      "oddsBySource": {
-        "sportsbookreview": "+150000"
-      },
-      "impliedProbability": 0.0007,
-      "market": "outrights"
-    },
-    {
-      "name": "Calgary Flames",
-      "nameNormalized": "calgaryflames",
-      "bestOdds": "+150000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+150000",
-      "oddsBySource": {
-        "sportsbookreview": "+150000"
-      },
-      "impliedProbability": 0.0007,
-      "market": "outrights"
-    },
-    {
-      "name": "Vancouver Canucks",
-      "nameNormalized": "vancouvercanucks",
-      "bestOdds": "+200000",
-      "bestOddsSource": "sportsbookreview",
-      "consensusOdds": "+200000",
-      "oddsBySource": {
-        "sportsbookreview": "+200000"
-      },
-      "impliedProbability": 0.0005,
-      "market": "outrights"
-    }
+    { "name": "Colorado Avalanche", "nameNormalized": "coloradoavalanche", "bestOdds": "+350", "consensusOdds": "+350", "oddsBySource": { "sportsbookreview": "+350" }, "impliedProbability": 0.2222 },
+    { "name": "Tampa Bay Lightning", "nameNormalized": "tampabaylightning", "bestOdds": "+450", "consensusOdds": "+450", "oddsBySource": { "sportsbookreview": "+450" }, "impliedProbability": 0.1818 },
+    { "name": "Carolina Hurricanes", "nameNormalized": "carolinahurricanes", "bestOdds": "+700", "consensusOdds": "+700", "oddsBySource": { "sportsbookreview": "+700" }, "impliedProbability": 0.125 },
+    { "name": "Edmonton Oilers", "nameNormalized": "edmontonoilers", "bestOdds": "+800", "consensusOdds": "+800", "oddsBySource": { "sportsbookreview": "+800" }, "impliedProbability": 0.1111 },
+    { "name": "Vegas Golden Knights", "nameNormalized": "vegasgoldenknights", "bestOdds": "+1100", "consensusOdds": "+1100", "oddsBySource": { "sportsbookreview": "+1100" }, "impliedProbability": 0.0833 },
+    { "name": "Dallas Stars", "nameNormalized": "dallasstars", "bestOdds": "+1800", "consensusOdds": "+1800", "oddsBySource": { "sportsbookreview": "+1800" }, "impliedProbability": 0.0526 },
+    { "name": "Minnesota Wild", "nameNormalized": "minnesotawild", "bestOdds": "+2000", "consensusOdds": "+2000", "oddsBySource": { "sportsbookreview": "+2000" }, "impliedProbability": 0.0476 },
+    { "name": "Utah Hockey Club", "nameNormalized": "utahhockeyclub", "bestOdds": "+4000", "consensusOdds": "+4000", "oddsBySource": { "sportsbookreview": "+4000" }, "impliedProbability": 0.0244 },
+    { "name": "Detroit Red Wings", "nameNormalized": "detroitredwings", "bestOdds": "+5000", "consensusOdds": "+5000", "oddsBySource": { "sportsbookreview": "+5000" }, "impliedProbability": 0.0196 },
+    { "name": "Florida Panthers", "nameNormalized": "floridapanthers", "bestOdds": "+6000", "consensusOdds": "+6000", "oddsBySource": { "sportsbookreview": "+6000" }, "impliedProbability": 0.0164 },
+    { "name": "Los Angeles Kings", "nameNormalized": "losangeleskings", "bestOdds": "+6000", "consensusOdds": "+6000", "oddsBySource": { "sportsbookreview": "+6000" }, "impliedProbability": 0.0164 },
+    { "name": "Washington Capitals", "nameNormalized": "washingtoncapitals", "bestOdds": "+6000", "consensusOdds": "+6000", "oddsBySource": { "sportsbookreview": "+6000" }, "impliedProbability": 0.0164 },
+    { "name": "Buffalo Sabres", "nameNormalized": "buffalosabres", "bestOdds": "+4000", "consensusOdds": "+4000", "oddsBySource": { "sportsbookreview": "+4000" }, "impliedProbability": 0.0244 },
+    { "name": "Montreal Canadiens", "nameNormalized": "montrealcanadiens", "bestOdds": "+4000", "consensusOdds": "+4000", "oddsBySource": { "sportsbookreview": "+4000" }, "impliedProbability": 0.0244 },
+    { "name": "Pittsburgh Penguins", "nameNormalized": "pittsburghpenguins", "bestOdds": "+7500", "consensusOdds": "+7500", "oddsBySource": { "sportsbookreview": "+7500" }, "impliedProbability": 0.0132 },
+    { "name": "Ottawa Senators", "nameNormalized": "ottawasenators", "bestOdds": "+8000", "consensusOdds": "+8000", "oddsBySource": { "sportsbookreview": "+8000" }, "impliedProbability": 0.0123 },
+    { "name": "New York Islanders", "nameNormalized": "newyorkislanders", "bestOdds": "+9000", "consensusOdds": "+9000", "oddsBySource": { "sportsbookreview": "+9000" }, "impliedProbability": 0.011 },
+    { "name": "Toronto Maple Leafs", "nameNormalized": "torontomapleleafs", "bestOdds": "+10000", "consensusOdds": "+10000", "oddsBySource": { "sportsbookreview": "+10000" }, "impliedProbability": 0.0099 },
+    { "name": "Anaheim Ducks", "nameNormalized": "anaheimducks", "bestOdds": "+10000", "consensusOdds": "+10000", "oddsBySource": { "sportsbookreview": "+10000" }, "impliedProbability": 0.0099 },
+    { "name": "Columbus Blue Jackets", "nameNormalized": "columbusbluejackets", "bestOdds": "+10000", "consensusOdds": "+10000", "oddsBySource": { "sportsbookreview": "+10000" }, "impliedProbability": 0.0099 },
+    { "name": "Boston Bruins", "nameNormalized": "bostonbruins", "bestOdds": "+20000", "consensusOdds": "+20000", "oddsBySource": { "sportsbookreview": "+20000" }, "impliedProbability": 0.005 },
+    { "name": "Nashville Predators", "nameNormalized": "nashvillepredators", "bestOdds": "+30000", "consensusOdds": "+30000", "oddsBySource": { "sportsbookreview": "+30000" }, "impliedProbability": 0.0033 },
+    { "name": "Philadelphia Flyers", "nameNormalized": "philadelphiaflyers", "bestOdds": "+30000", "consensusOdds": "+30000", "oddsBySource": { "sportsbookreview": "+30000" }, "impliedProbability": 0.0033 },
+    { "name": "Seattle Kraken", "nameNormalized": "seattlekraken", "bestOdds": "+35000", "consensusOdds": "+35000", "oddsBySource": { "sportsbookreview": "+35000" }, "impliedProbability": 0.0028 },
+    { "name": "San Jose Sharks", "nameNormalized": "sanjosesharks", "bestOdds": "+40000", "consensusOdds": "+40000", "oddsBySource": { "sportsbookreview": "+40000" }, "impliedProbability": 0.0025 },
+    { "name": "New Jersey Devils", "nameNormalized": "newjerseydevils", "bestOdds": "+50000", "consensusOdds": "+50000", "oddsBySource": { "sportsbookreview": "+50000" }, "impliedProbability": 0.002 },
+    { "name": "Winnipeg Jets", "nameNormalized": "winnipegjets", "bestOdds": "+50000", "consensusOdds": "+50000", "oddsBySource": { "sportsbookreview": "+50000" }, "impliedProbability": 0.002 },
+    { "name": "New York Rangers", "nameNormalized": "newyorkrangers", "bestOdds": "+100000", "consensusOdds": "+100000", "oddsBySource": { "sportsbookreview": "+100000" }, "impliedProbability": 0.001 },
+    { "name": "St. Louis Blues", "nameNormalized": "stlouisblues", "bestOdds": "+150000", "consensusOdds": "+150000", "oddsBySource": { "sportsbookreview": "+150000" }, "impliedProbability": 0.0007 },
+    { "name": "Chicago Blackhawks", "nameNormalized": "chicagoblackhawks", "bestOdds": "+150000", "consensusOdds": "+150000", "oddsBySource": { "sportsbookreview": "+150000" }, "impliedProbability": 0.0007 },
+    { "name": "Calgary Flames", "nameNormalized": "calgaryflames", "bestOdds": "+150000", "consensusOdds": "+150000", "oddsBySource": { "sportsbookreview": "+150000" }, "impliedProbability": 0.0007 },
+    { "name": "Vancouver Canucks", "nameNormalized": "vancouvercanucks", "bestOdds": "+200000", "consensusOdds": "+200000", "oddsBySource": { "sportsbookreview": "+200000" }, "impliedProbability": 0.0005 }
   ]
 }
