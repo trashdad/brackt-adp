@@ -43,7 +43,7 @@ const ROSTERS = {
     'Los Angeles Kings', 'Minnesota Wild', 'Montreal Canadiens', 'Nashville Predators',
     'New Jersey Devils', 'New York Islanders', 'New York Rangers', 'Ottawa Senators',
     'Philadelphia Flyers', 'Pittsburgh Penguins', 'San Jose Sharks', 'Seattle Kraken',
-    'St. Louis Blues', 'Tampa Bay Lightning', 'Toronto Maple Leafs', 'Utah Hockey Club',
+    'St. Louis Blues', 'Tampa Bay Lightning', 'Toronto Maple Leafs', 'Utah Mammoth',
     'Vancouver Canucks', 'Vegas Golden Knights', 'Washington Capitals', 'Winnipeg Jets',
   ],
 
@@ -83,7 +83,7 @@ const ROSTERS = {
     'NC State Wolfpack', 'Louisville Cardinals', 'Tennessee Lady Volunteers', 'Ohio State Buckeyes',
     'Ole Miss Rebels', 'Iowa State Cyclones', 'Baylor Bears', 'North Carolina Tar Heels',
     'Michigan State Spartans', 'Maryland Terrapins', 'Kentucky Wildcats', 'USC Trojans',
-    'Texas Tech Lady Raiders',
+    'Texas Tech Lady Raiders', 'Oregon Ducks',
   ],
 
   // ── WNBA — 13 teams ─────────────────────────────────────────────
@@ -152,6 +152,7 @@ const ROSTERS = {
   // ── Snooker — Top 40 world ranked players ───────────────────────
   snooker: [
     'Judd Trump', 'Kyren Wilson', 'Neil Robertson', 'Mark Williams',
+    "Ronnie O'Sullivan", 'Chang Bingyu',
     'Zhao Xintong', 'John Higgins', 'Mark Selby', 'Shaun Murphy',
     'Mark Allen', 'Xiao Guodong', 'Wu Yize',
     'Chris Wakelin', 'Barry Hawkins', 'Ding Junhui', 'Si Jiahui',
@@ -169,7 +170,7 @@ const ROSTERS = {
     'USA West', 'USA Midwest', 'USA Mid-Atlantic', 'USA Mountain',
     'USA Metro', 'USA Northwest', 'Japan', 'Taipei', 'Mexico',
     'Caribbean', 'Canada', 'Latin America', 'Europe-Africa', 'Asia-Pacific',
-    'Australia', 'Panama',
+    'Australia', 'Panama', 'Curacao',
   ],
 
   // ── IndyCar — 2026 season (full-time + confirmed Indy 500 entrants) ──

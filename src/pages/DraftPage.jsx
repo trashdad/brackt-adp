@@ -112,6 +112,24 @@ const NAME_FIX = {
   'vanderbilt':                    'Vanderbilt Commodores',
   'illinois':                      'Illinois Fighting Illini',
   'florida (ncaab)':               'Florida Gators',
+  // ── NCAAB ─────────────────────────────────────────────────────────
+  'michigan st.':                  'Michigan State Spartans',
+  'gonzaga':                       'Gonzaga Bulldogs',
+  "st. john's":                    "St. John's Red Storm",
+  'purdue':                        'Purdue Boilermakers',
+  'texas tech':                    'Texas Tech Red Raiders',
+  'alabama':                       'Alabama Crimson Tide',
+  'texas a&m':                     'Texas A&M Aggies',
+  'miami (fl)':                    'Miami Hurricanes',
+  'byu':                           'BYU Cougars',
+  'oklahoma':                      'Oklahoma Sooners',
+  'iowa':                          'Iowa Hawkeyes',
+  // ── UCL ────────────────────────────────────────────────────────────
+  'tottenham hotspur':             'Tottenham',
+  'newcastle united':              'Newcastle',
+  'bodø/glimt':                   'Bodo Glimt',
+  // ── LLWS ───────────────────────────────────────────────────────────
+  'us - mountain':                 'USA Mountain',
 };
 
 // ─── Entry lookup: map brackt.com pick → boardEntry ──────────────────────────
