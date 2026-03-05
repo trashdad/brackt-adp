@@ -1,17 +1,17 @@
 {
   "sport": "ncaab",
-  "lastUpdated": "2026-03-03T14:00:00.000Z",
+  "lastUpdated": "2026-03-05T10:00:00.000Z",
   "sources": [
     "sportsbookreview",
     "foxsports",
     "vegasinsider"
   ],
   "entries": [
-    { "name": "Michigan Wolverines", "nameNormalized": "michiganwolverines", "bestOdds": "+330", "consensusOdds": "+330", "oddsBySource": { "sportsbookreview": "+330" }, "impliedProbability": 0.2326 },
-    { "name": "Duke Blue Devils", "nameNormalized": "dukebluedevils", "bestOdds": "+350", "consensusOdds": "+350", "oddsBySource": { "sportsbookreview": "+350" }, "impliedProbability": 0.2222 },
-    { "name": "Arizona Wildcats", "nameNormalized": "arizonawildcats", "bestOdds": "+475", "consensusOdds": "+475", "oddsBySource": { "sportsbookreview": "+475" }, "impliedProbability": 0.1739 },
-    { "name": "Florida Gators", "nameNormalized": "floridagators", "bestOdds": "+1000", "consensusOdds": "+1000", "oddsBySource": { "sportsbookreview": "+1000" }, "impliedProbability": 0.0909 },
-    { "name": "Houston Cougars", "nameNormalized": "houstoncougars", "bestOdds": "+1000", "consensusOdds": "+1000", "oddsBySource": { "sportsbookreview": "+1000" }, "impliedProbability": 0.0909 },
+    { "name": "Duke Blue Devils", "nameNormalized": "dukebluedevils", "bestOdds": "+340", "consensusOdds": "+340", "oddsBySource": { "sportsbookreview": "+340" }, "impliedProbability": 0.2273 },
+    { "name": "Michigan Wolverines", "nameNormalized": "michiganwolverines", "bestOdds": "+380", "consensusOdds": "+380", "oddsBySource": { "sportsbookreview": "+380" }, "impliedProbability": 0.2083 },
+    { "name": "Arizona Wildcats", "nameNormalized": "arizonawildcats", "bestOdds": "+480", "consensusOdds": "+480", "oddsBySource": { "sportsbookreview": "+480" }, "impliedProbability": 0.1724 },
+    { "name": "Florida Gators", "nameNormalized": "floridagators", "bestOdds": "+800", "consensusOdds": "+800", "oddsBySource": { "sportsbookreview": "+800" }, "impliedProbability": 0.1111 },
+    { "name": "Houston Cougars", "nameNormalized": "houstoncougars", "bestOdds": "+1100", "consensusOdds": "+1100", "oddsBySource": { "sportsbookreview": "+1100" }, "impliedProbability": 0.0833 },
     { "name": "UConn Huskies", "nameNormalized": "uconnhuskies", "bestOdds": "+1600", "consensusOdds": "+1600", "oddsBySource": { "sportsbookreview": "+1600" }, "impliedProbability": 0.0588 },
     { "name": "Illinois Fighting Illini", "nameNormalized": "illinoisfightingillini", "bestOdds": "+1700", "consensusOdds": "+1700", "oddsBySource": { "sportsbookreview": "+1700" }, "impliedProbability": 0.0556 },
     { "name": "Iowa State Cyclones", "nameNormalized": "iowastatecyclones", "bestOdds": "+1900", "consensusOdds": "+1900", "oddsBySource": { "sportsbookreview": "+1900" }, "impliedProbability": 0.05 },

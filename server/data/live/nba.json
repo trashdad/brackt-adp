@@ -1,17 +1,17 @@
 {
   "sport": "nba",
-  "lastUpdated": "2026-03-03T14:00:00.000Z",
+  "lastUpdated": "2026-03-05T10:00:00.000Z",
   "sources": [
     "sportsbookreview",
-    "foxsports",
-    "fanduel"
+    "fanduel",
+    "betmgm"
   ],
   "entries": [
-    { "name": "Oklahoma City Thunder", "nameNormalized": "oklahomacitythunder", "bestOdds": "+140", "consensusOdds": "+140", "oddsBySource": { "sportsbookreview": "+140" }, "impliedProbability": 0.4167 },
-    { "name": "San Antonio Spurs", "nameNormalized": "sanantoniospurs", "bestOdds": "+700", "consensusOdds": "+700", "oddsBySource": { "sportsbookreview": "+700" }, "impliedProbability": 0.125 },
-    { "name": "Denver Nuggets", "nameNormalized": "denvernuggets", "bestOdds": "+750", "consensusOdds": "+750", "oddsBySource": { "sportsbookreview": "+750" }, "impliedProbability": 0.1176 },
-    { "name": "Boston Celtics", "nameNormalized": "bostonceltics", "bestOdds": "+850", "consensusOdds": "+850", "oddsBySource": { "sportsbookreview": "+850" }, "impliedProbability": 0.1053 },
-    { "name": "Cleveland Cavaliers", "nameNormalized": "clevelandcavaliers", "bestOdds": "+950", "consensusOdds": "+950", "oddsBySource": { "sportsbookreview": "+950" }, "impliedProbability": 0.0952 },
+    { "name": "Oklahoma City Thunder", "nameNormalized": "oklahomacitythunder", "bestOdds": "+145", "consensusOdds": "+145", "oddsBySource": { "sportsbookreview": "+145" }, "impliedProbability": 0.4082 },
+    { "name": "Denver Nuggets", "nameNormalized": "denvernuggets", "bestOdds": "+600", "consensusOdds": "+600", "oddsBySource": { "sportsbookreview": "+600" }, "impliedProbability": 0.1429 },
+    { "name": "San Antonio Spurs", "nameNormalized": "sanantoniospurs", "bestOdds": "+800", "consensusOdds": "+800", "oddsBySource": { "sportsbookreview": "+800" }, "impliedProbability": 0.1111 },
+    { "name": "Cleveland Cavaliers", "nameNormalized": "clevelandcavaliers", "bestOdds": "+1000", "consensusOdds": "+1000", "oddsBySource": { "sportsbookreview": "+1000" }, "impliedProbability": 0.0909 },
+    { "name": "Boston Celtics", "nameNormalized": "bostonceltics", "bestOdds": "+1200", "consensusOdds": "+1200", "oddsBySource": { "sportsbookreview": "+1200" }, "impliedProbability": 0.0769 },
     { "name": "Detroit Pistons", "nameNormalized": "detroitpistons", "bestOdds": "+1600", "consensusOdds": "+1600", "oddsBySource": { "sportsbookreview": "+1600" }, "impliedProbability": 0.0588 },
     { "name": "New York Knicks", "nameNormalized": "newyorkknicks", "bestOdds": "+1700", "consensusOdds": "+1700", "oddsBySource": { "sportsbookreview": "+1700" }, "impliedProbability": 0.0556 },
     { "name": "Houston Rockets", "nameNormalized": "houstonrockets", "bestOdds": "+2200", "consensusOdds": "+2200", "oddsBySource": { "sportsbookreview": "+2200" }, "impliedProbability": 0.0435 },

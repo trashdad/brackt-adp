@@ -1,225 +1,29 @@
 {
   "sport": "afl",
-  "lastUpdated": "2026-03-03T10:00:00.000Z",
+  "lastUpdated": "2026-03-05T10:00:00.000Z",
   "sources": [
-    "ladbrokes-tab-zerohanger"
+    "sportsbet",
+    "palmerbet",
+    "oddschecker"
   ],
   "entries": [
-    {
-      "name": "Brisbane Lions",
-      "nameNormalized": "brisbanelions",
-      "bestOdds": "+375",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+375",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+375"
-      },
-      "impliedProbability": 0.2105,
-      "market": "outrights"
-    },
-    {
-      "name": "Gold Coast Suns",
-      "nameNormalized": "goldcoastsuns",
-      "bestOdds": "+700",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+700",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+700"
-      },
-      "impliedProbability": 0.125,
-      "market": "outrights"
-    },
-    {
-      "name": "Sydney Swans",
-      "nameNormalized": "sydneyswans",
-      "bestOdds": "+800",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+800",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+800"
-      },
-      "impliedProbability": 0.1111,
-      "market": "outrights"
-    },
-    {
-      "name": "Hawthorn Hawks",
-      "nameNormalized": "hawthornhawks",
-      "bestOdds": "+900",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+900",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+900"
-      },
-      "impliedProbability": 0.1,
-      "market": "outrights"
-    },
-    {
-      "name": "Geelong Cats",
-      "nameNormalized": "geelongcats",
-      "bestOdds": "+900",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+900",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+900"
-      },
-      "impliedProbability": 0.1,
-      "market": "outrights"
-    },
-    {
-      "name": "Fremantle Dockers",
-      "nameNormalized": "fremantledockers",
-      "bestOdds": "+1100",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+1100",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+1100"
-      },
-      "impliedProbability": 0.0833,
-      "market": "outrights"
-    },
-    {
-      "name": "Adelaide Crows",
-      "nameNormalized": "adelaidecrows",
-      "bestOdds": "+1200",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+1200",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+1200"
-      },
-      "impliedProbability": 0.0769,
-      "market": "outrights"
-    },
-    {
-      "name": "Western Bulldogs",
-      "nameNormalized": "westernbulldogs",
-      "bestOdds": "+1400",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+1400",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+1400"
-      },
-      "impliedProbability": 0.0667,
-      "market": "outrights"
-    },
-    {
-      "name": "Collingwood Magpies",
-      "nameNormalized": "collingwoodmagpies",
-      "bestOdds": "+1600",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+1600",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+1600"
-      },
-      "impliedProbability": 0.0588,
-      "market": "outrights"
-    },
-    {
-      "name": "St Kilda Saints",
-      "nameNormalized": "stkildasaints",
-      "bestOdds": "+1600",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+1600",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+1600"
-      },
-      "impliedProbability": 0.0588,
-      "market": "outrights"
-    },
-    {
-      "name": "Greater Western Sydney Giants",
-      "nameNormalized": "greaterwesternsydneygiants",
-      "bestOdds": "+2000",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+2000",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+2000"
-      },
-      "impliedProbability": 0.0476,
-      "market": "outrights"
-    },
-    {
-      "name": "Carlton Blues",
-      "nameNormalized": "carltonblues",
-      "bestOdds": "+4000",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+4000",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+4000"
-      },
-      "impliedProbability": 0.0244,
-      "market": "outrights"
-    },
-    {
-      "name": "Port Adelaide Power",
-      "nameNormalized": "portadelaidepower",
-      "bestOdds": "+5000",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+5000",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+5000"
-      },
-      "impliedProbability": 0.0196,
-      "market": "outrights"
-    },
-    {
-      "name": "Melbourne Demons",
-      "nameNormalized": "melbournedemons",
-      "bestOdds": "+8000",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+8000",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+8000"
-      },
-      "impliedProbability": 0.0123,
-      "market": "outrights"
-    },
-    {
-      "name": "Essendon Bombers",
-      "nameNormalized": "essendonbombers",
-      "bestOdds": "+10000",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+10000",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+10000"
-      },
-      "impliedProbability": 0.0099,
-      "market": "outrights"
-    },
-    {
-      "name": "North Melbourne Kangaroos",
-      "nameNormalized": "northmelbournekangaroos",
-      "bestOdds": "+15000",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+15000",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+15000"
-      },
-      "impliedProbability": 0.0066,
-      "market": "outrights"
-    },
-    {
-      "name": "Richmond Tigers",
-      "nameNormalized": "richmondtigers",
-      "bestOdds": "+25000",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+25000",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+25000"
-      },
-      "impliedProbability": 0.004,
-      "market": "outrights"
-    },
-    {
-      "name": "West Coast Eagles",
-      "nameNormalized": "westcoasteagles",
-      "bestOdds": "+25000",
-      "bestOddsSource": "ladbrokes-tab-zerohanger",
-      "consensusOdds": "+25000",
-      "oddsBySource": {
-        "ladbrokes-tab-zerohanger": "+25000"
-      },
-      "impliedProbability": 0.004,
-      "market": "outrights"
-    }
+    { "name": "Brisbane Lions", "nameNormalized": "brisbanelions", "bestOdds": "+350", "consensusOdds": "+350", "oddsBySource": { "sportsbet": "+350" }, "impliedProbability": 0.2222 },
+    { "name": "Sydney Swans", "nameNormalized": "sydneyswans", "bestOdds": "+700", "consensusOdds": "+700", "oddsBySource": { "sportsbet": "+700" }, "impliedProbability": 0.125 },
+    { "name": "Gold Coast Suns", "nameNormalized": "goldcoastsuns", "bestOdds": "+700", "consensusOdds": "+700", "oddsBySource": { "sportsbet": "+700" }, "impliedProbability": 0.125 },
+    { "name": "Hawthorn Hawks", "nameNormalized": "hawthornhawks", "bestOdds": "+850", "consensusOdds": "+850", "oddsBySource": { "sportsbet": "+850" }, "impliedProbability": 0.1053 },
+    { "name": "Geelong Cats", "nameNormalized": "geelongcats", "bestOdds": "+900", "consensusOdds": "+900", "oddsBySource": { "sportsbet": "+900" }, "impliedProbability": 0.1 },
+    { "name": "Fremantle Dockers", "nameNormalized": "fremantledockers", "bestOdds": "+1100", "consensusOdds": "+1100", "oddsBySource": { "sportsbet": "+1100" }, "impliedProbability": 0.0833 },
+    { "name": "Adelaide Crows", "nameNormalized": "adelaidecrows", "bestOdds": "+1200", "consensusOdds": "+1200", "oddsBySource": { "sportsbet": "+1200" }, "impliedProbability": 0.0769 },
+    { "name": "Western Bulldogs", "nameNormalized": "westernbulldogs", "bestOdds": "+1400", "consensusOdds": "+1400", "oddsBySource": { "sportsbet": "+1400" }, "impliedProbability": 0.0667 },
+    { "name": "Collingwood Magpies", "nameNormalized": "collingwoodmagpies", "bestOdds": "+1600", "consensusOdds": "+1600", "oddsBySource": { "sportsbet": "+1600" }, "impliedProbability": 0.0588 },
+    { "name": "St Kilda Saints", "nameNormalized": "stkildasaints", "bestOdds": "+1600", "consensusOdds": "+1600", "oddsBySource": { "sportsbet": "+1600" }, "impliedProbability": 0.0588 },
+    { "name": "Greater Western Sydney Giants", "nameNormalized": "greaterwesternsydneygiants", "bestOdds": "+2000", "consensusOdds": "+2000", "oddsBySource": { "sportsbet": "+2000" }, "impliedProbability": 0.0476 },
+    { "name": "Carlton Blues", "nameNormalized": "carltonblues", "bestOdds": "+4500", "consensusOdds": "+4500", "oddsBySource": { "sportsbet": "+4500" }, "impliedProbability": 0.0217 },
+    { "name": "Port Adelaide Power", "nameNormalized": "portadelaidepower", "bestOdds": "+5000", "consensusOdds": "+5000", "oddsBySource": { "sportsbet": "+5000" }, "impliedProbability": 0.0196 },
+    { "name": "Melbourne Demons", "nameNormalized": "melbournedemons", "bestOdds": "+8000", "consensusOdds": "+8000", "oddsBySource": { "sportsbet": "+8000" }, "impliedProbability": 0.0123 },
+    { "name": "Essendon Bombers", "nameNormalized": "essendonbombers", "bestOdds": "+10000", "consensusOdds": "+10000", "oddsBySource": { "sportsbet": "+10000" }, "impliedProbability": 0.0099 },
+    { "name": "North Melbourne Kangaroos", "nameNormalized": "northmelbournekangaroos", "bestOdds": "+15000", "consensusOdds": "+15000", "oddsBySource": { "sportsbet": "+15000" }, "impliedProbability": 0.0066 },
+    { "name": "Richmond Tigers", "nameNormalized": "richmondtigers", "bestOdds": "+25000", "consensusOdds": "+25000", "oddsBySource": { "sportsbet": "+25000" }, "impliedProbability": 0.004 },
+    { "name": "West Coast Eagles", "nameNormalized": "westcoasteagles", "bestOdds": "+25000", "consensusOdds": "+25000", "oddsBySource": { "sportsbet": "+25000" }, "impliedProbability": 0.004 }
   ]
 }
