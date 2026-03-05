@@ -29,9 +29,9 @@ export default function App() {
   const { entries, loading, lastUpdated, refresh } = useOddsData(scarcityModifier);
   const { boardEntries, toggleDrafted, resetDraft, syncDraft } = useDraftBoard(entries);
 
-  // ikyn_EV: computed once from real boardEntries (300k-sim Plackett-Luce per sport).
-  // Shared by Dashboard and DraftPage so both always show the same live numbers.
-  const ikynEVMap = useMemo(() => computeIkynEV(boardEntries), [boardEntries]);
+  // ikyn_EV: computed from entries (odds data), not boardEntries — draft toggles don't
+  // affect adpScore/winProbability so recomputing 300k-sim PL-MC on every draft is wasted.
+  const ikynEVMap = useMemo(() => computeIkynEV(entries), [entries]);
 
   // DUNGEON_FOE: randomize display values for non-friends (never mutates real data)
   const { isFoe, seed } = useDungeonGate();

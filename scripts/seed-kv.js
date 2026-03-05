@@ -15,8 +15,12 @@ const DATA_DIR   = new URL('../server/data', import.meta.url).pathname.replace(/
 const pairs = [];
 
 // Store files (store:{name})
+// NOTE: draft-state is excluded — live site drafts are the source of truth.
+// Pass --include-draft-state to force-overwrite (e.g. first-time setup).
+const includeDraftState = process.argv.includes('--include-draft-state');
 const storeFiles = [
-  'draft-state', 'manual-odds', 'app-settings',
+  ...(includeDraftState ? ['draft-state'] : []),
+  'manual-odds', 'app-settings',
   'research-data', 'social-scores', 'subjective-data',
 ];
 for (const name of storeFiles) {
