@@ -341,3 +341,68 @@ To verify the model produces ~84 EV for Palou (IndyCar, QP tournament):
 8. **Scaled EV**: (254.9 / 360) × 100 = **70.8** ... needs tuning via championship odds weighting
 
 *Note: The exact calibration requires balancing per-race odds vs. championship odds. Championship odds already encode season-long accumulation. This is a key modeling decision — see Approach 2 (multi-market triangulation).*
+
+---
+
+## Odds Data Sources & API Key Setup
+
+### Source Priority (by sharpness)
+| Source | Type | API Key? | Sharpness | Coverage |
+|--------|------|----------|-----------|----------|
+| Pinnacle | Via The Odds API | Yes | 1.00 | Major sports |
+| Betfair | Via The Odds API | Yes | 0.95 | Major sports |
+| bet365 | Via scrapers | No | 0.85 | Broad |
+| Polymarket | Public API | **No key needed** | 0.80 | NBA, NFL, MLB, NHL, NCAA, UCL, FIFA, F1 |
+| DraftKings | Via The Odds API / scraper | Mixed | 0.75 | US sports |
+| FanDuel | Via The Odds API / scraper | Mixed | 0.75 | US sports |
+| BetMGM | Via The Odds API | Yes | 0.70 | US sports |
+| Manual (screenshots) | `scripts/add-odds.js` | No | 0.60 | Any |
+
+### API Key Setup Walkthrough
+
+#### 1. The Odds API (PRIMARY — covers Pinnacle, DraftKings, FanDuel, BetMGM, bet365)
+
+1. Go to https://the-odds-api.com/
+2. Click "Get API Key" → enter email → they email you a key instantly
+3. Free tier: **500 requests/month** (enough for ~1 fetch/day across all 20 sports)
+4. Add to your app: Go to TERMINAL_CFG page → paste in the API key field
+5. **Or** set as Netlify env var: `THE_ODDS_API_KEY=your_key_here`
+
+This is the highest-value key because it returns odds from **multiple sportsbooks per query** including Pinnacle (the sharpest book). One request gives you DraftKings + FanDuel + Pinnacle + bet365 odds simultaneously.
+
+#### 2. Polymarket (FREE — no key needed)
+
+Already wired in. Runs automatically when pipeline executes. Polymarket is a prediction market (not a sportsbook) — its odds come from thousands of traders buying/selling shares. Quality is moderate but coverage includes championship futures for NBA, NFL, MLB, NHL, NCAA, UCL, FIFA, F1.
+
+Polymarket slugs need updating each season. Current slugs in `netlify/functions/run-pipeline.js` → `POLYMARKET_SLUGS`.
+
+#### 3. Manual Screenshot Workflow (for niche sports)
+
+For sports with thin API coverage (AFL, Darts, Snooker, LLWS, IndyCar):
+```bash
+echo '[["Alex Palou", "+150"], ["Colton Herta", "+800"]]' | node scripts/add-odds.js indycar championship manual
+```
+
+### Sport Coverage Gaps
+
+| Sport | The Odds API | Polymarket | Manual needed? |
+|-------|-------------|------------|---------------|
+| NFL | ✅ | ✅ | No |
+| NBA | ✅ | ✅ | No |
+| MLB | ✅ | ✅ | No |
+| NHL | ✅ | ✅ | No |
+| NCAA Football | ✅ | ✅ | No |
+| NCAA Basketball | ✅ | ✅ | No |
+| NCAA Women's | ✅ | ❌ | Maybe |
+| WNBA | ✅ | ✅ | No |
+| F1 | ✅ | ✅ | No |
+| IndyCar | ✅ (added) | ❌ | Backup |
+| AFL | ✅ | ❌ | Backup |
+| UCL | ✅ | ✅ | No |
+| FIFA | ✅ | ✅ | No |
+| PGA | ✅ | ❌ | Per-major |
+| Tennis M/W | ✅ | ❌ | Per-slam |
+| CS2 | ✅ | ❌ | Maybe |
+| Darts | ✅ | ❌ | Backup |
+| Snooker | ✅ | ❌ | Backup |
+| LLWS | ❌ | ❌ | **Yes** |
