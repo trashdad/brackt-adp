@@ -21,14 +21,16 @@ import { enrichWithConfidence } from './utils/confidenceScore';
 
 export default function App() {
   const [scarcityModifier, setScarcityModifier] = useState(0.5); // default; overwritten from server
+  const [leagueSize, setLeagueSize] = useState(12); // default; overwritten from server
 
-  // Load scarcity modifier from server on mount
+  // Load settings from server on mount
   useEffect(() => {
     fetchAppConfig().then((cfg) => {
       if (cfg.scarcityModifier != null) setScarcityModifier(cfg.scarcityModifier);
+      if (cfg.leagueSize != null) setLeagueSize(cfg.leagueSize);
     });
   }, []);
-  const { entries, loading, lastUpdated, refresh } = useOddsData(scarcityModifier);
+  const { entries, loading, lastUpdated, refresh } = useOddsData(scarcityModifier, leagueSize);
   const { boardEntries, toggleDrafted, resetDraft, syncDraft } = useDraftBoard(entries);
 
   // ikyn_EV: computed from entries (odds data), not boardEntries — draft toggles don't
@@ -59,6 +61,11 @@ export default function App() {
   const handleScarcityChange = useCallback((val) => {
     setScarcityModifier(val);
     saveAppConfig({ scarcityModifier: val });
+  }, []);
+
+  const handleLeagueSizeChange = useCallback((val) => {
+    setLeagueSize(val);
+    saveAppConfig({ leagueSize: val });
   }, []);
 
   const handleImport = useCallback(async (e) => {
@@ -105,6 +112,8 @@ export default function App() {
             onExport={handleExport}
             onImportClick={() => fileInputRef.current?.click()}
             importStatus={importStatus}
+            leagueSize={leagueSize}
+            onLeagueSizeChange={handleLeagueSizeChange}
           />
         }>
           <Route

@@ -126,14 +126,31 @@ export const STABILITY_SAMPLES = {
   darts: 1, snooker: 1, wnba: 1, ncaaw: 1
 };
 
-// Phase 2: VOR replacement levels — 75th-percentile EV per sport
-const SPORT_REPLACEMENT_LEVELS = {
+// Fallback replacement levels — used when a sport has fewer entries than leagueSize
+const SPORT_REPLACEMENT_LEVELS_FALLBACK = {
   afl: 4.50, darts: 2.80, fifa: 3.10, f1: 5.20,
   indycar: 4.80, llws: 3.50, mlb: 14.33, nba: 10.92, ncaab: 2.10,
   ncaaf: 6.80, ncaaw: 3.50, nfl: 16.37, nhl: 9.50,
   snooker: 3.20, ucl: 5.50, wnba: 7.20,
   pga: 14.00, tennis_m: 12.00, tennis_w: 12.00, csgo: 12.00,
 };
+
+/**
+ * Dynamically compute replacement level EV for a sport based on league size.
+ * Replacement = EV of the (leagueSize + 1)th player — the best undrafted player.
+ */
+function computeReplacementEV(sportEntries, sportId, leagueSize) {
+  const evs = sportEntries
+    .map(e => e.ev?.seasonTotal || 0)
+    .filter(v => v > 0)
+    .sort((a, b) => b - a);
+
+  if (evs.length > leagueSize) {
+    return evs[leagueSize]; // EV of the first player who goes undrafted
+  }
+  // Not enough entries — use fallback
+  return SPORT_REPLACEMENT_LEVELS_FALLBACK[sportId] || 0;
+}
 
 export const SPORT_VOLATILITY_SCALING = {
   nhl: 1.12, mlb: 1.08, nba: 0.94, f1: 0.85, llws: 1.10
@@ -150,10 +167,10 @@ function getStabilitySigma(sportId) {
 // MAIN DPS PIPELINE — applyPositionalScarcity
 // ============================================================================
 
-export function applyPositionalScarcity(sportEntries, globalModifier) {
+export function applyPositionalScarcity(sportEntries, globalModifier, leagueSize = 12) {
   if (!sportEntries || sportEntries.length < 2) return;
   const sportId = sportEntries[0].sport;
-  const replacementEV = SPORT_REPLACEMENT_LEVELS[sportId] || 0;
+  const replacementEV = computeReplacementEV(sportEntries, sportId, leagueSize);
   const sigma = getStabilitySigma(sportId);
 
   sportEntries.sort((a, b) => (b.ev?.seasonTotal || 0) - (a.ev?.seasonTotal || 0));

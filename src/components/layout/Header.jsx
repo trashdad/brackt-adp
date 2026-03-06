@@ -54,6 +54,31 @@ function RobotIcon({ active }) {
   );
 }
 
+// Pixel-art gear icon — opens the settings popover
+function GearIcon() {
+  return (
+    <svg viewBox="0 0 16 16" className="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      {/* Outer teeth */}
+      <rect x="6" y="0" width="4" height="2"/>
+      <rect x="6" y="14" width="4" height="2"/>
+      <rect x="0" y="6" width="2" height="4"/>
+      <rect x="14" y="6" width="2" height="4"/>
+      {/* Diagonal teeth */}
+      <rect x="2" y="2" width="3" height="2"/>
+      <rect x="11" y="2" width="3" height="2"/>
+      <rect x="2" y="12" width="3" height="2"/>
+      <rect x="11" y="12" width="3" height="2"/>
+      {/* Body ring */}
+      <rect x="4" y="3" width="8" height="10"/>
+      {/* Center hole */}
+      <rect x="6" y="5" width="4" height="6" fill="#0a0a14"/>
+      <rect x="5" y="6" width="6" height="4" fill="#0a0a14"/>
+      {/* Center dot */}
+      <rect x="7" y="7" width="2" height="2" fill="currentColor"/>
+    </svg>
+  );
+}
+
 // Wizard icon — embedded GIF
 function WizardIcon({ unlocked }) {
   return (
@@ -66,10 +91,22 @@ function WizardIcon({ unlocked }) {
   );
 }
 
-export default function Header({ onExport, onImportClick, importStatus }) {
+export default function Header({ onExport, onImportClick, importStatus, leagueSize, onLeagueSizeChange }) {
   const { theme, setTheme } = useTheme();
   const { isUnlocked, showDevPanel, toggleDevPanel, handleWizardClick, wizardClicks } = useLock();
   const { userName, reopenGate } = useDungeonGate();
+  const [showSettings, setShowSettings] = useState(false);
+  const settingsRef = useRef(null);
+
+  // Close popover on outside click
+  useEffect(() => {
+    if (!showSettings) return;
+    const handler = (e) => {
+      if (settingsRef.current && !settingsRef.current.contains(e.target)) setShowSettings(false);
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, [showSettings]);
 
   return (
     <header className="bg-gradient-to-b from-retro-magenta to-retro-purple border-b-2 border-black shadow-[inset_0_-2px_0_0_rgba(0,0,0,0.5),0_4px_12px_rgba(0,0,0,0.5)] relative z-20">
@@ -156,6 +193,38 @@ export default function Header({ onExport, onImportClick, importStatus }) {
             >
               <RobotIcon active={showDevPanel} />
             </button>
+
+            {/* Gear — league settings popover */}
+            <div className="relative" ref={settingsRef}>
+              <button
+                onClick={() => setShowSettings(s => !s)}
+                title="LEAGUE_SETTINGS"
+                className={`w-8 h-8 flex items-center justify-center transition-all active:scale-90 rounded-sm ${
+                  showSettings ? 'text-retro-gold bg-retro-gold/10 border border-retro-gold/30' : 'text-white/40 hover:text-white/80'
+                }`}
+              >
+                <GearIcon />
+              </button>
+              {showSettings && (
+                <div className="absolute right-0 top-full mt-2 w-52 snes-panel bg-retro-panel border-2 border-black shadow-[4px_4px_0_#000] z-50 p-4">
+                  <label className="font-retro text-[10px] text-retro-light/60 tracking-[0.2em] uppercase block mb-2">
+                    LEAGUE_SIZE
+                  </label>
+                  <select
+                    value={leagueSize || 12}
+                    onChange={(e) => onLeagueSizeChange?.(Number(e.target.value))}
+                    className="w-full px-3 py-2 bg-black/40 border-2 border-white/10 font-retro text-[13px] text-retro-cyan appearance-none cursor-pointer hover:border-retro-cyan/40 transition-colors"
+                  >
+                    {[10, 12, 14, 16].map(n => (
+                      <option key={n} value={n} className="bg-retro-panel">{n} TEAMS</option>
+                    ))}
+                  </select>
+                  <div className="mt-3 font-mono text-[9px] text-white/30 tracking-wider">
+                    AFFECTS REPLACEMENT LEVEL + VOR
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* Wizard head — 5 clicks to unlock/lock */}
             <div className="relative">

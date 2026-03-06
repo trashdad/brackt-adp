@@ -11,6 +11,7 @@ const CONFIG_DEFAULTS = {
   apiSportsKey: '',
   refreshInterval: 24,
   scarcityModifier: 0.5,
+  leagueSize: 12,
   theme: 'snes',
 };
 

@@ -64,7 +64,7 @@ function pipelineToRawItems(pipelineData) {
  * @param historicalBySport - { sportId: { entries: [{ nameNormalized, history, trend, ... }] } } (optional)
  * @param socialScores - { entryId: { socialScore, socialQuotient } } (optional)
  */
-function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, socialScores = {}) {
+function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, socialScores = {}, leagueSize = 12) {
   const entries = [];
 
   for (const sport of SPORTS) {
@@ -271,7 +271,7 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
   }
 
   for (const sportEntries of Object.values(bySport)) {
-    applyPositionalScarcity(sportEntries, scarcityModifier);
+    applyPositionalScarcity(sportEntries, scarcityModifier, leagueSize);
   }
 
   entries.sort((a, b) => {
@@ -286,7 +286,7 @@ function buildEntries(rawBySport, historicalBySport = {}, scarcityModifier, soci
   return entries;
 }
 
-export default function useOddsData(scarcityModifier) {
+export default function useOddsData(scarcityModifier, leagueSize = 12) {
   const [entries, setEntries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState(null);
@@ -343,10 +343,10 @@ export default function useOddsData(scarcityModifier) {
       }
     } catch { /* continue without social scores */ }
 
-    setEntries(buildEntries(rawBySport, historicalBySport, scarcityModifier, socialScores));
+    setEntries(buildEntries(rawBySport, historicalBySport, scarcityModifier, socialScores, leagueSize));
     setLastUpdated(new Date());
     setLoading(false);
-  }, [scarcityModifier]);
+  }, [scarcityModifier, leagueSize]);
 
   // Initial load + periodic refresh
   const refreshRef = useRef(refresh);

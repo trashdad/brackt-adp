@@ -20,12 +20,56 @@ function formatOdds(n) {
   return n > 0 ? `+${n}` : `${n}`;
 }
 
+// ── Source sharpness weights (keep in sync with client) ──────────────────────
+const SOURCE_SHARPNESS = {
+  pinnacle: 1.0,
+  betfair: 0.95,
+  bet365: 0.85,
+  draftkings: 0.75,
+  fanduel: 0.75,
+  betmgm: 0.70,
+  caesars: 0.70,
+  manual: 0.60,
+};
+function getSharpness(source) {
+  const key = source.toLowerCase().replace(/[\s_-]/g, '');
+  for (const [k, v] of Object.entries(SOURCE_SHARPNESS)) {
+    if (key.includes(k)) return v;
+  }
+  return 0.70;
+}
+
+/** Power method — raises implied probs to exponent k so they sum to 1. */
+export function powerDevig(impliedProbs) {
+  const total = impliedProbs.reduce((s, p) => s + p, 0);
+  if (total <= 1) return [...impliedProbs];
+  let lo = 1.0, hi = 3.0;
+  for (let iter = 0; iter < 100; iter++) {
+    const mid = (lo + hi) / 2;
+    const sum = impliedProbs.reduce((s, p) => s + Math.pow(p, mid), 0);
+    if (sum > 1) lo = mid; else hi = mid;
+    if (Math.abs(sum - 1) < 1e-10) break;
+  }
+  const k = (lo + hi) / 2;
+  return impliedProbs.map(p => Math.pow(p, k));
+}
+
+/** Basic multiplicative normalization (original method). */
+function basicDevig(impliedProbs) {
+  const total = impliedProbs.reduce((s, p) => s + p, 0);
+  if (total <= 1) return [...impliedProbs];
+  return impliedProbs.map(p => p / total);
+}
+
 /**
  * Remove vig from a set of odds-by-source and return consensus.
+ * Uses Power method by default to correct for favorite-longshot bias.
+ * Weights sources by sharpness (Pinnacle > soft books).
  * @param {Object} oddsBySource - e.g. { draftkings: "+150", fanduel: "+160" }
+ * @param {string} method - 'power' (default) or 'basic'
  * @returns {{ consensus: string|null, bestOdds: string|null, bestSource: string|null }}
  */
-export function computeConsensus(oddsBySource) {
+export function computeConsensus(oddsBySource, method = 'power') {
   const entries = Object.entries(oddsBySource);
   const parsed = entries
     .map(([src, val]) => [src, typeof val === 'string' ? parseFloat(val) : val])
@@ -41,19 +85,26 @@ export function computeConsensus(oddsBySource) {
     return [src, prob];
   });
 
-  const totalImplied = probs.reduce((sum, [, p]) => sum + p, 0);
+  const impliedArr = probs.map(([, p]) => p);
+  const totalImplied = impliedArr.reduce((s, p) => s + p, 0);
 
-  // Normalize if there's vig (total > 1), otherwise use raw
-  const trueProbs = totalImplied > 1
-    ? probs.map(([src, p]) => [src, p / totalImplied])
-    : probs;
+  // Devig
+  const devigFn = method === 'basic' ? basicDevig : powerDevig;
+  const trueProbs = totalImplied > 1 ? devigFn(impliedArr) : impliedArr;
 
-  // Consensus = average of true probabilities → American
-  const avgProb = trueProbs.reduce((s, [, p]) => s + p, 0) / trueProbs.length;
+  // Consensus = sharpness-weighted average → American
+  let wSum = 0, wTotal = 0;
+  for (let i = 0; i < probs.length; i++) {
+    const [src] = probs[i];
+    const w = getSharpness(src);
+    wSum += trueProbs[i] * w;
+    wTotal += w;
+  }
+  const avgProb = wTotal > 0 ? wSum / wTotal : trueProbs[0];
   const consensusNum = probabilityToAmerican(avgProb);
   const consensus = consensusNum != null ? formatOdds(consensusNum) : null;
 
-  // Best odds = lowest implied probability (longest shot = best value for bettor)
+  // Best odds = lowest implied probability (best value for bettor)
   let bestSrc = null, bestVal = null, bestProb = Infinity;
   for (const [src, prob] of probs) {
     if (prob > 0 && prob < bestProb) {
